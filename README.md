@@ -1,41 +1,36 @@
-# 🔨 Hệ Thống Đấu Giá Trực Tuyến (Online Auction System)
-**Môn học:** Lập trình Nâng cao (OOD)  
-**Nhóm:** [Tên Nhóm của bạn]
+# 🔨 Auction-System-OOD | Hệ Thống Đấu Giá Trực Tuyến
+> Dự án bài tập lớn môn Lập trình Nâng cao - Xây dựng dựa trên kiến trúc hướng đối tượng (OOD).
 
-## 📝 Giới thiệu dự án
-Dự án xây dựng hệ thống đấu giá trực tuyến sử dụng mô hình Client-Server. Hệ thống cho phép người dùng đăng ký, đăng nhập, quản lý sản phẩm và tham gia đấu giá thời gian thực.
+[![Java CI with Maven](https://github.com/25023189-bit/Auction-System-OOD/actions/workflows/maven.yml/badge.svg)](https://github.com/25023189-bit/Auction-System-OOD/actions)
+![Java Version](https://img.shields.io/badge/Java-17-orange)
+![Framework](https://img.shields.io/badge/UI-JavaFX-blue)
 
-## 👥 Thành viên và Phân công (Vertical Slicing)
-Dự án được triển khai theo mô hình "Cắt dọc" tính năng để đảm bảo mọi thành viên đều làm việc với đủ các tầng: GUI, Logic và Data.
+## 💡 Ý tưởng dự án
+Hệ thống mô phỏng một sàn đấu giá chuyên nghiệp, nơi các "đại gia" (Clients) có thể vào tranh giành các món hàng độc lạ được quản lý bởi Server. Mọi giao dịch, bước giá và thời gian đều được đồng bộ hóa real-time qua Socket.
 
-| Thành viên | Trụ cột (Vertical Slice) | Chức năng chính |
-| :--- | :--- | :--- |
-| **Thành viên 1** | **Trụ cột 1 (Quản trị)** | Thiết lập CI/CD, Quản lý người dùng (Login/Register), Phân quyền. |
-| **Thành viên 2** | **Trụ cột 2 (Sản phẩm)** | Quản lý danh mục sản phẩm, Thêm/Sửa/Xóa sản phẩm đấu giá. |
-| **Thành viên 3** | **Trụ cột 3 (Giao dịch)** | Logic đấu giá cốt lõi, xử lý bước giá, kiểm tra tính hợp lệ của giá đặt. |
-| **Thành viên 4** | **Trụ cột 4 (Kết quả)** | Xử lý kết thúc phiên, xác định người thắng, thông báo và nâng cao. |
+## 🤺 Đội ngũ thực hiện & "Địa bàn" phụ trách
+Dự án được chia theo mô hình **Vertical Slicing** (Cắt dọc). Mỗi thành viên là một "Full-stack Java Developer" tự quản lý từ giao diện đến database cho tính năng của mình:
 
-## 🏗 Kiến trúc dự án (MVC)
-Dự án tuân thủ nghiêm ngặt mô hình MVC để đảm bảo dễ bảo trì và kiểm thử:
-* **Model:** Chứa các lớp thực thể (User, Item, Bid).
-* **View:** Giao diện người dùng sử dụng JavaFX (.fxml).
-* **Controller:** Xử lý điều hướng và logic trung gian.
-* **DAO (Data Access Object):** Quản lý truy xuất dữ liệu.
+* **⚡ Thành viên 1:** * *Sứ mệnh:* Kiến trúc hệ thống, CI/CD, Quản lý "danh phận" (Đăng ký/Đăng nhập) & Phân quyền User/Admin.
+* **📦 Thành viên 2:** * *Sứ mệnh:* "Kho hàng" - Phụ trách toàn bộ hệ thống quản lý sản phẩm, thêm mới và lưu trữ kho đồ đấu giá.
+* **⚖️ Thành viên 3:** * *Sứ mệnh:* "Sàn đấu" - Xử lý logic đặt giá, thuật toán kiểm tra tính hợp lệ và đảm bảo công bằng cho mỗi lượt bid.
+* **🏆 Thành viên 4:** * *Sứ mệnh:* "Chốt đơn" - Xử lý thời gian đếm ngược, xác định người thắng cuộc và hệ thống thông báo nâng cao.
 
-## 🚀 Công nghệ sử dụng
-* **Ngôn ngữ:** Java 17.
-* **Quản lý dự án:** Maven.
-* **Giao diện:** JavaFX.
-* **Kiểm thử:** JUnit 5 (Tự động chạy qua GitHub Actions).
-* **CI/CD:** GitHub Actions.
+## 🏗 Cấu trúc mã nguồn (MVC Pattern)
+Dự án được tổ chức "sạch sẽ" để ai nhìn vào cũng hiểu:
+- `com.auction.server`: Trái tim của hệ thống (Xử lý Data, Socket Server).
+- `com.auction.client`: Bộ não giao diện (JavaFX Controllers, FXML).
+- `com.auction.common`: Các tài nguyên dùng chung (Model Classes, JSON Utils).
+- `src/test`: Nơi chứa các "vũ khí" JUnit để đảm bảo code không bao giờ lỗi.
 
-## 🛠 Hướng dẫn cài đặt
-1. Clone dự án: `git clone https://github.com/25023189-bit/Auction-System-OOD.git`.
-2. Mở dự án bằng IntelliJ IDEA hoặc Eclipse (Chọn "Import as Maven Project").
-3. Chạy lệnh `mvn clean install` để tải các thư viện cần thiết.
+## 🛠 Cách "Build" dự án trên máy cá nhân
+1.  **Clone code:** `git clone https://github.com/25023189-bit/Auction-System-OOD.git`
+2.  **Mở IDE:** Dùng IntelliJ hoặc Eclipse mở folder dự án.
+3.  **Maven Magic:** Chạy `mvn clean install` để hệ thống tự động tải thư viện.
+4.  **Run:** Chạy `Server.main()` trước, sau đó mở các `Client.main()`.
 
-## 🛡 Quy trình phát triển (Git Workflow)
-Để đảm bảo chất lượng mã nguồn, nhóm áp dụng quy trình:
-1. Không push trực tiếp lên nhánh `main`.
-2. Mọi tính năng phải được phát triển trên nhánh `feature/[tên-tính-năng]`.
-3. Phải tạo **Pull Request** và vượt qua kiểm tra từ **GitHub Actions** (CI) mới được merge vào `main`.
+## 📜 "Luật chơi" trên GitHub (Git Flow)
+Để tránh tình trạng "code chồng code", nhóm thống nhất:
+1.  **Main là vùng cấm:** Không push thẳng lên `main`.
+2.  **Làm việc riêng:** Code trên nhánh `feature/ten-tinh-nang`.
+3.  **Hỏi ý kiến đồng đội:** Phải tạo **Pull Request**, đợi tích xanh CI và ít nhất 1 người Approve mới được Merge.
