@@ -33,4 +33,4 @@ Dự án được tổ chức "sạch sẽ" để ai nhìn vào cũng hiểu:
 Để tránh tình trạng "code chồng code", nhóm thống nhất:
 1.  **Main là vùng cấm:** Không push thẳng lên `main`.
 2.  **Làm việc riêng:** Code trên nhánh `feature/ten-tinh-nang`.
-3.  **Hỏi ý kiến đồng đội:** Phải tạo **Pull Request**, đợi tích xanh CI và ít nhất 1 người Approve mới được Merge.
+3.  **Hỏi ý kiến đồng đội:** Phải tạo **Pull Request**, đợi tích xanh CI và ít nhất 2 người Approve mới được Merge.
