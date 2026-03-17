@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="client.controllers.AuctionController" prefWidth="450" prefHeight="350">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <Label text="🔥 SÀN ĐẤU GIÁ TRỰC TUYẾN 🔥" textFill="RED">
+        <font><Font name="System Bold" size="22.0" /></font>
+    </Label>
+
+    <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #f4f4f4; -fx-padding: 15; -fx-border-color: #ccc; -fx-border-radius: 5;">
+        <Label fx:id="lblItemName" text="Sản phẩm: Đang tải..." style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+        <Label fx:id="lblCurrentPrice" text="Giá cao nhất: Đang tải..." style="-fx-font-size: 16px; -fx-text-fill: green;"/>
+        <Label fx:id="lblWinner" text="Người giữ kỷ lục: ..." style="-fx-font-size: 14px; -fx-text-fill: #555;"/>
+    </VBox>
+
+    <HBox fx:id="bidderBox" alignment="CENTER" spacing="10">
+        <TextField fx:id="txtBidAmount" promptText="Nhập giá tiền ($)" prefWidth="150" />
+        <Button text="💰 ĐẶT GIÁ" onAction="#handleBid" style="-fx-background-color: #ff9800; -fx-text-fill: white; -fx-font-weight: bold;" />
+    </HBox>
+
+    <HBox fx:id="sellerBox" alignment="CENTER" spacing="10" visible="false" managed="false">
+        <Button text="➕ Thêm SP" onAction="#handleAdd" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" />
+        <Button text="✏️ Sửa Giá" onAction="#handleUpdate" style="-fx-background-color: #2196F3; -fx-text-fill: white;" />
+        <Button text="🗑️ Xóa SP" onAction="#handleDelete" style="-fx-background-color: #f44336; -fx-text-fill: white;" />
+    </HBox>
+</VBox>

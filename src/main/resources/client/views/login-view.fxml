@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="15.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="client.controllers.LoginController">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <Label text="HỆ THỐNG ĐẤU GIÁ" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+    <TextField fx:id="txtMaKhachHang" promptText="Mã khách hàng (KHxxx)" />
+    <ComboBox fx:id="cbMaPhien" promptText="--- Chọn phiên ---" prefWidth="200" />
+
+    <Button text="ĐĂNG NHẬP" onAction="#handleLoginClick" prefWidth="200" />
+</VBox>
