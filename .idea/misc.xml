@@ -8,7 +8,11 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="temurin-17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
+=======
+  <component name="ProjectRootManager" version="2" project-jdk-name="25" project-jdk-type="JavaSDK" />
+>>>>>>> ee95c67bb7153b440fe6fd0af643db8887dc6c12
 </project>
