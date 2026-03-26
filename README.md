@@ -1,36 +1,45 @@
-# 🔨 Auction-System-OOD | Hệ Thống Đấu Giá Trực Tuyến
-> Dự án bài tập lớn môn Lập trình Nâng cao - Xây dựng dựa trên kiến trúc hướng đối tượng (OOD).
+# 🔨 Hệ Thống Đấu Giá Trực Tuyến (Online Auction System - OOD)
 
-[![Java CI with Maven](https://github.com/25023189-bit/Auction-System-OOD/actions/workflows/maven.yml/badge.svg)](https://github.com/25023189-bit/Auction-System-OOD/actions)
-![Java Version](https://img.shields.io/badge/Java-17-orange)
-![Framework](https://img.shields.io/badge/UI-JavaFX-blue)
+Dự án Hệ thống Đấu giá Trực tuyến được thiết kế theo mô hình Hướng đối tượng (Object-Oriented Design - OOD). 
 
-## 💡 Ý tưởng dự án
-Hệ thống mô phỏng một sàn đấu giá chuyên nghiệp, nơi các "đại gia" (Clients) có thể vào tranh giành các món hàng độc lạ được quản lý bởi Server. Mọi giao dịch, bước giá và thời gian đều được đồng bộ hóa real-time qua Socket.
+## 🚀 Lịch sử làm việc & Ý tưởng triển khai (Đến giai đoạn hiện tại)
 
-## 🤺 Đội ngũ thực hiện & "Địa bàn" phụ trách
-Dự án được chia theo mô hình **Vertical Slicing** (Cắt dọc). Mỗi thành viên là một "Full-stack Java Developer" tự quản lý từ giao diện đến database cho tính năng của mình:
+Dưới đây là nhật ký công việc và các quyết định kiến trúc cốt lõi mà tôi đã thực hiện trong giai đoạn khởi tạo dự án:
 
-* **⚡ Thành viên 1:** * *Sứ mệnh:* Kiến trúc hệ thống, CI/CD, Quản lý "danh phận" (Đăng ký/Đăng nhập) & Phân quyền User/Admin.
-* **📦 Thành viên 2:** * *Sứ mệnh:* "Kho hàng" - Phụ trách toàn bộ hệ thống quản lý sản phẩm, thêm mới và lưu trữ kho đồ đấu giá.
-* **⚖️ Thành viên 3:** * *Sứ mệnh:* "Sàn đấu" - Xử lý logic đặt giá, thuật toán kiểm tra tính hợp lệ và đảm bảo công bằng cho mỗi lượt bid.
-* **🏆 Thành viên 4:** * *Sứ mệnh:* "Chốt đơn" - Xử lý thời gian đếm ngược, xác định người thắng cuộc và hệ thống thông báo nâng cao.
+### 1. Kiến trúc Cơ sở dữ liệu (Phiên bản 5.0 - The Masterpiece)
+Thay vì tạo các bảng đơn giản, tôi đã thiết kế một CSDL MySQL (`auction_system`) cực kỳ chặt chẽ và áp dụng tư duy OOP trực tiếp vào SQL:
+* **Áp dụng OOP (Joined-Table Strategy):** Xây dựng bảng `products` làm lớp cha (Abstract Item) và các bảng con `product_electronics`, `product_arts`, `product_vehicles` kế thừa từ lớp cha.
+* **Ràng buộc dữ liệu siêu chặt (Max Ping):** * Dùng `REGEX` để ép chuẩn định dạng ID ngay từ Database (VD: Customer ID phải là `BD5...`, Auction ID phải là `AU1...`).
+  * Dùng `CHECK` constraint để đảm bảo logic nghiệp vụ (Giá hiện tại >= Giá khởi điểm, Thời gian kết thúc > Thời gian bắt đầu).
+* **Bảo toàn toàn vẹn dữ liệu:** Thiết lập đầy đủ các Khóa ngoại (`FOREIGN KEY`) với cơ chế `ON DELETE CASCADE` và `RESTRICT` hợp lý, kết hợp `UNIQUE KEY` cho tính năng Auto-bidding.
 
-## 🏗 Cấu trúc mã nguồn (MVC Pattern)
-Dự án được tổ chức "sạch sẽ" để ai nhìn vào cũng hiểu:
-- `com.auction.server`: Trái tim của hệ thống (Xử lý Data, Socket Server).
-- `com.auction.client`: Bộ não giao diện (JavaFX Controllers, FXML).
-- `com.auction.common`: Các tài nguyên dùng chung (Model Classes, JSON Utils).
-- `src/test`: Nơi chứa các "vũ khí" JUnit để đảm bảo code không bao giờ lỗi.
+### 2. Thiết lập Java & Kết nối MySQL
+* **Quản lý thư viện bằng Maven:** Khởi tạo file `pom.xml` chuẩn chỉ để quản lý các dependency.
+* **Bảo mật mật khẩu (Yêu cầu cốt lõi):** Tích hợp thư viện `jbcrypt` và tạo class `PasswordUtil` để băm mật khẩu (Hash Password) kết hợp "muối" (salt 12) trước khi lưu xuống DB, đảm bảo an toàn tuyệt đối theo tiêu chuẩn công nghiệp.
+* **Kết nối CSDL:** Tích hợp `mysql-connector-j` và xây dựng class `DatabaseConnection` dùng JDBC để giao tiếp thành công với MySQL.
 
-## 🛠 Cách "Build" dự án trên máy cá nhân
-1.  **Clone code:** `git clone https://github.com/25023189-bit/Auction-System-OOD.git`
-2.  **Mở IDE:** Dùng IntelliJ hoặc Eclipse mở folder dự án.
-3.  **Maven Magic:** Chạy `mvn clean install` để hệ thống tự động tải thư viện.
-4.  **Run:** Chạy `Server.main()` trước, sau đó mở các `Client.main()`.
+### 3. Quản lý Mã nguồn (Git/GitHub)
+* Khởi tạo và thiết lập chuẩn luồng làm việc với Git.
+* Cấu hình file `.gitignore` để loại bỏ các file rác/file cấu hình IDE (`.idea/`, `target/`), giúp repository luôn sạch sẽ và không bị xung đột khi làm việc nhóm.
+* Xử lý thành công các vấn đề về đồng bộ (Pull --rebase) và đẩy code (Push) an toàn lên GitHub.
 
-## 📜 "Luật chơi" trên GitHub (Git Flow)
-Để tránh tình trạng "code chồng code", nhóm thống nhất:
-1.  **Main là vùng cấm:** Không push thẳng lên `main`.
-2.  **Làm việc riêng:** Code trên nhánh `feature/ten-tinh-nang`.
-3.  **Hỏi ý kiến đồng đội:** Phải tạo **Pull Request**, đợi tích xanh CI và ít nhất 2 người Approve mới được Merge.
+---
+
+## 📂 Cấu trúc thư mục hiện tại
+
+```text
+Auction-System-OOD/
+│
+├── .gitignore               # Chặn các file rác không cho lên Git
+├── database_v5.sql          # Script khởi tạo CSDL hoàn chỉnh
+├── pom.xml                  # Cấu hình Maven & Thư viện (MySQL, BCrypt)
+├── README.md                # Tài liệu dự án (File này)
+│
+└── src/
+    └── main/
+        └── java/
+            ├── com.auction.model/  # Chứa các Class/Entity (User, Product...)
+            ├── utils/
+            │   ├── DatabaseConnection.java  # Class kết nối MySQL
+            │   └── PasswordUtil.java        # Class băm mật khẩu BCrypt
+            └── Main.java            # File chạy test hệ thống
