@@ -1,7 +1,8 @@
 -- ==============================================================================
 -- DATABASE: HỆ THỐNG ĐẤU GIÁ TRỰC TUYẾN (VERSION 5.0 - THE MASTERPIECE)
 -- ==============================================================================
-
+CREATE DATABASE IF NOT EXISTS auction_db;
+USE auction_db;
 DROP DATABASE IF EXISTS auction_system;
 CREATE DATABASE auction_system CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE auction_system;
@@ -108,7 +109,7 @@ CREATE TABLE auto_bidding_rules (
     registered_at TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP(3), 
     FOREIGN KEY (auction_id) REFERENCES auctions(auction_id) ON DELETE CASCADE,
     FOREIGN KEY (bidder_id) REFERENCES users(customer_id) ON DELETE CASCADE,
-    UNIQUE(auction_id, bidder_id)
+    UNIQUE KEY (auction_id, bidder_id)
 );
 
 CREATE TABLE notifications (
