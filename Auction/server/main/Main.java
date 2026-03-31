@@ -1,3 +1,6 @@
+package server.main;
+
+import common.models.Auctions.AuctionRoom;
 import utils.DatabaseConnection;
 import utils.PasswordUtil;
 import java.sql.Connection;
@@ -18,5 +21,7 @@ public class Main {
             System.out.println("❌ Kết nối thất bại! Hãy kiểm tra lại mật khẩu MySQL hoặc xem MySQL đã bật chưa.");
             System.out.println("Lỗi chi tiết: " + e.getMessage());
         }
+        AuctionRoom testRoom = new AuctionRoom("AUC001", "Laptop Dell", 500.0);
+        testRoom.placeNewBid("BD500001", 600.0); // Thử đặt giá 600$
     }
 }

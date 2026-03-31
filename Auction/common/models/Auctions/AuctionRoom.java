@@ -7,7 +7,6 @@ public class AuctionRoom implements Serializable {
     private String itemName;
     private double currentPrice;
     private String highestBidder;
-    private String nameSeller;
 
     public AuctionRoom(String roomId, String itemName, double startingPrice) {
         this.roomId = roomId;
@@ -16,26 +15,30 @@ public class AuctionRoom implements Serializable {
         this.highestBidder = "Chưa có ai";
     }
 
-    public AuctionRoom(String roomId, String itemName, double startingPrice, String nameSeller) {
-        this.roomId = roomId;
-        this.itemName = itemName;
-        this.currentPrice = startingPrice;
-        this.highestBidder = "Chưa có ai";
-        this.nameSeller = nameSeller;
+    // --- CÁC HÀM MÀ CLIENT HANDLER ĐANG TÌM ---
+    public String getRoomId() {
+        return roomId;
     }
 
-    // Cập nhật giá khi có người trả cao hơn
-    public boolean placeNewBid(String bidder, double amount) {
+    public String getItemName() {
+        return itemName;
+    }
+
+    public double getCurrentPrice() {
+        return currentPrice;
+    }
+
+    public String getHighestBidder() {
+        return highestBidder;
+    }
+
+    // Logic đặt giá tạm thời (Mock)
+    public boolean placeNewBid(String bidderId, double amount) {
         if (amount > this.currentPrice) {
             this.currentPrice = amount;
-            this.highestBidder = bidder;
-            return true; // Trả giá thành công
+            this.highestBidder = bidderId;
+            return true;
         }
-        return false; // Trả giá thất bại
+        return false;
     }
-
-    public String getRoomId() { return roomId; }
-    public String getItemName() { return itemName; }
-    public double getCurrentPrice() { return currentPrice; }
-    public String getHighestBidder() { return highestBidder; }
 }

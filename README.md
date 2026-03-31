@@ -42,4 +42,4 @@ Auction-System-OOD/
             ├── utils/
             │   ├── DatabaseConnection.java  # Class kết nối MySQL
             │   └── PasswordUtil.java        # Class băm mật khẩu BCrypt
-            └── Main.java            # File chạy test hệ thống
+            └── server.main.Main.java            # File chạy test hệ thống

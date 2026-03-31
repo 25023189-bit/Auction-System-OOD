@@ -1,5 +1,7 @@
 package com.auction.model;
 
+import common.models.Items.Item;
+
 public class Art extends Item {
     private String artistName;
 
@@ -7,7 +9,6 @@ public class Art extends Item {
         super(id, name, description, startingPrice);
         this.artistName = artistName;
     }
-    @Override
     public void printInfo() {
         System.out.println("[Nghệ thuật] " + getName() + " - Tác giả: " + artistName
                 + " - Giá hiện tại: $" + getCurrentHighestPrice());
