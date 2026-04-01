@@ -1,40 +1,46 @@
 Auction-System-OOD/
-├── src/main/java/com/auction/
-│   ├── client/                 # Chứa toàn bộ mã nguồn phía người dùng
-│   │   ├── controllers/        # Xử lý logic giao diện (Action listeners, UI logic) [cite: 128]
-│   │   │   ├── AuctionController.java
-│   │   │   └── SellerController.java
-│   │   └── views/              # (Tùy chọn) Các lớp bổ trợ hiển thị
+├── src/main/java/com/auction/          # Gốc của toàn bộ mã nguồn
+│   ├── client.controllers/             # Điều hướng giao diện (Frontend)
+│   │   ├── AuctionController.java      # Xử lý màn hình đấu giá chính
+│   │   └── SellerController.java       # Xử lý màn hình dành cho người bán
 │   │
-│   ├── server/                 # Chứa logic xử lý trung tâm và Database [cite: 129, 130]
-│   │   ├── dao/                # Data Access Object - Lớp tương tác trực tiếp SQL [cite: 129]
-│   │   │   ├── UserDAO.java    # Xử lý Đăng ký/Đăng nhập (BD5xxxxx) [cite: 152, 171]
-│   │   │   ├── BidDAO.java     # Lưu trữ lịch sử đặt giá 
-│   │   │   └── MockDB.java     # Dữ liệu mẫu để test nhanh
-│   │   ├── service/            # Business Logic - Xử lý "luật chơi" [cite: 129]
-│   │   │   ├── AuctionService.java  # Điều phối phiên đấu giá (OPEN -> FINISHED) [cite: 55]
-│   │   │   ├── AuthService.java     # Kiểm tra quyền Bidder/Seller [cite: 152, 173]
-│   │   │   └── ClientConnection.java # Quản lý kết nối Socket [cite: 126]
-│   │   ├── utils/              # Tiện ích hệ thống
-│   │   │   ├── DatabaseConnection.java # Kết nối JDBC tới database_v5.sql [cite: 60]
-│   │   │   └── PasswordUtil.java       # Mã hóa mật khẩu người dùng
-│   │   └── main/               # Điểm khởi chạy Server
-│   │       └── AuctionServer.java
+│   ├── common/                         # Các lớp dùng chung cho Client & Server
+│   │   ├── dto/                        # Đối tượng truyền tải dữ liệu
+│   │   │   └── Message.java            # Gói tin gửi qua Socket
+│   │   └── model/                      # Các thực thể OOP (Entities)
+│   │       ├── Admin.java              # Vai trò quản trị hệ thống [cite: 37, 115]
+│   │       ├── Art.java                # Loại sản phẩm nghệ thuật (Kế thừa Item) [cite: 113, 120]
+│   │       ├── AuctionRoom.java        # Quản lý trạng thái phiên (OPEN/RUNNING...) [cite: 55]
+│   │       ├── Bidder.java             # Vai trò người tham gia đấu giá [cite: 35, 115]
+│   │       ├── BidTransaction.java     # Lưu vết lịch sử đặt giá [cite: 117, 177]
+│   │       ├── Entity.java (Interface) # Lớp cơ sở cho toàn bộ đối tượng [cite: 111]
+│   │       ├── Item.java (Abstract)    # Lớp cha của các loại sản phẩm [cite: 112, 120]
+│   │       ├── Seller.java             # Vai trò người đăng bán [cite: 36, 115]
+│   │       └── User.java               # Lớp cha chứa ID (BD5xxxxx) và Pass [cite: 114, 153]
 │   │
-│   └── common/                 # Các lớp dùng chung cho cả Client và Server
-│       ├── dto/                # Data Transfer Object - Gói tin gửi qua mạng [cite: 126, 173]
-│       │   └── Message.java    # Cấu trúc thông điệp trao đổi giữa Client-Server
-│       └── model/              # Các thực thể (Entities) theo thiết kế OOP [cite: 107, 109]
-│           ├── Entity.java     # Interface/Abstract class cơ sở [cite: 111]
-│           ├── User.java       # Lớp cha cho Bidder, Seller, Admin [cite: 114, 115]
-│           ├── Item.java       # Lớp cha cho các loại sản phẩm (Art,...) [cite: 112, 113]
-│           ├── AuctionRoom.java# Quản lý trạng thái phiên [cite: 116]
-│           └── BidTransaction.java # Chi tiết một lần đặt giá [cite: 117]
+│   └── server/                         # Logic xử lý tại máy chủ (Backend)
+│       ├── dao/                        # Data Access Object - Thao tác Database
+│       │   ├── BidDAO.java             # Lưu/lấy dữ liệu đặt giá
+│       │   ├── UserDAO.java            # Quản lý tài khoản (BD5xxxxx)
+│       │   └── MockDB.java             # Database giả lập để test nhanh
+│       ├── main/                       # Khởi chạy hệ thống Server
+│       │   ├── AuctionServer.java      # Server Socket chính
+│       │   └── Main.java               # Điểm entry của ứng dụng
+│       ├── service/                    # Xử lý nghiệp vụ (Business Logic)
+│       │   ├── AuctionRoomService.java # Điều phối logic các phòng đấu giá
+│       │   ├── AuctionService.java     # Kiểm tra tính hợp lệ của giá Bid
+│       │   ├── AuthService.java        # Xử lý Đăng nhập/Đăng ký
+│       │   └── ClientConnection.java   # Quản lý luồng kết nối
+│       ├── utils/                      # Các công cụ hỗ trợ
+│       │   ├── DatabaseConnection.java # Kết nối tới database_v5.sql
+│       │   └── PasswordUtil.java       # Mã hóa mật khẩu bảo mật
+│       └── server/                     # (Lưu ý) File xử lý kết nối
+│           └── ClientHandler.java      # Xử lý request từ Client riêng biệt
 │
-├── src/main/resources/         # Tài nguyên hệ thống [cite: 128]
-│   └── com/auction/client/views/
-│       └── auction-view.fxml   # Giao diện thiết kế bằng Scene Builder [cite: 62, 63]
+├── src/main/resources/                 # Tài nguyên phi mã nguồn
+│   └── com.auction.client.views/       # File thiết kế giao diện FXML
+│       └── auction-view.fxml           # Giao diện đấu giá thời gian thực [cite: 67]
 │
-├── database_v5.sql             # File kịch bản tạo bảng và dữ liệu mẫu [cite: 175, 177]
-├── pom.xml                     # Cấu hình thư viện Maven (JavaFX, MySQL Driver, JUnit) [cite: 133]
-└── README.md                   # Hướng dẫn này
+├── database_v5.sql                     # Script tạo bảng Database
+├── pom.xml                             # Quản lý thư viện Maven
+└── README.md                           # Tài liệu hướng dẫn này
