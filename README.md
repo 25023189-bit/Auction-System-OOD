@@ -38,8 +38,8 @@ Auction-System-OOD/
 └── src/
     └── main/
         └── java/
-            ├── com.auction.model/  # Chứa các Class/Entity (User, Product...)
-            ├── utils/
+            ├── com.auction.common.model/  # Chứa các Class/Entity (User, Product...)
+            ├── com.auction.sever.utils/
             │   ├── DatabaseConnection.java  # Class kết nối MySQL
             │   └── PasswordUtil.java        # Class băm mật khẩu BCrypt
             └── server.main.Main.java            # File chạy test hệ thống
