@@ -50,6 +50,11 @@ public class Message implements Serializable {
         this.data = data;
     }
 
+    public Message(String action,Object data) {
+        this.action = action;
+        this.data = data;
+    }
+
     //Dành cho sau này, hoặc lúc lỗi
     public Message(String action, String id, String username, Object data) {
         this.action = action;

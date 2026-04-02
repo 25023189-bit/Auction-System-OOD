@@ -72,7 +72,13 @@ public class AuctionService {
      * @param amount Số tiền đặt cược
      */
     public void placeBid(double amount) {
+        // Chỉ gửi số tiền (Double) qua mạng
         clientConnection.sendMessage(new Message("BID", currentUser, amount));
+    }
+
+    public void closeAuction(String roomId) {
+        // action="CLOSE_AUCTION", id=currentUser (là UserID), data=roomId
+        clientConnection.sendMessage(new Message("CLOSE_AUCTION", currentUser, roomId));
     }
 
     /**

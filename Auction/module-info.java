@@ -3,6 +3,7 @@ module Auction {
     requires javafx.fxml;
 
     requires java.base;
+    requires java.desktop;
 
     opens client.controllers to javafx.fxml;
 

@@ -3,6 +3,11 @@ package client.controllers;
 import client.services.AuctionService;
 import client.services.ClientConnection;
 import common.models.Auctions.AuctionRoom;
+import common.models.Person.Seller;
+import common.models.Person.User;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import common.DTO.Message;
@@ -12,6 +17,16 @@ import javafx.scene.control.*;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.application.Platform;
+import common.models.Person.Bidder;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+import server.database.MockDB;
+
+import javax.swing.*;
 
 /**
  * Lớp AuctionController là Controller chính quản lý toàn bộ giao diện của Client.
@@ -36,6 +51,10 @@ public class AuctionController implements Initializable {
     @FXML private PasswordField txtPassword,txtRegPassword, txtRegConfirm,txtForgotNewPassword, txtForgotConfirm;
     @FXML private Label lblStatus,lblRegStatus,lblForgotStatus;
     @FXML private ComboBox<String> cbRegRole;
+    @FXML private Label lblUsername;
+    @FXML private Label lblBalance;
+
+    @FXML private Button btnCloseAuction;
 
     // 3. Màn hình Chính (Dashboard - Danh sách phòng đấu giá)
     @FXML private FlowPane gridAuctions;
@@ -52,6 +71,9 @@ public class AuctionController implements Initializable {
     // ==========================================================
     private ClientConnection clientConnection;
     private AuctionService auctionService;
+    private String currentRoomId;
+    private String myUsername = "";
+    private common.models.Person.User currentUserProfile;
 
     /**
      * Hàm này tự động chạy ngay sau khi file FXML được load lên.
@@ -155,7 +177,7 @@ public class AuctionController implements Initializable {
             auctionService.placeBid(amount);
             txtBidAmount.clear();
         } catch (NumberFormatException e) {
-            txtChatLog.appendText("Vui lòng nhập số tiền hợp lệ!\n");
+            txtChatLog.appendText("❌ Vui lòng nhập số tiền hợp lệ!\n");
         }
     }
 
@@ -174,6 +196,28 @@ public class AuctionController implements Initializable {
         switchScreen(paneSelectAuction);
     }
 
+    @FXML
+    private void handleCloseAuction() {
+        if (this.currentRoomId != null) {
+            // 1. Gửi lệnh chốt đơn lên Server để xử lý trừ tiền, cộng tiền
+            auctionService.closeAuction(this.currentRoomId);
+
+            // 2. Hiển thị thông báo Pop-up cho ngầu
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Chốt đơn thành công");
+            alert.setHeaderText(null);
+            alert.setContentText("Phòng đấu giá đã được đóng. Chúc mừng bạn đã bán thành công!");
+            alert.showAndWait();
+
+            // 3. Đóng giao diện phòng đấu giá và bật lại giao diện Sảnh chính
+            paneAuctionRoom.setVisible(false);
+            paneSelectAuction.setVisible(true);
+
+            // 4. Reset lại ID phòng hiện tại
+            this.currentRoomId = null;
+        }
+    }
+
     // ==========================================================
     // NHẬN VÀ XỬ LÝ PHẢN HỒI TỪ SERVER (ROUTER)
     // ==========================================================
@@ -186,35 +230,63 @@ public class AuctionController implements Initializable {
         Platform.runLater(() -> {
             switch (msg.action) {
                 case "LOGIN_SUCCESS":
-                    // Lưu định danh người dùng
-                    ClientConnection.currentUser = txtUsername.getText();
-                    auctionService.setCurrentUser(txtUsername.getText().trim());
+                    Platform.runLater(() -> {
+                        // 1. Ép kiểu dữ liệu Server gửi về thành object User (Class cha của Bidder và Seller)
+                        User loggedInUser = (User) msg.data;
 
-                    lblStatus.setText("✅ Đăng nhập thành công!");
-                    lblStatus.setTextFill(javafx.scene.paint.Color.GREEN);
+                        // 🌟 LƯU LẠI PROFILE ĐỂ DÙNG XUYÊN SUỐT
+                        this.currentUserProfile = loggedInUser;
 
-                    // Phân quyền hiển thị UI: Nếu là Seller thì bật nút "+ Create Auction"
-                    String userRole = msg.id;
-                    if (userRole.equalsIgnoreCase("Seller")) {
-                        btnCreateAuction.setVisible(true);
-                        btnCreateAuction.setManaged(true);
-                    } else {
-                        btnCreateAuction.setVisible(false);
-                        btnCreateAuction.setManaged(false);
-                    }
+                        // 2. LƯU ĐÚNG ĐỊNH DANH (ID) người dùng để dùng cho các luồng Chat/Bid sau này
+                        String userId = loggedInUser.getId();
+                        ClientConnection.currentUser = userId;
+                        auctionService.setCurrentUser(userId);
 
-                    // Lấy danh sách phòng và chuyển sang Màn hình chính
-                    clientConnection.sendMessage(new Message("GET_ROOMS", ClientConnection.currentUser, ""));
-                    switchScreen(paneSelectAuction);
+                        this.myUsername = loggedInUser.getUsername();
+
+                        // 3. Cập nhật thông tin lên giao diện
+                        lblUsername.setText("Xin chào: " + loggedInUser.getUsername());
+                        lblBalance.setText("Số dư ví: " + String.format("%,.0f $", loggedInUser.getBalance()));
+
+                        lblStatus.setText("✅ Đăng nhập thành công!");
+                        lblStatus.setTextFill(Color.GREEN);
+
+                        // 4. Phân quyền hiển thị UI: Bật nút "+ Create Auction" cho Seller
+                        boolean isSeller = false;
+
+                        // Cách 1: Kiểm tra xem object gửi về có phải là class Seller không (Dành cho user tạo qua AuthService)
+                        if (loggedInUser instanceof Seller) {
+                            isSeller = true;
+                        }
+                        // Cách 2: Kiểm tra qua role trong Message nếu Server có gửi (Dành cho user khởi tạo cứng trong MockDB)
+                        else if (msg.role != null && msg.role.equalsIgnoreCase("SELLER")) {
+                            isSeller = true;
+                        }
+
+                        // Bật/tắt nút dựa trên kết quả
+                        if (isSeller) {
+                            btnCreateAuction.setVisible(true);
+                            btnCreateAuction.setManaged(true);
+                        } else {
+                            btnCreateAuction.setVisible(false);
+                            btnCreateAuction.setManaged(false);
+                        }
+
+                        // 5. Gửi lệnh xin danh sách phòng lên Server (dùng userId chuẩn)
+                        clientConnection.sendMessage(new Message("GET_ROOMS", userId, ""));
+
+                        // 6. Chuyển sang Màn hình chính
+                        switchScreen(paneSelectAuction);
+                    });
                     break;
 
                 case "LOGIN_FAIL":
                     lblStatus.setText("❌ " + msg.data);
-                    lblStatus.setTextFill(javafx.scene.paint.Color.RED);
+                    lblStatus.setTextFill(Color.RED);
                     break;
 
                 case "REGISTER_SUCCESS":
-                    lblStatus.setTextFill(javafx.scene.paint.Color.GREEN);
+                    lblStatus.setTextFill(Color.GREEN);
                     showLoginScreen();
                     txtUsername.setText(txtRegUsername.getText());
                     txtPassword.clear();
@@ -224,28 +296,45 @@ public class AuctionController implements Initializable {
                     lblRegStatus.setText("❌ " + msg.data);
                     break;
 
-                case "ROOM_JOINED":
-                    AuctionRoom joinedRoom = (AuctionRoom) msg.data;
-                    lblAuctionItemName.setText(joinedRoom.getItemName());
-                    lblCurrentPrice.setText("Giá hiện tại: " + joinedRoom.getCurrentPrice() + " $");
-                    break;
 
-                case "NEW_BID":
-                    lblCurrentPrice.setText("Giá hiện tại: " + msg.data + " $");
-                    txtChatLog.appendText("New price: [" + msg.id + "] has paid:" + msg.data + "$\n");
+                case "ROOM_JOINED":
+                    common.models.Auctions.AuctionRoom room = (common.models.Auctions.AuctionRoom) msg.data;
+                    this.currentRoomId = room.getRoomId();
+
+                    Platform.runLater(() -> {
+                        lblAuctionItemName.setText(room.getItemName());
+                        lblCurrentPrice.setText("Giá hiện tại: " + room.getCurrentPrice() + " $");
+
+                        String sellerNameOfRoom = room.getNameSeller();
+                        String myName = this.myUsername;
+
+                        System.out.println("=== KIỂM TRA DỮ LIỆU PHÒNG ===");
+                        System.out.println("1. Tên Sản Phẩm thực tế: [" + room.getItemName() + "]");
+                        System.out.println("2. Chủ phòng lưu trên Server: [" + sellerNameOfRoom + "]");
+                        System.out.println("3. Tên tôi đang đăng nhập: [" + myName + "]");
+                        System.out.println("==============================");
+
+                        // So sánh chuẩn Tên vs Tên
+                        boolean isOwner = false;
+                        if (sellerNameOfRoom != null && myUsername != null) {
+                            isOwner = sellerNameOfRoom.trim().equalsIgnoreCase(myUsername.trim());
+                        }
+
+                        btnCloseAuction.setVisible(isOwner);
+                        btnCloseAuction.setManaged(isOwner);
+
+                        paneSelectAuction.setVisible(false);
+                        paneAuctionRoom.setVisible(true);
+                    });
                     break;
 
                 case "CHAT_MSG":
-                    txtChatLog.appendText("[" + msg.id + "]: " + msg.data + "\n");
-                    break;
-
-                case "BID_FAIL":
-                    txtChatLog.appendText("Hệ thống: " + msg.data + "\n");
+                    txtChatLog.appendText("[" + this.myUsername + "]: " + msg.data + "\n");
                     break;
 
                 case "RESET_SUCCESS":
                     lblStatus.setText("Đổi mật khẩu thành công!");
-                    lblStatus.setTextFill(javafx.scene.paint.Color.GREEN);
+                    lblStatus.setTextFill(Color.GREEN);
                     showLoginScreen();
                     txtUsername.setText(txtForgotUsername.getText());
                     txtPassword.clear();
@@ -257,7 +346,7 @@ public class AuctionController implements Initializable {
 
                 case "ROOM_LIST":
                     // ÉP BUỘC PHẢI BỌC TRONG PLATFORM.RUNLATER KHI VẼ GIAO DIỆN
-                    javafx.application.Platform.runLater(() -> {
+                    Platform.runLater(() -> {
                         // 1. Xóa sạch danh sách phòng cũ trên màn hình
                         gridAuctions.getChildren().clear();
 
@@ -273,6 +362,7 @@ public class AuctionController implements Initializable {
                         }
                     });
                     break;
+
                 // --- KHI SELLER TẠO PHÒNG THÀNH CÔNG ---
                 case "CREATE_AUCTION_SUCCESS":
                     // Lấy mã phòng mà Server trả về
@@ -280,14 +370,15 @@ public class AuctionController implements Initializable {
 
                     // Gửi lệnh xin vào phòng lên Server
                     auctionService.joinRoom(autoJoinRoomId);
+                    currentRoomId = autoJoinRoomId;
 
                     // Code liên quan đến Giao diện (UI) phải bọc trong Platform.runLater
-                    javafx.application.Platform.runLater(() -> {
+                    Platform.runLater(() -> {
                         // 1. Chuyển sang giao diện phòng
                         switchScreen(paneAuctionRoom);
 
                         // 2. Bật lại cái cửa sổ chính đã bị giấu lúc nãy lên!
-                        javafx.stage.Stage mainStage = (javafx.stage.Stage) paneAuctionRoom.getScene().getWindow();
+                        Stage mainStage = (Stage) paneAuctionRoom.getScene().getWindow();
                         if (!mainStage.isShowing()) {
                             mainStage.show();
                         }
@@ -300,6 +391,109 @@ public class AuctionController implements Initializable {
                     // Gọi hàm chuẩn từ Service
                     auctionService.getRooms();
                     break;
+                case "BID_FAIL":
+                    Platform.runLater(() -> txtChatLog.appendText("❌ " + msg.data + "\n"));
+                    break;
+
+                case "BID_SUCCESS":
+                    Platform.runLater(() -> txtChatLog.appendText("✅ Đặt giá thành công!\n"));
+                    break;
+
+                case "AUCTION_CLOSED":
+                    Platform.runLater(() -> {
+                        // Nếu Client đang ở trong chính cái phòng vừa bị đóng
+                        String closedRoomId = (String) msg.data;
+                        if (this.currentRoomId != null && this.currentRoomId.equals(closedRoomId)) {
+
+                            // Thông báo cho người mua biết phòng đã đóng
+                            Alert alert = new Alert(Alert.AlertType.WARNING);
+                            alert.setTitle("Phiên đấu giá kết thúc");
+                            alert.setHeaderText(null);
+                            alert.setContentText("Chủ phòng đã chốt đơn! Bạn sẽ được đưa về sảnh chính.");
+                            alert.showAndWait();
+
+                            // Đá người mua về sảnh
+                            paneAuctionRoom.setVisible(false);
+                            paneSelectAuction.setVisible(true);
+                            this.currentRoomId = null;
+                        }
+                    });
+                    break;
+
+                case "UPDATE_PRICE":
+                    Platform.runLater(() -> {
+                        // Tách chuỗi Server phát xuống
+                        String[] parts = ((String) msg.data).split("\\|");
+                        String bRoomId = parts[0];
+                        String newPrice = parts[1];
+                        String winner = parts[2];
+                        System.out.println("Check dữ liệu: Cập nhật ngươời chiến thắng");
+                        System.out.println("parts[0]"+parts[0]);
+                        System.out.println("parts[1]"+parts[1]);
+                        System.out.println("parts[2]"+parts[2]);
+
+                        // GIẢ SỬ bạn có biến đang lưu phòng hiện tại, ví dụ: this.currentRoom
+                        // Phải check xem người dùng đang mở đúng cửa sổ phòng đó không thì mới cập nhật Label
+                        if (this.currentRoomId != null && this.currentRoomId.equals(bRoomId)) {
+                            // Cập nhật Nhãn tiền to nhất trên màn hình (thay tên biến lblCurrentPrice bằng đúng id FXML của bạn)
+                            lblCurrentPrice.setText(newPrice + " $");
+                            txtChatLog.appendText("📢 New price:" + MockDB.userTable.get(winner).getUsername() + " has paid " + newPrice + "$\n");
+                        }
+                    });
+                    break;
+
+                case "UPDATE_BALANCE":
+                    String targetUserId = msg.id; // ID của người có biến động số dư
+                    double newBalance = (Double) msg.data; // Số dư mới nhất
+
+                    // Kiểm tra xem tin báo này có phải dành cho tài khoản mình đang đăng nhập không
+                    if (targetUserId.equals(auctionService.getCurrentUser())) {
+                        Platform.runLater(() -> {
+                            // 1. Nếu bạn có 1 cái Label hiển thị số dư ở màn hình chính, cập nhật nó ở đây
+                            // Ví dụ: lblBalance.setText("Số dư: " + newBalance + " $");
+                            if (this.currentUserProfile != null) {
+                                this.currentUserProfile.setBalance(newBalance);
+                            }
+
+                            // UI CẬP NHẬT LUÔN TRÊN GÓC MÀN HÌNH:
+                            lblBalance.setText("Số dư: " + String.format("%,.0f $", newBalance));
+
+                            // 2. Thông báo Pop-up cho người dùng
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Biến động số dư");
+                            alert.setHeaderText("Giao dịch đấu giá hoàn tất!");
+                            alert.setContentText("Số dư hiện tại của bạn là: " + String.format("%,.0f $", newBalance));
+                            alert.show();
+                        });
+                    }
+                    break;
+
+                case "AUCTION_CLOSED_NOTIFY":
+                    Platform.runLater(() -> {
+                        String closedRoomId = (String) msg.data;
+
+                        // Nếu mình đang ở trong đúng cái phòng vừa bị chốt
+                        if (this.currentRoomId != null && this.currentRoomId.equals(closedRoomId)) {
+
+                            // 1. Thông báo cho người dùng
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Thông báo");
+                            alert.setHeaderText("Phiên đấu giá đã kết thúc!");
+                            alert.setContentText("Chủ phòng đã chốt đơn thành công. Bạn sẽ được đưa về sảnh.");
+                            alert.showAndWait();
+
+                            // 2. Tự động chuyển về màn hình danh sách phòng
+                            paneAuctionRoom.setVisible(false);
+                            paneSelectAuction.setVisible(true);
+
+                            // 3. Xóa ID phòng hiện tại để tránh lỗi
+                            this.currentRoomId = null;
+
+                            // 4. (Tùy chọn) Gọi server để cập nhật lại danh sách phòng mới (đã xóa phòng cũ)
+                            //auctionService.getAuctionRooms();
+                        }
+                    });
+                    break;
             }
         });
     }
@@ -308,7 +502,7 @@ public class AuctionController implements Initializable {
         VBox card = new VBox(10);
         card.setStyle("-fx-background-color: white; -fx-padding: 20; -fx-border-color: #cccccc; -fx-border-radius: 5; -fx-background-radius: 5;");
         card.setPrefSize(180, 150);
-        card.setAlignment(javafx.geometry.Pos.CENTER);
+        card.setAlignment(Pos.CENTER);
 
         Label lblName = new Label(itemName);
         lblName.setStyle("-fx-font-weight: bold; -fx-font-size: 16px;");
@@ -318,6 +512,7 @@ public class AuctionController implements Initializable {
         btnJoin.setStyle("-fx-background-color: #3498db; -fx-text-fill: white; -fx-cursor: hand;");
 
         btnJoin.setOnAction(e -> {
+            this.currentRoomId = roomId;
             auctionService.joinRoom(roomId);
             switchScreen(paneAuctionRoom);
         });
@@ -345,21 +540,23 @@ public class AuctionController implements Initializable {
     private void openSellerDashboard() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/client/views/seller-view.fxml"));
-            javafx.scene.Parent root = loader.load();
+            Parent root = loader.load();
 
-            // Lấy Controller của màn hình Seller và truyền Service qua cho nó dùng chung
             SellerController sellerCtrl = loader.getController();
             sellerCtrl.setAuctionService(this.auctionService);
 
-            javafx.stage.Stage sellerStage = new javafx.stage.Stage();
+            if (this.currentUserProfile instanceof common.models.Person.Seller) {
+                sellerCtrl.setSellerData((common.models.Person.Seller) this.currentUserProfile);
+            }
+
+            Stage sellerStage = new Stage();
             sellerStage.setTitle("Tạo phiên đấu giá (Seller: " + ClientConnection.currentUser + ")");
-            sellerStage.setScene(new javafx.scene.Scene(root));
+            sellerStage.setScene(new Scene(root));
             sellerStage.show();
 
             // XÓA HOẶC COMMENT 2 DÒNG NÀY (Để không bị mất Màn hình chính phía sau)
             // javafx.stage.Stage currentStage = (javafx.stage.Stage) paneLogin.getScene().getWindow();
             // currentStage.hide();
-
             // Ghi chú: Cố tình KHÔNG đóng màn hình hiện tại (paneSelectAuction)
             // để Seller vẫn thấy danh sách phòng sau khi tạo xong.
 

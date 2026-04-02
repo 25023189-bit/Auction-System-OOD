@@ -5,9 +5,11 @@ import java.io.Serializable;
 
 public class User implements Serializable, Entity {
     // Thuộc tính private để đóng gói (Encapsulation)
-    private String username;
-    private String password;
-    private String id;
+    protected String username;
+    protected String password;
+    protected String id;
+    protected String role;
+    protected double balance;
 
     // Constructor (Hàm khởi tạo)
 
@@ -19,6 +21,35 @@ public class User implements Serializable, Entity {
         this.id = id;
         this.username = username;
         this.password = password;
+    }
+
+    public User(String id, String username,String role, String password) {
+        this.id = id;
+        this.username = username;
+        this.role = role;
+        this.password = password;
+    }
+
+    public User(String id, String username, String password,double balance) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.balance = balance;
+    }
+
+    public User(String id, String username,String role, String password, double balance) {
+        this.id = id;
+        this.username = username;
+        this.role = role;
+        this.password = password;
+        this.balance = balance;
+    }
+
+    public boolean isPasswordStrong() {
+        if (this.password == null) return false;
+        if (this.password.length() >= 6 && !this.password.contains(" ")){
+            return true;
+        }else {return false;}
     }
 
     @Override
@@ -42,5 +73,13 @@ public class User implements Serializable, Entity {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public double getBalance() {
+        return this.balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 }

@@ -33,10 +33,11 @@ public class AuthService {
             if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
 
                 // Lấy ra tên Class (Sẽ trả về chuỗi "Bidder" hoặc "Seller")
-                String role = user.getClass().getSimpleName();
+                //String role = user.getClass().getSimpleName();
 
                 // Trả Role về cho Client (Mình giấu Role vào trường id của Message nhé)
-                return new Message("LOGIN_SUCCESS", role, user.getId());
+                //return new Message("LOGIN_SUCCESS", role, user);
+                return new Message("LOGIN_SUCCESS", "SERVER", user);
             }
         }
         return new Message("LOGIN_FAIL", "SERVER", "Sai tài khoản hoặc mật khẩu!");
@@ -58,9 +59,13 @@ public class AuthService {
 
         User newUser;
         if (role.equalsIgnoreCase("SELLER")) {
-            newUser = new Seller(newId, username, password);
+            newUser = new Seller(newId, username, password, 1000);
         } else {
-            newUser = new Bidder(newId, username, password);
+            newUser = new Bidder(newId, username, password, 1000);
+        }
+
+        if (!newUser.isPasswordStrong()) {
+            return new Message("REGISTER_FAIL", "SERVER", "Mật khẩu quá yếu (Cần >= 6 ký tự và không có khoảng trắng)!");
         }
 
         MockDB.userTable.put(newId, newUser);
