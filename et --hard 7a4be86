@@ -1,0 +1,18 @@
+[33m7a4be86[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature-nen-mong-1.0[m[33m, [m[1;31morigin/feature-nen-mong-1.0[m[33m)[m HEAD@{0}: reset: moving to HEAD
+[33m7a4be86[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature-nen-mong-1.0[m[33m, [m[1;31morigin/feature-nen-mong-1.0[m[33m)[m HEAD@{1}: pull origin main: updating HEAD
+[33m7a4be86[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature-nen-mong-1.0[m[33m, [m[1;31morigin/feature-nen-mong-1.0[m[33m)[m HEAD@{2}: checkout: moving from feature-nen-mong-1.0 to feature-nen-mong-1.0
+[33m7a4be86[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature-nen-mong-1.0[m[33m, [m[1;31morigin/feature-nen-mong-1.0[m[33m)[m HEAD@{3}: commit: Khởi nguyên logic đấu giá. Fix lại vai trò,logic trong Person.
+[33m2074542[m[33m ([m[1;32mmain[m[33m)[m HEAD@{4}: reset: moving to 2074542
+[33m52fe65b[m HEAD@{5}: commit: Change for future
+[33m9a032a3[m HEAD@{6}: pull origin feature-nen-mong-1.0: Fast-forward
+[33mad96a3b[m HEAD@{7}: checkout: moving from main to feature-nen-mong-1.0
+[33m2074542[m[33m ([m[1;32mmain[m[33m)[m HEAD@{8}: commit (merge): Fix id and user name, add screen dor seller
+[33m641dd0f[m HEAD@{9}: Branch: renamed refs/heads/feature-nen-mong-1.0 to refs/heads/main
+[33m641dd0f[m HEAD@{11}: checkout: moving from feature-nen-mong-1.0 to feature-nen-mong-1.0
+[33m641dd0f[m HEAD@{12}: commit: Fix id and user name, add screen dor seller
+[33m4849651[m HEAD@{13}: commit: fix: resolve merge conflict in misc.xml
+[33mad96a3b[m HEAD@{14}: commit: fix: resolve pom.xml conflict (gop JavaFX va JUnit)
+[33me411aae[m HEAD@{15}: commit (merge): fix: merge main into feature branch
+[33mb8baf5d[m HEAD@{16}: commit: feat: setup nen mong 1.0 cho team
+[33m522bfd0[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{17}: checkout: moving from master to feature-nen-mong-1.0
+[33m522bfd0[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{18}: commit (initial): Khung mẫu.
