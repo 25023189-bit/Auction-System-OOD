@@ -77,11 +77,13 @@ public class AuctionController implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        logToScreen("");
         // Khởi tạo kết nối mạng và Service ngay từ đầu
         clientConnection = new ClientConnection(this);
+        // Khởi tạo service và truyền kết nối vào
         auctionService = new AuctionService(clientConnection);
+
         clientConnection.connect();
+
         if (cbRegRole != null) {
             cbRegRole.getItems().addAll("BIDDER", "SELLER");
             cbRegRole.setValue("BIDDER"); // Mặc định là Bidder
@@ -98,20 +100,19 @@ public class AuctionController implements Initializable {
         lblRegStatus.setText("");
     }
 
-    @FXML
-    private void showLoginScreen() {
-        switchScreen(paneLogin);
-    }
+    @FXML private void showLoginScreen() { switchScreen(paneLogin); }
 
     private void switchScreen(VBox screenToShow) {
-        paneLogin.setVisible(false);
-        paneRegister.setVisible(false);
-        paneSelectAuction.setVisible(false);
-        paneAuctionRoom.setVisible(false);
+        if(paneLogin != null) paneLogin.setVisible(false);
+        if(paneRegister != null) paneRegister.setVisible(false);
+        if(paneSelectAuction != null) paneSelectAuction.setVisible(false);
+        if(paneAuctionRoom != null) paneAuctionRoom.setVisible(false);
         if (paneForgotPassword != null) paneForgotPassword.setVisible(false);
 
-        screenToShow.setVisible(true);
-        screenToShow.toFront();
+        if(screenToShow != null) {
+            screenToShow.setVisible(true);
+            screenToShow.toFront();
+        }
     }
 
     // ==========================================================
@@ -142,8 +143,9 @@ public class AuctionController implements Initializable {
         String newRegPass = txtRegPassword.getText().trim();
         String role = cbRegRole.getValue(); // Lấy vai trò
 
-        // Gửi lên server. (Sếp nhớ vào AuctionService của Client để sửa hàm register
-        // cho phép gửi thêm role đi nhé. VD: new Message("REGISTER", role, user+"|"+pass))
+        // Khớp với hàm register(role, username, password) trong AuctionService
+        //auctionService.register(cbRegRole.getValue(), txtRegUsername.getText().trim(), txtRegPassword.getText().trim());
+        // Cho phép gửi thêm role đi nhé. VD: new Message("REGISTER", role, user+"|"+pass))
         auctionService.register(newRegUser, newRegPass, role);
     }
 
@@ -173,7 +175,7 @@ public class AuctionController implements Initializable {
             auctionService.placeBid(amount);
             txtBidAmount.clear();
         } catch (NumberFormatException e) {
-            txtChatLog.appendText("❌ Vui lòng nhập số tiền hợp lệ!\n");
+            txtChatLog.appendText("Hệ thống: Vui lòng nhập số tiền hợp lệ!\n");
         }
     }
 
@@ -224,7 +226,7 @@ public class AuctionController implements Initializable {
      */
     public void onServerResponse(Message msg) {
         Platform.runLater(() -> {
-            switch (msg.action) {
+            switch (msg.getAction()) {
                 case "LOGIN_SUCCESS":
                     Platform.runLater(() -> {
                         // 1. Ép kiểu dữ liệu Server gửi về thành object User (Class cha của Bidder và Seller)
@@ -251,7 +253,8 @@ public class AuctionController implements Initializable {
                         boolean isSeller = false;
 
                         // Cách 1: Kiểm tra xem object gửi về có phải là class Seller không (Dành cho user tạo qua AuthService)
-                        if (loggedInUser instanceof Seller) {
+                        System.out.println(loggedInUser.getRole());
+                        if (loggedInUser.getRole().equals("SELLER")) {
                             isSeller = true;
                         }
                         // Cách 2: Kiểm tra qua role trong Message nếu Server có gửi (Dành cho user khởi tạo cứng trong MockDB)
@@ -312,8 +315,8 @@ public class AuctionController implements Initializable {
 
                         // So sánh chuẩn Tên vs Tên
                         boolean isOwner = false;
-                        if (sellerNameOfRoom != null && myUsername != null) {
-                            isOwner = sellerNameOfRoom.trim().equalsIgnoreCase(myUsername.trim());
+                        if (sellerNameOfRoom != null && myUsername.toLowerCase() != null) {
+                            isOwner = sellerNameOfRoom.trim().equalsIgnoreCase(myUsername.toLowerCase().trim());
                         }
 
                         btnCloseAuction.setVisible(isOwner);
@@ -352,7 +355,7 @@ public class AuctionController implements Initializable {
                             if (!roomData.isEmpty()) {
                                 String[] info = roomData.split("\\|");
                                 if (info.length >= 3) {
-                                    createAuctionCard(info[0], info[1], info[2]); // Hàm vẽ thẻ phòng của sếp
+                                    createAuctionCard(info[0], info[1], info[2]);
                                 }
                             }
                         }
@@ -494,7 +497,7 @@ public class AuctionController implements Initializable {
         });
     }
 
-    private void createAuctionCard(String roomId, String itemName, String sellerName) {
+    public void createAuctionCard(String roomId, String itemName, String sellerName) {
         VBox card = new VBox(10);
         card.setStyle("-fx-background-color: white; -fx-padding: 20; -fx-border-color: #cccccc; -fx-border-radius: 5; -fx-background-radius: 5;");
         card.setPrefSize(180, 150);
@@ -525,7 +528,9 @@ public class AuctionController implements Initializable {
      * Cập nhật trạng thái mạng (Đang kết nối, Mất kết nối...)
      */
     public void updateConnectionStatus(String status) {
-        Platform.runLater(() -> lblStatus.setText("Trạng thái: " + status));
+        Platform.runLater(() -> {
+            if(lblStatus != null) lblStatus.setText("Trạng thái: " + status);
+        });
     }
 
     /**
@@ -541,9 +546,9 @@ public class AuctionController implements Initializable {
             SellerController sellerCtrl = loader.getController();
             sellerCtrl.setAuctionService(this.auctionService);
 
-            if (this.currentUserProfile instanceof Seller) {
+            /*if (this.currentUserProfile instanceof Seller) {
                 sellerCtrl.setSellerData((Seller) this.currentUserProfile);
-            }
+            }*/
 
             Stage sellerStage = new Stage();
             sellerStage.setTitle("Tạo phiên đấu giá (Seller: " + ClientConnection.currentUser + ")");
@@ -557,6 +562,7 @@ public class AuctionController implements Initializable {
             // để Seller vẫn thấy danh sách phòng sau khi tạo xong.
 
         } catch (Exception e) {
+            System.err.println("Lỗi mở màn hình Seller: " + e.getMessage());
             e.printStackTrace();
         }
     }

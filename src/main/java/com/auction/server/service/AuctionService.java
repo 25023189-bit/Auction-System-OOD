@@ -1,6 +1,8 @@
 package com.auction.server.service;
 
 import com.auction.common.dto.Message;
+// Đảm bảo đường dẫn này khớp với vị trí file ClientConnection của bạn
+import com.auction.server.service.*;
 
 /**
  * Lớp AuctionService đóng vai trò là tầng Dịch vụ (Service Layer) của Client.
@@ -39,7 +41,9 @@ public class AuctionService {
      * password Mật khẩu
      */
     public void login(String id, String password) {
-        clientConnection.sendMessage(new Message("LOGIN", id, password));
+        if (clientConnection != null) {
+            clientConnection.sendMessage(new Message("LOGIN", id, password));
+        }
     }
 
     /**

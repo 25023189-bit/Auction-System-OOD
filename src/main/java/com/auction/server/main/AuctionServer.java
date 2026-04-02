@@ -1,10 +1,11 @@
 package com.auction.server.main;
 
-import java.net.*;
-import java.util.*;
-
+// SỬA: Import đúng vị trí của ClientHandler và Message
 import com.auction.common.dto.Message;
 import com.auction.server.ClientHandler;
+
+import java.net.*;
+import java.util.*;
 
 /**
  * Lớp AuctionServer là điểm khởi chạy (Entry Point) của toàn bộ hệ thống Backend.
@@ -23,15 +24,16 @@ public class AuctionServer {
     // để tránh lỗi ConcurrentModificationException khi có người vào/ra liên tục.
 
     public static List<ClientHandler> clients = new ArrayList<>();
+
     public static void main(String[] args) {
         int port = 8080; // Cổng mặc định của Server
-        try{
+        try {
             // Mở cổng (Mở "cửa hàng" để đón khách)
             ServerSocket serverSocket = new ServerSocket(port);
-            System.out.println("Sever active success.");
+            System.out.println("Server active success on port: " + port);
 
             // Vòng lặp vô tận: Liên tục chờ đón các Client mới
-            while (true){
+            while (true) {
                 // Lệnh accept() sẽ block (chặn) tại đây cho đến khi có 1 Client kết nối vào
                 Socket socket = serverSocket.accept();
 
@@ -47,8 +49,8 @@ public class AuctionServer {
                 thread.start();
             }
 
-        }catch (Exception e){
-            System.out.println("Errol Port.");
+        } catch (Exception e) {
+            System.out.println("Error Port.");
             e.printStackTrace();
         }
     }
@@ -61,7 +63,8 @@ public class AuctionServer {
      * Gửi cho tất cả mọi người.
      */
     public static void broadcast(Message msg) {
-        System.out.println(msg.action);
+        // SỬA: Dùng getAction() thay vì truy cập biến trực tiếp
+        System.out.println("Broadcasting action: " + msg.getAction());
         for (ClientHandler client : clients) {
             client.sendMessage(msg);
         }
@@ -86,7 +89,8 @@ public class AuctionServer {
      */
     public static void broadcastToRoom(String roomId, Message msg) {
         for (ClientHandler client : clients) {
-            if (roomId.equals(client.getCurrentRoomId())) {
+            // Đảm bảo ClientHandler của bạn đã có hàm getCurrentRoomId()
+            if (roomId != null && roomId.equals(client.getCurrentRoomId())) {
                 client.sendMessage(msg);
             }
         }

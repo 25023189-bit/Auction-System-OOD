@@ -1,14 +1,11 @@
+CREATE DATABASE IF NOT EXISTS auction_system;
+USE auction_system;
 /* =================================================================================
  * AUCTION SYSTEM DATABASE SCHEMA - VERSION 4.2 (FINAL - NO ERRORS)
  * Architecture: Client-Server (Java Spring Boot/JavaFX)
  * Database Engine: MySQL 8.0+
  * All bugs fixed, no syntax errors, no duplicate indexes
  * ================================================================================= */
-
--- Khởi tạo Database
-DROP DATABASE IF EXISTS auction_system_v2;
-CREATE DATABASE auction_system_v2 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE auction_system_v2;
 
 /* =================================================================================
  * TABLE: USERS

@@ -1,10 +1,12 @@
 package com.auction.server.service;
 
+// Import đúng package com.auction.common.dto
 import com.auction.common.dto.Message;
 import com.auction.common.model.Bidder;
 import com.auction.common.model.User;
 import com.auction.server.dao.MockDB;
 import com.auction.common.model.AuctionRoom;
+import com.auction.server.dao.MockDB;
 
 /**
  * Lớp AuctionRoomService xử lý tất cả các nghiệp vụ lõi liên quan đến Phòng Đấu Giá.
@@ -21,6 +23,7 @@ public class AuctionRoomService {
      */
     public Message joinRoom(String roomId) {
         AuctionRoom room = MockDB.auctionTable.get(roomId);
+
         if (room != null) {
             return new Message("ROOM_JOINED", "SERVER", room);
         }
@@ -36,6 +39,7 @@ public class AuctionRoomService {
      */
     public Message processBid(String roomId, String userId, double amount) {
         AuctionRoom currentRoom = MockDB.auctionTable.get(roomId);
+
         if (currentRoom == null) {
             return new Message("BID_FAIL", "SERVER", "Lỗi: Không tìm thấy phòng đấu giá.");
         }
@@ -66,7 +70,7 @@ public class AuctionRoomService {
                 return new Message("BID_FAIL", "SERVER", "Số dư trong ví không đủ để đặt mức giá này!");
             }
         } else {
-            return new Message("BID_FAIL", "SERVER", "Lỗi: Người bán (Seller) không được phép tham gia đặt giá!");
+            return new Message("BID_FAIL", "SERVER", "Lỗi: Không tìm thấy người dùng!");
         }
     }
 

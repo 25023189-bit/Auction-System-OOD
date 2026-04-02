@@ -1,5 +1,7 @@
 package com.auction.server.service;
 
+// SỬA: Import đúng địa chỉ package thực tế
+import com.auction.server.dao.UserDAO;
 import com.auction.common.dto.Message;
 import com.auction.common.model.Bidder;
 import com.auction.common.model.Seller;
@@ -19,31 +21,57 @@ import com.auction.server.dao.MockDB;
 
 public class AuthService {
 
+    private UserDAO userDAO = new UserDAO();
+
     /**
-     * Xử lý yêu cầu Đăng nhập từ Client.
-     * @param username Tên đăng nhập
-     * @param password Mật khẩu
-     * @return Message chứa kết quả (Thành công/Thất bại) và Role của user.
+     * ĐĂNG NHẬP: Gọi trực tiếp UserDAO để check Database
      */
+    /*public Message login(String email, String password) {
+        System.out.println("--- Đang xử lý đăng nhập cho: " + email + " ---");
 
-    public Message login(String username, String password) {
+        // Nhờ UserDAO tìm trong database
+        User user = userDAO.login(email, password);
+
+        if (user != null) {
+            // Lấy role (BIDDER/SELLER/ADMIN)
+            String role = user.getRole();
+            System.out.println("=> Thành công! Role: " + role);
+
+            // Sử dụng Constructor: Message(String action, String id, Object data)
+            // Truyền Role vào ID, và UserID vào Data
+            return new Message("LOGIN_SUCCESS", role, (Object) user.getId());
+        }
+
+        return new Message("LOGIN_FAIL", "SERVER", (Object) "Sai tài khoản hoặc mật khẩu!");
+    }*/
+
+    public Message login(String usernameOrId, String password) {
+        System.out.println("--- Đang xử lý đăng nhập cho: " + usernameOrId + " ---");
+
+        // TẠM THỜI ĐÓNG CODE KẾT NỐI DATABASE THẬT:
+        // User user = userDAO.login(email, password);
+
+        // SỬ DỤNG MOCKDB ĐỂ TEST TRƯỚC:
         for (User user : MockDB.userTable.values()) {
-            // Tìm thấy user và đúng mật khẩu
-            if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
-
-                // Lấy ra tên Class (Sẽ trả về chuỗi "Bidder" hoặc "Seller")
-                //String role = user.getClass().getSimpleName();
-
-                // Trả Role về cho Client (Mình giấu Role vào trường id của Message nhé)
-                //return new Message("LOGIN_SUCCESS", role, user);
-                return new Message("LOGIN_SUCCESS", "SERVER", user);
+            // Kiểm tra khớp Username (Adam) và Password
+            if (user.getUsername().equalsIgnoreCase(usernameOrId) && user.getPassword().equals(password)) {
+                String role = user.getRole();
+                System.out.println("=> Thành công! Role: " + role);
+                return new Message("LOGIN_SUCCESS", role, (Object) user);
             }
         }
-        return new Message("LOGIN_FAIL", "SERVER", "Sai tài khoản hoặc mật khẩu!");
+
+        return new Message("LOGIN_FAIL", "SERVER", (Object) "Sai tài khoản hoặc mật khẩu!");
     }
 
+
+    /**
+     * ĐĂNG KÝ
+     */
     // Sửa lại tham số nhận vào có thêm role
     public Message register(String username, String password, String role) {
+        // Sau này bạn nên bổ sung userDAO.register(username, password, role) ở đây
+        //return new Message("REGISTER_SUCCESS", "SERVER", (Object) "Đăng ký thành công!");
         String payload = password + "|" + role;
 
         Message msg = new Message("REGISTER", username, payload);
@@ -54,7 +82,7 @@ public class AuthService {
         }
 
         MockDB.userCounter++;
-        String newId = String.format("BD%06d", MockDB.userCounter);
+        String newId = String.format("BD5%05d", MockDB.userCounter);
 
         User newUser;
         if (role.equalsIgnoreCase("SELLER")) {
@@ -72,6 +100,7 @@ public class AuthService {
     }
 
     public Message resetPassword(String username, String newPassword) {
+        // Sau này gọi userDAO.updatePassword(email, newPassword)
         for (User user : MockDB.userTable.values()) {
             if (user.getUsername().equals(username)) {
                 user.setPassword(newPassword);

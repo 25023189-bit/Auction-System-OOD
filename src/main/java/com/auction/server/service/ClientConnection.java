@@ -49,6 +49,7 @@ public class ClientConnection {
 
                 // Khởi tạo Socket và luồng dữ liệu Object (Lưu ý: Khởi tạo out trước in để tránh deadlock ở Server)
                 socket = new Socket(host, port);
+                // Quan trọng: Khởi tạo OutputStream trước InputStream
                 out = new ObjectOutputStream(socket.getOutputStream());
                 in = new ObjectInputStream(socket.getInputStream());
 
@@ -82,8 +83,8 @@ public class ClientConnection {
         try {
             if (out != null) {
                 out.writeObject(msg);
-                out.flush(); // Bắt buộc flush để đẩy dữ liệu đi ngay lập tức
-                // Ghi chú: Nếu gửi cùng 1 object nhiều lần bị lỗi cache, có thể thêm out.reset() ở đây.
+                out.flush();
+                out.reset(); // Tránh lỗi cache khi gửi cùng 1 object nhiều lần
             } else {
                 System.err.println("⚠️ Cảnh báo: ObjectOutputStream chưa được khởi tạo!");
             }

@@ -55,7 +55,6 @@ public class Message implements Serializable {
         this.data = data;
     }
 
-    //Dành cho sau này, hoặc lúc lỗi
     public Message(String action, String id, String username, Object data) {
         this.action = action;
         this.username = username;
@@ -71,17 +70,10 @@ public class Message implements Serializable {
         this.data = data;
     }
 
-    // --- GETTER (Dùng khi cần lấy dữ liệu an toàn) ---
-
-    public String getAction() {
-        return action;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public Object getData() {
-        return data;
-    }
+    // --- GETTERS ---
+    public String getAction() { return action; }
+    public String getId() { return id; }
+    public String getUsername() { return username; }
+    public String getRole() { return role; }
+    public Object getData() { return data; }
 }
