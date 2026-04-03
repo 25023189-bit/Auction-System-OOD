@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 
-<StackPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controllers.AuctionController" prefWidth="500" prefHeight="650">
+<StackPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.controllers.AuctionController" prefWidth="500" prefHeight="650">
 
     <VBox fx:id="paneAuctionRoom" spacing="10" visible="false" style="-fx-background-color: white;">
         <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>

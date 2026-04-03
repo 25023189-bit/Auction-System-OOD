@@ -11,7 +11,7 @@ public class DatabaseConnection {
     private static final String USER = "root";
 
     // 2. QUAN TRỌNG: Với XAMPP, hãy để TRỐNG mật khẩu như thế này
-    private static final String PASSWORD = "root";
+    private static final String PASSWORD = "";
 
     public static Connection getConnection() throws SQLException {
         try {

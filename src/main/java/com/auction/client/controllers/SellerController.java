@@ -1,10 +1,11 @@
 package com.auction.client.controllers;
 
-// SỬA QUAN TRỌNG: Import đúng từ package client.service để hết lỗi "Cannot find symbol"
-import com.auction.client.service.AuctionService;
+import com.auction.server.service.AuctionService;
+import com.auction.common.model.Seller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.event.ActionEvent;
 
 /**
  * Lớp SellerController quản lý màn hình Tạo phiên đấu giá mới.
@@ -17,13 +18,18 @@ import javafx.scene.control.TextField;
 
 public class SellerController {
 
-    // Các trường nhập liệu được liên kết với file seller-view.fxml
     @FXML private TextField txtItemName;
     @FXML private TextField txtStartingPrice;
     @FXML private Label lblStatus;
 
-    // Service dùng để giao tiếp với Server (Được truyền vào từ AuctionController)
+    // Khai báo nhãn hiển thị số dư và uy tín
+    @FXML private Label lblBalance;
+    @FXML private Label lblReputation;
+
+    @FXML private TextField txtRoomIdToClose;
+
     private AuctionService auctionService;
+    private Seller currentSeller;
 
     /**
      * Hàm này được gọi bởi AuctionController để "Bơm" (Inject) AuctionService vào đây.
@@ -33,27 +39,48 @@ public class SellerController {
         this.auctionService = service;
     }
 
+    // Bơm dữ liệu Seller vào để hiển thị lên giao diện
+    public void setSellerData(Seller seller) {
+        this.currentSeller = seller;
+        if (seller != null) {
+            lblBalance.setText("Số dư ví: " + String.format("%,.0f VNĐ", seller.getBalance()));
+            lblReputation.setText("Uy tín: " + String.format("%.1f ⭐", seller.getRatingScore()));
+        }
+    }
+
     /**
      * Sự kiện xảy ra khi Seller bấm nút "Tạo Phiên Đấu Giá".
      */
     @FXML
-    private void handleCreateAuction() {
-        // Lấy dữ liệu và xóa khoảng trắng 2 đầu
-        String itemName = txtItemName.getText().trim();
-        String priceStr = txtStartingPrice.getText().trim();
-
-        // 1. KIỂM TRA ĐẦU VÀO (VALIDATION) - Check rỗng
-        if (itemName.isEmpty() || priceStr.isEmpty()) {
-            lblStatus.setText("❌ Vui lòng nhập đủ tên vật phẩm và giá!");
-            lblStatus.setTextFill(javafx.scene.paint.Color.RED);
+    public void handleCreateAuction() {
+        // 1. THÊM ĐOẠN NÀY ĐỂ CHẶN LỖI NULL POINTER
+        if (this.auctionService == null) {
+            lblStatus.setText("❌ Lỗi: Service bị null!");
+            System.err.println("⚠️ LỖI: auctionService chưa được truyền vào SellerController. Có phải bạn đang chạy 'test nóng' trực tiếp file seller-view.fxml mà bỏ qua bước Đăng nhập không?");
             return;
         }
 
+        String itemName = txtItemName.getText();
+        String priceStr = txtStartingPrice.getText();
+
+        if (itemName.trim().isEmpty() || priceStr.trim().isEmpty()) {
+            lblStatus.setText("❌ Vui lòng điền đầy đủ thông tin!");
+            lblStatus.setTextFill(javafx.scene.paint.Color.RED);
+            return;
+        }
         try {
             // 2. KIỂM TRA ĐẦU VÀO - Check định dạng số học
             double startingPrice = Double.parseDouble(priceStr);
             if (startingPrice <= 0) {
                 lblStatus.setText("❌ Giá khởi điểm phải lớn hơn 0!");
+                lblStatus.setTextFill(javafx.scene.paint.Color.RED);
+                return;
+            }
+
+            // Kiểm tra uy tín trước khi cho tạo phòng
+            if (currentSeller != null && !currentSeller.isTrustworthy()) {
+                lblStatus.setText("❌ CẢNH BÁO: Uy tín quá thấp (< 2.0 sao). Bạn bị cấm tạo phiên đấu giá!");
+                lblStatus.setTextFill(javafx.scene.paint.Color.RED);
                 return;
             }
 
@@ -77,6 +104,31 @@ public class SellerController {
         } catch (NumberFormatException e) {
             // Nếu người dùng nhập chữ cái vào ô Giá tiền (VD: "mười ngàn")
             lblStatus.setText("❌ Giá khởi điểm phải là số!");
+            lblStatus.setTextFill(javafx.scene.paint.Color.RED);
+        }
+    }
+
+    @FXML
+    public void handleCloseAction(ActionEvent event) {
+        String roomId = txtRoomIdToClose.getText().trim();
+
+        if (roomId.isEmpty()) {
+            lblStatus.setText("❌ Vui lòng nhập Mã phòng cần chốt đơn!");
+            lblStatus.setTextFill(javafx.scene.paint.Color.RED);
+            return;
+        }
+
+        if (auctionService != null) {
+            // Gọi hàm chốt phòng đã có sẵn trong AuctionService
+            auctionService.closeAuction(roomId);
+
+            lblStatus.setText("✅ Đã gửi lệnh chốt đơn cho phòng: " + roomId);
+            lblStatus.setTextFill(javafx.scene.paint.Color.GREEN);
+
+            // Xóa rỗng ô nhập sau khi chốt
+            txtRoomIdToClose.clear();
+        } else {
+            lblStatus.setText("❌ Lỗi: Chưa kết nối được tới Service!");
             lblStatus.setTextFill(javafx.scene.paint.Color.RED);
         }
     }

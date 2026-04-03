@@ -13,6 +13,8 @@ public class AuctionRoom implements Serializable {
     private String itemName;
     private double currentPrice;
     private String highestBidder;
+    private String nameSeller;
+    private String highestBidderId = "Chưa có ai";
 
     /**
      * Constructor khởi tạo phòng mới.
@@ -21,7 +23,24 @@ public class AuctionRoom implements Serializable {
         this.roomId = roomId;
         this.itemName = itemName;
         this.currentPrice = startingPrice;
-        this.highestBidder = "None"; // Chuẩn hóa giá trị khi chưa có ai đặt
+        this.highestBidder = "None";
+    }
+
+    public AuctionRoom(String roomId, String itemName, double startingPrice, String nameSeller) {
+        this.roomId = roomId;
+        this.itemName = itemName;
+        this.currentPrice = startingPrice;
+        this.nameSeller = nameSeller;
+    }
+
+    // Hàm cập nhật biến treo
+    public synchronized boolean placeNewBid(String userId, double bidAmount) {
+        if (bidAmount > this.currentPrice) {
+            this.currentPrice = bidAmount;
+            this.highestBidderId = userId; // Ghi nhớ ID người giá cao nhất
+            return true;
+        }
+        return false;
     }
 
     // --- GETTERS (Dùng cho ClientHandler, MockDB, AuctionController) ---
@@ -29,6 +48,12 @@ public class AuctionRoom implements Serializable {
     public String getItemName() { return itemName; }
     public double getCurrentPrice() { return currentPrice; }
     public String getHighestBidder() { return highestBidder; }
+    public String getHighestBidderId() {
+        return this.highestBidderId;
+    }
+    public String getNameSeller() {
+        return nameSeller;
+    }
 
     // --- SETTERS (Dùng khi cần cập nhật thông tin phòng) ---
     public void setRoomId(String roomId) { this.roomId = roomId; }
@@ -36,19 +61,6 @@ public class AuctionRoom implements Serializable {
     public void setCurrentPrice(double currentPrice) { this.currentPrice = currentPrice; }
     public void setHighestBidder(String highestBidder) { this.highestBidder = highestBidder; }
 
-    /**
-     * Logic nghiệp vụ: Kiểm tra và đặt giá mới.
-     * Trả về true nếu giá thầu hợp lệ và được chấp nhận.
-     */
-    public synchronized boolean placeNewBid(String bidderId, double amount) {
-        // Giá mới phải cao hơn giá hiện tại ít nhất 1 đơn vị (hoặc tùy bạn chỉnh)
-        if (amount > this.currentPrice) {
-            this.currentPrice = amount;
-            this.highestBidder = bidderId;
-            return true;
-        }
-        return false;
-    }
 
     @Override
     public String toString() {

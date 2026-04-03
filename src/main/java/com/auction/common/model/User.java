@@ -2,23 +2,26 @@ package com.auction.common.model;
 
 import java.io.Serializable;
 
-/**
- * Lớp User đại diện cho thực thể người dùng trong hệ thống.
- * Tuân thủ quy tắc đóng gói (Encapsulation) và Serializable để truyền qua Socket.
- */
-public class User implements Serializable {
+public class User implements Serializable, Entity {
     private static final long serialVersionUID = 1L;
-
-    private String id;        // Định dạng BD5xxxxx
-    private String username;
-    private String password;
+    // Thuộc tính private để đóng gói (Encapsulation)
+    protected String username;
+    protected String password;
+    protected String id;
+    protected String role;
+    protected double balance;
     private String fullName;
     private String email;
-    private String role;      // BIDDER hoặc SELLER
     private String status;    // ACTIVE, LOCKED...
 
-    // Constructor mặc định (Cần thiết cho một số thư viện mapping)
+    // Constructor (Hàm khởi tạo)
+
     public User() {
+    }
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
 
     // Constructor rút gọn cho Login/Register
@@ -28,10 +31,35 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    /**
-     * BỔ SUNG: Constructor đầy đủ
-     * Dùng khi lấy dữ liệu từ Database (UserDAO) lên Object
-     */
+    public User(String id, String username,String role, String password) {
+        this.id = id;
+        this.username = username;
+        this.role = role;
+        this.password = password;
+    }
+
+    public User(String id, String username, String password,double balance) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.balance = balance;
+    }
+
+    public User(String id, String username,String role, String password, double balance) {
+        this.id = id;
+        this.username = username;
+        this.role = role;
+        this.password = password;
+        this.balance = balance;
+    }
+
+    public boolean isPasswordStrong() {
+        if (this.password == null) return false;
+        if (this.password.length() >= 6 && !this.password.contains(" ")){
+            return true;
+        }else {return false;}
+    }
+
     public User(String id, String username, String password, String fullName, String email, String role, String status) {
         this.id = id;
         this.username = username;
@@ -42,6 +70,10 @@ public class User implements Serializable {
         this.status = status;
     }
 
+    public String getName() {
+        return username;
+    }
+
     // --- GETTERS ---
     public String getId() { return id; }
     public String getUsername() { return username; }
@@ -50,6 +82,7 @@ public class User implements Serializable {
     public String getEmail() { return email; }
     public String getRole() { return role; }
     public String getStatus() { return status; }
+    public double getBalance() { return balance; }
 
     // --- SETTERS ---
     public void setId(String id) { this.id = id; }
@@ -59,4 +92,5 @@ public class User implements Serializable {
     public void setEmail(String email) { this.email = email; }
     public void setRole(String role) { this.role = role; }
     public void setStatus(String status) { this.status = status; }
+    public void setBalance(double balance) { this.balance = balance; }
 }

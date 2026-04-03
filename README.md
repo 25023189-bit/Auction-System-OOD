@@ -1,6 +1,3 @@
-### 📂 Cấu trúc Thư mục Dự án
-
-```text
 Auction-System-OOD/
 ├── src/main/java/com/auction/
 │   ├── client.controllers/             # Frontend: Điều hướng giao diện
@@ -39,11 +36,9 @@ Auction-System-OOD/
 │       │   └── PasswordUtil.java       #
 │       └── server/                     
 │           └── ClientHandler.java      # Xử lý luồng Client
-│
 ├── src/main/resources/                 # Resources
 │   └── com.auction.client.views/       
 │       └── auction-view.fxml           # Giao diện FXML
-│
 ├── database_v5.sql                     # Script SQL
 ├── pom.xml                             # Maven config
 └── README.md                           # Tài liệu này

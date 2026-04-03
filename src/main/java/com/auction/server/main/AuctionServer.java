@@ -1,13 +1,11 @@
 package com.auction.server.main;
 
 // SỬA: Import đúng vị trí của ClientHandler và Message
-import com.auction.server.ClientHandler;
 import com.auction.common.dto.Message;
+import com.auction.server.ClientHandler;
 
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.util.ArrayList;
-import java.util.List;
+import java.net.*;
+import java.util.*;
 
 /**
  * Lớp AuctionServer là điểm khởi chạy (Entry Point) của toàn bộ hệ thống Backend.
@@ -20,6 +18,11 @@ import java.util.List;
 public class AuctionServer {
 
     // Danh sách lưu trữ tất cả các Client đang kết nối tới Server.
+    // LƯU Ý:
+    // Hiện tại đang dùng ArrayList cơ bản. Nếu dự án có hàng ngàn user cùng lúc,
+    // hãy cân nhắc đổi sang CopyOnWriteArrayList hoặc dùng Collections.synchronizedList
+    // để tránh lỗi ConcurrentModificationException khi có người vào/ra liên tục.
+
     public static List<ClientHandler> clients = new ArrayList<>();
 
     public static void main(String[] args) {
@@ -41,6 +44,7 @@ public class AuctionServer {
                 clients.add(handler);
 
                 // Tạo và chạy một Luồng (Thread) độc lập cho khách hàng này
+                // Điều này giúp Server có thể đón khách tiếp theo ngay lập tức mà không phải chờ khách này tương tác xong
                 Thread thread = new Thread(handler);
                 thread.start();
             }
@@ -68,6 +72,7 @@ public class AuctionServer {
 
     /**
      * Gửi tin nhắn cho tất cả mọi người đang online trên Server.
+     * Thường dùng cho các thông báo hệ thống (VD: "Server sẽ bảo trì sau 5 phút").
      */
     public static void broadcastAll(Message msg) {
         for (ClientHandler client : clients) {
@@ -77,6 +82,10 @@ public class AuctionServer {
 
     /**
      * Chỉ gửi tin nhắn cho những người đang ở trong một phòng đấu giá cụ thể.
+     * Lưu ý: Vẫn chưa phát triển xong
+     * Dùng khi có người đặt giá mới (Bid) hoặc chat trong phòng.
+     * @param roomId Mã phòng cần gửi
+     * @param msg Gói tin chứa nội dung.
      */
     public static void broadcastToRoom(String roomId, Message msg) {
         for (ClientHandler client : clients) {
