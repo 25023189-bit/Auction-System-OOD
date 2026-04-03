@@ -16,6 +16,12 @@ public class Seller extends User {
         this.ratingScore = 5.0; // Mới tạo uy tín tối đa 5 sao
     }
 
+    public Seller(String id, String username,String role, String password, double balance) {
+        super(id, username,role, password, balance);
+        this.successfulAuctions = 0;
+        this.ratingScore = 5.0; // Mới tạo uy tín tối đa 5 sao
+    }
+
     // Cập nhật điểm uy tín sau mỗi phiên đấu giá (Tính trung bình cộng)
     public void updateRating(int stars) {
         this.ratingScore = ((this.ratingScore * successfulAuctions) + stars) / (successfulAuctions + 1);

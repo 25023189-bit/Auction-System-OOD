@@ -5,6 +5,10 @@ package com.auction.common.model;
  * Kế thừa toàn bộ thuộc tính và phương thức từ User.
  */
 public class Bidder extends User {
+    public Bidder(String id, String username,String role, String password,double balance) {
+        super(id, username,role, password,balance);
+    }
+
     public Bidder(String id, String username, String password,double balance) {
         super(id, username, password,balance);
     }

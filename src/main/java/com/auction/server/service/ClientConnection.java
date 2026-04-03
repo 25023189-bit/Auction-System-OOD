@@ -84,7 +84,7 @@ public class ClientConnection {
             if (out != null) {
                 out.writeObject(msg);
                 out.flush();
-                out.reset(); // Tránh lỗi cache khi gửi cùng 1 object nhiều lần
+                out.reset();
             } else {
                 System.err.println("⚠️ Cảnh báo: ObjectOutputStream chưa được khởi tạo!");
             }

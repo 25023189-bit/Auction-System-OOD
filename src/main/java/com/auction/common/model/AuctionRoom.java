@@ -14,7 +14,7 @@ public class AuctionRoom implements Serializable {
     private double currentPrice;
     private String highestBidder;
     private String nameSeller;
-    private String highestBidderId = "Chưa có ai"; // Bắt buộc lưu ID (VD: BD001)
+    private String highestBidderId = "Chưa có ai";
 
     /**
      * Constructor khởi tạo phòng mới.
@@ -33,11 +33,11 @@ public class AuctionRoom implements Serializable {
         this.nameSeller = nameSeller;
     }
 
-    // Cập nhật giá khi có người trả cao hơn
+    // Hàm cập nhật biến treo
     public synchronized boolean placeNewBid(String userId, double bidAmount) {
         if (bidAmount > this.currentPrice) {
             this.currentPrice = bidAmount;
-            this.highestBidderId = userId; // Treo ID người giá cao nhất
+            this.highestBidderId = userId; // Ghi nhớ ID người giá cao nhất
             return true;
         }
         return false;

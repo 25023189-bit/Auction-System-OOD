@@ -86,9 +86,9 @@ public class AuthService {
 
         User newUser;
         if (role.equalsIgnoreCase("SELLER")) {
-            newUser = new Seller(newId, username, password, 1000);
+            newUser = new Seller(newId, username, password, 10000);
         } else {
-            newUser = new Bidder(newId, username, password, 1000);
+            newUser = new Bidder(newId, username, password, 10000);
         }
 
         if (!newUser.isPasswordStrong()) {

@@ -254,7 +254,7 @@ public class AuctionController implements Initializable {
 
                         // Cách 1: Kiểm tra xem object gửi về có phải là class Seller không (Dành cho user tạo qua AuthService)
                         System.out.println(loggedInUser.getRole());
-                        if (loggedInUser.getRole().equals("SELLER")) {
+                        if (loggedInUser instanceof Seller) {
                             isSeller = true;
                         }
                         // Cách 2: Kiểm tra qua role trong Message nếu Server có gửi (Dành cho user khởi tạo cứng trong MockDB)
@@ -302,7 +302,7 @@ public class AuctionController implements Initializable {
 
                     Platform.runLater(() -> {
                         lblAuctionItemName.setText(room.getItemName());
-                        lblCurrentPrice.setText("Giá hiện tại: " + room.getCurrentPrice() + " $");
+                        lblCurrentPrice.setText("Giá hiện tại: " + String.format("%,.0f $", room.getCurrentPrice()));
 
                         String sellerNameOfRoom = room.getNameSeller();
                         String myName = this.myUsername;
@@ -328,7 +328,7 @@ public class AuctionController implements Initializable {
                     break;
 
                 case "CHAT_MSG":
-                    txtChatLog.appendText("[" + this.myUsername + "]: " + msg.data + "\n");
+                    txtChatLog.appendText("[" + msg.username + "]: " + msg.data + "\n");
                     break;
 
                 case "RESET_SUCCESS":
@@ -349,7 +349,7 @@ public class AuctionController implements Initializable {
                         // 1. Xóa sạch danh sách phòng cũ trên màn hình
                         gridAuctions.getChildren().clear();
 
-                        // 2. Tách chuỗi dữ liệu phòng mới và vẽ lại (Sếp giữ nguyên code cũ của sếp)
+                        // 2. Tách chuỗi dữ liệu phòng mới và vẽ lại
                         String[] rooms = ((String) msg.data).split(";");
                         for (String roomData : rooms) {
                             if (!roomData.isEmpty()) {
@@ -395,7 +395,12 @@ public class AuctionController implements Initializable {
                     break;
 
                 case "BID_SUCCESS":
-                    Platform.runLater(() -> txtChatLog.appendText("✅ Đặt giá thành công!\n"));
+                    String bidderName = msg.id; // Tên người vừa đặt giá
+                    double newPrices = (Double) msg.data; // Giá cao nhất hiện tại
+
+                    Platform.runLater(() -> {
+                        lblCurrentPrice.setText("Giá hiện tại: " + String.format("%,.0f $", newPrices));
+                    });
                     break;
 
                 case "AUCTION_CLOSED":
@@ -426,7 +431,7 @@ public class AuctionController implements Initializable {
                         String bRoomId = parts[0];
                         String newPrice = parts[1];
                         String winner = parts[2];
-                        System.out.println("Check dữ liệu: Cập nhật ngươời chiến thắng");
+                        System.out.println("Check dữ liệu: Cập nhật người chiến thắng");
                         System.out.println("parts[0]"+parts[0]);
                         System.out.println("parts[1]"+parts[1]);
                         System.out.println("parts[2]"+parts[2]);
@@ -520,10 +525,6 @@ public class AuctionController implements Initializable {
         gridAuctions.getChildren().add(card);
     }
 
-    private void logToScreen(String text) {
-        txtChatLog.appendText(text + "\n");
-    }
-
     /**
      * Cập nhật trạng thái mạng (Đang kết nối, Mất kết nối...)
      */
@@ -540,7 +541,7 @@ public class AuctionController implements Initializable {
     @FXML
     private void openSellerDashboard() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com.auction.client.views/seller-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/seller-view.fxml"));
             Parent root = loader.load();
 
             SellerController sellerCtrl = loader.getController();

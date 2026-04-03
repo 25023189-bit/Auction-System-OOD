@@ -115,8 +115,21 @@ public class ClientHandler implements Runnable {
                         break;
 
                     case "CHAT_MSG":
-                        AuctionServer.broadcastAll(new Message("CHAT_MSG", msg.id, msg.data));
+                        // 1. Nhận ID người gửi từ Client
+                        String senderId = msg.id;
+
+                        // 2. SERVER tự tìm tên người dùng trong MockDB của nó
+                        User sender = MockDB.userTable.get(senderId);
+                        String realUsername = (sender != null) ? sender.getUsername() : "Khách";
+
+                        // 3. Đóng gói tin nhắn mới CÓ KÈM TÊN (Sử dụng constructor 4 tham số)
+                        Message broadcastMsg = new Message("CHAT_MSG", senderId, realUsername, msg.data);
+
+                        // 4. Phát đi cho các Client khác (Dùng hàm broadcast của bạn)
+                        AuctionServer.broadcastAll(broadcastMsg);
+                        // (Hoặc gửi cho những người trong cùng phòng tùy logic của bạn)
                         break;
+
                     case "RESET_PASSWORD":
                         Message resetResult = authService.resetPassword(msg.id, (String) msg.data);
 

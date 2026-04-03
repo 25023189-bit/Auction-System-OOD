@@ -24,9 +24,9 @@ public class MockDB {
     public static Map<String, java.util.ArrayList<String>> userInventory = new java.util.HashMap<>();
 
     static {
-        userTable.put("BD500001", new User("BD500001","adam","BIDDER","123456", 10000));
-        userTable.put("BD500002", new User("BD500002","eva","BIDDER", "123456", 10000));
-        userTable.put("BD500003", new User("BD500003","zeus", "SELLER", "123456", 10000));
+        userTable.put("BD000001", new Bidder("BD000001","Adam", "123456", 10000));
+        userTable.put("BD000002", new Bidder("BD000002","Eva", "123456", 10000));
+        userTable.put("BD000003", new Seller("BD000003","Zeus", "123456", 10000));
 
 
         AuctionRoom room1 = new AuctionRoom("AU00441", "Tên lửa Rocket.", 1000.0,"zeus");
