@@ -1,51 +1,59 @@
 package com.auction.server.dao;
 
 import com.auction.server.utils.DatabaseConnection;
-// SỬA: Import đúng địa chỉ package thực tế của dự án
-import com.auction.common.model.BidTransaction;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.*;
 
 public class BidDAO {
-
     /**
-     * Hàm lưu một lượt đặt giá mới vào MySQL.
-     * Chú ý: Đảm bảo class BidTransaction đã có các hàm Getter tương ứng.
+     * Hàm đặt giá: Dùng Transaction để đảm bảo vừa cập nhật giá bảng items,
+     * vừa lưu lịch sử vào bảng bid_transactions cùng 1 lúc.
      */
-    public boolean saveBid(BidTransaction bid) {
-        String sql = "INSERT INTO bid_transactions (auction_id, bidder_id, bid_amount, bid_rank, is_highest) " +
-                "VALUES (?, ?, ?, ?, ?)";
+    public boolean placeBid(String roomId, String bidderId, double bidAmount) {
+        String checkPriceSql = "SELECT i.current_price, a.item_id FROM auctions a JOIN items i ON a.item_id = i.item_id WHERE a.auction_id = ?";
+        String updatePriceSql = "UPDATE items SET current_price = ? WHERE item_id = ?";
+        String insertBidSql = "INSERT INTO bid_transactions (auction_id, bidder_id, bid_amount, bid_rank) VALUES (?, ?, ?, 1)";
 
-        // Sử dụng Try-with-resources để tự động đóng Connection và PreparedStatement
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        try (Connection conn = DatabaseConnection.getConnection()) {
+            conn.setAutoCommit(false); // Bắt đầu Transaction
 
-            if (conn == null) {
-                System.err.println("❌ Không thể kết nối Database để lưu Bid!");
+            double currentPrice = 0;
+            String itemId = null;
+
+            // 1. Kiểm tra giá hiện tại
+            try (PreparedStatement pstmt = conn.prepareStatement(checkPriceSql)) {
+                pstmt.setString(1, roomId);
+                ResultSet rs = pstmt.executeQuery();
+                if (rs.next()) {
+                    currentPrice = rs.getDouble("current_price");
+                    itemId = rs.getString("item_id");
+                }
+            }
+
+            // Nếu giá nhập vào nhỏ hơn hoặc bằng giá hiện tại -> Từ chối
+            if (itemId == null || bidAmount <= currentPrice) {
+                conn.rollback();
                 return false;
             }
 
-            // 1. auction_id (Mã phòng đấu giá)
-            pstmt.setString(1, bid.getAuctionId());
+            // 2. Cập nhật giá mới lên bảng items
+            try (PreparedStatement pstmt = conn.prepareStatement(updatePriceSql)) {
+                pstmt.setDouble(1, bidAmount);
+                pstmt.setString(2, itemId);
+                pstmt.executeUpdate();
+            }
 
-            // 2. bidder_id (Mã người đặt)
-            pstmt.setString(2, bid.getBidderId());
+            // 3. Ghi lịch sử đặt giá
+            try (PreparedStatement pstmt = conn.prepareStatement(insertBidSql)) {
+                pstmt.setString(1, roomId);
+                pstmt.setString(2, bidderId);
+                pstmt.setDouble(3, bidAmount);
+                pstmt.executeUpdate();
+            }
 
-            // 3. bid_amount (Số tiền đặt)
-            pstmt.setDouble(3, bid.getBidAmount());
+            conn.commit(); // Thành công -> Chốt Transaction!
+            return true;
 
-            // 4. bid_rank (Thứ tự lượt đặt)
-            pstmt.setInt(4, bid.getBidRank());
-
-            // 5. is_highest (Mặc định là true khi vừa đặt giá cao nhất mới)
-            pstmt.setBoolean(5, true);
-
-            int rows = pstmt.executeUpdate();
-            return rows > 0;
-
-        } catch (Exception e) {
-            System.err.println("❌ Lỗi SQL khi lưu giao dịch đấu giá: " + e.getMessage());
+        } catch (SQLException e) {
             e.printStackTrace();
             return false;
         }

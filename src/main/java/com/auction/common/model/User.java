@@ -9,7 +9,7 @@ public class User implements Serializable, Entity {
     protected String password;
     protected String id;
     protected String role;
-    protected double balance;
+    protected double balance = 1000;
     private String fullName;
     private String email;
     private String status;    // ACTIVE, LOCKED...
