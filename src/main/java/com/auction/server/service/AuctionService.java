@@ -104,9 +104,9 @@ public class AuctionService {
      * @param itemName Tên vật phẩm
      * @param startingPrice Giá khởi điểm
      */
-    public void createAuction(String itemName, double startingPrice) {
-        String payload = itemName + "|" + startingPrice;
-        clientConnection.sendMessage(new Message("CREATE_AUCTION", currentUser, payload));
+    public void createAuction(String itemName,String description, double startingPrice) {
+        String data = itemName + "|" + description + "|" + startingPrice;
+        clientConnection.sendMessage(new Message("CREATE_AUCTION", currentUser, data));
     }
 
     /**

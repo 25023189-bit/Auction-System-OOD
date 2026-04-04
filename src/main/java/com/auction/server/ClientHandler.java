@@ -1,11 +1,9 @@
 package com.auction.server;
 
 import com.auction.common.dto.Message;
-import com.auction.common.model.AuctionRoom;
-import com.auction.common.model.Bidder;
-import com.auction.common.model.Seller;
-import com.auction.common.model.User;
-import com.auction.server.dao.MockDB;
+import com.auction.common.model.*;
+import com.auction.server.dao.AuctionDAO;
+import com.auction.server.dao.UserDAO;
 import com.auction.server.main.AuctionServer;
 import com.auction.server.service.AuthService;
 import com.auction.server.service.AuctionRoomService;
@@ -77,19 +75,6 @@ public class ClientHandler implements Runnable {
                         currentRoomId = "";
                         break;
 
-                    /*case "BID":
-                        //handleBid(msg);
-                        if (currentRoomId.isEmpty()) break;
-
-                        Message bidResult = roomService.processBid(currentRoomId, msg.id, (double) msg.data);
-
-                        if (bidResult.action.equals("NEW_BID")) {
-                            AuctionServer.broadcastToRoom(currentRoomId, bidResult);
-                        } else {
-                            sendMessage(bidResult);
-                        }
-                        break;*/
-
                     case "BID":
                         try {
                             double bidAmount = (Double) msg.data;
@@ -100,14 +85,19 @@ public class ClientHandler implements Runnable {
                                 break;
                             }
 
-                            Message result = roomService.placeNewBid(this.currentRoomId, userId, bidAmount);
+                            // 🌟 Chuyển lại việc xử lý nghiệp vụ cho Service
+                            Message bidResult = roomService.placeNewBid(this.currentRoomId, userId, bidAmount);
 
-                            // Đã sửa: Dùng hàm sendMessage để đồng bộ và tránh lỗi cache stream
-                            sendMessage(result);
+                            if (bidResult.action.equals("BID_SUCCESS")) {
+                                // Báo thành công cho người đặt
+                                sendMessage(new Message("BID_SUCCESS", "SERVER", bidAmount));
 
-                            if (result.action.equals("BID_SUCCESS")) {
-                                String broadcastPayload = this.currentRoomId + "|" + bidAmount + "|" + userId;
+                                // bidResult.id lúc này đang chứa TÊN NGƯỜI ĐẶT (do Service trả về)
+                                String broadcastPayload = this.currentRoomId + "|" + bidAmount + "|" + bidResult.id;
                                 AuctionServer.broadcastAll(new Message("UPDATE_PRICE", "SERVER", broadcastPayload));
+                            } else {
+                                // Gửi thông báo lỗi (Ví dụ: Không đủ tiền, giá thấp hơn...) về lại Client
+                                sendMessage(bidResult);
                             }
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -115,19 +105,15 @@ public class ClientHandler implements Runnable {
                         break;
 
                     case "CHAT_MSG":
-                        // 1. Nhận ID người gửi từ Client
                         String senderId = msg.id;
 
-                        // 2. SERVER tự tìm tên người dùng trong MockDB của nó
-                        User sender = MockDB.userTable.get(senderId);
+                        // 🌟 THAY MockDB BẰNG UserDAO
+                        com.auction.server.dao.UserDAO chatUserDAO = new com.auction.server.dao.UserDAO();
+                        User sender = chatUserDAO.getUserById(senderId);
                         String realUsername = (sender != null) ? sender.getUsername() : "Khách";
 
-                        // 3. Đóng gói tin nhắn mới CÓ KÈM TÊN (Sử dụng constructor 4 tham số)
                         Message broadcastMsg = new Message("CHAT_MSG", senderId, realUsername, msg.data);
-
-                        // 4. Phát đi cho các Client khác (Dùng hàm broadcast của bạn)
                         AuctionServer.broadcastAll(broadcastMsg);
-                        // (Hoặc gửi cho những người trong cùng phòng tùy logic của bạn)
                         break;
 
                     case "RESET_PASSWORD":
@@ -137,54 +123,84 @@ public class ClientHandler implements Runnable {
                         out.flush();
                         break;
                     case "CREATE_AUCTION":
-                        String sellerName = msg.id; // Tên người bán
-                        String[] auctionData = ((String) msg.data).split("\\|");
+                        try {
+                            String[] parts = ((String) msg.data).split("\\|");
+                            if (parts.length < 3) throw new Exception("Dữ liệu không đủ 3 phần!");
 
-                        String itemName = auctionData[0];
-                        double startingPrice = Double.parseDouble(auctionData[1]);
+                            String itemName = parts[0];
+                            String itemDesc = parts[1];
+                            double startingPrice = Double.parseDouble(parts[2]);
+                            String sellerId = msg.id;
 
-                        AuctionRoomService roomService = new AuctionRoomService();
-                        boolean isApproved = roomService.validateAuctionItem(msg.id, itemName, startingPrice);
-                        if (isApproved) {
-                            String newRoomId = "AU" + System.currentTimeMillis();
+                            // --- 1. TẠO ID VÀ LƯU VÀO BẢNG ITEMS ---
+                            // Vì SQL của bạn dùng VARCHAR(50) cho item_id, ta sinh ID dạng String
+                            String newItemId = "IT" + (System.currentTimeMillis() % 1000000);
+                            Item tempItem = new Item(newItemId, itemName, itemDesc, startingPrice);
 
-                            User sellerObj = MockDB.userTable.get(msg.id);
-                            String trueSellerName = (sellerObj != null) ? sellerObj.getUsername() : msg.id;
+                            // Dùng ItemDAO (vì bảng trong SQL là 'items')
+                            com.auction.server.dao.ItemDAO itemDAO = new com.auction.server.dao.ItemDAO();
+                            boolean isItemSaved = itemDAO.saveItem(tempItem);
 
-                            // Gắn tên thật vào phòng
-                            AuctionRoom newRoom = new AuctionRoom(newRoomId, itemName, startingPrice, trueSellerName);
-
-                            MockDB.auctionTable.put(newRoomId, newRoom);
-
-                            sendMessage(new Message("CREATE_AUCTION_SUCCESS", newRoomId, "Tạo thành công"));
-
-                            StringBuilder roomsInfo = new StringBuilder();
-                            for (AuctionRoom room : MockDB.auctionTable.values()) {
-                                roomsInfo.append(room.getRoomId()).append("|")
-                                        .append(room.getItemName()).append("|")
-                                        .append(room.getCurrentPrice()).append(";");
+                            if (!isItemSaved) {
+                                throw new Exception("Không thể lưu Item vào Database!");
                             }
 
-                            AuctionServer.broadcastAll(new Message("ROOM_LIST", "SERVER", roomsInfo.toString()));
+                            // --- 2. LẤY TÊN THẬT CỦA SELLER ---
+                            com.auction.server.dao.UserDAO userDAO = new com.auction.server.dao.UserDAO();
+                            User sellerObj = userDAO.getUserById(sellerId);
+                            String trueSellerName = (sellerObj != null) ? sellerObj.getUsername() : sellerId;
 
-                        } else {
-                            sendMessage(new Message("CREATE_AUCTION_FAIL", "SERVER", "Sản phẩm bị từ chối kiểm duyệt!"));
+                            // --- 3. LƯU VÀO BẢNG AUCTIONS ---
+                            // Tạo Room ID (Ví dụ: AU100045)
+                            String newRoomId = "AU1" + String.format("%05d", (System.currentTimeMillis() % 100000));
+                            AuctionRoom newRoom = new AuctionRoom(newRoomId, itemName, startingPrice, trueSellerName);
+
+                            com.auction.server.dao.AuctionDAO auctionDAO = new com.auction.server.dao.AuctionDAO();
+                            // Truyền newItemId (String) vào thay vì int
+                            boolean isAuctionSaved = auctionDAO.saveAuction(newRoom, newItemId, sellerId);
+
+                            if (isAuctionSaved) {
+
+                                System.out.println("✅ Đã tạo phiên đấu giá thành công: " + newRoomId);
+
+                                // Phản hồi cho Seller
+                                sendMessage(new Message("CREATE_AUCTION_SUCCESS", newRoomId, "Tạo thành công"));
+
+                                // Broadcast danh sách phòng mới cho tất cả mọi người
+                                java.util.List<AuctionRoom> activeRooms = auctionDAO.getAllActiveAuctions();
+                                StringBuilder roomsInfo = new StringBuilder();
+                                for (AuctionRoom room : activeRooms) {
+                                    roomsInfo.append(room.getRoomId()).append("|")
+                                            .append(room.getItemName()).append("|")
+                                            .append(room.getCurrentPrice()).append(";");
+                                }
+                                AuctionServer.broadcastAll(new Message("ROOM_LIST", "SERVER", roomsInfo.toString()));
+                            } else {
+                                sendMessage(new Message("CREATE_AUCTION_FAIL", "SERVER", "Lỗi lưu phiên đấu giá!"));
+                            }
+
+                        } catch (Exception e) {
+                            System.err.println("❌ Lỗi CREATE_AUCTION: " + e.getMessage());
+                            e.printStackTrace();
+                            sendMessage(new Message("CREATE_AUCTION_FAIL", "SERVER", "Lỗi: " + e.getMessage()));
                         }
                         break;
-                    case "GET_ROOMS":
-                        // Lục lọi trong kho MockDB xem có bao nhiêu phòng thì gom hết lại
-                        StringBuilder roomsInfo = new StringBuilder();
 
-                        for (AuctionRoom room : MockDB.auctionTable.values()) {
-                            // Đóng gói theo chuẩn: Mã phòng|Tên sản phẩm|Giá hiện tại;
-                            roomsInfo.append(room.getRoomId()).append("|")
+                    case "GET_ROOMS":
+                        // 🌟 THAY MockDB BẰNG AuctionDAO
+                        AuctionDAO getRoomDao = new AuctionDAO();
+                        java.util.List<AuctionRoom> allRooms = getRoomDao.getAllActiveAuctions();
+
+                        StringBuilder roomsInfoString = new StringBuilder();
+                        for (AuctionRoom room : allRooms) {
+                            roomsInfoString.append(room.getRoomId()).append("|")
                                     .append(room.getItemName()).append("|")
                                     .append(room.getCurrentPrice()).append(";");
                         }
 
-                        // Gửi nguyên 1 cục chuỗi này về cho Client
-                        sendMessage(new Message("ROOM_LIST", "SERVER", roomsInfo.toString()));
+                        sendMessage(new Message("ROOM_LIST", "SERVER", roomsInfoString.toString()));
                         break;
+
                     case "CLOSE_AUCTION":
                         handleCloseAuction(msg);
                         break;
@@ -235,80 +251,44 @@ public class ClientHandler implements Runnable {
     }
 
     private void handleCloseAuction(Message msg) {
-        String userId = msg.id; // ID của người bấm nút chốt (Seller)
-        String roomId = (String) msg.data; // Mã phòng
+        String sellerId = msg.id;
+        String roomId = (String) msg.data;
 
-        // Lấy thông tin Seller từ DB
-        User sender = MockDB.userTable.get(userId);
-        if (sender == null || !(sender instanceof Seller)) {
-            return; // Báo lỗi nếu không phải Seller
+        AuctionDAO auctionDAO = new AuctionDAO();
+        Object[] result = auctionDAO.closeAuctionAndTransferMoney(roomId, sellerId);
+
+        boolean isSuccess = (Boolean) result[0];
+        String winnerId = (String) result[1];
+        double finalPrice = (Double) result[2];
+
+        if (isSuccess && winnerId != null) {
+            System.out.println("✅ CHỐT ĐƠN: Người thắng " + winnerId + " với giá " + finalPrice + "$");
+
+            // Lấy lại số dư mới từ DB để báo cho các Client cập nhật UI
+            UserDAO userDAO = new UserDAO();
+            User winner = userDAO.getUserById(winnerId);
+            User seller = userDAO.getUserById(sellerId);
+
+            if (winner != null) AuctionServer.broadcastAll(new Message("UPDATE_BALANCE", winnerId, winner.getBalance()));
+            if (seller != null) AuctionServer.broadcastAll(new Message("UPDATE_BALANCE", sellerId, seller.getBalance()));
+
+        } else if (winnerId == null) {
+            System.out.println("⚠️ Phòng đã đóng nhưng không có ai mua (Ế hàng).");
+        } else {
+            System.out.println("❌ BÙNG KÈO: Giao dịch thất bại do " + result[3]);
         }
-        Seller seller = (Seller) sender;
 
-        // Lấy thông tin Phòng từ DB
-        AuctionRoom room = MockDB.auctionTable.get(roomId);
+        // Phát lệnh giải tán phòng cho tất cả những người đang xem
+        AuctionServer.broadcastAll(new Message("AUCTION_CLOSED_NOTIFY", "SERVER", roomId));
 
-        if (room != null) {
-            synchronized (room) {
-                // Kiểm tra xem ông này có đúng là chủ phòng không
-                if (!room.getNameSeller().equalsIgnoreCase(seller.getUsername())) {
-                    System.out.println("Lỗi: Không phải chủ phòng!");
-                    return;
-                }
-
-                // =========================================================
-                // LOGIC "TÍNH TIỀN" ĐỈNH CAO CỦA BẠN BẮT ĐẦU Ở ĐÂY
-                // =========================================================
-                String winnerId = room.getHighestBidderId(); // Lấy ID của người trả cao nhất
-                double finalPrice = room.getCurrentPrice();  // Giá chốt cuối cùng
-
-                // Nếu phòng có người mua (Không bị ế)
-                if (!winnerId.equals("Chưa có ai")) {
-                    User winnerUser = MockDB.userTable.get(winnerId);
-
-                    if (winnerUser != null && winnerUser instanceof Bidder) {
-                        Bidder winner = (Bidder) winnerUser;
-
-                        // Tiến hành trừ tiền thật sự
-                        if (winner.deduct(finalPrice)) {
-                            // Cộng tiền cho chủ phòng
-                            seller.addBalance(finalPrice);
-
-                            // Thêm vật phẩm vào kho của người thắng
-                            MockDB.userInventory.putIfAbsent(winnerId, new java.util.ArrayList<>());
-                            MockDB.userInventory.get(winnerId).add(room.getItemName());
-
-                            System.out.println("✅ CHỐT ĐƠN: " + winner.getUsername() + " mua " + room.getItemName() + " giá " + finalPrice + "$");
-                            System.out.println("Tiền trong ví Bidder còn"+winner.getBalance());
-                            System.out.println("Tiền trong ví Seller còn"+seller.getBalance());
-
-                            // Phát loa cho toàn Server, ai đúng ID thì người đó sẽ tự nhận
-                            AuctionServer.broadcastAll(new Message("UPDATE_BALANCE", winnerId, winner.getBalance()));
-                            AuctionServer.broadcastAll(new Message("UPDATE_BALANCE", seller.getId(), seller.getBalance()));
-                        } else {
-                            System.out.println("❌ BÙNG KÈO: " + winner.getUsername() + " không đủ tiền thanh toán!");
-                        }
-                    }
-                } else {
-                    System.out.println("⚠️ Phòng đóng nhưng không có ai mua (Ế hàng).");
-                }
-                // =========================================================
-
-                // Xóa phòng khỏi Database
-                MockDB.auctionTable.remove(roomId);
-
-                // Phát Broadcast cho toàn Server để các Client (Bidders) văng ra khỏi phòng
-                AuctionServer.broadcastAll(new Message("AUCTION_CLOSED_NOTIFY", "SERVER", roomId));
-
-                // Cập nhật lại danh sách phòng ở Sảnh
-                StringBuilder roomsInfo = new StringBuilder();
-                for (AuctionRoom r : MockDB.auctionTable.values()) {
-                    roomsInfo.append(r.getRoomId()).append("|")
-                            .append(r.getItemName()).append("|")
-                            .append(r.getCurrentPrice()).append(";");
-                }
-                AuctionServer.broadcastAll(new Message("ROOM_LIST", "SERVER", roomsInfo.toString()));
-            }
+        // Cập nhật lại danh sách phòng (lấy từ SQL) ở Sảnh
+        java.util.List<AuctionRoom> allRooms = auctionDAO.getAllActiveAuctions();
+        StringBuilder roomsInfo = new StringBuilder();
+        for (AuctionRoom r : allRooms) {
+            roomsInfo.append(r.getRoomId()).append("|")
+                    .append(r.getItemName()).append("|")
+                    .append(r.getCurrentPrice()).append(";");
         }
+        AuctionServer.broadcastAll(new Message("ROOM_LIST", "SERVER", roomsInfo.toString()));
     }
 }

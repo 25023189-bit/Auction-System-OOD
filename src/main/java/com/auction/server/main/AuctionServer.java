@@ -63,7 +63,6 @@ public class AuctionServer {
      * Gửi cho tất cả mọi người.
      */
     public static void broadcast(Message msg) {
-        // SỬA: Dùng getAction() thay vì truy cập biến trực tiếp
         System.out.println("Broadcasting action: " + msg.getAction());
         for (ClientHandler client : clients) {
             client.sendMessage(msg);
@@ -89,7 +88,6 @@ public class AuctionServer {
      */
     public static void broadcastToRoom(String roomId, Message msg) {
         for (ClientHandler client : clients) {
-            // Đảm bảo ClientHandler của bạn đã có hàm getCurrentRoomId()
             if (roomId != null && roomId.equals(client.getCurrentRoomId())) {
                 client.sendMessage(msg);
             }
