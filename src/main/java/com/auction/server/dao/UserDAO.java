@@ -44,8 +44,10 @@ public class UserDAO {
                         String id = rs.getString("customer_id");
                         double balance = rs.getDouble("balance"); // Nếu DB bạn ko có cột balance thì tạm xóa dòng này
 
-                        if ("SELLER".equals(role)) {
-                            return new com.auction.common.model.Seller(id, username, hashedPassInDB, balance);
+                        if ("SELLER".equalsIgnoreCase(role)) {
+                            return new com.auction.common.model.Seller(id, username,hashedPassInDB , balance);
+                        } else if ("ADMIN".equalsIgnoreCase(role)) {
+                            return new com.auction.common.model.Admin(id, username, hashedPassInDB, balance);
                         } else {
                             return new com.auction.common.model.Bidder(id, username, hashedPassInDB, balance);
                         }

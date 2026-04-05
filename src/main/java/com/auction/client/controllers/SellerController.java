@@ -11,7 +11,7 @@ import javafx.event.ActionEvent;
 public class SellerController {
 
     @FXML private TextField txtItemName;
-    @FXML private TextArea txtItemDescription; // 🌟 THÊM BIẾN MÔ TẢ VÀO ĐÂY
+    @FXML private TextArea txtItemDescription;
     @FXML private TextField txtStartingPrice;
     @FXML private Label lblStatus;
 

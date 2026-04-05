@@ -206,17 +206,29 @@ public class AuctionController implements Initializable {
                     lblStatus.setText("✅ Đăng nhập thành công!");
                     lblStatus.setTextFill(Color.GREEN);
 
-                    boolean isSeller = (loggedInUser instanceof Seller) || (msg.role != null && msg.role.equalsIgnoreCase("SELLER"));
-                    if (btnCreateAuction != null) {
-                        btnCreateAuction.setVisible(isSeller);
-                        btnCreateAuction.setManaged(isSeller);
+                    if (loggedInUser instanceof com.auction.common.model.Admin) {
+                        // NẾU LÀ ADMIN -> MỞ CỬA SỔ QUẢN TRỊ
+                        openAdminDashboard();
+
+                        // Ẩn cửa sổ đăng nhập hiện tại đi (Tùy chọn)
+                        paneLogin.getScene().getWindow().hide();
+                    } else {
+                        // NẾU LÀ USER BÌNH THƯỜNG -> VÀO SẢNH NHƯ CŨ
+                        if (lblUsername != null) lblUsername.setText("Xin chào: " + loggedInUser.getUsername());
+                        if (lblBalance != null) lblBalance.setText("Số dư ví: " + String.format("%,.0f $", loggedInUser.getBalance()));
+
+                        boolean isSeller = (loggedInUser instanceof Seller);
+                        if (btnCreateAuction != null) {
+                            btnCreateAuction.setVisible(isSeller);
+                            btnCreateAuction.setManaged(isSeller);
+                        }
+
+                        Stage stage = (Stage) paneLogin.getScene().getWindow();
+                        stage.setMaximized(true);
+
+                        clientConnection.sendMessage(new Message("GET_ROOMS", userId, ""));
+                        showMainLobby();
                     }
-
-                    Stage stage = (Stage) paneLogin.getScene().getWindow();
-                    stage.setMaximized(true);
-
-                    clientConnection.sendMessage(new Message("GET_ROOMS", userId, ""));
-                    showMainLobby();
                     break;
 
                 case "LOGIN_FAIL":
@@ -420,6 +432,25 @@ public class AuctionController implements Initializable {
             sellerStage.setTitle("Tạo phiên đấu giá");
             sellerStage.setScene(new Scene(root));
             sellerStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    private void openAdminDashboard() {
+        try {
+            // Tải file giao diện dành riêng cho Admin
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/admin-view.fxml"));
+            Parent root = loader.load();
+
+            // Truyền connection cho AdminController để Admin gọi Server
+            AdminController adminCtrl = loader.getController();
+            adminCtrl.setAuctionService(this.auctionService);
+
+            Stage adminStage = new Stage();
+            adminStage.setTitle("Hệ Thống Quản Trị - Admin Dashboard");
+            adminStage.setScene(new Scene(root));
+            adminStage.setMaximized(true);
+            adminStage.show();
         } catch (Exception e) {
             e.printStackTrace();
         }
