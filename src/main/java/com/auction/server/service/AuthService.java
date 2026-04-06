@@ -1,113 +1,70 @@
 package com.auction.server.service;
 
-// SỬA: Import đúng địa chỉ package thực tế
 import com.auction.server.dao.UserDAO;
 import com.auction.common.dto.Message;
-import com.auction.common.model.Bidder;
-import com.auction.common.model.Seller;
 import com.auction.common.model.User;
-import com.auction.server.dao.MockDB;
+import com.auction.server.utils.PasswordUtil;
 
 /**
  * Lớp AuthService đóng vai trò là Tầng Nghiệp Vụ (Business Logic Layer).
  * Xử lý mọi thao tác liên quan đến định danh người dùng: Đăng nhập, Đăng ký, Đổi mật khẩu.
- * * ⚠️ LƯU Ý:
- * 1. BẢO MẬT: Mật khẩu hiện đang lưu dưới dạng văn bản gốc (Plain-text). Bắt buộc phải
- * tích hợp thư viện mã hóa băm (như BCrypt) vào hàm register() và login() trước khi Golive.
- * 2. HIỆU NĂNG: Các hàm tìm kiếm đang dùng vòng lặp for-each duyệt qua toàn bộ values()
- * của HashMap. Độ phức tạp là O(N). Nếu có 1 triệu User, Server sẽ bị nghẽn.
- * -> Giải pháp: Cần tạo thêm một HashMap phụ (Index) ánh xạ từ Username -> UserID.
- */
+*/
 
 public class AuthService {
-
     private UserDAO userDAO = new UserDAO();
 
-    /**
-     * ĐĂNG NHẬP: Gọi trực tiếp UserDAO để check Database
-     */
-    /*public Message login(String email, String password) {
-        System.out.println("--- Đang xử lý đăng nhập cho: " + email + " ---");
-
-        // Nhờ UserDAO tìm trong database
-        User user = userDAO.login(email, password);
+    public Message login(String username, String password) {
+        // Kiểm tra trong SQL thay vì MockDB
+        User user = userDAO.login(username, password);
 
         if (user != null) {
-            // Lấy role (BIDDER/SELLER/ADMIN)
-            String role = user.getRole();
-            System.out.println("=> Thành công! Role: " + role);
-
-            // Sử dụng Constructor: Message(String action, String id, Object data)
-            // Truyền Role vào ID, và UserID vào Data
-            return new Message("LOGIN_SUCCESS", role, (Object) user.getId());
+            return new Message("LOGIN_SUCCESS", "SERVER", user);
+        } else {
+            return new Message("LOGIN_FAIL", "SERVER", "Sai tài khoản hoặc mật khẩu!");
         }
-
-        return new Message("LOGIN_FAIL", "SERVER", (Object) "Sai tài khoản hoặc mật khẩu!");
-    }*/
-
-    public Message login(String usernameOrId, String password) {
-        System.out.println("--- Đang xử lý đăng nhập cho: " + usernameOrId + " ---");
-
-        // TẠM THỜI ĐÓNG CODE KẾT NỐI DATABASE THẬT:
-        // User user = userDAO.login(email, password);
-
-        // SỬ DỤNG MOCKDB ĐỂ TEST TRƯỚC:
-        for (User user : MockDB.userTable.values()) {
-            // Kiểm tra khớp Username (Adam) và Password
-            if (user.getUsername().equalsIgnoreCase(usernameOrId) && user.getPassword().equals(password)) {
-                String role = user.getRole();
-                System.out.println("=> Thành công! Role: " + role);
-                return new Message("LOGIN_SUCCESS", role, (Object) user);
-            }
-        }
-
-        return new Message("LOGIN_FAIL", "SERVER", (Object) "Sai tài khoản hoặc mật khẩu!");
     }
 
-
-    /**
-     * ĐĂNG KÝ
-     */
-    // Sửa lại tham số nhận vào có thêm role
     public Message register(String username, String password, String role) {
-        // Sau này bạn nên bổ sung userDAO.register(username, password, role) ở đây
-        //return new Message("REGISTER_SUCCESS", "SERVER", (Object) "Đăng ký thành công!");
-        String payload = password + "|" + role;
+        String newId = "BD5" + (System.currentTimeMillis() % 100000);
 
-        Message msg = new Message("REGISTER", username, payload);
-        for (User user : MockDB.userTable.values()) {
-            if (user.getUsername().equals(username)) {
-                return new Message("REGISTER_FAIL", "SERVER", "Tên này có người xài rồi!");
-            }
-        }
-
-        MockDB.userCounter++;
-        String newId = String.format("BD5%05d", MockDB.userCounter);
+        // Băm mật khẩu
+        String hashedPass = com.auction.server.utils.PasswordUtil.hashPassword(password);
 
         User newUser;
         if (role.equalsIgnoreCase("SELLER")) {
-            newUser = new Seller(newId, username, password, 10000);
+            newUser = new com.auction.common.model.Seller(newId, username, hashedPass, 0.0);
         } else {
-            newUser = new Bidder(newId, username, password, 10000);
+            newUser = new com.auction.common.model.Bidder(newId, username, hashedPass, 0.0);
         }
 
-        if (!newUser.isPasswordStrong()) {
-            return new Message("REGISTER_FAIL", "SERVER", "Mật khẩu quá yếu (Cần >= 6 ký tự và không có khoảng trắng)!");
-        }
+        //ÉP BUỘC GÁN ROLE VÀO ĐỐI TƯỢNG ĐỂ KHÔNG BAO GIỜ BỊ NULL
+        newUser.setRole(role.toUpperCase());
 
-        MockDB.userTable.put(newId, newUser);
-        return new Message("REGISTER_SUCCESS", "SERVER", newId);
+        // Gọi xuống DAO
+        if (userDAO.registerUser(newUser)) {
+            return new Message("REGISTER_SUCCESS", "SERVER", newId);
+        } else {
+            return new Message("REGISTER_FAIL", "SERVER", "Lỗi tạo tài khoản! Vui lòng xem Console.");
+        }
     }
 
     public Message resetPassword(String username, String newPassword) {
-        // Sau này gọi userDAO.updatePassword(email, newPassword)
-        for (User user : MockDB.userTable.values()) {
-            if (user.getUsername().equals(username)) {
-                user.setPassword(newPassword);
-                System.out.println("🔄 " + username + " vừa đổi mật khẩu mới.");
-                return new Message("RESET_SUCCESS", "SERVER", "OK");
-            }
+        // 1. Kiểm tra mật khẩu mới có đủ mạnh không
+        if (newPassword == null || newPassword.length() < 6 || newPassword.contains(" ")) {
+            return new Message("RESET_FAIL", "SERVER", "Mật khẩu quá yếu (Cần >= 6 ký tự và không có khoảng trắng)!");
         }
-        return new Message("RESET_FAIL", "SERVER", "Tài khoản không tồn tại!");
+
+        // 2. Băm mật khẩu mới bằng BCrypt trước khi lưu
+        String hashedNewPassword = PasswordUtil.hashPassword(newPassword);
+
+        // 3. Gọi UserDAO để cập nhật xuống Database
+        boolean isUpdated = userDAO.updatePassword(username, hashedNewPassword);
+
+        if (isUpdated) {
+            System.out.println("🔄 " + username + " vừa đổi mật khẩu mới trong Database.");
+            return new Message("RESET_SUCCESS", "SERVER", "Đổi mật khẩu thành công!");
+        } else {
+            return new Message("RESET_FAIL", "SERVER", "Lỗi: Không tìm thấy tên đăng nhập này trong hệ thống!");
+        }
     }
 }

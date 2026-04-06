@@ -38,6 +38,10 @@ public class Item implements Serializable {
         return description;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
     // Hàm Setter để cập nhật giá khi có người đấu giá mới
     public void setCurrentHighestPrice(double currentHighestPrice) {
         this.currentHighestPrice = currentHighestPrice;
