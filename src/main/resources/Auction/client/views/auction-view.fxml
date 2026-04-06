@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.controllers.AuctionController" prefWidth="500" prefHeight="650">
+
+    <VBox fx:id="paneAuctionRoom" spacing="10" visible="false" style="-fx-background-color: white;">
+        <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Button text="⬅ Quay Lại" onAction="#handleBackToSelection"/>
+            <Region HBox.hgrow="ALWAYS" /> <Label fx:id="lblParticipantCount" text="Người tham gia:" style="-fx-text-fill: gray;"/>
+        </HBox>
+        <Separator/>
+
+        <Label fx:id="lblAuctionItemName" text="Đang tải tên sản phẩm..." style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        <Label fx:id="lblCurrentPrice" text="Giá hiện tại: Đang tải..." style="-fx-font-size: 24px; -fx-text-fill: red; -fx-font-weight: bold;"/>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <TextField fx:id="txtBidAmount" promptText="Nhập số tiền..." HBox.hgrow="ALWAYS"/>
+            <Button fx:id="btnBid" text="Paid." onAction="#handleBid"/>
+        </HBox>
+
+        <Label text="🌐 KHUNG CHAT THẾ GIỚI:" style="-fx-font-weight: bold;"/>
+        <TextArea fx:id="txtChatLog" editable="false" VBox.vgrow="ALWAYS"/>
+
+        <HBox spacing="10">
+            <TextField fx:id="txtChatInput" promptText="Chém gió..." HBox.hgrow="ALWAYS"/>
+            <Button fx:id="btnSendChat" text="Gửi 💬" onAction="#handleSendChat"/>
+        </HBox>
+    </VBox>
+
+    <VBox fx:id="paneSelectAuction" spacing="15" visible="false" style="-fx-background-color: #f4f4f4;">
+        <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+        <Label text="Danh sách Phiên Đấu Giá" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+        <Label text="Choose Auction."/>
+
+        <FlowPane fx:id="gridAuctions" hgap="15" vgap="15" />
+    </VBox>
+
+    <VBox fx:id="paneRegister" spacing="15" alignment="CENTER" visible="false" style="-fx-background-color: white;">
+        <padding><Insets top="40" right="40" bottom="40" left="40"/></padding>
+        <Label text="ĐĂNG KÝ TÀI KHOẢN MỚI" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+        <TextField fx:id="txtRegUsername" promptText="Tên đăng nhập mới."/>
+        <PasswordField fx:id="txtRegPassword" promptText="Mật khẩu"/>
+        <PasswordField fx:id="txtRegConfirm" promptText="Nhập lại mật khẩu"/>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="⬅ Quay lại Đăng nhập" onAction="#showLoginScreen"/>
+            <Button text="Xác Nhận Đăng Ký" onAction="#handleSubmitRegister" style="-fx-background-color: #2ecc71; -fx-text-fill: white;"/>
+        </HBox>
+        <Label fx:id="lblRegStatus" text="" textFill="red"/>
+    </VBox>
+
+    <VBox fx:id="paneForgotPassword" spacing="15" alignment="CENTER" visible="false" style="-fx-background-color: white;">
+        <padding><Insets top="40" right="40" bottom="40" left="40"/></padding>
+        <Label text="KHÔI PHỤC MẬT KHẨU" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+        <TextField fx:id="txtForgotUsername" promptText="Tên đăng nhập cần khôi phục (VD: CE50001)"/>
+        <PasswordField fx:id="txtForgotNewPassword" promptText="Mật khẩu mới"/>
+        <PasswordField fx:id="txtForgotConfirm" promptText="Nhập lại mật khẩu mới"/>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="⬅ Quay lại" onAction="#showLoginScreen"/>
+            <Button text="Đổi Mật Khẩu" onAction="#handleSubmitForgotPassword" style="-fx-background-color: #e67e22; -fx-text-fill: white;"/>
+        </HBox>
+        <Label fx:id="lblForgotStatus" text="" textFill="red"/>
+    </VBox>
+
+    <VBox fx:id="paneLogin" spacing="15" alignment="CENTER" style="-fx-background-color: white;">
+        <padding><Insets top="40" right="40" bottom="40" left="40"/></padding>
+        <Label text="HỆ THỐNG ĐẤU GIÁ VIP" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+        <TextField fx:id="txtUsername" promptText="Tên đăng nhập"/>
+        <PasswordField fx:id="txtPassword" promptText="Mật khẩu"/>
+
+        <Hyperlink text="Quên mật khẩu?" onAction="#showForgotPasswordScreen" style="-fx-text-fill: gray;"/>
+        <Button fx:id="btnLogin" text="Đăng Nhập" onAction="#handleLogin" prefWidth="150" style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+
+        <Separator/> <Label text="Chưa có tài khoản?"/>
+        <Button fx:id="btnRegister" text="Đăng Ký Ngay" onAction="#showRegisterScreen" prefWidth="150"/>
+
+        <Label fx:id="lblStatus" text="Trạng thái: Chưa kết nối..." textFill="blue"/>
+    </VBox>
+
+</StackPane>

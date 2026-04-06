@@ -1,0 +1,88 @@
+/* Hình nền tổng thể (Gán cho AnchorPane/StackPane gốc nếu muốn nền màu xám nhạt) */
+.root {
+    -fx-background-color: #f4f7f6;
+}
+
+/* Khung thẻ đăng nhập chính */
+.login-card {
+    -fx-background-color: white;
+    -fx-background-radius: 15px; /* Bo góc khung */
+    -fx-padding: 40px; /* Khoảng cách từ viền vào trong */
+    /* Hiệu ứng đổ bóng: loại bóng, màu (có độ trong suốt), bán kính, độ lan, tọa độ x, y */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 20, 0, 0, 10);
+}
+
+/* Tiêu đề */
+.login-header {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50; /* Màu xanh đen */
+    -fx-alignment: center;
+}
+
+/* Ô nhập liệu (Tài khoản & Mật khẩu) */
+.input-field {
+    -fx-background-color: #f9f9f9;
+    -fx-background-radius: 8px; /* Bo góc ô nhập */
+    -fx-border-color: #dcdcdc; /* Màu viền */
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
+    -fx-padding: 12px 15px; /* Chiều cao và khoảng cách chữ bên trong */
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+}
+
+/* Hiệu ứng khi click vào ô nhập liệu (Focus) */
+.input-field:focused {
+    -fx-border-color: #3498db; /* Viền sáng lên màu xanh */
+    -fx-background-color: white;
+}
+
+/* Định dạng mặc định cho nút Đăng Nhập */
+.login-button {
+    /* Nền gradient: Chuyển màu từ xanh dương nhạt sang xanh dương đậm theo chiều ngang */
+    -fx-background-color: linear-gradient(to right, #4a90e2, #007aff);
+
+    /* Bo góc tròn trịa (hình viên thuốc) */
+    -fx-background-radius: 25px;
+
+    /* Màu chữ trắng */
+    -fx-text-fill: white;
+
+    /* Khoảng cách từ chữ đẩy ra viền (Trên-Dưới 12px, Trái-Phải 40px) */
+    -fx-padding: 12px 40px;
+
+    /* Cỡ chữ và in đậm */
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI", sans-serif;
+
+    /* Đổi con trỏ chuột thành hình bàn tay khi chỉ vào nút */
+    -fx-cursor: hand;
+
+    /* Thêm một chút bóng đổ nhẹ cho nút nổi bật hơn */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 122, 255, 0.3), 10, 0, 0, 5);
+}
+
+/* Hiệu ứng khi di chuột qua nút (Hover) */
+.login-button:hover {
+    /* Đổi màu gradient tối đi một chút để tạo cảm giác nút được bấm/tương tác */
+    -fx-background-color: linear-gradient(to right, #357abd, #005bb5);
+}
+
+/* Hiệu ứng khi click chuột (nhấn giữ nút) */
+.login-button:pressed {
+    -fx-background-color: #005bb5;
+    -fx-translate-y: 2px; /* Nút lún xuống nhẹ 2px tạo cảm giác bấm thật */
+}
+
+/* Trang trí cho HBox bao ngoài (Trông giống hệt 1 ô nhập liệu bình thường) */
+.input-container {
+    -fx-background-color: #f9f9f9; /* Màu nền ô nhập */
+    -fx-border-color: #dcdcdc;     /* Màu viền */
+    -fx-border-radius: 8px;        /* Bo góc viền */
+    -fx-background-radius: 8px;    /* Bo góc nền */
+    -fx-padding: 8px 12px;         /* Khoảng cách từ viền vào icon và chữ */
+    -fx-alignment: center-left;
+}
