@@ -500,7 +500,7 @@ public class AuctionController implements Initializable {
     @FXML
     private void openSellerDashboard() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/seller-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/seller-view.fxml"));
             Parent root = loader.load();
 
             SellerController sellerCtrl = loader.getController();
