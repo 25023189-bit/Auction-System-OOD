@@ -21,8 +21,7 @@ CREATE TABLE auctions (
     item_id VARCHAR(50) NOT NULL,
     seller_id VARCHAR(50) NOT NULL,
     status VARCHAR(20) DEFAULT 'RUNNING',
-    
-    -- Ràng buộc khóa ngoại: Xóa item hoặc user thì phòng đấu giá tự động xóa theo
+
     FOREIGN KEY (item_id) REFERENCES items(item_id) ON DELETE CASCADE,
     FOREIGN KEY (seller_id) REFERENCES users(customer_id) ON DELETE CASCADE
 );

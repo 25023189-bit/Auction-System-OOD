@@ -15,7 +15,6 @@ import com.auction.server.dao.UserDAO;
 public class AuctionRoomService {
 
     public Message joinRoom(String roomId) {
-        // Lấy thông tin phòng từ Database
         AuctionDAO auctionDAO = new AuctionDAO();
         AuctionRoom room = auctionDAO.getAuctionById(roomId);
 
@@ -32,18 +31,16 @@ public class AuctionRoomService {
         if (user != null && user instanceof Bidder) {
             Bidder bidder = (Bidder) user;
 
-            // 1. KIỂM TRA SỐ DƯ (Tránh việc Bid 1000$ nhưng ví chỉ có 100$)
-            // Tuyệt đối không trừ tiền ở đây, chỉ kiểm tra!
+            // KIỂM TRA SỐ DƯ
             if (!bidder.canAfford(amount)) {
                 return new Message("BID_FAIL", "SERVER", "Số dư ví không đủ " + amount + "$ để đặt giá!");
             }
 
-            // 2. GỌI BidDAO ĐỂ THỰC HIỆN ĐẶT GIÁ (Dùng Transaction SQL an toàn)
+            // GỌI BidDAO ĐỂ THỰC HIỆN ĐẶT GIÁ
             BidDAO bidDAO = new BidDAO();
             boolean isSuccess = bidDAO.placeBid(roomId, userId, amount);
 
             if (isSuccess) {
-                // Trả về kèm tên thật của người dùng để Client hiển thị
                 return new Message("BID_SUCCESS", bidder.getUsername(), amount);
             } else {
                 return new Message("BID_FAIL", "SERVER", "Giá phải cao hơn mức hiện tại!");

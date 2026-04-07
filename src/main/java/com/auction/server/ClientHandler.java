@@ -3,6 +3,7 @@ package com.auction.server;
 import com.auction.common.dto.Message;
 import com.auction.common.model.*;
 import com.auction.server.dao.AuctionDAO;
+import com.auction.server.dao.TransactionDAO;
 import com.auction.server.dao.UserDAO;
 import com.auction.server.main.AuctionServer;
 import com.auction.server.service.AuthService;
@@ -11,6 +12,7 @@ import com.auction.server.service.AuctionRoomService;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.util.List;
 
 /**
  * Lớp ClientHandler chịu trách nhiệm duy trì kết nối 1-1 với một Client cụ thể.
@@ -24,6 +26,8 @@ public class ClientHandler implements Runnable {
     private ObjectInputStream in;
     private ObjectOutputStream out;
     private String currentRoomId = "";
+    private String userId = "";
+    public String getUserId() { return this.userId; }
 
     private AuthService authService = new AuthService();
     private AuctionRoomService roomService = new AuctionRoomService();
@@ -50,7 +54,13 @@ public class ClientHandler implements Runnable {
                 Message msg = (Message) in.readObject();
                 switch (msg.action) {
                     case "LOGIN":
-                        sendMessage(authService.login(msg.id, (String) msg.data));
+                        Message loginRes = authService.login(msg.id, (String) msg.data);
+                        // Nếu đăng nhập thành công, lưu ID lại để sau này Admin còn biết đường mà Kick!
+                        if ("LOGIN_SUCCESS".equals(loginRes.action)) {
+                            User loggedInUser = (User) loginRes.data;
+                            this.userId = loggedInUser.getId();
+                        }
+                        sendMessage(loginRes);
                         break;
 
                     case "REGISTER":
@@ -58,12 +68,15 @@ public class ClientHandler implements Runnable {
 
                         String[] regData = ((String) msg.data).split("\\|");
 
-                        String regPass = regData[0];
-                        String regRole = regData[1];
+                        if (regData.length >= 3) {
+                            String uname = regData[0];   // Username
+                            String pass  = regData[1];   // Password
+                            String role  = regData[2];   // Role
 
-                        Message regResponse = authService.register(regUser, regPass, regRole);
-
-                        sendMessage(regResponse);
+                            // Chuyển cho AuthService xử lý
+                            Message response = authService.register(uname, pass, role);
+                            sendMessage(response);
+                        }
                         break;
 
                     case "JOIN_ROOM":
@@ -203,6 +216,100 @@ public class ClientHandler implements Runnable {
 
                     case "CLOSE_AUCTION":
                         handleCloseAuction(msg);
+                        break;
+
+                    // ==========================================================
+                    // QUYỀN NĂNG TỐI CAO CỦA ADMIN
+                    // ==========================================================
+
+                    case "ADMIN_GET_USERS":
+                        try {
+                            UserDAO adminUserDao = new UserDAO();
+                            List<User> userList = adminUserDao.getAllUsers();
+                            System.out.println("SERVER TÌM THẤY: " + userList.size() + " USERS"); // Xem Server có móc được từ DB lên không
+                            sendMessage(new Message("ADMIN_USER_LIST", "SERVER", userList));
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            sendMessage(new Message("ADMIN_ACTION_FAIL", "SERVER", "Lỗi tải danh sách người dùng."));
+                        }
+                        break;
+
+                    case "ADMIN_GET_AUCTIONS":
+                        try {
+                            AuctionDAO adminAuctionDao = new AuctionDAO();
+                            List<AuctionRoom> adminRooms = adminAuctionDao.getAllAuctions();
+                            sendMessage(new Message("ADMIN_AUCTION_LIST", "SERVER", adminRooms));
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            sendMessage(new Message("ADMIN_ACTION_FAIL", "SERVER", "Lỗi tải danh sách phiên đấu giá."));
+                        }
+                        break;
+
+                    case "GET_BID_HISTORY":
+                        String roomId = (String) msg.data;
+
+                        TransactionDAO transactionDAO = new TransactionDAO();
+                        List<BidTransaction> historyList = transactionDAO.getHistoryByRoom(roomId);
+
+                        // 3. Đóng gói danh sách và gửi trả lại cho Client
+                        Message responseMsg = new Message("BID_HISTORY_SUCCESS", "SERVER", historyList);
+                        sendMessage(responseMsg); // Gửi qua Socket về lại Client
+                        break;
+
+                    case "ADMIN_DELETE_AUCTION":
+                        try {
+                            String targetRoomId = (String) msg.data;
+                            com.auction.server.dao.AuctionDAO delAuctionDao = new com.auction.server.dao.AuctionDAO();
+
+                            // Gọi hàm forceDeleteAuction (Update status thành 'CANCELED')
+                            if (delAuctionDao.forceDeleteAuction(targetRoomId)) {
+                                sendMessage(new Message("ADMIN_ACTION_SUCCESS", "AUCTION_DELETED", "Đã ép hủy phiên đấu giá: " + targetRoomId));
+
+                                // Bật "loa phường" giải tán những người đang xem phòng này
+                                AuctionServer.broadcastAll(new Message("AUCTION_CLOSED_NOTIFY", "SERVER", targetRoomId));
+
+                                // Cập nhật lại sảnh chính cho "dân thường"
+                                java.util.List<AuctionRoom> activeRooms = delAuctionDao.getAllActiveAuctions();
+                                StringBuilder roomsInfoStr = new StringBuilder();
+                                for (AuctionRoom r : activeRooms) {
+                                    roomsInfoStr.append(r.getRoomId()).append("|")
+                                            .append(r.getItemName()).append("|")
+                                            .append(r.getCurrentPrice()).append(";");
+                                }
+                                AuctionServer.broadcastAll(new Message("ROOM_LIST", "SERVER", roomsInfoStr.toString()));
+
+                            } else {
+                                sendMessage(new Message("ADMIN_ACTION_FAIL", "SERVER", "Lỗi: Không thể hủy phiên đấu giá này!"));
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        break;
+                    case "ADMIN_DELETE_USER":
+                        try {
+                            String targetUserId = (String) msg.data;
+                            com.auction.server.dao.UserDAO delUserDao = new com.auction.server.dao.UserDAO();
+
+                            // 1. Xóa dưới Database
+                            if (delUserDao.deleteUser(targetUserId)) {
+                                sendMessage(new Message("ADMIN_ACTION_SUCCESS", "USER_DELETED", "Đã bay màu tài khoản: " + targetUserId));
+
+                                // 2. TÌM VÀ KICK NGƯỜI DÙNG ĐÓ NẾU ĐANG ONLINE
+                                // ⚠️ Chú ý: Đảm bảo AuctionServer của bạn có biến danh sách public static List<ClientHandler> clients
+                                if (AuctionServer.clients != null) {
+                                    for (ClientHandler client : AuctionServer.clients) {
+                                        if (targetUserId.equals(client.getUserId())) {
+                                            client.sendMessage(new Message("BANNED", "SERVER", "Tài khoản của bạn đã bị xóa bởi Admin!"));
+                                            break; // Kick xong thì thoát vòng lặp
+                                        }
+                                    }
+                                }
+                            } else {
+                                sendMessage(new Message("ADMIN_ACTION_FAIL", "SERVER", "Lỗi: Không thể xóa tài khoản. Có thể do họ đang có phiên đấu giá."));
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         break;
                 }
             }

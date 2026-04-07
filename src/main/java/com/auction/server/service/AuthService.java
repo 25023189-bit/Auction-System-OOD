@@ -25,20 +25,28 @@ public class AuthService {
     }
 
     public Message register(String username, String password, String role) {
+        System.out.println("Người dùng đã đăng ký:"+username);
         String newId = "BD5" + (System.currentTimeMillis() % 100000);
-
-        // Băm mật khẩu
         String hashedPass = com.auction.server.utils.PasswordUtil.hashPassword(password);
 
+        // 🌟 BƯỚC LÀM SẠCH VÀ ÉP KIỂU TUYỆT ĐỐI (BULLETPROOF)
+        // Mặc định cứ đăng ký là cho thành BIDDER hết
+        String finalRole = "BIDDER";
+
+        // Nếu chuỗi Client gửi lên có chứa chữ "SELLER" (bất kể viết hoa/thường hay có dấu cách)
+        if (role != null && role.toUpperCase().contains("SELLER")) {
+            finalRole = "SELLER";
+        }
+
         User newUser;
-        if (role.equalsIgnoreCase("SELLER")) {
+        if (finalRole.equals("SELLER")) {
             newUser = new com.auction.common.model.Seller(newId, username, hashedPass, 0.0);
         } else {
             newUser = new com.auction.common.model.Bidder(newId, username, hashedPass, 0.0);
         }
 
-        //ÉP BUỘC GÁN ROLE VÀO ĐỐI TƯỢNG ĐỂ KHÔNG BAO GIỜ BỊ NULL
-        newUser.setRole(role.toUpperCase());
+        // Ép chặt Role chuẩn vào đối tượng trước khi lưu
+        newUser.setRole(finalRole);
 
         // Gọi xuống DAO
         if (userDAO.registerUser(newUser)) {

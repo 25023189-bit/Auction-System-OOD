@@ -66,12 +66,19 @@ public class ClientConnection {
                     // Ghi chú: Bên trong hàm onServerResponse của Controller phải dùng Platform.runLater()
                     controller.onServerResponse(response);
                 }
+            } catch (java.net.SocketException se) {
+                if (se.getMessage() != null && se.getMessage().toLowerCase().contains("socket closed")) {
+                    System.out.println("ℹ️ Kết nối mạng đã được thu hồi an toàn (Người dùng đã ngắt kết nối).");
+                } else {
+                    System.err.println("❌ Mất kết nối tới Server: " + se.getMessage());
+                }
+            } catch (java.io.EOFException eof) {
+                System.out.println("ℹ️ Server đã chủ động ngắt kết nối.");
             } catch (Exception e) {
-                // Nếu Server sập hoặc rớt mạng sẽ nhảy vào đây
-                System.err.println("❌ Lỗi kết nối Socket: " + e.getMessage());
-                controller.updateConnectionStatus("Mất kết nối!");
+                System.err.println("❌ Lỗi luồng đọc dữ liệu: " + e.getMessage());
+                // e.printStackTrace();
             }
-        }).start(); // Bắt đầu luồng
+        }).start();
     }
 
     /**
@@ -90,6 +97,29 @@ public class ClientConnection {
             }
         } catch (Exception e) {
             System.err.println("❌ Lỗi khi gửi tin nhắn lên Server: ");
+            e.printStackTrace();
+        }
+    }
+
+    //Sử dụng trong các tình huống khẩn cấp
+    public void closeConnection() {
+        try {
+            if (this.in != null) {
+                this.in.close();
+            }
+
+            if (this.out != null) {
+                this.out.close();
+            }
+
+            if (this.socket != null && !this.socket.isClosed()) {
+                this.socket.close();
+            }
+
+            System.out.println("🔌 Đã ngắt kết nối với Server an toàn.");
+
+        } catch (Exception e) {
+            System.err.println("❌ Lỗi khi cố gắng ngắt kết nối: " + e.getMessage());
             e.printStackTrace();
         }
     }

@@ -13,7 +13,6 @@ public class AuctionService {
 
     // Lưu trữ thông tin định danh của người dùng hiện tại sau khi đăng nhập thành công
     private String currentUser = "";
-    private String currentId = "";
 
     /**
      * Khởi tạo service với một kết nối đã có sẵn.
@@ -31,12 +30,25 @@ public class AuctionService {
         return currentUser;
     }
 
-    // --- CÁC NGHIỆP VỤ GỬI YÊU CẦU LÊN SERVER ---
+    public ClientConnection getClientConnection() {
+        return this.clientConnection;
+    }
+
+    /**
+     * Gửi yêu cầu lấy danh sách toàn bộ các phòng đấu giá đang hoạt động.
+     */
+    public void getRooms() {
+        clientConnection.sendMessage(new Message("GET_ROOMS", currentUser, ""));
+    }
+
+    // ==========================================================
+    // CÁC NGHIỆP VỤ GỬI YÊU CẦU LÊN SERVER
+    // ==========================================================
 
     /**
      * Gửi yêu cầu Đăng nhập.
-     * id Tên đăng nhập
-     * password Mật khẩu
+     * @param id Tên đăng nhập
+     * @param password Mật khẩu
      */
     public void login(String id, String password) {
         if (clientConnection != null) {
@@ -44,22 +56,16 @@ public class AuctionService {
         }
     }
 
-    /**
-     * Gửi yêu cầu Đăng ký tài khoản mới.
-     * @param role Vai trò (VD: "Bidder", "Seller")
-     * @param username Tên hiển thị/tài khoản
-     * @param password Mật khẩu
-     */
-    public void register(String role, String username, String password) {
-        clientConnection.sendMessage(new Message("REGISTER", role, username+"|"+password));
+    public void register(String username, String password, String role) {
+        String data = username + "|" + password + "|" + role;
+        clientConnection.sendMessage(new Message("REGISTER", "", data));
     }
 
     /**
      * Gửi yêu cầu tham gia vào một phòng đấu giá cụ thể.
-     * @param roomId Mã phòng đấu giá
      */
     public void joinRoom(String roomId) {
-        clientConnection.sendMessage(new Message("JOIN_ROOM", currentUser,roomId  ));
+        clientConnection.sendMessage(new Message("JOIN_ROOM", currentUser, roomId));
     }
 
     /**
@@ -71,24 +77,24 @@ public class AuctionService {
 
     /**
      * Gửi yêu cầu đặt giá (Bid) cho vật phẩm trong phòng.
-     * @param amount Số tiền đặt cược
      */
     public void placeBid(double amount) {
-        // Chỉ gửi số tiền (Double) qua mạng
         clientConnection.sendMessage(new Message("BID", currentUser, amount));
     }
 
+    /**
+     * Gửi yêu cầu chốt phiên đấu giá.
+     */
     public void closeAuction(String roomId) {
-        // action="CLOSE_AUCTION", id=currentUser (là UserID), data=roomId
         clientConnection.sendMessage(new Message("CLOSE_AUCTION", currentUser, roomId));
     }
 
     /**
-     * Gửi tin nhắn chat vào phòng đấu giá.
-     * @param chatContent Nội dung chat
+     * 🌟 ĐÃ SỬA: Gửi tin nhắn chat vào phòng đấu giá.
      */
     public void sendChat(String chatContent) {
-        Message msg = new Message("CHAT_MSG", ClientConnection.currentUser, chatContent);
+        // Dùng this.currentUser thay vì ClientConnection.currentUser
+        Message msg = new Message("CHAT_MSG", this.currentUser, chatContent);
         clientConnection.sendMessage(msg);
     }
 
@@ -100,19 +106,29 @@ public class AuctionService {
     }
 
     /**
-     * (Nghiệp vụ Seller) Gửi yêu cầu tạo phòng đấu giá mới lên Server.
-     * @param itemName Tên vật phẩm
-     * @param startingPrice Giá khởi điểm
+     * (Nghiệp vụ Seller) Gửi yêu cầu tạo phòng đấu giá mới.
      */
-    public void createAuction(String itemName,String description, double startingPrice) {
+    public void createAuction(String itemName, String description, double startingPrice) {
         String data = itemName + "|" + description + "|" + startingPrice;
         clientConnection.sendMessage(new Message("CREATE_AUCTION", currentUser, data));
     }
 
     /**
-     * Gửi yêu cầu lấy danh sách toàn bộ các phòng đấu giá đang hoạt động.
+     * Gửi yêu cầu lấy lịch sử đặt giá của một phòng cụ thể lên Server.
+     * @param roomId Mã phòng đấu giá cần xem
      */
-    public void getRooms() {
-        clientConnection.sendMessage(new Message("GET_ROOMS", currentUser, ""));
+    public void getBidHistory(String roomId) {
+        Message msg = new Message("GET_BID_HISTORY", currentUser, roomId);
+        clientConnection.sendMessage(msg);
+    }
+
+    /**
+     * SỬ DỤNG TRONG TRƯỜNG HỢP KHẨN CẤP
+     */
+    public void disconnect() {
+        if (clientConnection != null) {
+            clientConnection.closeConnection();
+        }
+        this.currentUser = "";
     }
 }
