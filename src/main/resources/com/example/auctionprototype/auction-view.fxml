@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.controllers.AuctionController">
+    <children>
+        <StackPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+
+                <VBox fx:id="paneLogin" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 10);">
+                    <children>
+                        <HBox alignment="CENTER" spacing="10.0">
+                            <children>
+                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@auction.png" />
+                                    </image>
+                                </ImageView>
+                                <Label text="Đăng Nhập Hệ Thống" textFill="#2c3e50">
+                                    <font><Font name="System Bold" size="24.0" /></font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <TextField fx:id="txtUsername" prefHeight="40.0" prefWidth="300.0" promptText="Tên đăng nhập" text="Adam" />
+                        <PasswordField fx:id="txtPassword" prefHeight="40.0" promptText="Mật khẩu" text="123456" />
+                        <Label fx:id="lblStatus" textFill="RED" />
+                        <Button onAction="#handleLogin" prefWidth="200.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" styleClass="login-button" text="Đăng Nhập" />
+                        <HBox alignment="CENTER" spacing="10.0">
+                            <children>
+                                <Button onAction="#showRegisterScreen" style="-fx-background-color: transparent; -fx-text-fill: #2ecc71;" text="Chưa có tài khoản?" />
+                                <Button onAction="#showForgotPasswordScreen" style="-fx-background-color: transparent; -fx-text-fill: #e67e22;" text="Quên mật khẩu?" />
+                            </children>
+                        </HBox>
+                    </children>
+                    <padding><Insets bottom="40.0" left="40.0" right="40.0" top="40.0" /></padding>
+                </VBox>
+
+                <VBox fx:id="paneRegister" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 10);" visible="false">
+                    <children>
+                        <Label text="ĐĂNG KÝ TÀI KHOẢN" textFill="#2c3e50">
+                            <font><Font name="System Bold" size="24.0" /></font>
+                        </Label>
+                        <TextField fx:id="txtRegUsername" promptText="Tên đăng nhập" />
+                        <PasswordField fx:id="txtRegPassword" promptText="Mật khẩu (ít nhất 6 ký tự)" />
+                        <PasswordField fx:id="txtRegConfirm" promptText="Xác nhận lại mật khẩu" />
+                        <ComboBox fx:id="cbRegRole" prefWidth="400.0" promptText="Chọn vai trò..." />
+                        <Label fx:id="lblRegStatus" textFill="RED" />
+                        <Button onAction="#handleSubmitRegister" prefWidth="200.0" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold;" text="Xác nhận Đăng ký" />
+                        <Button onAction="#showLoginScreen" style="-fx-background-color: transparent; -fx-text-fill: #3498db;" text="⬅ Quay lại Đăng nhập" />
+                    </children>
+                    <padding><Insets bottom="30.0" left="30.0" right="30.0" top="30.0" /></padding>
+                </VBox>
+
+                <VBox fx:id="paneForgotPassword" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 10);" visible="false">
+                    <children>
+                        <Label text="KHÔI PHỤC MẬT KHẨU" textFill="#2c3e50">
+                            <font><Font name="System Bold" size="24.0" /></font>
+                        </Label>
+                        <TextField fx:id="txtForgotUsername" promptText="Nhập tên tài khoản của bạn" />
+                        <PasswordField fx:id="txtForgotNewPassword" promptText="Nhập mật khẩu mới" />
+                        <PasswordField fx:id="txtForgotConfirm" promptText="Xác nhận lại mật khẩu mới" />
+                        <Label fx:id="lblForgotStatus" textFill="RED" />
+                        <Button onAction="#handleSubmitForgotPassword" prefWidth="200.0" style="-fx-background-color: #e67e22; -fx-text-fill: white; -fx-font-weight: bold;" text="Đổi Mật Khẩu" />
+                        <Button onAction="#showLoginScreen" style="-fx-background-color: transparent; -fx-text-fill: #3498db;" text="⬅ Quay lại Đăng nhập" />
+                    </children>
+                    <padding><Insets bottom="30.0" left="30.0" right="30.0" top="30.0" /></padding>
+                </VBox>
+
+                <BorderPane fx:id="paneMainLobby" style="-fx-background-color: #f4f7f6;" visible="false">
+                    <top>
+                        <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-background-color: #2C3E50; -fx-padding: 10 20 10 20;">
+                            <Button style="-fx-font-weight: bold; -fx-background-color: #3498DB; -fx-text-fill: white;" text="Sảnh Chính" />
+                            <Region HBox.hgrow="ALWAYS" />
+                            <Label fx:id="lblBalance" style="-fx-text-fill: #F1C40F; -fx-font-weight: bold; -fx-padding: 0 10 0 0;" text="Số dư: 0 $" />
+                            <Label fx:id="lblUsername" style="-fx-padding: 0 10 0 0;" text="Xin chào!" textFill="WHITE" />
+                            <Button onAction="#handleLogout" style="-fx-background-color: #E74C3C; -fx-text-fill: white; -fx-cursor: hand;" text="Đăng xuất" />
+                        </HBox>
+                    </top>
+                    <center>
+                        <GridPane>
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="20" />
+                                <ColumnConstraints percentWidth="60" />
+                                <ColumnConstraints percentWidth="20" />
+                            </columnConstraints>
+                            <children>
+                                <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 15; -fx-border-color: #ddd; -fx-border-width: 0 1 0 0;" GridPane.columnIndex="0">
+                                    <Label style="-fx-font-weight: bold;" text="📈 Tỷ giá (Gốc: USD)" />
+                                    <Separator />
+                                    <VBox fx:id="vboxCurrencyRates" spacing="8">
+                                        <Label text="VND: 25.450 ₫" />
+                                        <Label text="EUR: 0.92 €" />
+                                    </VBox>
+                                </VBox>
+                                <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;" GridPane.columnIndex="1">
+                                    <VBox spacing="15" style="-fx-padding: 15;">
+                                        <HBox alignment="CENTER_LEFT">
+                                            <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="🔥 Đang diễn ra" />
+                                            <Region HBox.hgrow="ALWAYS" />
+                                            <Button fx:id="btnCreateAuction" onAction="#openSellerDashboard" style="-fx-background-color: #27AE60; -fx-text-fill: white;" text="+ Tạo phòng" />
+                                        </HBox>
+                                        <FlowPane fx:id="paneSelectAuction" hgap="15" vgap="15" />
+                                    </VBox>
+                                </ScrollPane>
+                                <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 15; -fx-border-color: #ddd; -fx-border-width: 0 0 0 1;" GridPane.columnIndex="2">
+                                    <Label style="-fx-font-weight: bold;" text="📰 Tin tức" />
+                                    <Separator />
+                                    <VBox fx:id="vboxNews" spacing="10">
+                                        <Label text="• Hệ thống cập nhật bản 2.0" wrapText="true" />
+                                        <Label text="• Sự kiện X2 uy tín" wrapText="true" />
+                                    </VBox>
+                                </VBox>
+                            </children>
+                     <rowConstraints>
+                        <RowConstraints />
+                     </rowConstraints>
+                        </GridPane>
+                    </center>
+                </BorderPane>
+
+                <VBox fx:id="paneAuctionRoom" spacing="15" style="-fx-padding: 20; -fx-background-color: #ECF0F1;" visible="false">
+                    <HBox alignment="CENTER_LEFT" spacing="20">
+                        <Button onAction="#handleBackToSelection" style="-fx-background-color: #95A5A6; -fx-text-fill: white; -fx-cursor: hand;" text="⬅ Quay lại Sảnh" />
+                        <Label fx:id="lblAuctionItemName" style="-fx-font-size: 22px; -fx-font-weight: bold;" text="Tên vật phẩm" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="lblParticipantCount" style="-fx-text-fill: #7F8C8D;" text="Người tham gia: 1" />
+                        <Button fx:id="btnCloseAuction" onAction="#handleCloseAuction" style="-fx-background-color: #E74C3C; -fx-text-fill: white; -fx-cursor: hand; -fx-font-weight: bold;" text="Chốt Đơn" visible="false" />
+                    </HBox>
+                    <Separator />
+                    <Label fx:id="lblCurrentPrice" style="-fx-font-size: 28px; -fx-text-fill: #E67E22; -fx-font-weight: bold;" text="Giá hiện tại: 0 $" />
+                    <TextArea fx:id="txtChatLog" editable="false" style="-fx-font-size: 14px;" wrapText="true" VBox.vgrow="ALWAYS" />
+                    <HBox spacing="10">
+                        <TextField fx:id="txtBidAmount" promptText="Nhập giá muốn đặt..." style="-fx-font-size: 14px;" HBox.hgrow="ALWAYS" />
+                        <Button onAction="#handleBid" style="-fx-background-color: #2ECC71; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-font-size: 14px;" text="Đặt Giá" />
+                    </HBox>
+                    <HBox spacing="10">
+                        <TextField fx:id="txtChatInput" promptText="Nhập tin nhắn chat..." style="-fx-font-size: 14px;" HBox.hgrow="ALWAYS" />
+                        <Button onAction="#handleSendChat" style="-fx-background-color: #3498DB; -fx-text-fill: white; -fx-cursor: hand; -fx-font-size: 14px;" text="Gửi Chat" />
+                    </HBox>
+                </VBox>
+
+            </children>
+        </StackPane>
+    </children>
+</AnchorPane>

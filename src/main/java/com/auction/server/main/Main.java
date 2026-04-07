@@ -8,11 +8,14 @@ import javafx.stage.*;
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/auction-view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/auction-view.fxml"));
         Parent root = loader.load();
 
         primaryStage.setTitle("Sàn Đấu Giá VIP PRO - Client");
-        primaryStage.setScene(new Scene(root, 450, 650));
+        primaryStage.setScene(new Scene(root, 500, 400));
+        // Thêm 2 dòng này để chặn thu nhỏ cửa sổ quá mức
+        primaryStage.setMinWidth(500);
+        primaryStage.setMinHeight(400);
 
         primaryStage.show();
     }
