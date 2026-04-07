@@ -1,5 +1,6 @@
 package com.auction.client.controllers;
 
+import com.auction.common.model.BidTransaction;
 import com.auction.server.service.AuctionService;
 import com.auction.server.service.ClientConnection;
 import com.auction.common.model.AuctionRoom;
@@ -16,6 +17,7 @@ import javafx.fxml.*;
 import javafx.scene.control.*;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import javafx.application.Platform;
@@ -53,6 +55,7 @@ public class AuctionController implements Initializable {
     private String currentRoomId;
     private String myUsername = "";
     private User currentUserProfile;
+    private AdminController adminController;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -110,17 +113,7 @@ public class AuctionController implements Initializable {
 
     @FXML
     private void handleLogout() {
-        showLoginScreen();
-        Stage stage = (Stage) paneLogin.getScene().getWindow();
-        stage.setMaximized(false);
-        stage.setWidth(800);
-        stage.setHeight(600);
-        stage.centerOnScreen();
-
-        txtUsername.clear();
-        txtPassword.clear();
-        lblStatus.setText("Đã đăng xuất thành công.");
-        lblStatus.setTextFill(Color.GREEN);
+        openLoginScreen();
     }
 
     //Sau này triển khai thành phương thức trừu tượng handleSubmitRegister và handleSubmitForgotPassword
@@ -128,11 +121,16 @@ public class AuctionController implements Initializable {
     private void handleSubmitRegister() {
         String user = txtRegUsername.getText().trim();
         String password = txtRegPassword.getText().trim();
-        String checkPassword = cbRegRole.getValue();
+        String roleValue = cbRegRole.getValue();
+        //String roleToSend = (roleValue != null && roleValue.contains("SELLER")) ? "SELLER" : "BIDDER";
         if (password.isEmpty() || user.isEmpty() || !password.equals(txtRegConfirm.getText().trim())) {
             lblRegStatus.setText("Thông tin không hợp lệ hoặc mật khẩu không khớp!");
         }else{
-            auctionService.register(user, password, checkPassword);
+            if (roleValue.equals("SELLER") || roleValue.equals("ADMIN")){
+                auctionService.register(user, password, roleValue);
+            }else{
+                auctionService.register(user, password, "BIDDER");
+            }
         }
     }
 
@@ -194,6 +192,7 @@ public class AuctionController implements Initializable {
             switch (msg.getAction()) {
                 case "LOGIN_SUCCESS":
                     User loggedInUser = (User) msg.data;
+                    System.out.println("Role nhận được từ Server: " + loggedInUser.getRole()); // In ra để kiểm tra
                     this.currentUserProfile = loggedInUser;
                     String userId = loggedInUser.getId();
                     ClientConnection.currentUser = userId;
@@ -206,7 +205,7 @@ public class AuctionController implements Initializable {
                     lblStatus.setText("✅ Đăng nhập thành công!");
                     lblStatus.setTextFill(Color.GREEN);
 
-                    if (loggedInUser instanceof com.auction.common.model.Admin) {
+                    if ("ADMIN".equalsIgnoreCase(loggedInUser.getRole())) {
                         // NẾU LÀ ADMIN -> MỞ CỬA SỔ QUẢN TRỊ
                         openAdminDashboard();
 
@@ -371,7 +370,6 @@ public class AuctionController implements Initializable {
                     String[] parts = ((String) msg.data).split("\\|");
                     if (this.currentRoomId != null && this.currentRoomId.equals(parts[0])) {
                         lblCurrentPrice.setText(parts[1] + " $");
-                        // parts[2] lúc này đã là Tên người dùng do Server gửi thẳng về
                         txtChatLog.appendText("📢 Giá mới: " + parts[2] + " đang giữ giá " + parts[1] + "$\n");
                     }
                     break;
@@ -387,6 +385,73 @@ public class AuctionController implements Initializable {
                         alerts.setHeaderText("Biến động số dư");
                         alerts.show();
                     }
+                    break;
+
+                case "ADMIN_USER_LIST":
+                    System.out.println("CLIENT ĐÃ NHẬN ĐƯỢC LIST TỪ SERVER!");
+                    if (adminController != null) {
+                        adminController.updateUsersTable((java.util.List<User>) msg.data);
+                    }else{
+                        System.out.println("LỖI: adminController BỊ NULL !!!");
+                    }
+                    break;
+
+                case "ADMIN_AUCTION_LIST":
+                    if (adminController != null) {
+                        adminController.updateAuctionsTable((java.util.List<AuctionRoom>) msg.data);
+                    }
+                    break;
+
+                // Thêm vào khối switch-case xử lý dữ liệu trả về từ Server ở Client
+                case "BID_HISTORY_SUCCESS":
+                    @SuppressWarnings("unchecked")
+                    List<BidTransaction> receivedHistory = (List<BidTransaction>) msg.data;
+
+                    Platform.runLater(() -> {
+                        if (this.adminController != null) {
+                            this.adminController.updateBidHistoryTable(receivedHistory);
+                        }
+                    });
+                    break;
+
+                case "ADMIN_ACTION_SUCCESS":
+                    if (adminController != null) {
+                        adminController.handleAdminResponse(msg.getAction() + "_" + msg.id, (String) msg.data);
+                    }
+                    break;
+
+                case "ADMIN_ACTION_FAIL":
+                    if (adminController != null) {
+                        adminController.handleAdminResponse("FAIL", (String) msg.data);
+                    }
+                    break;
+
+                case "BANNED":
+                    Platform.runLater(() -> {
+                        Alert alerted = new Alert(Alert.AlertType.ERROR);
+                        alerted.setTitle("Thông báo hệ thống");
+                        alerted.setHeaderText("TÀI KHOẢN ĐÃ BỊ VÔ HIỆU HÓA");
+                        alerted.setContentText((String) msg.data);
+                        alerted.showAndWait();
+
+                        openLoginScreen();
+
+                        // THUẬT TOÁN ĐÓNG CỬA SỔ AN TOÀN (Không bao giờ bị lỗi NullPointer)
+                        // Lấy danh sách toàn bộ các cửa sổ đang mở trong App
+                        java.util.List<javafx.stage.Window> openWindows = new java.util.ArrayList<>(javafx.stage.Window.getWindows());
+
+                        for (javafx.stage.Window window : openWindows) {
+                            if (window instanceof javafx.stage.Stage) {
+                                javafx.stage.Stage stage = (javafx.stage.Stage) window;
+
+                                // Nếu tên cửa sổ KHÔNG PHẢI là cửa sổ Đăng nhập thì đóng nó lại (Giải tán hết!)
+                                // Lưu ý: Sửa lại chữ "Đăng nhập Hệ thống Đấu giá" cho khớp với Title bạn set ở hàm showLoginScreen()
+                                if (!"Sàn Đấu Giá VIP PRO - Client".equals(stage.getTitle())) {
+                                    stage.close();
+                                }
+                            }
+                        }
+                    });
                     break;
             }
         });
@@ -408,7 +473,6 @@ public class AuctionController implements Initializable {
         btnJoin.setOnAction(e -> {
             this.currentRoomId = roomId;
             auctionService.joinRoom(roomId);
-            // BỎ LỆNH switchScreen() Ở ĐÂY. Để Server xử lý xong mới chuyển cảnh.
         });
 
         card.getChildren().addAll(lblName, lblId, btnJoin);
@@ -417,6 +481,20 @@ public class AuctionController implements Initializable {
 
     public void updateConnectionStatus(String status) {
         Platform.runLater(() -> { if (lblStatus != null) lblStatus.setText("Trạng thái: " + status); });
+    }
+
+    public void openLoginScreen(){
+        showLoginScreen();
+        Stage stage = (Stage) paneLogin.getScene().getWindow();
+        stage.setMaximized(false);
+        stage.setWidth(800);
+        stage.setHeight(600);
+        stage.centerOnScreen();
+
+        txtUsername.clear();
+        txtPassword.clear();
+        lblStatus.setText("Đã đăng xuất thành công.");
+        lblStatus.setTextFill(Color.GREEN);
     }
 
     @FXML
@@ -436,15 +514,14 @@ public class AuctionController implements Initializable {
             e.printStackTrace();
         }
     }
+
     private void openAdminDashboard() {
         try {
-            // Tải file giao diện dành riêng cho Admin
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/admin-view.fxml"));
             Parent root = loader.load();
 
-            // Truyền connection cho AdminController để Admin gọi Server
-            AdminController adminCtrl = loader.getController();
-            adminCtrl.setAuctionService(this.auctionService);
+            this.adminController = loader.getController();
+            this.adminController.setAuctionService(this.auctionService);
 
             Stage adminStage = new Stage();
             adminStage.setTitle("Hệ Thống Quản Trị - Admin Dashboard");

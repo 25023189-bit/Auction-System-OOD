@@ -44,10 +44,8 @@ public class SellerController {
         String itemName = txtItemName.getText();
         String priceStr = txtStartingPrice.getText();
 
-        // 🌟 Lấy nội dung mô tả (kiểm tra null để chống crash)
         String itemDesc = (txtItemDescription != null) ? txtItemDescription.getText() : "";
 
-        // Kiểm tra xem đã điền đủ cả mô tả chưa
         if (itemName.trim().isEmpty() || priceStr.trim().isEmpty() || itemDesc.trim().isEmpty()) {
             lblStatus.setText("❌ Vui lòng điền đầy đủ thông tin (kể cả Mô tả)!");
             lblStatus.setTextFill(javafx.scene.paint.Color.RED);
@@ -69,7 +67,6 @@ public class SellerController {
             }
 
             if (auctionService != null) {
-                // 🌟 GỌI HÀM CREATE AUCTION VỚI 3 THAM SỐ (Thêm itemDesc)
                 auctionService.createAuction(itemName, itemDesc, startingPrice);
 
                 javafx.stage.Stage stage = (javafx.stage.Stage) txtItemName.getScene().getWindow();
