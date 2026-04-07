@@ -86,3 +86,10 @@
     -fx-padding: 8px 12px;         /* Khoảng cách từ viền vào icon và chữ */
     -fx-alignment: center-left;
 }
+
+/* HOẶC Dành cho hình nền (Ảnh thật) */
+.my-background {
+    -fx-background-image: url("background-login.png");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+}
