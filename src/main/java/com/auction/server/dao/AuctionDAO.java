@@ -159,4 +159,54 @@ public class AuctionDAO {
         }
         return null;
     }
+
+    /**
+     * Lấy TẤT CẢ các phòng đấu giá (Để Admin quản lý)
+     */
+    public java.util.List<AuctionRoom> getAllAuctions() {
+        java.util.List<AuctionRoom> list = new java.util.ArrayList<>();
+        String sql = "SELECT a.auction_id, i.name AS item_name, i.current_price, u.username AS seller_name, a.status " +
+                "FROM auctions a " +
+                "JOIN items i ON a.item_id = i.item_id " +
+                "JOIN users u ON a.seller_id = u.customer_id";
+
+        try (java.sql.Connection conn = DatabaseConnection.getConnection();
+             java.sql.PreparedStatement pstmt = conn.prepareStatement(sql);
+             java.sql.ResultSet rs = pstmt.executeQuery()) {
+
+            while (rs.next()) {
+                String roomId = rs.getString("auction_id");
+                String itemName = rs.getString("item_name");
+                double currentPrice = rs.getDouble("current_price");
+                String sellerName = rs.getString("seller_name");
+                String status = rs.getString("status");
+
+                AuctionRoom room = new AuctionRoom(roomId, itemName, currentPrice, sellerName);
+
+                room.setStatus(status);
+
+                list.add(room);
+            }
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    /**
+     * Admin ép hủy một phiên đấu giá
+     */
+    public boolean forceDeleteAuction(String roomId) {
+        String sql = "UPDATE auctions SET status = 'CANCELED_BY_ADMIN' WHERE auction_id = ?";
+        try (java.sql.Connection conn = DatabaseConnection.getConnection();
+             java.sql.PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, roomId);
+            return pstmt.executeUpdate() > 0;
+
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

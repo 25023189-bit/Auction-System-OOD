@@ -7,19 +7,19 @@ package com.auction.common.model;
 public class Seller extends User {
     private static final long serialVersionUID = 1L;
 
-    private int successfulAuctions; // Số phiên đấu giá thành công
-    private double ratingScore;     // Điểm đánh giá (1-5 sao)     // Số dư ví (để nhận tiền)
+    private int successfulAuctions;
+    private double ratingScore;
 
     public Seller(String id, String username, String password, double balance) {
         super(id, username, password, balance);
         this.successfulAuctions = 0;
-        this.ratingScore = 5.0; // Mới tạo uy tín tối đa 5 sao
+        this.ratingScore = 5.0;
     }
 
     public Seller(String id, String username,String role, String password, double balance) {
         super(id, username,role, password, balance);
         this.successfulAuctions = 0;
-        this.ratingScore = 5.0; // Mới tạo uy tín tối đa 5 sao
+        this.ratingScore = 5.0;
     }
 
     // Cập nhật điểm uy tín sau mỗi phiên đấu giá (Tính trung bình cộng)

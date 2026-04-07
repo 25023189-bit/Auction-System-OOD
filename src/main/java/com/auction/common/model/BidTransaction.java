@@ -2,6 +2,7 @@ package com.auction.common.model;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class BidTransaction implements Serializable {
     private int transactionId; // Tự động tăng trong DB
@@ -9,7 +10,7 @@ public class BidTransaction implements Serializable {
     private String bidderId;   // Mã người đặt (customer_id)
     private double bidAmount;  // Số tiền đặt
     private int bidRank;       // Thứ tự lượt đặt
-    private LocalDateTime bidTime; // Thời gian đặt
+    private String bidTime; // Thời gian đặt
 
     // Constructor rỗng
     public BidTransaction() {}
@@ -20,7 +21,8 @@ public class BidTransaction implements Serializable {
         this.bidderId = bidderId;
         this.bidAmount = bidAmount;
         this.bidRank = bidRank;
-        this.bidTime = LocalDateTime.now(); // Lấy giờ hiện tại
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+        this.bidTime = dtf.format(LocalDateTime.now());
     }
 
     public String getAuctionId() { return auctionId; }
@@ -35,6 +37,6 @@ public class BidTransaction implements Serializable {
     public int getBidRank() { return bidRank; }
     public void setBidRank(int bidRank) { this.bidRank = bidRank; }
 
-    public LocalDateTime getBidTime() { return bidTime; }
-    public void setBidTime(LocalDateTime bidTime) { this.bidTime = bidTime; }
+    public String getBidTime() { return bidTime; }
+    public void setBidTime(String bidTime) { this.bidTime = bidTime; }
 }

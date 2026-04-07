@@ -15,6 +15,7 @@ public class AuctionRoom implements Serializable {
     private String highestBidder;
     private String nameSeller;
     private String highestBidderId = "Chưa có ai";
+    private String status;
 
     /**
      * Constructor khởi tạo phòng mới.
@@ -54,13 +55,18 @@ public class AuctionRoom implements Serializable {
     public String getNameSeller() {
         return nameSeller;
     }
+    public String getStatus() {
+        return status;
+    }
 
     // --- SETTERS (Dùng khi cần cập nhật thông tin phòng) ---
     public void setRoomId(String roomId) { this.roomId = roomId; }
     public void setItemName(String itemName) { this.itemName = itemName; }
     public void setCurrentPrice(double currentPrice) { this.currentPrice = currentPrice; }
     public void setHighestBidder(String highestBidder) { this.highestBidder = highestBidder; }
-
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     @Override
     public String toString() {

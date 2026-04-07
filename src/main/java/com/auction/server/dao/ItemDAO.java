@@ -11,7 +11,6 @@ public class ItemDAO {
      * Lưu Item vào bảng 'products' và trả về product_id (INT) tự động sinh ra.
      * Trả về -1 nếu lỗi.
      */
-    // Trong ItemDAO.java
     public boolean saveItem(Item item) {
         // Khớp với bảng items: item_id, name, description, current_price
         String sql = "INSERT INTO items (item_id, name, description, current_price) VALUES (?, ?, ?, ?)";
