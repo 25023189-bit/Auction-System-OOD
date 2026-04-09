@@ -12,11 +12,10 @@ public class Main extends Application {
         Parent root = loader.load();
 
         primaryStage.setTitle("Sàn Đấu Giá VIP PRO - Client");
-        primaryStage.setScene(new Scene(root, 500, 400));
+        primaryStage.setScene(new Scene(root, 960, 600));
         // Thêm 2 dòng này để chặn thu nhỏ cửa sổ quá mức
-        primaryStage.setMinWidth(500);
-        primaryStage.setMinHeight(400);
-
+        //primaryStage.setMinWidth(1000);
+        //primaryStage.setMinHeight(600);
         primaryStage.show();
     }
 

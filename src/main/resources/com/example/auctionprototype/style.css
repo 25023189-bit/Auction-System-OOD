@@ -1,18 +1,9 @@
-/* Hình nền tổng thể (Gán cho AnchorPane/StackPane gốc nếu muốn nền màu xám nhạt) */
-.root {
-    -fx-background-color: #f4f7f6;
-}
-
-/* Khung thẻ đăng nhập chính */
-.login-card {
-    -fx-background-color: white;
-    -fx-background-radius: 15px; /* Bo góc khung */
-    -fx-padding: 40px; /* Khoảng cách từ viền vào trong */
-    /* Hiệu ứng đổ bóng: loại bóng, màu (có độ trong suốt), bán kính, độ lan, tọa độ x, y */
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 20, 0, 0, 10);
-}
-
 /* Tiêu đề */
+.login-card {
+    -fx-background-image: url("login-card.png");
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+}
 .login-header {
     -fx-font-family: "Segoe UI", sans-serif;
     -fx-font-size: 28px;
@@ -91,5 +82,28 @@
 .my-background {
     -fx-background-image: url("background-login.png");
     -fx-background-size: cover;
+    -fx-background-position: center center;
+}
+
+.link-button {
+    -fx-background-color: transparent; /* Xóa nền xám */
+    -fx-text-fill: #3498db;           /* Đổi màu chữ sang xanh dương */
+    -fx-font-size: 12px;
+    -fx-cursor: hand;                 /* Hiện hình bàn tay khi di chuột vào */
+}
+
+.link-button:hover {
+    -fx-text-fill: #2980b9;           /* Màu đậm hơn khi di chuột vào */
+    -fx-underline: true;              /* Hiện gạch chân khi hover */
+}
+
+.admin-header {
+    /* 1. Đường dẫn đến ảnh nền (đảm bảo file ảnh nằm cùng thư mục với file CSS) */
+    -fx-background-image: url("background-admin.jpg");
+
+    /* 2. Cho ảnh tự co giãn phủ kín toàn bộ thanh tiêu đề */
+    -fx-background-size: cover;
+
+    /* 3. Căn giữa ảnh để phần đẹp nhất luôn hiển thị */
     -fx-background-position: center center;
 }
