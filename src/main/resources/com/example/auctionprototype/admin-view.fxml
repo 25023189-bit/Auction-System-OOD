@@ -12,10 +12,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.controllers.AdminController">
+<BorderPane prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.controllers.AdminController">
 
     <top>
-        <HBox alignment="CENTER" style="-fx-background-color: #2c3e50;">
+        <HBox alignment="CENTER" styleClass="admin-header">
             <padding>
                 <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
             </padding>
@@ -36,7 +36,7 @@
                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                         </padding>
 
-                        <HBox spacing="15.0" alignment="CENTER_LEFT">
+                        <HBox alignment="CENTER_LEFT" spacing="15.0">
                             <Button mnemonicParsing="false" onAction="#loadUsers" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-cursor: hand;" text="Làm mới danh sách" />
                             <Button mnemonicParsing="false" onAction="#handleDeleteUser" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-cursor: hand;" text="Xóa tài khoản" />
                         </HBox>
@@ -61,7 +61,7 @@
                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                         </padding>
 
-                        <HBox spacing="15.0" alignment="CENTER_LEFT">
+                        <HBox alignment="CENTER_LEFT" spacing="15.0">
                             <Button mnemonicParsing="false" onAction="#loadAuctions" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-cursor: hand;" text="Làm mới danh sách" />
                             <Button mnemonicParsing="false" onAction="#handleForceDeleteAuction" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-cursor: hand;" text="Ép hủy phiên" />
                         </HBox>
@@ -82,7 +82,7 @@
                 </Tab>
                 <Tab text="Quản lý Giao dịch Người dùng">
                     <VBox spacing="10.0" VBox.vgrow="ALWAYS">
-                        <Label text="Lịch Sử Đặt Giá" style="-fx-font-weight: bold; -fx-font-size: 16px;" />
+                        <Label style="-fx-font-weight: bold; -fx-font-size: 16px;" text="Lịch Sử Đặt Giá" />
 
                         <TableView fx:id="tableBidHistory" VBox.vgrow="ALWAYS">
                             <columns>

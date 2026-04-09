@@ -30,6 +30,7 @@ public class ClientHandler implements Runnable {
     private ObjectOutputStream out;
     private String currentRoomId = "";
     private String userId = "";
+    private volatile boolean alive = true;
     public String getUserId() { return this.userId; }
 
     private AuthService authService = new AuthService();
@@ -48,6 +49,9 @@ public class ClientHandler implements Runnable {
 
     public String getCurrentRoomId() {
         return currentRoomId;
+    }
+    public boolean isAlive() {
+        return alive && socket != null && !socket.isClosed();
     }
 
     @Override
@@ -138,10 +142,13 @@ public class ClientHandler implements Runnable {
 
                         Message broadcastMsg = new Message("CHAT_MSG", senderId, realUsername, msg.data);
 
-                        // 🔥 SỬA LỖI CHAT: Thay vì broadcastAll, CHỈ gửi cho những Client ĐANG Ở CÙNG PHÒNG
                         if (AuctionServer.clients != null) {
                             for (ClientHandler client : AuctionServer.clients) {
-                                // Kiểm tra xem Client kia có ID phòng khớp với phòng hiện tại không
+                                if (client == null || !client.isAlive()) {
+                                    AuctionServer.removeClient(client);
+                                    continue;
+                                }
+
                                 if (this.currentRoomId != null && this.currentRoomId.equals(client.getCurrentRoomId())) {
                                     client.sendMessage(broadcastMsg);
                                 }
@@ -366,7 +373,9 @@ public class ClientHandler implements Runnable {
                 }
             }
         } catch (Exception e) {
-            // Xử lý ngắt kết nối
+            System.out.println("⚠️ Client mất kết nối: " + userId + " | " + e.getMessage());
+        } finally {
+            cleanupConnection();
         }
     }
 
@@ -377,12 +386,37 @@ public class ClientHandler implements Runnable {
      */
     public void sendMessage(Message response) {
         try {
+            if (!isAlive()) {
+                cleanupConnection();
+                return;
+            }
+
             out.writeObject(response);
             out.flush();
             out.reset();
         } catch (Exception e) {
-            System.out.println("Error sending response to Client!");
+            System.out.println("❌ Error sending response to Client: " + e.getMessage());
+            cleanupConnection();
         }
+    }
+
+    private void cleanupConnection() {
+        alive = false;
+        currentRoomId = "";
+
+        try {
+            if (in != null) in.close();
+        } catch (Exception ignored) {}
+
+        try {
+            if (out != null) out.close();
+        } catch (Exception ignored) {}
+
+        try {
+            if (socket != null && !socket.isClosed()) socket.close();
+        } catch (Exception ignored) {}
+
+        AuctionServer.removeClient(this);
     }
 
     private void handleBid(Message msg) {

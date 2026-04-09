@@ -14,29 +14,37 @@ public class AuthService {
     private UserDAO userDAO = new UserDAO();
 
     public Message login(String username, String password) {
-        // Kiểm tra trong SQL thay vì MockDB
-        User user = userDAO.login(username, password);
+        User user = null;
+
+        try {
+            user = userDAO.login(username, password);
+            System.out.println("DB login result = " + (user == null ? "null" : user.getUsername() + " | " + user.getRole()));
+        } catch (Exception e) {
+            System.out.println("⚠️ DB login lỗi, chuyển sang fallback: " + e.getMessage());
+        }
+
+        if (user == null) {
+            user = FallbackUserStore.login(username, password);
+            System.out.println("Fallback login result = " + (user == null ? "null" : user.getUsername() + " | " + user.getRole()));
+        }
 
         if (user != null) {
             return new Message("LOGIN_SUCCESS", "SERVER", user);
-        } else {
-            return new Message("LOGIN_FAIL", "SERVER", "Sai tài khoản hoặc mật khẩu!");
         }
+
+        return new Message("LOGIN_FAIL", "SERVER", "Sai tài khoản hoặc mật khẩu!");
     }
 
     public Message register(String username, String password, String role) {
-        System.out.println("Người dùng đã đăng ký:"+username);
-        String newId = "BD5" + (System.currentTimeMillis() % 100000);
-        String hashedPass = com.auction.server.utils.PasswordUtil.hashPassword(password);
+        System.out.println("Người dùng đã đăng ký: " + username);
 
-        // 🌟 BƯỚC LÀM SẠCH VÀ ÉP KIỂU TUYỆT ĐỐI (BULLETPROOF)
-        // Mặc định cứ đăng ký là cho thành BIDDER hết
         String finalRole = "BIDDER";
-
-        // Nếu chuỗi Client gửi lên có chứa chữ "SELLER" (bất kể viết hoa/thường hay có dấu cách)
         if (role != null && role.toUpperCase().contains("SELLER")) {
             finalRole = "SELLER";
         }
+
+        String newId = "BD5" + (System.currentTimeMillis() % 100000);
+        String hashedPass = com.auction.server.utils.PasswordUtil.hashPassword(password);
 
         User newUser;
         if (finalRole.equals("SELLER")) {
@@ -44,35 +52,46 @@ public class AuthService {
         } else {
             newUser = new com.auction.common.model.Bidder(newId, username, hashedPass, 0.0);
         }
-
-        // Ép chặt Role chuẩn vào đối tượng trước khi lưu
         newUser.setRole(finalRole);
 
-        // Gọi xuống DAO
-        if (userDAO.registerUser(newUser)) {
-            return new Message("REGISTER_SUCCESS", "SERVER", newId);
-        } else {
-            return new Message("REGISTER_FAIL", "SERVER", "Lỗi tạo tài khoản! Vui lòng xem Console.");
+        try {
+            if (userDAO.registerUser(newUser)) {
+                return new Message("REGISTER_SUCCESS", "SERVER", newId);
+            }
+        } catch (Exception e) {
+            System.out.println("⚠️ DB register lỗi, chuyển sang fallback: " + e.getMessage());
         }
+
+        boolean fallbackOk = FallbackUserStore.register(username, password, finalRole);
+        if (fallbackOk) {
+            return new Message("REGISTER_SUCCESS", "SERVER", newId);
+        }
+
+        return new Message("REGISTER_FAIL", "SERVER", "Tên tài khoản đã tồn tại!");
     }
 
     public Message resetPassword(String username, String newPassword) {
-        // 1. Kiểm tra mật khẩu mới có đủ mạnh không
         if (newPassword == null || newPassword.length() < 6 || newPassword.contains(" ")) {
             return new Message("RESET_FAIL", "SERVER", "Mật khẩu quá yếu (Cần >= 6 ký tự và không có khoảng trắng)!");
         }
 
-        // 2. Băm mật khẩu mới bằng BCrypt trước khi lưu
         String hashedNewPassword = PasswordUtil.hashPassword(newPassword);
 
-        // 3. Gọi UserDAO để cập nhật xuống Database
-        boolean isUpdated = userDAO.updatePassword(username, hashedNewPassword);
-
-        if (isUpdated) {
-            System.out.println("🔄 " + username + " vừa đổi mật khẩu mới trong Database.");
-            return new Message("RESET_SUCCESS", "SERVER", "Đổi mật khẩu thành công!");
-        } else {
-            return new Message("RESET_FAIL", "SERVER", "Lỗi: Không tìm thấy tên đăng nhập này trong hệ thống!");
+        try {
+            boolean isUpdated = userDAO.updatePassword(username, hashedNewPassword);
+            if (isUpdated) {
+                System.out.println("🔄 " + username + " vừa đổi mật khẩu mới trong Database.");
+                return new Message("RESET_SUCCESS", "SERVER", "Đổi mật khẩu thành công!");
+            }
+        } catch (Exception e) {
+            System.out.println("⚠️ DB reset password lỗi, chuyển sang fallback: " + e.getMessage());
         }
+
+        boolean fallbackUpdated = FallbackUserStore.resetPassword(username, newPassword);
+        if (fallbackUpdated) {
+            return new Message("RESET_SUCCESS", "SERVER", "Đổi mật khẩu thành công!");
+        }
+
+        return new Message("RESET_FAIL", "SERVER", "Lỗi: Không tìm thấy tên đăng nhập này trong hệ thống!");
     }
 }

@@ -6,112 +6,119 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Priority?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.auction.client.controllers.AuctionController"
-            prefWidth="1280.0" prefHeight="720.0">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@style.css"
+            xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.auction.client.controllers.AuctionController">
+    <children>
+        <BorderPane fx:id="paneAuctionRoom"
+                    AnchorPane.topAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                    style="-fx-background-color: #ECF0F1;">
 
-    <top>
-        <VBox spacing="10">
-            <padding>
-                <Insets top="15" right="20" bottom="10" left="20"/>
-            </padding>
+            <top>
+                <VBox spacing="10" style="-fx-padding: 14 18 10 18;">
+                    <HBox alignment="CENTER_LEFT" spacing="12">
+                        <Button text="⬅ Quay lại Sảnh" onAction="#handleBackToSelection"
+                                style="-fx-background-color: #95A5A6; -fx-text-fill: white;" />
 
-            <!-- Hàng 1: điều hướng + tiêu đề + đồng hồ + nút seller -->
-            <HBox spacing="15" alignment="CENTER_LEFT">
-                <Button text="⬅ Quay lại Sảnh" onAction="#handleBackToSelection"/>
+                        <Label fx:id="lblAuctionItemName"
+                               text="Tên vật phẩm"
+                               style="-fx-font-size: 20px; -fx-font-weight: bold;" />
 
-                <Label fx:id="lblAuctionItemName" text="Tên vật phẩm"/>
+                        <Region HBox.hgrow="ALWAYS" />
 
-                <Region HBox.hgrow="ALWAYS"/>
+                        <Label fx:id="lblParticipantCount"
+                               text="Người tham gia: 1"
+                               style="-fx-text-fill: #566573;" />
 
-                <Label fx:id="lblParticipantCount" text="Người tham gia: 1"/>
+                        <VBox spacing="2" alignment="CENTER_RIGHT">
+                            <Label text="Thời gian" style="-fx-text-fill: #566573;" />
+                            <Label fx:id="lblTimer"
+                                   text="⏱️ Đang tải..."
+                                   style="-fx-font-weight: bold;" />
+                        </VBox>
 
-                <VBox spacing="3" alignment="CENTER_RIGHT">
-                    <Label text="Thời gian còn lại:"/>
-                    <Label fx:id="lblTimer" text="⏱️ Đang kết nối..."/>
+                        <Button fx:id="btnCloseAuction"
+                                text="Kết thúc phiên"
+                                onAction="#handleCloseAuction"
+                                visible="false" managed="false"
+                                style="-fx-background-color: #E74C3C; -fx-text-fill: white; -fx-font-weight: bold;" />
+                    </HBox>
+
+                    <Separator />
+
+                    <Label fx:id="lblCurrentPrice"
+                           text="Giá hiện tại: 0 $"
+                           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #E67E22;" />
                 </VBox>
+            </top>
 
-                <Button fx:id="btnCloseAuction"
-                        text="Kết thúc phiên"
-                        onAction="#handleCloseAuction"
-                        visible="false"
-                        managed="false"/>
-            </HBox>
+            <center>
+                <HBox spacing="16" style="-fx-padding: 0 18 12 18;">
+                    <VBox spacing="12" prefWidth="360">
+                        <Label text="Vật phẩm" style="-fx-font-weight: bold;" />
 
-            <Separator/>
+                        <ImageView fx:id="imgAuctionItem"
+                                   fitWidth="340" fitHeight="240"
+                                   preserveRatio="true"
+                                   pickOnBounds="true">
+                            <image>
+                                <Image url="@auction.png" />
+                            </image>
+                        </ImageView>
 
-            <!-- Hàng 2: giá hiện tại -->
-            <HBox alignment="CENTER_LEFT">
-                <Label fx:id="lblCurrentPrice" text="Giá hiện tại: 0 $"/>
-            </HBox>
-        </VBox>
-    </top>
+                        <Label text="Mô tả" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="txtItemDescriptionDisplay"
+                                  editable="false"
+                                  wrapText="true"
+                                  prefRowCount="8"
+                                  text="Mô tả vật phẩm sẽ hiển thị tại đây..." />
+                    </VBox>
 
-    <center>
-        <HBox spacing="15">
-            <padding>
-                <Insets top="0" right="20" bottom="10" left="20"/>
-            </padding>
+                    <VBox spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="Diễn biến phiên đấu giá" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="txtChatLog"
+                                  editable="false"
+                                  wrapText="true"
+                                  VBox.vgrow="ALWAYS" />
+                    </VBox>
+                </HBox>
+            </center>
 
-            <!-- Cột trái: khu thông tin vật phẩm -->
-            <VBox spacing="12" prefWidth="420">
-                <Label text="Thông tin vật phẩm"/>
+            <bottom>
+                <VBox spacing="10" style="-fx-padding: 0 18 16 18;">
+                    <Separator />
 
-                <!-- Khung để trống cho ảnh sau này -->
-                <VBox prefHeight="260" minHeight="260" alignment="CENTER">
-                    <Label text="Khu vực hiển thị ảnh vật phẩm"/>
-                    <Label text="(để trống để sau này thêm ImageView / Gallery)"/>
+                    <HBox spacing="10">
+                        <TextField fx:id="txtBidAmount"
+                                   promptText="Nhập giá muốn đặt..."
+                                   HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnPlaceBid"
+                                text="Đặt Giá"
+                                onAction="#handleBid"
+                                style="-fx-background-color: #2ECC71; -fx-text-fill: white; -fx-font-weight: bold;" />
+                    </HBox>
+
+                    <HBox spacing="10">
+                        <TextField fx:id="txtChatInput"
+                                   promptText="Nhập tin nhắn chat..."
+                                   HBox.hgrow="ALWAYS" />
+                        <Button text="Gửi Chat"
+                                onAction="#handleSendChat"
+                                style="-fx-background-color: #3498DB; -fx-text-fill: white;" />
+                    </HBox>
                 </VBox>
+            </bottom>
 
-                <Label text="Mô tả"/>
-                <TextArea fx:id="txtItemDescriptionDisplay"
-                          editable="false"
-                          wrapText="true"
-                          prefRowCount="10"
-                          text="Mô tả vật phẩm sẽ hiển thị ở đây..."/>
-            </VBox>
-
-            <!-- Cột phải: chat / diễn biến -->
-            <VBox spacing="12" HBox.hgrow="ALWAYS">
-                <Label text="Diễn biến phiên đấu giá"/>
-                <TextArea fx:id="txtChatLog"
-                          editable="false"
-                          wrapText="true"
-                          VBox.vgrow="ALWAYS"/>
-            </VBox>
-        </HBox>
-    </center>
-
-    <bottom>
-        <VBox spacing="10">
-            <padding>
-                <Insets top="0" right="20" bottom="15" left="20"/>
-            </padding>
-
-            <Separator/>
-
-            <HBox spacing="10" alignment="CENTER_LEFT">
-                <TextField fx:id="txtBidAmount"
-                           promptText="Nhập giá muốn đặt..."
-                           HBox.hgrow="ALWAYS"/>
-                <Button fx:id="btnPlaceBid"
-                        text="Đặt Giá"
-                        onAction="#handleBid"/>
-            </HBox>
-
-            <HBox spacing="10" alignment="CENTER_LEFT">
-                <TextField fx:id="txtChatInput"
-                           promptText="Nhập tin nhắn chat..."
-                           HBox.hgrow="ALWAYS"/>
-                <Button text="Gửi Chat"
-                        onAction="#handleSendChat"/>
-            </HBox>
-        </VBox>
-    </bottom>
-</BorderPane>
+        </BorderPane>
+    </children>
+</AnchorPane>

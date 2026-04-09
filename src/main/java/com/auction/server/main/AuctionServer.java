@@ -3,6 +3,7 @@ package com.auction.server.main;
 // SỬA: Import đúng vị trí của ClientHandler và Message
 import com.auction.common.dto.Message;
 import com.auction.server.ClientHandler;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import java.net.*;
 import java.util.*;
@@ -23,7 +24,7 @@ public class AuctionServer {
     // hãy cân nhắc đổi sang CopyOnWriteArrayList hoặc dùng Collections.synchronizedList
     // để tránh lỗi ConcurrentModificationException khi có người vào/ra liên tục.
 
-    public static List<ClientHandler> clients = new ArrayList<>();
+    public static List<ClientHandler> clients = new CopyOnWriteArrayList<>();
 
     public static void main(String[] args) {
         int port = 8080; // Cổng mặc định của Server
@@ -37,14 +38,9 @@ public class AuctionServer {
                 // Lệnh accept() sẽ block (chặn) tại đây cho đến khi có 1 Client kết nối vào
                 Socket socket = serverSocket.accept();
 
-                // Khởi tạo "Nhân viên phục vụ" (ClientHandler) cho khách hàng này
                 ClientHandler handler = new ClientHandler(socket);
+                addClient(handler);
 
-                // Thêm vào danh sách quản lý chung
-                clients.add(handler);
-
-                // Tạo và chạy một Luồng (Thread) độc lập cho khách hàng này
-                // Điều này giúp Server có thể đón khách tiếp theo ngay lập tức mà không phải chờ khách này tương tác xong
                 Thread thread = new Thread(handler);
                 thread.start();
             }
@@ -65,7 +61,11 @@ public class AuctionServer {
     public static void broadcast(Message msg) {
         System.out.println("Broadcasting action: " + msg.getAction());
         for (ClientHandler client : clients) {
-            client.sendMessage(msg);
+            if (client != null && client.isAlive()) {
+                client.sendMessage(msg);
+            } else {
+                removeClient(client);
+            }
         }
     }
 
@@ -75,7 +75,11 @@ public class AuctionServer {
      */
     public static void broadcastAll(Message msg) {
         for (ClientHandler client : clients) {
-            client.sendMessage(msg);
+            if (client != null && client.isAlive()) {
+                client.sendMessage(msg);
+            } else {
+                removeClient(client);
+            }
         }
     }
 
@@ -88,9 +92,28 @@ public class AuctionServer {
      */
     public static void broadcastToRoom(String roomId, Message msg) {
         for (ClientHandler client : clients) {
+            if (client == null || !client.isAlive()) {
+                removeClient(client);
+                continue;
+            }
+
             if (roomId != null && roomId.equals(client.getCurrentRoomId())) {
                 client.sendMessage(msg);
             }
+        }
+    }
+
+    public static void addClient(ClientHandler client) {
+        if (client != null) {
+            clients.add(client);
+            System.out.println("✅ Client connected. Online: " + clients.size());
+        }
+    }
+
+    public static void removeClient(ClientHandler client) {
+        if (client != null) {
+            clients.remove(client);
+            System.out.println("❌ Client disconnected. Online: " + clients.size());
         }
     }
 }

@@ -1,5 +1,7 @@
 package com.auction.server.dao;
 
+import com.auction.common.model.Admin;
+import com.auction.server.service.FallbackUserStore;
 import com.auction.server.utils.DatabaseConnection;
 import com.auction.common.model.User;
 import com.auction.common.model.Bidder;
@@ -49,15 +51,15 @@ public class UserDAO {
                         double balance = rs.getDouble("balance");
 
                         User user;
-                        if ("SELLER".equalsIgnoreCase(role)) {
-                            user = new com.auction.common.model.Seller(id, username, hashedPass, balance);
+                        if ("ADMIN".equalsIgnoreCase(role)) {
+                            user = new com.auction.common.model.Admin(id, username, hashedPass, balance);
+                        } else if ("SELLER".equalsIgnoreCase(role)) {
+                            user = new com.auction.common.model.Seller(id, username, role, hashedPass, balance);
                         } else {
-                            user = new com.auction.common.model.Bidder(id, username, hashedPass, balance);
+                            user = new com.auction.common.model.Bidder(id, username, role, hashedPass, balance);
                         }
 
-                        // BẮT BUỘC ÉP QUYỀN ĐỂ CLIENT NHẬN DIỆN
                         user.setRole(role != null ? role.toUpperCase() : "BIDDER");
-
                         return user;
                     } else {
                         System.out.println("❌ Sai mật khẩu cho user: " + username);
@@ -103,28 +105,28 @@ public class UserDAO {
 
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
-                    // Lấy các thông tin cần thiết từ Database
                     String id = rs.getString("customer_id");
                     String username = rs.getString("username");
                     String hashedPass = rs.getString("password_hash");
                     String role = rs.getString("role");
                     double balance = rs.getDouble("balance");
 
-                    //Admin là duy nhất, không cần kiểm tra
-                    // Khởi tạo đúng Class dựa vào Role để không bị lỗi ép kiểu sau này
-                    if ("SELLER".equalsIgnoreCase(role)) {
-                        return new com.auction.common.model.Seller(id, username,role, hashedPass, balance);
+                    if ("ADMIN".equalsIgnoreCase(role)) {
+                        Admin admin = new Admin(id, username, hashedPass, balance);
+                        admin.setRole("ADMIN");
+                        return admin;
+                    } else if ("SELLER".equalsIgnoreCase(role)) {
+                        return new Seller(id, username, role, hashedPass, balance);
                     } else {
-                        return new com.auction.common.model.Bidder(id, username,role, hashedPass, balance);
+                        return new Bidder(id, username, role, hashedPass, balance);
                     }
                 }
             }
-        } catch (SQLException e) {
-            System.err.println("❌ Lỗi truy vấn UserDAO (getUserById): " + e.getMessage());
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("⚠️ DB getUserById lỗi, thử fallback: " + e.getMessage());
         }
 
-        return null;
+        return FallbackUserStore.getUserById(customerId);
     }
 
     /**

@@ -39,16 +39,6 @@ public class AuctionRoom implements Serializable {
         this.nameSeller = nameSeller;
     }
 
-    // Hàm cập nhật biến treo
-    public synchronized boolean placeNewBid(String userId, double bidAmount) {
-        if (bidAmount > this.currentPrice) {
-            this.currentPrice = bidAmount;
-            this.highestBidderId = userId; // Ghi nhớ ID người giá cao nhất
-            return true;
-        }
-        return false;
-    }
-
     // --- GETTERS (Dùng cho ClientHandler, MockDB, AuctionController) ---
     public String getRoomId() { return roomId; }
     public String getItemName() { return itemName; }
