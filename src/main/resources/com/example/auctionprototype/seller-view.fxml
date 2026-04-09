@@ -75,6 +75,21 @@
                     </children>
                 </VBox>
 
+                <VBox spacing="5" style="-fx-padding: 10 0 10 0;">
+                    <Label text="Thời gian bắt đầu:" style="-fx-font-weight: bold;"/>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <DatePicker fx:id="datePickerStart" promptText="Chọn ngày bắt đầu" prefWidth="150"/>
+                        <TextField fx:id="txtStartHour" promptText="Giờ (0-23)" prefWidth="80"/>
+                        <Label text=":" style="-fx-font-weight: bold;"/>
+                        <TextField fx:id="txtStartMinute" promptText="Phút (0-59)" prefWidth="80"/>
+                    </HBox>
+                </VBox>
+
+                <VBox spacing="5" style="-fx-padding: 0 0 10 0;">
+                    <Label text="Thời gian diễn ra (Phút):" style="-fx-font-weight: bold;"/>
+                    <TextField fx:id="txtDuration" promptText="Ví dụ: 30" prefWidth="150"/>
+                </VBox>
+
             </children>
             <padding>
                 <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />

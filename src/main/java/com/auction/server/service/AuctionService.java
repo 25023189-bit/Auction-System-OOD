@@ -2,6 +2,8 @@ package com.auction.server.service;
 
 import com.auction.common.dto.Message;
 
+import java.time.LocalDateTime;
+
 /**
  * Lớp AuctionService đóng vai trò là tầng Dịch vụ (Service Layer) của Client.
  * Nhiệm vụ chính: Cung cấp các phương thức giao tiếp rõ ràng cho UI Controller gọi.
@@ -72,7 +74,7 @@ public class AuctionService {
      * Gửi yêu cầu rời khỏi phòng đấu giá hiện tại.
      */
     public void leaveRoom() {
-        clientConnection.sendMessage(new Message("LEAVE_ROOM", currentUser, ""));
+        clientConnection.sendMessage(new Message("LEAVE_ROOM", this.currentUser, ""));
     }
 
     /**
@@ -108,9 +110,12 @@ public class AuctionService {
     /**
      * (Nghiệp vụ Seller) Gửi yêu cầu tạo phòng đấu giá mới.
      */
-    public void createAuction(String itemName, String description, double startingPrice) {
-        String data = itemName + "|" + description + "|" + startingPrice;
-        clientConnection.sendMessage(new Message("CREATE_AUCTION", currentUser, data));
+    public void createAuction(String itemName, String itemDesc, double startingPrice, LocalDateTime startTime, int duration) {
+        // 🔥 ĐÃ SỬA: Nối thêm startTime và duration vào chuỗi data phân cách bởi dấu "|"
+        String data = itemName + "|" + itemDesc + "|" + startingPrice + "|" + startTime.toString() + "|" + duration;
+
+        // Dùng this.currentUser để đảm bảo đúng người gửi
+        clientConnection.sendMessage(new Message("CREATE_AUCTION", this.currentUser, data));
     }
 
     /**

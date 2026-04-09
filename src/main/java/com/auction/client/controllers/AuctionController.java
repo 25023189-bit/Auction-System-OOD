@@ -16,6 +16,7 @@ import com.auction.common.dto.Message;
 import javafx.fxml.*;
 import javafx.scene.control.*;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -23,6 +24,13 @@ import java.util.ResourceBundle;
 import javafx.application.Platform;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.util.Duration;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
 public class AuctionController implements Initializable {
     // ==========================================================
@@ -36,16 +44,19 @@ public class AuctionController implements Initializable {
     @FXML private ComboBox<String> cbRegRole;
     @FXML private Label lblUsername, lblBalance, lblUsernameDisplay;
 
+    @FXML private Label lblCountdownTimer;
     @FXML private Button btnCloseAuction, btnCreateAuction;
 
     @FXML private FlowPane paneSelectAuction; // Container chứa các phòng (Cột giữa)
 
-    @FXML private Label lblAuctionItemName, lblCurrentPrice, lblParticipantCount;
+    @FXML private Label lblAuctionItemName, lblCurrentPrice, lblParticipantCount,lblTimer;
     @FXML private TextArea txtChatLog;
     @FXML private TextField txtBidAmount, txtChatInput;
 
     @FXML private BorderPane paneMainLobby;
     @FXML private VBox vboxCurrencyRates, vboxNews;
+    @FXML private Button btnPlaceBid;
+    @FXML private TextArea txtItemDescriptionDisplay;
 
     // ==========================================================
     // KHAI BÁO CÁC TẦNG DỊCH VỤ (SERVICES)
@@ -56,42 +67,9 @@ public class AuctionController implements Initializable {
     private String myUsername = "";
     private User currentUserProfile;
     private AdminController adminController;
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        clientConnection = new ClientConnection(this);
-        auctionService = new AuctionService(clientConnection);
-        clientConnection.connect();
-
-        if (cbRegRole != null) {
-            cbRegRole.getItems().addAll("BIDDER", "SELLER");
-            cbRegRole.setValue("BIDDER");
-        }
-    }
-
-    // ==========================================================
-    // CÁC HÀM ĐIỀU KHIỂN CHUYỂN MÀN HÌNH (GỌN GÀNG, KHÔNG LỖI)
-    // ==========================================================
-    private void switchScreen(javafx.scene.layout.Pane screenToShow) {
-        if (paneLogin != null) paneLogin.setVisible(false);
-        if (paneRegister != null) paneRegister.setVisible(false);
-        if (paneAuctionRoom != null) paneAuctionRoom.setVisible(false);
-        if (paneForgotPassword != null) paneForgotPassword.setVisible(false);
-        if (paneMainLobby != null) paneMainLobby.setVisible(false);
-
-        if (screenToShow != null) {
-            screenToShow.setVisible(true);
-            screenToShow.toFront();
-        }
-    }
-
-    private void showMainLobby() {
-        switchScreen(paneMainLobby);
-    }
-
-    private void showAuctionRoom() {
-        switchScreen(paneAuctionRoom);
-    }
+    private Timeline auctionTimer;
+    private AuctionRoom currentRoom;
+    private boolean isNetworkConnected = false;
 
     @FXML private void showRegisterScreen() { switchScreen(paneRegister); lblRegStatus.setText(""); }
     @FXML private void showLoginScreen() { switchScreen(paneLogin); }
@@ -112,8 +90,37 @@ public class AuctionController implements Initializable {
     }
 
     @FXML
-    private void handleLogout() {
+    public void handleLogout() {
+        // Có thể thêm log báo hiệu
+        System.out.println("Đang thực hiện đăng xuất...");
+
+        // Gọi lại hàm openLoginScreen an toàn mà chúng ta vừa sửa ở bước trước
         openLoginScreen();
+    }
+
+    @FXML
+    public void openLoginScreen() {
+        try {
+            resetSessionState();
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/login-view.fxml"));
+            loader.setControllerFactory(clazz -> this);
+            Parent root = loader.load();
+
+            Stage stage = getSafeWindow();
+            stage.setScene(new Scene(root));
+            configureStage(stage, "Sàn Đấu Giá", false, 800, 600);
+
+            if (txtUsername != null) txtUsername.clear();
+            if (txtPassword != null) txtPassword.clear();
+            if (lblStatus != null) {
+                lblStatus.setText("✅ Đã đăng xuất thành công.");
+                lblStatus.setTextFill(Color.GREEN);
+            }
+        } catch (Exception e) {
+            System.err.println("❌ Lỗi khi tải lại màn hình Đăng nhập: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     //Sau này triển khai thành phương thức trừu tượng handleSubmitRegister và handleSubmitForgotPassword
@@ -148,6 +155,21 @@ public class AuctionController implements Initializable {
     @FXML
     private void handleBid() {
         try {
+            if (currentRoom != null) {
+                java.time.LocalDateTime now = java.time.LocalDateTime.now();
+
+                if (currentRoom.getStartTime() != null && now.isBefore(currentRoom.getStartTime())) {
+                    txtChatLog.appendText("⚠️ Phiên đấu giá chưa bắt đầu, chưa thể đặt giá!\n");
+                    return;
+                }
+
+                if (currentRoom.getActualEndTime() != null && !now.isBefore(currentRoom.getActualEndTime())) {
+                    txtChatLog.appendText("⚠️ Phiên đấu giá đã hết giờ, không thể đặt giá!\n");
+                    disableBidUI("Phiên đấu giá đã hết giờ.");
+                    return;
+                }
+            }
+
             double amount = Double.parseDouble(txtBidAmount.getText());
             auctionService.placeBid(amount);
             txtBidAmount.clear();
@@ -166,9 +188,27 @@ public class AuctionController implements Initializable {
     }
 
     @FXML
-    private void handleBackToSelection() {
+    public void handleBackToSelection() {
+        // Tắt đồng hồ
+        if (auctionTimer != null) {
+            auctionTimer.stop();
+        }
+
+        // Gửi lệnh rời phòng cho Server
         auctionService.leaveRoom();
-        showMainLobby(); // Quay lại sảnh an toàn
+
+        //Dọn dẹp data cũ
+        this.currentRoom = null;
+        this.currentRoomId = null;
+
+        if (btnCloseAuction != null) {
+            btnCloseAuction.setVisible(false);
+            btnCloseAuction.setManaged(false);
+        }
+
+        showMainLobby();
+
+        auctionService.getRooms();
     }
 
     @FXML
@@ -184,6 +224,136 @@ public class AuctionController implements Initializable {
         }
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        // 1. 🔥 BỌC THÉP: CHỈ KẾT NỐI MẠNG ĐÚNG 1 LẦN DUY NHẤT
+        if (!isNetworkConnected) {
+            clientConnection = new ClientConnection(this);
+            auctionService = new AuctionService(clientConnection);
+            clientConnection.connect();
+
+            isNetworkConnected = true; // Đánh dấu là đã kết nối
+            System.out.println("✅ Đã khởi tạo mạng thành công (Chỉ chạy 1 lần)");
+        } else {
+            System.out.println("⚠️ Bỏ qua kết nối mạng (Sử dụng lại kết nối cũ)");
+        }
+
+        // 2. Nạp dữ liệu cho giao diện (Phần này được phép chạy nhiều lần)
+        if (cbRegRole != null && cbRegRole.getItems().isEmpty()) {
+            cbRegRole.getItems().addAll("BIDDER", "SELLER");
+            cbRegRole.setValue("BIDDER");
+        }
+    }
+
+    // ==========================================================
+    // CÁC HÀM ĐIỀU KHIỂN CHUYỂN MÀN HÌNH (GỌN GÀNG, KHÔNG LỖI)
+    // ==========================================================
+    private void switchScreen(javafx.scene.layout.Pane screenToShow) {
+        if (paneLogin != null) paneLogin.setVisible(false);
+        if (paneRegister != null) paneRegister.setVisible(false);
+        if (paneAuctionRoom != null) paneAuctionRoom.setVisible(false);
+        if (paneForgotPassword != null) paneForgotPassword.setVisible(false);
+        if (paneMainLobby != null) paneMainLobby.setVisible(false);
+
+        if (screenToShow != null) {
+            screenToShow.setVisible(true);
+            screenToShow.toFront();
+        }
+    }
+
+    private void showMainLobby() {
+        try {
+            if (auctionTimer != null) {
+                auctionTimer.stop();
+            }
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/mainLobby-view.fxml"));
+            // (Nhớ kiểm tra lại đường dẫn /views/ hoặc bỏ đi nếu file của bạn ở ngoài nhé)
+
+            loader.setControllerFactory(clazz -> this);
+            Parent root = loader.load();
+
+            // Ép trạng thái mặc định an toàn trước khi đổ dữ liệu role mới
+            if (btnCreateAuction != null) {
+                btnCreateAuction.setVisible(false);
+                btnCreateAuction.setManaged(false);
+            }
+
+            if (btnCloseAuction != null) {
+                btnCloseAuction.setVisible(false);
+                btnCloseAuction.setManaged(false);
+            }
+
+            // 1. Dùng hàm lấy cửa sổ
+            Stage stage = getSafeWindow();
+
+            // 2. 🛡️ BACKUP BẮT BUỘC: Nếu vẫn null thì quét toàn bộ cửa sổ đang mở trên màn hình
+            if (stage == null) {
+                stage = (Stage) javafx.stage.Window.getWindows().stream()
+                        .filter(javafx.stage.Window::isShowing)
+                        .findFirst()
+                        .orElse(null);
+            }
+
+            // 3. Đè giao diện Sảnh chính lên
+            if (stage != null) {
+                stage.setScene(new Scene(root));
+                configureStage(stage, "Sảnh Chính - Hệ Thống Đấu Giá", true, 0, 0);
+            } else {
+                System.out.println("❌ LỖI TỘT ĐỘ: Không tìm thấy bất kỳ cửa sổ nào đang mở!");
+            }
+
+        } catch (Exception e) {
+            System.err.println("❌ Lỗi khi tải Sảnh chính: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    private void showAuctionRoom() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/auction-view.fxml"));
+            loader.setControllerFactory(clazz -> this);
+            Parent root = loader.load();
+
+            Stage stage = getSafeWindow();
+
+            if (stage == null) {
+                stage = (Stage) javafx.stage.Window.getWindows().stream()
+                        .filter(javafx.stage.Window::isShowing)
+                        .findFirst()
+                        .orElse(null);
+            }
+
+            if (stage != null) {
+                stage.setScene(new Scene(root));
+                configureStage(stage, "Sàn Đấu Giá - Trong phòng", true, 0, 0);
+            } else {
+                System.out.println("❌ LỖI: Không tìm thấy cửa sổ để hiển thị phòng đấu giá!");
+            }
+
+            if (this.currentRoom != null) {
+                if (txtChatLog != null) {
+                    txtChatLog.clear();
+                }
+
+                if (txtItemDescriptionDisplay != null) {
+                    String description = this.currentRoom.getItemDescription();
+                    txtItemDescriptionDisplay.setText(
+                            description != null && !description.isBlank()
+                                    ? description
+                                    : "Chưa có mô tả cho vật phẩm này."
+                    );
+                }
+
+                updateAuctionTimeUI(this.currentRoom);
+            }
+
+        } catch (IOException e) {
+            System.err.println("❌ Lỗi khi tải Phòng đấu giá: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
     // ==========================================================
     // NHẬN VÀ XỬ LÝ PHẢN HỒI TỪ SERVER (ROUTER)
     // ==========================================================
@@ -192,42 +362,59 @@ public class AuctionController implements Initializable {
             switch (msg.getAction()) {
                 case "LOGIN_SUCCESS":
                     User loggedInUser = (User) msg.data;
-                    System.out.println("Role nhận được từ Server: " + loggedInUser.getRole()); // In ra để kiểm tra
+                    System.out.println("Role nhận được từ Server: " + loggedInUser.getRole());
+
+                    // 1. Cập nhật dữ liệu ngầm (Không đụng chạm UI nên để thoải mái ở ngoài)
                     this.currentUserProfile = loggedInUser;
                     String userId = loggedInUser.getId();
                     ClientConnection.currentUser = userId;
                     auctionService.setCurrentUser(userId);
                     this.myUsername = loggedInUser.getUsername();
 
-                    if (lblUsername != null) lblUsername.setText("Xin chào: " + loggedInUser.getUsername());
-                    if (lblBalance != null) lblBalance.setText("Số dư ví: " + String.format("%,.0f $", loggedInUser.getBalance()));
-
-                    lblStatus.setText("✅ Đăng nhập thành công!");
-                    lblStatus.setTextFill(Color.GREEN);
-
-                    if ("ADMIN".equalsIgnoreCase(loggedInUser.getRole())) {
-                        // NẾU LÀ ADMIN -> MỞ CỬA SỔ QUẢN TRỊ
-                        openAdminDashboard();
-
-                        // Ẩn cửa sổ đăng nhập hiện tại đi (Tùy chọn)
-                        paneLogin.getScene().getWindow().hide();
-                    } else {
-                        // NẾU LÀ USER BÌNH THƯỜNG -> VÀO SẢNH NHƯ CŨ
-                        if (lblUsername != null) lblUsername.setText("Xin chào: " + loggedInUser.getUsername());
-                        if (lblBalance != null) lblBalance.setText("Số dư ví: " + String.format("%,.0f $", loggedInUser.getBalance()));
-
-                        boolean isSeller = (loggedInUser instanceof Seller);
-                        if (btnCreateAuction != null) {
-                            btnCreateAuction.setVisible(isSeller);
-                            btnCreateAuction.setManaged(isSeller);
+                    // 2. MỌI THAO TÁC CẬP NHẬT GIAO DIỆN BẮT BUỘC PHẢI BỌC TRONG Platform.runLater
+                    Platform.runLater(() -> {
+                        // Báo thành công trên màn hình Login
+                        if (lblStatus != null) {
+                            lblStatus.setText("✅ Đăng nhập thành công!");
+                            lblStatus.setTextFill(Color.GREEN);
                         }
 
-                        Stage stage = (Stage) paneLogin.getScene().getWindow();
-                        stage.setMaximized(true);
+                        // 3. PHÂN LUỒNG ROLE
+                        if ("ADMIN".equalsIgnoreCase(loggedInUser.getRole())) {
+                            // NẾU LÀ ADMIN -> MỞ CỬA SỔ QUẢN TRỊ ĐỘC LẬP
+                            openAdminDashboard();
 
-                        clientConnection.sendMessage(new Message("GET_ROOMS", userId, ""));
-                        showMainLobby();
-                    }
+                            // Ẩn cửa sổ đăng nhập hiện tại đi
+                            if (paneLogin != null && paneLogin.getScene() != null) {
+                                paneLogin.getScene().getWindow().hide();
+                            }
+
+                        } else {
+                            // NẾU LÀ USER BÌNH THƯỜNG -> VÀO SẢNH
+                            // ⚠️ CHÚ Ý: Phải gọi showMainLobby() TRƯỚC để JavaFX nạp các biến @FXML của sảnh chính
+                            showMainLobby();
+
+                            // SAU KHI nạp xong sảnh, mới bắt đầu đổ chữ vào các Label
+                            if (lblUsername != null) lblUsername.setText("Xin chào: " + loggedInUser.getUsername());
+                            if (lblBalance != null) lblBalance.setText("Số dư ví: " + String.format("%,.0f $", loggedInUser.getBalance()));
+
+                            // Phân quyền hiện nút "Tạo phiên đấu giá" cho Seller
+                            boolean isSeller = "SELLER".equalsIgnoreCase(loggedInUser.getRole());
+
+                            if (btnCreateAuction != null) {
+                                btnCreateAuction.setVisible(false);
+                                btnCreateAuction.setManaged(false);
+
+                                if (isSeller) {
+                                    btnCreateAuction.setVisible(true);
+                                    btnCreateAuction.setManaged(true);
+                                }
+                            }
+
+                            // Gửi yêu cầu lấy danh sách phòng chờ lên Server
+                            clientConnection.sendMessage(new Message("GET_ROOMS", userId, ""));
+                        }
+                    });
                     break;
 
                 case "LOGIN_FAIL":
@@ -269,10 +456,22 @@ public class AuctionController implements Initializable {
 
                 case "ROOM_JOINED":
                     AuctionRoom room = (AuctionRoom) msg.data;
+                    this.currentRoom = room;
                     this.currentRoomId = room.getRoomId();
 
-                    lblAuctionItemName.setText(room.getItemName());
-                    lblCurrentPrice.setText("Giá hiện tại: " + String.format("%,.0f $", room.getCurrentPrice()));
+                    showAuctionRoom();
+
+                    if (lblAuctionItemName != null) lblAuctionItemName.setText(room.getItemName());
+                    if (lblCurrentPrice != null) lblCurrentPrice.setText("Giá hiện tại: " + String.format("%,.0f $", room.getCurrentPrice()));
+
+                    if (txtItemDescriptionDisplay != null) {
+                        String description = room.getItemDescription();
+                        txtItemDescriptionDisplay.setText(
+                                description != null && !description.isBlank()
+                                        ? description
+                                        : "Chưa có mô tả cho vật phẩm này."
+                        );
+                    }
 
                     boolean isOwner = room.getNameSeller() != null && room.getNameSeller().trim().equalsIgnoreCase(myUsername.trim());
                     if (btnCloseAuction != null) {
@@ -280,8 +479,7 @@ public class AuctionController implements Initializable {
                         btnCloseAuction.setManaged(isOwner);
                     }
 
-                    // CHỈ CHUYỂN SANG MÀN HÌNH ĐẤU GIÁ KHI ĐÃ CÓ DATA TỪ SERVER
-                    showAuctionRoom();
+                    updateAuctionTimeUI(room);
                     break;
 
                 case "CHAT_MSG":
@@ -348,7 +546,22 @@ public class AuctionController implements Initializable {
                     break;
 
                 case "BID_FAIL":
-                    txtChatLog.appendText("❌ " + msg.data + "\n");
+                    if (txtChatLog != null) {
+                        txtChatLog.appendText("❌ " + msg.data + "\n");
+                    }
+                    if (lblStatus != null && msg.data != null) {
+                        lblStatus.setText("❌ " + msg.data);
+                        lblStatus.setTextFill(Color.RED);
+                    }
+                    break;
+
+                case "ROOM_FAIL":
+                    Alert roomFailAlert = new Alert(Alert.AlertType.WARNING, String.valueOf(msg.data));
+                    roomFailAlert.setHeaderText("Không thể vào phòng");
+                    roomFailAlert.showAndWait();
+                    showMainLobby();
+                    this.currentRoom = null;
+                    this.currentRoomId = null;
                     break;
 
                 case "BID_SUCCESS":
@@ -483,20 +696,6 @@ public class AuctionController implements Initializable {
         Platform.runLater(() -> { if (lblStatus != null) lblStatus.setText("Trạng thái: " + status); });
     }
 
-    public void openLoginScreen(){
-        showLoginScreen();
-        Stage stage = (Stage) paneLogin.getScene().getWindow();
-        stage.setMaximized(false);
-        stage.setWidth(800);
-        stage.setHeight(600);
-        stage.centerOnScreen();
-
-        txtUsername.clear();
-        txtPassword.clear();
-        lblStatus.setText("Đã đăng xuất thành công.");
-        lblStatus.setTextFill(Color.GREEN);
-    }
-
     @FXML
     private void openSellerDashboard() {
         try {
@@ -517,6 +716,7 @@ public class AuctionController implements Initializable {
 
     private void openAdminDashboard() {
         try {
+            /*Nếu chuyển đường dẫn admin-view thì thêm đường link này /com/example/auctionprototype/*/
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/admin-view.fxml"));
             Parent root = loader.load();
 
@@ -530,6 +730,196 @@ public class AuctionController implements Initializable {
             adminStage.show();
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    private Stage getSafeWindow() {
+        if (paneLogin != null && paneLogin.getScene() != null) return (Stage) paneLogin.getScene().getWindow();
+        if (paneMainLobby != null && paneMainLobby.getScene() != null) return (Stage) paneMainLobby.getScene().getWindow();
+        if (paneAuctionRoom != null && paneAuctionRoom.getScene() != null) return (Stage) paneAuctionRoom.getScene().getWindow();
+        return (Stage) javafx.stage.Window.getWindows().get(0);
+    }
+
+    // Hàm đếm ngược
+    private void startCountdown(java.time.LocalDateTime endTime) {
+        if (auctionTimer != null) auctionTimer.stop();
+
+        auctionTimer = new javafx.animation.Timeline(
+                new javafx.animation.KeyFrame(javafx.util.Duration.seconds(1), e -> {
+                    long secondsLeft = java.time.temporal.ChronoUnit.SECONDS.between(java.time.LocalDateTime.now(), endTime);
+
+                    if (secondsLeft <= 0) {
+                        lblTimer.setText("⏱️ Đã kết thúc!");
+                        lblTimer.setTextFill(javafx.scene.paint.Color.RED);
+
+                        if (btnPlaceBid != null) {
+                            btnPlaceBid.setDisable(true);
+                        }
+
+                        auctionTimer.stop();
+                    } else {
+                        long hh = secondsLeft / 3600;
+                        long mm = (secondsLeft % 3600) / 60;
+                        long ss = secondsLeft % 60;
+                        lblTimer.setText(String.format("⏱️ %02d:%02d:%02d", hh, mm, ss));
+                        lblTimer.setTextFill(javafx.scene.paint.Color.DARKGREEN);
+
+                        if (btnPlaceBid != null) {
+                            btnPlaceBid.setDisable(false);
+                        }
+                    }
+                })
+        );
+
+        auctionTimer.setCycleCount(javafx.animation.Animation.INDEFINITE);
+        auctionTimer.play();
+    }
+
+    private void updateAuctionTimeUI(AuctionRoom room) {
+        if (room == null || lblTimer == null) return;
+
+        java.time.LocalDateTime now = java.time.LocalDateTime.now();
+        java.time.LocalDateTime startTime = room.getStartTime();
+        java.time.LocalDateTime endTime = room.getActualEndTime();
+
+        if (auctionTimer != null) {
+            auctionTimer.stop();
+        }
+
+        // Chưa có thời gian rõ ràng
+        if (startTime == null || endTime == null) {
+            lblTimer.setText("Vô thời hạn");
+            lblTimer.setTextFill(javafx.scene.paint.Color.ORANGE);
+            if (btnPlaceBid != null) btnPlaceBid.setDisable(false);
+            return;
+        }
+
+        // Chưa bắt đầu
+        if (now.isBefore(startTime)) {
+            long secondsToStart = java.time.temporal.ChronoUnit.SECONDS.between(now, startTime);
+
+            if (btnPlaceBid != null) btnPlaceBid.setDisable(true);
+
+            auctionTimer = new javafx.animation.Timeline(
+                    new javafx.animation.KeyFrame(javafx.util.Duration.seconds(1), e -> {
+                        long left = java.time.temporal.ChronoUnit.SECONDS.between(java.time.LocalDateTime.now(), startTime);
+
+                        if (left <= 0) {
+                            updateAuctionTimeUI(room);
+                        } else {
+                            long hh = left / 3600;
+                            long mm = (left % 3600) / 60;
+                            long ss = left % 60;
+                            lblTimer.setText(String.format("🕒 Chưa bắt đầu: %02d:%02d:%02d", hh, mm, ss));
+                            lblTimer.setTextFill(javafx.scene.paint.Color.BLUE);
+                        }
+                    })
+            );
+            auctionTimer.setCycleCount(javafx.animation.Animation.INDEFINITE);
+            auctionTimer.play();
+            return;
+        }
+
+        // Đã hết giờ
+        if (!now.isBefore(endTime)) {
+            lblTimer.setText("⏱️ Đã kết thúc!");
+            lblTimer.setTextFill(javafx.scene.paint.Color.RED);
+            if (btnPlaceBid != null) btnPlaceBid.setDisable(true);
+            return;
+        }
+
+        // Đang diễn ra
+        startCountdown(endTime);
+    }
+
+    private void disableBidUI(String reason) {
+        if (btnPlaceBid != null) btnPlaceBid.setDisable(true);
+        if (txtBidAmount != null) txtBidAmount.setDisable(true);
+
+        if (txtChatLog != null && reason != null && !reason.isBlank()) {
+            txtChatLog.appendText("⚠️ " + reason + "\n");
+        }
+    }
+
+    private void resetSessionState() {
+        // Reset dữ liệu nghiệp vụ
+        this.currentRoomId = null;
+        this.currentRoom = null;
+        this.currentUserProfile = null;
+        this.myUsername = "";
+        this.adminController = null;
+
+        ClientConnection.currentUser = null;
+        if (this.auctionService != null) {
+            this.auctionService.setCurrentUser(null);
+        }
+
+        // Dừng timer nếu còn chạy
+        if (auctionTimer != null) {
+            auctionTimer.stop();
+            auctionTimer = null;
+        }
+
+        // Reset UI nếu control đã được inject
+        if (btnCreateAuction != null) {
+            btnCreateAuction.setVisible(false);
+            btnCreateAuction.setManaged(false);
+        }
+
+        if (btnCloseAuction != null) {
+            btnCloseAuction.setVisible(false);
+            btnCloseAuction.setManaged(false);
+        }
+
+        if (btnPlaceBid != null) {
+            btnPlaceBid.setDisable(false);
+        }
+
+        if (txtBidAmount != null) {
+            txtBidAmount.clear();
+            txtBidAmount.setDisable(false);
+        }
+
+        if (txtChatInput != null) {
+            txtChatInput.clear();
+            txtChatInput.setDisable(false);
+        }
+
+        if (txtChatLog != null) {
+            txtChatLog.clear();
+        }
+
+        if (lblUsername != null) {
+            lblUsername.setText("");
+        }
+
+        if (lblBalance != null) {
+            lblBalance.setText("");
+        }
+
+        if (lblAuctionItemName != null) {
+            lblAuctionItemName.setText("");
+        }
+
+        if (lblCurrentPrice != null) {
+            lblCurrentPrice.setText("");
+        }
+
+        if (lblTimer != null) {
+            lblTimer.setText("");
+        }
+    }
+
+    private void configureStage(Stage stage, String title, boolean maximized, double width, double height) {
+        if (stage == null) return;
+
+        stage.setTitle(title);
+        stage.setMaximized(maximized);
+
+        if (!maximized) {
+            stage.setWidth(width);
+            stage.setHeight(height);
+            stage.centerOnScreen();
         }
     }
 }

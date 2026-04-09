@@ -1,6 +1,7 @@
 package com.auction.common.model;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * Model đại diện cho một Phòng đấu giá.
@@ -16,6 +17,10 @@ public class AuctionRoom implements Serializable {
     private String nameSeller;
     private String highestBidderId = "Chưa có ai";
     private String status;
+    private LocalDateTime startTime;      // Thời gian bắt đầu dự kiến
+    private int durationMinutes;          // Thời gian diễn ra (phút)
+    private LocalDateTime actualEndTime;// Thời gian kết thúc thực tế (để dành tính năng sau này)
+    private String itemDescription;
 
     /**
      * Constructor khởi tạo phòng mới.
@@ -58,6 +63,12 @@ public class AuctionRoom implements Serializable {
     public String getStatus() {
         return status;
     }
+    public int getDurationMinutes() { return durationMinutes; }
+    public LocalDateTime getStartTime() { return startTime; }
+    public LocalDateTime getActualEndTime() { return actualEndTime; }
+    public String getItemDescription() {
+        return itemDescription;
+    }
 
     // --- SETTERS (Dùng khi cần cập nhật thông tin phòng) ---
     public void setRoomId(String roomId) { this.roomId = roomId; }
@@ -66,6 +77,12 @@ public class AuctionRoom implements Serializable {
     public void setHighestBidder(String highestBidder) { this.highestBidder = highestBidder; }
     public void setStatus(String status) {
         this.status = status;
+    }
+    public void setStartTime(LocalDateTime startTime) { this.startTime = startTime; }
+    public void setDurationMinutes(int durationMinutes) { this.durationMinutes = durationMinutes; }
+    public void setActualEndTime(LocalDateTime actualEndTime) { this.actualEndTime = actualEndTime; }
+    public void setItemDescription(String itemDescription) {
+        this.itemDescription = itemDescription;
     }
 
     @Override

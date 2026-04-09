@@ -3,10 +3,15 @@ package com.auction.client.controllers;
 import com.auction.server.service.AuctionService;
 import com.auction.common.model.Seller;
 import javafx.fxml.FXML;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextArea;
 import javafx.event.ActionEvent;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public class SellerController {
 
@@ -18,6 +23,11 @@ public class SellerController {
     @FXML private Label lblBalance;
     @FXML private Label lblReputation;
     @FXML private TextField txtRoomIdToClose;
+
+    @FXML private DatePicker datePickerStart;
+    @FXML private TextField txtStartHour;
+    @FXML private TextField txtStartMinute;
+    @FXML private TextField txtDuration;
 
     private AuctionService auctionService;
     private Seller currentSeller;
@@ -41,9 +51,15 @@ public class SellerController {
             return;
         }
 
+        LocalDate date = datePickerStart.getValue();
+        if (date == null) {
+            lblStatus.setText("❌ Vui lòng chọn ngày bắt đầu!");
+            lblStatus.setTextFill(javafx.scene.paint.Color.RED);
+            return;
+        }
+
         String itemName = txtItemName.getText();
         String priceStr = txtStartingPrice.getText();
-
         String itemDesc = (txtItemDescription != null) ? txtItemDescription.getText() : "";
 
         if (itemName.trim().isEmpty() || priceStr.trim().isEmpty() || itemDesc.trim().isEmpty()) {
@@ -60,21 +76,40 @@ public class SellerController {
                 return;
             }
 
+            int hour = Integer.parseInt(txtStartHour.getText().trim());
+            int minute = Integer.parseInt(txtStartMinute.getText().trim());
+            int duration = Integer.parseInt(txtDuration.getText().trim());
+
+            if (duration <= 0) {
+                lblStatus.setText("❌ Thời lượng phải lớn hơn 0 phút!");
+                lblStatus.setTextFill(javafx.scene.paint.Color.RED);
+                return;
+            }
+
+            LocalDateTime startTime = LocalDateTime.of(date, LocalTime.of(hour, minute));
+
+            if (startTime.isBefore(LocalDateTime.now())) {
+                lblStatus.setText("❌ Thời gian bắt đầu phải ở hiện tại hoặc tương lai!");
+                lblStatus.setTextFill(javafx.scene.paint.Color.RED);
+                return;
+            }
+
             if (currentSeller != null && !currentSeller.isTrustworthy()) {
                 lblStatus.setText("❌ CẢNH BÁO: Uy tín quá thấp!");
                 lblStatus.setTextFill(javafx.scene.paint.Color.RED);
                 return;
             }
 
-            if (auctionService != null) {
-                auctionService.createAuction(itemName, itemDesc, startingPrice);
+            auctionService.createAuction(itemName, itemDesc, startingPrice, startTime, duration);
 
-                javafx.stage.Stage stage = (javafx.stage.Stage) txtItemName.getScene().getWindow();
-                stage.close();
-            }
+            javafx.stage.Stage stage = (javafx.stage.Stage) txtItemName.getScene().getWindow();
+            stage.close();
 
         } catch (NumberFormatException e) {
-            lblStatus.setText("❌ Giá khởi điểm phải là số!");
+            lblStatus.setText("❌ Giá, Giờ, Phút và Thời lượng phải là số hợp lệ!");
+            lblStatus.setTextFill(javafx.scene.paint.Color.RED);
+        } catch (java.time.DateTimeException e) {
+            lblStatus.setText("❌ Thời gian không hợp lệ (Giờ: 0-23, Phút: 0-59)!");
             lblStatus.setTextFill(javafx.scene.paint.Color.RED);
         }
     }
