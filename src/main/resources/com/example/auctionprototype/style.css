@@ -1,10 +1,13 @@
-/* Tiêu đề */
 .login-card {
     -fx-background-image: url("login-card.png");
+    -fx-background-size: cover;
+    /* Phải có 2 dòng dưới đây để bo tròn */
     -fx-background-radius: 20px;
     -fx-border-radius: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 10);
 }
 .login-header {
+-fx-background-radius: 20 20 0 0;
     -fx-font-family: "Segoe UI", sans-serif;
     -fx-font-size: 28px;
     -fx-font-weight: bold;
@@ -83,13 +86,16 @@
     -fx-background-image: url("background-login.png");
     -fx-background-size: cover;
     -fx-background-position: center center;
+    -fx-background-radius: 20px;
 }
 
 .link-button {
-    -fx-background-color: transparent; /* Xóa nền xám */
+    -fx-background-color: transparent;
+     -fx-font-weight: bold;/* Xóa nền xám */
     -fx-text-fill: #3498db;           /* Đổi màu chữ sang xanh dương */
-    -fx-font-size: 12px;
+    -fx-font-size: 15px;
     -fx-cursor: hand;                 /* Hiện hình bàn tay khi di chuột vào */
+    -fx-transition: all 0.3s; /* Tạo cảm giác mượt mà */
 }
 
 .link-button:hover {
