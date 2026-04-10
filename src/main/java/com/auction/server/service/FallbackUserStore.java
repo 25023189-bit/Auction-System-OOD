@@ -12,18 +12,18 @@ public class FallbackUserStore {
     private static final Map<String, User> USERS = new HashMap<>();
 
     static {
-        Admin admin = new Admin("BD500001", "Hades", "123456", 0);
+        Admin admin = new Admin("BD500001", "hades", "123456", 0);
         admin.setRole("ADMIN");
 
-        Seller seller = new Seller("BD500002", "Hephaestus", "SELLER", "123456", 500000);
+        Seller seller = new Seller("BD500002", "hephaestus", "SELLER", "123456", 500000);
         seller.setRole("SELLER");
 
-        Bidder bidder = new Bidder("BD500003", "Cerberus", "BIDDER", "123456", 300000);
+        Bidder bidder = new Bidder("BD500003", "cerberus", "BIDDER", "123456", 300000);
         bidder.setRole("BIDDER");
 
-        USERS.put("admin", admin);
-        USERS.put("seller", seller);
-        USERS.put("bidder", bidder);
+        USERS.put("hades", admin);
+        USERS.put("hephaestus", seller);
+        USERS.put("cerberus", bidder);
 
         System.out.println("✅ Fallback users loaded: " + USERS.keySet());
     }
@@ -31,17 +31,16 @@ public class FallbackUserStore {
     public static User login(String username, String password) {
         if (username == null || password == null) return null;
 
-        String normalizedUsername = username.trim().toLowerCase();
-        User user = USERS.get(normalizedUsername);
+        String normalized = username.trim().toLowerCase();
+        User user = USERS.get(normalized);
 
-        System.out.println("Fallback lookup username = " + normalizedUsername);
+        System.out.println("Fallback lookup username = " + normalized);
         System.out.println("Fallback found user = " + (user == null ? "null" : user.getUsername()));
         System.out.println("Fallback stored password = " + (user == null ? "null" : user.getPassword()));
 
         if (user != null && password.equals(user.getPassword())) {
             return cloneUser(user);
         }
-
         return null;
     }
 
