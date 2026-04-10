@@ -12,7 +12,7 @@ public class FallbackUserStore {
     private static final Map<String, User> USERS = new HashMap<>();
 
     static {
-        Admin admin = new Admin("BD500001", "Hades", "123456", 999999);
+        Admin admin = new Admin("BD500001", "Hades", "123456", 0);
         admin.setRole("ADMIN");
 
         Seller seller = new Seller("BD500002", "Hephaestus", "SELLER", "123456", 500000);
