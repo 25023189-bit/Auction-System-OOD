@@ -3,12 +3,8 @@ package com.auction.common.model;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-/**
- * Model đại diện cho một Phòng đấu giá.
- * Chứa thông tin vật phẩm và logic kiểm tra giá thầu (Bid).
- */
 public class AuctionRoom implements Serializable {
-    private static final long serialVersionUID = 1L; // Đảm bảo truyền nhận object qua mạng ổn định
+    private static final long serialVersionUID = 1L;
 
     private String roomId;
     private String itemName;
@@ -17,14 +13,20 @@ public class AuctionRoom implements Serializable {
     private String nameSeller;
     private String highestBidderId = "Chưa có ai";
     private String status;
-    private LocalDateTime startTime;      // Thời gian bắt đầu dự kiến
-    private int durationMinutes;          // Thời gian diễn ra (phút)
-    private LocalDateTime actualEndTime;// Thời gian kết thúc thực tế (để dành tính năng sau này)
+    private LocalDateTime startTime;
+    private int durationMinutes;
+
+    // Chỉ set khi phiên đóng thật sự
+    private LocalDateTime actualEndTime;
+
+    // Dùng runtime/client countdown
+    private LocalDateTime scheduledEndTime;
+
+    private boolean entryLocked;
+    private long extendedSeconds;
+
     private String itemDescription;
 
-    /**
-     * Constructor khởi tạo phòng mới.
-     */
     public AuctionRoom(String roomId, String itemName, double startingPrice) {
         this.roomId = roomId;
         this.itemName = itemName;
@@ -39,41 +41,33 @@ public class AuctionRoom implements Serializable {
         this.nameSeller = nameSeller;
     }
 
-    // --- GETTERS (Dùng cho ClientHandler, MockDB, AuctionController) ---
     public String getRoomId() { return roomId; }
     public String getItemName() { return itemName; }
     public double getCurrentPrice() { return currentPrice; }
     public String getHighestBidder() { return highestBidder; }
-    public String getHighestBidderId() {
-        return this.highestBidderId;
-    }
-    public String getNameSeller() {
-        return nameSeller;
-    }
-    public String getStatus() {
-        return status;
-    }
+    public String getHighestBidderId() { return this.highestBidderId; }
+    public String getNameSeller() { return nameSeller; }
+    public String getStatus() { return status; }
     public int getDurationMinutes() { return durationMinutes; }
     public LocalDateTime getStartTime() { return startTime; }
     public LocalDateTime getActualEndTime() { return actualEndTime; }
-    public String getItemDescription() {
-        return itemDescription;
-    }
+    public LocalDateTime getScheduledEndTime() { return scheduledEndTime; }
+    public boolean isEntryLocked() { return entryLocked; }
+    public long getExtendedSeconds() { return extendedSeconds; }
+    public String getItemDescription() { return itemDescription; }
 
-    // --- SETTERS (Dùng khi cần cập nhật thông tin phòng) ---
     public void setRoomId(String roomId) { this.roomId = roomId; }
     public void setItemName(String itemName) { this.itemName = itemName; }
     public void setCurrentPrice(double currentPrice) { this.currentPrice = currentPrice; }
     public void setHighestBidder(String highestBidder) { this.highestBidder = highestBidder; }
-    public void setStatus(String status) {
-        this.status = status;
-    }
+    public void setStatus(String status) { this.status = status; }
     public void setStartTime(LocalDateTime startTime) { this.startTime = startTime; }
     public void setDurationMinutes(int durationMinutes) { this.durationMinutes = durationMinutes; }
     public void setActualEndTime(LocalDateTime actualEndTime) { this.actualEndTime = actualEndTime; }
-    public void setItemDescription(String itemDescription) {
-        this.itemDescription = itemDescription;
-    }
+    public void setScheduledEndTime(LocalDateTime scheduledEndTime) { this.scheduledEndTime = scheduledEndTime; }
+    public void setEntryLocked(boolean entryLocked) { this.entryLocked = entryLocked; }
+    public void setExtendedSeconds(long extendedSeconds) { this.extendedSeconds = extendedSeconds; }
+    public void setItemDescription(String itemDescription) { this.itemDescription = itemDescription; }
 
     @Override
     public String toString() {

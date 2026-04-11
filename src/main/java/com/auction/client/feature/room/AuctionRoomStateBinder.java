@@ -25,6 +25,10 @@ public class AuctionRoomStateBinder implements ViewStateBinder<AuctionRoom> {
 
         presenter.showRoomInfo(room.getItemName(), room.getCurrentPrice(), room.getItemDescription());
 
+        if (room.isEntryLocked()) {
+            presenter.appendChat("🔒 Phiên đã khóa người tham gia mới (30 giây cuối).");
+        }
+
         User user = sessionStore.getCurrentUser();
         String username = sessionStore.getCurrentUsername();
         boolean isOwner = rolePolicy.canCloseAuction(user, room, username);

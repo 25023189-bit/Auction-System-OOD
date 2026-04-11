@@ -31,7 +31,7 @@ public class BidActionHandler implements ActionHandler<BidRequest> {
                     return;
                 }
 
-                if (room.getActualEndTime() != null && !now.isBefore(room.getActualEndTime())) {
+                if (room.getScheduledEndTime() != null && !now.isBefore(room.getScheduledEndTime())) {
                     presenter.disableBidUi("Phiên đấu giá đã hết giờ.");
                     return;
                 }

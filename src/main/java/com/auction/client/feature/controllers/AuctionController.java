@@ -304,7 +304,7 @@ public class AuctionController implements Initializable {
         if (sessionStore != null && sessionStore.getCurrentRoom() != null) {
             AuctionRoom room = sessionStore.getCurrentRoom();
             auctionRoomStateBinder.bind(room);
-            auctionTimerService.start(room.getStartTime(), room.getActualEndTime());
+            auctionTimerService.start(room.getStartTime(), room.getScheduledEndTime());
         }
 
         rebuildRouter();

@@ -18,10 +18,10 @@ public class DefaultAuctionTimerService implements AuctionTimer {
     }
 
     @Override
-    public void start(LocalDateTime startTime, LocalDateTime endTime) {
+    public void start(LocalDateTime startTime, LocalDateTime scheduledEndTime) {
         stop();
 
-        if (startTime == null || endTime == null) {
+        if (startTime == null || scheduledEndTime == null) {
             presenter.setTimerText("Vô thời hạn", Color.ORANGE);
             return;
         }
@@ -32,7 +32,7 @@ public class DefaultAuctionTimerService implements AuctionTimer {
             timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
                 long left = ChronoUnit.SECONDS.between(LocalDateTime.now(), startTime);
                 if (left <= 0) {
-                    start(startTime, endTime);
+                    start(startTime, scheduledEndTime);
                 } else {
                     long hh = left / 3600;
                     long mm = (left % 3600) / 60;
@@ -45,14 +45,14 @@ public class DefaultAuctionTimerService implements AuctionTimer {
             return;
         }
 
-        if (!now.isBefore(endTime)) {
+        if (!now.isBefore(scheduledEndTime)) {
             presenter.setTimerText("⏱️ Đã kết thúc!", Color.RED);
             presenter.disableBidUi("Phiên đấu giá đã hết giờ.");
             return;
         }
 
         timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
-            long left = ChronoUnit.SECONDS.between(LocalDateTime.now(), endTime);
+            long left = ChronoUnit.SECONDS.between(LocalDateTime.now(), scheduledEndTime);
             if (left <= 0) {
                 presenter.setTimerText("⏱️ Đã kết thúc!", Color.RED);
                 presenter.disableBidUi("Phiên đấu giá đã hết giờ.");

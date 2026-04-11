@@ -28,7 +28,7 @@ public class AuctionRoomMessageHandler implements MessageHandler {
     @Override
     public boolean supports(String action) {
         return switch (action) {
-            case "ROOM_JOINED", "CHAT_MSG", "UPDATE_PRICE" -> true;
+            case "ROOM_JOINED", "ROOM_STATE_UPDATED", "CHAT_MSG", "UPDATE_PRICE" -> true;
             default -> false;
         };
     }
@@ -43,10 +43,25 @@ public class AuctionRoomMessageHandler implements MessageHandler {
                 sceneNavigator.showAuctionRoom(room);
                 binder.bind(room);
                 if (room != null) {
-                    auctionTimer.start(room.getStartTime(), room.getActualEndTime());
+                    auctionTimer.start(room.getStartTime(), room.getScheduledEndTime());
                 }
             }
+
+            case "ROOM_STATE_UPDATED" -> {
+                AuctionRoom room = (AuctionRoom) message.getData();
+                if (room == null) return;
+
+                String currentRoomId = sessionStore.getCurrentRoomId();
+                if (currentRoomId != null && currentRoomId.equals(room.getRoomId())) {
+                    sessionStore.setCurrentRoom(room);
+                    binder.bind(room);
+                    presenter.showCurrentPrice(room.getCurrentPrice(), room.getHighestBidder());
+                    auctionTimer.start(room.getStartTime(), room.getScheduledEndTime());
+                }
+            }
+
             case "CHAT_MSG" -> presenter.appendChat("[" + message.username + "]: " + message.data);
+
             case "UPDATE_PRICE" -> {
                 String[] parts = ((String) message.data).split("\\|");
                 String currentRoomId = sessionStore.getCurrentRoomId();
