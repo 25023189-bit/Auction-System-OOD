@@ -1,0 +1,56 @@
+package com.auction.client.network.messaging;
+
+import com.auction.client.core.navigation.SceneNavigator;
+import com.auction.client.session.SessionStore;
+import com.auction.common.dto.Message;
+import com.auction.server.service.AuctionService;
+import com.auction.server.service.ClientConnection;
+import javafx.scene.control.Alert;
+import javafx.stage.Stage;
+import javafx.stage.Window;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class AccountStatusFallbackHandler implements MessageHandler {
+    private final SceneNavigator sceneNavigator;
+    private final SessionStore sessionStore;
+    private final AuctionService auctionService;
+
+    public AccountStatusFallbackHandler(SceneNavigator sceneNavigator,
+                                        SessionStore sessionStore,
+                                        AuctionService auctionService) {
+        this.sceneNavigator = sceneNavigator;
+        this.sessionStore = sessionStore;
+        this.auctionService = auctionService;
+    }
+
+    @Override
+    public boolean supports(String action) {
+        return "BANNED".equals(action);
+    }
+
+    @Override
+    public void handle(Message msg) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Thông báo hệ thống");
+        alert.setHeaderText("TÀI KHOẢN ĐÃ BỊ VÔ HIỆU HÓA");
+        alert.setContentText(String.valueOf(msg.getData()));
+        alert.showAndWait();
+
+        sessionStore.clearSession();
+        ClientConnection.currentUser = null;
+        auctionService.setCurrentUser(null);
+
+        sceneNavigator.showLogin();
+
+        List<Window> openWindows = new ArrayList<>(Window.getWindows());
+        for (Window window : openWindows) {
+            if (window instanceof Stage stage) {
+                if (!"Sàn Đấu Giá".equals(stage.getTitle())) {
+                    stage.close();
+                }
+            }
+        }
+    }
+}

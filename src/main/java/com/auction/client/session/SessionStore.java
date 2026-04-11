@@ -1,6 +1,6 @@
 package com.auction.client.session;
 
-import com.auction.client.controllers.AdminController;
+import com.auction.client.feature.controllers.AdminController;
 import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.User;
 

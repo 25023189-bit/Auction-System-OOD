@@ -11,11 +11,10 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/login-view.fxml"));
         Parent root = loader.load();
 
-        primaryStage.setTitle("Sàn Đấu Giá VIP PRO - Client");
+        primaryStage.setTitle("Sàn Đấu Giá");
         primaryStage.setScene(new Scene(root, 960, 600));
-        // Thêm 2 dòng này để chặn thu nhỏ cửa sổ quá mức
-        //primaryStage.setMinWidth(1000);
-        //primaryStage.setMinHeight(600);
+        primaryStage.setMinWidth(1000);
+        primaryStage.setMinHeight(600);
         primaryStage.show();
     }
 
