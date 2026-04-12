@@ -15,8 +15,8 @@ public class AuctionDAO {
             initialStatus = "SCHEDULED";
         }
 
-        String sql = "INSERT INTO auctions (auction_id, item_id, seller_id, status, start_time, duration_minutes, actual_end_time) " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO auctions (auction_id, item_id, seller_id, status, start_time, duration_minutes, extension_seconds, actual_end_time) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -33,11 +33,12 @@ public class AuctionDAO {
             }
 
             pstmt.setInt(6, room.getDurationMinutes());
+            pstmt.setInt(7, room.getExtensionSeconds());
 
             if (room.getActualEndTime() != null) {
-                pstmt.setTimestamp(7, Timestamp.valueOf(room.getActualEndTime()));
+                pstmt.setTimestamp(8, Timestamp.valueOf(room.getActualEndTime()));
             } else {
-                pstmt.setNull(7, Types.TIMESTAMP);
+                pstmt.setNull(8, Types.TIMESTAMP);
             }
 
             return pstmt.executeUpdate() > 0;
@@ -51,7 +52,7 @@ public class AuctionDAO {
         java.util.List<AuctionRoom> list = new java.util.ArrayList<>();
 
         String sql = "SELECT a.auction_id, i.name AS item_name, i.current_price, u.username AS seller_name, " +
-                "a.status, a.start_time, a.duration_minutes, a.actual_end_time " +
+                "a.status, a.start_time, a.duration_minutes, a.extension_seconds, a.actual_end_time " +
                 "FROM auctions a " +
                 "JOIN items i ON a.item_id = i.item_id " +
                 "JOIN users u ON a.seller_id = u.customer_id " +
@@ -77,6 +78,7 @@ public class AuctionDAO {
                 }
 
                 room.setDurationMinutes(rs.getInt("duration_minutes"));
+                room.setExtensionSeconds(rs.getInt("extension_seconds"));
 
                 java.sql.Timestamp endTs = rs.getTimestamp("actual_end_time");
                 if (endTs != null) {
@@ -184,7 +186,7 @@ public class AuctionDAO {
     public AuctionRoom getAuctionById(String roomId) {
         String sql = "SELECT a.auction_id, i.name AS item_name, i.description AS item_description, " +
                 "i.current_price, u.username AS seller_name, " +
-                "a.status, a.start_time, a.duration_minutes, a.actual_end_time " +
+                "a.status, a.start_time, a.duration_minutes, a.extension_seconds, a.actual_end_time " +
                 "FROM auctions a " +
                 "JOIN items i ON a.item_id = i.item_id " +
                 "JOIN users u ON a.seller_id = u.customer_id " +
@@ -207,6 +209,7 @@ public class AuctionDAO {
 
                     room.setStatus(rs.getString("status"));
                     room.setDurationMinutes(rs.getInt("duration_minutes"));
+                    room.setExtensionSeconds(rs.getInt("extension_seconds"));
 
                     java.sql.Timestamp startTs = rs.getTimestamp("start_time");
                     if (startTs != null) {

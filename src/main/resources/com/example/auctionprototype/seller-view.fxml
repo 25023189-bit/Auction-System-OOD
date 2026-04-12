@@ -19,11 +19,6 @@
 
                 <HBox alignment="CENTER" spacing="30.0" style="-fx-padding: 0 0 10 0;">
                     <children>
-                        <Label fx:id="lblBalance" text="Số dư ví: 0 VNĐ" textFill="#27ae60">
-                            <font>
-                                <Font name="System Bold" size="14.0" />
-                            </font>
-                        </Label>
                         <Label fx:id="lblReputation" text="Uy tín: 5.0 ⭐" textFill="#e67e22">
                             <font>
                                 <Font name="System Bold" size="14.0" />
@@ -39,7 +34,7 @@
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <TextField fx:id="txtItemName" promptText="Ví dụ: Siêu xe Ferrari..." />
+                        <TextField fx:id="txtItemName" promptText="Tên Sản phẩm" />
                         <TextArea fx:id="txtItemDescription" promptText="Mô tả chi tiết vật phẩm..." prefRowCount="3" wrapText="true" />
 
                         <Label text="Giá khởi điểm ($):">
@@ -59,22 +54,6 @@
                     </children>
                 </HBox>
 
-                <VBox alignment="CENTER" spacing="10.0" style="-fx-padding: 20 0 0 0; -fx-border-color: #ddd; -fx-border-width: 1 0 0 0; -fx-margin-top: 10;">
-                    <children>
-                        <Label text="Quản lý phiên đấu giá" textFill="#2c3e50">
-                            <font>
-                                <Font name="System Bold" size="16.0" />
-                            </font>
-                        </Label>
-                        <HBox alignment="CENTER" spacing="10.0">
-                            <children>
-                                <TextField fx:id="txtRoomIdToClose" promptText="Nhập Mã Phòng (VD: AU00441)" prefWidth="200.0" />
-                                <Button mnemonicParsing="false" onAction="#handleCloseAction" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;" text="Chốt Đơn Bán" />
-                            </children>
-                        </HBox>
-                    </children>
-                </VBox>
-
                 <VBox spacing="5" style="-fx-padding: 10 0 10 0;">
                     <Label text="Thời gian bắt đầu:" style="-fx-font-weight: bold;"/>
                     <HBox spacing="10" alignment="CENTER_LEFT">
@@ -88,6 +67,9 @@
                 <VBox spacing="5" style="-fx-padding: 0 0 10 0;">
                     <Label text="Thời gian diễn ra (Phút):" style="-fx-font-weight: bold;"/>
                     <TextField fx:id="txtDuration" promptText="Ví dụ: 30" prefWidth="150"/>
+                    <Label text="Gia hạn mỗi lần (giây):" />
+                    <TextField fx:id="txtExtensionSeconds"
+                               promptText="1 - 120"/>
                 </VBox>
 
             </children>
