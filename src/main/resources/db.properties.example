@@ -1,0 +1,9 @@
+# FILE MẪU CẤU HÌNH DATABASE - COPY THÀNH db.properties ĐỂ DÙNG
+# 1. Đường dẫn kết nối (Đổi 'auction_system' nếu tên DB của bạn khác)
+db.url=jdbc:mysql://localhost:3306/auction_system
+
+# 2. Tên đăng nhập MySQL (thường là root)
+db.user=root
+
+# 3. Mật khẩu MySQL (Để trống để mỗi người tự điền vào file db.properties thật)
+db.password=
