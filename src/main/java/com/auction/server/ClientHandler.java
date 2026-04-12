@@ -76,9 +76,13 @@ public class ClientHandler implements Runnable {
                             String passReg  = regData[1];   // Password
                             String roleReg  = regData[2];   // Role
 
-                            User newUser = "SELLER".equalsIgnoreCase(roleReg)
-                                    ? new Seller(regUser, uname)
-                                    : new Bidder(regUser, uname);
+                            // FIX LỖI CONSTRUCTOR: Dùng constructor 4 tham số (id, username, email trống, số dư ban đầu 0.0)
+                            User newUser;
+                            if ("SELLER".equalsIgnoreCase(roleReg)) {
+                                newUser = new Seller(regUser, uname, "", 0.0);
+                            } else {
+                                newUser = new Bidder(regUser, uname, "", 0.0);
+                            }
 
                             Message response = authService.registerUser(newUser, passReg);
                             sendMessage(response);
