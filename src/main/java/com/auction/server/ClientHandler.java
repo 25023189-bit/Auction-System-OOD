@@ -166,16 +166,23 @@ public class ClientHandler implements Runnable {
                         try {
                             String[] parts = ((String) msg.data).split("\\|");
 
-                            if (parts.length < 5) throw new Exception("Dữ liệu không đủ 5 phần (Bị thiếu thời gian)!");
+                            if (parts.length < 6) throw new Exception("Dữ liệu không đủ 6 phần (Thiếu thời gian gia hạn)!");
 
                             String itemName = parts[0];
                             String itemDesc = parts[1];
                             double startingPrice = Double.parseDouble(parts[2]);
                             LocalDateTime startTime = LocalDateTime.parse(parts[3]);
                             int duration = Integer.parseInt(parts[4]);
+                            int extensionSeconds = Integer.parseInt(parts[5]);
 
                             if (duration <= 0) {
                                 sendMessage(new Message("CREATE_AUCTION_FAIL", "SERVER", "Thời lượng phải lớn hơn 0 phút!"));
+                                break;
+                            }
+
+                            if (extensionSeconds < 1 || extensionSeconds > 120) {
+                                sendMessage(new Message("CREATE_AUCTION_FAIL", "SERVER",
+                                        "Thời gian gia hạn mỗi lần phải từ 1 đến 120 giây!"));
                                 break;
                             }
 
@@ -207,6 +214,11 @@ public class ClientHandler implements Runnable {
                             newRoom.setStartTime(startTime);
                             newRoom.setDurationMinutes(duration);
                             newRoom.setActualEndTime(endTime);
+                            newRoom.setActualEndTime(null);
+                            newRoom.setScheduledEndTime(endTime);
+                            newRoom.setEntryLocked(false);
+                            newRoom.setExtendedSeconds(0);
+                            newRoom.setExtensionSeconds(extensionSeconds);
 
                             com.auction.server.dao.AuctionDAO auctionDAO = new com.auction.server.dao.AuctionDAO();
                             boolean isAuctionSaved = auctionDAO.saveAuction(newRoom, newItemId, sellerId);

@@ -110,11 +110,11 @@ public class AuctionService {
     /**
      * (Nghiệp vụ Seller) Gửi yêu cầu tạo phòng đấu giá mới.
      */
-    public void createAuction(String itemName, String itemDesc, double startingPrice, LocalDateTime startTime, int duration) {
-        // 🔥 ĐÃ SỬA: Nối thêm startTime và duration vào chuỗi data phân cách bởi dấu "|"
-        String data = itemName + "|" + itemDesc + "|" + startingPrice + "|" + startTime.toString() + "|" + duration;
+    public void createAuction(String itemName, String itemDesc, double startingPrice,
+                              LocalDateTime startTime, int duration, int extensionSeconds) {
+        String data = itemName + "|" + itemDesc + "|" + startingPrice + "|" +
+                startTime.toString() + "|" + duration + "|" + extensionSeconds;
 
-        // Dùng this.currentUser để đảm bảo đúng người gửi
         clientConnection.sendMessage(new Message("CREATE_AUCTION", this.currentUser, data));
     }
 

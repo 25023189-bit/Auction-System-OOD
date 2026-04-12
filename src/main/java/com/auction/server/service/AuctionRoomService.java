@@ -10,7 +10,6 @@ import com.auction.server.dao.UserDAO;
 
 public class AuctionRoomService {
     private static final long FINAL_WINDOW_SECONDS = 30;
-    private static final long EXTENSION_SECONDS = 60;
 
     public Message joinRoom(String roomId, String userId) {
         AuctionDAO auctionDAO = new AuctionDAO();
@@ -149,7 +148,7 @@ public class AuctionRoomService {
 
             boolean extended = false;
             if (remaining <= FINAL_WINDOW_SECONDS) {
-                state.extendBySeconds(EXTENSION_SECONDS);
+                state.extendBySeconds(room.getExtensionSeconds());
                 extended = true;
             }
 
