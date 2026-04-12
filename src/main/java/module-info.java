@@ -6,11 +6,12 @@ module com.example.auctionprototype {
 
     opens com.auction.common.model to javafx.base;
 
-    opens com.auction.client.controllers to javafx.fxml;
+    // Tạm thời comment lại vì package client chưa có code trong nhánh này
+    // opens com.auction.client.controllers to javafx.fxml;
 
     opens com.auction.server.main to javafx.graphics, javafx.fxml;
     opens com.example.auctionprototype to javafx.fxml;
 
-    exports com.auction.client;
+    // exports com.auction.client;
     exports com.auction.server.main;
 }
