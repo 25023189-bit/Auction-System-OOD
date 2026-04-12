@@ -87,7 +87,7 @@ public class AuctionServer {
     public static void removeClient(ClientHandler client) {
         if (client != null) {
             clients.remove(client);
-            client.closeConnection();
+            client.closeConnection(); // Đã khớp 100% với hàm public trong ClientHandler
             System.out.println("❌ Client disconnected | Online: " + clients.size());
         }
     }
