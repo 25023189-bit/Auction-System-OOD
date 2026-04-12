@@ -10,14 +10,19 @@ public class Seller extends User {
     private int successfulAuctions;
     private double ratingScore;
 
+    // ✅ Constructor rỗng đã được đưa VÀO TRONG class
+    public Seller() {
+        super(); // Gọi constructor rỗng của User
+    }
+
     public Seller(String id, String username, String password, double balance) {
         super(id, username, password, balance);
         this.successfulAuctions = 0;
         this.ratingScore = 5.0;
     }
 
-    public Seller(String id, String username,String role, String password, double balance) {
-        super(id, username,role, password, balance);
+    public Seller(String id, String username, String role, String password, double balance) {
+        super(id, username, role, password, balance);
         this.successfulAuctions = 0;
         this.ratingScore = 5.0;
     }

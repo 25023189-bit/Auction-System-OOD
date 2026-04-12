@@ -1,21 +1,18 @@
-module com.auction {
+module com.example.auctionprototype {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
     requires jbcrypt;
 
-    exports com.auction.client.app.launcher;
-    exports com.auction.client.feature.auth;
-    exports com.auction.client.feature.lobby;
-    exports com.auction.client.feature.room;
-    exports com.auction.server.main;
-    exports com.auction.common.dto;
-    exports com.auction.common.model;
+    opens com.auction.common.model to javafx.base;
 
-    opens com.auction.client.app.launcher to javafx.fxml;
-    opens com.auction.client.feature.auth to javafx.fxml;
-    opens com.auction.client.feature.lobby to javafx.fxml;
-    opens com.auction.client.feature.room to javafx.fxml;
+    // 1. MỞ KHÓA CHO JAVAFX TRUY CẬP VÀO THƯ MỤC CONTROLLERS CỦA CLIENT NÀY
     opens com.auction.client.feature.controllers to javafx.fxml;
-    opens com.auction.server.main to javafx.fxml;
+
+    opens com.auction.server.main to javafx.graphics, javafx.fxml;
+    opens com.example.auctionprototype to javafx.fxml;
+
+    // 2. EXPORT THƯ MỤC NÀY RA (Nếu có dùng ở nơi khác)
+    exports com.auction.client.feature.controllers;
+    exports com.auction.server.main;
 }
