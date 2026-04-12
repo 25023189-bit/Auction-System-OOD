@@ -6,7 +6,6 @@ import com.auction.server.dao.AuctionDAO;
 import com.auction.server.dao.TransactionDAO;
 import com.auction.server.dao.UserDAO;
 import com.auction.server.main.AuctionServer;
-import com.auction.server.service.AuctionStateManager;
 import com.auction.server.service.AuthService;
 import com.auction.server.service.AuctionRoomService;
 
@@ -98,7 +97,7 @@ public class ClientHandler implements Runnable {
 
                         System.out.println("User [" + this.userId + "] vừa join phòng: [" + this.currentRoomId + "]");
 
-                        Message joinResult = roomService.joinRoom(this.currentRoomId, this.userId);
+                        Message joinResult = roomService.joinRoom(this.currentRoomId);
                         if ("ROOM_FAIL".equals(joinResult.getAction())) {
                             this.currentRoomId = "";
                         }
@@ -121,27 +120,16 @@ public class ClientHandler implements Runnable {
 
                             Message bidResult = roomService.placeNewBid(this.currentRoomId, userId, bidAmount);
 
-                            if ("BID_SUCCESS".equals(bidResult.action) || "BID_SUCCESS_EXTENDED".equals(bidResult.action)) {
-                                AuctionRoom updatedRoom = (AuctionRoom) bidResult.data;
+                            if (bidResult.action.equals("BID_SUCCESS")) {
+                                sendMessage(new Message("BID_SUCCESS", "SERVER", bidAmount));
 
-                                if (AuctionServer.clients != null) {
-                                    for (ClientHandler client : AuctionServer.clients) {
-                                        if (client == null || !client.isAlive()) {
-                                            AuctionServer.removeClient(client);
-                                            continue;
-                                        }
-
-                                        if (this.currentRoomId != null && this.currentRoomId.equals(client.getCurrentRoomId())) {
-                                            client.sendMessage(new Message("ROOM_STATE_UPDATED", "SERVER", updatedRoom));
-                                        }
-                                    }
-                                }
+                                String broadcastPayload = this.currentRoomId + "|" + bidAmount + "|" + bidResult.id;
+                                AuctionServer.broadcastAll(new Message("UPDATE_PRICE", "SERVER", broadcastPayload));
                             } else {
                                 sendMessage(bidResult);
                             }
                         } catch (Exception e) {
                             e.printStackTrace();
-                            sendMessage(new Message("BID_FAIL", "SERVER", "Lỗi xử lý đặt giá!"));
                         }
                         break;
 
@@ -218,10 +206,7 @@ public class ClientHandler implements Runnable {
 
                             newRoom.setStartTime(startTime);
                             newRoom.setDurationMinutes(duration);
-                            newRoom.setActualEndTime(null);
-                            newRoom.setScheduledEndTime(endTime);
-                            newRoom.setEntryLocked(false);
-                            newRoom.setExtendedSeconds(0);
+                            newRoom.setActualEndTime(endTime);
 
                             com.auction.server.dao.AuctionDAO auctionDAO = new com.auction.server.dao.AuctionDAO();
                             boolean isAuctionSaved = auctionDAO.saveAuction(newRoom, newItemId, sellerId);
@@ -497,7 +482,6 @@ public class ClientHandler implements Runnable {
                     .append(r.getItemName()).append("|")
                     .append(r.getCurrentPrice()).append(";");
         }
-        AuctionStateManager.removeState(roomId);
         AuctionServer.broadcastAll(new Message("ROOM_LIST", "SERVER", roomsInfo.toString()));
     }
 
@@ -526,7 +510,6 @@ public class ClientHandler implements Runnable {
                     AuctionServer.broadcastAll(new Message("UPDATE_BALANCE", sellerId, seller.getBalance()));
                 }
             }
-            com.auction.server.service.AuctionStateManager.removeState(roomId);
 
             AuctionServer.broadcastAll(new Message("AUCTION_CLOSED_NOTIFY", "SERVER", roomId));
         }

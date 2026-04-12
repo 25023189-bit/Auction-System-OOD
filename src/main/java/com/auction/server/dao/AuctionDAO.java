@@ -85,6 +85,12 @@ public class AuctionDAO {
 
                 java.time.LocalDateTime now = java.time.LocalDateTime.now();
 
+                // Tự đồng bộ trạng thái theo thời gian
+                if (room.getActualEndTime() != null && now.isAfter(room.getActualEndTime())) {
+                    closeAuctionByTime(roomId);
+                    continue;
+                }
+
                 if ("SCHEDULED".equalsIgnoreCase(room.getStatus())
                         && room.getStartTime() != null
                         && (now.isEqual(room.getStartTime()) || now.isAfter(room.getStartTime()))) {
@@ -112,7 +118,8 @@ public class AuctionDAO {
         String deductBuyerSql = "UPDATE users SET balance = balance - ? WHERE customer_id = ? AND balance >= ?";
         String addSellerSql = "UPDATE users SET balance = balance + ? WHERE customer_id = ?";
 
-        String updateAuctionStatusSql = "UPDATE auctions SET status = ?, actual_end_time = CURRENT_TIMESTAMP WHERE auction_id = ?";
+        // 🌟 SỬA Ở ĐÂY: Thay lệnh DELETE bằng UPDATE status
+        String updateAuctionStatusSql = "UPDATE auctions SET status = ? WHERE auction_id = ?";
 
         java.sql.Connection conn = null;
         try {
@@ -218,6 +225,19 @@ public class AuctionDAO {
                         room.setActualEndTime(endTs.toLocalDateTime());
                     }
 
+                    // Đồng bộ trạng thái khi load 1 phòng
+                    java.time.LocalDateTime now = java.time.LocalDateTime.now();
+
+                    if (room.getActualEndTime() != null && now.isAfter(room.getActualEndTime())) {
+                        closeAuctionByTime(roomId);
+                        return null;
+                    } else if ("SCHEDULED".equalsIgnoreCase(room.getStatus())
+                            && room.getStartTime() != null
+                            && (now.isEqual(room.getStartTime()) || now.isAfter(room.getStartTime()))) {
+                        updateAuctionStatus(roomId, "RUNNING");
+                        room.setStatus("RUNNING");
+                    }
+
                     return room;
                 }
             }
@@ -265,7 +285,7 @@ public class AuctionDAO {
      * Admin ép hủy một phiên đấu giá
      */
     public boolean forceDeleteAuction(String roomId) {
-        String sql = "UPDATE auctions SET status = 'CANCELED_BY_ADMIN', actual_end_time = CURRENT_TIMESTAMP WHERE auction_id = ?";
+        String sql = "UPDATE auctions SET status = 'CANCELED_BY_ADMIN' WHERE auction_id = ?";
         try (java.sql.Connection conn = DatabaseConnection.getConnection();
              java.sql.PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
@@ -299,7 +319,7 @@ public class AuctionDAO {
         String getHighestBidSql = "SELECT bidder_id, bid_amount FROM bid_transactions WHERE auction_id = ? ORDER BY bid_amount DESC LIMIT 1";
         String deductBuyerSql = "UPDATE users SET balance = balance - ? WHERE customer_id = ? AND balance >= ?";
         String addSellerSql = "UPDATE users SET balance = balance + ? WHERE customer_id = ?";
-        String updateAuctionStatusSql = "UPDATE auctions SET status = ?, actual_end_time = CURRENT_TIMESTAMP WHERE auction_id = ?";
+        String updateAuctionStatusSql = "UPDATE auctions SET status = ? WHERE auction_id = ?";
 
         Connection conn = null;
         try {

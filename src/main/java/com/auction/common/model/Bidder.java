@@ -5,12 +5,18 @@ package com.auction.common.model;
  * Kế thừa toàn bộ thuộc tính và phương thức từ User.
  */
 public class Bidder extends User {
-    public Bidder(String id, String username,String role, String password,double balance) {
-        super(id, username,role, password,balance);
+
+    // ✅ ĐÃ SỬA: Đưa Constructor rỗng vào BÊN TRONG class
+    public Bidder() {
+        super(); // Gọi constructor rỗng của User
     }
 
-    public Bidder(String id, String username, String password,double balance) {
-        super(id, username, password,balance);
+    public Bidder(String id, String username, String role, String password, double balance) {
+        super(id, username, role, password, balance);
+    }
+
+    public Bidder(String id, String username, String password, double balance) {
+        super(id, username, password, balance);
     }
 
     // Nạp tiền
