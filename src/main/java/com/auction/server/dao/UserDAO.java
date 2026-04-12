@@ -12,7 +12,6 @@ public class UserDAO {
 
     /**
      * 1. HÀM SINH MÃ KHÁCH HÀNG TỰ ĐỘNG
-     * (Vẫn giữ lại code ở đây phòng khi sau này nộp bài giáo viên bắt ép dùng chuẩn Đặc tả BD5)
      */
     private String generateNewCustomerId() {
         String sql = "SELECT MAX(customer_id) AS max_id FROM users WHERE customer_id LIKE 'BD5%'";
@@ -30,8 +29,9 @@ public class UserDAO {
         }
         return newId;
     }
+
     /**
-     * 2. ĐĂNG KÝ (Đã fix lỗi Column 'role' cannot be null)
+     * 2. ĐĂNG KÝ
      */
     public String registerUser(User user, String email, String fullName, String rawPassword) {
         String customerId = user.getId();
@@ -48,12 +48,12 @@ public class UserDAO {
             String hashedPass = com.auction.server.utils.PasswordUtil.hashPassword(rawPassword);
             pstmt.setString(3, hashedPass);
 
-            // 🔥 FIX: TỰ ĐỘNG BẮT ROLE DỰA TRÊN CLASS NẾU BỊ NULL
+            // TỰ ĐỘNG BẮT ROLE DỰA TRÊN CLASS NẾU BỊ NULL
             String role = user.getRole();
             if (role == null || role.isEmpty()) {
                 role = (user instanceof Seller) ? "SELLER" : "BIDDER";
             }
-            pstmt.setString(4, role); // Đẩy role chuẩn vào Database
+            pstmt.setString(4, role);
 
             pstmt.setDouble(5, 100000.0); // Khởi tạo 100k
 
@@ -67,16 +67,16 @@ public class UserDAO {
     }
 
     /**
-     * 3. ĐĂNG NHẬP (Bằng Mã Khách Hàng và Role)
+     * 3. ĐĂNG NHẬP
      */
-    public User login(String customerId, String rawPassword, String requestedRole) {
-        String sql = "SELECT * FROM users WHERE customer_id = ? AND role = ?";
+    public User login(String loginIdentifier, String rawPassword) {
+        String sql = "SELECT * FROM users WHERE username = ? OR customer_id = ?";
 
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
-            pstmt.setString(1, customerId);
-            pstmt.setString(2, requestedRole);
+            pstmt.setString(1, loginIdentifier);
+            pstmt.setString(2, loginIdentifier);
 
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
@@ -91,21 +91,26 @@ public class UserDAO {
                     }
 
                     if (isPasswordMatch) {
-                        String username = rs.getString("username");
+                        String dbCustomerId = rs.getString("customer_id");
+                        String dbUsername = rs.getString("username");
+                        String dbRole = rs.getString("role");
                         double balance = rs.getDouble("balance");
 
-                        User user = "SELLER".equalsIgnoreCase(requestedRole) ?
-                                new Seller(customerId, username, requestedRole, hashedPass, balance) :
-                                new Bidder(customerId, username, requestedRole, hashedPass, balance);
+                        User user = "SELLER".equalsIgnoreCase(dbRole) ?
+                                new Seller(dbCustomerId, dbUsername, dbRole, hashedPass, balance) :
+                                new Bidder(dbCustomerId, dbUsername, dbRole, hashedPass, balance);
+
+                        System.out.println("✅ Database: Đăng nhập thành công cho User: " + dbUsername + " | Role: " + dbRole);
                         return user;
                     } else {
-                        System.out.println("❌ Sai mật khẩu cho ID: " + customerId);
+                        System.out.println("❌ Database: Sai mật khẩu cho tài khoản: " + loginIdentifier);
                     }
                 } else {
-                    System.out.println("❌ Không tìm thấy user hoặc sai vai trò: " + customerId);
+                    System.out.println("❌ Database: Không tìm thấy tài khoản nào có tên/id là: " + loginIdentifier);
                 }
             }
         } catch (SQLException e) {
+            System.err.println("❌ Database: Lỗi SQL khi đăng nhập: " + e.getMessage());
             e.printStackTrace();
         }
         return null;
@@ -114,15 +119,16 @@ public class UserDAO {
     /**
      * 4. QUÊN MẬT KHẨU
      */
-    public boolean resetPassword(String customerId, String token, String newPassword) {
-        String sql = "UPDATE users SET password_hash = ? WHERE customer_id = ?";
+    public boolean resetPassword(String loginIdentifier, String token, String newPassword) {
+        String sql = "UPDATE users SET password_hash = ? WHERE username = ? OR customer_id = ?";
 
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             String hashedNewPassword = com.auction.server.utils.PasswordUtil.hashPassword(newPassword);
             pstmt.setString(1, hashedNewPassword);
-            pstmt.setString(2, customerId);
+            pstmt.setString(2, loginIdentifier);
+            pstmt.setString(3, loginIdentifier);
 
             return pstmt.executeUpdate() > 0;
 
@@ -202,6 +208,26 @@ public class UserDAO {
         } catch (SQLException e) {
             System.err.println("❌ Lỗi xóa User: " + e.getMessage());
             return false;
+        }
+    }
+
+    /**
+     * --- HÀM MAIN DÙNG ĐỂ TEST NHANH DATABASE ---
+     */
+    public static void main(String[] args) {
+        UserDAO dao = new UserDAO();
+        System.out.println("--- DANH SÁCH TÀI KHOẢN TRONG HỆ THỐNG ---");
+        List<User> users = dao.getAllUsers();
+
+        if(users.isEmpty()) {
+            System.out.println("Chưa có tài khoản nào trong Database!");
+        } else {
+            for (User u : users) {
+                System.out.println("ID: " + u.getId() +
+                        " | Tên: " + u.getUsername() +
+                        " | Vai trò: " + u.getRole() +
+                        " | Số dư: " + u.getBalance());
+            }
         }
     }
 }
