@@ -3,6 +3,10 @@ package com.auction.common.model;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+/**
+ * Model đại diện cho một Phòng đấu giá.
+ * Chứa thông tin vật phẩm và logic kiểm tra giá thầu (Bid).
+ */
 public class AuctionRoom implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -19,11 +23,15 @@ public class AuctionRoom implements Serializable {
     // Chỉ set khi phiên đóng thật sự
     private LocalDateTime actualEndTime;
 
-    // Dùng runtime/client countdown
+    // Deadline logic hiện tại để client đếm ngược
     private LocalDateTime scheduledEndTime;
 
+    // Runtime flags/info
     private boolean entryLocked;
     private long extendedSeconds;
+
+    // Seller cấu hình lúc tạo phiên: số giây cộng thêm mỗi lần anti-sniping kích hoạt
+    private int extensionSeconds = 60;
 
     private String itemDescription;
 
@@ -54,6 +62,7 @@ public class AuctionRoom implements Serializable {
     public LocalDateTime getScheduledEndTime() { return scheduledEndTime; }
     public boolean isEntryLocked() { return entryLocked; }
     public long getExtendedSeconds() { return extendedSeconds; }
+    public int getExtensionSeconds() { return extensionSeconds; }
     public String getItemDescription() { return itemDescription; }
 
     public void setRoomId(String roomId) { this.roomId = roomId; }
@@ -67,6 +76,7 @@ public class AuctionRoom implements Serializable {
     public void setScheduledEndTime(LocalDateTime scheduledEndTime) { this.scheduledEndTime = scheduledEndTime; }
     public void setEntryLocked(boolean entryLocked) { this.entryLocked = entryLocked; }
     public void setExtendedSeconds(long extendedSeconds) { this.extendedSeconds = extendedSeconds; }
+    public void setExtensionSeconds(int extensionSeconds) { this.extensionSeconds = extensionSeconds; }
     public void setItemDescription(String itemDescription) { this.itemDescription = itemDescription; }
 
     @Override
