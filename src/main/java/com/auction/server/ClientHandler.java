@@ -55,10 +55,13 @@ public class ClientHandler implements Runnable {
                 switch (msg.action) {
                     case "LOGIN":
                         String[] loginData = ((String) msg.data).split("\\|");
-                        if (loginData.length >= 2) {
+                        // Chỉ cần lấy password, không cần lấy role nữa
+                        if (loginData.length >= 1) {
                             String password = loginData[0];
-                            String role = loginData[1];
-                            Message loginRes = authService.login(msg.id, password, role);
+
+                            // 🔥 ĐÃ SỬA: Chỉ truyền 2 tham số (msg.id chính là Username/ID, và password)
+                            Message loginRes = authService.login(msg.id, password);
+
                             if ("LOGIN_SUCCESS".equals(loginRes.action)) {
                                 User loggedInUser = (User) loginRes.data;
                                 this.userId = loggedInUser.getId();

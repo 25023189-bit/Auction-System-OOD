@@ -158,6 +158,7 @@ public class AuctionController implements Initializable {
     // ==========================================================
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        System.out.println("[Controller] Đang khởi tạo AuctionController...");
         if (!isNetworkConnected) {
             clientConnection = new ClientConnection(this);
             auctionService = new AuctionService(clientConnection);
@@ -247,25 +248,20 @@ public class AuctionController implements Initializable {
                     lobbyUserInfoBinder
             );
         }
+        System.out.println("[Controller] Khởi tạo hoàn tất!");
     }
 
     private void wireLoginView() {
         authPresenter = new AuthPresenter(lblStatus, lblRegStatus, lblForgotStatus, txtUsername, txtPassword, txtForgotUsername, txtForgotNewPassword, txtForgotConfirm);
-
         authMessageHandler = new AuthMessageHandler(authPresenter, sceneNavigator, sessionStore, rolePolicy, auctionService);
-
         rebuildRouter();
     }
 
     private void wireLobbyView() {
         lobbyPresenter = new LobbyPresenter(paneSelectAuction, new AuctionCardFactory(auctionService));
-
         lobbyUserInfoBinder = new LobbyUserInfoBinder(lblUsername, lblBalance, btnCreateAuction, rolePolicy);
-
         roomDisplayMapper = new RoomDisplayMapper();
-
         lobbyRoomListRenderer = new LobbyRoomListRenderer(paneSelectAuction, new DefaultAuctionCardFactory(auctionService));
-
         lobbyMessageHandler = new AdvancedLobbyMessageHandler(new RoomListMapper(), roomDisplayMapper, lobbyRoomListRenderer);
 
         if (btnCreateAuction != null) {btnCreateAuction.setVisible(false);btnCreateAuction.setManaged(false);}
@@ -275,25 +271,17 @@ public class AuctionController implements Initializable {
         }
 
         roomTransitionHandler = new RoomTransitionHandler(auctionService, sessionStore, sceneNavigator, auctionTimerService, lobbyUserInfoBinder);
-
         rebuildRouter();
     }
 
     private void wireAuctionRoomView() {
         auctionRoomPresenter = new AuctionRoomPresenter(lblAuctionItemName, lblCurrentPrice, lblTimer, txtChatLog, txtItemDescriptionDisplay, btnCloseAuction, btnPlaceBid, txtBidAmount);
-
         auctionTimerService = new DefaultAuctionTimerService(auctionRoomPresenter);
-
         auctionRoomStateBinder = new AuctionRoomStateBinder(auctionRoomPresenter, sessionStore, rolePolicy);
-
         auctionRoomMessageHandler = new AuctionRoomMessageHandler(sessionStore, sceneNavigator,auctionRoomStateBinder, auctionRoomPresenter, auctionTimerService);
-
         bidActionHandler = new BidActionHandler(auctionService, sessionStore, auctionRoomPresenter);
-
         chatActionHandler = new ChatActionHandler(auctionService);
-
         auctionCloseHandler = new AuctionCloseHandler(auctionService);
-
         roomTransitionHandler = new RoomTransitionHandler(auctionService, sessionStore, sceneNavigator, auctionTimerService, lobbyUserInfoBinder);
 
         if (btnCloseAuction != null) {
@@ -312,11 +300,8 @@ public class AuctionController implements Initializable {
 
     private void rebuildRouter() {
         auctionFlowFallbackHandler = new AuctionFlowFallbackHandler(auctionService, sessionStore, sceneNavigator, lobbyUserInfoBinder, auctionRoomPresenter);
-
         balanceFallbackHandler = new BalanceFallbackHandler(auctionService, sessionStore, lobbyUserInfoBinder);
-
         adminFallbackHandler = new AdminFallbackHandler(sessionStore);
-
         accountStatusFallbackHandler = new AccountStatusFallbackHandler(sceneNavigator, sessionStore, auctionService);
 
         java.util.List<MessageHandler> primaryHandlers = new java.util.ArrayList<>();
@@ -330,11 +315,6 @@ public class AuctionController implements Initializable {
         if (adminFallbackHandler != null) fallbackHandlers.add(adminFallbackHandler);
         if (accountStatusFallbackHandler != null) fallbackHandlers.add(accountStatusFallbackHandler);
 
-        System.out.println("Router primary handlers = " + primaryHandlers.size());
-        System.out.println("authMessageHandler = " + (authMessageHandler != null));
-        System.out.println("lobbyMessageHandler = " + (lobbyMessageHandler != null));
-        System.out.println("auctionRoomMessageHandler = " + (auctionRoomMessageHandler != null));
-
         responseRouter = new AuctionMessageRouter(
                 primaryHandlers,
                 new FallbackMessageHandler(fallbackHandlers)
@@ -346,6 +326,7 @@ public class AuctionController implements Initializable {
     // ==========================================================
     @FXML
     private void handleLogin() {
+        System.out.println("\n[UI Event] -> Nút Đăng Nhập vừa được bấm!");
         if (authViewModel == null) {
             authViewModel = new AuthViewModel();
         }
@@ -353,7 +334,18 @@ public class AuctionController implements Initializable {
         authViewModel.setUsername(txtUsername != null ? txtUsername.getText() : "");
         authViewModel.setPassword(txtPassword != null ? txtPassword.getText() : "");
 
-        new LoginCommand(auctionService, new LoginFormValidator(), authPresenter, authViewModel.getUsername(), authViewModel.getPassword()
+        System.out.println("[Login] Đã lấy dữ liệu từ FXML:");
+        System.out.println("  - Username: " + authViewModel.getUsername());
+        System.out.println("  - Password: " + authViewModel.getPassword().replaceAll(".", "*")); // Che pass đi cho an toàn
+
+        System.out.println("[Login] Chuẩn bị gọi LoginCommand. Nếu luồng bị kẹt, khả năng cao là do LoginFormValidator chặn lại!");
+
+        new LoginCommand(
+                auctionService,
+                new LoginFormValidator(),
+                authPresenter,
+                authViewModel.getUsername(),
+                authViewModel.getPassword()
         ).execute();
     }
 
@@ -436,7 +428,6 @@ public class AuctionController implements Initializable {
     @FXML
     public void handleBackToSelection() {
         roomTransitionHandler = new RoomTransitionHandler(auctionService, sessionStore, sceneNavigator, auctionTimerService, lobbyUserInfoBinder);
-
         roomTransitionHandler.backToLobby();
     }
 
@@ -511,11 +502,9 @@ public class AuctionController implements Initializable {
         if (auctionRoomPresenter == null) {
             auctionRoomPresenter = new AuctionRoomPresenter(lblAuctionItemName, lblCurrentPrice, lblTimer, txtChatLog, txtItemDescriptionDisplay, btnCloseAuction, btnPlaceBid, txtBidAmount);
         }
-
         if (bidActionHandler == null) {
             bidActionHandler = new BidActionHandler(auctionService, sessionStore, auctionRoomPresenter);
         }
-
         if (chatActionHandler == null) {
             chatActionHandler = new ChatActionHandler(auctionService);
         }
