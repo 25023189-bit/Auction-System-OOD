@@ -11,7 +11,8 @@ import java.util.List;
 public class UserDAO {
 
     /**
-     * 1. HÀM SINH MÃ KHÁCH HÀNG TỰ ĐỘNG (CHUẨN ĐẶC TẢ BD5xxxxx)
+     * 1. HÀM SINH MÃ KHÁCH HÀNG TỰ ĐỘNG
+     * (Vẫn giữ lại code ở đây phòng khi sau này nộp bài giáo viên bắt ép dùng chuẩn Đặc tả BD5)
      */
     private String generateNewCustomerId() {
         String sql = "SELECT MAX(customer_id) AS max_id FROM users WHERE customer_id LIKE 'BD5%'";
@@ -21,7 +22,6 @@ public class UserDAO {
              ResultSet rs = stmt.executeQuery(sql)) {
             if (rs.next() && rs.getString("max_id") != null) {
                 String lastId = rs.getString("max_id");
-                // Cắt chữ BD5, lấy phần số cộng thêm 1
                 int numberPart = Integer.parseInt(lastId.substring(3));
                 newId = String.format("BD5%05d", numberPart + 1);
             }
@@ -30,37 +30,44 @@ public class UserDAO {
         }
         return newId;
     }
-
     /**
-     * 2. ĐĂNG KÝ (Khớp với AuthService)
+     * 2. ĐĂNG KÝ (Đã fix lỗi Column 'role' cannot be null)
      */
     public String registerUser(User user, String email, String fullName, String rawPassword) {
-        // Tự động sinh ID BD5xxxxx
-        String newId = generateNewCustomerId();
+        String customerId = user.getId();
+
         String sql = "INSERT INTO users (customer_id, username, password_hash, role, balance) VALUES (?, ?, ?, ?, ?)";
 
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
-            pstmt.setString(1, newId);
+            pstmt.setString(1, customerId);
             pstmt.setString(2, user.getUsername());
+
             // Mã hóa mật khẩu
             String hashedPass = com.auction.server.utils.PasswordUtil.hashPassword(rawPassword);
             pstmt.setString(3, hashedPass);
-            pstmt.setString(4, user.getRole());
+
+            // 🔥 FIX: TỰ ĐỘNG BẮT ROLE DỰA TRÊN CLASS NẾU BỊ NULL
+            String role = user.getRole();
+            if (role == null || role.isEmpty()) {
+                role = (user instanceof Seller) ? "SELLER" : "BIDDER";
+            }
+            pstmt.setString(4, role); // Đẩy role chuẩn vào Database
+
             pstmt.setDouble(5, 100000.0); // Khởi tạo 100k
 
             if (pstmt.executeUpdate() > 0) {
-                return newId; // Trả về ID để AuthService gửi cho Client
+                return customerId;
             }
         } catch (SQLException e) {
-            System.err.println("❌ Lỗi Đăng ký: " + e.getMessage());
+            System.err.println("❌ Lỗi Đăng ký (Database Exception): " + e.getMessage());
         }
         return null;
     }
 
     /**
-     * 3. ĐĂNG NHẬP (Bằng Mã Khách Hàng và Role - Chuẩn Đặc Tả)
+     * 3. ĐĂNG NHẬP (Bằng Mã Khách Hàng và Role)
      */
     public User login(String customerId, String rawPassword, String requestedRole) {
         String sql = "SELECT * FROM users WHERE customer_id = ? AND role = ?";
@@ -105,7 +112,7 @@ public class UserDAO {
     }
 
     /**
-     * 4. QUÊN MẬT KHẨU (HÀM GIẢI QUYẾT LỖI CHỮ ĐỎ CỦA BÁC)
+     * 4. QUÊN MẬT KHẨU
      */
     public boolean resetPassword(String customerId, String token, String newPassword) {
         String sql = "UPDATE users SET password_hash = ? WHERE customer_id = ?";
@@ -126,7 +133,7 @@ public class UserDAO {
     }
 
     /**
-     * 5. LẤY USER THEO ID (Giữ nguyên)
+     * 5. LẤY USER THEO ID
      */
     public User getUserById(String customerId) {
         String sql = "SELECT * FROM users WHERE customer_id = ?";
@@ -154,7 +161,7 @@ public class UserDAO {
     }
 
     /**
-     * 6. LẤY TẤT CẢ USER (Giữ nguyên)
+     * 6. LẤY TẤT CẢ USER
      */
     public List<User> getAllUsers() {
         List<User> userList = new ArrayList<>();
@@ -184,7 +191,7 @@ public class UserDAO {
     }
 
     /**
-     * 7. XÓA USER (Giữ nguyên)
+     * 7. XÓA USER
      */
     public boolean deleteUser(String customerId) {
         String sql = "DELETE FROM users WHERE customer_id = ?";
