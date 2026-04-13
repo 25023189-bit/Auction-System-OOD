@@ -568,6 +568,6 @@ DELIMITER ;
 -- LƯU Ý: Wallet (Ví) sẽ được tự động tạo nhờ Trigger trg_after_insert_users ở phía trên.
 
 INSERT INTO users (customer_id, username, password_hash, email, full_name, role, balance) VALUES
-    git stash pop                            ('BD50001', 'BacBanHang', '123', 'seller@test.com', 'Bác Bán Hàng', 'SELLER', 100000.00),
-                                                                                              ('BD50002', 'NguoiMuaVip', '123', 'bidder@test.com', 'Người Mua VIP', 'BIDDER', 500000.00),
+    git stash pop                            ('BD50006', 'BacBanHang', '123', 'seller@test.com', 'Bác Bán Hàng', 'SELLER', 100000.00),
+                                                                                              ('BD50008', 'NguoiMuaVip', '123', 'bidder@test.com', 'Người Mua VIP', 'BIDDER', 500000.00),
                                                                                               ('BD59999', 'AdminTong', '123', 'admin@test.com', 'Admin System', 'ADMIN', 9999999.00);
