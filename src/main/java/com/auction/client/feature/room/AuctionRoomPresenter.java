@@ -56,7 +56,7 @@ public class AuctionRoomPresenter implements ViewPresenter {
             lblCurrentPrice.setText("Giá hiện tại: " + String.format("%,.0f $", price));
         }
         if (holderName != null && txtChatLog != null) {
-            txtChatLog.appendText("📢 Giá mới: " + holderName + " đang giữ giá " + String.format("%,.0f $", price) + "\n");
+            txtChatLog.appendText("📢 Giá mớii: " + holderName + " đang giữ giá " + String.format("%,.0f $", price) + "\n");
         }
     }
 

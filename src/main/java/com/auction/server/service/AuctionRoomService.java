@@ -2,74 +2,264 @@ package com.auction.server.service;
 
 import com.auction.common.dto.Message;
 import com.auction.common.model.AuctionRoom;
-import com.auction.common.model.Bidder;
 import com.auction.common.model.User;
 import com.auction.server.dao.AuctionDAO;
 import com.auction.server.dao.BidDAO;
 import com.auction.server.dao.UserDAO;
+import com.auction.server.main.AuctionServer;
+import com.auction.server.dao.AuctionDAO.CloseAuctionResult;
+
+import java.time.Duration;
+import java.time.LocalDateTime;
 
 public class AuctionRoomService {
-    private static final long FINAL_WINDOW_SECONDS = 30;
+    private static final long FINAL_WINDOW_SECONDS = 30L;
 
     public Message joinRoom(String roomId, String userId) {
         AuctionDAO auctionDAO = new AuctionDAO();
         AuctionRoom room = auctionDAO.getAuctionById(roomId);
 
         if (room == null) {
-            return new Message("ROOM_FAIL", "SERVER", "Không tìm thấy phòng hoặc phiên đã kết thúc!");
+            return fail("ROOM_FAIL", "Không tìm thấy phòng hoặc phiên đã kết thúc!");
         }
 
-        java.time.LocalDateTime now = java.time.LocalDateTime.now();
+        LocalDateTime now = LocalDateTime.now();
 
-        if ("SOLD".equalsIgnoreCase(room.getStatus())
-                || "UNSOLD".equalsIgnoreCase(room.getStatus())
-                || "CANCELED_BY_ADMIN".equalsIgnoreCase(room.getStatus())) {
-            return new Message("ROOM_FAIL", "SERVER", "Phiên đấu giá này không còn khả dụng!");
-        }
-
-        if ("SCHEDULED".equalsIgnoreCase(room.getStatus())
-                && room.getStartTime() != null
-                && now.isBefore(room.getStartTime())) {
-            return new Message("ROOM_FAIL", "SERVER", "Phiên đấu giá chưa bắt đầu!");
+        Message preCheck = validateJoinByStatus(room, now);
+        if (preCheck != null) {
+            return preCheck;
         }
 
         AuctionRuntimeState state = AuctionStateManager.getState(roomId);
 
         synchronized (state) {
-            java.time.LocalDateTime scheduledEnd = calculateScheduledEnd(room, state);
-
+            LocalDateTime scheduledEnd = calculateScheduledEnd(room, state);
             if (scheduledEnd == null) {
-                return new Message("ROOM_FAIL", "SERVER", "Phiên đấu giá thiếu thông tin thời gian!");
+                return fail("ROOM_FAIL", "Phiên đấu giá thiếu thông tin thời gian!");
             }
 
             if (!now.isBefore(scheduledEnd)) {
-                auctionDAO.closeAuctionByTime(roomId);
-                AuctionStateManager.removeState(roomId);
-                return new Message("ROOM_FAIL", "SERVER", "Phiên đấu giá đã hết giờ và đã được chốt tự động!");
+                return handleExpiredAuction(roomId, "ROOM_FAIL");
             }
 
-            long remaining = java.time.Duration.between(now, scheduledEnd).getSeconds();
-
-            if (!state.isEntryLocked() && remaining <= FINAL_WINDOW_SECONDS) {
-                state.lockEntry(now);
-            }
+            long remainingSeconds = Duration.between(now, scheduledEnd).getSeconds();
+            applyFinalWindowRules(state, now, remainingSeconds);
 
             if (state.isEntryLocked() && !state.hasParticipant(userId)) {
-                return new Message("ROOM_FAIL", "SERVER", "Phiên đã khóa người tham gia mới trong 30 giây cuối!");
+                return fail("ROOM_FAIL", "Phiên đã khóa người tham gia mới trong 30 giây cuối!");
             }
 
             state.addParticipant(userId);
-
             syncRuntimeInfoToRoom(room, state);
+
             return new Message("ROOM_JOINED", "SERVER", room);
         }
     }
 
-    private java.time.LocalDateTime calculateScheduledEnd(AuctionRoom room, AuctionRuntimeState state) {
-        if (room.getStartTime() == null) return null;
-        return room.getStartTime()
-                .plusMinutes(room.getDurationMinutes())
-                .plusSeconds(state.getTotalExtendedSeconds());
+    public Message placeNewBid(String roomId, String userId, double amount) {
+        UserDAO userDAO = new UserDAO();
+        User user = userDAO.getUserById(userId);
+
+        if (user == null) {
+            return fail("BID_FAIL", "Không tìm thấy người dùng!");
+        }
+
+        if (!"BIDDER".equalsIgnoreCase(user.getRole())) {
+            return fail("BID_FAIL", "Bạn không phải người mua để tham gia đặt giá!");
+        }
+
+        AuctionDAO auctionDAO = new AuctionDAO();
+        AuctionRoom room = auctionDAO.getAuctionById(roomId);
+
+        if (room == null) {
+            return fail("BID_FAIL", "Không tìm thấy phòng đấu giá hoặc phiên đã kết thúc!");
+        }
+
+        LocalDateTime now = LocalDateTime.now();
+
+        Message preCheck = validateBidByStatus(room, now);
+        if (preCheck != null) {
+            return preCheck;
+        }
+
+        AuctionRuntimeState state = AuctionStateManager.getState(roomId);
+
+        synchronized (state) {
+            LocalDateTime scheduledEnd = calculateScheduledEnd(room, state);
+            if (scheduledEnd == null) {
+                return fail("BID_FAIL", "Phiên đấu giá thiếu thông tin thời gian!");
+            }
+
+            if (!now.isBefore(scheduledEnd)) {
+                return handleExpiredAuction(roomId, "BID_FAIL");
+            }
+
+            long remainingSeconds = Duration.between(now, scheduledEnd).getSeconds();
+            applyFinalWindowRules(state, now, remainingSeconds);
+
+            if (!state.hasParticipant(userId)) {
+                return fail("BID_FAIL", "Bạn không nằm trong danh sách người tham gia hợp lệ của phiên!");
+            }
+
+            BidDAO bidDAO = new BidDAO();
+            boolean bidSuccess = bidDAO.placeBid(roomId, userId, amount);
+
+            if (!bidSuccess) {
+                return fail("BID_FAIL", "Giá phải cao hơn mức hiện tại!");
+            }
+
+            room.setCurrentPrice(amount);
+            room.setHighestBidder(user.getUsername());
+
+            boolean extended = false;
+            if (remainingSeconds <= FINAL_WINDOW_SECONDS) {
+                int extensionSeconds = room.getExtensionSeconds();
+                if (extensionSeconds > 0) {
+                    state.extendBySeconds(extensionSeconds);
+                    extended = true;
+                }
+            }
+
+            syncRuntimeInfoToRoom(room, state);
+
+            return new Message(
+                    extended ? "BID_SUCCESS_EXTENDED" : "BID_SUCCESS",
+                    user.getUsername(),
+                    room
+            );
+        }
+    }
+
+    public boolean validateAuctionItem(String sellerName, String itemName, double startingPrice) {
+        if (sellerName == null || sellerName.isBlank()) {
+            return false;
+        }
+        if (itemName == null || itemName.isBlank()) {
+            return false;
+        }
+        return startingPrice > 0;
+    }
+
+    // =========================
+    // STATUS CHECKS WITH SWITCH
+    // =========================
+
+    private Message validateJoinByStatus(AuctionRoom room, LocalDateTime now) {
+        String status = normalizeStatus(room.getStatus());
+
+        switch (status) {
+            case "SOLD":
+                return fail("ROOM_FAIL", "Phiên đấu giá này đã bán thành công và không còn khả dụng!");
+
+            case "UNSOLD":
+                return fail("ROOM_FAIL", "Phiên đấu giá này đã kết thúc mà không có người mua!");
+
+            case "ENDED":
+            case "CLOSED_BY_SELLER":
+                return fail("ROOM_FAIL", "Phiên đấu giá này đã được người bán đóng!");
+
+            case "CANCELED":
+            case "CANCELED_BY_ADMIN":
+                return fail("ROOM_FAIL", "Phiên đấu giá này đã bị hủy!");
+
+            case "OPEN":
+            case "RUNNING":
+                if (room.getStartTime() != null && now.isBefore(room.getStartTime())) {
+                    return fail("ROOM_FAIL", "Phiên đấu giá chưa bắt đầu!");
+                }
+                return null;
+
+            default:
+                return fail("ROOM_FAIL", "Trạng thái phiên đấu giá không hợp lệ: " + status);
+        }
+    }
+
+    private Message validateBidByStatus(AuctionRoom room, LocalDateTime now) {
+        String status = normalizeStatus(room.getStatus());
+
+        switch (status) {
+            case "SOLD":
+                return fail("BID_FAIL", "Phiên đấu giá đã bán thành công, không thể đặt giá!");
+
+            case "UNSOLD":
+                return fail("BID_FAIL", "Phiên đấu giá đã kết thúc mà không có người mua!");
+
+            case "ENDED":
+            case "CLOSED_BY_SELLER":
+                return fail("BID_FAIL", "Phiên đấu giá đã được người bán đóng!");
+
+            case "CANCELED":
+            case "CANCELED_BY_ADMIN":
+                return fail("BID_FAIL", "Phiên đấu giá đã bị hủy!");
+
+            case "OPEN":
+            case "RUNNING":
+                if (room.getStartTime() != null && now.isBefore(room.getStartTime())) {
+                    return fail("BID_FAIL", "Phiên đấu giá chưa bắt đầu!");
+                }
+                return null;
+
+            default:
+                return fail("BID_FAIL", "Trạng thái phiên đấu giá không hợp lệ: " + status);
+        }
+    }
+
+    // =========================
+    // TIMEOUT / SETTLEMENT
+    // =========================
+
+    private Message handleExpiredAuction(String roomId, String failAction) {
+        AuctionDAO auctionDAO = new AuctionDAO();
+        CloseAuctionResult result = auctionDAO.closeAuctionByTime(roomId);
+
+        AuctionStateManager.removeState(roomId);
+
+        broadcastBalancesAfterTimeout(result);
+        AuctionServer.broadcastToRoom(roomId, new Message("AUCTION_CLOSED_NOTIFY", "SERVER", roomId));
+        broadcastRoomList();
+
+        return fail(failAction, result.getMessage());
+    }
+
+    private void broadcastBalancesAfterTimeout(CloseAuctionResult result) {
+        if (result == null || !result.isSuccess()) return;
+        if (!"SOLD".equalsIgnoreCase(result.getFinalStatus())) return;
+
+        if (result.getWinnerId() != null && result.getWinnerBalance() != null) {
+            AuctionServer.broadcastAll(
+                    new Message("UPDATE_BALANCE", result.getWinnerId(), result.getWinnerBalance())
+            );
+        }
+
+        if (result.getSellerId() != null && result.getSellerBalance() != null) {
+            AuctionServer.broadcastAll(
+                    new Message("UPDATE_BALANCE", result.getSellerId(), result.getSellerBalance())
+            );
+        }
+    }
+
+    private void broadcastRoomList() {
+        AuctionDAO auctionDAO = new AuctionDAO();
+        AuctionServer.broadcastAll(
+                new Message("ROOM_LIST", "SERVER", auctionDAO.getAllActiveAuctions())
+        );
+    }
+
+    // =========================
+    // RUNTIME / TIME HELPERS
+    // =========================
+
+    private void applyFinalWindowRules(AuctionRuntimeState state, LocalDateTime now, long remainingSeconds) {
+        if (!state.isEntryLocked() && remainingSeconds <= FINAL_WINDOW_SECONDS) {
+            state.lockEntry(now);
+        }
+    }
+
+    private LocalDateTime calculateScheduledEnd(AuctionRoom room, AuctionRuntimeState state) {
+        if (room == null || room.getEndTime() == null) {
+            return null;
+        }
+        return room.getEndTime().plusSeconds(state.getTotalExtendedSeconds());
     }
 
     private void syncRuntimeInfoToRoom(AuctionRoom room, AuctionRuntimeState state) {
@@ -78,90 +268,14 @@ public class AuctionRoomService {
         room.setScheduledEndTime(calculateScheduledEnd(room, state));
     }
 
-    public Message placeNewBid(String roomId, String userId, double amount) {
-        UserDAO userDAO = new UserDAO();
-        User user = userDAO.getUserById(userId);
-
-        if (!(user instanceof Bidder)) {
-            return new Message("BID_FAIL", "SERVER", "Lỗi: Không tìm thấy người dùng hoặc bạn không phải người mua!");
+    private String normalizeStatus(String status) {
+        if (status == null || status.isBlank()) {
+            return "UNKNOWN";
         }
-
-        Bidder bidder = (Bidder) user;
-
-        AuctionDAO auctionDAO = new AuctionDAO();
-        AuctionRoom room = auctionDAO.getAuctionById(roomId);
-
-        if (room == null) {
-            return new Message("BID_FAIL", "SERVER", "Không tìm thấy phòng đấu giá hoặc phiên đã kết thúc!");
-        }
-
-        java.time.LocalDateTime now = java.time.LocalDateTime.now();
-
-        if ("SCHEDULED".equalsIgnoreCase(room.getStatus())
-                && room.getStartTime() != null
-                && now.isBefore(room.getStartTime())) {
-            return new Message("BID_FAIL", "SERVER", "Phiên đấu giá chưa bắt đầu!");
-        }
-
-        if (!"RUNNING".equalsIgnoreCase(room.getStatus()) && !"SCHEDULED".equalsIgnoreCase(room.getStatus())) {
-            return new Message("BID_FAIL", "SERVER", "Phiên đấu giá không ở trạng thái hợp lệ để đặt giá!");
-        }
-
-        if (!bidder.canAfford(amount)) {
-            return new Message("BID_FAIL", "SERVER", "Số dư ví không đủ " + amount + "$ để đặt giá!");
-        }
-
-        AuctionRuntimeState state = AuctionStateManager.getState(roomId);
-
-        synchronized (state) {
-            java.time.LocalDateTime scheduledEnd = calculateScheduledEnd(room, state);
-
-            if (scheduledEnd == null) {
-                return new Message("BID_FAIL", "SERVER", "Phiên đấu giá thiếu thông tin thời gian!");
-            }
-
-            if (!now.isBefore(scheduledEnd)) {
-                auctionDAO.closeAuctionByTime(roomId);
-                AuctionStateManager.removeState(roomId);
-                return new Message("BID_FAIL", "SERVER", "Phiên đấu giá đã hết giờ và đã được chốt tự động!");
-            }
-
-            long remaining = java.time.Duration.between(now, scheduledEnd).getSeconds();
-
-            if (!state.isEntryLocked() && remaining <= FINAL_WINDOW_SECONDS) {
-                state.lockEntry(now);
-            }
-
-            if (!state.hasParticipant(userId)) {
-                return new Message("BID_FAIL", "SERVER", "Bạn không nằm trong danh sách người tham gia hợp lệ của phiên!");
-            }
-
-            BidDAO bidDAO = new BidDAO();
-            boolean isSuccess = bidDAO.placeBid(roomId, userId, amount);
-
-            if (!isSuccess) {
-                return new Message("BID_FAIL", "SERVER", "Giá phải cao hơn mức hiện tại!");
-            }
-
-            room.setCurrentPrice(amount);
-            room.setHighestBidder(bidder.getUsername());
-
-            boolean extended = false;
-            if (remaining <= FINAL_WINDOW_SECONDS) {
-                state.extendBySeconds(room.getExtensionSeconds());
-                extended = true;
-            }
-
-            syncRuntimeInfoToRoom(room, state);
-
-            String action = extended ? "BID_SUCCESS_EXTENDED" : "BID_SUCCESS";
-            return new Message(action, bidder.getUsername(), room);
-        }
+        return status.trim().toUpperCase();
     }
 
-    public boolean validateAuctionItem(String sellerName, String itemName, double startingPrice) {
-        boolean result = true;
-        System.out.println("Chức năng đang bảo trì");
-        return result;
+    private Message fail(String action, String content) {
+        return new Message(action, "SERVER", content);
     }
 }

@@ -6,66 +6,113 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-public class DatabaseConnection {
-    // 1. Singleton Instance (Thêm volatile để đồng bộ hóa bộ nhớ giữa các Thread)
-    private static volatile Connection connection = null;
+public final class DatabaseConnection {
 
-    // 2. Private constructor (Ngăn chặn khởi tạo từ bên ngoài)
-    private DatabaseConnection() {}
+    private static final String DEFAULT_DRIVER = "com.mysql.cj.jdbc.Driver";
 
-    // 3. Thread-safe Singleton
-    public static synchronized Connection getConnection() throws SQLException {
-        try {
-            if (connection == null || connection.isClosed()) {
-                // TẢI FILE CẤU HÌNH (THAY THẾ CHO VIỆC HARDCODE)
-                Properties props = new Properties();
-                InputStream inputStream = DatabaseConnection.class
-                        .getClassLoader()
-                        .getResourceAsStream("db.properties");
-
-                if (inputStream == null) {
-                    System.err.println("❌ [Database] LỖI CRITICAL: Không tìm thấy file db.properties!");
-                    System.err.println("👉 Hãy vào thư mục src/main/resources, copy db.properties.example thành db.properties và điền mật khẩu của bạn vào.");
-                    throw new SQLException("Thiếu file cấu hình database (db.properties).");
-                }
-
-                // Load dữ liệu từ file vào biến props
-                props.load(inputStream);
-
-                // Lấy thông số kết nối từ file
-                // Cố tình thêm tham số characterEncoding ở đây để hỗ trợ tiếng Việt có dấu luôn cho an toàn
-                String url = props.getProperty("db.url") + "?useUnicode=true&characterEncoding=UTF-8";
-                String user = props.getProperty("db.user");
-                String pass = props.getProperty("db.password");
-
-                // Load Driver MySQL
-                Class.forName("com.mysql.cj.jdbc.Driver");
-
-                // Khởi tạo kết nối thực tế
-                connection = DriverManager.getConnection(url, user, pass);
-                System.out.println("✅ [Database] Kết nối Database thành công với user: " + user);
-            }
-        } catch (ClassNotFoundException e) {
-            System.err.println("❌ [Database] Lỗi: Không tìm thấy Driver MySQL (Thiếu thư viện mysql-connector-j)!");
-            throw new SQLException(e);
-        } catch (Exception e) {
-            System.err.println("❌ [Database] Lỗi kết nối hoặc đọc file cấu hình!");
-            e.printStackTrace();
-            throw new SQLException(e);
-        }
-        return connection;
+    private DatabaseConnection() {
     }
 
-    // 4. Hàm đóng kết nối an toàn khi server tắt
-    public static synchronized void closeConnection() {
-        if (connection != null) {
-            try {
-                connection.close();
-                System.out.println("🔌 [Database] Đã đóng kết nối an toàn.");
-            } catch (SQLException e) {
-                System.err.println("❌ [Database] Lỗi khi đóng kết nối!");
-                e.printStackTrace();
+    public static Connection getConnection() throws SQLException {
+        Properties props = loadDatabaseProperties();
+
+        String url = firstNonBlank(
+                System.getenv("AUCTION_DB_URL"),
+                System.getProperty("auction.db.url"),
+                props.getProperty("db.url")
+        );
+
+        String user = firstNonBlank(
+                System.getenv("AUCTION_DB_USER"),
+                System.getProperty("auction.db.user"),
+                props.getProperty("db.user")
+        );
+
+        String password = firstNonBlank(
+                System.getenv("AUCTION_DB_PASSWORD"),
+                System.getProperty("auction.db.password"),
+                props.getProperty("db.password")
+        );
+
+        String driver = firstNonBlank(
+                System.getenv("AUCTION_DB_DRIVER"),
+                System.getProperty("auction.db.driver"),
+                props.getProperty("db.driver"),
+                DEFAULT_DRIVER
+        );
+
+        validateRequired(url, "db.url");
+        validateRequired(user, "db.user");
+        if (password == null) {
+            password = "";
+        }
+
+        try {
+            Class.forName(driver);
+        } catch (ClassNotFoundException e) {
+            throw new SQLException("Không tìm thấy JDBC driver: " + driver, e);
+        }
+
+        try {
+            return DriverManager.getConnection(url, user, password);
+        } catch (SQLException e) {
+            throw new SQLException(buildHelpfulConnectionError(url, user, driver), e);
+        }
+    }
+
+    private static Properties loadDatabaseProperties() throws SQLException {
+        Properties props = new Properties();
+
+        InputStream input = null;
+
+        ClassLoader cl = DatabaseConnection.class.getClassLoader();
+
+        input = cl.getResourceAsStream("db.properties");
+        if (input == null) {
+            input = cl.getResourceAsStream("db.properties.example");
+        }
+
+        if (input == null) {
+            throw new SQLException(
+                    "Không tìm thấy cấu hình database trên classpath. " +
+                            "Cần có ít nhất một trong hai file: db.properties hoặc db.properties.example trong src/main/resources."
+            );
+        }
+
+        try (InputStream in = input) {
+            props.load(in);
+            return props;
+        } catch (Exception e) {
+            throw new SQLException("Đọc file cấu hình database thất bại.", e);
+        }
+    }
+
+    private static void validateRequired(String value, String key) throws SQLException {
+        if (value == null || value.trim().isEmpty()) {
+            throw new SQLException("Thiếu cấu hình bắt buộc: " + key);
+        }
+    }
+
+    private static String firstNonBlank(String... values) {
+        if (values == null) {
+            return null;
+        }
+        for (String value : values) {
+            if (value != null && !value.trim().isEmpty()) {
+                return value.trim();
             }
         }
+        return null;
+    }
+
+    private static String buildHelpfulConnectionError(String url, String user, String driver) {
+        return "Kết nối database thất bại. " +
+                "Kiểm tra MySQL đã chạy chưa, database 'auction_system' đã được tạo chưa, " +
+                "và thông tin cấu hình có đúng không. " +
+                "[url=" + safe(url) + ", user=" + safe(user) + ", driver=" + safe(driver) + "]";
+    }
+
+    private static String safe(String value) {
+        return value == null ? "<null>" : value;
     }
 }

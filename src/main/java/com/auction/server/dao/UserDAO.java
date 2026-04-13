@@ -1,233 +1,251 @@
 package com.auction.server.dao;
 
-import com.auction.server.utils.DatabaseConnection;
 import com.auction.common.model.User;
-import com.auction.common.model.Bidder;
-import com.auction.common.model.Seller;
+import com.auction.server.utils.DatabaseConnection;
+import com.auction.server.utils.PasswordUtil;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class UserDAO {
 
-    /**
-     * 1. HÀM SINH MÃ KHÁCH HÀNG TỰ ĐỘNG
-     */
-    private String generateNewCustomerId() {
-        String sql = "SELECT MAX(customer_id) AS max_id FROM users WHERE customer_id LIKE 'BD5%'";
-        String newId = "BD50001"; // Mặc định nếu chưa có ai
-        try (Connection conn = DatabaseConnection.getConnection();
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)) {
-            if (rs.next() && rs.getString("max_id") != null) {
-                String lastId = rs.getString("max_id");
-                int numberPart = Integer.parseInt(lastId.substring(3));
-                newId = String.format("BD5%05d", numberPart + 1);
-            }
-        } catch (SQLException e) {
-            System.err.println("Lỗi sinh ID: " + e.getMessage());
-        }
-        return newId;
-    }
-
-    /**
-     * 2. ĐĂNG KÝ
-     */
-    public String registerUser(User user, String email, String fullName, String rawPassword) {
-        String customerId = user.getId();
-
-        String sql = "INSERT INTO users (customer_id, username, password_hash, role, balance) VALUES (?, ?, ?, ?, ?)";
+    public User getUserById(String customerId) {
+        String sql = """
+                SELECT customer_id, username, password_hash, role, balance
+                FROM users
+                WHERE customer_id = ?
+                """;
 
         try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            pstmt.setString(1, customerId);
-            pstmt.setString(2, user.getUsername());
+            stmt.setString(1, normalizeCustomerId(customerId));
 
-            // Mã hóa mật khẩu
-            String hashedPass = com.auction.server.utils.PasswordUtil.hashPassword(rawPassword);
-            pstmt.setString(3, hashedPass);
-
-            // TỰ ĐỘNG BẮT ROLE DỰA TRÊN CLASS NẾU BỊ NULL
-            String role = user.getRole();
-            if (role == null || role.isEmpty()) {
-                role = (user instanceof Seller) ? "SELLER" : "BIDDER";
-            }
-            pstmt.setString(4, role);
-
-            pstmt.setDouble(5, 100000.0); // Khởi tạo 100k
-
-            if (pstmt.executeUpdate() > 0) {
-                return customerId;
-            }
-        } catch (SQLException e) {
-            System.err.println("❌ Lỗi Đăng ký (Database Exception): " + e.getMessage());
-        }
-        return null;
-    }
-
-    /**
-     * 3. ĐĂNG NHẬP
-     */
-    public User login(String loginIdentifier, String rawPassword) {
-        String sql = "SELECT * FROM users WHERE username = ? OR customer_id = ?";
-
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-
-            pstmt.setString(1, loginIdentifier);
-            pstmt.setString(2, loginIdentifier);
-
-            try (ResultSet rs = pstmt.executeQuery()) {
+            try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
-                    String hashedPass = rs.getString("password_hash");
-
-                    // CHỐNG CRASH MẬT KHẨU CŨ
-                    boolean isPasswordMatch = false;
-                    try {
-                        isPasswordMatch = com.auction.server.utils.PasswordUtil.checkPassword(rawPassword, hashedPass);
-                    } catch (IllegalArgumentException e) {
-                        isPasswordMatch = rawPassword.equals(hashedPass);
-                    }
-
-                    if (isPasswordMatch) {
-                        String dbCustomerId = rs.getString("customer_id");
-                        String dbUsername = rs.getString("username");
-                        String dbRole = rs.getString("role");
-                        double balance = rs.getDouble("balance");
-
-                        User user = "SELLER".equalsIgnoreCase(dbRole) ?
-                                new Seller(dbCustomerId, dbUsername, dbRole, hashedPass, balance) :
-                                new Bidder(dbCustomerId, dbUsername, dbRole, hashedPass, balance);
-
-                        System.out.println("✅ Database: Đăng nhập thành công cho User: " + dbUsername + " | Role: " + dbRole);
-                        return user;
-                    } else {
-                        System.out.println("❌ Database: Sai mật khẩu cho tài khoản: " + loginIdentifier);
-                    }
-                } else {
-                    System.out.println("❌ Database: Không tìm thấy tài khoản nào có tên/id là: " + loginIdentifier);
+                    return mapUser(rs);
                 }
             }
         } catch (SQLException e) {
-            System.err.println("❌ Database: Lỗi SQL khi đăng nhập: " + e.getMessage());
+            System.err.println("Lỗi khi truy vấn User theo ID: " + e.getMessage());
             e.printStackTrace();
         }
         return null;
     }
 
-    /**
-     * 4. QUÊN MẬT KHẨU
-     */
-    public boolean resetPassword(String loginIdentifier, String token, String newPassword) {
-        String sql = "UPDATE users SET password_hash = ? WHERE username = ? OR customer_id = ?";
+    public User getUserByUsername(String username) {
+        String sql = """
+                SELECT customer_id, username, password_hash, role, balance
+                FROM users
+                WHERE username = ?
+                """;
 
         try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            String hashedNewPassword = com.auction.server.utils.PasswordUtil.hashPassword(newPassword);
-            pstmt.setString(1, hashedNewPassword);
-            pstmt.setString(2, loginIdentifier);
-            pstmt.setString(3, loginIdentifier);
+            stmt.setString(1, username != null ? username.trim() : null);
 
-            return pstmt.executeUpdate() > 0;
-
-        } catch (SQLException e) {
-            System.err.println("❌ Lỗi resetPassword: " + e.getMessage());
-            return false;
-        }
-    }
-
-    /**
-     * 5. LẤY USER THEO ID
-     */
-    public User getUserById(String customerId) {
-        String sql = "SELECT * FROM users WHERE customer_id = ?";
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, customerId);
-            try (ResultSet rs = pstmt.executeQuery()) {
+            try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
-                    String username = rs.getString("username");
-                    String hashedPass = rs.getString("password_hash");
-                    String role = rs.getString("role");
-                    double balance = rs.getDouble("balance");
-
-                    if ("SELLER".equalsIgnoreCase(role)) {
-                        return new Seller(customerId, username, role, hashedPass, balance);
-                    } else {
-                        return new Bidder(customerId, username, role, hashedPass, balance);
-                    }
+                    return mapUser(rs);
                 }
             }
         } catch (SQLException e) {
-            System.err.println("❌ Lỗi getUserById: " + e.getMessage());
+            System.err.println("Lỗi khi truy vấn User theo username: " + e.getMessage());
+            e.printStackTrace();
         }
         return null;
     }
 
-    /**
-     * 6. LẤY TẤT CẢ USER
-     */
-    public List<User> getAllUsers() {
-        List<User> userList = new ArrayList<>();
-        String sql = "SELECT * FROM users WHERE role != 'ADMIN'";
+    public User login(String username, String rawPassword) {
+        String sql = """
+            SELECT customer_id, username, password_hash, role, balance
+            FROM users
+            WHERE username = ?
+            """;
 
         try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql);
-             ResultSet rs = pstmt.executeQuery()) {
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            while (rs.next()) {
-                String id = rs.getString("customer_id");
-                String username = rs.getString("username");
-                String hashedPass = rs.getString("password_hash");
-                String role = rs.getString("role");
-                double balance = rs.getDouble("balance");
+            stmt.setString(1, username != null ? username.trim() : null);
 
-                if ("SELLER".equalsIgnoreCase(role)) {
-                    userList.add(new Seller(id, username, role, hashedPass, balance));
-                } else {
-                    userList.add(new Bidder(id, username, role, hashedPass, balance));
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (!rs.next()) {
+                    return null;
                 }
+
+                String storedHash = rs.getString("password_hash");
+                if (storedHash == null || storedHash.isBlank()) {
+                    return null;
+                }
+
+                if (!PasswordUtil.checkPassword(rawPassword, storedHash)) {
+                    return null;
+                }
+
+                return new User(
+                        rs.getString("customer_id"),
+                        rs.getString("username"),
+                        rs.getString("role"),
+                        rs.getString("password_hash"),
+                        rs.getDouble("balance")
+                );
             }
         } catch (SQLException e) {
-            System.err.println("❌ Lỗi getAllUsers: " + e.getMessage());
+            System.err.println("Lỗi khi đăng nhập: " + e.getMessage());
+            e.printStackTrace();
+            return null;
         }
-        return userList;
     }
 
-    /**
-     * 7. XÓA USER
-     */
-    public boolean deleteUser(String customerId) {
-        String sql = "DELETE FROM users WHERE customer_id = ?";
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, customerId);
-            return pstmt.executeUpdate() > 0;
-        } catch (SQLException e) {
-            System.err.println("❌ Lỗi xóa User: " + e.getMessage());
+    public boolean registerUser(User user, String rawPassword) {
+        String checkSql = """
+                SELECT 1 FROM users
+                WHERE customer_id = ? OR username = ?
+                """;
+
+        String insertSql = """
+                INSERT INTO users (customer_id, username, password_hash, role, balance)
+                VALUES (?, ?, ?, ?, ?)
+                """;
+
+        try (Connection conn = DatabaseConnection.getConnection()) {
+            try (PreparedStatement checkStmt = conn.prepareStatement(checkSql)) {
+                String customerId = normalizeCustomerId(
+                        user.getCustomerId() != null ? user.getCustomerId() : user.getId()
+                );
+
+                String username = user.getUsername() != null ? user.getUsername().trim() : null;
+
+                checkStmt.setString(1, customerId);
+                checkStmt.setString(2, username);
+
+                try (ResultSet rs = checkStmt.executeQuery()) {
+                    if (rs.next()) {
+                        return false;
+                    }
+                }
+
+                try (PreparedStatement insertStmt = conn.prepareStatement(insertSql)) {
+                    String passwordHash = PasswordUtil.hashPassword(rawPassword);
+
+                    insertStmt.setString(1, customerId);
+                    insertStmt.setString(2, username);
+                    insertStmt.setString(3, passwordHash);
+                    insertStmt.setString(4, user.getRole());
+                    insertStmt.setDouble(5, user.getBalance());
+
+                    return insertStmt.executeUpdate() > 0;
+                }
+            }
+        }  catch (SQLException e) {
+            System.err.println("Lỗi khi đăng ký User mới: " + e.getMessage());
+            e.printStackTrace();
             return false;
         }
     }
 
-    /**
-     * --- HÀM MAIN DÙNG ĐỂ TEST NHANH DATABASE ---
-     */
-    public static void main(String[] args) {
-        UserDAO dao = new UserDAO();
-        System.out.println("--- DANH SÁCH TÀI KHOẢN TRONG HỆ THỐNG ---");
-        List<User> users = dao.getAllUsers();
+    public boolean resetPassword(String customerId, String newPassword, String confirmPassword) {
+        if (customerId == null || customerId.isBlank()) return false;
+        if (newPassword == null || !newPassword.equals(confirmPassword)) return false;
 
-        if(users.isEmpty()) {
-            System.out.println("Chưa có tài khoản nào trong Database!");
-        } else {
-            for (User u : users) {
-                System.out.println("ID: " + u.getId() +
-                        " | Tên: " + u.getUsername() +
-                        " | Vai trò: " + u.getRole() +
-                        " | Số dư: " + u.getBalance());
+        String sql = """
+                UPDATE users
+                SET password_hash = ?
+                WHERE customer_id = ?
+                """;
+
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, PasswordUtil.hashPassword(newPassword));
+            stmt.setString(2, normalizeCustomerId(customerId));
+
+            return stmt.executeUpdate() > 0;
+        } catch (SQLException e) {
+            System.err.println("Lỗi khi đổi mật khẩu: " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public List<User> getAllUsers() {
+        List<User> userList = new ArrayList<>();
+        String sql = """
+                SELECT customer_id, username, password_hash, role, balance
+                FROM users
+                ORDER BY customer_id
+                """;
+
+        try (Connection conn = DatabaseConnection.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+
+            while (rs.next()) {
+                userList.add(mapUser(rs));
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return userList;
+    }
+
+    public boolean deleteUser(String customerId) {
+        String sql = "DELETE FROM users WHERE customer_id = ?";
+
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, normalizeCustomerId(customerId));
+            return stmt.executeUpdate() > 0;
+        } catch (SQLException e) {
+            System.err.println("Lỗi khi xoá User: " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    private User mapUser(ResultSet rs) throws SQLException {
+        return new User(
+                rs.getString("customer_id"),
+                rs.getString("username"),
+                rs.getString("role"),
+                rs.getString("password_hash"),
+                rs.getDouble("balance")
+        );
+    }
+
+    private String normalizeCustomerId(String customerId) {
+        return customerId == null ? null : customerId.trim().toUpperCase();
+    }
+
+    public String generateNextCustomerId() {
+        String sql = """
+            SELECT customer_id
+            FROM users
+            WHERE customer_id LIKE 'BD5%'
+            ORDER BY customer_id DESC
+            LIMIT 1
+            """;
+
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            if (rs.next()) {
+                String lastId = rs.getString("customer_id");
+                String numberPart = lastId.substring(3);
+                int nextNumber = Integer.parseInt(numberPart) + 1;
+                return "BD5" + String.format("%05d", nextNumber);
+            }
+
+            return "BD500001";
+        } catch (SQLException e) {
+            System.err.println("Lỗi khi sinh customer_id mới: " + e.getMessage());
+            e.printStackTrace();
+            return "BD500001";
         }
     }
 }

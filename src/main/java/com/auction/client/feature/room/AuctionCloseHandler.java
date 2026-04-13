@@ -18,8 +18,8 @@ public class AuctionCloseHandler {
         auctionService.closeAuction(roomId);
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION,
-                "Phòng đấu giá đã được đóng. Chúc mừng bạn đã bán thành công!");
-        alert.setHeaderText("Chốt đơn thành công");
+                "Phiên đấu giá đã được đóng bởi người bán.");
+        alert.setHeaderText("Đóng phiên thành công");
         alert.showAndWait();
     }
 }

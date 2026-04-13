@@ -292,7 +292,8 @@ public class AuctionController implements Initializable {
         if (sessionStore != null && sessionStore.getCurrentRoom() != null) {
             AuctionRoom room = sessionStore.getCurrentRoom();
             auctionRoomStateBinder.bind(room);
-            auctionTimerService.start(room.getStartTime(), room.getScheduledEndTime());
+            auctionTimerService.start(room.getStartTime(), room.getEndTime());
+            updateCloseAuctionButtonVisibility();
         }
 
         rebuildRouter();
@@ -364,7 +365,12 @@ public class AuctionController implements Initializable {
                 auctionService,
                 new RegisterFormValidator(),
                 authPresenter,
-                new RegisterForm(authViewModel.getRegisterUsername(), authViewModel.getRegisterPassword(), authViewModel.getRegisterConfirmPassword(), authViewModel.getRegisterRole())
+                new RegisterForm(
+                        authViewModel.getRegisterUsername(),
+                        authViewModel.getRegisterPassword(),
+                        authViewModel.getRegisterConfirmPassword(),
+                        authViewModel.getRegisterRole()
+                )
         ).execute();
     }
 
@@ -508,5 +514,24 @@ public class AuctionController implements Initializable {
         if (chatActionHandler == null) {
             chatActionHandler = new ChatActionHandler(auctionService);
         }
+    }
+
+    private void updateCloseAuctionButtonVisibility() {
+        if (btnCloseAuction == null || sessionStore == null) return;
+
+        boolean visible = false;
+
+        if (sessionStore.getCurrentUser() != null && sessionStore.getCurrentRoom() != null) {
+            String currentUserId = sessionStore.getCurrentUser().getId();
+            String role = sessionStore.getCurrentUser().getRole();
+            String sellerIdOfRoom = sessionStore.getCurrentRoom().getSellerName();
+
+            visible = "SELLER".equalsIgnoreCase(role)
+                    && currentUserId != null
+                    && currentUserId.equalsIgnoreCase(sellerIdOfRoom);
+        }
+
+        btnCloseAuction.setVisible(visible);
+        btnCloseAuction.setManaged(visible);
     }
 }

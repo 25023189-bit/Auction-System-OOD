@@ -3,84 +3,200 @@ package com.auction.common.model;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-/**
- * Model đại diện cho một Phòng đấu giá.
- * Chứa thông tin vật phẩm và logic kiểm tra giá thầu (Bid).
- */
 public class AuctionRoom implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private String roomId;
-    private String itemName;
-    private double currentPrice;
-    private String highestBidder;
-    private String nameSeller;
-    private String highestBidderId = "Chưa có ai";
-    private String status;
-    private LocalDateTime startTime;
-    private int durationMinutes;
+    // ===== ID / THÔNG TIN CƠ BẢN =====
+    private String roomId;              // auction_id
+    private String itemId;              // item_id
+    private String itemName;            // items.name
+    private String itemDescription;     // items.description
 
-    // Chỉ set khi phiên đóng thật sự
-    private LocalDateTime actualEndTime;
+    // ===== GIÁ / NGƯỜI LIÊN QUAN =====
+    private double currentPrice;        // items.current_price
+    private String sellerName;          // seller_id hoặc username seller nếu có map thêm
+    private String highestBidder;       // bidder hiện tại cao nhất (nếu cần hiển thị)
 
-    // Deadline logic hiện tại để client đếm ngược
-    private LocalDateTime scheduledEndTime;
+    // ===== THỜI GIAN / TRẠNG THÁI =====
+    private LocalDateTime startTime;        // auctions.start_time
+    private LocalDateTime endTime;          // auctions.actual_end_time
+    private int durationMinutes;            // auctions.duration_minutes
+    private int extensionSeconds;           // auctions.extension_seconds
+    private String status;                  // OPEN / SOLD / UNSOLD / ENDED / CANCELED_BY_ADMIN ...
 
-    // Runtime flags/info
-    private boolean entryLocked;
-    private long extendedSeconds;
+    // ===== RUNTIME STATE (ANTI-SNIPING / CLIENT VIEW) =====
+    private long extendedSeconds = 0;       // tổng số giây đã được cộng thêm lúc runtime
+    private boolean entryLocked = false;    // khóa người mới vào 30 giây cuối
+    private LocalDateTime scheduledEndTime; // endTime + runtime extension
 
-    // Seller cấu hình lúc tạo phiên: số giây cộng thêm mỗi lần anti-sniping kích hoạt
-    private int extensionSeconds = 60;
-
-    private String itemDescription;
-
-    public AuctionRoom(String roomId, String itemName, double startingPrice) {
-        this.roomId = roomId;
-        this.itemName = itemName;
-        this.currentPrice = startingPrice;
-        this.highestBidder = "None";
+    public AuctionRoom() {
     }
 
-    public AuctionRoom(String roomId, String itemName, double startingPrice, String nameSeller) {
+    public AuctionRoom(String roomId, String itemName, double currentPrice) {
         this.roomId = roomId;
         this.itemName = itemName;
-        this.currentPrice = startingPrice;
-        this.nameSeller = nameSeller;
+        this.currentPrice = currentPrice;
     }
 
-    public String getRoomId() { return roomId; }
-    public String getItemName() { return itemName; }
-    public double getCurrentPrice() { return currentPrice; }
-    public String getHighestBidder() { return highestBidder; }
-    public String getHighestBidderId() { return this.highestBidderId; }
-    public String getNameSeller() { return nameSeller; }
-    public String getStatus() { return status; }
-    public int getDurationMinutes() { return durationMinutes; }
-    public LocalDateTime getStartTime() { return startTime; }
-    public LocalDateTime getActualEndTime() { return actualEndTime; }
-    public LocalDateTime getScheduledEndTime() { return scheduledEndTime; }
-    public boolean isEntryLocked() { return entryLocked; }
-    public long getExtendedSeconds() { return extendedSeconds; }
-    public int getExtensionSeconds() { return extensionSeconds; }
-    public String getItemDescription() { return itemDescription; }
+    public AuctionRoom(String roomId, String itemName, double currentPrice, String sellerName) {
+        this.roomId = roomId;
+        this.itemName = itemName;
+        this.currentPrice = currentPrice;
+        this.sellerName = sellerName;
+    }
 
-    public void setRoomId(String roomId) { this.roomId = roomId; }
-    public void setItemName(String itemName) { this.itemName = itemName; }
-    public void setCurrentPrice(double currentPrice) { this.currentPrice = currentPrice; }
-    public void setHighestBidder(String highestBidder) { this.highestBidder = highestBidder; }
-    public void setStatus(String status) { this.status = status; }
-    public void setStartTime(LocalDateTime startTime) { this.startTime = startTime; }
-    public void setDurationMinutes(int durationMinutes) { this.durationMinutes = durationMinutes; }
-    public void setActualEndTime(LocalDateTime actualEndTime) { this.actualEndTime = actualEndTime; }
-    public void setScheduledEndTime(LocalDateTime scheduledEndTime) { this.scheduledEndTime = scheduledEndTime; }
-    public void setEntryLocked(boolean entryLocked) { this.entryLocked = entryLocked; }
-    public void setExtendedSeconds(long extendedSeconds) { this.extendedSeconds = extendedSeconds; }
-    public void setExtensionSeconds(int extensionSeconds) { this.extensionSeconds = extensionSeconds; }
-    public void setItemDescription(String itemDescription) { this.itemDescription = itemDescription; }
+    // ===== GETTER / SETTER CHÍNH =====
 
-    @Override
-    public String toString() {
-        return "Room[" + roomId + " - " + itemName + " - Price: " + currentPrice + "]";
+    public String getRoomId() {
+        return roomId;
+    }
+
+    public void setRoomId(String roomId) {
+        this.roomId = roomId;
+    }
+
+    public String getAuctionId() {
+        return roomId;
+    }
+
+    public void setAuctionId(String auctionId) {
+        this.roomId = auctionId;
+    }
+
+    public String getItemId() {
+        return itemId;
+    }
+
+    public void setItemId(String itemId) {
+        this.itemId = itemId;
+    }
+
+    // Alias giữ tương thích code cũ
+    public String getProductId() {
+        return itemId;
+    }
+
+    public void setProductId(String productId) {
+        this.itemId = productId;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+
+    public String getItemDescription() {
+        return (itemDescription != null && !itemDescription.isBlank())
+                ? itemDescription
+                : "Không có mô tả";
+    }
+
+    public void setItemDescription(String itemDescription) {
+        this.itemDescription = itemDescription;
+    }
+
+    public double getCurrentPrice() {
+        return currentPrice;
+    }
+
+    public void setCurrentPrice(double currentPrice) {
+        this.currentPrice = currentPrice;
+    }
+
+    public String getSellerName() {
+        return sellerName;
+    }
+
+    public void setSellerName(String sellerName) {
+        this.sellerName = sellerName;
+    }
+
+    // Alias giữ tương thích giao diện cũ
+    public String getNameSeller() {
+        return sellerName;
+    }
+
+    public String getHighestBidder() {
+        return highestBidder;
+    }
+
+    public void setHighestBidder(String highestBidder) {
+        this.highestBidder = highestBidder;
+    }
+
+    public LocalDateTime getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(LocalDateTime startTime) {
+        this.startTime = startTime;
+    }
+
+    public LocalDateTime getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(LocalDateTime endTime) {
+        this.endTime = endTime;
+    }
+
+    // Alias tương thích code cũ
+    public void setActualEndTime(LocalDateTime endTime) {
+        this.endTime = endTime;
+    }
+
+    public LocalDateTime getActualEndTime() {
+        return endTime;
+    }
+
+    public int getDurationMinutes() {
+        return durationMinutes;
+    }
+
+    public void setDurationMinutes(int durationMinutes) {
+        this.durationMinutes = durationMinutes;
+    }
+
+    public int getExtensionSeconds() {
+        return extensionSeconds;
+    }
+
+    public void setExtensionSeconds(int extensionSeconds) {
+        this.extensionSeconds = extensionSeconds;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public boolean isEntryLocked() {
+        return entryLocked;
+    }
+
+    public void setEntryLocked(boolean entryLocked) {
+        this.entryLocked = entryLocked;
+    }
+
+    public long getExtendedSeconds() {
+        return extendedSeconds;
+    }
+
+    public void setExtendedSeconds(long extendedSeconds) {
+        this.extendedSeconds = extendedSeconds;
+    }
+
+    public LocalDateTime getScheduledEndTime() {
+        return scheduledEndTime;
+    }
+
+    public void setScheduledEndTime(LocalDateTime scheduledEndTime) {
+        this.scheduledEndTime = scheduledEndTime;
     }
 }

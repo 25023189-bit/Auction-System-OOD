@@ -1,6 +1,8 @@
 package com.auction.client.feature.lobby;
 
 import com.auction.client.feature.viewmodel.LobbyRoomDisplayModel;
+import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 
@@ -23,7 +25,30 @@ public class LobbyRoomListRenderer {
         if (models == null) return;
 
         for (LobbyRoomDisplayModel model : models) {
-            paneSelectAuction.getChildren().add(cardFactory.createDefault(model));
+            VBox card = cardFactory.createDefault(model);
+            card.setUserData(model.getRoomId());
+            paneSelectAuction.getChildren().add(card);
+        }
+    }
+
+    public void updatePrice(String roomId, double newPrice) {
+        if (paneSelectAuction == null || roomId == null || roomId.isBlank()) return;
+
+        for (Node node : paneSelectAuction.getChildren()) {
+            if (!(node instanceof VBox card)) continue;
+
+            Object userData = card.getUserData();
+            if (userData == null || !roomId.equals(userData.toString())) continue;
+
+            for (Node child : card.getChildren()) {
+                if (child instanceof Label label) {
+                    String text = label.getText();
+                    if (text != null && text.startsWith("Giá hiện tại:")) {
+                        label.setText("Giá hiện tại: " + newPrice);
+                        return;
+                    }
+                }
+            }
         }
     }
 }

@@ -24,7 +24,10 @@ public class RoomListMapper implements DisplayMapper<String, List<AuctionRoom>> 
                 String itemName = info[1];
                 double currentPrice = Double.parseDouble(info[2]);
 
-                AuctionRoom room = new AuctionRoom(roomId, itemName, currentPrice);
+                AuctionRoom room = new AuctionRoom();
+                room.setRoomId(roomId);
+                room.setItemName(itemName);
+                room.setCurrentPrice(currentPrice);
                 rooms.add(room);
             }
         }

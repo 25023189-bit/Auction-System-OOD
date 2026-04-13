@@ -13,9 +13,11 @@ public class RoomDisplayMapper implements DisplayMapper<List<AuctionRoom>, List<
         if (source == null) return result;
 
         for (AuctionRoom room : source) {
+            String displayName = room.getItemName();
+
             result.add(new LobbyRoomDisplayModel(
                     room.getRoomId(),
-                    room.getItemName(),
+                    displayName,
                     room.getCurrentPrice()
             ));
         }
