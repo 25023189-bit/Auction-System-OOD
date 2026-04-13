@@ -33,7 +33,10 @@ public class SellerController {
     public void setSellerData(Seller seller) {
         this.currentSeller = seller;
         if (seller != null) {
-            lblReputation.setText("Uy tín: " + String.format("%.1f ⭐", seller.getRatingScore()));
+            // ĐÃ FIX: Bỏ tính năng Rating phức tạp, set text tĩnh hoặc ẩn đi
+            if(lblReputation != null) {
+                lblReputation.setText("Quyền: NGƯỜI BÁN (SELLER)");
+            }
         }
     }
 
@@ -99,11 +102,7 @@ public class SellerController {
                 return;
             }
 
-            if (currentSeller != null && !currentSeller.isTrustworthy()) {
-                lblStatus.setText("❌ CẢNH BÁO: Uy tín quá thấp!");
-                lblStatus.setTextFill(javafx.scene.paint.Color.RED);
-                return;
-            }
+            // ĐÃ FIX: Đã gỡ bỏ đoạn check `!currentSeller.isTrustworthy()` vì không còn phù hợp với DB chuẩn.
 
             this.extensionSeconds = parsedExtensionSeconds;
 

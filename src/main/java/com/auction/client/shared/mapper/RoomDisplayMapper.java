@@ -13,9 +13,12 @@ public class RoomDisplayMapper implements DisplayMapper<List<AuctionRoom>, List<
         if (source == null) return result;
 
         for (AuctionRoom room : source) {
+            // Thay vì getItemName() đã bị xóa, ta hiển thị ID Sản phẩm để Client không bị lỗi
+            String displayName = "Sản phẩm #" + room.getProductId();
+
             result.add(new LobbyRoomDisplayModel(
-                    room.getRoomId(),
-                    room.getItemName(),
+                    room.getAuctionId(), // Đã đổi roomId -> auctionId
+                    displayName,
                     room.getCurrentPrice()
             ));
         }

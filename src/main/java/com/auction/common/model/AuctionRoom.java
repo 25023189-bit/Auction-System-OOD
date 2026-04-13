@@ -3,84 +3,82 @@ package com.auction.common.model;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-/**
- * Model đại diện cho một Phòng đấu giá.
- * Chứa thông tin vật phẩm và logic kiểm tra giá thầu (Bid).
- */
 public class AuctionRoom implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String roomId;
     private String itemName;
+    private String itemDescription;
     private double currentPrice;
+    private String sellerName;
     private String highestBidder;
-    private String nameSeller;
-    private String highestBidderId = "Chưa có ai";
-    private String status;
     private LocalDateTime startTime;
-    private int durationMinutes;
+    private LocalDateTime endTime;
+    private String status;
 
-    // Chỉ set khi phiên đóng thật sự
-    private LocalDateTime actualEndTime;
-
-    // Deadline logic hiện tại để client đếm ngược
+    private long extendedSeconds = 0;
+    private boolean entryLocked = false;
     private LocalDateTime scheduledEndTime;
 
-    // Runtime flags/info
-    private boolean entryLocked;
-    private long extendedSeconds;
+    public AuctionRoom() {}
 
-    // Seller cấu hình lúc tạo phiên: số giây cộng thêm mỗi lần anti-sniping kích hoạt
-    private int extensionSeconds = 60;
-
-    private String itemDescription;
-
-    public AuctionRoom(String roomId, String itemName, double startingPrice) {
+    public AuctionRoom(String roomId, String itemName, double currentPrice) {
         this.roomId = roomId;
         this.itemName = itemName;
-        this.currentPrice = startingPrice;
-        this.highestBidder = "None";
+        this.currentPrice = currentPrice;
     }
 
-    public AuctionRoom(String roomId, String itemName, double startingPrice, String nameSeller) {
+    public AuctionRoom(String roomId, String itemName, double currentPrice, String sellerName) {
         this.roomId = roomId;
         this.itemName = itemName;
-        this.currentPrice = startingPrice;
-        this.nameSeller = nameSeller;
+        this.currentPrice = currentPrice;
+        this.sellerName = sellerName;
     }
 
-    public String getRoomId() { return roomId; }
-    public String getItemName() { return itemName; }
-    public double getCurrentPrice() { return currentPrice; }
-    public String getHighestBidder() { return highestBidder; }
-    public String getHighestBidderId() { return this.highestBidderId; }
-    public String getNameSeller() { return nameSeller; }
-    public String getStatus() { return status; }
-    public int getDurationMinutes() { return durationMinutes; }
-    public LocalDateTime getStartTime() { return startTime; }
-    public LocalDateTime getActualEndTime() { return actualEndTime; }
-    public LocalDateTime getScheduledEndTime() { return scheduledEndTime; }
-    public boolean isEntryLocked() { return entryLocked; }
-    public long getExtendedSeconds() { return extendedSeconds; }
-    public int getExtensionSeconds() { return extensionSeconds; }
-    public String getItemDescription() { return itemDescription; }
+    // --- CÁC HÀM FIX LỖI Ở AuctionDAO (image_afe5ca.jpg) ---
+    public void setEndTime(LocalDateTime endTime) { this.endTime = endTime; }
 
-    public void setRoomId(String roomId) { this.roomId = roomId; }
-    public void setItemName(String itemName) { this.itemName = itemName; }
-    public void setCurrentPrice(double currentPrice) { this.currentPrice = currentPrice; }
-    public void setHighestBidder(String highestBidder) { this.highestBidder = highestBidder; }
-    public void setStatus(String status) { this.status = status; }
+    // --- CÁC HÀM FIX LỖI Ở ClientHandler (image_af7d09.jpg, image_af6aa0.jpg) ---
     public void setStartTime(LocalDateTime startTime) { this.startTime = startTime; }
-    public void setDurationMinutes(int durationMinutes) { this.durationMinutes = durationMinutes; }
-    public void setActualEndTime(LocalDateTime actualEndTime) { this.actualEndTime = actualEndTime; }
-    public void setScheduledEndTime(LocalDateTime scheduledEndTime) { this.scheduledEndTime = scheduledEndTime; }
-    public void setEntryLocked(boolean entryLocked) { this.entryLocked = entryLocked; }
-    public void setExtendedSeconds(long extendedSeconds) { this.extendedSeconds = extendedSeconds; }
-    public void setExtensionSeconds(int extensionSeconds) { this.extensionSeconds = extensionSeconds; }
-    public void setItemDescription(String itemDescription) { this.itemDescription = itemDescription; }
-
-    @Override
-    public String toString() {
-        return "Room[" + roomId + " - " + itemName + " - Price: " + currentPrice + "]";
+    public void setActualEndTime(LocalDateTime endTime) { this.endTime = endTime; }
+    public void setDurationMinutes(int minutes) {
+        if (this.startTime != null) {
+            this.endTime = this.startTime.plusMinutes(minutes);
+        }
     }
+
+    // --- CÁC HÀM FIX LỖI Ở AuctionRoomStateBinder (image_afe265.jpg) ---
+    public String getItemDescription() {
+        return (itemDescription != null) ? itemDescription : "Không có mô tả";
+    }
+    public void setItemDescription(String itemDescription) { this.itemDescription = itemDescription; }
+    public boolean isEntryLocked() { return entryLocked; }
+    public void setEntryLocked(boolean entryLocked) { this.entryLocked = entryLocked; }
+
+    // --- FIX LỖI Ở AuctionRoomService & MessageHandler (image_af87f2.jpg, image_afde48.jpg) ---
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
+    public LocalDateTime getScheduledEndTime() { return scheduledEndTime; }
+    public void setScheduledEndTime(LocalDateTime scheduledEndTime) { this.scheduledEndTime = scheduledEndTime; }
+    public String getHighestBidder() { return highestBidder; }
+    public void setHighestBidder(String highestBidder) { this.highestBidder = highestBidder; }
+    public long getExtensionSeconds() { return extendedSeconds; }
+    public void setExtendedSeconds(long extendedSeconds) { this.extendedSeconds = extendedSeconds; }
+
+    // --- ALIAS CHO GIAO DIỆN ---
+    public String getAuctionId() { return roomId; }
+    public String getProductId() { return itemName; }
+    public String getNameSeller() { return sellerName; }
+
+    // --- GETTER/SETTER CƠ BẢN ---
+    public String getRoomId() { return roomId; }
+    public void setRoomId(String roomId) { this.roomId = roomId; }
+    public String getItemName() { return itemName; }
+    public void setItemName(String itemName) { this.itemName = itemName; }
+    public double getCurrentPrice() { return currentPrice; }
+    public void setCurrentPrice(double currentPrice) { this.currentPrice = currentPrice; }
+    public String getSellerName() { return sellerName; }
+    public void setSellerName(String sellerName) { this.sellerName = sellerName; }
+    public LocalDateTime getStartTime() { return startTime; }
+    public LocalDateTime getEndTime() { return endTime; }
 }
