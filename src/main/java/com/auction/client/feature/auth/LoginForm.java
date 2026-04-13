@@ -1,3 +1,3 @@
 package com.auction.client.feature.auth;
 
-public record LoginForm(String username, String password) {}
+public record LoginForm(String customerId, String password) {}

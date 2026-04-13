@@ -27,6 +27,7 @@ public class RegisterCommand implements UiCommand {
         }
 
         String role = "SELLER".equalsIgnoreCase(form.role()) ? "SELLER" : "BIDDER";
-        auctionService.register(form.username().trim(), form.password().trim(), role);
+        // Đổi .username() thành .customerId()
+        auctionService.register(form.customerId().trim(), form.password().trim(), role);
     }
 }

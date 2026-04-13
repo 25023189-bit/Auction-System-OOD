@@ -5,46 +5,48 @@ import java.sql.*;
 
 public class BidDAO {
     /**
-     * Hàm đặt giá: Dùng Transaction để đảm bảo vừa cập nhật giá bảng items,
-     * vừa lưu lịch sử vào bảng bid_transactions cùng 1 lúc.
+     * Hàm đặt giá: Dùng Transaction để đảm bảo tính toàn vẹn dữ liệu.
+     * Cập nhật giá mới lên bảng auctions và ghi vào bid_transactions.
      */
-    public boolean placeBid(String roomId, String bidderId, double bidAmount) {
-        String checkPriceSql = "SELECT i.current_price, a.item_id FROM auctions a JOIN items i ON a.item_id = i.item_id WHERE a.auction_id = ?";
-        String updatePriceSql = "UPDATE items SET current_price = ? WHERE item_id = ?";
-        String insertBidSql = "INSERT INTO bid_transactions (auction_id, bidder_id, bid_amount, bid_rank) VALUES (?, ?, ?, 1)";
+    public boolean placeBid(String auctionId, String bidderId, double bidAmount) {
+        // Giá hiện tại giờ nằm ở bảng auctions, dùng FOR UPDATE để tránh Race Condition
+        String checkPriceSql = "SELECT current_price FROM auctions WHERE auction_id = ? FOR UPDATE";
+        String updatePriceSql = "UPDATE auctions SET current_price = ? WHERE auction_id = ?";
+        String insertBidSql = "INSERT INTO bid_transactions (auction_id, bidder_id, bid_amount) VALUES (?, ?, ?)";
 
         try (Connection conn = DatabaseConnection.getConnection()) {
             conn.setAutoCommit(false); // Bắt đầu Transaction
 
             double currentPrice = 0;
-            String itemId = null;
+            boolean isAuctionExist = false;
 
-            // 1. Kiểm tra giá hiện tại
+            // 1. Kiểm tra giá hiện tại của phòng đấu giá
             try (PreparedStatement pstmt = conn.prepareStatement(checkPriceSql)) {
-                pstmt.setString(1, roomId);
-                ResultSet rs = pstmt.executeQuery();
-                if (rs.next()) {
-                    currentPrice = rs.getDouble("current_price");
-                    itemId = rs.getString("item_id");
+                pstmt.setString(1, auctionId);
+                try (ResultSet rs = pstmt.executeQuery()) {
+                    if (rs.next()) {
+                        currentPrice = rs.getDouble("current_price");
+                        isAuctionExist = true;
+                    }
                 }
             }
 
-            // Nếu giá nhập vào nhỏ hơn hoặc bằng giá hiện tại -> Từ chối
-            if (itemId == null || bidAmount <= currentPrice) {
+            // Nếu phòng không tồn tại hoặc giá nhập vào nhỏ hơn/bằng giá hiện tại -> Từ chối
+            if (!isAuctionExist || bidAmount <= currentPrice) {
                 conn.rollback();
                 return false;
             }
 
-            // 2. Cập nhật giá mới lên bảng items
+            // 2. Cập nhật giá mới trực tiếp lên bảng auctions
             try (PreparedStatement pstmt = conn.prepareStatement(updatePriceSql)) {
                 pstmt.setDouble(1, bidAmount);
-                pstmt.setString(2, itemId);
+                pstmt.setString(2, auctionId);
                 pstmt.executeUpdate();
             }
 
             // 3. Ghi lịch sử đặt giá
             try (PreparedStatement pstmt = conn.prepareStatement(insertBidSql)) {
-                pstmt.setString(1, roomId);
+                pstmt.setString(1, auctionId);
                 pstmt.setString(2, bidderId);
                 pstmt.setDouble(3, bidAmount);
                 pstmt.executeUpdate();
@@ -54,6 +56,7 @@ public class BidDAO {
             return true;
 
         } catch (SQLException e) {
+            System.err.println("❌ Lỗi khi Bid: " + e.getMessage());
             e.printStackTrace();
             return false;
         }

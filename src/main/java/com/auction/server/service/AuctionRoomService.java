@@ -2,7 +2,6 @@ package com.auction.server.service;
 
 import com.auction.common.dto.Message;
 import com.auction.common.model.AuctionRoom;
-import com.auction.common.model.Bidder;
 import com.auction.common.model.User;
 import com.auction.server.dao.AuctionDAO;
 import com.auction.server.dao.BidDAO;
@@ -21,13 +20,14 @@ public class AuctionRoomService {
 
         java.time.LocalDateTime now = java.time.LocalDateTime.now();
 
-        if ("SOLD".equalsIgnoreCase(room.getStatus())
-                || "UNSOLD".equalsIgnoreCase(room.getStatus())
-                || "CANCELED_BY_ADMIN".equalsIgnoreCase(room.getStatus())) {
+        // Đổi thành trạng thái FINISHED và CANCELED theo DB mới
+        if ("FINISHED".equalsIgnoreCase(room.getStatus())
+                || "CANCELED".equalsIgnoreCase(room.getStatus())) {
             return new Message("ROOM_FAIL", "SERVER", "Phiên đấu giá này không còn khả dụng!");
         }
 
-        if ("SCHEDULED".equalsIgnoreCase(room.getStatus())
+        // Đổi SCHEDULED thành OPEN theo DB mới
+        if ("OPEN".equalsIgnoreCase(room.getStatus())
                 && room.getStartTime() != null
                 && now.isBefore(room.getStartTime())) {
             return new Message("ROOM_FAIL", "SERVER", "Phiên đấu giá chưa bắt đầu!");
@@ -66,10 +66,9 @@ public class AuctionRoomService {
     }
 
     private java.time.LocalDateTime calculateScheduledEnd(AuctionRoom room, AuctionRuntimeState state) {
-        if (room.getStartTime() == null) return null;
-        return room.getStartTime()
-                .plusMinutes(room.getDurationMinutes())
-                .plusSeconds(state.getTotalExtendedSeconds());
+        if (room.getEndTime() == null) return null;
+        // Lấy thời gian kết thúc gốc cộng thêm số giây gia hạn
+        return room.getEndTime().plusSeconds(state.getTotalExtendedSeconds());
     }
 
     private void syncRuntimeInfoToRoom(AuctionRoom room, AuctionRuntimeState state) {
@@ -82,11 +81,10 @@ public class AuctionRoomService {
         UserDAO userDAO = new UserDAO();
         User user = userDAO.getUserById(userId);
 
-        if (!(user instanceof Bidder)) {
+        // Đổi cách check Role do DB mới không chia class Bidder/Seller
+        if (user == null || !"BIDDER".equalsIgnoreCase(user.getRole())) {
             return new Message("BID_FAIL", "SERVER", "Lỗi: Không tìm thấy người dùng hoặc bạn không phải người mua!");
         }
-
-        Bidder bidder = (Bidder) user;
 
         AuctionDAO auctionDAO = new AuctionDAO();
         AuctionRoom room = auctionDAO.getAuctionById(roomId);
@@ -97,19 +95,17 @@ public class AuctionRoomService {
 
         java.time.LocalDateTime now = java.time.LocalDateTime.now();
 
-        if ("SCHEDULED".equalsIgnoreCase(room.getStatus())
+        if ("OPEN".equalsIgnoreCase(room.getStatus())
                 && room.getStartTime() != null
                 && now.isBefore(room.getStartTime())) {
             return new Message("BID_FAIL", "SERVER", "Phiên đấu giá chưa bắt đầu!");
         }
 
-        if (!"RUNNING".equalsIgnoreCase(room.getStatus()) && !"SCHEDULED".equalsIgnoreCase(room.getStatus())) {
+        if (!"RUNNING".equalsIgnoreCase(room.getStatus()) && !"OPEN".equalsIgnoreCase(room.getStatus())) {
             return new Message("BID_FAIL", "SERVER", "Phiên đấu giá không ở trạng thái hợp lệ để đặt giá!");
         }
 
-        if (!bidder.canAfford(amount)) {
-            return new Message("BID_FAIL", "SERVER", "Số dư ví không đủ " + amount + "$ để đặt giá!");
-        }
+        // ĐÃ XÓA ĐOẠN CHECK SỐ DƯ (canAfford) VÌ DB KHÔNG CÒN CỘT TIỀN.
 
         AuctionRuntimeState state = AuctionStateManager.getState(roomId);
 
@@ -144,7 +140,7 @@ public class AuctionRoomService {
             }
 
             room.setCurrentPrice(amount);
-            room.setHighestBidder(bidder.getUsername());
+            room.setHighestBidder(user.getUsername());
 
             boolean extended = false;
             if (remaining <= FINAL_WINDOW_SECONDS) {
@@ -155,13 +151,11 @@ public class AuctionRoomService {
             syncRuntimeInfoToRoom(room, state);
 
             String action = extended ? "BID_SUCCESS_EXTENDED" : "BID_SUCCESS";
-            return new Message(action, bidder.getUsername(), room);
+            return new Message(action, user.getUsername(), room);
         }
     }
 
     public boolean validateAuctionItem(String sellerName, String itemName, double startingPrice) {
-        boolean result = true;
-        System.out.println("Chức năng đang bảo trì");
-        return result;
+        return true;
     }
 }

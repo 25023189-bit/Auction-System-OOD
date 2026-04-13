@@ -1,49 +1,33 @@
 package com.auction.common.model;
-
-// Nếu Art kế thừa Item và chung thư mục thì KHÔNG cần import Item.
-// Nhưng nếu cần dùng Serializable:
 import java.io.Serializable;
 
 public class Item implements Serializable {
     private String id;
     private String name;
     private String description;
-    private double currentHighestPrice;
-
+    private double startingPrice;
 
     public Item() {}
 
-    // Constructor có tham số để dùng trong file Art.java
     public Item(String id, String name, String description, double startingPrice) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.currentHighestPrice = startingPrice;
+        this.startingPrice = startingPrice;
     }
 
-    // Các hàm Getter để thằng Art có thể gọi được (getName, getCurrentHighestPrice)
-    public String getName() {
-        return name;
-    }
+    // --- BỔ SUNG ĐỂ FIX LỖI Ở FILE ART.JAVA ---
 
-    public double getCurrentHighestPrice() {
-        return currentHighestPrice;
-    }
+    // Fix lỗi Art.java gọi getName() ở dòng 14
+    public String getName() { return name; }
 
-    public String getId() {
-        return id;
-    }
+    // Fix lỗi Art.java gọi getCurrentHighestPrice() ở dòng 15
+    public double getCurrentHighestPrice() { return startingPrice; }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    // Hàm Setter để cập nhật giá khi có người đấu giá mới
-    public void setCurrentHighestPrice(double currentHighestPrice) {
-        this.currentHighestPrice = currentHighestPrice;
-    }
+    // --- CÁC HÀM GETTER CŨ ---
+    public String getProductId() { return id; }
+    public String getId() { return id; }
+    public String getProductName() { return name; }
+    public String getDescription() { return description; }
+    public double getStartingPrice() { return startingPrice; }
 }

@@ -40,13 +40,15 @@ public class AuthService {
         System.out.println("  - Role mong muốn: " + user.getRole());
 
         // Gọi DAO thực hiện insert vào Database
-        String newId = userDAO.registerUser(user, null, null, rawPassword);
+        // Gọi DAO thực hiện insert vào Database (Chỉ truyền đúng 2 tham số, trả về true/false)
+        boolean isSuccess = userDAO.registerUser(user, rawPassword);
 
-        if (newId != null) {
-            System.out.println("  - Kết quả: ĐĂNG KÝ THÀNH CÔNG");
-            return new Message("REGISTER_SUCCESS", "SERVER", newId);
+        if (isSuccess) {
+            System.out.println(" - Kết quả: ĐĂNG KÝ THÀNH CÔNG");
+            // Lấy luôn Username từ object user hiện tại để trả về (vì dòng 39 anh dùng user.getUsername() hợp lệ)
+            return new Message("REGISTER_SUCCESS", "SERVER", user.getUsername());
         } else {
-            System.out.println("  - Kết quả: ĐĂNG KÝ THẤT BẠI (Có thể trùng tên tài khoản)");
+            System.out.println(" - Kết quả: ĐĂNG KÝ THẤT BẠI (Có thể trùng tên tài khoản)");
             return new Message("REGISTER_FAIL", "SERVER", "Lỗi tạo tài khoản! Tên đăng nhập có thể đã tồn tại.");
         }
     }
