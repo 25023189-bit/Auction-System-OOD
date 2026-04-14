@@ -154,8 +154,8 @@
                         <Button onAction="#handleLogin" prefWidth="200.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" styleClass="login-button" text="Đăng Nhập" />
                         <HBox alignment="CENTER" spacing="120.0">
                             <children>
-                                <Button onAction="#showRegisterScreen"  styleClass="link-button" text="Chưa có tài khoản?" />
-                                <Button onAction="#showForgotPasswordScreen"  styleClass="link-button" text="Quên mật khẩu?" />
+                                <Button onAction="#showRegisterScreen" styleClass="link-button" text="Chưa có tài khoản?" />
+                                <Button onAction="#showForgotPasswordScreen" styleClass="link-button" text="Quên mật khẩu?" />
                             </children>
                         </HBox>
                     </children>
@@ -168,6 +168,9 @@
                 </VBox>
 
             </children>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
         </StackPane>
     </children>
 </AnchorPane>
