@@ -3,6 +3,7 @@ import math
 import random
 import re
 from pathlib import Path
+import time
 
 random.seed(42)
 
@@ -125,13 +126,15 @@ def generate_row():
         "auto_approve": auto_approve,
     }
 
-def generate_dataset(n_rows=10**5, output_path="auction_dataset.csv"):
+def generate_dataset(n_rows=10**9, output_path="auction_dataset.csv"):
+    st = time.time()
     rows = [generate_row() for _ in range(n_rows)]
     with open(output_path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
         writer.writeheader()
         writer.writerows(rows)
     print(f"Saved {n_rows} rows to {output_path}")
+    print("Time run:",time.time() - st,"s")
 
 if __name__ == "__main__":
     generate_dataset()

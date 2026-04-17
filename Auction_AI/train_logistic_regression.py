@@ -6,7 +6,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 from sklearn.compose import ColumnTransformer
-from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import CountVectorizer,TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import (
     accuracy_score,
@@ -69,8 +69,8 @@ def main():
     # =========================
     preprocessor = ColumnTransformer(
         transformers=[
-            ("title_bow", CountVectorizer(), title_feature),
-            ("desc_bow", CountVectorizer(max_features=200), desc_feature),
+            ("title_bow", TfidfVectorizer(), title_feature),
+            ("desc_bow", TfidfVectorizer(max_features=200), desc_feature),
             ("num", StandardScaler(), numeric_features),
         ],
         remainder="drop"
@@ -169,13 +169,13 @@ def main():
     plt.grid()
     plt.show()"""
 
-    # --- 10.4 Confusion Matrix ---
+    """# --- 10.4 Confusion Matrix ---
     ConfusionMatrixDisplay.from_predictions(y_test, y_pred)
     plt.title("Confusion Matrix")
-    plt.show()
+    plt.show()"""
 
     # --- 10.5 ROC Curve ---
-    """fpr, tpr, _ = roc_curve(y_test, y_prob)
+    fpr, tpr, _ = roc_curve(y_test, y_prob)
     roc_auc = auc(fpr, tpr)
 
     plt.figure()
@@ -186,7 +186,7 @@ def main():
     plt.title("ROC Curve")
     plt.legend()
     plt.grid()
-    plt.show()"""
+    plt.show()
 
 
 if __name__ == "__main__":
