@@ -13,7 +13,8 @@ import com.auction.server.main.AuctionServer;
 import com.auction.server.service.AuctionRoomService;
 import com.auction.server.service.AuthService;
 import com.auction.server.service.AuctionStateManager;
-
+import com.auction.server.service.ProductDetailService;
+import com.auction.common.model.ProductDetailResponse;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
@@ -128,6 +129,10 @@ public class ClientHandler implements Runnable {
 
                     case "ADMIN_DELETE_USER":
                         handleAdminDeleteUser(msg);
+                        break;
+
+                    case "GET_PRODUCT_DETAILS":
+                        handleGetProductDetails(msg);
                         break;
 
                     default:
@@ -575,6 +580,37 @@ public class ClientHandler implements Runnable {
         if (data instanceof Integer i) return i.doubleValue();
         if (data instanceof Long l) return l.doubleValue();
         return Double.parseDouble(data.toString().trim());
+    }
+    // =========================================================
+    // XỬ LÝ LẤY CHI TIẾT SẢN PHẨM
+    // =========================================================
+
+    private void handleGetProductDetails(Message msg) {
+        try {
+            // Lấy roomId từ dữ liệu Client gửi lên
+            String roomId = (msg.getData() != null) ? msg.getData().toString().trim() : "";
+
+            if (roomId.isEmpty()) {
+                sendMessage(new Message("PRODUCT_DETAILS_FAIL", "SERVER", "Mã phòng không hợp lệ!"));
+                return;
+            }
+
+            // Sử dụng ProductDetailService để lấy dữ liệu từ các DAO (AuctionDAO, TransactionDAO)
+            ProductDetailService detailService = new ProductDetailService();
+            ProductDetailResponse responseData = detailService.getProductDetails(roomId);
+
+            if (responseData != null) {
+                // Gửi phản hồi thành công kèm theo đối tượng DTO đã đóng gói
+                sendMessage(new Message("PRODUCT_DETAILS_SUCCESS", "SERVER", responseData));
+            } else {
+                sendMessage(new Message("PRODUCT_DETAILS_FAIL", "SERVER", "Không tìm thấy thông tin phòng đấu giá!"));
+            }
+
+        } catch (Exception e) {
+            System.err.println("❌ Lỗi xử lý GET_PRODUCT_DETAILS: " + e.getMessage());
+            e.printStackTrace();
+            sendMessage(new Message("PRODUCT_DETAILS_FAIL", "SERVER", "Lỗi hệ thống khi tải chi tiết!"));
+        }
     }
 
     private String generateItemId() {
