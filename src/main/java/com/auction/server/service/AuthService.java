@@ -26,19 +26,24 @@ public class AuthService {
         System.out.println("\n[AuthService] Nhận yêu cầu đăng ký:");
         System.out.println("  - ID mới: " + user.getId());
         System.out.println("  - Username mới: " + user.getUsername());
-        System.out.println("  - Role mong muốn: " + user.getRole());
 
-        boolean isSuccess = userDAO.registerUser(user, rawPassword);
+        // Nhận kết quả là String từ DAO
+        String resultStatus = userDAO.registerUser(user, rawPassword);
 
-        if (isSuccess) {
+        if ("SUCCESS".equals(resultStatus)) {
             System.out.println(" - Kết quả: ĐĂNG KÝ THÀNH CÔNG");
             return new Message("REGISTER_SUCCESS", "SERVER", user.getUsername());
         }
-
-        System.out.println(" - Kết quả: ĐĂNG KÝ THẤT BẠI");
-        return new Message("REGISTER_FAIL", "SERVER", "Tạo tài khoản thất bại! ID hoặc username có thể đã tồn tại.");
+        else if ("DUPLICATE".equals(resultStatus)) {
+            System.out.println(" - Kết quả: TRÙNG LẶP DỮ LIỆU");
+            return new Message("REGISTER_FAIL", "SERVER", "Tên đăng nhập đã có người sử dụng!");
+        }
+        else {
+            // NẾU LÀ LỖI DATABASE, NÓ SẼ IN THẲNG LÊN MÀN HÌNH ĐỎ CỦA CLIENT
+            System.out.println(" - Kết quả: LỖI DATABASE - " + resultStatus);
+            return new Message("REGISTER_FAIL", "SERVER", resultStatus);
+        }
     }
-
     public Message resetPassword(String customerId, String data) {
         System.out.println("\n[AuthService] Nhận yêu cầu đổi mật khẩu cho: " + customerId);
 
