@@ -1,10 +1,14 @@
 package com.auction.common.model;
 
 public class Admin extends User {
-    public Admin(String id, String username, String password, double balance) {
-        //Cố định role là "ADMIN"
-        super(id, username, "ADMIN", password, balance);
-    }
+    private static final long serialVersionUID = 1L;
 
-    // Thêm các thuộc tính riêng của Admin ở đây nếu muốn sau này
+    public Admin(String customerId, String password) {
+        super(); // Gọi constructor rỗng của class User
+
+        // Gọi các hàm Setter (Lưu ý: Nếu hàm bên class User của ông tên khác thì đổi lại cho đúng nhé)
+        this.setUsername(customerId);
+        this.setPassword(password);
+        this.setRole("ADMIN");
+    }
 }

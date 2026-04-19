@@ -1,6 +1,6 @@
 package com.auction.server.service;
 
-import com.auction.client.controllers.AuctionController;
+import com.auction.client.feature.controllers.AuctionController;
 import com.auction.common.dto.Message;
 import java.io.*;
 import java.net.Socket;

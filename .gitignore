@@ -72,3 +72,5 @@ build/
 
 ### Mac OS ###
 .DS_Store
+# Bỏ qua file cấu hình database của từng cá nhân
+src/main/resources/db.properties

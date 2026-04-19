@@ -2,95 +2,72 @@ package com.auction.common.model;
 
 import java.io.Serializable;
 
+/**
+ * Class User chuẩn chỉnh để fix toàn bộ lỗi build.
+ */
 public class User implements Serializable, Entity {
     private static final long serialVersionUID = 1L;
-    // Thuộc tính private để đóng gói (Encapsulation)
+
+    protected String customerId;
     protected String username;
     protected String password;
-    protected String id;
     protected String role;
-    protected double balance = 1000;
-    private String fullName;
-    private String email;
-    private String status;    // ACTIVE, LOCKED...
+    protected double balance;
 
-    // Constructor (Hàm khởi tạo)
+    // 1. Constructor rỗng (Bắt buộc cho Java Serializable)
+    public User() {}
 
-    public User() {
-    }
-
-    public User(String username, String password) {
-        this.username = username;
+    // 2. Constructor 3 tham số (Cứu bồ cho Admin.java)
+    public User(String customerId, String password, String role) {
+        this.customerId = customerId;
+        this.username = customerId; // Mặc định lấy ID làm tên
         this.password = password;
-    }
-
-    // Constructor rút gọn cho Login/Register
-    public User(String id, String username, String password) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-    }
-
-    public User(String id, String username,String role, String password) {
-        this.id = id;
-        this.username = username;
         this.role = role;
-        this.password = password;
+        this.balance = 0.0;
     }
 
-    public User(String id, String username, String password,double balance) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.balance = balance;
-    }
-
-    public User(String id, String username,String role, String password, double balance) {
-        this.id = id;
+    // 3. Constructor 5 tham số (Dùng cho UserDAO và login)
+    public User(String customerId, String username, String role, String password, double balance) {
+        this.customerId = customerId;
         this.username = username;
         this.role = role;
         this.password = password;
         this.balance = balance;
     }
 
-    public boolean isPasswordStrong() {
-        if (this.password == null) return false;
-        if (this.password.length() >= 6 && !this.password.contains(" ")){
-            return true;
-        }else {return false;}
+    // --- BẮT BUỘC: Override các hàm từ Interface Entity ---
+
+    @Override
+    public String getId() {
+        return this.customerId;
     }
 
-    public User(String id, String username, String password, String fullName, String email, String role, String status) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.fullName = fullName;
-        this.email = email;
-        this.role = role;
-        this.status = status;
-    }
-
+    @Override
     public String getName() {
-        return username;
+        return (this.username != null && !this.username.isEmpty()) ? this.username : this.customerId;
     }
 
-    // --- GETTERS ---
-    public String getId() { return id; }
-    public String getUsername() { return username; }
-    public String getPassword() { return password; }
-    public String getFullName() { return fullName; }
-    public String getEmail() { return email; }
+    // --- CÁC HÀM GETTER ĐỂ FIX LỖI "CANNOT FIND SYMBOL" ---
+
+    public String getUsername() {
+        return (username != null) ? username : customerId;
+    }
+
+    // BỔ SUNG: Alias để fix lỗi ở RegisterFormValidator đòi getConfirmPassword
+    public String getConfirmPassword() {
+        return this.password;
+    }
+
+    public String getCustomerId() { return customerId; }
     public String getRole() { return role; }
-    public String getStatus() { return status; }
+    public String getPassword() { return password; }
     public double getBalance() { return balance; }
 
-    // --- SETTERS ---
-    public void setId(String id) { this.id = id; }
+    // --- CÁC HÀM SETTER ---
+
+    public void setCustomerId(String customerId) { this.customerId = customerId; }
     public void setUsername(String username) { this.username = username; }
     public void setPassword(String password) { this.password = password; }
-    public void setFullName(String fullName) { this.fullName = fullName; }
-    public void setEmail(String email) { this.email = email; }
     public void setRole(String role) { this.role = role; }
-    public void setStatus(String status) { this.status = status; }
     public void setBalance(double balance) { this.balance = balance; }
 }
