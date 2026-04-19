@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
@@ -11,86 +10,61 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Priority?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@style.css"
-            xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.auction.client.feature.controllers.AuctionController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@auction-view.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.AuctionController">
     <children>
-        <BorderPane fx:id="paneAuctionRoom"
-                    AnchorPane.topAnchor="0.0" AnchorPane.rightAnchor="0.0"
-                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                    style="-fx-background-color: #ECF0F1;">
+        <BorderPane fx:id="paneAuctionRoom" style="-fx-background-color: #ECF0F1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 
             <top>
-                <VBox spacing="10" style="-fx-padding: 14 18 10 18;">
-                    <HBox alignment="CENTER_LEFT" spacing="12">
-                        <Button text="⬅ Quay lại Sảnh" onAction="#handleBackToSelection"
-                                style="-fx-background-color: #95A5A6; -fx-text-fill: white;" />
+                <VBox prefHeight="78.0" prefWidth="1280.0" spacing="10" style="-fx-padding: 14 18 10 18;">
+                    <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="1243.0" spacing="12">
+                        <Button onAction="#handleBackToSelection" style="-fx-background-color: #95A5A6; -fx-text-fill: white;" text="⬅ Quay lại Sảnh" />
 
-                        <Label fx:id="lblAuctionItemName"
-                               text="Tên vật phẩm"
-                               style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+                        <Label fx:id="lblAuctionItemName" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Tên vật phẩm" />
 
                         <Region HBox.hgrow="ALWAYS" />
 
-                        <Label fx:id="lblParticipantCount"
-                               text="Người tham gia: 1"
-                               style="-fx-text-fill: #566573;" />
+                        <Label fx:id="lblParticipantCount" style="-fx-text-fill: #566573;" text="Người tham gia: 1" />
 
-                        <VBox spacing="2" alignment="CENTER_RIGHT">
-                            <Label text="Thời gian" style="-fx-text-fill: #566573;" />
-                            <Label fx:id="lblTimer"
-                                   text="⏱️ Đang tải..."
-                                   style="-fx-font-weight: bold;" />
+                        <VBox alignment="CENTER_RIGHT" spacing="2">
+                            <Label style="-fx-text-fill: #566573;" text="Thời gian" />
+                            <Label fx:id="lblTimer" style="-fx-font-weight: bold;" text="⏱️ Đang tải..." />
                         </VBox>
 
-                        <Button fx:id="btnCloseAuction"
-                                text="Kết thúc phiên"
-                                onAction="#handleCloseAuction"
-                                visible="false" managed="false"
-                                style="-fx-background-color: #E74C3C; -fx-text-fill: white; -fx-font-weight: bold;" />
+                        <Button fx:id="btnCloseAuction" managed="false" onAction="#handleCloseAuction" style="-fx-background-color: #E74C3C; -fx-text-fill: white; -fx-font-weight: bold;" text="Kết thúc phiên" visible="false" />
                     </HBox>
 
                     <Separator />
-
-                    <Label fx:id="lblCurrentPrice"
-                           text="Giá hiện tại: 0 $"
-                           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #E67E22;" />
                 </VBox>
             </top>
 
             <center>
                 <HBox spacing="16" style="-fx-padding: 0 18 12 18;">
-                    <VBox spacing="12" prefWidth="360">
-                        <Label text="Vật phẩm" style="-fx-font-weight: bold;" />
+                    <VBox prefHeight="482.0" prefWidth="190.0" spacing="12">
+                        <Label alignment="CENTER" prefHeight="20.0" prefWidth="243.0" style="-fx-font-weight: bold;" text="VẬT PHẨM" />
 
-                        <ImageView fx:id="imgAuctionItem"
-                                   fitWidth="340" fitHeight="240"
-                                   preserveRatio="true"
-                                   pickOnBounds="true">
+                        <ImageView fx:id="imgAuctionItem" fitHeight="240" fitWidth="1090.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@auction.png" />
                             </image>
                         </ImageView>
 
-                        <Label text="Mô tả" style="-fx-font-weight: bold;" />
-                        <TextArea fx:id="txtItemDescriptionDisplay"
-                                  editable="false"
-                                  wrapText="true"
-                                  prefRowCount="8"
-                                  text="Mô tả vật phẩm sẽ hiển thị tại đây..." />
+                        <Label alignment="CENTER" prefHeight="20.0" prefWidth="241.0" style="-fx-font-weight: bold;" text="MÔ TẢ" textAlignment="CENTER">
+                     <font>
+                        <Font size="62.0" />
+                     </font></Label>
+                        <TextArea fx:id="txtItemDescriptionDisplay" editable="false" prefHeight="195.0" prefRowCount="8" prefWidth="240.0" text="Mô tả vật phẩm sẽ hiển thị tại đây..." wrapText="true" />
                     </VBox>
-
-                    <VBox spacing="12" HBox.hgrow="ALWAYS">
-                        <Label text="Diễn biến phiên đấu giá" style="-fx-font-weight: bold;" />
-                        <TextArea fx:id="txtChatLog"
-                                  editable="false"
-                                  wrapText="true"
-                                  VBox.vgrow="ALWAYS" />
-                    </VBox>
+               <HBox>
+                  <children>
+      
+                                <Label fx:id="lblCurrentPrice" prefHeight="35.0" prefWidth="426.0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #E67E22;" text="Giá hiện tại: 0 $" />
+                           <TextArea fx:id="txtChatLog" editable="false" prefHeight="482.0" prefWidth="833.0" wrapText="true" />
+                  </children>
+               </HBox>
                 </HBox>
             </center>
 
@@ -99,22 +73,13 @@
                     <Separator />
 
                     <HBox spacing="10">
-                        <TextField fx:id="txtBidAmount"
-                                   promptText="Nhập giá muốn đặt..."
-                                   HBox.hgrow="ALWAYS" />
-                        <Button fx:id="btnPlaceBid"
-                                text="Đặt Giá"
-                                onAction="#handleBid"
-                                style="-fx-background-color: #2ECC71; -fx-text-fill: white; -fx-font-weight: bold;" />
+                        <TextField fx:id="txtBidAmount" prefHeight="30.0" prefWidth="495.0" promptText="Nhập giá muốn đặt..." HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnPlaceBid" onAction="#handleBid" style="-fx-background-color: #2ECC71; -fx-text-fill: white; -fx-font-weight: bold;" text="Đặt Giá" />
                     </HBox>
 
                     <HBox spacing="10">
-                        <TextField fx:id="txtChatInput"
-                                   promptText="Nhập tin nhắn chat..."
-                                   HBox.hgrow="ALWAYS" />
-                        <Button text="Gửi Chat"
-                                onAction="#handleSendChat"
-                                style="-fx-background-color: #3498DB; -fx-text-fill: white;" />
+                        <TextField fx:id="txtChatInput" promptText="Nhập tin nhắn chat..." HBox.hgrow="ALWAYS" />
+                        <Button onAction="#handleSendChat" style="-fx-background-color: #3498DB; -fx-text-fill: white;" text="Gửi Chat" />
                     </HBox>
                 </VBox>
             </bottom>

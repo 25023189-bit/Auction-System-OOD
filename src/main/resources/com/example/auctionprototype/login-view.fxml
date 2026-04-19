@@ -132,7 +132,7 @@
                     </HBox>
                 </BorderPane>
 
-                <VBox fx:id="paneLogin" alignment="CENTER" layoutX="40.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="368.0" prefWidth="504.0" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 10);" styleClass="login-card">
+                <VBox fx:id="paneLogin" alignment="CENTER" layoutX="40.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="368.0" prefWidth="504.0" spacing="20.0" style="-fx-background-color: azure; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 10);" styleClass="login-card">
                     <children>
                         <HBox alignment="CENTER" prefWidth="424.0" spacing="10.0" styleClass="login-card">
                             <children>
@@ -163,7 +163,7 @@
                         <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
                     </padding>
                     <StackPane.margin>
-                        <Insets bottom="170.0" left="50.0" />
+                        <Insets />
                     </StackPane.margin>
                 </VBox>
 

@@ -1,5 +1,4 @@
 .login-card {
-    -fx-background-image: url("login-card.png");
     -fx-background-size: cover;
     /* Phải có 2 dòng dưới đây để bo tròn */
     -fx-background-radius: 20px;
@@ -83,7 +82,7 @@
 
 /* HOẶC Dành cho hình nền (Ảnh thật) */
 .my-background {
-    -fx-background-image: url("background-login.png");
+    -fx-background-image: url("login-card.png");
     -fx-background-size: cover;
     -fx-background-position: center center;
     -fx-background-radius: 20px;
