@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+import time
 
 import joblib
 import pandas as pd
@@ -61,6 +62,8 @@ def main():
         "is_weekend",
     ]
 
+    st = time.time()
+
     title_feature = "title"
     desc_feature = "description"
 
@@ -69,8 +72,8 @@ def main():
     # =========================
     preprocessor = ColumnTransformer(
         transformers=[
-            ("title_bow", TfidfVectorizer(), title_feature),
-            ("desc_bow", TfidfVectorizer(max_features=200), desc_feature),
+            ("title_bow", CountVectorizer(), title_feature),
+            ("desc_bow", CountVectorizer(max_features=200), desc_feature),
             ("num", StandardScaler(), numeric_features),
         ],
         remainder="drop"
@@ -110,6 +113,8 @@ def main():
     y_pred = model.predict(X_test)
     y_prob = model.predict_proba(X_test)[:, 1]
 
+    ed = time.time()
+
     # =========================
     # 8. METRICS
     # =========================
@@ -135,6 +140,7 @@ def main():
 
     print(f"\nModel saved: {MODEL_PATH}")
     print(f"Metrics saved: {METRICS_PATH}")
+    print("Time run:"+str(round(ed-st,2))+"s")
 
     # =========================
     # 10. VISUALIZATION
