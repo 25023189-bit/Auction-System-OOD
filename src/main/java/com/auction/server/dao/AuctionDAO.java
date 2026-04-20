@@ -1,9 +1,14 @@
 package com.auction.server.dao;
 
 import com.auction.common.model.AuctionRoom;
+import com.auction.common.model.Item;
 import com.auction.server.utils.DatabaseConnection;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,9 +18,10 @@ public class AuctionDAO {
         String sql = """
                 INSERT INTO auctions (
                     auction_id, item_id, seller_id, status,
-                    start_time, duration_minutes, actual_end_time, extension_seconds
+                    start_time, duration_minutes, actual_end_time, extension_seconds,
+                    starting_price, bid_step, minimum_join_amount
                 )
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """;
 
         try (Connection conn = DatabaseConnection.getConnection();
@@ -29,10 +35,63 @@ public class AuctionDAO {
             pstmt.setInt(6, room.getDurationMinutes());
             pstmt.setTimestamp(7, Timestamp.valueOf(room.getEndTime()));
             pstmt.setInt(8, room.getExtensionSeconds());
+            pstmt.setDouble(9, room.getStartingPrice());
+            pstmt.setDouble(10, room.getBidStep());
+            pstmt.setDouble(11, room.getMinimumJoinAmount());
 
             return pstmt.executeUpdate() > 0;
         } catch (SQLException e) {
-            System.err.println("❌ Lỗi lưu Auction: " + e.getMessage());
+            System.err.println("Loi luu Auction: " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean createAuctionWithItem(AuctionRoom room, Item item, String sellerId) {
+        String insertItemSql = """
+                INSERT INTO items (item_id, name, description, current_price)
+                VALUES (?, ?, ?, ?)
+                """;
+
+        String insertAuctionSql = """
+                INSERT INTO auctions (
+                    auction_id, item_id, seller_id, status,
+                    start_time, duration_minutes, actual_end_time, extension_seconds,
+                    starting_price, bid_step, minimum_join_amount
+                )
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """;
+
+        try (Connection conn = DatabaseConnection.getConnection()) {
+            conn.setAutoCommit(false);
+
+            try (PreparedStatement itemStmt = conn.prepareStatement(insertItemSql)) {
+                itemStmt.setString(1, item.getId());
+                itemStmt.setString(2, item.getProductName());
+                itemStmt.setString(3, item.getDescription());
+                itemStmt.setDouble(4, item.getStartingPrice());
+                itemStmt.executeUpdate();
+            }
+
+            try (PreparedStatement auctionStmt = conn.prepareStatement(insertAuctionSql)) {
+                auctionStmt.setString(1, room.getRoomId());
+                auctionStmt.setString(2, item.getId());
+                auctionStmt.setString(3, sellerId);
+                auctionStmt.setString(4, room.getStatus() != null ? room.getStatus() : "OPEN");
+                auctionStmt.setTimestamp(5, Timestamp.valueOf(room.getStartTime()));
+                auctionStmt.setInt(6, room.getDurationMinutes());
+                auctionStmt.setTimestamp(7, Timestamp.valueOf(room.getEndTime()));
+                auctionStmt.setInt(8, room.getExtensionSeconds());
+                auctionStmt.setDouble(9, room.getStartingPrice());
+                auctionStmt.setDouble(10, room.getBidStep());
+                auctionStmt.setDouble(11, room.getMinimumJoinAmount());
+                auctionStmt.executeUpdate();
+            }
+
+            conn.commit();
+            return true;
+        } catch (SQLException e) {
+            System.err.println("Transaction create auction failed: " + e.getMessage());
             e.printStackTrace();
             return false;
         }
@@ -43,6 +102,7 @@ public class AuctionDAO {
         String sql = """
                 SELECT a.auction_id, a.item_id, a.seller_id, a.status,
                        a.start_time, a.duration_minutes, a.actual_end_time, a.extension_seconds,
+                       a.starting_price, a.bid_step, a.minimum_join_amount,
                        i.name, i.description, i.current_price
                 FROM auctions a
                 JOIN items i ON a.item_id = i.item_id
@@ -68,6 +128,7 @@ public class AuctionDAO {
         String sql = """
                 SELECT a.auction_id, a.item_id, a.seller_id, a.status,
                        a.start_time, a.duration_minutes, a.actual_end_time, a.extension_seconds,
+                       a.starting_price, a.bid_step, a.minimum_join_amount,
                        i.name, i.description, i.current_price
                 FROM auctions a
                 JOIN items i ON a.item_id = i.item_id
@@ -103,6 +164,7 @@ public class AuctionDAO {
         String sql = """
                 SELECT a.auction_id, a.item_id, a.seller_id, a.status,
                        a.start_time, a.duration_minutes, a.actual_end_time, a.extension_seconds,
+                       a.starting_price, a.bid_step, a.minimum_join_amount,
                        i.name, i.description, i.current_price
                 FROM auctions a
                 JOIN items i ON a.item_id = i.item_id
@@ -139,7 +201,7 @@ public class AuctionDAO {
             pstmt.setString(2, sellerId);
             return pstmt.executeUpdate() > 0;
         } catch (SQLException e) {
-            System.err.println("❌ Lỗi đóng phiên bởi seller: " + e.getMessage());
+            System.err.println("Loi dong phien boi seller: " + e.getMessage());
             e.printStackTrace();
             return false;
         }
@@ -170,7 +232,7 @@ public class AuctionDAO {
         String debitWinnerSql = """
                 UPDATE users
                 SET balance = balance - ?
-                WHERE customer_id = ?
+                WHERE customer_id = ? AND balance >= ?
                 """;
 
         String creditSellerSql = """
@@ -196,7 +258,7 @@ public class AuctionDAO {
                 try (ResultSet rs = pstmt.executeQuery()) {
                     if (!rs.next()) {
                         conn.rollback();
-                        return CloseAuctionResult.fail("Không tìm thấy phiên đấu giá.");
+                        return CloseAuctionResult.fail("Khong tim thay phien dau gia.");
                     }
                     sellerId = rs.getString("seller_id");
                     currentStatus = rs.getString("status");
@@ -205,7 +267,7 @@ public class AuctionDAO {
 
             if (currentStatus != null && !("OPEN".equalsIgnoreCase(currentStatus) || "RUNNING".equalsIgnoreCase(currentStatus))) {
                 conn.rollback();
-                return CloseAuctionResult.fail("Phiên đã ở trạng thái kết thúc.");
+                return CloseAuctionResult.fail("Phien da o trang thai ket thuc.");
             }
 
             String winnerId = null;
@@ -235,7 +297,11 @@ public class AuctionDAO {
             try (PreparedStatement pstmt = conn.prepareStatement(debitWinnerSql)) {
                 pstmt.setDouble(1, finalPrice);
                 pstmt.setString(2, winnerId);
-                pstmt.executeUpdate();
+                pstmt.setDouble(3, finalPrice);
+                if (pstmt.executeUpdate() == 0) {
+                    conn.rollback();
+                    return CloseAuctionResult.fail("Nguoi thang khong du so du de chot phien.");
+                }
             }
 
             try (PreparedStatement pstmt = conn.prepareStatement(creditSellerSql)) {
@@ -275,9 +341,9 @@ public class AuctionDAO {
             return CloseAuctionResult.sold(winnerId, sellerId, finalPrice, winnerBalance, sellerBalance);
 
         } catch (SQLException e) {
-            System.err.println("❌ Lỗi chốt phiên theo thời gian: " + e.getMessage());
+            System.err.println("Loi chot phien theo thoi gian: " + e.getMessage());
             e.printStackTrace();
-            return CloseAuctionResult.fail("Lỗi database khi chốt phiên.");
+            return CloseAuctionResult.fail("Loi database khi chot phien.");
         }
     }
 
@@ -291,6 +357,9 @@ public class AuctionDAO {
         room.setItemName(rs.getString("name"));
         room.setItemDescription(rs.getString("description"));
         room.setCurrentPrice(rs.getDouble("current_price"));
+        room.setStartingPrice(rs.getDouble("starting_price"));
+        room.setBidStep(rs.getDouble("bid_step"));
+        room.setMinimumJoinAmount(rs.getDouble("minimum_join_amount"));
 
         Timestamp startTs = rs.getTimestamp("start_time");
         if (startTs != null) {
@@ -333,12 +402,12 @@ public class AuctionDAO {
         public static CloseAuctionResult sold(String winnerId, String sellerId, double finalPrice,
                                               Double winnerBalance, Double sellerBalance) {
             return new CloseAuctionResult(true, "SOLD", winnerId, sellerId, finalPrice, winnerBalance, sellerBalance,
-                    "Phiên đấu giá bán thành công.");
+                    "Phien dau gia ban thanh cong.");
         }
 
         public static CloseAuctionResult unsold() {
             return new CloseAuctionResult(true, "UNSOLD", null, null, 0.0, null, null,
-                    "Phiên đấu giá kết thúc nhưng không có người mua.");
+                    "Phien dau gia ket thuc nhung khong co nguoi mua.");
         }
 
         public static CloseAuctionResult fail(String message) {

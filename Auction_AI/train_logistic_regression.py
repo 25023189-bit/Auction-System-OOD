@@ -1,0 +1,199 @@
+import json
+from pathlib import Path
+import time
+
+import joblib
+import pandas as pd
+import matplotlib.pyplot as plt
+
+from sklearn.compose import ColumnTransformer
+from sklearn.feature_extraction.text import CountVectorizer,TfidfVectorizer
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import (
+    accuracy_score,
+    precision_score,
+    recall_score,
+    f1_score,
+    confusion_matrix,
+    classification_report,
+    ConfusionMatrixDisplay,
+    roc_curve,
+    auc
+)
+from sklearn.model_selection import train_test_split
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+
+
+# =========================
+# PATH
+# =========================
+BASE_DIR = Path(__file__).resolve().parent
+DATA_PATH = BASE_DIR / "auction_dataset.csv"
+MODEL_PATH = BASE_DIR / "auction_model.pkl"
+METRICS_PATH = BASE_DIR / "metrics.json"
+
+
+def main():
+    # =========================
+    # 1. LOAD DATA
+    # =========================
+    df = pd.read_csv(DATA_PATH)
+
+    X = df.drop(columns=["auto_approve"])
+    y = df["auto_approve"]
+
+    # =========================
+    # 2. FEATURE GROUP
+    # =========================
+    numeric_features = [
+        "seller_rating",
+        "seller_completed_auctions",
+        "seller_cancel_rate",
+        "title_length",
+        "desc_length",
+        "num_positive_keywords",
+        "num_negative_keywords",
+        "start_price_log",
+        "duration_minutes",
+        "extension_seconds",
+        "start_hour",
+        "day_of_week",
+        "is_weekend",
+    ]
+
+    st = time.time()
+
+    title_feature = "title"
+    desc_feature = "description"
+
+    # =========================
+    # 3. PREPROCESSOR
+    # =========================
+    preprocessor = ColumnTransformer(
+        transformers=[
+            ("title_bow", CountVectorizer(), title_feature),
+            ("desc_bow", CountVectorizer(max_features=200), desc_feature),
+            ("num", StandardScaler(), numeric_features),
+        ],
+        remainder="drop"
+    )
+
+    # =========================
+    # 4. MODEL PIPELINE
+    # =========================
+    model = Pipeline(
+        steps=[
+            ("preprocessor", preprocessor),
+            ("classifier", LogisticRegression(
+                max_iter=2000,
+                class_weight="balanced"
+            )),
+        ]
+    )
+
+    # =========================
+    # 5. TRAIN / TEST SPLIT
+    # =========================
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y,
+        test_size=0.2,
+        random_state=42,
+        stratify=y
+    )
+
+    # =========================
+    # 6. TRAIN
+    # =========================
+    model.fit(X_train, y_train)
+
+    # =========================
+    # 7. PREDICT
+    # =========================
+    y_pred = model.predict(X_test)
+    y_prob = model.predict_proba(X_test)[:, 1]
+
+    ed = time.time()
+
+    # =========================
+    # 8. METRICS
+    # =========================
+    metrics = {
+        "accuracy": float(accuracy_score(y_test, y_pred)),
+        "precision": float(precision_score(y_test, y_pred, zero_division=0)),
+        "recall": float(recall_score(y_test, y_pred, zero_division=0)),
+        "f1": float(f1_score(y_test, y_pred, zero_division=0)),
+        "confusion_matrix": confusion_matrix(y_test, y_pred).tolist(),
+        "classification_report": classification_report(y_test, y_pred, zero_division=0),
+    }
+
+    print("\n=== METRICS ===")
+    print(json.dumps(metrics, indent=2))
+
+    # =========================
+    # 9. SAVE MODEL
+    # =========================
+    joblib.dump(model, MODEL_PATH)
+
+    with open(METRICS_PATH, "w", encoding="utf-8") as f:
+        json.dump(metrics, f, indent=2, ensure_ascii=False)
+
+    print(f"\nModel saved: {MODEL_PATH}")
+    print(f"Metrics saved: {METRICS_PATH}")
+    print("Time run:"+str(round(ed-st,2))+"s")
+
+    # =========================
+    # 10. VISUALIZATION
+    # =========================
+
+    # --- 10.1 So sánh y_test vs y_pred ---
+    """plt.figure(figsize=(10, 4))
+    plt.plot(y_test.values, label="Thực tế", marker='o')
+    plt.plot(y_pred, label="Dự đoán", marker='x')
+    plt.title("Thực tế vs Dự đoán")
+    plt.legend()
+    plt.grid()
+    plt.show()"""
+
+    """# --- 10.2 Scatter probability ---
+    plt.figure(figsize=(10, 4))
+    plt.scatter(range(len(y_prob)), y_prob, c=y_test, cmap="bwr")
+    plt.axhline(y=0.5, linestyle='--', color='black')
+    plt.title("Xác suất dự đoán")
+    plt.ylabel("Probability")
+    plt.xlabel("Sample index")
+    plt.colorbar(label="True label")
+    plt.grid()
+    plt.show()"""
+
+    # --- 10.3 Histogram ---
+    """plt.figure(figsize=(6, 4))
+    plt.hist(y_prob, bins=20)
+    plt.title("Phân bố xác suất")
+    plt.xlabel("Probability")
+    plt.ylabel("Count")
+    plt.grid()
+    plt.show()"""
+
+    """# --- 10.4 Confusion Matrix ---
+    ConfusionMatrixDisplay.from_predictions(y_test, y_pred)
+    plt.title("Confusion Matrix")
+    plt.show()"""
+
+    # --- 10.5 ROC Curve ---
+    fpr, tpr, _ = roc_curve(y_test, y_prob)
+    roc_auc = auc(fpr, tpr)
+
+    plt.figure()
+    plt.plot(fpr, tpr, label=f"AUC = {roc_auc:.2f}")
+    plt.plot([0, 1], [0, 1], linestyle='--')
+    plt.xlabel("FPR")
+    plt.ylabel("TPR")
+    plt.title("ROC Curve")
+    plt.legend()
+    plt.grid()
+    plt.show()
+
+
+if __name__ == "__main__":
+    main()
