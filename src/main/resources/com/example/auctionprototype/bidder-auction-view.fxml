@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@style.css"
+            xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.auction.client.feature.controllers.AuctionController">
+    <children>
+        <BorderPane fx:id="paneAuctionRoom"
+                    AnchorPane.topAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                    style="-fx-background-color: linear-gradient(to bottom, #fffdf7, #f6f0e8);">
+            <top>
+                <VBox spacing="10" style="-fx-padding: 16 20 12 20;">
+                    <HBox alignment="CENTER_LEFT" spacing="12">
+                        <Button text="Back To Lobby" onAction="#handleBackToSelection"
+                                style="-fx-background-color: #95A5A6; -fx-text-fill: white;" />
+                        <Label fx:id="lblAuctionItemName"
+                               text="Auction Item"
+                               style="-fx-font-size: 22px; -fx-font-weight: bold;" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="lblParticipantCount"
+                               text="Participants: 0"
+                               style="-fx-text-fill: #566573;" />
+                        <VBox spacing="2" alignment="CENTER_RIGHT">
+                            <Label text="Time Remaining" style="-fx-text-fill: #566573;" />
+                            <Label fx:id="lblTimer"
+                                   text="Loading..."
+                                   style="-fx-font-weight: bold;" />
+                        </VBox>
+                    </HBox>
+                    <Separator />
+                    <HBox spacing="24" alignment="CENTER_LEFT">
+                        <VBox spacing="4">
+                            <Label text="Current Price" style="-fx-text-fill: #566573;" />
+                            <Label fx:id="lblCurrentPrice"
+                                   text="0 USD"
+                                   style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #D35400;" />
+                        </VBox>
+                        <VBox spacing="4">
+                            <Label text="Bidder Controls" style="-fx-text-fill: #566573;" />
+                            <Label text="Place bids and follow live activity in the room." />
+                        </VBox>
+                    </HBox>
+                </VBox>
+            </top>
+
+            <center>
+                <HBox spacing="16" style="-fx-padding: 0 20 14 20;">
+                    <VBox spacing="12" prefWidth="360">
+                        <Label text="Item Preview" style="-fx-font-weight: bold;" />
+                        <ImageView fx:id="imgAuctionItem"
+                                   fitWidth="340" fitHeight="240"
+                                   preserveRatio="true"
+                                   pickOnBounds="true">
+                            <image>
+                                <Image url="@auction.png" />
+                            </image>
+                        </ImageView>
+                        <Label text="Description" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="txtItemDescriptionDisplay"
+                                  editable="false"
+                                  wrapText="true"
+                                  prefRowCount="8"
+                                  text="Item description will appear here." />
+                    </VBox>
+
+                    <VBox spacing="12" HBox.hgrow="ALWAYS">
+                        <Label text="Live Auction Activity" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="txtChatLog"
+                                  editable="false"
+                                  wrapText="true"
+                                  VBox.vgrow="ALWAYS" />
+                    </VBox>
+                </HBox>
+            </center>
+
+            <bottom>
+                <VBox spacing="10" style="-fx-padding: 0 20 18 20;">
+                    <Separator />
+                    <HBox spacing="10">
+                        <TextField fx:id="txtBidAmount"
+                                   promptText="Enter your bid amount..."
+                                   HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnPlaceBid"
+                                text="Place Bid"
+                                onAction="#handleBid"
+                                style="-fx-background-color: #2ECC71; -fx-text-fill: white; -fx-font-weight: bold;" />
+                    </HBox>
+                    <HBox spacing="10">
+                        <TextField fx:id="txtChatInput"
+                                   promptText="Type a chat message..."
+                                   HBox.hgrow="ALWAYS" />
+                        <Button text="Send Chat"
+                                onAction="#handleSendChat"
+                                style="-fx-background-color: #3498DB; -fx-text-fill: white;" />
+                    </HBox>
+                </VBox>
+            </bottom>
+        </BorderPane>
+    </children>
+</AnchorPane>

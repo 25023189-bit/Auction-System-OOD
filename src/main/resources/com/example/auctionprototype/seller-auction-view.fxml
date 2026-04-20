@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
@@ -16,57 +15,56 @@
 <?import javafx.scene.layout.VBox?>
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@style.css"
-            xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.auction.client.feature.controllers.AuctionController">
     <children>
         <BorderPane fx:id="paneAuctionRoom"
                     AnchorPane.topAnchor="0.0" AnchorPane.rightAnchor="0.0"
                     AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                    style="-fx-background-color: #ECF0F1;">
-
+                    style="-fx-background-color: linear-gradient(to bottom, #f7f9fb, #eef3f7);">
             <top>
-                <VBox spacing="10" style="-fx-padding: 14 18 10 18;">
+                <VBox spacing="10" style="-fx-padding: 16 20 12 20;">
                     <HBox alignment="CENTER_LEFT" spacing="12">
-                        <Button text="⬅ Quay lại Sảnh" onAction="#handleBackToSelection"
+                        <Button text="Back To Lobby" onAction="#handleBackToSelection"
                                 style="-fx-background-color: #95A5A6; -fx-text-fill: white;" />
-
                         <Label fx:id="lblAuctionItemName"
-                               text="Tên vật phẩm"
-                               style="-fx-font-size: 20px; -fx-font-weight: bold;" />
-
+                               text="Auction Item"
+                               style="-fx-font-size: 22px; -fx-font-weight: bold;" />
                         <Region HBox.hgrow="ALWAYS" />
-
                         <Label fx:id="lblParticipantCount"
-                               text="Người tham gia: 1"
+                               text="Participants: 0"
                                style="-fx-text-fill: #566573;" />
-
                         <VBox spacing="2" alignment="CENTER_RIGHT">
-                            <Label text="Thời gian" style="-fx-text-fill: #566573;" />
+                            <Label text="Time Remaining" style="-fx-text-fill: #566573;" />
                             <Label fx:id="lblTimer"
-                                   text="⏱️ Đang tải..."
+                                   text="Loading..."
                                    style="-fx-font-weight: bold;" />
                         </VBox>
-
                         <Button fx:id="btnCloseAuction"
-                                text="Kết thúc phiên"
+                                text="Close Auction"
                                 onAction="#handleCloseAuction"
-                                visible="false" managed="false"
                                 style="-fx-background-color: #E74C3C; -fx-text-fill: white; -fx-font-weight: bold;" />
                     </HBox>
-
                     <Separator />
-
-                    <Label fx:id="lblCurrentPrice"
-                           text="Giá hiện tại: 0 $"
-                           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #E67E22;" />
+                    <HBox spacing="24" alignment="CENTER_LEFT">
+                        <VBox spacing="4">
+                            <Label text="Current Price" style="-fx-text-fill: #566573;" />
+                            <Label fx:id="lblCurrentPrice"
+                                   text="0 USD"
+                                   style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #E67E22;" />
+                        </VBox>
+                        <VBox spacing="4">
+                            <Label text="Seller Controls" style="-fx-text-fill: #566573;" />
+                            <Label text="Monitor bids, chat with participants, and close the auction when needed." />
+                        </VBox>
+                    </HBox>
                 </VBox>
             </top>
 
             <center>
-                <HBox spacing="16" style="-fx-padding: 0 18 12 18;">
+                <HBox spacing="16" style="-fx-padding: 0 20 14 20;">
                     <VBox spacing="12" prefWidth="360">
-                        <Label text="Vật phẩm" style="-fx-font-weight: bold;" />
-
+                        <Label text="Item Preview" style="-fx-font-weight: bold;" />
                         <ImageView fx:id="imgAuctionItem"
                                    fitWidth="340" fitHeight="240"
                                    preserveRatio="true"
@@ -75,17 +73,16 @@
                                 <Image url="@auction.png" />
                             </image>
                         </ImageView>
-
-                        <Label text="Mô tả" style="-fx-font-weight: bold;" />
+                        <Label text="Description" style="-fx-font-weight: bold;" />
                         <TextArea fx:id="txtItemDescriptionDisplay"
                                   editable="false"
                                   wrapText="true"
                                   prefRowCount="8"
-                                  text="Mô tả vật phẩm sẽ hiển thị tại đây..." />
+                                  text="Item description will appear here." />
                     </VBox>
 
                     <VBox spacing="12" HBox.hgrow="ALWAYS">
-                        <Label text="Diễn biến phiên đấu giá" style="-fx-font-weight: bold;" />
+                        <Label text="Live Auction Activity" style="-fx-font-weight: bold;" />
                         <TextArea fx:id="txtChatLog"
                                   editable="false"
                                   wrapText="true"
@@ -95,30 +92,20 @@
             </center>
 
             <bottom>
-                <VBox spacing="10" style="-fx-padding: 0 18 16 18;">
+                <VBox spacing="10" style="-fx-padding: 0 20 18 20;">
                     <Separator />
-
-                    <HBox spacing="10">
-                        <TextField fx:id="txtBidAmount"
-                                   promptText="Nhập giá muốn đặt..."
-                                   HBox.hgrow="ALWAYS" />
-                        <Button fx:id="btnPlaceBid"
-                                text="Đặt Giá"
-                                onAction="#handleBid"
-                                style="-fx-background-color: #2ECC71; -fx-text-fill: white; -fx-font-weight: bold;" />
-                    </HBox>
-
+                    <Label text="Seller view does not place bids. Use chat to communicate with participants."
+                           style="-fx-text-fill: #7F8C8D;" />
                     <HBox spacing="10">
                         <TextField fx:id="txtChatInput"
-                                   promptText="Nhập tin nhắn chat..."
+                                   promptText="Type a chat message..."
                                    HBox.hgrow="ALWAYS" />
-                        <Button text="Gửi Chat"
+                        <Button text="Send Chat"
                                 onAction="#handleSendChat"
                                 style="-fx-background-color: #3498DB; -fx-text-fill: white;" />
                     </HBox>
                 </VBox>
             </bottom>
-
         </BorderPane>
     </children>
 </AnchorPane>

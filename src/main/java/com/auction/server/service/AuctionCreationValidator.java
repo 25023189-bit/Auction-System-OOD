@@ -6,6 +6,7 @@ public class AuctionCreationValidator {
     private String errorMessage = "Thong tin tao phien khong hop le!";
 
     public boolean validateAuction(String sellerId,
+                                   String sellerOrganization,
                                    String itemName,
                                    String itemDesc,
                                    double startingPrice,
@@ -16,6 +17,10 @@ public class AuctionCreationValidator {
                                    int extensionSeconds) {
         if (sellerId == null || sellerId.isBlank()) {
             errorMessage = "Khong xac dinh duoc seller tao phien!";
+            return false;
+        }
+        if (sellerOrganization == null || sellerOrganization.isBlank()) {
+            errorMessage = "Seller phai co to chuc hop le moi duoc tao phien!";
             return false;
         }
         if (itemName == null || itemName.isBlank()) {

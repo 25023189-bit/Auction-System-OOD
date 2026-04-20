@@ -269,10 +269,21 @@ public class ClientHandler implements Runnable {
             int extensionSeconds = Integer.parseInt(parts[7].trim());
 
             String sellerId = msg.getId() != null ? msg.getId().trim().toUpperCase() : "";
+            UserDAO userDAO = new UserDAO();
+            User seller = userDAO.getUserById(sellerId);
+            if (seller == null) {
+                sendMessage(new Message("CREATE_AUCTION_FAIL", "SERVER", "Khong tim thay tai khoan seller!"));
+                return;
+            }
+            if (!"SELLER".equalsIgnoreCase(seller.getRole())) {
+                sendMessage(new Message("CREATE_AUCTION_FAIL", "SERVER", "Chi seller moi duoc tao phien dau gia!"));
+                return;
+            }
 
             AuctionCreationValidator validator = new AuctionCreationValidator();
             if (!validator.validateAuction(
                     sellerId,
+                    seller.getOrganization(),
                     itemName,
                     itemDesc,
                     startingPrice,
