@@ -26,6 +26,7 @@ import com.auction.common.role.DefaultRolePolicy;
 import com.auction.common.role.RolePolicy;
 import com.auction.server.service.*;
 import javafx.fxml.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 
@@ -39,7 +40,7 @@ public class AuctionController implements Initializable {
     // FXML FIELDS
     // ==========================================================
     @FXML private VBox paneLogin, paneRegister, paneForgotPassword;
-    @FXML private BorderPane paneAuctionRoom;
+    @FXML private Pane paneAuctionRoom;
     @FXML private BorderPane paneMainLobby;
 
     @FXML private TextField txtUsername, txtRegUsername, txtForgotUsername, txtRegOrganization;
@@ -55,11 +56,13 @@ public class AuctionController implements Initializable {
     @FXML private FlowPane paneSelectAuction;
 
     @FXML private Label lblAuctionItemName, lblCurrentPrice, lblParticipantCount, lblTimer;
+    @FXML private Label lblProductName, lblDescription, lblTimeLeft;
     @FXML private TextArea txtChatLog;
     @FXML private TextField txtBidAmount, txtChatInput;
     @FXML private VBox vboxCurrencyRates, vboxNews;
     @FXML private Button btnPlaceBid;
     @FXML private TextArea txtItemDescriptionDisplay;
+    @FXML private ImageView imgProduct;
 
     // ==========================================================
     // CORE SERVICE
@@ -159,7 +162,7 @@ public class AuctionController implements Initializable {
     // ==========================================================
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("[Controller] Đang khởi tạo AuctionController...");
+        System.out.println("[Controller] Ãƒâ€žÃ‚Âang khÃƒÂ¡Ã‚Â»Ã…Â¸i tÃƒÂ¡Ã‚ÂºÃ‚Â¡o AuctionController...");
         if (!isNetworkConnected) {
             clientConnection = new ClientConnection(this);
             auctionService = new AuctionService(clientConnection);
@@ -208,10 +211,13 @@ public class AuctionController implements Initializable {
         }
 
         if (auctionRoomPresenter == null) {
+            Label itemNameLabel = lblAuctionItemName != null ? lblAuctionItemName : lblProductName;
+            Label timerLabel = lblTimer != null ? lblTimer : lblTimeLeft;
             auctionRoomPresenter = new AuctionRoomPresenter(
-                    lblAuctionItemName,
+                    itemNameLabel,
                     lblCurrentPrice,
-                    lblTimer,
+                    timerLabel,
+                    lblDescription,
                     txtChatLog,
                     txtItemDescriptionDisplay,
                     btnCloseAuction,
@@ -251,7 +257,7 @@ public class AuctionController implements Initializable {
                     lobbyUserInfoBinder
             );
         }
-        System.out.println("[Controller] Khởi tạo hoàn tất!");
+        System.out.println("[Controller] KhÃƒÂ¡Ã‚Â»Ã…Â¸i tÃƒÂ¡Ã‚ÂºÃ‚Â¡o hoÃƒÆ’Ã‚Â n tÃƒÂ¡Ã‚ÂºÃ‚Â¥t!");
     }
 
     private void wireLoginView() {
@@ -278,7 +284,9 @@ public class AuctionController implements Initializable {
     }
 
     private void wireAuctionRoomView() {
-        auctionRoomPresenter = new AuctionRoomPresenter(lblAuctionItemName, lblCurrentPrice, lblTimer, txtChatLog, txtItemDescriptionDisplay, btnCloseAuction, btnPlaceBid, txtBidAmount);
+        Label itemNameLabel = lblAuctionItemName != null ? lblAuctionItemName : lblProductName;
+        Label timerLabel = lblTimer != null ? lblTimer : lblTimeLeft;
+        auctionRoomPresenter = new AuctionRoomPresenter(itemNameLabel, lblCurrentPrice, timerLabel, lblDescription, txtChatLog, txtItemDescriptionDisplay, btnCloseAuction, btnPlaceBid, txtBidAmount);
         auctionTimerService = new DefaultAuctionTimerService(auctionRoomPresenter);
         auctionRoomStateBinder = new AuctionRoomStateBinder(auctionRoomPresenter, sessionStore, rolePolicy);
         auctionRoomMessageHandler = new AuctionRoomMessageHandler(sessionStore, sceneNavigator,auctionRoomStateBinder, auctionRoomPresenter, auctionTimerService);
@@ -330,7 +338,7 @@ public class AuctionController implements Initializable {
     // ==========================================================
     @FXML
     private void handleLogin() {
-        System.out.println("\n[UI Event] -> Nút Đăng Nhập vừa được bấm!");
+        System.out.println("\n[UI Event] -> NÃƒÆ’Ã‚Âºt Ãƒâ€žÃ‚ÂÃƒâ€žÃ†â€™ng NhÃƒÂ¡Ã‚ÂºÃ‚Â­p vÃƒÂ¡Ã‚Â»Ã‚Â«a Ãƒâ€žÃ¢â‚¬ËœÃƒâ€ Ã‚Â°ÃƒÂ¡Ã‚Â»Ã‚Â£c bÃƒÂ¡Ã‚ÂºÃ‚Â¥m!");
         if (authViewModel == null) {
             authViewModel = new AuthViewModel();
         }
@@ -338,11 +346,11 @@ public class AuctionController implements Initializable {
         authViewModel.setUsername(txtUsername != null ? txtUsername.getText() : "");
         authViewModel.setPassword(txtPassword != null ? txtPassword.getText() : "");
 
-        System.out.println("[Login] Đã lấy dữ liệu từ FXML:");
+        System.out.println("[Login] Ãƒâ€žÃ‚ÂÃƒÆ’Ã‚Â£ lÃƒÂ¡Ã‚ÂºÃ‚Â¥y dÃƒÂ¡Ã‚Â»Ã‚Â¯ liÃƒÂ¡Ã‚Â»Ã¢â‚¬Â¡u tÃƒÂ¡Ã‚Â»Ã‚Â« FXML:");
         System.out.println("  - Username: " + authViewModel.getUsername());
-        System.out.println("  - Password: " + authViewModel.getPassword().replaceAll(".", "*")); // Che pass đi cho an toàn
+        System.out.println("  - Password: " + authViewModel.getPassword().replaceAll(".", "*")); // Che pass Ãƒâ€žÃ¢â‚¬Ëœi cho an toÃƒÆ’Ã‚Â n
 
-        System.out.println("[Login] Chuẩn bị gọi LoginCommand. Nếu luồng bị kẹt, khả năng cao là do LoginFormValidator chặn lại!");
+        System.out.println("[Login] ChuÃƒÂ¡Ã‚ÂºÃ‚Â©n bÃƒÂ¡Ã‚Â»Ã¢â‚¬Â¹ gÃƒÂ¡Ã‚Â»Ã‚Âi LoginCommand. NÃƒÂ¡Ã‚ÂºÃ‚Â¿u luÃƒÂ¡Ã‚Â»Ã¢â‚¬Å“ng bÃƒÂ¡Ã‚Â»Ã¢â‚¬Â¹ kÃƒÂ¡Ã‚ÂºÃ‚Â¹t, khÃƒÂ¡Ã‚ÂºÃ‚Â£ nÃƒâ€žÃ†â€™ng cao lÃƒÆ’Ã‚Â  do LoginFormValidator chÃƒÂ¡Ã‚ÂºÃ‚Â·n lÃƒÂ¡Ã‚ÂºÃ‚Â¡i!");
 
         new LoginCommand(
                 auctionService,
@@ -472,7 +480,7 @@ public class AuctionController implements Initializable {
     // ==========================================================
     public void updateConnectionStatus(String status) {
         if (lblStatus != null) {
-            lblStatus.setText("Trạng thái: " + status);
+            lblStatus.setText("TrÃƒÂ¡Ã‚ÂºÃ‚Â¡ng thÃƒÆ’Ã‚Â¡i: " + status);
         }
     }
 
@@ -511,7 +519,9 @@ public class AuctionController implements Initializable {
 
     private void ensureAuctionRoomActionsReady() {
         if (auctionRoomPresenter == null) {
-            auctionRoomPresenter = new AuctionRoomPresenter(lblAuctionItemName, lblCurrentPrice, lblTimer, txtChatLog, txtItemDescriptionDisplay, btnCloseAuction, btnPlaceBid, txtBidAmount);
+            Label itemNameLabel = lblAuctionItemName != null ? lblAuctionItemName : lblProductName;
+            Label timerLabel = lblTimer != null ? lblTimer : lblTimeLeft;
+            auctionRoomPresenter = new AuctionRoomPresenter(itemNameLabel, lblCurrentPrice, timerLabel, lblDescription, txtChatLog, txtItemDescriptionDisplay, btnCloseAuction, btnPlaceBid, txtBidAmount);
         }
         if (bidActionHandler == null) {
             bidActionHandler = new BidActionHandler(auctionService, sessionStore, auctionRoomPresenter);
