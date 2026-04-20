@@ -7,6 +7,7 @@ public class AuthViewModel {
     private String registerPassword = "";
     private String registerConfirmPassword = "";
     private String registerRole = "BIDDER";
+    private String registerOrganization = "";
     private String forgotUsername = "";
     private String forgotPassword = "";
     private String forgotConfirmPassword = "";
@@ -28,6 +29,9 @@ public class AuthViewModel {
 
     public String getRegisterRole() { return registerRole; }
     public void setRegisterRole(String registerRole) { this.registerRole = registerRole; }
+
+    public String getRegisterOrganization() { return registerOrganization; }
+    public void setRegisterOrganization(String registerOrganization) { this.registerOrganization = registerOrganization; }
 
     public String getForgotUsername() { return forgotUsername; }
     public void setForgotUsername(String forgotUsername) { this.forgotUsername = forgotUsername; }

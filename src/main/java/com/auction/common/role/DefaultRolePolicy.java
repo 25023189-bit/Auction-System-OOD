@@ -11,10 +11,12 @@ public class DefaultRolePolicy implements RolePolicy {
     }
 
     @Override
-    public boolean canCloseAuction(User user, AuctionRoom room, String currentUsername) {
-        if (user == null || room == null || currentUsername == null) return false;
+    public boolean canCloseAuction(User user, AuctionRoom room, String currentUserId) {
+        if (user == null || room == null || currentUserId == null) {
+            return false;
+        }
         return room.getSellerName() != null
-                && room.getSellerName().trim().equalsIgnoreCase(currentUsername.trim());
+                && room.getSellerName().trim().equalsIgnoreCase(currentUserId.trim());
     }
 
     @Override

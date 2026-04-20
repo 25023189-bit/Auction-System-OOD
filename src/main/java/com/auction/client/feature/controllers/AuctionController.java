@@ -42,10 +42,11 @@ public class AuctionController implements Initializable {
     @FXML private BorderPane paneAuctionRoom;
     @FXML private BorderPane paneMainLobby;
 
-    @FXML private TextField txtUsername, txtRegUsername, txtForgotUsername;
+    @FXML private TextField txtUsername, txtRegUsername, txtForgotUsername, txtRegOrganization;
     @FXML private PasswordField txtPassword, txtRegPassword, txtRegConfirm, txtForgotNewPassword, txtForgotConfirm;
     @FXML private Label lblStatus, lblRegStatus, lblForgotStatus;
     @FXML private ComboBox<String> cbRegRole;
+    @FXML private Label lblRegOrganization;
 
     @FXML private Label lblUsername, lblBalance, lblUsernameDisplay;
     @FXML private Label lblCountdownTimer;
@@ -194,7 +195,9 @@ public class AuctionController implements Initializable {
         if (cbRegRole != null && cbRegRole.getItems().isEmpty()) {
             cbRegRole.getItems().addAll("BIDDER", "SELLER");
             cbRegRole.setValue("BIDDER");
+            cbRegRole.valueProperty().addListener((obs, oldValue, newValue) -> updateRegisterOrganizationVisibility());
         }
+        updateRegisterOrganizationVisibility();
 
         if (sellerDashboardLauncher == null) {
             sellerDashboardLauncher = new SellerDashboardLauncher(auctionService);
@@ -360,6 +363,7 @@ public class AuctionController implements Initializable {
         authViewModel.setRegisterPassword(txtRegPassword != null ? txtRegPassword.getText() : "");
         authViewModel.setRegisterConfirmPassword(txtRegConfirm != null ? txtRegConfirm.getText() : "");
         authViewModel.setRegisterRole(cbRegRole != null ? cbRegRole.getValue() : "BIDDER");
+        authViewModel.setRegisterOrganization(txtRegOrganization != null ? txtRegOrganization.getText() : "");
 
         new RegisterCommand(
                 auctionService,
@@ -369,7 +373,8 @@ public class AuctionController implements Initializable {
                         authViewModel.getRegisterUsername(),
                         authViewModel.getRegisterPassword(),
                         authViewModel.getRegisterConfirmPassword(),
-                        authViewModel.getRegisterRole()
+                        authViewModel.getRegisterRole(),
+                        authViewModel.getRegisterOrganization()
                 )
         ).execute();
     }
@@ -533,5 +538,22 @@ public class AuctionController implements Initializable {
 
         btnCloseAuction.setVisible(visible);
         btnCloseAuction.setManaged(visible);
+    }
+
+    private void updateRegisterOrganizationVisibility() {
+        boolean sellerSelected = cbRegRole != null && "SELLER".equalsIgnoreCase(cbRegRole.getValue());
+
+        if (txtRegOrganization != null) {
+            txtRegOrganization.setVisible(sellerSelected);
+            txtRegOrganization.setManaged(sellerSelected);
+            if (!sellerSelected) {
+                txtRegOrganization.clear();
+            }
+        }
+
+        if (lblRegOrganization != null) {
+            lblRegOrganization.setVisible(sellerSelected);
+            lblRegOrganization.setManaged(sellerSelected);
+        }
     }
 }

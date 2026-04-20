@@ -1,10 +1,10 @@
 package com.auction.client.feature.room;
 
-import com.auction.common.role.RolePolicy;
-import com.auction.client.session.SessionStore;
 import com.auction.client.core.ui.ViewStateBinder;
+import com.auction.client.session.SessionStore;
 import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.User;
+import com.auction.common.role.RolePolicy;
 
 public class AuctionRoomStateBinder implements ViewStateBinder<AuctionRoom> {
 
@@ -22,18 +22,19 @@ public class AuctionRoomStateBinder implements ViewStateBinder<AuctionRoom> {
 
     @Override
     public void bind(AuctionRoom room) {
-        if (room == null) return;
+        if (room == null) {
+            return;
+        }
 
-        // Chỗ này nó gọi room.getItemDescription(), nên thằng AuctionRoom phải có hàm này
         presenter.showRoomInfo(room.getItemName(), room.getCurrentPrice(), room.getItemDescription());
 
         if (room.isEntryLocked()) {
-            presenter.appendChat("🔒 Phiên đã khóa người tham gia mới (30 giây cuối).");
+            presenter.appendChat("Phiên đã khóa người tham gia mới (30 giây cuối).");
         }
 
         User user = sessionStore.getCurrentUser();
-        String username = sessionStore.getCurrentUsername();
-        boolean isOwner = rolePolicy.canCloseAuction(user, room, username);
+        String currentUserId = user != null ? user.getId() : null;
+        boolean isOwner = rolePolicy.canCloseAuction(user, room, currentUserId);
         presenter.setOwnerControlsVisible(isOwner);
     }
 }

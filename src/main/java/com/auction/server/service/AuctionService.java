@@ -1,6 +1,7 @@
-package com.auction.server.service; // Lưu ý: Dù nằm ở package server nhưng class này phục vụ Client
+package com.auction.server.service;
 
 import com.auction.common.dto.Message;
+
 import java.time.LocalDateTime;
 
 public class AuctionService {
@@ -33,8 +34,9 @@ public class AuctionService {
         }
     }
 
-    public void register(String username, String password, String role) {
-        String data = username + "|" + password + "|" + role;
+    public void register(String username, String password, String role, String organization) {
+        String normalizedOrganization = (organization == null || organization.trim().isEmpty()) ? "" : organization.trim();
+        String data = username + "|" + password + "|" + role + "|" + normalizedOrganization;
         clientConnection.sendMessage(new Message("REGISTER", "", data));
     }
 
@@ -64,9 +66,11 @@ public class AuctionService {
     }
 
     public void createAuction(String itemName, String itemDesc, double startingPrice,
+                              double minimumJoinAmount, double bidStep,
                               LocalDateTime startTime, int duration, int extensionSeconds) {
         String data = itemName + "|" + itemDesc + "|" + startingPrice + "|" +
-                startTime.toString() + "|" + duration + "|" + extensionSeconds;
+                minimumJoinAmount + "|" + bidStep + "|" +
+                startTime + "|" + duration + "|" + extensionSeconds;
         clientConnection.sendMessage(new Message("CREATE_AUCTION", this.currentUser, data));
     }
 

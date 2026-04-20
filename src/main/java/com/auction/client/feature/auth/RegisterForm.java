@@ -4,5 +4,6 @@ public record RegisterForm(
         String username,
         String password,
         String confirmPassword,
-        String role
+        String role,
+        String organization
 ) {}

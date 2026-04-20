@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.control.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.SellerController">
+<AnchorPane prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.SellerController">
     <children>
         <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="500.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <Label text="BẢNG ĐIỀU KHIỂN NGƯỜI BÁN" textFill="#2c3e50">
+                <Label text="Seller Dashboard" textFill="#2c3e50">
                     <font>
                         <Font name="System Bold" size="24.0" />
                     </font>
@@ -19,7 +19,7 @@
 
                 <HBox alignment="CENTER" spacing="30.0" style="-fx-padding: 0 0 10 0;">
                     <children>
-                        <Label fx:id="lblReputation" text="Uy tín: 5.0 ⭐" textFill="#e67e22">
+                        <Label fx:id="lblReputation" text="Reputation: 5.0 Stars" textFill="#e67e22">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
@@ -29,20 +29,34 @@
 
                 <VBox spacing="10.0" style="-fx-background-color: #f8f9fa; -fx-padding: 20; -fx-border-color: #ddd; -fx-border-radius: 5;">
                     <children>
-                        <Label text="Tên vật phẩm đấu giá:">
+                        <Label text="Auction Item Name:">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <TextField fx:id="txtItemName" promptText="Tên Sản phẩm" />
-                        <TextArea fx:id="txtItemDescription" promptText="Mô tả chi tiết vật phẩm..." prefRowCount="3" wrapText="true" />
+                        <TextField fx:id="txtItemName" promptText="Item name" />
+                        <TextArea fx:id="txtItemDescription" promptText="Detailed item description..." prefRowCount="3" wrapText="true" />
 
-                        <Label text="Giá khởi điểm ($):">
+                        <Label text="Starting Price ($):">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <TextField fx:id="txtStartingPrice" promptText="Ví dụ: 1000" />
+                        <TextField fx:id="txtStartingPrice" promptText="Example: 1000" />
+
+                        <Label text="Minimum Join Amount ($):">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="txtMinimumJoinAmount" promptText="Greater than 10% and less than 75% of starting price" />
+
+                        <Label text="Bid Step ($):">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="txtBidStep" promptText="Example: 50" />
                     </children>
                 </VBox>
 
@@ -50,28 +64,26 @@
 
                 <HBox alignment="CENTER" spacing="20.0">
                     <children>
-                        <Button mnemonicParsing="false" onAction="#handleCreateAuction" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 150;" text="Tạo Phiên Đấu Giá" />
+                        <Button mnemonicParsing="false" onAction="#handleCreateAuction" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 150;" text="Create Auction" />
                     </children>
                 </HBox>
 
                 <VBox spacing="5" style="-fx-padding: 10 0 10 0;">
-                    <Label text="Thời gian bắt đầu:" style="-fx-font-weight: bold;"/>
+                    <Label text="Start Time:" style="-fx-font-weight: bold;" />
                     <HBox spacing="10" alignment="CENTER_LEFT">
-                        <DatePicker fx:id="datePickerStart" promptText="Chọn ngày bắt đầu" prefWidth="150"/>
-                        <TextField fx:id="txtStartHour" promptText="Giờ (0-23)" prefWidth="80"/>
-                        <Label text=":" style="-fx-font-weight: bold;"/>
-                        <TextField fx:id="txtStartMinute" promptText="Phút (0-59)" prefWidth="80"/>
+                        <DatePicker fx:id="datePickerStart" promptText="Select start date" prefWidth="150" />
+                        <TextField fx:id="txtStartHour" promptText="Hour (0-23)" prefWidth="80" />
+                        <Label text=":" style="-fx-font-weight: bold;" />
+                        <TextField fx:id="txtStartMinute" promptText="Minute (0-59)" prefWidth="80" />
                     </HBox>
                 </VBox>
 
                 <VBox spacing="5" style="-fx-padding: 0 0 10 0;">
-                    <Label text="Thời gian diễn ra (Phút):" style="-fx-font-weight: bold;"/>
-                    <TextField fx:id="txtDuration" promptText="Ví dụ: 30" prefWidth="150"/>
-                    <Label text="Gia hạn mỗi lần (giây):" />
-                    <TextField fx:id="txtExtensionSeconds"
-                               promptText="1 - 120"/>
+                    <Label text="Duration (Minutes):" style="-fx-font-weight: bold;" />
+                    <TextField fx:id="txtDuration" promptText="Example: 30" prefWidth="150" />
+                    <Label text="Extension Per Trigger (seconds):" />
+                    <TextField fx:id="txtExtensionSeconds" promptText="1 - 120" />
                 </VBox>
-
             </children>
             <padding>
                 <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
