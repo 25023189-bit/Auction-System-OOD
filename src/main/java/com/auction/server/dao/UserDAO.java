@@ -4,16 +4,19 @@ import com.auction.common.model.User;
 import com.auction.server.utils.DatabaseConnection;
 import com.auction.server.utils.PasswordUtil;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class UserDAO {
 
     public User getUserById(String customerId) {
         String sql = """
-                SELECT customer_id, username, password_hash, role, balance
+                SELECT customer_id, username, password_hash, role, organization, balance
                 FROM users
                 WHERE customer_id = ?
                 """;
@@ -29,7 +32,7 @@ public class UserDAO {
                 }
             }
         } catch (SQLException e) {
-            System.err.println("Lỗi khi truy vấn User theo ID: " + e.getMessage());
+            System.err.println("Loi khi truy van User theo ID: " + e.getMessage());
             e.printStackTrace();
         }
         return null;
@@ -37,7 +40,7 @@ public class UserDAO {
 
     public User getUserByUsername(String username) {
         String sql = """
-                SELECT customer_id, username, password_hash, role, balance
+                SELECT customer_id, username, password_hash, role, organization, balance
                 FROM users
                 WHERE username = ?
                 """;
@@ -53,7 +56,7 @@ public class UserDAO {
                 }
             }
         } catch (SQLException e) {
-            System.err.println("Lỗi khi truy vấn User theo username: " + e.getMessage());
+            System.err.println("Loi khi truy van User theo username: " + e.getMessage());
             e.printStackTrace();
         }
         return null;
@@ -61,7 +64,7 @@ public class UserDAO {
 
     public User login(String username, String rawPassword) {
         String sql = """
-            SELECT customer_id, username, password_hash, role, balance
+            SELECT customer_id, username, password_hash, role, organization, balance
             FROM users
             WHERE username = ?
             """;
@@ -85,16 +88,10 @@ public class UserDAO {
                     return null;
                 }
 
-                return new User(
-                        rs.getString("customer_id"),
-                        rs.getString("username"),
-                        rs.getString("role"),
-                        rs.getString("password_hash"),
-                        rs.getDouble("balance")
-                );
+                return mapUser(rs);
             }
         } catch (SQLException e) {
-            System.err.println("Lỗi khi đăng nhập: " + e.getMessage());
+            System.err.println("Loi khi dang nhap: " + e.getMessage());
             e.printStackTrace();
             return null;
         }
@@ -107,16 +104,13 @@ public class UserDAO {
                 """;
 
         String insertSql = """
-                INSERT INTO users (customer_id, username, password_hash, role, balance)
-                VALUES (?, ?, ?, ?, ?)
+                INSERT INTO users (customer_id, username, password_hash, role, organization, balance)
+                VALUES (?, ?, ?, ?, ?, ?)
                 """;
 
         try (Connection conn = DatabaseConnection.getConnection()) {
             try (PreparedStatement checkStmt = conn.prepareStatement(checkSql)) {
-                String customerId = normalizeCustomerId(
-                        user.getCustomerId() != null ? user.getCustomerId() : user.getId()
-                );
-
+                String customerId = normalizeCustomerId(user.getCustomerId() != null ? user.getCustomerId() : user.getId());
                 String username = user.getUsername() != null ? user.getUsername().trim() : null;
 
                 checkStmt.setString(1, customerId);
@@ -124,7 +118,7 @@ public class UserDAO {
 
                 try (ResultSet rs = checkStmt.executeQuery()) {
                     if (rs.next()) {
-                        return "DUPLICATE"; // Báo chính xác là do trùng lặp
+                        return "DUPLICATE";
                     }
                 }
 
@@ -135,16 +129,16 @@ public class UserDAO {
                     insertStmt.setString(2, username);
                     insertStmt.setString(3, passwordHash);
                     insertStmt.setString(4, user.getRole());
-                    insertStmt.setDouble(5, user.getBalance());
+                    insertStmt.setString(5, normalizeOrganization(user));
+                    insertStmt.setDouble(6, user.getBalance());
 
                     return insertStmt.executeUpdate() > 0 ? "SUCCESS" : "FAIL_INSERT";
                 }
             }
-        }  catch (SQLException e) {
-            System.err.println("Lỗi khi đăng ký User mới: " + e.getMessage());
+        } catch (SQLException e) {
+            System.err.println("Loi khi dang ky User moi: " + e.getMessage());
             e.printStackTrace();
-            // Trả thẳng cái lỗi của MySQL về để hiện lên màn hình!
-            return "LỖI SQL: " + e.getMessage();
+            return "LOI SQL: " + e.getMessage();
         }
     }
 
@@ -166,7 +160,7 @@ public class UserDAO {
 
             return stmt.executeUpdate() > 0;
         } catch (SQLException e) {
-            System.err.println("Lỗi khi đổi mật khẩu: " + e.getMessage());
+            System.err.println("Loi khi doi mat khau: " + e.getMessage());
             e.printStackTrace();
             return false;
         }
@@ -175,7 +169,7 @@ public class UserDAO {
     public List<User> getAllUsers() {
         List<User> userList = new ArrayList<>();
         String sql = """
-                SELECT customer_id, username, password_hash, role, balance
+                SELECT customer_id, username, password_hash, role, organization, balance
                 FROM users
                 ORDER BY customer_id
                 """;
@@ -202,7 +196,7 @@ public class UserDAO {
             stmt.setString(1, normalizeCustomerId(customerId));
             return stmt.executeUpdate() > 0;
         } catch (SQLException e) {
-            System.err.println("Lỗi khi xoá User: " + e.getMessage());
+            System.err.println("Loi khi xoa User: " + e.getMessage());
             e.printStackTrace();
             return false;
         }
@@ -214,12 +208,24 @@ public class UserDAO {
                 rs.getString("username"),
                 rs.getString("role"),
                 rs.getString("password_hash"),
+                rs.getString("organization"),
                 rs.getDouble("balance")
         );
     }
 
     private String normalizeCustomerId(String customerId) {
         return customerId == null ? null : customerId.trim().toUpperCase();
+    }
+
+    private String normalizeOrganization(User user) {
+        if (user == null || !"SELLER".equalsIgnoreCase(user.getRole())) {
+            return null;
+        }
+        String organization = user.getOrganization();
+        if (organization == null || organization.trim().isEmpty()) {
+            return null;
+        }
+        return organization.trim();
     }
 
     public String generateNextCustomerId() {
@@ -244,7 +250,7 @@ public class UserDAO {
 
             return "BD500001";
         } catch (SQLException e) {
-            System.err.println("Lỗi khi sinh customer_id mới: " + e.getMessage());
+            System.err.println("Loi khi sinh customer_id moi: " + e.getMessage());
             e.printStackTrace();
             return "BD500001";
         }

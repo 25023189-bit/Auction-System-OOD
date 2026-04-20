@@ -1,23 +1,32 @@
 package com.auction.server.main;
 
 import com.auction.common.dto.Message;
+import com.auction.common.model.AuctionRoom;
 import com.auction.server.ClientHandler;
+import com.auction.server.dao.AuctionDAO;
+import com.auction.server.service.AuctionRoomService;
 
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class AuctionServer {
 
     public static List<ClientHandler> clients = new CopyOnWriteArrayList<>();
+    private static final ScheduledExecutorService AUCTION_WATCHER = Executors.newSingleThreadScheduledExecutor();
 
     public static void main(String[] args) {
         int port = 8080;
 
         try {
+            startExpiredAuctionWatcher();
+
             ServerSocket serverSocket = new ServerSocket(port);
-            System.out.println("🚀 Server running on port: " + port);
+            System.out.println("Server running on port: " + port);
 
             while (true) {
                 Socket socket = serverSocket.accept();
@@ -30,15 +39,13 @@ public class AuctionServer {
             }
 
         } catch (Exception e) {
-            System.out.println("❌ Server error");
+            System.out.println("Server error");
             e.printStackTrace();
         }
     }
 
-    // ================== BROADCAST ==================
-
     public static void broadcast(Message msg) {
-        System.out.println("📡 Broadcast: " + msg.getAction());
+        System.out.println("Broadcast: " + msg.getAction());
 
         for (ClientHandler client : clients) {
             if (client != null && client.isAlive()) {
@@ -61,34 +68,63 @@ public class AuctionServer {
 
     public static void broadcastToRoom(String roomId, Message msg) {
         for (ClientHandler client : clients) {
-
             if (client == null || !client.isAlive()) {
                 removeClient(client);
                 continue;
             }
 
             String clientRoom = client.getCurrentRoomId();
-
             if (roomId != null && roomId.equals(clientRoom)) {
                 client.sendMessage(msg);
             }
         }
     }
 
-    // ================== CLIENT MANAGER ==================
+    public static void notifyRoomClosed(String roomId) {
+        Message message = new Message("AUCTION_CLOSED_NOTIFY", "SERVER", roomId);
+        for (ClientHandler client : clients) {
+            if (client == null || !client.isAlive()) {
+                removeClient(client);
+                continue;
+            }
+
+            if (roomId != null && roomId.equals(client.getCurrentRoomId())) {
+                client.sendMessage(message);
+                client.leaveCurrentRoomIfMatches(roomId);
+            }
+        }
+    }
 
     public static void addClient(ClientHandler client) {
         if (client != null) {
             clients.add(client);
-            System.out.println("✅ Client connected | Online: " + clients.size());
+            System.out.println("Client connected | Online: " + clients.size());
         }
     }
 
     public static void removeClient(ClientHandler client) {
         if (client != null) {
             clients.remove(client);
-            client.closeConnection(); // Đã khớp 100% với hàm public trong ClientHandler
-            System.out.println("❌ Client disconnected | Online: " + clients.size());
+            client.closeConnection();
+            System.out.println("Client disconnected | Online: " + clients.size());
         }
+    }
+
+    private static void startExpiredAuctionWatcher() {
+        AuctionDAO auctionDAO = new AuctionDAO();
+        AuctionRoomService roomService = new AuctionRoomService();
+
+        AUCTION_WATCHER.scheduleAtFixedRate(() -> {
+            try {
+                List<AuctionRoom> activeRooms = auctionDAO.getAllActiveAuctions();
+                for (AuctionRoom room : activeRooms) {
+                    if (room != null && room.getRoomId() != null) {
+                        roomService.finalizeExpiredAuctionIfNeeded(room.getRoomId());
+                    }
+                }
+            } catch (Exception e) {
+                System.err.println("Auction watcher error: " + e.getMessage());
+            }
+        }, 1, 1, TimeUnit.SECONDS);
     }
 }
