@@ -100,7 +100,7 @@ public class UserDAO {
         }
     }
 
-    public boolean registerUser(User user, String rawPassword) {
+    public String registerUser(User user, String rawPassword) {
         String checkSql = """
                 SELECT 1 FROM users
                 WHERE customer_id = ? OR username = ?
@@ -124,7 +124,7 @@ public class UserDAO {
 
                 try (ResultSet rs = checkStmt.executeQuery()) {
                     if (rs.next()) {
-                        return false;
+                        return "DUPLICATE"; // Báo chính xác là do trùng lặp
                     }
                 }
 
@@ -137,13 +137,14 @@ public class UserDAO {
                     insertStmt.setString(4, user.getRole());
                     insertStmt.setDouble(5, user.getBalance());
 
-                    return insertStmt.executeUpdate() > 0;
+                    return insertStmt.executeUpdate() > 0 ? "SUCCESS" : "FAIL_INSERT";
                 }
             }
         }  catch (SQLException e) {
             System.err.println("Lỗi khi đăng ký User mới: " + e.getMessage());
             e.printStackTrace();
-            return false;
+            // Trả thẳng cái lỗi của MySQL về để hiện lên màn hình!
+            return "LỖI SQL: " + e.getMessage();
         }
     }
 
