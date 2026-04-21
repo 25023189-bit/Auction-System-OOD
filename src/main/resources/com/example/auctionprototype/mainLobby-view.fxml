@@ -16,12 +16,23 @@
             </top>
             <center>
                 <HBox spacing="16" style="-fx-padding: 16;">
-                    <VBox spacing="10" prefWidth="220" style="-fx-background-color: white; -fx-padding: 14;">
+                    <VBox spacing="10" prefWidth="285" style="-fx-background-color: white; -fx-padding: 14;">
                         <Label text="Exchange Rates" style="-fx-font-weight: bold;" />
+                        <Label text="Base: 1 USD" style="-fx-text-fill: #7f8c8d; -fx-font-size: 12px;" />
                         <Separator />
                         <VBox fx:id="vboxCurrencyRates" spacing="8">
-                            <Label text="VND: 25,450" />
-                            <Label text="EUR: 0.92" />
+                            <Label text="United States (USD): 1.00" />
+                            <Label text="China (CNY): 6.82" />
+                            <Label text="Japan (JPY): 158.91" />
+                            <Label text="Germany (EUR): 0.85" />
+                            <Label text="India (INR): 93.07" />
+                            <Label text="United Kingdom (GBP): 0.74" />
+                            <Label text="France (EUR): 0.85" />
+                            <Label text="Brazil (BRL): 4.98" />
+                            <Label text="Italy (EUR): 0.85" />
+                            <Label text="Canada (CAD): 1.37" />
+                            <Label text="Indonesia (IDR): 17,129.60" />
+                            <Label text="Vietnam (VND): 26,336.30" />
                         </VBox>
                     </VBox>
                     <VBox spacing="12" HBox.hgrow="ALWAYS" style="-fx-background-color: white; -fx-padding: 14;">
