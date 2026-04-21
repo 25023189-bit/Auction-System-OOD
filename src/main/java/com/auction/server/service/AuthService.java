@@ -2,10 +2,12 @@ package com.auction.server.service;
 
 import com.auction.common.dto.Message;
 import com.auction.common.model.User;
+import com.auction.server.dao.AuctionDAO;
 import com.auction.server.dao.UserDAO;
 
 public class AuthService {
     private final UserDAO userDAO = new UserDAO();
+    private final AuctionDAO auctionDAO = new AuctionDAO();
 
     public Message login(String username, String password) {
         System.out.println("\n[AuthService] Login request:");
@@ -14,6 +16,7 @@ public class AuthService {
         User user = userDAO.login(username, password);
 
         if (user != null) {
+            applySellerAuctionStats(user);
             System.out.println("  - Result: SUCCESS (Role: " + user.getRole() + ")");
             return new Message("LOGIN_SUCCESS", "SERVER", user);
         }
@@ -61,5 +64,15 @@ public class AuthService {
 
         System.out.println("  - Result: PASSWORD RESET FAILED");
         return new Message("RESET_FAIL", "SERVER", "Unable to change password. Please check your data and try again!");
+    }
+
+    private void applySellerAuctionStats(User user) {
+        if (user == null || !"SELLER".equalsIgnoreCase(user.getRole())) {
+            return;
+        }
+
+        AuctionDAO.SellerAuctionStats stats = auctionDAO.getSellerAuctionStats(user.getId());
+        user.setSuccessfulAuctionRate(stats.getSuccessfulAuctionRate());
+        user.setAdminCancellationRate(stats.getAdminCancellationRate());
     }
 }

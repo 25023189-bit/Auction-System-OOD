@@ -283,6 +283,11 @@ public class ClientHandler implements Runnable {
                 return;
             }
 
+            AuctionDAO auctionDAO = new AuctionDAO();
+            AuctionDAO.SellerAuctionStats sellerStats = auctionDAO.getSellerAuctionStats(sellerId);
+            seller.setSuccessfulAuctionRate(sellerStats.getSuccessfulAuctionRate());
+            seller.setAdminCancellationRate(sellerStats.getAdminCancellationRate());
+
             AuctionCreationValidator validator = new AuctionCreationValidator();
             if (!validator.validateAuction(
                     sellerId,
@@ -294,7 +299,10 @@ public class ClientHandler implements Runnable {
                     bidStep,
                     startTime,
                     durationMinutes,
-                    extensionSeconds
+                    extensionSeconds,
+                    seller.getSellerReputation(),
+                    seller.getSuccessfulAuctionRate(),
+                    seller.getAdminCancellationRate()
             )) {
                 sendMessage(new Message("CREATE_AUCTION_FAIL", "SERVER", validator.getErrorMessage()));
                 return;
@@ -316,9 +324,11 @@ public class ClientHandler implements Runnable {
             room.setDurationMinutes(durationMinutes);
             room.setActualEndTime(endTime);
             room.setExtensionSeconds(extensionSeconds);
+            room.setSellerReputation(seller.getSellerReputation());
+            room.setSellerSuccessfulAuctionRate(seller.getSuccessfulAuctionRate());
+            room.setSellerAdminCancellationRate(seller.getAdminCancellationRate());
             room.setStatus(startTime.isAfter(LocalDateTime.now()) ? "OPEN" : "RUNNING");
 
-            AuctionDAO auctionDAO = new AuctionDAO();
             boolean auctionSaved = auctionDAO.createAuctionWithItem(room, item, sellerId);
             if (!auctionSaved) {
                 sendMessage(new Message("CREATE_AUCTION_FAIL", "SERVER", "Unable to save auction!"));

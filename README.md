@@ -397,3 +397,18 @@ FINAL_WINDOW_SECONDS = 30
   - `AuctionDAO`
   - `BidDAO`
   - `AuctionCreationValidator`
+
+# 13.Tham khảo ý tưởng, thiết kế:
+- https://www.bpiauctions.com/
+- https://www.namecheap.com/
+- https://dgts.moj.gov.vn/
+- https://daugiaviet.vn/home
+
+- https://www.facebook.com/
+- https://www.tiktok.com/
+- https://www.instagram.com/
+- https://www.amazon.com/
+
+- https://www.ebay.com/
+- https://www.catawiki.com/en
+- https://www.dealdash.com/

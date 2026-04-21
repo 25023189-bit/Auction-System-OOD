@@ -18,6 +18,9 @@ public class AuctionRoom implements Serializable {
     private String sellerName;
     private String highestBidder;
     private int participantCount;
+    private double sellerReputation;
+    private double sellerSuccessfulAuctionRate;
+    private double sellerAdminCancellationRate;
 
     private LocalDateTime startTime;
     private LocalDateTime endTime;
@@ -90,6 +93,15 @@ public class AuctionRoom implements Serializable {
 
     public int getParticipantCount() { return participantCount; }
     public void setParticipantCount(int participantCount) { this.participantCount = participantCount; }
+
+    public double getSellerReputation() { return sellerReputation; }
+    public void setSellerReputation(double sellerReputation) { this.sellerReputation = sellerReputation; }
+
+    public double getSellerSuccessfulAuctionRate() { return sellerSuccessfulAuctionRate; }
+    public void setSellerSuccessfulAuctionRate(double sellerSuccessfulAuctionRate) { this.sellerSuccessfulAuctionRate = sellerSuccessfulAuctionRate; }
+
+    public double getSellerAdminCancellationRate() { return sellerAdminCancellationRate; }
+    public void setSellerAdminCancellationRate(double sellerAdminCancellationRate) { this.sellerAdminCancellationRate = sellerAdminCancellationRate; }
 
     public LocalDateTime getStartTime() { return startTime; }
     public void setStartTime(LocalDateTime startTime) { this.startTime = startTime; }

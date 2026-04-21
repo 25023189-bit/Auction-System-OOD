@@ -14,7 +14,10 @@ public class AuctionCreationValidator {
                                    double bidStep,
                                    LocalDateTime startTime,
                                    int durationMinutes,
-                                   int extensionSeconds) {
+                                   int extensionSeconds,
+                                   double sellerReputation,
+                                   double successfulAuctionRate,
+                                   double adminCancellationRate) {
         if (sellerId == null || sellerId.isBlank()) {
             errorMessage = "Unable to identify the seller creating this auction.";
             return false;
@@ -53,6 +56,18 @@ public class AuctionCreationValidator {
         }
         if (startTime == null || startTime.isBefore(LocalDateTime.now())) {
             errorMessage = "Start time must be now or in the future.";
+            return false;
+        }
+        if (sellerReputation < 0.0 || sellerReputation > 5.0) {
+            errorMessage = "Seller reputation must be between 0 and 5.";
+            return false;
+        }
+        if (successfulAuctionRate < 0.0 || successfulAuctionRate > 1.0) {
+            errorMessage = "Seller successful auction rate must be between 0 and 1.";
+            return false;
+        }
+        if (adminCancellationRate < 0.0 || adminCancellationRate > 1.0) {
+            errorMessage = "Seller admin cancellation rate must be between 0 and 1.";
             return false;
         }
         return true;
