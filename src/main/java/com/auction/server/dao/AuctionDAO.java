@@ -258,7 +258,7 @@ public class AuctionDAO {
                 try (ResultSet rs = pstmt.executeQuery()) {
                     if (!rs.next()) {
                         conn.rollback();
-                        return CloseAuctionResult.fail("Khong tim thay phien dau gia.");
+                        return CloseAuctionResult.fail("Auction not found.");
                     }
                     sellerId = rs.getString("seller_id");
                     currentStatus = rs.getString("status");
@@ -267,7 +267,7 @@ public class AuctionDAO {
 
             if (currentStatus != null && !("OPEN".equalsIgnoreCase(currentStatus) || "RUNNING".equalsIgnoreCase(currentStatus))) {
                 conn.rollback();
-                return CloseAuctionResult.fail("Phien da o trang thai ket thuc.");
+                return CloseAuctionResult.fail("Auction is already in a finished state.");
             }
 
             String winnerId = null;
@@ -300,7 +300,7 @@ public class AuctionDAO {
                 pstmt.setDouble(3, finalPrice);
                 if (pstmt.executeUpdate() == 0) {
                     conn.rollback();
-                    return CloseAuctionResult.fail("Nguoi thang khong du so du de chot phien.");
+                    return CloseAuctionResult.fail("Winner does not have enough balance to finalize the auction.");
                 }
             }
 
@@ -343,7 +343,7 @@ public class AuctionDAO {
         } catch (SQLException e) {
             System.err.println("Loi chot phien theo thoi gian: " + e.getMessage());
             e.printStackTrace();
-            return CloseAuctionResult.fail("Loi database khi chot phien.");
+            return CloseAuctionResult.fail("Database error while finalizing auction.");
         }
     }
 
@@ -402,12 +402,12 @@ public class AuctionDAO {
         public static CloseAuctionResult sold(String winnerId, String sellerId, double finalPrice,
                                               Double winnerBalance, Double sellerBalance) {
             return new CloseAuctionResult(true, "SOLD", winnerId, sellerId, finalPrice, winnerBalance, sellerBalance,
-                    "Phien dau gia ban thanh cong.");
+                    "Auction sold successfully.");
         }
 
         public static CloseAuctionResult unsold() {
             return new CloseAuctionResult(true, "UNSOLD", null, null, 0.0, null, null,
-                    "Phien dau gia ket thuc nhung khong co nguoi mua.");
+                    "Auction ended without a buyer.");
         }
 
         public static CloseAuctionResult fail(String message) {
@@ -424,3 +424,4 @@ public class AuctionDAO {
         public String getMessage() { return message; }
     }
 }
+

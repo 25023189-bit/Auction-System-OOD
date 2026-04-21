@@ -36,28 +36,28 @@ public class AuthPresenter implements ViewPresenter {
 
     public void showLoginError(String message) {
         if (lblStatus != null) {
-            lblStatus.setText("❌ " + message);
+            lblStatus.setText("Error: " + message);
             lblStatus.setTextFill(Color.RED);
         }
     }
 
     public void showLoginSuccess() {
         if (lblStatus != null) {
-            lblStatus.setText("✅ Đăng nhập thành công!");
+            lblStatus.setText("Login successful!");
             lblStatus.setTextFill(Color.GREEN);
         }
     }
 
     public void showRegisterError(String message) {
         if (lblRegStatus != null) {
-            lblRegStatus.setText("❌ " + message);
+            lblRegStatus.setText("Error: " + message);
             lblRegStatus.setTextFill(Color.RED);
         }
     }
 
     public void showResetError(String message) {
         if (lblForgotStatus != null) {
-            lblForgotStatus.setText("❌ " + message);
+            lblForgotStatus.setText("Error: " + message);
             lblForgotStatus.setTextFill(Color.RED);
         }
     }

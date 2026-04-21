@@ -27,11 +27,11 @@ public class LobbyUserInfoBinder implements ViewStateBinder<User> {
         if (user == null) return;
 
         if (lblUsername != null) {
-            lblUsername.setText("Xin chào: " + user.getUsername());
+            lblUsername.setText("Welcome: " + user.getUsername());
         }
 
         if (lblBalance != null) {
-            lblBalance.setText("Số dư ví: " + String.format("%,.0f $", user.getBalance()));
+            lblBalance.setText("Wallet Balance: " + String.format("%,.0f $", user.getBalance()));
         }
 
         if (btnCreateAuction != null) {

@@ -63,18 +63,18 @@ public class BidDAO {
 
             if (!auctionExists || itemId == null) {
                 conn.rollback();
-                return BidResult.fail(BidStatus.AUCTION_NOT_FOUND, "Khong tim thay phien dau gia.");
+                return BidResult.fail(BidStatus.AUCTION_NOT_FOUND, "Auction not found.");
             }
 
             double minimumAllowedBid = currentPrice + bidStep;
             if (bidAmount < minimumAllowedBid) {
                 conn.rollback();
-                return BidResult.fail(BidStatus.BID_TOO_LOW, "Gia phai tang it nhat " + bidStep + " so voi gia hien tai.");
+                return BidResult.fail(BidStatus.BID_TOO_LOW, "Bid must increase by at least " + bidStep + " from the current price.");
             }
 
             if (bidAmount > currentBalance) {
                 conn.rollback();
-                return BidResult.fail(BidStatus.INSUFFICIENT_BALANCE, "So du hien tai khong du de dat muc gia nay.");
+                return BidResult.fail(BidStatus.INSUFFICIENT_BALANCE, "Current balance is not enough for this bid amount.");
             }
 
             try (PreparedStatement pstmt = conn.prepareStatement(clearHighestSql)) {
@@ -102,7 +102,7 @@ public class BidDAO {
         } catch (SQLException e) {
             System.err.println("Bid error: " + e.getMessage());
             e.printStackTrace();
-            return BidResult.fail(BidStatus.ERROR, "Loi database khi dat gia.");
+            return BidResult.fail(BidStatus.ERROR, "Database error while placing bid.");
         }
     }
 
@@ -146,3 +146,4 @@ public class BidDAO {
         }
     }
 }
+

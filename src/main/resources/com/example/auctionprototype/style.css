@@ -1,16 +1,16 @@
-/* --- CHUNG --- */
+/* --- Common --- */
 .root {
     -fx-font-family: "Segoe UI", "Arial", sans-serif;
 }
 
-/* Nền của toàn bộ trang login */
+/* Login background */
 .my-background {
     -fx-background-image: url("login-card.png");
     -fx-background-size: cover;
     -fx-background-position: center center;
 }
 
-/* --- TIÊU ĐỀ (Đã sửa tên class cho khớp FXML) --- */
+/* Header */
 .header-label {
     -fx-font-size: 28px;
     -fx-font-weight: bold;
@@ -18,8 +18,7 @@
     -fx-alignment: center;
 }
 
-/* --- Ô NHẬP LIỆU --- */
-/* Vì FXML của bạn không gán class cho TextField, chúng ta gọi trực tiếp selector mặc định */
+/* Inputs */
 .text-field, .password-field {
     -fx-background-color: #f9f9f9;
     -fx-background-radius: 8px;
@@ -34,7 +33,7 @@
     -fx-background-color: white;
 }
 
-/* --- NÚT ĐĂNG NHẬP --- */
+/* Login button */
 .login-button {
     -fx-background-color: linear-gradient(to right, #4a90e2, #007aff);
     -fx-background-radius: 25px;
@@ -53,12 +52,13 @@
     -fx-background-color: #005bb5;
     -fx-translate-y: 2px;
 }
-/* --- CÁC NÚT LIÊN KẾT (Quên mật khẩu/Đăng ký) --- */
+
+/* Link buttons */
 .link-button {
     -fx-background-color: transparent;
     -fx-font-weight: bold;
     -fx-text-fill: #3498db;
-    -fx-font-size: 14px; /* Giảm nhẹ cỡ chữ cho cân đối */
+    -fx-font-size: 14px;
     -fx-cursor: hand;
 }
 

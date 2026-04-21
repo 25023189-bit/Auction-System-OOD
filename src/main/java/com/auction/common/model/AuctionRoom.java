@@ -17,6 +17,7 @@ public class AuctionRoom implements Serializable {
     private double minimumJoinAmount;
     private String sellerName;
     private String highestBidder;
+    private int participantCount;
 
     private LocalDateTime startTime;
     private LocalDateTime endTime;
@@ -86,6 +87,9 @@ public class AuctionRoom implements Serializable {
 
     public String getHighestBidder() { return highestBidder; }
     public void setHighestBidder(String highestBidder) { this.highestBidder = highestBidder; }
+
+    public int getParticipantCount() { return participantCount; }
+    public void setParticipantCount(int participantCount) { this.participantCount = participantCount; }
 
     public LocalDateTime getStartTime() { return startTime; }
     public void setStartTime(LocalDateTime startTime) { this.startTime = startTime; }

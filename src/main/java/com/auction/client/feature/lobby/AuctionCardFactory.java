@@ -21,14 +21,14 @@ public class AuctionCardFactory implements CardFactory<AuctionRoom, VBox> {
         card.setPrefSize(180, 180);
         card.setAlignment(Pos.CENTER);
 
-        Label lblName = new Label("Sản phẩm: " + room.getItemName());
+        Label lblName = new Label("Product: " + room.getItemName());
         lblName.setStyle("-fx-font-weight: bold; -fx-font-size: 16px;");
 
-        Label lblId = new Label("Mã: " + room.getRoomId());
+        Label lblId = new Label("ID: " + room.getRoomId());
 
-        Label lblPrice = new Label("Giá hiện tại: " + room.getCurrentPrice());
+        Label lblPrice = new Label("Current Price: " + room.getCurrentPrice());
 
-        Button btnJoin = new Button("Vào Phòng");
+        Button btnJoin = new Button("Join Room");
         btnJoin.setStyle("-fx-background-color: #3498db; -fx-text-fill: white; -fx-cursor: hand;");
         btnJoin.setOnAction(e -> auctionService.joinRoom(room.getRoomId()));
 

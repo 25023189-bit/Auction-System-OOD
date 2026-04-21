@@ -94,7 +94,7 @@ public class ClientHandler implements Runnable {
                     case "ADMIN_DELETE_AUCTION" -> handleAdminDeleteAuction(msg);
                     case "ADMIN_DELETE_USER" -> handleAdminDeleteUser(msg);
                     case "GET_PRODUCT_DETAILS" -> handleGetProductDetails(msg);
-                    default -> sendMessage(new Message("UNKNOWN_ACTION", "SERVER", "Action khong duoc ho tro: " + msg.getAction()));
+                    default -> sendMessage(new Message("UNKNOWN_ACTION", "SERVER", "Unsupported action: " + msg.getAction()));
                 }
             }
         } catch (Exception e) {
@@ -118,7 +118,7 @@ public class ClientHandler implements Runnable {
             sendMessage(loginRes);
         } catch (Exception e) {
             e.printStackTrace();
-            sendMessage(new Message("LOGIN_FAIL", "SERVER", "Loi xu ly dang nhap!"));
+            sendMessage(new Message("LOGIN_FAIL", "SERVER", "Login processing error!"));
         }
     }
 
@@ -126,7 +126,7 @@ public class ClientHandler implements Runnable {
         try {
             String[] regData = msg.getData() != null ? msg.getData().toString().split("\\|", -1) : new String[0];
             if (regData.length < 4) {
-                sendMessage(new Message("REGISTER_FAIL", "SERVER", "Du lieu dang ky khong hop le!"));
+                sendMessage(new Message("REGISTER_FAIL", "SERVER", "Invalid registration data!"));
                 return;
             }
 
@@ -151,7 +151,7 @@ public class ClientHandler implements Runnable {
             sendMessage(response);
         } catch (Exception e) {
             e.printStackTrace();
-            sendMessage(new Message("REGISTER_FAIL", "SERVER", "Loi xu ly dang ky!"));
+            sendMessage(new Message("REGISTER_FAIL", "SERVER", "Registration processing error!"));
         }
     }
 
@@ -161,7 +161,7 @@ public class ClientHandler implements Runnable {
             sendMessage(resetResult);
         } catch (Exception e) {
             e.printStackTrace();
-            sendMessage(new Message("RESET_FAIL", "SERVER", "Loi xu ly doi mat khau!"));
+            sendMessage(new Message("RESET_FAIL", "SERVER", "Password reset processing error!"));
         }
     }
 
@@ -169,7 +169,7 @@ public class ClientHandler implements Runnable {
         try {
             String roomId = msg.getData() != null ? msg.getData().toString().trim() : "";
             if (roomId.isEmpty()) {
-                sendMessage(new Message("ROOM_FAIL", "SERVER", "Thieu ma phong dau gia!"));
+                sendMessage(new Message("ROOM_FAIL", "SERVER", "Missing auction room ID!"));
                 return;
             }
 
@@ -181,10 +181,13 @@ public class ClientHandler implements Runnable {
             }
 
             sendMessage(joinResult);
+            if ("ROOM_JOINED".equals(joinResult.getAction())) {
+                AuctionServer.broadcastToRoom(this.currentRoomId, new Message("ROOM_STATE_UPDATED", "SERVER", joinResult.getData()));
+            }
         } catch (Exception e) {
             e.printStackTrace();
             this.currentRoomId = "";
-            sendMessage(new Message("ROOM_FAIL", "SERVER", "Loi xu ly vao phong!"));
+            sendMessage(new Message("ROOM_FAIL", "SERVER", "Join room processing error!"));
         }
     }
 
@@ -206,7 +209,7 @@ public class ClientHandler implements Runnable {
     private void handleBid(Message msg) {
         try {
             if (this.currentRoomId == null || this.currentRoomId.isBlank()) {
-                sendMessage(new Message("BID_FAIL", "SERVER", "Chua tham gia phong nao!"));
+                sendMessage(new Message("BID_FAIL", "SERVER", "You have not joined any room!"));
                 return;
             }
 
@@ -222,7 +225,7 @@ public class ClientHandler implements Runnable {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            sendMessage(new Message("BID_FAIL", "SERVER", "Loi xu ly dat gia!"));
+            sendMessage(new Message("BID_FAIL", "SERVER", "Bid processing error!"));
         }
     }
 
@@ -247,7 +250,7 @@ public class ClientHandler implements Runnable {
             sendMessage(new Message("BID_HISTORY_SUCCESS", "SERVER", historyList));
         } catch (Exception e) {
             e.printStackTrace();
-            sendMessage(new Message("BID_HISTORY_FAIL", "SERVER", "Khong tai duoc lich su dau gia!"));
+            sendMessage(new Message("BID_HISTORY_FAIL", "SERVER", "Unable to load bid history!"));
         }
     }
 
@@ -255,7 +258,7 @@ public class ClientHandler implements Runnable {
         try {
             String[] parts = msg.getData() != null ? msg.getData().toString().split("\\|", -1) : new String[0];
             if (parts.length < 8) {
-                sendMessage(new Message("CREATE_AUCTION_FAIL", "SERVER", "Du lieu tao phien khong hop le!"));
+                sendMessage(new Message("CREATE_AUCTION_FAIL", "SERVER", "Invalid auction creation data!"));
                 return;
             }
 
@@ -272,11 +275,11 @@ public class ClientHandler implements Runnable {
             UserDAO userDAO = new UserDAO();
             User seller = userDAO.getUserById(sellerId);
             if (seller == null) {
-                sendMessage(new Message("CREATE_AUCTION_FAIL", "SERVER", "Khong tim thay tai khoan seller!"));
+                sendMessage(new Message("CREATE_AUCTION_FAIL", "SERVER", "Seller account not found!"));
                 return;
             }
             if (!"SELLER".equalsIgnoreCase(seller.getRole())) {
-                sendMessage(new Message("CREATE_AUCTION_FAIL", "SERVER", "Chi seller moi duoc tao phien dau gia!"));
+                sendMessage(new Message("CREATE_AUCTION_FAIL", "SERVER", "Only sellers can create auctions!"));
                 return;
             }
 
@@ -318,7 +321,7 @@ public class ClientHandler implements Runnable {
             AuctionDAO auctionDAO = new AuctionDAO();
             boolean auctionSaved = auctionDAO.createAuctionWithItem(room, item, sellerId);
             if (!auctionSaved) {
-                sendMessage(new Message("CREATE_AUCTION_FAIL", "SERVER", "Khong the luu phien dau gia!"));
+                sendMessage(new Message("CREATE_AUCTION_FAIL", "SERVER", "Unable to save auction!"));
                 return;
             }
 
@@ -327,7 +330,7 @@ public class ClientHandler implements Runnable {
         } catch (Exception e) {
             System.err.println("CREATE_AUCTION error: " + e.getMessage());
             e.printStackTrace();
-            sendMessage(new Message("CREATE_AUCTION_FAIL", "SERVER", "Loi: " + e.getMessage()));
+            sendMessage(new Message("CREATE_AUCTION_FAIL", "SERVER", "Error: " + e.getMessage()));
         }
     }
 
@@ -335,7 +338,7 @@ public class ClientHandler implements Runnable {
         try {
             String roomId = msg.getData() != null ? msg.getData().toString() : "";
             if (roomId.isBlank()) {
-                sendMessage(new Message("CLOSE_AUCTION_FAIL", "SERVER", "Thieu ma phien dau gia!"));
+                sendMessage(new Message("CLOSE_AUCTION_FAIL", "SERVER", "Missing auction ID!"));
                 return;
             }
 
@@ -344,7 +347,7 @@ public class ClientHandler implements Runnable {
 
             boolean closed = auctionDAO.closeAuctionBySeller(roomId, sellerId);
             if (!closed) {
-                sendMessage(new Message("CLOSE_AUCTION_FAIL", "SERVER", "Khong the dong phien dau gia nay!"));
+                sendMessage(new Message("CLOSE_AUCTION_FAIL", "SERVER", "Unable to close this auction!"));
                 return;
             }
 
@@ -355,7 +358,7 @@ public class ClientHandler implements Runnable {
             broadcastRoomList();
         } catch (Exception e) {
             e.printStackTrace();
-            sendMessage(new Message("CLOSE_AUCTION_FAIL", "SERVER", "Khong the dong phien dau gia!"));
+            sendMessage(new Message("CLOSE_AUCTION_FAIL", "SERVER", "Unable to close auction!"));
         }
     }
 
@@ -366,7 +369,7 @@ public class ClientHandler implements Runnable {
             sendMessage(new Message("ADMIN_USER_LIST", "SERVER", userList));
         } catch (Exception e) {
             e.printStackTrace();
-            sendMessage(new Message("ADMIN_ACTION_FAIL", "SERVER", "Loi tai danh sach nguoi dung."));
+            sendMessage(new Message("ADMIN_ACTION_FAIL", "SERVER", "Unable to load user list."));
         }
     }
 
@@ -377,7 +380,7 @@ public class ClientHandler implements Runnable {
             sendMessage(new Message("ADMIN_AUCTION_LIST", "SERVER", rooms));
         } catch (Exception e) {
             e.printStackTrace();
-            sendMessage(new Message("ADMIN_ACTION_FAIL", "SERVER", "Loi tai danh sach phien dau gia."));
+            sendMessage(new Message("ADMIN_ACTION_FAIL", "SERVER", "Unable to load auction list."));
         }
     }
 
@@ -388,15 +391,15 @@ public class ClientHandler implements Runnable {
 
             if (auctionDAO.forceDeleteAuction(targetRoomId)) {
                 AuctionStateManager.removeState(targetRoomId);
-                sendMessage(new Message("ADMIN_ACTION_SUCCESS", "AUCTION_DELETED", "Da ep huy phien dau gia: " + targetRoomId));
+                sendMessage(new Message("ADMIN_ACTION_SUCCESS", "AUCTION_DELETED", "Force-canceled auction: " + targetRoomId));
                 AuctionServer.notifyRoomClosed(targetRoomId);
                 broadcastRoomList();
             } else {
-                sendMessage(new Message("ADMIN_ACTION_FAIL", "SERVER", "Khong the huy phien dau gia nay!"));
+                sendMessage(new Message("ADMIN_ACTION_FAIL", "SERVER", "Unable to cancel this auction!"));
             }
         } catch (Exception e) {
             e.printStackTrace();
-            sendMessage(new Message("ADMIN_ACTION_FAIL", "SERVER", "Loi khi huy phien dau gia!"));
+            sendMessage(new Message("ADMIN_ACTION_FAIL", "SERVER", "Auction cancellation error!"));
         }
     }
 
@@ -411,18 +414,18 @@ public class ClientHandler implements Runnable {
                 if (AuctionServer.clients != null) {
                     for (ClientHandler client : AuctionServer.clients) {
                         if (client != null && targetUserId.equals(client.getUserId())) {
-                            client.sendMessage(new Message("BANNED", "SERVER", "Tai khoan cua ban da bi xoa boi Admin!"));
+                            client.sendMessage(new Message("BANNED", "SERVER", "Your account has been deleted by an admin!"));
                             client.closeConnection();
                             break;
                         }
                     }
                 }
             } else {
-                sendMessage(new Message("ADMIN_ACTION_FAIL", "SERVER", "Khong the xoa tai khoan."));
+                sendMessage(new Message("ADMIN_ACTION_FAIL", "SERVER", "Unable to delete account."));
             }
         } catch (Exception e) {
             e.printStackTrace();
-            sendMessage(new Message("ADMIN_ACTION_FAIL", "SERVER", "Loi khi xoa tai khoan!"));
+            sendMessage(new Message("ADMIN_ACTION_FAIL", "SERVER", "Account deletion error!"));
         }
     }
 
@@ -487,7 +490,7 @@ public class ClientHandler implements Runnable {
             String roomId = (msg.getData() != null) ? msg.getData().toString().trim() : "";
 
             if (roomId.isEmpty()) {
-                sendMessage(new Message("PRODUCT_DETAILS_FAIL", "SERVER", "Ma phong khong hop le!"));
+                sendMessage(new Message("PRODUCT_DETAILS_FAIL", "SERVER", "Invalid room ID!"));
                 return;
             }
 
@@ -497,13 +500,13 @@ public class ClientHandler implements Runnable {
             if (responseData != null) {
                 sendMessage(new Message("PRODUCT_DETAILS_SUCCESS", "SERVER", responseData));
             } else {
-                sendMessage(new Message("PRODUCT_DETAILS_FAIL", "SERVER", "Khong tim thay thong tin phong dau gia!"));
+                sendMessage(new Message("PRODUCT_DETAILS_FAIL", "SERVER", "Auction room details not found!"));
             }
 
         } catch (Exception e) {
-            System.err.println("Loi xu ly GET_PRODUCT_DETAILS: " + e.getMessage());
+            System.err.println("GET_PRODUCT_DETAILS processing error: " + e.getMessage());
             e.printStackTrace();
-            sendMessage(new Message("PRODUCT_DETAILS_FAIL", "SERVER", "Loi he thong khi tai chi tiet!"));
+            sendMessage(new Message("PRODUCT_DETAILS_FAIL", "SERVER", "System error while loading details!"));
         }
     }
 
@@ -515,3 +518,4 @@ public class ClientHandler implements Runnable {
         return "AU" + String.format("%06d", System.currentTimeMillis() % 1000000);
     }
 }
+

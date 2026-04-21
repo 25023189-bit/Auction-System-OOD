@@ -27,9 +27,10 @@ public class AuctionRoomStateBinder implements ViewStateBinder<AuctionRoom> {
         }
 
         presenter.showRoomInfo(room.getItemName(), room.getCurrentPrice(), room.getItemDescription());
+        presenter.showParticipantCount(room.getParticipantCount());
 
         if (room.isEntryLocked()) {
-            presenter.appendChat("Phiên đã khóa người tham gia mới (30 giây cuối).");
+            presenter.appendChat("New participants are locked during the final 30 seconds.");
         }
 
         User user = sessionStore.getCurrentUser();

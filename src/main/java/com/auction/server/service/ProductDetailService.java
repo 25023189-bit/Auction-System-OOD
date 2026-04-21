@@ -24,7 +24,6 @@ public class ProductDetailService {
 
     public ProductDetailResponse getProductDetails(String roomId) {
 
-        // Đã sửa thành getAuctionById cho khớp với file AuctionDAO của bạn
         AuctionRoom room = auctionDAO.getAuctionById(roomId);
 
         if (room == null) return null;
@@ -37,13 +36,12 @@ public class ProductDetailService {
         detail.setCurrentPrice(room.getCurrentPrice());
         detail.setTimeLeftMillis(calculateRemainingTime(room.getEndTime()));
 
-        // Đã sửa thành getHistoryByRoom cho khớp với file TransactionDAO của bạn
         List<BidTransaction> dbTransactions = transactionDAO.getHistoryByRoom(roomId);
         List<BidHistoryDTO> historyDTOs = new ArrayList<>();
 
         if (dbTransactions != null) {
             for (BidTransaction tx : dbTransactions) {
-                String bidderDisplay = (tx.getBidderId() != null) ? "User " + tx.getBidderId() : "Ẩn danh";
+                String bidderDisplay = (tx.getBidderId() != null) ? "User " + tx.getBidderId() : "Anonymous";
                 historyDTOs.add(new BidHistoryDTO(
                         bidderDisplay,
                         tx.getBidAmount(),

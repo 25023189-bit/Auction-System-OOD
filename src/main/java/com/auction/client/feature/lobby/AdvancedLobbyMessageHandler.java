@@ -48,12 +48,12 @@ public class AdvancedLobbyMessageHandler implements MessageHandler {
             } else if (rawList.get(0) instanceof AuctionRoom) {
                 rooms = (List<AuctionRoom>) rawList;
             } else {
-                System.err.println("[AdvancedLobbyMessageHandler] ROOM_LIST có List nhưng phần tử không phải AuctionRoom: "
+                System.err.println("[AdvancedLobbyMessageHandler] ROOM_LIST contains a non-AuctionRoom item: "
                         + rawList.get(0).getClass().getName());
                 rooms = Collections.emptyList();
             }
         } else {
-            System.err.println("[AdvancedLobbyMessageHandler] Kiểu dữ liệu ROOM_LIST không hỗ trợ: "
+            System.err.println("[AdvancedLobbyMessageHandler] Unsupported ROOM_LIST data type: "
                     + data.getClass().getName());
             rooms = Collections.emptyList();
         }
@@ -75,7 +75,7 @@ public class AdvancedLobbyMessageHandler implements MessageHandler {
 
             renderer.updatePrice(roomId, newPrice);
         } catch (Exception e) {
-            System.err.println("[AdvancedLobbyMessageHandler] Lỗi xử lý UPDATE_PRICE: " + e.getMessage());
+            System.err.println("[AdvancedLobbyMessageHandler] Failed to handle UPDATE_PRICE: " + e.getMessage());
         }
     }
 }

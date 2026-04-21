@@ -23,15 +23,12 @@
 
                         <HBox alignment="CENTER_LEFT" prefHeight="70.0" style="-fx-background-color: #3498db; -fx-padding: 0 25;" styleClass="admin-header">
                             <children>
-                                <Label text="HỆ THỐNG QUẢN LÝ - PHÒNG ĐẤU GIÁ" textFill="WHITE">
-                                    <font>
-                                        <Font name="System Bold" size="20.0" />
-                                    </font>
-                                </Label>
+                                <Label text="AUCTION ROOM" textFill="WHITE"><font><Font name="System Bold" size="20.0" /></font></Label>
                                 <Region HBox.hgrow="ALWAYS" />
                                 <HBox alignment="CENTER" spacing="10.0">
                                     <children>
-                                        <Label text="Người dùng: Adam" textFill="WHITE" />
+                                        <Label text="User: Adam" textFill="WHITE" />
+                                        <Label fx:id="lblParticipantCount" text="Participants: 0" textFill="WHITE" />
                                         <Button mnemonicParsing="false" onAction="#handleBackToSelection" style="-fx-background-color: #e74c3c;" text="Exit Auction" textFill="WHITE" />
                                     </children>
                                 </HBox>
@@ -46,23 +43,18 @@
 
                                 <VBox prefHeight="585.0" prefWidth="400.0" spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);" styleClass="info-card">
                                     <children>
-                                        <Label text="Thông tin sản phẩm" textFill="#2c3e50">
-                                            <font>
-                                                <Font name="System Bold" size="18.0" />
-                                            </font>
-                                        </Label>
-                                        <Separator prefWidth="200.0" />
+                                        <Label text="Product Information" textFill="#2c3e50"><font><Font name="System Bold" size="18.0" /></font></Label><Separator prefWidth="200.0" />
                                         <ImageView fitHeight="250.0" fitWidth="360.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 10;" />
-                                        <Label fx:id="lblAuctionItemName" text="Tên sản phẩm: Tivi 4K" wrapText="true">
+                                        <Label fx:id="lblAuctionItemName" text="Product Name: 4K TV" wrapText="true">
                                             <font>
                                                 <Font name="System Bold" size="16.0" />
                                             </font>
                                         </Label>
-                                        <TextArea fx:id="txtItemDescriptionDisplay" editable="false" text="Mô tả: Màn hình siêu nét, âm thanh sống động..." wrapText="true" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-padding: 0; -fx-control-inner-background: transparent; -fx-text-fill: #7f8c8d;" prefRowCount="3" />
+                                        <TextArea fx:id="txtItemDescriptionDisplay" editable="false" text="Description: Ultra-sharp display and immersive sound..." wrapText="true" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-padding: 0; -fx-control-inner-background: transparent; -fx-text-fill: #7f8c8d;" prefRowCount="3" />
                                         <Region VBox.vgrow="ALWAYS" />
                                         <VBox alignment="CENTER" spacing="5.0" style="-fx-background-color: #ebf5fb; -fx-padding: 15; -fx-background-radius: 10;">
                                             <children>
-                                                <Label text="THỜI GIAN CÒN LẠI" textFill="#2980b9">
+                                                <Label text="TIME REMAINING" textFill="#2980b9">
                                                     <font>
                                                         <Font name="System Bold" size="13.0" />
                                                     </font>
@@ -76,12 +68,8 @@
                                         </VBox>
                                         <VBox alignment="CENTER" spacing="5.0" style="-fx-background-color: #fdf2e9; -fx-padding: 15; -fx-background-radius: 10;">
                                             <children>
-                                                <Label text="GIÁ HIỆN TẠI">
-                                                    <font>
-                                                        <Font size="13.0" />
-                                                    </font>
-                                                </Label>
-                                                <Label fx:id="lblCurrentPrice" text="1.500.000 VNĐ" textFill="#e67e22">
+                                                <Label text="CURRENT PRICE"><font><Font size="13.0" /></font></Label>
+                                                <Label fx:id="lblCurrentPrice" text="1,500,000 VND" textFill="#e67e22">
                                                     <font>
                                                         <Font name="System Bold" size="26.0" />
                                                     </font>
@@ -93,7 +81,7 @@
 
                                 <VBox spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);" styleClass="chat-container" HBox.hgrow="ALWAYS">
                                     <children>
-                                        <Label text="Lịch sử đấu giá &amp; Trò chuyện" textFill="#2c3e50">
+                                        <Label text="Bid History &amp; Chat" textFill="#2c3e50">
                                             <font>
                                                 <Font name="System Bold" size="18.0" />
                                             </font>
@@ -104,14 +92,8 @@
                                             <children>
                                                 <HBox spacing="10.0">
                                                     <children>
-                                                        <TextField fx:id="txtBidAmount" prefHeight="40.0" promptText="Nhập mức giá bạn muốn đặt..." HBox.hgrow="ALWAYS" />
-                                                        <Button fx:id="btnPlaceBid" minWidth="120.0" onAction="#handleBid" prefHeight="40.0" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" text="ĐẶT GIÁ" />
-                                                    </children>
-                                                </HBox>
-                                                <HBox spacing="10.0">
-                                                    <children>
-                                                        <TextField fx:id="txtChatInput" prefHeight="40.0" promptText="Nhập tin nhắn..." HBox.hgrow="ALWAYS" />
-                                                        <Button minWidth="120.0" onAction="#handleSendChat" prefHeight="40.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 8;" text="GỬI CHAT" />
+                                                        <TextField fx:id="txtBidAmount" prefHeight="40.0" promptText="Enter your bid amount..." HBox.hgrow="ALWAYS" /><Button fx:id="btnPlaceBid" minWidth="120.0" onAction="#handleBid" prefHeight="40.0" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" text="PLACE BID" /></children></HBox><HBox spacing="10.0"><children><TextField fx:id="txtChatInput" prefHeight="40.0" promptText="Type a message..." HBox.hgrow="ALWAYS" />
+                                                        <Button minWidth="120.0" onAction="#handleSendChat" prefHeight="40.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 8;" text="SEND CHAT" />
                                                     </children>
                                                 </HBox>
                                             </children>
