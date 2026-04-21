@@ -25,7 +25,7 @@
             <top>
                 <VBox spacing="10" style="-fx-padding: 16 20 12 20;">
                     <HBox alignment="CENTER_LEFT" spacing="12">
-                        <Button text="Back To Lobby" onAction="#handleBackToSelection"
+                        <Button text="Exit Auction" onAction="#handleBackToSelection"
                                 style="-fx-background-color: #95A5A6; -fx-text-fill: white;" />
                         <Label fx:id="lblAuctionItemName"
                                text="Auction Item"

@@ -32,7 +32,7 @@
                                 <HBox alignment="CENTER" spacing="10.0">
                                     <children>
                                         <Label text="Người dùng: Adam" textFill="WHITE" />
-                                        <Button mnemonicParsing="false" style="-fx-background-color: #e74c3c;" text="Thoát" textFill="WHITE" />
+                                        <Button mnemonicParsing="false" onAction="#handleBackToSelection" style="-fx-background-color: #e74c3c;" text="Exit Auction" textFill="WHITE" />
                                     </children>
                                 </HBox>
                             </children>
