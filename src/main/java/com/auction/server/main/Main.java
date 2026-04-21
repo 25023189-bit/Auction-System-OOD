@@ -1,9 +1,13 @@
 package com.auction.server.main;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.*;
-import javafx.stage.*;
+import javafx.geometry.Rectangle2D;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Screen;
+import javafx.stage.Stage;
 
 public class Main extends Application {
     @Override
@@ -11,14 +15,22 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/login-view.fxml"));
         Parent root = loader.load();
 
-        primaryStage.setTitle("Sàn Đấu Giá");
-        primaryStage.setScene(new Scene(root, 960, 600));
+        primaryStage.setTitle("Auction System");
+        primaryStage.setScene(new Scene(root));
         primaryStage.setMinWidth(1000);
         primaryStage.setMinHeight(600);
+        primaryStage.setFullScreen(false);
+        Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+        primaryStage.setX(bounds.getMinX());
+        primaryStage.setY(bounds.getMinY());
+        primaryStage.setWidth(bounds.getWidth());
+        primaryStage.setHeight(bounds.getHeight());
+        primaryStage.setMaximized(true);
         primaryStage.show();
+        Platform.runLater(() -> primaryStage.setMaximized(true));
     }
 
     public static void main(String[] args) {
-        launch(args); //Active JavaFX
+        launch(args);
     }
 }

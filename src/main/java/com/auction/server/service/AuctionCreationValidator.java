@@ -3,7 +3,7 @@ package com.auction.server.service;
 import java.time.LocalDateTime;
 
 public class AuctionCreationValidator {
-    private String errorMessage = "Thong tin tao phien khong hop le!";
+    private String errorMessage = "Auction information is invalid.";
 
     public boolean validateAuction(String sellerId,
                                    String sellerOrganization,
@@ -14,45 +14,60 @@ public class AuctionCreationValidator {
                                    double bidStep,
                                    LocalDateTime startTime,
                                    int durationMinutes,
-                                   int extensionSeconds) {
+                                   int extensionSeconds,
+                                   double sellerReputation,
+                                   double successfulAuctionRate,
+                                   double adminCancellationRate) {
         if (sellerId == null || sellerId.isBlank()) {
-            errorMessage = "Khong xac dinh duoc seller tao phien!";
+            errorMessage = "Unable to identify the seller creating this auction.";
             return false;
         }
         if (sellerOrganization == null || sellerOrganization.isBlank()) {
-            errorMessage = "Seller phai co to chuc hop le moi duoc tao phien!";
+            errorMessage = "Seller organization is required to create an auction.";
             return false;
         }
         if (itemName == null || itemName.isBlank()) {
-            errorMessage = "Ten vat pham khong hop le!";
+            errorMessage = "Item name is invalid.";
             return false;
         }
         if (itemDesc == null || itemDesc.isBlank()) {
-            errorMessage = "Mo ta vat pham khong duoc de trong!";
+            errorMessage = "Item description is required.";
             return false;
         }
         if (startingPrice <= 0) {
-            errorMessage = "Gia khoi diem phai lon hon 0!";
+            errorMessage = "Starting price must be greater than 0.";
             return false;
         }
         if (bidStep <= 0) {
-            errorMessage = "Buoc gia phai lon hon 0!";
+            errorMessage = "Bid step must be greater than 0.";
             return false;
         }
         if (!(minimumJoinAmount > startingPrice * 0.10 && minimumJoinAmount < startingPrice * 0.75)) {
-            errorMessage = "So tien toi thieu tham gia phai lon hon 10% va nho hon 75% gia khoi diem!";
+            errorMessage = "Minimum join amount must be greater than 10% and less than 75% of the starting price.";
             return false;
         }
         if (durationMinutes <= 0) {
-            errorMessage = "Thoi luong phai lon hon 0 phut!";
+            errorMessage = "Duration must be greater than 0 minutes.";
             return false;
         }
         if (extensionSeconds < 1 || extensionSeconds > 120) {
-            errorMessage = "Gia han phai tu 1 den 120 giay!";
+            errorMessage = "Extension must be between 1 and 120 seconds.";
             return false;
         }
         if (startTime == null || startTime.isBefore(LocalDateTime.now())) {
-            errorMessage = "Thoi gian bat dau phai o hien tai hoac tuong lai!";
+            errorMessage = "Start time must be now or in the future.";
+            return false;
+        }
+        if (sellerReputation < 0.0 || sellerReputation > 5.0) {
+            errorMessage = "Seller reputation must be between 0 and 5.";
+            return false;
+        }
+        if (successfulAuctionRate < 0.0 || successfulAuctionRate > 1.0) {
+            errorMessage = "Seller successful auction rate must be between 0 and 1.";
+            return false;
+        }
+        if (adminCancellationRate < 0.0 || adminCancellationRate > 1.0) {
+            errorMessage = "Seller admin cancellation rate must be between 0 and 1.";
             return false;
         }
         return true;

@@ -138,7 +138,7 @@ public class UserDAO {
         } catch (SQLException e) {
             System.err.println("Loi khi dang ky User moi: " + e.getMessage());
             e.printStackTrace();
-            return "LOI SQL: " + e.getMessage();
+            return "SQL ERROR: " + e.getMessage();
         }
     }
 
@@ -256,3 +256,4 @@ public class UserDAO {
         }
     }
 }
+

@@ -28,8 +28,9 @@ public class AdminDashboardLauncher implements DashboardLauncher {
             sessionStore.setAdminController(controller);
 
             Stage stage = new Stage();
-            stage.setTitle("Hệ Thống Quản Trị - Admin Dashboard");
+            stage.setTitle("Admin Dashboard");
             stage.setScene(new Scene(root));
+            stage.setFullScreen(false);
             stage.setMaximized(true);
             stage.show();
         } catch (Exception e) {

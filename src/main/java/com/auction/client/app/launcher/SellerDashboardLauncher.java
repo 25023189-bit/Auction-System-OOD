@@ -24,8 +24,10 @@ public class SellerDashboardLauncher implements DashboardLauncher {
             controller.setAuctionService(auctionService);
 
             Stage stage = new Stage();
-            stage.setTitle("Tạo phiên đấu giá");
+            stage.setTitle("Create Auction");
             stage.setScene(new Scene(root));
+            stage.setFullScreen(false);
+            stage.setMaximized(true);
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();

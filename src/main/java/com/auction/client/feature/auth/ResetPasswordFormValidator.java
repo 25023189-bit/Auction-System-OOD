@@ -4,13 +4,13 @@ public class ResetPasswordFormValidator implements FormValidator<ResetPasswordFo
     @Override
     public ValidationResult validate(ResetPasswordForm form) {
         if (form.username() == null || form.username().trim().isEmpty()) {
-            return ValidationResult.fail("Vui lòng nhập tên tài khoản!");
+            return ValidationResult.fail("Please enter your username!");
         }
         if (form.newPassword() == null || form.newPassword().trim().isEmpty()) {
-            return ValidationResult.fail("Vui lòng nhập mật khẩu mới!");
+            return ValidationResult.fail("Please enter a new password!");
         }
         if (!form.newPassword().equals(form.confirmPassword())) {
-            return ValidationResult.fail("Mật khẩu xác nhận không khớp!");
+            return ValidationResult.fail("Password confirmation does not match!");
         }
         return ValidationResult.ok();
     }

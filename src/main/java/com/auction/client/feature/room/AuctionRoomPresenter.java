@@ -11,6 +11,7 @@ public class AuctionRoomPresenter implements ViewPresenter {
     private final Label lblAuctionItemName;
     private final Label lblCurrentPrice;
     private final Label lblTimer;
+    private final Label lblParticipantCount;
     private final Label lblDescription;
     private final TextArea txtChatLog;
     private final TextArea txtItemDescriptionDisplay;
@@ -21,6 +22,7 @@ public class AuctionRoomPresenter implements ViewPresenter {
     public AuctionRoomPresenter(Label lblAuctionItemName,
                                 Label lblCurrentPrice,
                                 Label lblTimer,
+                                Label lblParticipantCount,
                                 Label lblDescription,
                                 TextArea txtChatLog,
                                 TextArea txtItemDescriptionDisplay,
@@ -30,6 +32,7 @@ public class AuctionRoomPresenter implements ViewPresenter {
         this.lblAuctionItemName = lblAuctionItemName;
         this.lblCurrentPrice = lblCurrentPrice;
         this.lblTimer = lblTimer;
+        this.lblParticipantCount = lblParticipantCount;
         this.lblDescription = lblDescription;
         this.txtChatLog = txtChatLog;
         this.txtItemDescriptionDisplay = txtItemDescriptionDisplay;
@@ -43,15 +46,21 @@ public class AuctionRoomPresenter implements ViewPresenter {
             lblAuctionItemName.setText(itemName);
         }
         if (lblCurrentPrice != null) {
-            lblCurrentPrice.setText("Gia hien tai: " + String.format("%,.0f $", currentPrice));
+            lblCurrentPrice.setText("Current Price: " + String.format("%,.0f $", currentPrice));
         }
         String resolvedDescription = (description != null && !description.isBlank())
                 ? description
-                : "Chua co mo ta cho vat pham nay.";
+                : "No item description available.";
         if (txtItemDescriptionDisplay != null) {
             txtItemDescriptionDisplay.setText(resolvedDescription);
         } else if (lblDescription != null) {
             lblDescription.setText(resolvedDescription);
+        }
+    }
+
+    public void showParticipantCount(int participantCount) {
+        if (lblParticipantCount != null) {
+            lblParticipantCount.setText("Participants: " + Math.max(participantCount, 0));
         }
     }
 
@@ -63,10 +72,10 @@ public class AuctionRoomPresenter implements ViewPresenter {
 
     public void showCurrentPrice(double price, String holderName) {
         if (lblCurrentPrice != null) {
-            lblCurrentPrice.setText("Gia hien tai: " + String.format("%,.0f $", price));
+            lblCurrentPrice.setText("Current Price: " + String.format("%,.0f $", price));
         }
         if (holderName != null && txtChatLog != null) {
-            txtChatLog.appendText("Gia moi: " + holderName + " dang giu gia " + String.format("%,.0f $", price) + "\n");
+            txtChatLog.appendText("New bid: " + holderName + " is holding the price at " + String.format("%,.0f $", price) + "\n");
         }
     }
 

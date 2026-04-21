@@ -21,13 +21,13 @@ public class AuctionRoomService {
         AuctionRoom room = auctionDAO.getAuctionById(roomId);
 
         if (room == null) {
-            return fail("ROOM_FAIL", "Khong tim thay phong hoac phien da ket thuc!");
+            return fail("ROOM_FAIL", "Room not found or the auction has ended.");
         }
 
         UserDAO userDAO = new UserDAO();
         User user = userDAO.getUserById(userId);
         if (user == null) {
-            return fail("ROOM_FAIL", "Khong tim thay nguoi dung!");
+            return fail("ROOM_FAIL", "User not found.");
         }
 
         LocalDateTime now = LocalDateTime.now();
@@ -41,7 +41,7 @@ public class AuctionRoomService {
         synchronized (state) {
             LocalDateTime scheduledEnd = calculateScheduledEnd(room, state);
             if (scheduledEnd == null) {
-                return fail("ROOM_FAIL", "Phien dau gia thieu thong tin thoi gian!");
+                return fail("ROOM_FAIL", "Auction schedule information is missing.");
             }
 
             if (!now.isBefore(scheduledEnd)) {
@@ -52,11 +52,11 @@ public class AuctionRoomService {
             applyFinalWindowRules(state, now, remainingSeconds);
 
             if (state.isEntryLocked() && !state.hasParticipant(userId)) {
-                return fail("ROOM_FAIL", "Phien da khoa nguoi tham gia moi trong 30 giay cuoi!");
+                return fail("ROOM_FAIL", "New participants are locked during the final 30 seconds.");
             }
 
             if ("BIDDER".equalsIgnoreCase(user.getRole()) && user.getBalance() < room.getMinimumJoinAmount()) {
-                return fail("ROOM_FAIL", "So du cua ban chua dat muc toi thieu de tham gia phien nay!");
+                return fail("ROOM_FAIL", "Your balance does not meet the minimum join amount for this auction.");
             }
 
             state.addParticipant(userId);
@@ -71,18 +71,18 @@ public class AuctionRoomService {
         User user = userDAO.getUserById(userId);
 
         if (user == null) {
-            return fail("BID_FAIL", "Khong tim thay nguoi dung!");
+            return fail("BID_FAIL", "User not found.");
         }
 
         if (!"BIDDER".equalsIgnoreCase(user.getRole())) {
-            return fail("BID_FAIL", "Ban khong phai nguoi mua de tham gia dat gia!");
+            return fail("BID_FAIL", "Only bidders can place bids.");
         }
 
         AuctionDAO auctionDAO = new AuctionDAO();
         AuctionRoom room = auctionDAO.getAuctionById(roomId);
 
         if (room == null) {
-            return fail("BID_FAIL", "Khong tim thay phong dau gia hoac phien da ket thuc!");
+            return fail("BID_FAIL", "Auction room not found or the auction has ended.");
         }
 
         LocalDateTime now = LocalDateTime.now();
@@ -96,7 +96,7 @@ public class AuctionRoomService {
         synchronized (state) {
             LocalDateTime scheduledEnd = calculateScheduledEnd(room, state);
             if (scheduledEnd == null) {
-                return fail("BID_FAIL", "Phien dau gia thieu thong tin thoi gian!");
+                return fail("BID_FAIL", "Auction schedule information is missing.");
             }
 
             if (!now.isBefore(scheduledEnd)) {
@@ -107,7 +107,7 @@ public class AuctionRoomService {
             applyFinalWindowRules(state, now, remainingSeconds);
 
             if (!state.hasParticipant(userId)) {
-                return fail("BID_FAIL", "Ban khong nam trong danh sach nguoi tham gia hop le cua phien!");
+                return fail("BID_FAIL", "You are not in the valid participant list for this auction.");
             }
 
             BidDAO bidDAO = new BidDAO();
@@ -115,7 +115,7 @@ public class AuctionRoomService {
             if (!bidResult.isSuccess()) {
                 return fail("BID_FAIL", bidResult.getMessage() != null
                         ? bidResult.getMessage()
-                        : "Khong the dat gia.");
+                        : "Unable to place bid.");
             }
 
             room.setCurrentPrice(amount);
@@ -172,25 +172,25 @@ public class AuctionRoomService {
 
         switch (status) {
             case "SOLD":
-                return fail("ROOM_FAIL", "Phien dau gia nay da ban thanh cong va khong con kha dung!");
+                return fail("ROOM_FAIL", "This auction has been sold and is no longer available.");
             case "UNSOLD":
-                return fail("ROOM_FAIL", "Phien dau gia nay da ket thuc ma khong co nguoi mua!");
+                return fail("ROOM_FAIL", "This auction ended without a buyer.");
             case "ENDED":
             case "CLOSED_BY_SELLER":
-                return fail("ROOM_FAIL", "Phien dau gia nay da duoc nguoi ban dong!");
+                return fail("ROOM_FAIL", "This auction was closed by the seller.");
             case "CANCELED":
             case "CANCELED_BY_ADMIN":
-                return fail("ROOM_FAIL", "Phien dau gia nay da bi huy!");
+                return fail("ROOM_FAIL", "This auction has been canceled.");
             case "OPEN":
             case "RUNNING":
                 if (room.getStartTime() != null && now.isBefore(room.getStartTime())) {
                     if (user == null || user.getId() == null || !user.getId().equalsIgnoreCase(room.getSellerName())) {
-                        return fail("ROOM_FAIL", "Chi seller cua phien moi duoc vao truoc khi phien bat dau!");
+                        return fail("ROOM_FAIL", "Only this auction's seller can enter before the auction starts.");
                     }
                 }
                 return null;
             default:
-                return fail("ROOM_FAIL", "Trang thai phien dau gia khong hop le: " + status);
+                return fail("ROOM_FAIL", "Invalid auction status: " + status);
         }
     }
 
@@ -199,23 +199,23 @@ public class AuctionRoomService {
 
         switch (status) {
             case "SOLD":
-                return fail("BID_FAIL", "Phien dau gia da ban thanh cong, khong the dat gia!");
+                return fail("BID_FAIL", "This auction has been sold. Bidding is not available.");
             case "UNSOLD":
-                return fail("BID_FAIL", "Phien dau gia da ket thuc ma khong co nguoi mua!");
+                return fail("BID_FAIL", "This auction ended without a buyer.");
             case "ENDED":
             case "CLOSED_BY_SELLER":
-                return fail("BID_FAIL", "Phien dau gia da duoc nguoi ban dong!");
+                return fail("BID_FAIL", "This auction was closed by the seller.");
             case "CANCELED":
             case "CANCELED_BY_ADMIN":
-                return fail("BID_FAIL", "Phien dau gia da bi huy!");
+                return fail("BID_FAIL", "This auction has been canceled.");
             case "OPEN":
             case "RUNNING":
                 if (room.getStartTime() != null && now.isBefore(room.getStartTime())) {
-                    return fail("BID_FAIL", "Phien dau gia chua bat dau!");
+                    return fail("BID_FAIL", "This auction has not started yet.");
                 }
                 return null;
             default:
-                return fail("BID_FAIL", "Trang thai phien dau gia khong hop le: " + status);
+                return fail("BID_FAIL", "Invalid auction status: " + status);
         }
     }
 
@@ -275,6 +275,7 @@ public class AuctionRoomService {
         room.setExtendedSeconds(state.getTotalExtendedSeconds());
         room.setEntryLocked(state.isEntryLocked());
         room.setScheduledEndTime(calculateScheduledEnd(room, state));
+        room.setParticipantCount(state.getParticipants().size());
     }
 
     private String normalizeStatus(String status) {

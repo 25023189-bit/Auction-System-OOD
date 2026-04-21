@@ -1,21 +1,15 @@
 package com.auction.client.core.navigation;
 
+import javafx.application.Platform;
+import javafx.geometry.Rectangle2D;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class DefaultWindowStateHandler implements WindowStateHandler {
-    private boolean lastMaximized = false;
-    private double lastWidth = 1280;
-    private double lastHeight = 720;
 
     @Override
     public void capture(Stage stage) {
-        if (stage == null) return;
-
-        lastMaximized = stage.isMaximized();
-        if (!lastMaximized) {
-            lastWidth = stage.getWidth();
-            lastHeight = stage.getHeight();
-        }
+        // Scene transitions should not preserve smaller previous window sizes.
     }
 
     @Override
@@ -23,27 +17,31 @@ public class DefaultWindowStateHandler implements WindowStateHandler {
         if (stage == null) return;
 
         stage.setTitle(title);
-        stage.setMaximized(lastMaximized);
-
-        if (!lastMaximized) {
-            stage.setWidth(lastWidth > 0 ? lastWidth : 1280);
-            stage.setHeight(lastHeight > 0 ? lastHeight : 720);
-            stage.centerOnScreen();
-        }
+        stage.setFullScreen(false);
+        maximize(stage);
     }
 
     @Override
     public void applyFixed(Stage stage, String title, double width, double height) {
-        if (stage == null) return;
+        apply(stage, title);
+    }
 
-        stage.setTitle(title);
+    private void maximize(Stage stage) {
+        Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+
         stage.setMaximized(false);
-        stage.setWidth(width);
-        stage.setHeight(height);
-        stage.centerOnScreen();
+        stage.setX(bounds.getMinX());
+        stage.setY(bounds.getMinY());
+        stage.setWidth(bounds.getWidth());
+        stage.setHeight(bounds.getHeight());
+        stage.setMaximized(true);
 
-        lastMaximized = false;
-        lastWidth = width;
-        lastHeight = height;
+        Platform.runLater(() -> {
+            stage.setX(bounds.getMinX());
+            stage.setY(bounds.getMinY());
+            stage.setWidth(bounds.getWidth());
+            stage.setHeight(bounds.getHeight());
+            stage.setMaximized(true);
+        });
     }
 }

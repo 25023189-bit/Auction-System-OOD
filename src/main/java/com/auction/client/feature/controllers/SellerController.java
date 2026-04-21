@@ -35,13 +35,13 @@ public class SellerController {
     @FXML
     public void handleCreateAuction() {
         if (auctionService == null) {
-            showError("Loi: Service bi null!");
+            showError("Error: Service is not available.");
             return;
         }
 
         LocalDate date = datePickerStart.getValue();
         if (date == null) {
-            showError("Vui long chon ngay bat dau!");
+            showError("Please select a start date.");
             return;
         }
 
@@ -72,9 +72,9 @@ public class SellerController {
             javafx.stage.Stage stage = (javafx.stage.Stage) txtItemName.getScene().getWindow();
             stage.close();
         } catch (NumberFormatException e) {
-            showError("Gia, muc tham gia toi thieu, buoc gia, gio, phut, thoi luong va gia han phai la so hop le!");
+            showError("Price, minimum join amount, bid step, time, duration, and extension must be valid numbers.");
         } catch (Exception e) {
-            showError("Thong tin tao phien khong hop le!");
+            showError("Auction information is invalid.");
         }
     }
 
