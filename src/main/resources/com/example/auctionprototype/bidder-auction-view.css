@@ -1,0 +1,5 @@
+.admin-header {
+    -fx-background-image: url("background-admin.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+}
