@@ -4,6 +4,7 @@ import com.auction.common.dto.Message;
 import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.BidTransaction;
 import com.auction.common.model.Item;
+import com.auction.common.model.PendingAuctionRequest;
 import com.auction.common.model.ProductDetailResponse;
 import com.auction.common.model.User;
 import com.auction.server.dao.AuctionDAO;
@@ -14,6 +15,7 @@ import com.auction.server.service.AuctionCreationValidator;
 import com.auction.server.service.AuctionRoomService;
 import com.auction.server.service.AuctionStateManager;
 import com.auction.server.service.AuthService;
+import com.auction.server.service.PendingAuctionApprovalService;
 import com.auction.server.service.ProductDetailService;
 
 import java.io.ObjectInputStream;
@@ -33,6 +35,7 @@ public class ClientHandler implements Runnable {
 
     private final AuthService authService = new AuthService();
     private final AuctionRoomService roomService = new AuctionRoomService();
+    private final PendingAuctionApprovalService pendingAuctionApprovalService = new PendingAuctionApprovalService();
 
     public ClientHandler(Socket socket) {
         this.socket = socket;
@@ -90,6 +93,9 @@ public class ClientHandler implements Runnable {
                     case "CLOSE_AUCTION" -> handleCloseAuction(msg);
                     case "ADMIN_GET_USERS" -> handleAdminGetUsers();
                     case "ADMIN_GET_AUCTIONS" -> handleAdminGetAuctions();
+                    case "ADMIN_GET_PENDING_AUCTIONS" -> handleAdminGetPendingAuctions();
+                    case "ADMIN_APPROVE_AUCTION" -> handleAdminApproveAuction(msg);
+                    case "ADMIN_REJECT_AUCTION" -> handleAdminRejectAuction(msg);
                     case "GET_BID_HISTORY" -> handleGetBidHistory(msg);
                     case "ADMIN_DELETE_AUCTION" -> handleAdminDeleteAuction(msg);
                     case "ADMIN_DELETE_USER" -> handleAdminDeleteUser(msg);
@@ -310,33 +316,30 @@ public class ClientHandler implements Runnable {
 
             String newItemId = generateItemId();
             String newRoomId = generateAuctionId();
-            LocalDateTime endTime = startTime.plusMinutes(durationMinutes);
 
-            Item item = new Item(newItemId, itemName, itemDesc, startingPrice);
-            AuctionRoom room = new AuctionRoom(newRoomId, itemName, startingPrice, sellerId);
-            room.setItemId(newItemId);
-            room.setItemDescription(itemDesc);
-            room.setCurrentPrice(startingPrice);
-            room.setStartingPrice(startingPrice);
-            room.setMinimumJoinAmount(minimumJoinAmount);
-            room.setBidStep(bidStep);
-            room.setStartTime(startTime);
-            room.setDurationMinutes(durationMinutes);
-            room.setActualEndTime(endTime);
-            room.setExtensionSeconds(extensionSeconds);
-            room.setSellerReputation(seller.getSellerReputation());
-            room.setSellerSuccessfulAuctionRate(seller.getSuccessfulAuctionRate());
-            room.setSellerAdminCancellationRate(seller.getAdminCancellationRate());
-            room.setStatus(startTime.isAfter(LocalDateTime.now()) ? "OPEN" : "RUNNING");
+            PendingAuctionRequest request = new PendingAuctionRequest(
+                    generatePendingRequestId(),
+                    newRoomId,
+                    newItemId,
+                    sellerId,
+                    seller.getOrganization(),
+                    itemName,
+                    itemDesc,
+                    startingPrice,
+                    minimumJoinAmount,
+                    bidStep,
+                    startTime,
+                    durationMinutes,
+                    extensionSeconds,
+                    seller.getSellerReputation(),
+                    seller.getSuccessfulAuctionRate(),
+                    seller.getAdminCancellationRate()
+            );
+            pendingAuctionApprovalService.submit(request);
 
-            boolean auctionSaved = auctionDAO.createAuctionWithItem(room, item, sellerId);
-            if (!auctionSaved) {
-                sendMessage(new Message("CREATE_AUCTION_FAIL", "SERVER", "Unable to save auction!"));
-                return;
-            }
-
-            sendMessage(new Message("CREATE_AUCTION_SUCCESS", newRoomId, room));
-            broadcastRoomList();
+            sendMessage(new Message("CREATE_AUCTION_PENDING", request.getRequestId(),
+                    "Auction request submitted and is waiting for admin approval."));
+            broadcastPendingAuctionList();
         } catch (Exception e) {
             System.err.println("CREATE_AUCTION error: " + e.getMessage());
             e.printStackTrace();
@@ -391,6 +394,59 @@ public class ClientHandler implements Runnable {
         } catch (Exception e) {
             e.printStackTrace();
             sendMessage(new Message("ADMIN_ACTION_FAIL", "SERVER", "Unable to load auction list."));
+        }
+    }
+
+    private void handleAdminGetPendingAuctions() {
+        try {
+            sendMessage(new Message("ADMIN_PENDING_AUCTION_LIST", "SERVER", pendingAuctionApprovalService.getAllPending()));
+        } catch (Exception e) {
+            e.printStackTrace();
+            sendMessage(new Message("ADMIN_ACTION_FAIL", "SERVER", "Unable to load pending auction requests."));
+        }
+    }
+
+    private void handleAdminApproveAuction(Message msg) {
+        try {
+            String requestId = msg.getData() != null ? msg.getData().toString().trim() : "";
+            PendingAuctionRequest request = pendingAuctionApprovalService.approve(requestId);
+            if (request == null) {
+                sendMessage(new Message("ADMIN_ACTION_FAIL", "SERVER", "Pending auction request not found."));
+                return;
+            }
+
+            AuctionRoom room = buildRoomFromPendingRequest(request);
+            Item item = new Item(request.getItemId(), request.getItemName(), request.getItemDesc(), request.getStartingPrice());
+            AuctionDAO auctionDAO = new AuctionDAO();
+
+            if (!auctionDAO.createAuctionWithItem(room, item, request.getSellerId())) {
+                pendingAuctionApprovalService.submit(request);
+                sendMessage(new Message("ADMIN_ACTION_FAIL", "SERVER", "Unable to approve auction request."));
+                return;
+            }
+
+            sendMessage(new Message("ADMIN_ACTION_SUCCESS", "AUCTION_APPROVED", "Approved auction: " + request.getRoomId()));
+            broadcastRoomList();
+            broadcastPendingAuctionList();
+        } catch (Exception e) {
+            e.printStackTrace();
+            sendMessage(new Message("ADMIN_ACTION_FAIL", "SERVER", "Auction approval error."));
+        }
+    }
+
+    private void handleAdminRejectAuction(Message msg) {
+        try {
+            String requestId = msg.getData() != null ? msg.getData().toString().trim() : "";
+            if (!pendingAuctionApprovalService.reject(requestId)) {
+                sendMessage(new Message("ADMIN_ACTION_FAIL", "SERVER", "Pending auction request not found."));
+                return;
+            }
+
+            sendMessage(new Message("ADMIN_ACTION_SUCCESS", "AUCTION_REJECTED", "Rejected auction request: " + requestId));
+            broadcastPendingAuctionList();
+        } catch (Exception e) {
+            e.printStackTrace();
+            sendMessage(new Message("ADMIN_ACTION_FAIL", "SERVER", "Auction rejection error."));
         }
     }
 
@@ -488,6 +544,33 @@ public class ClientHandler implements Runnable {
         }
     }
 
+    private void broadcastPendingAuctionList() {
+        try {
+            AuctionServer.broadcastAll(new Message("ADMIN_PENDING_AUCTION_LIST", "SERVER", pendingAuctionApprovalService.getAllPending()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private AuctionRoom buildRoomFromPendingRequest(PendingAuctionRequest request) {
+        AuctionRoom room = new AuctionRoom(request.getRoomId(), request.getItemName(), request.getStartingPrice(), request.getSellerId());
+        room.setItemId(request.getItemId());
+        room.setItemDescription(request.getItemDesc());
+        room.setCurrentPrice(request.getStartingPrice());
+        room.setStartingPrice(request.getStartingPrice());
+        room.setMinimumJoinAmount(request.getMinimumJoinAmount());
+        room.setBidStep(request.getBidStep());
+        room.setStartTime(request.getStartTime());
+        room.setDurationMinutes(request.getDurationMinutes());
+        room.setActualEndTime(request.getStartTime().plusMinutes(request.getDurationMinutes()));
+        room.setExtensionSeconds(request.getExtensionSeconds());
+        room.setSellerReputation(request.getSellerReputation());
+        room.setSellerSuccessfulAuctionRate(request.getSuccessfulAuctionRate());
+        room.setSellerAdminCancellationRate(request.getAdminCancellationRate());
+        room.setStatus(request.getStartTime().isAfter(LocalDateTime.now()) ? "OPEN" : "RUNNING");
+        return room;
+    }
+
     private double parseBidAmount(Object data) {
         if (data instanceof Double d) return d;
         if (data instanceof Integer i) return i.doubleValue();
@@ -526,6 +609,10 @@ public class ClientHandler implements Runnable {
 
     private String generateAuctionId() {
         return "AU" + String.format("%06d", System.currentTimeMillis() % 1000000);
+    }
+
+    private String generatePendingRequestId() {
+        return "PA" + String.format("%06d", System.currentTimeMillis() % 1000000);
     }
 }
 

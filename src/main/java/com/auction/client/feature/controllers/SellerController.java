@@ -57,6 +57,10 @@ public class SellerController {
             int extensionSeconds = safeText(txtExtensionSeconds).isEmpty() ? 60 : Integer.parseInt(safeText(txtExtensionSeconds));
 
             LocalDateTime startTime = LocalDateTime.of(date, LocalTime.of(hour, minute));
+            if (startTime.isBefore(LocalDateTime.now())) {
+                showError("Start time must be now or in the future.");
+                return;
+            }
 
             auctionService.createAuction(
                     itemName,
