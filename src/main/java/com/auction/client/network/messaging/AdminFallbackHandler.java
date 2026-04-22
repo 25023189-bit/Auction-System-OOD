@@ -5,6 +5,7 @@ import com.auction.client.session.SessionStore;
 import com.auction.common.dto.Message;
 import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.BidTransaction;
+import com.auction.common.model.PendingAuctionRequest;
 import com.auction.common.model.User;
 
 import java.util.List;
@@ -21,6 +22,7 @@ public class AdminFallbackHandler implements MessageHandler {
         return switch (action) {
             case "ADMIN_USER_LIST",
                  "ADMIN_AUCTION_LIST",
+                 "ADMIN_PENDING_AUCTION_LIST",
                  "BID_HISTORY_SUCCESS",
                  "ADMIN_ACTION_SUCCESS",
                  "ADMIN_ACTION_FAIL" -> true;
@@ -40,6 +42,9 @@ public class AdminFallbackHandler implements MessageHandler {
 
             case "ADMIN_AUCTION_LIST" ->
                     admin.updateAuctionsTable((List<AuctionRoom>) msg.getData());
+
+            case "ADMIN_PENDING_AUCTION_LIST" ->
+                    admin.updatePendingAuctionsTable((List<PendingAuctionRequest>) msg.getData());
 
             case "BID_HISTORY_SUCCESS" ->
                     admin.updateBidHistoryTable((List<BidTransaction>) msg.getData());

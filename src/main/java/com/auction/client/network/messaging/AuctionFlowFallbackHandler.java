@@ -31,6 +31,7 @@ public class AuctionFlowFallbackHandler implements MessageHandler {
     public boolean supports(String action) {
         return switch (action) {
             case "CREATE_AUCTION_SUCCESS",
+                 "CREATE_AUCTION_PENDING",
                  "CREATE_AUCTION_FAIL",
                  "UPDATE_ROOMS",
                  "BID_FAIL",
@@ -49,6 +50,11 @@ public class AuctionFlowFallbackHandler implements MessageHandler {
             case "CREATE_AUCTION_SUCCESS" -> {
                 sessionStore.setCurrentRoomId(msg.id);
                 auctionService.joinRoom(msg.id);
+            }
+            case "CREATE_AUCTION_PENDING" -> {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION, String.valueOf(msg.getData()));
+                alert.setHeaderText("Auction Waiting For Approval");
+                alert.showAndWait();
             }
             case "CREATE_AUCTION_FAIL" -> {
                 Alert alert = new Alert(Alert.AlertType.ERROR, String.valueOf(msg.getData()));
