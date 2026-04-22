@@ -281,8 +281,8 @@ public class AuctionDAO {
         try (Connection conn = DatabaseConnection.getConnection()) {
             conn.setAutoCommit(false);
 
-            String sellerId = null;
-            String currentStatus = null;
+            String sellerId;
+            String currentStatus;
 
             try (PreparedStatement pstmt = conn.prepareStatement(auctionSql)) {
                 pstmt.setString(1, roomId);

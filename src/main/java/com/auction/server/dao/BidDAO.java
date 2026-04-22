@@ -40,30 +40,26 @@ public class BidDAO {
         try (Connection conn = DatabaseConnection.getConnection()) {
             conn.setAutoCommit(false);
 
-            String itemId = null;
-            double currentPrice = 0;
-            double currentBalance = 0;
-            double bidStep = 0;
-            boolean auctionExists = false;
+            String itemId;
+            double currentPrice;
+            double currentBalance;
+            double bidStep;
 
             try (PreparedStatement pstmt = conn.prepareStatement(selectAuctionSql)) {
                 pstmt.setString(1, bidderId);
                 pstmt.setString(2, auctionId);
 
                 try (ResultSet rs = pstmt.executeQuery()) {
-                    if (rs.next()) {
-                        auctionExists = true;
-                        itemId = rs.getString("item_id");
-                        currentPrice = rs.getDouble("current_price");
-                        currentBalance = rs.getDouble("balance");
-                        bidStep = rs.getDouble("bid_step");
+                    if (!rs.next()) {
+                        conn.rollback();
+                        return BidResult.fail(BidStatus.AUCTION_NOT_FOUND, "Auction not found.");
                     }
-                }
-            }
 
-            if (!auctionExists || itemId == null) {
-                conn.rollback();
-                return BidResult.fail(BidStatus.AUCTION_NOT_FOUND, "Auction not found.");
+                    itemId = rs.getString("item_id");
+                    currentPrice = rs.getDouble("current_price");
+                    currentBalance = rs.getDouble("balance");
+                    bidStep = rs.getDouble("bid_step");
+                }
             }
 
             double minimumAllowedBid = currentPrice + bidStep;

@@ -214,7 +214,7 @@ public class ClientHandler implements Runnable {
 
     private void handleBid(Message msg) {
         try {
-            if (this.currentRoomId == null || this.currentRoomId.isBlank()) {
+            if (this.currentRoomId.isBlank()) {
                 sendMessage(new Message("BID_FAIL", "SERVER", "You have not joined any room!"));
                 return;
             }
@@ -477,15 +477,7 @@ public class ClientHandler implements Runnable {
             if (userDAO.deleteUser(targetUserId)) {
                 sendMessage(new Message("ADMIN_ACTION_SUCCESS", "USER_DELETED", "Da xoa tai khoan: " + targetUserId));
 
-                if (AuctionServer.clients != null) {
-                    for (ClientHandler client : AuctionServer.clients) {
-                        if (client != null && targetUserId.equals(client.getUserId())) {
-                            client.sendMessage(new Message("BANNED", "SERVER", "Your account has been deleted by an admin!"));
-                            client.closeConnection();
-                            break;
-                        }
-                    }
-                }
+                AuctionServer.notifyDeletedUser(targetUserId);
             } else {
                 sendMessage(new Message("ADMIN_ACTION_FAIL", "SERVER", "Unable to delete account."));
             }
@@ -530,7 +522,7 @@ public class ClientHandler implements Runnable {
         }
 
         if (wasAlive) {
-            AuctionServer.clients.remove(this);
+            AuctionServer.unregisterClient(this);
         }
     }
 

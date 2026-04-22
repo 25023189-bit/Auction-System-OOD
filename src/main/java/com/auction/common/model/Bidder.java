@@ -1,6 +1,11 @@
 package com.auction.common.model;
 
+import java.io.Serial;
+
 public class Bidder extends User {
+    @Serial
+    private static final long serialVersionUID = 1L;
+
     public Bidder() { super(); }
 
     public Bidder(String id, String username, String password, double balance) {

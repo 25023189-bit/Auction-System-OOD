@@ -1,6 +1,9 @@
 package com.auction.common.model;
 
+import java.io.Serial;
+
 public class Admin extends User {
+    @Serial
     private static final long serialVersionUID = 1L;
 
     public Admin(String customerId, String password) {

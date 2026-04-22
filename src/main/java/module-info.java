@@ -12,5 +12,9 @@ module com.example.auctionprototype {
     opens com.example.auctionprototype to javafx.fxml;
 
     exports com.auction.client.feature.controllers;
+    exports com.auction.common.dto;
+    exports com.auction.common.model;
+    exports com.auction.server;
     exports com.auction.server.main;
+    exports com.auction.server.service;
 }

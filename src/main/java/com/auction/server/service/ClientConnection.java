@@ -35,7 +35,7 @@ public class ClientConnection {
 
                 controller.updateConnectionStatus("Connected to server!");
 
-                while (true) {
+                while (!Thread.currentThread().isInterrupted() && socket != null && !socket.isClosed()) {
                     Message response = (Message) in.readObject();
                     System.out.println("[ClientConnection] Received action: " + response.getAction());
                     controller.onServerResponse(response);

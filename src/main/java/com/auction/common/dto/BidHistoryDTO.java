@@ -1,8 +1,12 @@
 package com.auction.common.dto;
 
-import java.time.LocalDateTime;
+import java.io.Serial;
+import java.io.Serializable;
 
-public class BidHistoryDTO {
+public class BidHistoryDTO implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
+
     private String bidderName;   // Tên người đặt để hiển thị lên UI
     private double amount;       // Số tiền đặt
     private String time; // Thời điểm đặt giá
