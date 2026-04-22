@@ -349,7 +349,7 @@ public class AuctionController implements Initializable {
 
         System.out.println("[Login] Read login form data from FXML:");
         System.out.println("  - Username: " + authViewModel.getUsername());
-        System.out.println("  - Password: " + authViewModel.getPassword().replaceAll(".", "*"));
+        System.out.println("  - Password: " + "*".repeat(authViewModel.getPassword().length()));
 
         System.out.println("[Login] Sending LoginCommand.");
 

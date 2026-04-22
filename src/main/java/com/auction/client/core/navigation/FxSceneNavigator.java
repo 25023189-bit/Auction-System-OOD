@@ -51,14 +51,14 @@ public class FxSceneNavigator implements SceneNavigator {
             Stage stage = resolveStage();
             windowStateHandler.capture(stage);
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/mainLobby-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(resolveLobbyViewPath()));
             loader.setControllerFactory(clazz -> controllerRef);
             Parent root = loader.load();
 
             stage = resolveStage();
             if (stage != null) {
                 stage.setScene(new Scene(root));
-                windowStateHandler.apply(stage, "Main Lobby - Auction System");
+                windowStateHandler.apply(stage, resolveLobbyTitle());
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -144,6 +144,26 @@ public class FxSceneNavigator implements SceneNavigator {
             return "/com/example/auctionprototype/seller-auction-view.fxml";
         }
         return "/com/example/auctionprototype/bidder-auction-view.fxml";
+    }
+
+    private String resolveLobbyViewPath() {
+        User currentUser = sessionStore != null ? sessionStore.getCurrentUser() : null;
+        String role = currentUser != null ? currentUser.getRole() : null;
+
+        if ("SELLER".equalsIgnoreCase(role)) {
+            return "/com/example/auctionprototype/seller-mainLobby-view.fxml";
+        }
+        return "/com/example/auctionprototype/bidder-mainLobby-view.fxml";
+    }
+
+    private String resolveLobbyTitle() {
+        User currentUser = sessionStore != null ? sessionStore.getCurrentUser() : null;
+        String role = currentUser != null ? currentUser.getRole() : null;
+
+        if ("SELLER".equalsIgnoreCase(role)) {
+            return "Seller Lobby - Auction System";
+        }
+        return "Bidder Lobby - Auction System";
     }
 
     private String resolveAuctionRoomTitle() {

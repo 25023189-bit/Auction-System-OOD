@@ -1,9 +1,11 @@
 package com.auction.common.model;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
 public class AuctionRoom implements Serializable {
+    @Serial
     private static final long serialVersionUID = 1L;
 
     private String roomId;

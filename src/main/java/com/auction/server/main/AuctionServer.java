@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 public class AuctionServer {
 
-    public static List<ClientHandler> clients = new CopyOnWriteArrayList<>();
+    private static final List<ClientHandler> CLIENTS = new CopyOnWriteArrayList<>();
     private static final ScheduledExecutorService AUCTION_WATCHER = Executors.newSingleThreadScheduledExecutor();
 
     public static void main(String[] args) {
@@ -25,17 +25,17 @@ public class AuctionServer {
         try {
             startExpiredAuctionWatcher();
 
-            ServerSocket serverSocket = new ServerSocket(port);
-            System.out.println("Server running on port: " + port);
+            try (ServerSocket serverSocket = new ServerSocket(port)) {
+                System.out.println("Server running on port: " + port);
+                while (!serverSocket.isClosed()) {
+                    Socket socket = serverSocket.accept();
 
-            while (true) {
-                Socket socket = serverSocket.accept();
+                    ClientHandler handler = new ClientHandler(socket);
+                    addClient(handler);
 
-                ClientHandler handler = new ClientHandler(socket);
-                addClient(handler);
-
-                Thread thread = new Thread(handler);
-                thread.start();
+                    Thread thread = new Thread(handler);
+                    thread.start();
+                }
             }
 
         } catch (Exception e) {
@@ -47,7 +47,7 @@ public class AuctionServer {
     public static void broadcast(Message msg) {
         System.out.println("Broadcast: " + msg.getAction());
 
-        for (ClientHandler client : clients) {
+        for (ClientHandler client : CLIENTS) {
             if (client != null && client.isAlive()) {
                 client.sendMessage(msg);
             } else {
@@ -57,7 +57,7 @@ public class AuctionServer {
     }
 
     public static void broadcastAll(Message msg) {
-        for (ClientHandler client : clients) {
+        for (ClientHandler client : CLIENTS) {
             if (client != null && client.isAlive()) {
                 client.sendMessage(msg);
             } else {
@@ -67,7 +67,7 @@ public class AuctionServer {
     }
 
     public static void broadcastToRoom(String roomId, Message msg) {
-        for (ClientHandler client : clients) {
+        for (ClientHandler client : CLIENTS) {
             if (client == null || !client.isAlive()) {
                 removeClient(client);
                 continue;
@@ -82,7 +82,7 @@ public class AuctionServer {
 
     public static void notifyRoomClosed(String roomId) {
         Message message = new Message("AUCTION_CLOSED_NOTIFY", "SERVER", roomId);
-        for (ClientHandler client : clients) {
+        for (ClientHandler client : CLIENTS) {
             if (client == null || !client.isAlive()) {
                 removeClient(client);
                 continue;
@@ -97,16 +97,34 @@ public class AuctionServer {
 
     public static void addClient(ClientHandler client) {
         if (client != null) {
-            clients.add(client);
-            System.out.println("Client connected | Online: " + clients.size());
+            CLIENTS.add(client);
+            System.out.println("Client connected | Online: " + CLIENTS.size());
         }
     }
 
     public static void removeClient(ClientHandler client) {
         if (client != null) {
-            clients.remove(client);
             client.closeConnection();
-            System.out.println("Client disconnected | Online: " + clients.size());
+        }
+    }
+
+    public static void unregisterClient(ClientHandler client) {
+        if (client != null && CLIENTS.remove(client)) {
+            System.out.println("Client disconnected | Online: " + CLIENTS.size());
+        }
+    }
+
+    public static void notifyDeletedUser(String targetUserId) {
+        if (targetUserId == null || targetUserId.isBlank()) {
+            return;
+        }
+
+        for (ClientHandler client : CLIENTS) {
+            if (client != null && targetUserId.equals(client.getUserId())) {
+                client.sendMessage(new Message("BANNED", "SERVER", "Your account has been deleted by an admin!"));
+                client.closeConnection();
+                break;
+            }
         }
     }
 

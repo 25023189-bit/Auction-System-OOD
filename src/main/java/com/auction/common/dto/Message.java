@@ -1,5 +1,6 @@
 package com.auction.common.dto;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 /**
@@ -15,6 +16,7 @@ import java.io.Serializable;
 public class Message implements Serializable {
     // Đảm bảo tính tương thích phiên bản khi truyền qua mạng.
     // Tránh lỗi InvalidClassException nếu Server và Client dùng 2 bản code lệch nhau.
+    @Serial
     private static final long serialVersionUID = 1L;
 
     /**

@@ -1,10 +1,14 @@
 package com.auction.common.model;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class BidTransaction implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
+
     private int transactionId; // Tự động tăng trong DB
     private String auctionId;  // Mã phòng đấu giá
     private String bidderId;   // Mã người đặt (customer_id)
