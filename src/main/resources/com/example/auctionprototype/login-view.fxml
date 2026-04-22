@@ -30,33 +30,33 @@
 
                 <VBox fx:id="paneRegister" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 10);" visible="false">
                     <children>
-                        <Label text="ÄÄ‚NG KÃ TÃ€I KHOáº¢N" textFill="#2c3e50">
+                        <Label text="ĐĂNG NHẬP HỆ THỐNG ĐẤU GIÁ" textFill="#2c3e50">
                             <font><Font name="System Bold" size="24.0" /></font>
                         </Label>
-                        <TextField fx:id="txtRegUsername" promptText="TÃªn Ä‘Äƒng nháº­p" />
-                        <PasswordField fx:id="txtRegPassword" promptText="Máº­t kháº©u (Ã­t nháº¥t 6 kÃ½ tá»±)" />
-                        <PasswordField fx:id="txtRegConfirm" promptText="XÃ¡c nháº­n láº¡i máº­t kháº©u" />
-                                                <ComboBox fx:id="cbRegRole" prefWidth="400.0" promptText="Chá»n vai trÃ²..." />
+                        <TextField fx:id="txtRegUsername" promptText="Tên đăng nhập." />
+                        <PasswordField fx:id="txtRegPassword" promptText="Mật Khẩu." />
+                        <PasswordField fx:id="txtRegConfirm" promptText="Sai định dạng mật khẩu." />
+                                                <ComboBox fx:id="cbRegRole" prefWidth="400.0" promptText="Chọn vai trò:" />
                         <Label fx:id="lblRegOrganization" text="T? ch?c" visible="false" managed="false" />
-                        <TextField fx:id="txtRegOrganization" promptText="Nh?p tên t? ch?c (ch? cho SELLER)" visible="false" managed="false" />
+                        <TextField fx:id="txtRegOrganization" promptText="Nhập tên tổ chức." visible="false" managed="false" />
                         <Label fx:id="lblRegStatus" textFill="RED" />
-                        <Button onAction="#handleSubmitRegister" prefWidth="200.0" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold;" text="XÃ¡c nháº­n ÄÄƒng kÃ½" />
-                        <Button onAction="#showLoginScreen" style="-fx-background-color: transparent; -fx-text-fill: #3498db;" text="â¬… Quay láº¡i ÄÄƒng nháº­p" />
+                        <Button onAction="#handleSubmitRegister" prefWidth="200.0" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold;" text="Xác nhận mật khẩu." />
+                        <Button onAction="#showLoginScreen" style="-fx-background-color: transparent; -fx-text-fill: #3498db;" text="Quay lại." />
                     </children>
                     <padding><Insets bottom="30.0" left="30.0" right="30.0" top="30.0" /></padding>
                 </VBox>
 
                 <VBox fx:id="paneForgotPassword" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 10);" visible="false">
                     <children>
-                        <Label text="KHÃ”I PHá»¤C Máº¬T KHáº¨U" textFill="#2c3e50">
+                        <Label text="Quên mật khẩu" textFill="#2c3e50">
                             <font><Font name="System Bold" size="24.0" /></font>
                         </Label>
-                        <TextField fx:id="txtForgotUsername" promptText="Nháº­p tÃªn tÃ i khoáº£n cá»§a báº¡n" />
-                        <PasswordField fx:id="txtForgotNewPassword" promptText="Nháº­p máº­t kháº©u má»›i" />
-                        <PasswordField fx:id="txtForgotConfirm" promptText="XÃ¡c nháº­n láº¡i máº­t kháº©u má»›i" />
+                        <TextField fx:id="txtForgotUsername" promptText="Username." />
+                        <PasswordField fx:id="txtForgotNewPassword" promptText="Password" />
+                        <PasswordField fx:id="txtForgotConfirm" promptText="Verify Password" />
                         <Label fx:id="lblForgotStatus" textFill="RED" />
-                        <Button onAction="#handleSubmitForgotPassword" prefWidth="200.0" style="-fx-background-color: #e67e22; -fx-text-fill: white; -fx-font-weight: bold;" text="Äá»•i Máº­t Kháº©u" />
-                        <Button onAction="#showLoginScreen" style="-fx-background-color: transparent; -fx-text-fill: #3498db;" text="â¬… Quay láº¡i ÄÄƒng nháº­p" />
+                        <Button onAction="#handleSubmitForgotPassword" prefWidth="200.0" style="-fx-background-color: #e67e22; -fx-text-fill: white; -fx-font-weight: bold;" text="Password" />
+                        <Button onAction="#showLoginScreen" style="-fx-background-color: transparent; -fx-text-fill: #3498db;" text="Verify Password" />
                     </children>
                     <padding><Insets bottom="30.0" left="30.0" right="30.0" top="30.0" /></padding>
                 </VBox>
