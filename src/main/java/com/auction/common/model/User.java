@@ -11,6 +11,9 @@ public class User implements Serializable, Entity {
     protected String role;
     protected String organization;
     protected double balance;
+    protected double sellerReputation = 5.0;
+    protected double successfulAuctionRate = 0.0;
+    protected double adminCancellationRate = 0.0;
 
     public User() {}
 
@@ -59,6 +62,9 @@ public class User implements Serializable, Entity {
     public String getPassword() { return password; }
     public String getOrganization() { return organization; }
     public double getBalance() { return balance; }
+    public double getSellerReputation() { return sellerReputation; }
+    public double getSuccessfulAuctionRate() { return successfulAuctionRate; }
+    public double getAdminCancellationRate() { return adminCancellationRate; }
 
     public void setCustomerId(String customerId) { this.customerId = customerId; }
     public void setUsername(String username) { this.username = username; }
@@ -66,4 +72,7 @@ public class User implements Serializable, Entity {
     public void setRole(String role) { this.role = role; }
     public void setOrganization(String organization) { this.organization = organization; }
     public void setBalance(double balance) { this.balance = balance; }
+    public void setSellerReputation(double sellerReputation) { this.sellerReputation = sellerReputation; }
+    public void setSuccessfulAuctionRate(double successfulAuctionRate) { this.successfulAuctionRate = successfulAuctionRate; }
+    public void setAdminCancellationRate(double adminCancellationRate) { this.adminCancellationRate = adminCancellationRate; }
 }

@@ -36,7 +36,7 @@ public class TransactionDAO {
                     if (timestamp != null) {
                         bt.setBidTime(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(timestamp));
                     } else {
-                        bt.setBidTime("Không rõ");
+                        bt.setBidTime("Unknown");
                     }
 
                     list.add(bt);

@@ -25,6 +25,6 @@ public class FallbackMessageHandler implements MessageHandler {
             }
         }
 
-        System.out.println("⚠️ Chưa có handler cho action: " + message.getAction());
+        System.out.println("[FallbackMessageHandler] No handler for action: " + message.getAction());
     }
 }

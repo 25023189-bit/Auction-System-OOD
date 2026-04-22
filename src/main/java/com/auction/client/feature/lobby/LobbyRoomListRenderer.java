@@ -43,8 +43,8 @@ public class LobbyRoomListRenderer {
             for (Node child : card.getChildren()) {
                 if (child instanceof Label label) {
                     String text = label.getText();
-                    if (text != null && text.startsWith("Giá hiện tại:")) {
-                        label.setText("Giá hiện tại: " + newPrice);
+                    if (text != null && (text.startsWith("Current Price:") || text.startsWith("Price:"))) {
+                        label.setText("Price: " + newPrice);
                         return;
                     }
                 }

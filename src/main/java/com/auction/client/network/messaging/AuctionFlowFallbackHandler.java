@@ -49,61 +49,47 @@ public class AuctionFlowFallbackHandler implements MessageHandler {
                 sessionStore.setCurrentRoomId(msg.id);
                 auctionService.joinRoom(msg.id);
             }
-
             case "UPDATE_ROOMS" -> auctionService.getRooms();
-
             case "BID_FAIL" -> {
                 if (auctionRoomPresenter != null) {
-                    auctionRoomPresenter.appendChat("X " + msg.getData());
+                    auctionRoomPresenter.appendChat("Error: " + msg.getData());
                 }
             }
-
             case "ROOM_FAIL" -> {
                 Alert alert = new Alert(Alert.AlertType.WARNING, String.valueOf(msg.getData()));
-                alert.setHeaderText("Khong the vao phong");
+                alert.setHeaderText("Unable to Join Room");
                 alert.showAndWait();
-
                 sessionStore.setCurrentRoom(null);
                 sessionStore.setCurrentRoomId(null);
-
                 sceneNavigator.showLobby();
                 if (lobbyUserInfoBinder != null) {
                     lobbyUserInfoBinder.bind(sessionStore.getCurrentUser());
                 }
                 auctionService.getRooms();
             }
-
             case "BID_SUCCESS" -> {
                 if (auctionRoomPresenter != null && msg.getData() instanceof Double price) {
                     auctionRoomPresenter.showCurrentPrice(price, null);
                 }
             }
-
             case "CLOSE_AUCTION_SUCCESS" -> {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION, "Phiên đấu giá đã được đóng bởi người bán.");
-                alert.setHeaderText("Đóng phiên thành công");
+                Alert alert = new Alert(Alert.AlertType.INFORMATION, "The auction was closed by the seller.");
+                alert.setHeaderText("Auction Closed");
                 alert.showAndWait();
             }
-
             case "CLOSE_AUCTION_FAIL" -> {
                 Alert alert = new Alert(Alert.AlertType.ERROR, String.valueOf(msg.getData()));
-                alert.setHeaderText("Không thể đóng phiên");
+                alert.setHeaderText("Unable to Close Auction");
                 alert.showAndWait();
             }
-
             case "AUCTION_CLOSED_NOTIFY" -> {
                 String currentRoomId = sessionStore.getCurrentRoomId();
                 if (currentRoomId != null && currentRoomId.equals(String.valueOf(msg.getData()))) {
-                    Alert alert = new Alert(
-                            Alert.AlertType.WARNING,
-                            "Phiên đấu giá đã kết thúc. Bạn sẽ được đưa về sảnh chính."
-                    );
-                    alert.setHeaderText("Phiên đấu giá kết thúc");
+                    Alert alert = new Alert(Alert.AlertType.WARNING, "The auction has ended. You will be returned to the main lobby.");
+                    alert.setHeaderText("Auction Ended");
                     alert.showAndWait();
-
                     sessionStore.setCurrentRoom(null);
                     sessionStore.setCurrentRoomId(null);
-
                     sceneNavigator.showLobby();
                     if (lobbyUserInfoBinder != null) {
                         lobbyUserInfoBinder.bind(sessionStore.getCurrentUser());

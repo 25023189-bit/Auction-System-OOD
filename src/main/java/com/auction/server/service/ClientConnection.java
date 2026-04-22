@@ -2,90 +2,58 @@ package com.auction.server.service;
 
 import com.auction.client.feature.controllers.AuctionController;
 import com.auction.common.dto.Message;
-import java.io.*;
+
+import java.io.EOFException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.Socket;
 
-/**
- * Lớp ClientConnection quản lý kết nối mạng TCP/IP giữa Client và Server.
- * Chịu trách nhiệm thiết lập Socket, gửi dữ liệu (writeObject) và
- * liên tục lắng nghe dữ liệu trả về trên một Thread riêng biệt.
- * * TODO cho người phát triển sau: Nếu sau này dự án scale lên,
- * có thể cân nhắc chuyển tham chiếu 'AuctionController' thành một Interface (Listener)
- * để giảm sự phụ thuộc cứng (tight-coupling) giữa mạng và giao diện.
- */
 public class ClientConnection {
-    // Định danh user hiện tại lưu ở mức static (Cân nhắc gộp chung vào AuctionService để quản lý)
     public static String currentUser = null;
 
-    // Cấu hình mạng
-    private final String host = "localhost"; // Đổi thành IP Server thật khi deploy
-    private int port = 8080;
+    private final String host = "localhost";
+    private final int port = 8080;
 
-    // Các đối tượng cốt lõi của Socket và Stream
     private Socket socket;
     private ObjectOutputStream out;
     private ObjectInputStream in;
 
-    // Giữ tham chiếu ngược lại Controller để trả data về UI sau khi nhận được từ Server
-    private AuctionController controller;
+    private final AuctionController controller;
 
-    /**
-     * Constructor gắn kết nối với giao diện chính (Controller).
-     */
     public ClientConnection(AuctionController controller) {
         this.controller = controller;
     }
 
-    /**
-     * Bắt đầu tiến trình kết nối tới Server.
-     * Phải chạy trên một luồng riêng (Thread) để vòng lặp while(true)
-     * không làm đơ (block) giao diện JavaFX.
-     */
     public void connect() {
         new Thread(() -> {
             try {
-                // Cập nhật UI: Đang kết nối
-                controller.updateConnectionStatus("Đang kết nối...");
+                controller.updateConnectionStatus("Connecting...");
 
-                // Khởi tạo Socket và luồng dữ liệu Object (Lưu ý: Khởi tạo out trước in để tránh deadlock ở Server)
                 socket = new Socket(host, port);
-                // Quan trọng: Khởi tạo OutputStream trước InputStream
                 out = new ObjectOutputStream(socket.getOutputStream());
                 in = new ObjectInputStream(socket.getInputStream());
 
-                // Cập nhật UI: Kết nối thành công
-                controller.updateConnectionStatus("Đã kết nối Server!");
+                controller.updateConnectionStatus("Connected to server!");
 
-                // VÒNG LẶP LẮNG NGHE LẼ BẤT TẬN (Infinite Listener Loop)
-                // Liên tục chờ và đọc các đối tượng Message do Server đẩy về
                 while (true) {
                     Message response = (Message) in.readObject();
-                    System.out.println("📥 Client nhận được action: " + response.getAction());
-
-                    // Chuyển tiếp Message nhận được về cho Controller xử lý hiển thị lên UI
-                    // Ghi chú: Bên trong hàm onServerResponse của Controller phải dùng Platform.runLater()
+                    System.out.println("[ClientConnection] Received action: " + response.getAction());
                     controller.onServerResponse(response);
                 }
             } catch (java.net.SocketException se) {
                 if (se.getMessage() != null && se.getMessage().toLowerCase().contains("socket closed")) {
-                    System.out.println("ℹ️ Kết nối mạng đã được thu hồi an toàn (Người dùng đã ngắt kết nối).");
+                    System.out.println("[ClientConnection] Network connection closed safely.");
                 } else {
-                    System.err.println("❌ Mất kết nối tới Server: " + se.getMessage());
+                    System.err.println("[ClientConnection] Lost connection to server: " + se.getMessage());
                 }
-            } catch (java.io.EOFException eof) {
-                System.out.println("ℹ️ Server đã chủ động ngắt kết nối.");
+            } catch (EOFException eof) {
+                System.out.println("[ClientConnection] Server closed the connection.");
             } catch (Exception e) {
-                System.err.println("❌ Lỗi luồng đọc dữ liệu: " + e.getMessage());
-                // e.printStackTrace();
+                System.err.println("[ClientConnection] Reader thread error: " + e.getMessage());
             }
         }).start();
     }
 
-    /**
-     * Hàm gửi đối tượng Message lên Server.
-     * Hàm này được gọi bởi AuctionService.
-     * @param msg Đối tượng chuẩn giao tiếp giữa Client và Server
-     */
     public void sendMessage(Message msg) {
         try {
             if (out != null) {
@@ -93,33 +61,31 @@ public class ClientConnection {
                 out.flush();
                 out.reset();
             } else {
-                System.err.println("⚠️ Cảnh báo: ObjectOutputStream chưa được khởi tạo!");
+                System.err.println("[ClientConnection] ObjectOutputStream is not initialized.");
             }
         } catch (Exception e) {
-            System.err.println("❌ Lỗi khi gửi tin nhắn lên Server: ");
+            System.err.println("[ClientConnection] Failed to send message to server:");
             e.printStackTrace();
         }
     }
 
-    //Sử dụng trong các tình huống khẩn cấp
     public void closeConnection() {
         try {
-            if (this.in != null) {
-                this.in.close();
+            if (in != null) {
+                in.close();
             }
 
-            if (this.out != null) {
-                this.out.close();
+            if (out != null) {
+                out.close();
             }
 
-            if (this.socket != null && !this.socket.isClosed()) {
-                this.socket.close();
+            if (socket != null && !socket.isClosed()) {
+                socket.close();
             }
 
-            System.out.println("🔌 Đã ngắt kết nối với Server an toàn.");
-
+            System.out.println("[ClientConnection] Disconnected from server safely.");
         } catch (Exception e) {
-            System.err.println("❌ Lỗi khi cố gắng ngắt kết nối: " + e.getMessage());
+            System.err.println("[ClientConnection] Failed to close connection: " + e.getMessage());
             e.printStackTrace();
         }
     }

@@ -38,7 +38,7 @@ public class FxSceneNavigator implements SceneNavigator {
             Stage stage = resolveStage();
             if (stage != null) {
                 stage.setScene(new Scene(root));
-                windowStateHandler.applyFixed(stage, "Auction System", 800, 600);
+                windowStateHandler.apply(stage, "Auction System");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -100,6 +100,8 @@ public class FxSceneNavigator implements SceneNavigator {
             Stage stage = new Stage();
             stage.setTitle("Create Auction");
             stage.setScene(new Scene(root));
+            stage.setFullScreen(false);
+            stage.setMaximized(true);
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();
@@ -119,6 +121,7 @@ public class FxSceneNavigator implements SceneNavigator {
             Stage stage = new Stage();
             stage.setTitle("Admin Dashboard");
             stage.setScene(new Scene(root));
+            stage.setFullScreen(false);
             stage.setMaximized(true);
             stage.show();
         } catch (Exception e) {

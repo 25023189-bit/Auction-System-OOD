@@ -187,6 +187,37 @@ public class AuctionDAO {
         return null;
     }
 
+    public SellerAuctionStats getSellerAuctionStats(String sellerId) {
+        String sql = """
+                SELECT
+                    COUNT(*) AS total_count,
+                    SUM(CASE WHEN status = 'SOLD' THEN 1 ELSE 0 END) AS sold_count,
+                    SUM(CASE WHEN status = 'CANCELED_BY_ADMIN' THEN 1 ELSE 0 END) AS admin_canceled_count
+                FROM auctions
+                WHERE seller_id = ?
+                """;
+
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, sellerId);
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    int totalCount = rs.getInt("total_count");
+                    int soldCount = rs.getInt("sold_count");
+                    int adminCanceledCount = rs.getInt("admin_canceled_count");
+                    return new SellerAuctionStats(totalCount, soldCount, adminCanceledCount);
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Failed to load seller auction stats: " + e.getMessage());
+            e.printStackTrace();
+        }
+
+        return new SellerAuctionStats(0, 0, 0);
+    }
+
     public boolean closeAuctionBySeller(String roomId, String sellerId) {
         String sql = """
                 UPDATE auctions
@@ -258,7 +289,7 @@ public class AuctionDAO {
                 try (ResultSet rs = pstmt.executeQuery()) {
                     if (!rs.next()) {
                         conn.rollback();
-                        return CloseAuctionResult.fail("Khong tim thay phien dau gia.");
+                        return CloseAuctionResult.fail("Auction not found.");
                     }
                     sellerId = rs.getString("seller_id");
                     currentStatus = rs.getString("status");
@@ -267,7 +298,7 @@ public class AuctionDAO {
 
             if (currentStatus != null && !("OPEN".equalsIgnoreCase(currentStatus) || "RUNNING".equalsIgnoreCase(currentStatus))) {
                 conn.rollback();
-                return CloseAuctionResult.fail("Phien da o trang thai ket thuc.");
+                return CloseAuctionResult.fail("Auction is already in a finished state.");
             }
 
             String winnerId = null;
@@ -300,7 +331,7 @@ public class AuctionDAO {
                 pstmt.setDouble(3, finalPrice);
                 if (pstmt.executeUpdate() == 0) {
                     conn.rollback();
-                    return CloseAuctionResult.fail("Nguoi thang khong du so du de chot phien.");
+                    return CloseAuctionResult.fail("Winner does not have enough balance to finalize the auction.");
                 }
             }
 
@@ -343,7 +374,7 @@ public class AuctionDAO {
         } catch (SQLException e) {
             System.err.println("Loi chot phien theo thoi gian: " + e.getMessage());
             e.printStackTrace();
-            return CloseAuctionResult.fail("Loi database khi chot phien.");
+            return CloseAuctionResult.fail("Database error while finalizing auction.");
         }
     }
 
@@ -373,8 +404,20 @@ public class AuctionDAO {
 
         room.setDurationMinutes(rs.getInt("duration_minutes"));
         room.setExtensionSeconds(rs.getInt("extension_seconds"));
+        applySellerStats(room);
 
         return room;
+    }
+
+    private void applySellerStats(AuctionRoom room) {
+        if (room == null || room.getSellerName() == null || room.getSellerName().isBlank()) {
+            return;
+        }
+
+        SellerAuctionStats stats = getSellerAuctionStats(room.getSellerName());
+        room.setSellerReputation(5.0);
+        room.setSellerSuccessfulAuctionRate(stats.getSuccessfulAuctionRate());
+        room.setSellerAdminCancellationRate(stats.getAdminCancellationRate());
     }
 
     public static class CloseAuctionResult {
@@ -402,12 +445,12 @@ public class AuctionDAO {
         public static CloseAuctionResult sold(String winnerId, String sellerId, double finalPrice,
                                               Double winnerBalance, Double sellerBalance) {
             return new CloseAuctionResult(true, "SOLD", winnerId, sellerId, finalPrice, winnerBalance, sellerBalance,
-                    "Phien dau gia ban thanh cong.");
+                    "Auction sold successfully.");
         }
 
         public static CloseAuctionResult unsold() {
             return new CloseAuctionResult(true, "UNSOLD", null, null, 0.0, null, null,
-                    "Phien dau gia ket thuc nhung khong co nguoi mua.");
+                    "Auction ended without a buyer.");
         }
 
         public static CloseAuctionResult fail(String message) {
@@ -423,4 +466,31 @@ public class AuctionDAO {
         public Double getSellerBalance() { return sellerBalance; }
         public String getMessage() { return message; }
     }
+
+    public static class SellerAuctionStats {
+        private final int totalAuctions;
+        private final int soldAuctions;
+        private final int adminCanceledAuctions;
+
+        public SellerAuctionStats(int totalAuctions, int soldAuctions, int adminCanceledAuctions) {
+            this.totalAuctions = Math.max(totalAuctions, 0);
+            this.soldAuctions = Math.max(soldAuctions, 0);
+            this.adminCanceledAuctions = Math.max(adminCanceledAuctions, 0);
+        }
+
+        public int getTotalAuctions() { return totalAuctions; }
+        public int getSoldAuctions() { return soldAuctions; }
+        public int getAdminCanceledAuctions() { return adminCanceledAuctions; }
+
+        public double getSuccessfulAuctionRate() {
+            if (totalAuctions == 0) return 0.0;
+            return (double) soldAuctions / totalAuctions;
+        }
+
+        public double getAdminCancellationRate() {
+            if (totalAuctions == 0) return 0.0;
+            return (double) adminCanceledAuctions / totalAuctions;
+        }
+    }
 }
+
