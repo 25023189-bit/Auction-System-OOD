@@ -4,6 +4,7 @@ import com.auction.client.feature.controllers.AdminController;
 import com.auction.client.feature.controllers.SellerController;
 import com.auction.client.session.SessionStore;
 import com.auction.common.model.AuctionRoom;
+import com.auction.common.model.User;
 import com.auction.server.service.AuctionService;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -37,7 +38,7 @@ public class FxSceneNavigator implements SceneNavigator {
             Stage stage = resolveStage();
             if (stage != null) {
                 stage.setScene(new Scene(root));
-                windowStateHandler.applyFixed(stage, "Sàn Đấu Giá", 800, 600);
+                windowStateHandler.apply(stage, "Auction System");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -50,14 +51,14 @@ public class FxSceneNavigator implements SceneNavigator {
             Stage stage = resolveStage();
             windowStateHandler.capture(stage);
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/mainLobby-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(resolveLobbyViewPath()));
             loader.setControllerFactory(clazz -> controllerRef);
             Parent root = loader.load();
 
             stage = resolveStage();
             if (stage != null) {
                 stage.setScene(new Scene(root));
-                windowStateHandler.apply(stage, "Sảnh Chính - Hệ Thống Đấu Giá");
+                windowStateHandler.apply(stage, resolveLobbyTitle());
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -73,14 +74,14 @@ public class FxSceneNavigator implements SceneNavigator {
             Stage stage = resolveStage();
             windowStateHandler.capture(stage);
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/auction-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(resolveAuctionRoomViewPath()));
             loader.setControllerFactory(clazz -> controllerRef);
             Parent root = loader.load();
 
             stage = resolveStage();
             if (stage != null) {
                 stage.setScene(new Scene(root));
-                windowStateHandler.apply(stage, "Sàn Đấu Giá - Trong phòng");
+                windowStateHandler.apply(stage, resolveAuctionRoomTitle());
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -97,8 +98,10 @@ public class FxSceneNavigator implements SceneNavigator {
             sellerController.setAuctionService(auctionService);
 
             Stage stage = new Stage();
-            stage.setTitle("Tạo phiên đấu giá");
+            stage.setTitle("Create Auction");
             stage.setScene(new Scene(root));
+            stage.setFullScreen(false);
+            stage.setMaximized(true);
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();
@@ -116,8 +119,9 @@ public class FxSceneNavigator implements SceneNavigator {
             sessionStore.setAdminController(adminController);
 
             Stage stage = new Stage();
-            stage.setTitle("Hệ Thống Quản Trị - Admin Dashboard");
+            stage.setTitle("Admin Dashboard");
             stage.setScene(new Scene(root));
+            stage.setFullScreen(false);
             stage.setMaximized(true);
             stage.show();
         } catch (Exception e) {
@@ -130,5 +134,45 @@ public class FxSceneNavigator implements SceneNavigator {
                 .filter(Window::isShowing)
                 .findFirst()
                 .orElse(null);
+    }
+
+    private String resolveAuctionRoomViewPath() {
+        User currentUser = sessionStore != null ? sessionStore.getCurrentUser() : null;
+        String role = currentUser != null ? currentUser.getRole() : null;
+
+        if ("SELLER".equalsIgnoreCase(role)) {
+            return "/com/example/auctionprototype/seller-auction-view.fxml";
+        }
+        return "/com/example/auctionprototype/bidder-auction-view.fxml";
+    }
+
+    private String resolveLobbyViewPath() {
+        User currentUser = sessionStore != null ? sessionStore.getCurrentUser() : null;
+        String role = currentUser != null ? currentUser.getRole() : null;
+
+        if ("SELLER".equalsIgnoreCase(role)) {
+            return "/com/example/auctionprototype/seller-mainLobby-view.fxml";
+        }
+        return "/com/example/auctionprototype/bidder-mainLobby-view.fxml";
+    }
+
+    private String resolveLobbyTitle() {
+        User currentUser = sessionStore != null ? sessionStore.getCurrentUser() : null;
+        String role = currentUser != null ? currentUser.getRole() : null;
+
+        if ("SELLER".equalsIgnoreCase(role)) {
+            return "Seller Lobby - Auction System";
+        }
+        return "Bidder Lobby - Auction System";
+    }
+
+    private String resolveAuctionRoomTitle() {
+        User currentUser = sessionStore != null ? sessionStore.getCurrentUser() : null;
+        String role = currentUser != null ? currentUser.getRole() : null;
+
+        if ("SELLER".equalsIgnoreCase(role)) {
+            return "Auction Room - Seller View";
+        }
+        return "Auction Room - Bidder View";
     }
 }

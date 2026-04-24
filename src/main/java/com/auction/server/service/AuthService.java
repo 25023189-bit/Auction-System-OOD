@@ -2,49 +2,54 @@ package com.auction.server.service;
 
 import com.auction.common.dto.Message;
 import com.auction.common.model.User;
+import com.auction.server.dao.AuctionDAO;
 import com.auction.server.dao.UserDAO;
 
 public class AuthService {
     private final UserDAO userDAO = new UserDAO();
+    private final AuctionDAO auctionDAO = new AuctionDAO();
 
     public Message login(String username, String password) {
-        System.out.println("\n[AuthService] Nhận yêu cầu đăng nhập:");
+        System.out.println("\n[AuthService] Login request:");
         System.out.println("  - Username: " + username);
 
         User user = userDAO.login(username, password);
 
         if (user != null) {
-            System.out.println("  - Kết quả: THÀNH CÔNG (Role: " + user.getRole() + ")");
+            applySellerAuctionStats(user);
+            System.out.println("  - Result: SUCCESS (Role: " + user.getRole() + ")");
             return new Message("LOGIN_SUCCESS", "SERVER", user);
         }
 
-        System.out.println("  - Kết quả: THẤT BẠI");
-        return new Message("LOGIN_FAIL", "SERVER", "Sai tên đăng nhập hoặc mật khẩu!");
+        System.out.println("  - Result: FAILED");
+        return new Message("LOGIN_FAIL", "SERVER", "Incorrect username or password!");
     }
 
     public Message registerUser(User user, String rawPassword) {
-        System.out.println("\n[AuthService] Nhận yêu cầu đăng ký:");
-        System.out.println("  - ID mới: " + user.getId());
-        System.out.println("  - Username mới: " + user.getUsername());
-        System.out.println("  - Role mong muốn: " + user.getRole());
+        System.out.println("\n[AuthService] Register request:");
+        System.out.println("  - New ID: " + user.getId());
+        System.out.println("  - New username: " + user.getUsername());
 
-        boolean isSuccess = userDAO.registerUser(user, rawPassword);
+        String resultStatus = userDAO.registerUser(user, rawPassword);
 
-        if (isSuccess) {
-            System.out.println(" - Kết quả: ĐĂNG KÝ THÀNH CÔNG");
+        if ("SUCCESS".equals(resultStatus)) {
+            System.out.println(" - Result: REGISTER SUCCESS");
             return new Message("REGISTER_SUCCESS", "SERVER", user.getUsername());
+        } else if ("DUPLICATE".equals(resultStatus)) {
+            System.out.println(" - Result: DUPLICATE DATA");
+            return new Message("REGISTER_FAIL", "SERVER", "Username is already in use!");
+        } else {
+            System.out.println(" - Result: DATABASE ERROR - " + resultStatus);
+            return new Message("REGISTER_FAIL", "SERVER", resultStatus);
         }
-
-        System.out.println(" - Kết quả: ĐĂNG KÝ THẤT BẠI");
-        return new Message("REGISTER_FAIL", "SERVER", "Tạo tài khoản thất bại! ID hoặc username có thể đã tồn tại.");
     }
 
     public Message resetPassword(String customerId, String data) {
-        System.out.println("\n[AuthService] Nhận yêu cầu đổi mật khẩu cho: " + customerId);
+        System.out.println("\n[AuthService] Password reset request for: " + customerId);
 
         String[] parts = data.split(":");
         if (parts.length < 2) {
-            return new Message("RESET_FAIL", "SERVER", "Dữ liệu yêu cầu không hợp lệ!");
+            return new Message("RESET_FAIL", "SERVER", "Invalid request data!");
         }
 
         String newPassword = parts[0];
@@ -53,11 +58,21 @@ public class AuthService {
         boolean isSuccess = userDAO.resetPassword(customerId, newPassword, confirmPassword);
 
         if (isSuccess) {
-            System.out.println("  - Kết quả: ĐỔI MẬT KHẨU THÀNH CÔNG");
-            return new Message("RESET_SUCCESS", "SERVER", "Đổi mật khẩu thành công!");
+            System.out.println("  - Result: PASSWORD RESET SUCCESS");
+            return new Message("RESET_SUCCESS", "SERVER", "Password changed successfully!");
         }
 
-        System.out.println("  - Kết quả: ĐỔI MẬT KHẨU THẤT BẠI");
-        return new Message("RESET_FAIL", "SERVER", "Không thể đổi mật khẩu. Vui lòng kiểm tra lại dữ liệu!");
+        System.out.println("  - Result: PASSWORD RESET FAILED");
+        return new Message("RESET_FAIL", "SERVER", "Unable to change password. Please check your data and try again!");
+    }
+
+    private void applySellerAuctionStats(User user) {
+        if (user == null || !"SELLER".equalsIgnoreCase(user.getRole())) {
+            return;
+        }
+
+        AuctionDAO.SellerAuctionStats stats = auctionDAO.getSellerAuctionStats(user.getId());
+        user.setSuccessfulAuctionRate(stats.getSuccessfulAuctionRate());
+        user.setAdminCancellationRate(stats.getAdminCancellationRate());
     }
 }

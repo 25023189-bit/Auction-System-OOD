@@ -1,6 +1,7 @@
 package com.auction.server.utils;
 
 import java.io.InputStream;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -50,7 +51,7 @@ public final class DatabaseConnection {
         try {
             Class.forName(driver);
         } catch (ClassNotFoundException e) {
-            throw new SQLException("Không tìm thấy JDBC driver: " + driver, e);
+            throw new SQLException("JDBC driver not found: " + driver, e);
         }
 
         try {
@@ -62,34 +63,31 @@ public final class DatabaseConnection {
 
     private static Properties loadDatabaseProperties() throws SQLException {
         Properties props = new Properties();
-
-        InputStream input = null;
-
-        ClassLoader cl = DatabaseConnection.class.getClassLoader();
-
-        input = cl.getResourceAsStream("db.properties");
-        if (input == null) {
-            input = cl.getResourceAsStream("db.properties.example");
-        }
-
-        if (input == null) {
+        URL resource = findDatabasePropertiesResource();
+        if (resource == null) {
             throw new SQLException(
-                    "Không tìm thấy cấu hình database trên classpath. " +
-                            "Cần có ít nhất một trong hai file: db.properties hoặc db.properties.example trong src/main/resources."
+                    "Database configuration was not found on the classpath. " +
+                            "Add db.properties or db.properties.example under src/main/resources."
             );
         }
 
-        try (InputStream in = input) {
-            props.load(in);
+        try (InputStream input = resource.openStream()) {
+            props.load(input);
             return props;
         } catch (Exception e) {
-            throw new SQLException("Đọc file cấu hình database thất bại.", e);
+            throw new SQLException("Failed to read database configuration file.", e);
         }
+    }
+
+    private static URL findDatabasePropertiesResource() {
+        ClassLoader classLoader = DatabaseConnection.class.getClassLoader();
+        URL resource = classLoader.getResource("db.properties");
+        return resource != null ? resource : classLoader.getResource("db.properties.example");
     }
 
     private static void validateRequired(String value, String key) throws SQLException {
         if (value == null || value.trim().isEmpty()) {
-            throw new SQLException("Thiếu cấu hình bắt buộc: " + key);
+            throw new SQLException("Missing required configuration: " + key);
         }
     }
 
@@ -106,9 +104,8 @@ public final class DatabaseConnection {
     }
 
     private static String buildHelpfulConnectionError(String url, String user, String driver) {
-        return "Kết nối database thất bại. " +
-                "Kiểm tra MySQL đã chạy chưa, database 'auction_system' đã được tạo chưa, " +
-                "và thông tin cấu hình có đúng không. " +
+        return "Database connection failed. Check that MySQL is running, database 'auction_system' exists, " +
+                "and the connection configuration is correct. " +
                 "[url=" + safe(url) + ", user=" + safe(user) + ", driver=" + safe(driver) + "]";
     }
 

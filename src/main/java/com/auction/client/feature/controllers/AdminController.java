@@ -1,16 +1,24 @@
 package com.auction.client.feature.controllers;
 
 import com.auction.common.dto.Message;
-import com.auction.common.model.*;
-import com.auction.server.service.*;
+import com.auction.common.model.AuctionRoom;
+import com.auction.common.model.BidTransaction;
+import com.auction.common.model.PendingAuctionRequest;
+import com.auction.common.model.User;
+import com.auction.server.service.AuctionService;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.util.*;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
 
 public class AdminController {
 
@@ -20,7 +28,7 @@ public class AdminController {
 
     @FXML private TableView<AuctionRoom> tableAuctions;
     @FXML private TableColumn<AuctionRoom, String> colRoomId, colRoomName, colSeller, colStatus;
-    @FXML private TableColumn<AuctionRoom, Double> colPrice;
+    @FXML private TableColumn<AuctionRoom, Double> colPrice, colBidStep;
 
     @FXML private TableView<BidTransaction> tableBidHistory;
     @FXML private TableColumn<BidTransaction, String> colBidAuctionId;
@@ -28,30 +36,34 @@ public class AdminController {
     @FXML private TableColumn<BidTransaction, Double> colBidAmount;
     @FXML private TableColumn<BidTransaction, String> colBidTime;
 
+    @FXML private TableView<PendingAuctionRequest> tablePendingAuctions;
+    @FXML private TableColumn<PendingAuctionRequest, String> colPendingRequestId, colPendingSellerId,
+            colPendingSellerOrganization, colPendingItemName, colPendingItemDesc;
+    @FXML private TableColumn<PendingAuctionRequest, Double> colPendingStartingPrice, colPendingMinimumJoinAmount,
+            colPendingBidStep, colPendingSellerReputation, colPendingSuccessfulAuctionRate, colPendingAdminCancellationRate;
+    @FXML private TableColumn<PendingAuctionRequest, LocalDateTime> colPendingStartTime;
+    @FXML private TableColumn<PendingAuctionRequest, Integer> colPendingDurationMinutes, colPendingExtensionSeconds;
+
     private AuctionService auctionService;
 
-    // Danh sách quan sát để tự động cập nhật UI khi có dữ liệu mới
-    private ObservableList<User> userList = FXCollections.observableArrayList();
-    private ObservableList<AuctionRoom> auctionList = FXCollections.observableArrayList();
-    private ObservableList<BidTransaction> bidHistoryList = FXCollections.observableArrayList();
+    private final ObservableList<User> userList = FXCollections.observableArrayList();
+    private final ObservableList<AuctionRoom> auctionList = FXCollections.observableArrayList();
+    private final ObservableList<BidTransaction> bidHistoryList = FXCollections.observableArrayList();
+    private final ObservableList<PendingAuctionRequest> pendingAuctionList = FXCollections.observableArrayList();
 
-    // ==========================================================
-    // KHỞI TẠO GIAO DIỆN VÀ RÀNG BUỘC CỘT
-    // ==========================================================
     @FXML
     public void initialize() {
-        // Bảng User:
         colUserId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colUsername.setCellValueFactory(new PropertyValueFactory<>("username"));
         colRole.setCellValueFactory(new PropertyValueFactory<>("role"));
         colBalance.setCellValueFactory(new PropertyValueFactory<>("balance"));
         tableUsers.setItems(userList);
 
-        // Bảng Auction:
         colRoomId.setCellValueFactory(new PropertyValueFactory<>("roomId"));
         colRoomName.setCellValueFactory(new PropertyValueFactory<>("itemName"));
         colSeller.setCellValueFactory(new PropertyValueFactory<>("nameSeller"));
         colPrice.setCellValueFactory(new PropertyValueFactory<>("currentPrice"));
+        colBidStep.setCellValueFactory(new PropertyValueFactory<>("bidStep"));
         colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
         tableAuctions.setItems(auctionList);
 
@@ -59,13 +71,27 @@ public class AdminController {
         colBidderId.setCellValueFactory(new PropertyValueFactory<>("bidderId"));
         colBidAmount.setCellValueFactory(new PropertyValueFactory<>("bidAmount"));
         colBidTime.setCellValueFactory(new PropertyValueFactory<>("bidTime"));
-
         tableBidHistory.setItems(bidHistoryList);
+
+        colPendingRequestId.setCellValueFactory(new PropertyValueFactory<>("requestId"));
+        colPendingSellerId.setCellValueFactory(new PropertyValueFactory<>("sellerId"));
+        colPendingSellerOrganization.setCellValueFactory(new PropertyValueFactory<>("sellerOrganization"));
+        colPendingItemName.setCellValueFactory(new PropertyValueFactory<>("itemName"));
+        colPendingItemDesc.setCellValueFactory(new PropertyValueFactory<>("itemDesc"));
+        colPendingStartingPrice.setCellValueFactory(new PropertyValueFactory<>("startingPrice"));
+        colPendingMinimumJoinAmount.setCellValueFactory(new PropertyValueFactory<>("minimumJoinAmount"));
+        colPendingBidStep.setCellValueFactory(new PropertyValueFactory<>("bidStep"));
+        colPendingStartTime.setCellValueFactory(new PropertyValueFactory<>("startTime"));
+        colPendingDurationMinutes.setCellValueFactory(new PropertyValueFactory<>("durationMinutes"));
+        colPendingExtensionSeconds.setCellValueFactory(new PropertyValueFactory<>("extensionSeconds"));
+        colPendingSellerReputation.setCellValueFactory(new PropertyValueFactory<>("sellerReputation"));
+        colPendingSuccessfulAuctionRate.setCellValueFactory(new PropertyValueFactory<>("successfulAuctionRate"));
+        colPendingAdminCancellationRate.setCellValueFactory(new PropertyValueFactory<>("adminCancellationRate"));
+        tablePendingAuctions.setItems(pendingAuctionList);
 
         tableAuctions.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
-                String selectedRoomId = newSelection.getRoomId();
-                auctionService.getBidHistory(selectedRoomId);
+                auctionService.getBidHistory(newSelection.getRoomId());
             }
         });
     }
@@ -74,11 +100,11 @@ public class AdminController {
         this.auctionService = auctionService;
         loadUsers();
         loadAuctions();
+        loadPendingAuctions();
     }
 
     @FXML
     private void loadUsers() {
-        // Gửi lệnh ADMIN_GET_USERS lên Server
         auctionService.getClientConnection().sendMessage(
                 new Message("ADMIN_GET_USERS", auctionService.getCurrentUser(), "")
         );
@@ -86,31 +112,32 @@ public class AdminController {
 
     @FXML
     private void loadAuctions() {
-        // Lấy danh sách tất cả các phòng (kể cả đang chạy hay đã đóng)
         auctionService.getClientConnection().sendMessage(
                 new Message("ADMIN_GET_AUCTIONS", auctionService.getCurrentUser(), "")
         );
     }
 
-    // ==========================================================
-    // CÁC HÀM XỬ LÝ NÚT BẤM (XÓA / HỦY)
-    // ==========================================================
+    @FXML
+    private void loadPendingAuctions() {
+        auctionService.getClientConnection().sendMessage(
+                new Message("ADMIN_GET_PENDING_AUCTIONS", auctionService.getCurrentUser(), "")
+        );
+    }
+
     @FXML
     private void handleDeleteUser() {
         User selectedUser = tableUsers.getSelectionModel().getSelectedItem();
         if (selectedUser == null) {
-            showAlert(Alert.AlertType.WARNING, "Chưa chọn người dùng", "Vui lòng chọn một người dùng trong bảng để xóa!");
+            showAlert(Alert.AlertType.WARNING, "No User Selected", "Please select a user to delete.");
             return;
         }
 
-        // Cảnh báo xác nhận trước khi xóa
         Alert confirm = new Alert(Alert.AlertType.CONFIRMATION);
-        confirm.setTitle("Xác nhận xóa");
-        confirm.setHeaderText("Bạn có chắc chắn muốn xóa tài khoản: " + selectedUser.getUsername() + "?");
+        confirm.setTitle("Confirm Delete");
+        confirm.setHeaderText("Are you sure you want to delete account: " + selectedUser.getUsername() + "?");
 
         Optional<ButtonType> result = confirm.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
-            // Gửi lệnh xóa lên Server
             auctionService.getClientConnection().sendMessage(
                     new Message("ADMIN_DELETE_USER", auctionService.getCurrentUser(), selectedUser.getId())
             );
@@ -121,26 +148,48 @@ public class AdminController {
     private void handleForceDeleteAuction() {
         AuctionRoom selectedRoom = tableAuctions.getSelectionModel().getSelectedItem();
         if (selectedRoom == null) {
-            showAlert(Alert.AlertType.WARNING, "Chưa chọn phiên", "Vui lòng chọn một phiên đấu giá để hủy!");
+            showAlert(Alert.AlertType.WARNING, "No Auction Selected", "Please select an auction to cancel.");
             return;
         }
 
         Alert confirm = new Alert(Alert.AlertType.CONFIRMATION);
-        confirm.setTitle("Xác nhận hủy phiên");
-        confirm.setHeaderText("Bạn có chắc muốn ép hủy phiên: " + selectedRoom.getRoomId() + "?");
+        confirm.setTitle("Confirm Auction Cancellation");
+        confirm.setHeaderText("Are you sure you want to force-cancel auction: " + selectedRoom.getRoomId() + "?");
 
         Optional<ButtonType> result = confirm.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
-            // Gửi lệnh hủy phiên lên Server
             auctionService.getClientConnection().sendMessage(
                     new Message("ADMIN_DELETE_AUCTION", auctionService.getCurrentUser(), selectedRoom.getRoomId())
             );
         }
     }
 
-    // ==========================================================
-    // CẬP NHẬT GIAO DIỆN TỪ SERVER TRẢ VỀ (Được gọi từ Router)
-    // ==========================================================
+    @FXML
+    private void handleApprovePendingAuction() {
+        PendingAuctionRequest selectedRequest = tablePendingAuctions.getSelectionModel().getSelectedItem();
+        if (selectedRequest == null) {
+            showAlert(Alert.AlertType.WARNING, "No Request Selected", "Please select a pending auction request to approve.");
+            return;
+        }
+
+        auctionService.getClientConnection().sendMessage(
+                new Message("ADMIN_APPROVE_AUCTION", auctionService.getCurrentUser(), selectedRequest.getRequestId())
+        );
+    }
+
+    @FXML
+    private void handleRejectPendingAuction() {
+        PendingAuctionRequest selectedRequest = tablePendingAuctions.getSelectionModel().getSelectedItem();
+        if (selectedRequest == null) {
+            showAlert(Alert.AlertType.WARNING, "No Request Selected", "Please select a pending auction request to reject.");
+            return;
+        }
+
+        auctionService.getClientConnection().sendMessage(
+                new Message("ADMIN_REJECT_AUCTION", auctionService.getCurrentUser(), selectedRequest.getRequestId())
+        );
+    }
+
     public void updateUsersTable(List<User> users) {
         Platform.runLater(() -> {
             userList.clear();
@@ -164,20 +213,26 @@ public class AdminController {
         });
     }
 
+    public void updatePendingAuctionsTable(List<PendingAuctionRequest> requests) {
+        Platform.runLater(() -> {
+            pendingAuctionList.clear();
+            if (requests != null) pendingAuctionList.addAll(requests);
+        });
+    }
+
     public void handleAdminResponse(String action, String message) {
         Platform.runLater(() -> {
             if (action.contains("SUCCESS")) {
-                showAlert(Alert.AlertType.INFORMATION, "Thành công", message);
-                // Refresh lại bảng sau khi xóa thành công
+                showAlert(Alert.AlertType.INFORMATION, "Success", message);
                 if (action.contains("USER")) loadUsers();
                 if (action.contains("AUCTION")) loadAuctions();
+                if (action.contains("AUCTION")) loadPendingAuctions();
             } else {
-                showAlert(Alert.AlertType.ERROR, "Thất bại", message);
+                showAlert(Alert.AlertType.ERROR, "Failed", message);
             }
         });
     }
 
-    // Hàm tiện ích hiển thị thông báo
     private void showAlert(Alert.AlertType type, String title, String content) {
         Alert alert = new Alert(type);
         alert.setTitle(title);

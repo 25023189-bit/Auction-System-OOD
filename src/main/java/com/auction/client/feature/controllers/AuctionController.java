@@ -26,6 +26,7 @@ import com.auction.common.role.DefaultRolePolicy;
 import com.auction.common.role.RolePolicy;
 import com.auction.server.service.*;
 import javafx.fxml.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 
@@ -39,13 +40,14 @@ public class AuctionController implements Initializable {
     // FXML FIELDS
     // ==========================================================
     @FXML private VBox paneLogin, paneRegister, paneForgotPassword;
-    @FXML private BorderPane paneAuctionRoom;
+    @FXML private Pane paneAuctionRoom;
     @FXML private BorderPane paneMainLobby;
 
-    @FXML private TextField txtUsername, txtRegUsername, txtForgotUsername;
+    @FXML private TextField txtUsername, txtRegUsername, txtForgotUsername, txtRegOrganization;
     @FXML private PasswordField txtPassword, txtRegPassword, txtRegConfirm, txtForgotNewPassword, txtForgotConfirm;
     @FXML private Label lblStatus, lblRegStatus, lblForgotStatus;
     @FXML private ComboBox<String> cbRegRole;
+    @FXML private Label lblRegOrganization;
 
     @FXML private Label lblUsername, lblBalance, lblUsernameDisplay;
     @FXML private Label lblCountdownTimer;
@@ -54,11 +56,13 @@ public class AuctionController implements Initializable {
     @FXML private FlowPane paneSelectAuction;
 
     @FXML private Label lblAuctionItemName, lblCurrentPrice, lblParticipantCount, lblTimer;
+    @FXML private Label lblProductName, lblDescription, lblTimeLeft;
     @FXML private TextArea txtChatLog;
     @FXML private TextField txtBidAmount, txtChatInput;
     @FXML private VBox vboxCurrencyRates, vboxNews;
     @FXML private Button btnPlaceBid;
     @FXML private TextArea txtItemDescriptionDisplay;
+    @FXML private ImageView imgProduct;
 
     // ==========================================================
     // CORE SERVICE
@@ -158,7 +162,7 @@ public class AuctionController implements Initializable {
     // ==========================================================
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("[Controller] Đang khởi tạo AuctionController...");
+        System.out.println("[Controller] Initializing AuctionController...");
         if (!isNetworkConnected) {
             clientConnection = new ClientConnection(this);
             auctionService = new AuctionService(clientConnection);
@@ -194,7 +198,9 @@ public class AuctionController implements Initializable {
         if (cbRegRole != null && cbRegRole.getItems().isEmpty()) {
             cbRegRole.getItems().addAll("BIDDER", "SELLER");
             cbRegRole.setValue("BIDDER");
+            cbRegRole.valueProperty().addListener((obs, oldValue, newValue) -> updateRegisterOrganizationVisibility());
         }
+        updateRegisterOrganizationVisibility();
 
         if (sellerDashboardLauncher == null) {
             sellerDashboardLauncher = new SellerDashboardLauncher(auctionService);
@@ -205,10 +211,14 @@ public class AuctionController implements Initializable {
         }
 
         if (auctionRoomPresenter == null) {
+            Label itemNameLabel = lblAuctionItemName != null ? lblAuctionItemName : lblProductName;
+            Label timerLabel = lblTimer != null ? lblTimer : lblTimeLeft;
             auctionRoomPresenter = new AuctionRoomPresenter(
-                    lblAuctionItemName,
+                    itemNameLabel,
                     lblCurrentPrice,
-                    lblTimer,
+                    timerLabel,
+                    lblParticipantCount,
+                    lblDescription,
                     txtChatLog,
                     txtItemDescriptionDisplay,
                     btnCloseAuction,
@@ -248,7 +258,7 @@ public class AuctionController implements Initializable {
                     lobbyUserInfoBinder
             );
         }
-        System.out.println("[Controller] Khởi tạo hoàn tất!");
+        System.out.println("[Controller] AuctionController initialized.");
     }
 
     private void wireLoginView() {
@@ -275,7 +285,9 @@ public class AuctionController implements Initializable {
     }
 
     private void wireAuctionRoomView() {
-        auctionRoomPresenter = new AuctionRoomPresenter(lblAuctionItemName, lblCurrentPrice, lblTimer, txtChatLog, txtItemDescriptionDisplay, btnCloseAuction, btnPlaceBid, txtBidAmount);
+        Label itemNameLabel = lblAuctionItemName != null ? lblAuctionItemName : lblProductName;
+        Label timerLabel = lblTimer != null ? lblTimer : lblTimeLeft;
+        auctionRoomPresenter = new AuctionRoomPresenter(itemNameLabel, lblCurrentPrice, timerLabel, lblParticipantCount, lblDescription, txtChatLog, txtItemDescriptionDisplay, btnCloseAuction, btnPlaceBid, txtBidAmount);
         auctionTimerService = new DefaultAuctionTimerService(auctionRoomPresenter);
         auctionRoomStateBinder = new AuctionRoomStateBinder(auctionRoomPresenter, sessionStore, rolePolicy);
         auctionRoomMessageHandler = new AuctionRoomMessageHandler(sessionStore, sceneNavigator,auctionRoomStateBinder, auctionRoomPresenter, auctionTimerService);
@@ -327,7 +339,7 @@ public class AuctionController implements Initializable {
     // ==========================================================
     @FXML
     private void handleLogin() {
-        System.out.println("\n[UI Event] -> Nút Đăng Nhập vừa được bấm!");
+        System.out.println("\n[UI Event] Login button clicked.");
         if (authViewModel == null) {
             authViewModel = new AuthViewModel();
         }
@@ -335,11 +347,11 @@ public class AuctionController implements Initializable {
         authViewModel.setUsername(txtUsername != null ? txtUsername.getText() : "");
         authViewModel.setPassword(txtPassword != null ? txtPassword.getText() : "");
 
-        System.out.println("[Login] Đã lấy dữ liệu từ FXML:");
+        System.out.println("[Login] Read login form data from FXML:");
         System.out.println("  - Username: " + authViewModel.getUsername());
-        System.out.println("  - Password: " + authViewModel.getPassword().replaceAll(".", "*")); // Che pass đi cho an toàn
+        System.out.println("  - Password: " + "*".repeat(authViewModel.getPassword().length()));
 
-        System.out.println("[Login] Chuẩn bị gọi LoginCommand. Nếu luồng bị kẹt, khả năng cao là do LoginFormValidator chặn lại!");
+        System.out.println("[Login] Sending LoginCommand.");
 
         new LoginCommand(
                 auctionService,
@@ -360,6 +372,7 @@ public class AuctionController implements Initializable {
         authViewModel.setRegisterPassword(txtRegPassword != null ? txtRegPassword.getText() : "");
         authViewModel.setRegisterConfirmPassword(txtRegConfirm != null ? txtRegConfirm.getText() : "");
         authViewModel.setRegisterRole(cbRegRole != null ? cbRegRole.getValue() : "BIDDER");
+        authViewModel.setRegisterOrganization(txtRegOrganization != null ? txtRegOrganization.getText() : "");
 
         new RegisterCommand(
                 auctionService,
@@ -369,7 +382,8 @@ public class AuctionController implements Initializable {
                         authViewModel.getRegisterUsername(),
                         authViewModel.getRegisterPassword(),
                         authViewModel.getRegisterConfirmPassword(),
-                        authViewModel.getRegisterRole()
+                        authViewModel.getRegisterRole(),
+                        authViewModel.getRegisterOrganization()
                 )
         ).execute();
     }
@@ -467,7 +481,7 @@ public class AuctionController implements Initializable {
     // ==========================================================
     public void updateConnectionStatus(String status) {
         if (lblStatus != null) {
-            lblStatus.setText("Trạng thái: " + status);
+            lblStatus.setText("Status: " + status);
         }
     }
 
@@ -506,7 +520,9 @@ public class AuctionController implements Initializable {
 
     private void ensureAuctionRoomActionsReady() {
         if (auctionRoomPresenter == null) {
-            auctionRoomPresenter = new AuctionRoomPresenter(lblAuctionItemName, lblCurrentPrice, lblTimer, txtChatLog, txtItemDescriptionDisplay, btnCloseAuction, btnPlaceBid, txtBidAmount);
+            Label itemNameLabel = lblAuctionItemName != null ? lblAuctionItemName : lblProductName;
+            Label timerLabel = lblTimer != null ? lblTimer : lblTimeLeft;
+            auctionRoomPresenter = new AuctionRoomPresenter(itemNameLabel, lblCurrentPrice, timerLabel, lblParticipantCount, lblDescription, txtChatLog, txtItemDescriptionDisplay, btnCloseAuction, btnPlaceBid, txtBidAmount);
         }
         if (bidActionHandler == null) {
             bidActionHandler = new BidActionHandler(auctionService, sessionStore, auctionRoomPresenter);
@@ -533,5 +549,22 @@ public class AuctionController implements Initializable {
 
         btnCloseAuction.setVisible(visible);
         btnCloseAuction.setManaged(visible);
+    }
+
+    private void updateRegisterOrganizationVisibility() {
+        boolean sellerSelected = cbRegRole != null && "SELLER".equalsIgnoreCase(cbRegRole.getValue());
+
+        if (txtRegOrganization != null) {
+            txtRegOrganization.setVisible(sellerSelected);
+            txtRegOrganization.setManaged(sellerSelected);
+            if (!sellerSelected) {
+                txtRegOrganization.clear();
+            }
+        }
+
+        if (lblRegOrganization != null) {
+            lblRegOrganization.setVisible(sellerSelected);
+            lblRegOrganization.setManaged(sellerSelected);
+        }
     }
 }

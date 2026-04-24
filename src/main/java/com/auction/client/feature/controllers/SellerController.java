@@ -1,21 +1,25 @@
 package com.auction.client.feature.controllers;
 
 import com.auction.server.service.AuctionService;
-import com.auction.common.model.Seller;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
-import javafx.event.ActionEvent;
-import java.time.*;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public class SellerController {
 
     @FXML private TextField txtItemName;
     @FXML private TextArea txtItemDescription;
     @FXML private TextField txtStartingPrice;
+    @FXML private TextField txtMinimumJoinAmount;
+    @FXML private TextField txtBidStep;
     @FXML private Label lblStatus;
-
     @FXML private Label lblReputation;
-
     @FXML private DatePicker datePickerStart;
     @FXML private TextField txtStartHour;
     @FXML private TextField txtStartMinute;
@@ -23,106 +27,72 @@ public class SellerController {
     @FXML private TextField txtExtensionSeconds;
 
     private AuctionService auctionService;
-    private Seller currentSeller;
-    private int extensionSeconds;
 
     public void setAuctionService(AuctionService service) {
         this.auctionService = service;
     }
 
-    public void setSellerData(Seller seller) {
-        this.currentSeller = seller;
-        if (seller != null) {
-            // ĐÃ FIX: Bỏ tính năng Rating phức tạp, set text tĩnh hoặc ẩn đi
-            if(lblReputation != null) {
-                lblReputation.setText("Quyền: NGƯỜI BÁN (SELLER)");
-            }
-        }
-    }
-
     @FXML
     public void handleCreateAuction() {
-        if (this.auctionService == null) {
-            lblStatus.setText("❌ Lỗi: Service bị null!");
-            lblStatus.setTextFill(javafx.scene.paint.Color.RED);
+        if (auctionService == null) {
+            showError("Error: Service is not available.");
             return;
         }
 
         LocalDate date = datePickerStart.getValue();
         if (date == null) {
-            lblStatus.setText("❌ Vui lòng chọn ngày bắt đầu!");
-            lblStatus.setTextFill(javafx.scene.paint.Color.RED);
-            return;
-        }
-
-        String itemName = txtItemName.getText();
-        String priceStr = txtStartingPrice.getText();
-        String itemDesc = (txtItemDescription != null) ? txtItemDescription.getText() : "";
-        String extensionStr = (txtExtensionSeconds != null && txtExtensionSeconds.getText() != null)
-                ? txtExtensionSeconds.getText().trim()
-                : "";
-
-        if (itemName.trim().isEmpty() || priceStr.trim().isEmpty() || itemDesc.trim().isEmpty()) {
-            lblStatus.setText("❌ Vui lòng điền đầy đủ thông tin (kể cả Mô tả)!");
-            lblStatus.setTextFill(javafx.scene.paint.Color.RED);
+            showError("Please select a start date.");
             return;
         }
 
         try {
-            double startingPrice = Double.parseDouble(priceStr);
-            if (startingPrice <= 0) {
-                lblStatus.setText("❌ Giá khởi điểm phải lớn hơn 0!");
-                lblStatus.setTextFill(javafx.scene.paint.Color.RED);
-                return;
-            }
-
-            int hour = Integer.parseInt(txtStartHour.getText().trim());
-            int minute = Integer.parseInt(txtStartMinute.getText().trim());
-            int duration = Integer.parseInt(txtDuration.getText().trim());
-
-            if (duration <= 0) {
-                lblStatus.setText("❌ Thời lượng phải lớn hơn 0 phút!");
-                lblStatus.setTextFill(javafx.scene.paint.Color.RED);
-                return;
-            }
-
-            int parsedExtensionSeconds = extensionStr.isEmpty() ? 60 : Integer.parseInt(extensionStr);
-
-            if (parsedExtensionSeconds < 1 || parsedExtensionSeconds > 120) {
-                lblStatus.setText("❌ Thời gian gia hạn mỗi lần phải từ 1 đến 120 giây!");
-                lblStatus.setTextFill(javafx.scene.paint.Color.RED);
-                return;
-            }
+            String itemName = safeText(txtItemName);
+            String itemDesc = safeText(txtItemDescription);
+            double startingPrice = Double.parseDouble(safeText(txtStartingPrice));
+            double minimumJoinAmount = Double.parseDouble(safeText(txtMinimumJoinAmount));
+            double bidStep = Double.parseDouble(safeText(txtBidStep));
+            int hour = Integer.parseInt(safeText(txtStartHour));
+            int minute = Integer.parseInt(safeText(txtStartMinute));
+            int duration = Integer.parseInt(safeText(txtDuration));
+            int extensionSeconds = safeText(txtExtensionSeconds).isEmpty() ? 60 : Integer.parseInt(safeText(txtExtensionSeconds));
 
             LocalDateTime startTime = LocalDateTime.of(date, LocalTime.of(hour, minute));
-
             if (startTime.isBefore(LocalDateTime.now())) {
-                lblStatus.setText("❌ Thời gian bắt đầu phải ở hiện tại hoặc tương lai!");
-                lblStatus.setTextFill(javafx.scene.paint.Color.RED);
+                showError("Start time must be now or in the future.");
                 return;
             }
-
-            // ĐÃ FIX: Đã gỡ bỏ đoạn check `!currentSeller.isTrustworthy()` vì không còn phù hợp với DB chuẩn.
-
-            this.extensionSeconds = parsedExtensionSeconds;
 
             auctionService.createAuction(
                     itemName,
                     itemDesc,
                     startingPrice,
+                    minimumJoinAmount,
+                    bidStep,
                     startTime,
                     duration,
-                    this.extensionSeconds
+                    extensionSeconds
             );
 
             javafx.stage.Stage stage = (javafx.stage.Stage) txtItemName.getScene().getWindow();
             stage.close();
-
         } catch (NumberFormatException e) {
-            lblStatus.setText("❌ Giá, Giờ, Phút, Thời lượng và Gia hạn phải là số hợp lệ!");
-            lblStatus.setTextFill(javafx.scene.paint.Color.RED);
-        } catch (java.time.DateTimeException e) {
-            lblStatus.setText("❌ Thời gian không hợp lệ (Giờ: 0-23, Phút: 0-59)!");
+            showError("Price, minimum join amount, bid step, time, duration, and extension must be valid numbers.");
+        } catch (Exception e) {
+            showError("Auction information is invalid.");
+        }
+    }
+
+    private String safeText(TextField field) {
+        return field == null || field.getText() == null ? "" : field.getText().trim();
+    }
+
+    private String safeText(TextArea field) {
+        return field == null || field.getText() == null ? "" : field.getText().trim();
+    }
+
+    private void showError(String message) {
+        if (lblStatus != null) {
+            lblStatus.setText(message);
             lblStatus.setTextFill(javafx.scene.paint.Color.RED);
         }
     }

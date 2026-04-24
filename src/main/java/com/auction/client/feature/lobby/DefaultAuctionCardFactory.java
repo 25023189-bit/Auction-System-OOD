@@ -16,14 +16,12 @@ public class DefaultAuctionCardFactory implements AbstractAuctionCardFactory<Lob
 
     @Override
     public VBox createDefault(LobbyRoomDisplayModel model) {
-        VBox card = baseCard(model, false);
-        return card;
+        return baseCard(model, false);
     }
 
     @Override
     public VBox createHighlighted(LobbyRoomDisplayModel model) {
-        VBox card = baseCard(model, true);
-        return card;
+        return baseCard(model, true);
     }
 
     private VBox baseCard(LobbyRoomDisplayModel model, boolean highlighted) {
@@ -39,10 +37,10 @@ public class DefaultAuctionCardFactory implements AbstractAuctionCardFactory<Lob
         Label lblName = new Label(model.getItemName());
         lblName.setStyle("-fx-font-weight: bold; -fx-font-size: 16px;");
 
-        Label lblId = new Label("Mã: " + model.getRoomId());
-        Label lblPrice = new Label("Giá: " + model.getDisplayPrice());
+        Label lblId = new Label("ID: " + model.getRoomId());
+        Label lblPrice = new Label("Price: " + model.getDisplayPrice());
 
-        Button btnJoin = new Button("Vào Phòng");
+        Button btnJoin = new Button("Join Room");
         btnJoin.setStyle("-fx-background-color: #3498db; -fx-text-fill: white; -fx-cursor: hand;");
         btnJoin.setOnAction(e -> auctionService.joinRoom(model.getRoomId()));
 

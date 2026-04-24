@@ -42,13 +42,9 @@ public class AuctionRoomMessageHandler implements MessageHandler {
     public void handle(Message message) {
         switch (message.getAction()) {
             case "ROOM_JOINED" -> handleRoomJoined(message);
-
             case "ROOM_STATE_UPDATED" -> handleRoomStateUpdated(message);
-
             case "BID_SUCCESS", "BID_SUCCESS_EXTENDED" -> handleBidSuccess(message);
-
             case "CHAT_MSG" -> presenter.appendChat("[" + message.username + "]: " + message.data);
-
             case "UPDATE_PRICE" -> handleUpdatePrice(message);
         }
     }
@@ -91,22 +87,19 @@ public class AuctionRoomMessageHandler implements MessageHandler {
 
     private void handleBidSuccess(Message message) {
         if (!(message.getData() instanceof AuctionRoom room)) {
-            presenter.appendChat("📢 Có lượt đặt giá mới!");
+            presenter.appendChat("New bid received!");
             return;
         }
 
         String currentRoomId = sessionStore.getCurrentRoomId();
         if (currentRoomId == null || !currentRoomId.equals(room.getRoomId())) return;
 
-        // Cập nhật session
         sessionStore.setCurrentRoom(room);
-
-        // Cập nhật giao diện đầy đủ
         binder.bind(room);
         presenter.showCurrentPrice(room.getCurrentPrice(), room.getHighestBidder());
 
         if ("BID_SUCCESS_EXTENDED".equals(message.getAction())) {
-            presenter.appendChat("⏳ Phiên đã được gia hạn do có đặt giá trong 30 giây cuối.");
+            presenter.appendChat("Auction extended because a bid was placed in the final 30 seconds.");
         }
 
         if (room.getStartTime() != null) {
@@ -136,11 +129,10 @@ public class AuctionRoomMessageHandler implements MessageHandler {
                 currentRoom.setCurrentPrice(newPrice);
             }
 
-            // Không append chat ở đây nữa
             presenter.showCurrentPrice(newPrice, null);
 
         } catch (Exception e) {
-            System.err.println("[AuctionRoomMessageHandler] Lỗi xử lý UPDATE_PRICE: " + e.getMessage());
+            System.err.println("[AuctionRoomMessageHandler] Failed to handle UPDATE_PRICE: " + e.getMessage());
         }
     }
 }

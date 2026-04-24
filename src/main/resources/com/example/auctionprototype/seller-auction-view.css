@@ -1,0 +1,23 @@
+/* --- LÀM TRONG SUỐT NỀN TỔNG (Optional nếu muốn nhìn xuyên) --- */
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-background-color: #f4f7fa; /* Màu xám nhạt hiện đại */
+}
+
+/* --- TẠO HIỆU ỨNG THẺ (CARD) CHO CỘT TRÁI VÀ CỘT PHẢI --- */
+.info-card, .chat-container {
+    -fx-background-color: white;
+    -fx-background-radius: 15px; /* Bo góc tròn trịa */
+    -fx-padding: 20px;            /* Khoảng cách nội dung vào viền */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5); /* Đổ bóng nhẹ */
+}
+
+/* Tùy chỉnh thêm cho TextArea (Khung chat) nhìn mượt hơn */
+.chat-container .text-area {
+    -fx-background-color: transparent;
+    -fx-control-inner-background: transparent;
+    -fx-background-insets: 0;
+    -fx-border-color: #ecf0f1;
+    -fx-border-radius: 10px;
+    -fx-padding: 5px;
+}

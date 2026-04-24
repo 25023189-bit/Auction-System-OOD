@@ -48,8 +48,8 @@ public class AuthMessageHandler implements MessageHandler {
             }
             case "REGISTER_FAIL" -> presenter.showRegisterError(String.valueOf(message.getData()));
             case "RESET_SUCCESS" -> {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION, "Đổi mật khẩu thành công! Vui lòng đăng nhập lại.");
-                alert.setHeaderText("Thành công");
+                Alert alert = new Alert(Alert.AlertType.INFORMATION, "Password changed successfully. Please log in again.");
+                alert.setHeaderText("Success");
                 alert.showAndWait();
                 presenter.clearResetForm();
                 navigator.showLogin();

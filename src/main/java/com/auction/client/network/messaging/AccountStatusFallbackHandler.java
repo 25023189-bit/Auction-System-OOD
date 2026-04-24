@@ -33,8 +33,8 @@ public class AccountStatusFallbackHandler implements MessageHandler {
     @Override
     public void handle(Message msg) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Thông báo hệ thống");
-        alert.setHeaderText("TÀI KHOẢN ĐÃ BỊ VÔ HIỆU HÓA");
+        alert.setTitle("System Notification");
+        alert.setHeaderText("ACCOUNT DISABLED");
         alert.setContentText(String.valueOf(msg.getData()));
         alert.showAndWait();
 
@@ -47,7 +47,7 @@ public class AccountStatusFallbackHandler implements MessageHandler {
         List<Window> openWindows = new ArrayList<>(Window.getWindows());
         for (Window window : openWindows) {
             if (window instanceof Stage stage) {
-                if (!"Sàn Đấu Giá".equals(stage.getTitle())) {
+                if (!"Auction System".equals(stage.getTitle())) {
                     stage.close();
                 }
             }

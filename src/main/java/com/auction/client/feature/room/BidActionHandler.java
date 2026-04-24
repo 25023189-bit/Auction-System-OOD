@@ -27,12 +27,12 @@ public class BidActionHandler implements ActionHandler<BidRequest> {
                 LocalDateTime now = LocalDateTime.now();
 
                 if (room.getStartTime() != null && now.isBefore(room.getStartTime())) {
-                    presenter.appendChat("⚠️ Phiên đấu giá chưa bắt đầu, chưa thể đặt giá!");
+                    presenter.appendChat("Auction has not started yet. Bidding is not available.");
                     return;
                 }
 
                 if (room.getScheduledEndTime() != null && !now.isBefore(room.getScheduledEndTime())) {
-                    presenter.disableBidUi("Phiên đấu giá đã hết giờ.");
+                    presenter.disableBidUi("Auction has ended.");
                     return;
                 }
             }
@@ -40,7 +40,7 @@ public class BidActionHandler implements ActionHandler<BidRequest> {
             double amount = Double.parseDouble(request.amountText());
             auctionService.placeBid(amount);
         } catch (NumberFormatException e) {
-            presenter.appendChat("Hệ thống: Vui lòng nhập số tiền hợp lệ!");
+            presenter.appendChat("System: Please enter a valid amount.");
         }
     }
 }

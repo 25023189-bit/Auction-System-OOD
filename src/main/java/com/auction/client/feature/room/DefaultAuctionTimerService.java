@@ -22,7 +22,7 @@ public class DefaultAuctionTimerService implements AuctionTimer {
         stop();
 
         if (startTime == null || scheduledEndTime == null) {
-            presenter.setTimerText("Vô thời hạn", Color.ORANGE);
+            presenter.setTimerText("No time limit", Color.ORANGE);
             return;
         }
 
@@ -37,7 +37,7 @@ public class DefaultAuctionTimerService implements AuctionTimer {
                     long hh = left / 3600;
                     long mm = (left % 3600) / 60;
                     long ss = left % 60;
-                    presenter.setTimerText(String.format("🕒 Chưa bắt đầu: %02d:%02d:%02d", hh, mm, ss), Color.BLUE);
+                    presenter.setTimerText(String.format("Starts in: %02d:%02d:%02d", hh, mm, ss), Color.BLUE);
                 }
             }));
             timeline.setCycleCount(Animation.INDEFINITE);
@@ -46,22 +46,22 @@ public class DefaultAuctionTimerService implements AuctionTimer {
         }
 
         if (!now.isBefore(scheduledEndTime)) {
-            presenter.setTimerText("⏱️ Đã kết thúc!", Color.RED);
-            presenter.disableBidUi("Phiên đấu giá đã hết giờ.");
+            presenter.setTimerText("Ended", Color.RED);
+            presenter.disableBidUi("Auction has ended.");
             return;
         }
 
         timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
             long left = ChronoUnit.SECONDS.between(LocalDateTime.now(), scheduledEndTime);
             if (left <= 0) {
-                presenter.setTimerText("⏱️ Đã kết thúc!", Color.RED);
-                presenter.disableBidUi("Phiên đấu giá đã hết giờ.");
+                presenter.setTimerText("Ended", Color.RED);
+                presenter.disableBidUi("Auction has ended.");
                 stop();
             } else {
                 long hh = left / 3600;
                 long mm = (left % 3600) / 60;
                 long ss = left % 60;
-                presenter.setTimerText(String.format("⏱️ %02d:%02d:%02d", hh, mm, ss), Color.DARKGREEN);
+                presenter.setTimerText(String.format("%02d:%02d:%02d", hh, mm, ss), Color.DARKGREEN);
             }
         }));
         timeline.setCycleCount(Animation.INDEFINITE);
