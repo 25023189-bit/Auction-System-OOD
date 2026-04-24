@@ -1,8 +1,10 @@
 package com.auction.common.model;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 public class User implements Serializable, Entity {
+    @Serial
     private static final long serialVersionUID = 1L;
 
     protected String customerId;

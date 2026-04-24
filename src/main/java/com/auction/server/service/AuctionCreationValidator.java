@@ -42,8 +42,8 @@ public class AuctionCreationValidator {
             errorMessage = "Bid step must be greater than 0.";
             return false;
         }
-        if (!(minimumJoinAmount > startingPrice * 0.10 && minimumJoinAmount < startingPrice * 0.75)) {
-            errorMessage = "Minimum join amount must be greater than 10% and less than 75% of the starting price.";
+        if (!(minimumJoinAmount < startingPrice * 0.75)) {
+            errorMessage = "Minimum join amount must be Less than 75% of the starting price.";
             return false;
         }
         if (durationMinutes <= 0) {

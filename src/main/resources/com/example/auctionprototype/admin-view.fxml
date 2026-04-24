@@ -42,9 +42,37 @@
                                 <TableColumn fx:id="colRoomName" prefWidth="250.0" text="Item Name" />
                                 <TableColumn fx:id="colSeller" prefWidth="150.0" text="Seller" />
                                 <TableColumn fx:id="colPrice" prefWidth="150.0" text="Current Price ($)" />
+                                <TableColumn fx:id="colBidStep" prefWidth="130.0" text="Bid Step ($)" />
                                 <TableColumn fx:id="colStatus" prefWidth="150.0" text="Status" />
                             </columns>
                             <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY" /></columnResizePolicy>
+                        </TableView>
+                    </VBox>
+                </Tab>
+                <Tab text="Duyệt sản phẩm">
+                    <VBox spacing="10.0"><padding><Insets bottom="10.0" left="10.0" right="10.0" top="10.0" /></padding>
+                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                            <Button mnemonicParsing="false" onAction="#loadPendingAuctions" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-cursor: hand;" text="Refresh List" />
+                            <Button mnemonicParsing="false" onAction="#handleApprovePendingAuction" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-cursor: hand;" text="Approve" />
+                            <Button mnemonicParsing="false" onAction="#handleRejectPendingAuction" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-cursor: hand;" text="Reject" />
+                        </HBox>
+                        <TableView fx:id="tablePendingAuctions" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="colPendingRequestId" prefWidth="120.0" text="Request ID" />
+                                <TableColumn fx:id="colPendingSellerId" prefWidth="120.0" text="Seller ID" />
+                                <TableColumn fx:id="colPendingSellerOrganization" prefWidth="170.0" text="Seller Organization" />
+                                <TableColumn fx:id="colPendingItemName" prefWidth="170.0" text="Item Name" />
+                                <TableColumn fx:id="colPendingItemDesc" prefWidth="240.0" text="Item Description" />
+                                <TableColumn fx:id="colPendingStartingPrice" prefWidth="130.0" text="Starting Price" />
+                                <TableColumn fx:id="colPendingMinimumJoinAmount" prefWidth="160.0" text="Minimum Join Amount" />
+                                <TableColumn fx:id="colPendingBidStep" prefWidth="100.0" text="Bid Step" />
+                                <TableColumn fx:id="colPendingStartTime" prefWidth="170.0" text="Start Time" />
+                                <TableColumn fx:id="colPendingDurationMinutes" prefWidth="120.0" text="Duration" />
+                                <TableColumn fx:id="colPendingExtensionSeconds" prefWidth="120.0" text="Extension" />
+                                <TableColumn fx:id="colPendingSellerReputation" prefWidth="130.0" text="Seller Reputation" />
+                                <TableColumn fx:id="colPendingSuccessfulAuctionRate" prefWidth="150.0" text="Success Rate" />
+                                <TableColumn fx:id="colPendingAdminCancellationRate" prefWidth="170.0" text="Admin Cancel Rate" />
+                            </columns>
                         </TableView>
                     </VBox>
                 </Tab>
