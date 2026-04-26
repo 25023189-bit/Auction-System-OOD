@@ -6,7 +6,7 @@ import com.auction.server.main.AuctionServer;
 public class AuctionServerEventPublisher implements ServerEventPublisher {
     @Override
     public void broadcastAll(Message message) {
-        AuctionServer.broadcastAll(message);
+        AuctionServer.broadcast(message);
     }
 
     @Override
