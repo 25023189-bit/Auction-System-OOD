@@ -85,4 +85,29 @@ public class AuctionService {
         }
         this.currentUser = "";
     }
+    // ==========================================================
+    // PHẦN XỬ LÝ LẤY CHI TIẾT SẢN PHẨM (PRODUCT VIEW)
+    // ==========================================================
+    private java.util.function.Consumer<Object> productDetailsCallback;
+
+    // Cài đặt "tai nghe" để đợi Server trả lời
+    public void setProductDetailsCallback(java.util.function.Consumer<Object> callback) {
+        this.productDetailsCallback = callback;
+    }
+
+    // Hàm gọi lên Server xin thông tin
+    public void requestProductDetails(String roomId) {
+        if (clientConnection != null) {
+            // Gửi tin nhắn GET_PRODUCT_DETAILS lên Server
+            com.auction.common.dto.Message msg = new com.auction.common.dto.Message("GET_PRODUCT_DETAILS", "CLIENT", roomId);
+            clientConnection.sendMessage(msg);
+        }
+    }
+
+    // Hàm này sẽ được kích hoạt khi Server ném data về
+    public void fireProductDetailsReceived(Object data) {
+        if (productDetailsCallback != null) {
+            productDetailsCallback.accept(data);
+        }
+    }
 }

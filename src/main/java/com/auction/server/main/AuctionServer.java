@@ -34,11 +34,11 @@ public class AuctionServer {
 
         // NÂNG CẤP 3: Xử lý khi tắt Server an toàn (Graceful Shutdown)
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            System.out.println("\n[Server] Đang tiến hành tắt Server an toàn...");
-            broadcast(new Message("SERVER_SHUTDOWN", "SERVER", "Hệ thống bảo trì"));
+            System.out.println("\n[Server] Initiating graceful shutdown...");
+            broadcast(new Message("SERVER_SHUTDOWN", "SERVER", "System under maintenance"));
             if (AUCTION_WATCHER != null) AUCTION_WATCHER.shutdown();
             if (CLIENT_POOL != null) CLIENT_POOL.shutdown();
-            System.out.println("[Server] Đã tắt hoàn tất.");
+            System.out.println("[Server] Shutdown complete.");
         }));
 
         try (ServerSocket serverSocket = new ServerSocket(port)) {
@@ -51,7 +51,7 @@ public class AuctionServer {
                 ClientHandler handler = new ClientHandler(socket);
                 addClient(handler);
 
-                // Dùng ThreadPool thay vì new Thread()
+                // Dùng ThreadPool thay vì new Thread() để tối ưu hiệu năng
                 CLIENT_POOL.execute(handler);
             }
 
@@ -108,7 +108,7 @@ public class AuctionServer {
         if (client != null && client.isAlive()) {
             client.sendMessage(msg);
         } else {
-            System.out.println("User " + userId + " khong online hoac khong ton tai.");
+            System.out.println("User " + userId + " is offline or does not exist.");
         }
     }
 
@@ -147,13 +147,14 @@ public class AuctionServer {
             }
         }, 1, 1, TimeUnit.SECONDS);
     }
+
     public static void notifyDeletedUser(String userId) {
         // Tìm user trong danh sách đang online
         ClientHandler client = userSessions.get(userId);
 
         if (client != null && client.isAlive()) {
-            // Gửi thông báo cho Client biết họ đã bị ban
-            client.sendMessage(new Message("BANNED", "SERVER", "Tài khoản của bạn đã bị xóa bởi Admin!"));
+            // Gửi thông báo cho Client biết họ đã bị ban (nhưng nội dung tin nhắn vẫn là tiếng Anh)
+            client.sendMessage(new Message("BANNED", "SERVER", "Your account has been deleted by the Admin!"));
             // Ngắt kết nối ngay lập tức
             client.closeConnection();
         }
