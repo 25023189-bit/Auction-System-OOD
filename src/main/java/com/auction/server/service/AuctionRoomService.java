@@ -245,17 +245,17 @@ public class AuctionRoomService {
         }
 
         if (result.getWinnerId() != null && result.getWinnerBalance() != null) {
-            AuctionServer.broadcastAll(new Message("UPDATE_BALANCE", result.getWinnerId(), result.getWinnerBalance()));
+            AuctionServer.broadcast(new Message("UPDATE_BALANCE", result.getWinnerId(), result.getWinnerBalance()));
         }
 
         if (result.getSellerId() != null && result.getSellerBalance() != null) {
-            AuctionServer.broadcastAll(new Message("UPDATE_BALANCE", result.getSellerId(), result.getSellerBalance()));
+            AuctionServer.broadcast(new Message("UPDATE_BALANCE", result.getSellerId(), result.getSellerBalance()));
         }
     }
 
     private void broadcastRoomList() {
         AuctionDAO auctionDAO = new AuctionDAO();
-        AuctionServer.broadcastAll(new Message("ROOM_LIST", "SERVER", auctionDAO.getAllActiveAuctions()));
+        AuctionServer.broadcast(new Message("ROOM_LIST", "SERVER", auctionDAO.getAllActiveAuctions()));
     }
 
     private void applyFinalWindowRules(AuctionRuntimeState state, LocalDateTime now, long remainingSeconds) {

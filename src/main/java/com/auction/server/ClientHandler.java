@@ -133,7 +133,7 @@ public class ClientHandler implements Runnable {
         }
 
         if (wasAlive) {
-            AuctionServer.unregisterClient(this);
+            AuctionServer.removeClient(this);
         }
     }
 }
