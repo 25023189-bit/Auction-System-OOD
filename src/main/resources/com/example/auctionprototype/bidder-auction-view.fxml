@@ -32,10 +32,13 @@
                                         </Label>
                                     </children>
                                 </VBox>
-                                <Region HBox.hgrow="ALWAYS" />
+                                <Region HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin></Region>
                                 <HBox alignment="CENTER" spacing="15.0">
                                     <children>
-                                        <HBox alignment="CENTER" spacing="8" style="-fx-border-color: #3498db;" styleClass="header-info-box">
+                                        <HBox alignment="CENTER" spacing="8" style="-fx-border-color: red;" styleClass="header-info-box">
                                             <children>
                                             <Label style="-fx-font-size: 18px;" text="⏱" textFill="WHITE" />
                                             <Label fx:id="lblCountdown" text="05:00" textFill="WHITE">
@@ -45,6 +48,17 @@
                                             </Label>
                                         </children>
                                         </HBox>
+                                      <HBox alignment="CENTER" spacing="8" styleClass="header-info-box">
+                                 <children>
+                                              <Label style="-fx-font-size: 16px;" text="👥" textFill="WHITE" />
+      
+                                              <Label fx:id="lblParticipantCount" style="-fx-border-color: sky blue;" text="0 Participants" textFill="WHITE">
+                                                  <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                  </font>
+                                              </Label>
+                                 </children>
+                                      </HBox>
                                         <HBox alignment="CENTER" spacing="15">
                                             <children>
                                                 <VBox alignment="CENTER_RIGHT">
@@ -59,9 +73,12 @@
                                     </children>
                                 </HBox>
                             </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
                         </HBox>
 
-                        <HBox spacing="25.0" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
+                        <HBox spacing="25.0" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
                             <padding>
                                 <Insets bottom="20.0" left="25.0" right="25.0" top="10.0" />
                             </padding>
@@ -94,7 +111,7 @@
                                 <VBox spacing="15.0" styleClass="chat-container" HBox.hgrow="ALWAYS">
                                     <children>
                                         <Label text="Bid History &amp; Chat" textFill="#2c3e50"><font><Font name="System Bold" size="18.0" /></font></Label>
-                                        <TextArea fx:id="txtChatLog" editable="false" VBox.vgrow="ALWAYS" wrapText="true" />
+                                        <TextArea fx:id="txtChatLog" editable="false" wrapText="true" VBox.vgrow="ALWAYS" />
                                         <VBox spacing="10.0">
                                             <children>
                                                 <HBox spacing="10.0">
