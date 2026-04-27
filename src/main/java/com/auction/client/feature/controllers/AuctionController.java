@@ -23,6 +23,7 @@ import com.auction.client.shared.mapper.RoomListMapper;
 import com.auction.client.shared.support.*;
 import com.auction.common.dto.Message;
 import com.auction.common.model.AuctionRoom;
+import com.auction.common.model.User;
 import com.auction.common.role.DefaultRolePolicy;
 import com.auction.common.role.RolePolicy;
 import com.auction.server.service.*;
@@ -311,6 +312,8 @@ public class AuctionController implements Initializable {
             btnCloseAuction.setVisible(false);
             btnCloseAuction.setManaged(false);
         }
+
+        updateAuctionRoomUserLabel();
 
         if (sessionStore != null && sessionStore.getCurrentRoom() != null) {
             AuctionRoom room = sessionStore.getCurrentRoom();
@@ -678,6 +681,19 @@ public class AuctionController implements Initializable {
 
         btnCloseAuction.setVisible(visible);
         btnCloseAuction.setManaged(visible);
+    }
+
+    private void updateAuctionRoomUserLabel() {
+        if (lblUsername == null || sessionStore == null || sessionStore.getCurrentUser() == null) {
+            return;
+        }
+
+        User user = sessionStore.getCurrentUser();
+        String displayName = user.getUsername() != null && !user.getUsername().isBlank()
+                ? user.getUsername()
+                : user.getId();
+        String prefix = "SELLER".equalsIgnoreCase(user.getRole()) ? "Seller: " : "User: ";
+        lblUsername.setText(prefix + displayName);
     }
 
     private void updateRegisterOrganizationVisibility() {
