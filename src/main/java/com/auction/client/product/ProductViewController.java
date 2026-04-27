@@ -1,8 +1,8 @@
-package com.auction.client.feature.product; // Sửa dòng này
+package com.auction.client.product;
 
+import com.auction.common.model.AuctionRoom;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import com.auction.common.model.AuctionRoom;
 
 public class ProductViewController {
     @FXML private Label lblProductName;

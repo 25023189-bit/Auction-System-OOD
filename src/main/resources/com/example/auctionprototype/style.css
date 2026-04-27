@@ -1,0 +1,164 @@
+/* --- Common --- */
+.root {
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+/* Login background */
+.my-background {
+    -fx-background-image: url("login-card.png");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+}
+
+/* Header */
+.header-label {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-alignment: center;
+}
+
+/* Inputs */
+.text-field, .password-field {
+    -fx-background-color: #f9f9f9;
+    -fx-background-radius: 8px;
+    -fx-border-color: #dcdcdc;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
+    -fx-padding: 10px 15px;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #3498db;
+    -fx-background-color: white;
+}
+
+/* Login button */
+.login-button {
+    -fx-background-color: linear-gradient(to right, #4a90e2, #007aff);
+    -fx-background-radius: 25px;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 122, 255, 0.3), 10, 0, 0, 5);
+}
+
+.login-button:hover {
+    -fx-background-color: linear-gradient(to right, #357abd, #005bb5);
+}
+
+.login-button:pressed {
+    -fx-background-color: #005bb5;
+    -fx-translate-y: 2px;
+}
+
+/* Link buttons */
+.link-button {
+    -fx-background-color: transparent;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3498db;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+.link-button:hover {
+    -fx-text-fill: #2980b9;
+    -fx-underline: true;
+}
+
+/* Chatbot */
+.chatbot-open-button {
+    -fx-background-color: #1769e0;
+    -fx-background-radius: 28px;
+    -fx-border-color: rgba(255, 255, 255, 0.85);
+    -fx-border-radius: 28px;
+    -fx-border-width: 1px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(23, 105, 224, 0.32), 18, 0.18, 0, 7);
+}
+
+.chatbot-open-button:hover {
+    -fx-background-color: #0f5bcc;
+    -fx-effect: dropshadow(gaussian, rgba(23, 105, 224, 0.42), 22, 0.2, 0, 8);
+}
+
+.chatbot-open-button:pressed {
+    -fx-background-color: #0c4fb2;
+    -fx-translate-y: 1px;
+}
+
+.chatbot-panel {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-border-color: #d9dee7;
+    -fx-border-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.18), 18, 0, 0, 8);
+}
+
+.chatbot-header {
+    -fx-background-color: #1877f2;
+    -fx-background-radius: 8px 8px 0 0;
+    -fx-padding: 10px 12px;
+}
+
+.chatbot-title {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.chatbot-close-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.chatbot-scroll {
+    -fx-background-color: #f4f7fb;
+    -fx-background: #f4f7fb;
+    -fx-padding: 0;
+}
+
+.chatbot-messages {
+    -fx-background-color: #f4f7fb;
+    -fx-padding: 12px;
+}
+
+.chatbot-message-row {
+    -fx-fill-width: true;
+}
+
+.chatbot-message-user {
+    -fx-background-color: #1877f2;
+    -fx-background-radius: 16px 16px 4px 16px;
+    -fx-text-fill: white;
+    -fx-padding: 9px 12px;
+}
+
+.chatbot-message-bot {
+    -fx-background-color: #e8ecf3;
+    -fx-background-radius: 16px 16px 16px 4px;
+    -fx-text-fill: #1f2933;
+    -fx-padding: 9px 12px;
+}
+
+.chatbot-input-bar {
+    -fx-padding: 10px;
+    -fx-background-color: white;
+    -fx-background-radius: 0 0 8px 8px;
+}
+
+.chatbot-send-button {
+    -fx-background-color: #1877f2;
+    -fx-background-radius: 18px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 14px;
+    -fx-cursor: hand;
+}
