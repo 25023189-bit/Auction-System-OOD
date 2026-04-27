@@ -62,6 +62,32 @@ public class UserDAO {
         return null;
     }
 
+    public User getUserByUsernameWithEmail(String username) {
+        String sql = """
+                SELECT customer_id, username, password_hash, role, organization, balance, email, full_name
+                FROM users
+                WHERE username = ? OR customer_id = ?
+                """;
+
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            String normalized = normalizeCustomerId(username);
+            stmt.setString(1, normalized);
+            stmt.setString(2, normalized);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return mapUserWithEmail(rs);
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Loi khi truy van User theo username: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public User login(String loginIdentifier, String rawPassword) {
         // Sửa câu SQL: Tìm kiếm theo username HOẶC customer_id
         String sql = """
@@ -100,11 +126,12 @@ public class UserDAO {
             return null;
         }
     }
+
     public String registerUser(User user, String rawPassword) {
         String checkSql = """
                 SELECT 1 FROM users
                 WHERE customer_id = ? OR username = ? OR email = ?
-                """; // Thêm check trùng email luôn cho xịn
+                """;
 
         String insertSql = """
                 INSERT INTO users (customer_id, username, password_hash, role, organization, balance, email, full_name)
@@ -115,8 +142,8 @@ public class UserDAO {
             try (PreparedStatement checkStmt = conn.prepareStatement(checkSql)) {
                 String customerId = normalizeCustomerId(user.getCustomerId() != null ? user.getCustomerId() : user.getId());
                 String username = user.getUsername() != null ? user.getUsername().trim() : null;
-                String email = user.getEmail() != null ? user.getEmail().trim() : ""; // Lấy Email thật
-                String fullName = user.getFullName() != null ? user.getFullName().trim() : ""; // Lấy Họ Tên thật
+                String email = user.getEmail() != null ? user.getEmail().trim() : "";
+                String fullName = user.getFullName() != null ? user.getFullName().trim() : "";
 
                 checkStmt.setString(1, customerId);
                 checkStmt.setString(2, username);
@@ -137,8 +164,6 @@ public class UserDAO {
                     insertStmt.setString(4, user.getRole());
                     insertStmt.setString(5, normalizeOrganization(user));
                     insertStmt.setDouble(6, user.getBalance());
-
-                    // Truyền data thật xuống DB
                     insertStmt.setString(7, email);
                     insertStmt.setString(8, fullName);
 
@@ -151,6 +176,7 @@ public class UserDAO {
             return "SQL ERROR: " + e.getMessage();
         }
     }
+
     public boolean resetPassword(String customerId, String newPassword, String confirmPassword) {
         if (customerId == null || customerId.isBlank()) return false;
         if (newPassword == null || !newPassword.equals(confirmPassword)) return false;
@@ -172,6 +198,31 @@ public class UserDAO {
             System.err.println("Loi khi doi mat khau: " + e.getMessage());
             e.printStackTrace();
             return false;
+        }
+    }
+
+    public String resetPasswordWithNewPassword(String username, String newPassword) {
+        String sql = """
+                UPDATE users
+                SET password_hash = ?
+                WHERE username = ? OR customer_id = ?
+                """;
+
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            String hashedPassword = PasswordUtil.hashPassword(newPassword);
+            String normalized = normalizeCustomerId(username);
+            
+            stmt.setString(1, hashedPassword);
+            stmt.setString(2, normalized);
+            stmt.setString(3, normalized);
+
+            return stmt.executeUpdate() > 0 ? "SUCCESS" : "FAIL";
+        } catch (SQLException e) {
+            System.err.println("Error resetting password: " + e.getMessage());
+            e.printStackTrace();
+            return "ERROR: " + e.getMessage();
         }
     }
 
@@ -222,6 +273,20 @@ public class UserDAO {
         );
     }
 
+    private User mapUserWithEmail(ResultSet rs) throws SQLException {
+        User user = new User(
+                rs.getString("customer_id"),
+                rs.getString("username"),
+                rs.getString("role"),
+                rs.getString("password_hash"),
+                rs.getString("organization"),
+                rs.getDouble("balance")
+        );
+        user.setEmail(rs.getString("email"));
+        user.setFullName(rs.getString("full_name"));
+        return user;
+    }
+
     private String normalizeCustomerId(String customerId) {
         return customerId == null ? null : customerId.trim().toUpperCase();
     }
@@ -265,4 +330,3 @@ public class UserDAO {
         }
     }
 }
-
