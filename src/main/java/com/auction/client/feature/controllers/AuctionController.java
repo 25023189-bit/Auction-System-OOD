@@ -593,6 +593,15 @@ public class AuctionController implements Initializable {
     // SERVER RESPONSE ENTRY
     // ==========================================================
     public void onServerResponse(Message msg) {
+        // Chặn đầu tin nhắn lấy chi tiết sản phẩm
+        if ("PRODUCT_DETAILS_SUCCESS".equals(msg.getAction())) {
+            javafx.application.Platform.runLater(() -> {
+                auctionService.fireProductDetailsReceived(msg.getData());
+            });
+            return; // Dừng luôn, không cho chạy xuống Router bên dưới nữa
+        }
+
+        // Các tin nhắn bình thường khác vẫn cho chạy qua Router như cũ
         fxThreadExecutor.execute(() -> responseRouter.route(msg));
     }
 

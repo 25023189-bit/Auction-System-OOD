@@ -1,4 +1,4 @@
 db.url=jdbc:mysql://localhost:3306/auction_system
 db.user=root
-db.password=
+db.password=root
 db.driver=com.mysql.cj.jdbc.Driver
