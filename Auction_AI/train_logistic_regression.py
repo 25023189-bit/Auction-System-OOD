@@ -14,6 +14,7 @@ from sklearn.metrics import (
     precision_score,
     recall_score,
     f1_score,
+    roc_auc_score,
     confusion_matrix,
     classification_report,
     ConfusionMatrixDisplay,
@@ -22,16 +23,17 @@ from sklearn.metrics import (
 )
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 
 # =========================
 # PATH
 # =========================
 BASE_DIR = Path(__file__).resolve().parent
-DATA_PATH = BASE_DIR / "auction_dataset.csv"
+DATA_PATH = BASE_DIR / "Training_Data.csv"
 MODEL_PATH = BASE_DIR / "auction_model.pkl"
 METRICS_PATH = BASE_DIR / "metrics.json"
+DECISION_THRESHOLD = 0.75
 
 
 def main():
@@ -39,8 +41,12 @@ def main():
     # 1. LOAD DATA
     # =========================
     df = pd.read_csv(DATA_PATH)
+    df["title_length"] = df["title"].astype(str).str.len()
+    df["desc_length"] = df["description"].astype(str).str.len()
+    df["minimum_join_ratio"] = df["minimum_join_amount"] / df["start_price"]
+    df["bid_step_ratio"] = df["bid_step"] / df["start_price"]
 
-    X = df.drop(columns=["auto_approve"])
+    X = df.drop(columns=["auto_approve", "review_status", "description_style", "targeted_risk_type", "category"], errors="ignore")
     y = df["auto_approve"]
 
     # =========================
@@ -48,12 +54,14 @@ def main():
     # =========================
     numeric_features = [
         "seller_rating",
-        "seller_completed_auctions",
+        "seller_completed_rating",
         "seller_cancel_rate",
         "title_length",
         "desc_length",
-        "num_positive_keywords",
-        "num_negative_keywords",
+        "minimum_join_amount",
+        "minimum_join_ratio",
+        "bid_step",
+        "bid_step_ratio",
         "start_price_log",
         "duration_minutes",
         "extension_seconds",
@@ -66,16 +74,23 @@ def main():
 
     title_feature = "title"
     desc_feature = "description"
+    organization_feature = ["organization"]
 
     # =========================
     # 3. PREPROCESSOR
     # =========================
     preprocessor = ColumnTransformer(
         transformers=[
-            ("title_bow", CountVectorizer(), title_feature),
-            ("desc_bow", CountVectorizer(max_features=200), desc_feature),
+            ("title_bow", TfidfVectorizer(), title_feature),
+            ("desc_bow", TfidfVectorizer(ngram_range=(1, 2),max_features=5000,min_df=2,sublinear_tf=True), desc_feature),
+            ("organization_onehot", OneHotEncoder(handle_unknown="ignore"), organization_feature),
             ("num", StandardScaler(), numeric_features),
         ],
+        transformer_weights={
+            "title_bow": 0.7,
+            "desc_bow": 1.0,
+            "organization_onehot": 1.2,
+        },
         remainder="drop"
     )
 
@@ -110,8 +125,8 @@ def main():
     # =========================
     # 7. PREDICT
     # =========================
-    y_pred = model.predict(X_test)
     y_prob = model.predict_proba(X_test)[:, 1]
+    y_pred = (y_prob >= DECISION_THRESHOLD).astype(int)
 
     ed = time.time()
 
@@ -123,6 +138,8 @@ def main():
         "precision": float(precision_score(y_test, y_pred, zero_division=0)),
         "recall": float(recall_score(y_test, y_pred, zero_division=0)),
         "f1": float(f1_score(y_test, y_pred, zero_division=0)),
+        "roc_auc": float(roc_auc_score(y_test, y_prob)),
+        "decision_threshold": DECISION_THRESHOLD,
         "confusion_matrix": confusion_matrix(y_test, y_pred).tolist(),
         "classification_report": classification_report(y_test, y_pred, zero_division=0),
     }
@@ -178,7 +195,7 @@ def main():
     """# --- 10.4 Confusion Matrix ---
     ConfusionMatrixDisplay.from_predictions(y_test, y_pred)
     plt.title("Confusion Matrix")
-    plt.show()"""
+    plt.show()
 
     # --- 10.5 ROC Curve ---
     fpr, tpr, _ = roc_curve(y_test, y_prob)
@@ -192,7 +209,7 @@ def main():
     plt.title("ROC Curve")
     plt.legend()
     plt.grid()
-    plt.show()
+    plt.show()"""
 
 
 if __name__ == "__main__":
