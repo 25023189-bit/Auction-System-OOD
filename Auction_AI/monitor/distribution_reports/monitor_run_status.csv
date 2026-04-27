@@ -1,0 +1,8 @@
+﻿script,status,return_code,started_at,ended_at,duration_seconds,stdout,stderr
+monitor_bid_step_distribution.py,ok,0,2026-04-25T10:02:41,2026-04-25T10:02:42,0.829,Saved bid_step distribution reports to C:\Users\Kaido\IdeaProjects\AuctionSystem\Auction_AI\monitor\distribution_reports,
+monitor_duration_minutes_distribution.py,ok,0,2026-04-25T10:02:42,2026-04-25T10:02:43,0.7,Saved duration_minutes distribution reports to C:\Users\Kaido\IdeaProjects\AuctionSystem\Auction_AI\monitor\distribution_reports,
+monitor_extension_seconds_distribution.py,ok,0,2026-04-25T10:02:43,2026-04-25T10:02:43,0.697,Saved extension_seconds distribution reports to C:\Users\Kaido\IdeaProjects\AuctionSystem\Auction_AI\monitor\distribution_reports,
+monitor_minimum_join_amount_distribution.py,ok,0,2026-04-25T10:02:43,2026-04-25T10:02:44,0.847,Saved minimum_join_amount distribution reports to C:\Users\Kaido\IdeaProjects\AuctionSystem\Auction_AI\monitor\distribution_reports,
+monitor_seller_rating_distribution.py,ok,0,2026-04-25T10:02:44,2026-04-25T10:02:45,0.707,Saved seller_rating distribution reports to C:\Users\Kaido\IdeaProjects\AuctionSystem\Auction_AI\monitor\distribution_reports,
+monitor_start_hour_day_of_week_distribution.py,ok,0,2026-04-25T10:02:45,2026-04-25T10:02:46,0.767,Saved start_hour and day_of_week distribution reports to C:\Users\Kaido\IdeaProjects\AuctionSystem\Auction_AI\monitor\distribution_reports,
+monitor_start_price_distribution.py,ok,0,2026-04-25T10:02:46,2026-04-25T10:02:46,0.822,Saved start_price distribution reports to C:\Users\Kaido\IdeaProjects\AuctionSystem\Auction_AI\monitor\distribution_reports,
