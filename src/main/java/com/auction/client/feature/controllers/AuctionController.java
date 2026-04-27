@@ -15,7 +15,6 @@ import com.auction.client.feature.viewmodel.AuthViewModel;
 import com.auction.client.feature.viewmodel.LobbyRoomDisplayModel;
 import com.auction.client.feature.viewmodel.LobbyViewModel;
 import com.auction.client.network.messaging.*;
-import com.auction.client.service.ChatbotService;
 import com.auction.client.session.*;
 import com.auction.client.shared.mapper.DisplayMapper;
 import com.auction.client.shared.mapper.RoomDisplayMapper;
@@ -27,10 +26,7 @@ import com.auction.common.model.User;
 import com.auction.common.role.DefaultRolePolicy;
 import com.auction.common.role.RolePolicy;
 import com.auction.server.service.*;
-import javafx.application.Platform;
 import javafx.fxml.*;
-import javafx.geometry.Pos;
-import javafx.scene.input.KeyCode;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
@@ -68,11 +64,7 @@ public class AuctionController implements Initializable {
     @FXML private Button btnPlaceBid;
     @FXML private TextArea txtItemDescriptionDisplay;
     @FXML private ImageView imgProduct;
-    @FXML private StackPane chatbotRoot;
-    @FXML private VBox chatbotPanel, chatMessages;
-    @FXML private ScrollPane chatScrollPane;
-    @FXML private TextField txtChatbotInput;
-    @FXML private Button btnOpenChatbot, btnCloseChatbot, btnSendChatbot;
+    @FXML private ChatbotController chatbotController;
 
     // ==========================================================
     // CORE SERVICE
@@ -80,7 +72,6 @@ public class AuctionController implements Initializable {
     private ClientConnection clientConnection;
     private AuctionService auctionService;
     private boolean isNetworkConnected = false;
-    private final ChatbotService chatbotService = new ChatbotService();
 
     // ==========================================================
     // CORE ABSTRACTIONS
@@ -326,40 +317,8 @@ public class AuctionController implements Initializable {
     }
 
     private void wireLobbyChatbot() {
-        if (chatbotRoot == null || chatbotPanel == null || btnOpenChatbot == null) {
-            return;
-        }
-
-        chatbotRoot.setPickOnBounds(false);
-        chatbotRoot.setMouseTransparent(false);
-        chatbotPanel.setPickOnBounds(true);
-
-        setLobbyChatbotVisible(false);
-
-        if (chatMessages != null && chatMessages.getChildren().isEmpty()) {
-            addChatbotBotMessage("Xin chào, tôi có thể hỗ trợ bạn về đấu giá, anti-sniping, đặt giá và số dư.");
-        }
-
-        btnOpenChatbot.setOnAction(event -> showLobbyChatbot());
-
-        if (btnCloseChatbot != null) {
-            btnCloseChatbot.setOnAction(event -> hideLobbyChatbot());
-        }
-
-        if (btnSendChatbot != null) {
-            btnSendChatbot.setOnAction(event -> sendLobbyChatbotMessage());
-        }
-
-        if (txtChatbotInput != null) {
-            txtChatbotInput.setDisable(false);
-            txtChatbotInput.setEditable(true);
-            txtChatbotInput.setMouseTransparent(false);
-            txtChatbotInput.setOnKeyPressed(event -> {
-                if (event.getCode() == KeyCode.ENTER) {
-                    sendLobbyChatbotMessage();
-                    event.consume();
-                }
-            });
+        if (chatbotController != null) {
+            chatbotController.setLobbyContext(lblBalance, paneSelectAuction);
         }
     }
 
@@ -495,77 +454,6 @@ public class AuctionController implements Initializable {
         if (txtChatInput != null) {
             txtChatInput.clear();
         }
-    }
-
-    private void showLobbyChatbot() {
-        setLobbyChatbotVisible(true);
-        if (txtChatbotInput != null) {
-            Platform.runLater(() -> txtChatbotInput.requestFocus());
-        }
-    }
-
-    private void hideLobbyChatbot() {
-        setLobbyChatbotVisible(false);
-    }
-
-    private void setLobbyChatbotVisible(boolean visible) {
-        if (chatbotPanel != null) {
-            chatbotPanel.setVisible(visible);
-            chatbotPanel.setManaged(visible);
-            chatbotPanel.setDisable(!visible);
-            chatbotPanel.setMouseTransparent(!visible);
-        }
-
-        if (btnOpenChatbot != null) {
-            btnOpenChatbot.setVisible(!visible);
-            btnOpenChatbot.setManaged(!visible);
-            btnOpenChatbot.setDisable(visible);
-            btnOpenChatbot.setMouseTransparent(visible);
-        }
-
-        if (visible && chatbotPanel != null) {
-            chatbotPanel.toFront();
-        } else if (btnOpenChatbot != null) {
-            btnOpenChatbot.toFront();
-        }
-    }
-
-    private void sendLobbyChatbotMessage() {
-        String userMessage = txtChatbotInput != null ? txtChatbotInput.getText().trim() : "";
-        if (userMessage.isEmpty()) {
-            return;
-        }
-
-        addChatbotUserMessage(userMessage);
-        addChatbotBotMessage(chatbotService.reply(userMessage));
-        txtChatbotInput.clear();
-    }
-
-    private void addChatbotUserMessage(String message) {
-        addChatbotMessage(message, "chatbot-message-user", Pos.CENTER_RIGHT);
-    }
-
-    private void addChatbotBotMessage(String message) {
-        addChatbotMessage(message, "chatbot-message-bot", Pos.CENTER_LEFT);
-    }
-
-    private void addChatbotMessage(String message, String styleClass, Pos alignment) {
-        if (chatMessages == null || chatScrollPane == null) {
-            return;
-        }
-
-        Label bubble = new Label(message);
-        bubble.setWrapText(true);
-        bubble.setMaxWidth(250);
-        bubble.getStyleClass().add(styleClass);
-
-        HBox row = new HBox(bubble);
-        row.setAlignment(alignment);
-        row.getStyleClass().add("chatbot-message-row");
-
-        chatMessages.getChildren().add(row);
-        chatScrollPane.layout();
-        chatScrollPane.setVvalue(1.0);
     }
 
     @FXML

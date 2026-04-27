@@ -32,7 +32,7 @@ public class FxSceneNavigator implements SceneNavigator {
     public void showLogin() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/login-view.fxml"));
-            loader.setControllerFactory(clazz -> controllerRef);
+            loader.setControllerFactory(this::createController);
             Parent root = loader.load();
 
             Stage stage = resolveStage();
@@ -52,7 +52,7 @@ public class FxSceneNavigator implements SceneNavigator {
             windowStateHandler.capture(stage);
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource(resolveLobbyViewPath()));
-            loader.setControllerFactory(clazz -> controllerRef);
+            loader.setControllerFactory(this::createController);
             Parent root = loader.load();
 
             stage = resolveStage();
@@ -75,7 +75,7 @@ public class FxSceneNavigator implements SceneNavigator {
             windowStateHandler.capture(stage);
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource(resolveAuctionRoomViewPath()));
-            loader.setControllerFactory(clazz -> controllerRef);
+            loader.setControllerFactory(this::createController);
             Parent root = loader.load();
 
             stage = resolveStage();
@@ -134,6 +134,18 @@ public class FxSceneNavigator implements SceneNavigator {
                 .filter(Window::isShowing)
                 .findFirst()
                 .orElse(null);
+    }
+
+    private Object createController(Class<?> controllerClass) {
+        if (controllerClass.isInstance(controllerRef)) {
+            return controllerRef;
+        }
+
+        try {
+            return controllerClass.getDeclaredConstructor().newInstance();
+        } catch (Exception e) {
+            throw new IllegalStateException("Cannot create controller: " + controllerClass.getName(), e);
+        }
     }
 
     private String resolveAuctionRoomViewPath() {

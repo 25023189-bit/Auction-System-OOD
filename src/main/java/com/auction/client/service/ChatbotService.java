@@ -7,44 +7,60 @@ import java.util.Locale;
 public class ChatbotService {
 
     private static final String DEFAULT_RESPONSE = """
-            Xin lỗi, tôi chưa có câu trả lời cho nội dung này. Bạn có thể hỏi về anti-sniping, cách đặt giá, tạo phiên đấu giá, số dư hoặc quy định tham gia đấu giá.
+            Xin loi, toi chua co cau tra loi cho noi dung nay. Ban co the hoi ve anti-sniping, cach dat gia, tao phien dau gia, so du, quy dinh tham gia hoac truy van thong tin dau gia.
             """.strip();
 
     private final List<ChatbotRule> rules = List.of(
             new ChatbotRule(
+                    List.of("truy van gia", "tra cuu gia", "gia hien tai", "gia cua phien", "gia san pham"),
+                    "De truy van gia hien tai, ban mo phien dau gia can xem. Gia hien tai se hien thi trong phong dau gia va duoc cap nhat khi co nguoi dat gia moi."
+            ),
+            new ChatbotRule(
+                    List.of("truy van phien", "tra cuu phien", "tim phien", "tim kiem phien", "danh sach phien"),
+                    "De truy van phien dau gia, ban xem danh sach trong Main Lobby. Ban co the tim theo ten san pham, trang thai phien hoac nguoi ban neu man hinh co bo loc tuong ung."
+            ),
+            new ChatbotRule(
+                    List.of("truy van nguoi thang", "ai thang", "nguoi thang", "ket qua dau gia", "winner"),
+                    "Ket qua dau gia duoc xac dinh khi phien ket thuc. Nguoi co luot dat gia hop le cao nhat se la nguoi thang."
+            ),
+            new ChatbotRule(
+                    List.of("truy van", "tra cuu", "tim kiem", "kiem tra thong tin", "lookup", "query"),
+                    "Ban muon truy van thong tin nao? Ban co the hoi theo mau: 'truy van phien dau gia', 'truy van gia hien tai', 'truy van nguoi thang', hoac 'truy van so du'."
+            ),
+            new ChatbotRule(
                     List.of("anti sniping", "antisniping", "chong sniping", "gia han phien", "mo rong phien", "anti-sniping"),
-                    "Anti-sniping là cơ chế tự động gia hạn thời gian đấu giá khi có người đặt giá vào những giây cuối. Cách này giúp phiên đấu giá công bằng hơn vì người khác vẫn có thời gian phản hồi."
+                    "Anti-sniping la co che tu dong gia han thoi gian dau gia khi co nguoi dat gia vao nhung giay cuoi. Cach nay giup phien dau gia cong bang hon vi nguoi khac van co thoi gian phan hoi."
             ),
             new ChatbotRule(
                     List.of("dat gia", "bid", "dau gia nhu the nao", "tham gia dau gia"),
-                    "Để đặt giá, bạn vào một phiên đấu giá đang mở, nhập số tiền cao hơn giá hiện tại và nhấn nút đặt giá. Hệ thống sẽ kiểm tra số dư và điều kiện phiên trước khi ghi nhận lượt đặt giá."
+                    "De dat gia, ban vao mot phien dau gia dang mo, nhap so tien cao hon gia hien tai va nhan nut dat gia. He thong se kiem tra so du va dieu kien phien truoc khi ghi nhan luot dat gia."
             ),
             new ChatbotRule(
                     List.of("tao phien", "tao dau gia", "create auction", "seller"),
-                    "Người bán có thể tạo phiên đấu giá từ màn hình Seller Lobby bằng nút Create Auction. Sau khi gửi thông tin sản phẩm, phiên cần được duyệt trước khi hiển thị cho người tham gia."
+                    "Nguoi ban co the tao phien dau gia tu man hinh Seller Lobby bang nut Create Auction. Sau khi gui thong tin san pham, phien can duoc duyet truoc khi hien thi cho nguoi tham gia."
             ),
             new ChatbotRule(
-                    List.of("so du", "balance", "nap tien", "tien"),
-                    "Số dư dùng để kiểm tra khả năng tham gia và đặt giá trong phiên đấu giá. Nếu số dư không đủ, bạn cần bổ sung tiền trước khi tiếp tục đặt giá."
+                    List.of("so du", "balance", "nap tien", "tien", "truy van so du", "tra cuu so du"),
+                    "So du dung de kiem tra kha nang tham gia va dat gia trong phien dau gia. Neu so du khong du, ban can bo sung tien truoc khi tiep tuc dat gia."
             ),
             new ChatbotRule(
                     List.of("dang nhap", "login", "tai khoan", "mat khau"),
-                    "Nếu không đăng nhập được, hãy kiểm tra lại tên tài khoản và mật khẩu. Nếu quên mật khẩu, dùng chức năng Forgot Password ở màn hình đăng nhập."
+                    "Neu khong dang nhap duoc, hay kiem tra lai ten tai khoan va mat khau. Neu quen mat khau, dung chuc nang Forgot Password o man hinh dang nhap."
             ),
             new ChatbotRule(
                     List.of("quy dinh", "luat", "dieu kien", "rule"),
-                    "Người tham gia cần đặt giá hợp lệ, không thấp hơn giá hiện tại và tuân thủ thời gian của phiên. Khi phiên kết thúc, lượt đặt giá hợp lệ cao nhất sẽ được dùng để xác định người thắng."
+                    "Nguoi tham gia can dat gia hop le, khong thap hon gia hien tai va tuan thu thoi gian cua phien. Khi phien ket thuc, luot dat gia hop le cao nhat se duoc dung de xac dinh nguoi thang."
             ),
             new ChatbotRule(
                     List.of("xin chao", "hello", "hi", "chao"),
-                    "Xin chào, tôi là trợ lý của hệ thống đấu giá. Bạn cần hỗ trợ về đặt giá, anti-sniping, tạo phiên đấu giá hay số dư?"
+                    "Xin chao, toi la tro ly cua he thong dau gia. Ban can ho tro ve dat gia, anti-sniping, tao phien dau gia, truy van thong tin hay so du?"
             )
     );
 
     public String reply(String userInput) {
         String normalizedInput = normalize(userInput);
         if (normalizedInput.isBlank()) {
-            return "Bạn hãy nhập câu hỏi cần hỗ trợ.";
+            return "Ban hay nhap cau hoi can ho tro.";
         }
 
         return rules.stream()
