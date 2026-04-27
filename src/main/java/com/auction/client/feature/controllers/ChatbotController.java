@@ -17,10 +17,8 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
-import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class ChatbotController {
 
@@ -41,7 +39,7 @@ public class ChatbotController {
     public void initialize() {
         configureInteraction();
         setChatbotVisible(false);
-        addBotMessage("Xin chao, toi co the ho tro ve dau gia, anti-sniping, dat gia, so du va truy van san pham dang dau gia.");
+        addBotMessage("Xin chào, tôi có thể hỗ trợ bạn về đấu giá, anti-sniping, đặt giá, số dư và truy vấn sản phẩm đang đấu giá.");
 
         if (txtChatbotInput != null) {
             txtChatbotInput.setOnKeyPressed(event -> {
@@ -145,7 +143,7 @@ public class ChatbotController {
     }
 
     private String resolveChatbotReply(String userMessage) {
-        String normalizedMessage = normalizeChatbotText(userMessage);
+        String normalizedMessage = chatbotService.normalizeByInputState(userMessage);
 
         if (isBalanceQuery(normalizedMessage)) {
             return getBalanceQueryReply();
@@ -153,81 +151,91 @@ public class ChatbotController {
         if (isAuctionCountQuery(normalizedMessage)) {
             return getAuctionCountQueryReply();
         }
+        if (isProductExistenceQuery(normalizedMessage)) {
+            String productName = extractProductSearchTerm(normalizedMessage);
+            return getProductExistenceQueryReply(productName);
+        }
         if (isProductPriceQuery(normalizedMessage)) {
             String productName = extractProductSearchTerm(normalizedMessage);
             if (!productName.isBlank()) {
                 return getProductPriceQueryReply(productName);
             }
         }
-        if (isProductExistenceQuery(normalizedMessage)) {
-            String productName = extractProductSearchTerm(normalizedMessage);
-            return getProductExistenceQueryReply(productName);
-        }
 
         return chatbotService.reply(userMessage);
     }
 
     private boolean isBalanceQuery(String message) {
-        return containsAny(message, "so du", "balance", "tai khoan con bao nhieu", "tien trong tai khoan");
+        return containsAny(message,
+                "so du", "balance", "account balance", "tai khoan con bao nhieu", "tien trong tai khoan", "money in account");
     }
 
     private boolean isAuctionCountQuery(String message) {
-        return containsAny(message, "so phien", "bao nhieu phien", "phien dang dien ra", "phien dang mo", "co may phien");
+        return containsAny(message,
+                "so phien", "bao nhieu phien", "phien dang dien ra", "phien dang mo", "co may phien",
+                "active auctions", "ongoing auctions", "how many auctions");
     }
 
     private boolean isProductExistenceQuery(String message) {
-        return containsAny(message, "co san pham", "ton tai san pham", "san pham dang dau gia", "kiem tra san pham", "tim san pham");
+        return containsAny(message,
+                "co san pham", "ton tai san pham", "san pham dang dau gia", "kiem tra san pham", "tim san pham",
+                "product available", "is there product", "find product", "search product");
     }
 
     private boolean isProductPriceQuery(String message) {
-        return message.contains("gia") && !message.contains("dat gia") && !message.contains("gia han");
+        boolean asksPrice = containsAny(message, "price", "current price", "gia hien tai", "gia cua", "gia san pham")
+                || message.startsWith("gia ")
+                || message.contains("bao nhieu");
+
+        return asksPrice
+                && !containsAny(message, "dat gia", "gia han", "dau gia la gi", "dau gia nhu the nao", "place bid", "bid now");
     }
 
     private String getBalanceQueryReply() {
         if (balanceLabel == null || balanceLabel.getText() == null || balanceLabel.getText().isBlank()) {
-            return "Toi chua doc duoc so du tai khoan tren man hinh hien tai.";
+            return "Tôi chưa đọc được số dư tài khoản trên màn hình hiện tại.";
         }
 
-        return "So du tai khoan hien tai cua ban la: " + balanceLabel.getText().replace("Balance:", "").trim();
+        return "Số dư tài khoản hiện tại của bạn là: " + balanceLabel.getText().replace("Balance:", "").trim();
     }
 
     private String getAuctionCountQueryReply() {
         List<ProductSnapshot> products = getDisplayedAuctionProducts();
         if (products.isEmpty()) {
-            return "Hien tai lobby khong co phien dau gia nao dang hien thi.";
+            return "Hiện tại lobby không có phiên đấu giá nào đang hiển thị.";
         }
 
-        return "Hien tai co " + products.size() + " phien dau gia dang hien thi trong lobby.";
+        return "Hiện tại có " + products.size() + " phiên đấu giá đang hiển thị trong lobby.";
     }
 
     private String getProductExistenceQueryReply(String productName) {
         List<ProductSnapshot> products = getDisplayedAuctionProducts();
         if (products.isEmpty()) {
-            return "Hien tai khong co san pham nao dang dau gia trong lobby.";
+            return "Hiện tại không có sản phẩm nào đang đấu giá trong lobby.";
         }
 
         if (productName.isBlank()) {
-            return "Hien tai co " + products.size() + " san pham dang dau gia: " + joinProductNames(products) + ".";
+            return "Hiện tại có " + products.size() + " sản phẩm đang đấu giá: " + joinProductNames(products) + ".";
         }
 
         return products.stream()
-                .filter(product -> normalizeChatbotText(product.name()).contains(productName))
+                .filter(product -> ChatbotService.normalizeForSearch(product.name()).contains(productName))
                 .findFirst()
-                .map(product -> "Co, san pham '" + product.name() + "' dang dau gia trong lobby.")
-                .orElse("Khong tim thay san pham phu hop voi '" + productName + "' trong lobby hien tai.");
+                .map(product -> "Có, sản phẩm '" + product.name() + "' đang đấu giá trong lobby.")
+                .orElse("Không tìm thấy sản phẩm phù hợp với '" + productName + "' trong lobby hiện tại.");
     }
 
     private String getProductPriceQueryReply(String productName) {
         List<ProductSnapshot> products = getDisplayedAuctionProducts();
         if (products.isEmpty()) {
-            return "Hien tai khong co phien dau gia nao de truy van gia.";
+            return "Hiện tại không có phiên đấu giá nào để truy vấn giá.";
         }
 
         return products.stream()
-                .filter(product -> normalizeChatbotText(product.name()).contains(productName))
+                .filter(product -> ChatbotService.normalizeForSearch(product.name()).contains(productName))
                 .findFirst()
-                .map(product -> "Gia hien tai cua '" + product.name() + "' la: " + product.price() + ".")
-                .orElse("Khong tim thay san pham phu hop voi '" + productName + "' de truy van gia.");
+                .map(product -> "Giá hiện tại của '" + product.name() + "' là: " + product.price() + ".")
+                .orElse("Không tìm thấy sản phẩm phù hợp với '" + productName + "' để truy vấn giá.");
     }
 
     private List<ProductSnapshot> getDisplayedAuctionProducts() {
@@ -246,10 +254,10 @@ public class ChatbotController {
             String name = labels.get(0).getText();
             String price = labels.stream()
                     .map(Label::getText)
-                    .filter(text -> text != null && normalizeChatbotText(text).startsWith("price"))
+                    .filter(text -> text != null && ChatbotService.normalizeForSearch(text).startsWith("price"))
                     .findFirst()
                     .map(text -> text.replace("Price:", "").trim())
-                    .orElse("chua co thong tin gia");
+                    .orElse("chưa có thông tin giá");
 
             if (name != null && !name.isBlank()) {
                 products.add(new ProductSnapshot(name, price));
@@ -290,6 +298,20 @@ public class ChatbotController {
                 .replaceAll("\\bkhong\\b", " ")
                 .replaceAll("\\bhay\\b", " ")
                 .replaceAll("\\bgiup toi\\b", " ")
+                .replaceAll("\\bis there\\b", " ")
+                .replaceAll("\\bdoes\\b", " ")
+                .replaceAll("\\bexist\\b", " ")
+                .replaceAll("\\bavailable\\b", " ")
+                .replaceAll("\\bproduct\\b", " ")
+                .replaceAll("\\bauction\\b", " ")
+                .replaceAll("\\bauctions\\b", " ")
+                .replaceAll("\\bauctioning\\b", " ")
+                .replaceAll("\\bcurrent price\\b", " ")
+                .replaceAll("\\bprice\\b", " ")
+                .replaceAll("\\bof\\b", " ")
+                .replaceAll("\\bfor\\b", " ")
+                .replaceAll("\\bfind\\b", " ")
+                .replaceAll("\\bsearch\\b", " ")
                 .replaceAll("\\s+", " ")
                 .trim();
     }
@@ -308,24 +330,7 @@ public class ChatbotController {
                 .map(ProductSnapshot::name)
                 .limit(5)
                 .reduce((left, right) -> left + ", " + right)
-                .orElse("khong co san pham");
-    }
-
-    private String normalizeChatbotText(String value) {
-        if (value == null) {
-            return "";
-        }
-
-        String withoutDiacritics = Normalizer.normalize(value, Normalizer.Form.NFD)
-                .replaceAll("\\p{M}", "")
-                .replace('đ', 'd')
-                .replace('Đ', 'D');
-
-        return withoutDiacritics
-                .toLowerCase(Locale.ROOT)
-                .replaceAll("[^a-z0-9\\s-]", " ")
-                .replaceAll("\\s+", " ")
-                .trim();
+                .orElse("không có sản phẩm");
     }
 
     private void addUserMessage(String message) {
