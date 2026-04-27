@@ -1,38 +1,66 @@
-# Auction ML Project
+# Auction AI
 
 ## Files
-- `generate_dataset.py`: sinh dữ liệu giả lập cho bài toán auto-approve phiên đấu giá
-- `auction_dataset.csv`: dataset mẫu 10000 dòng
-- `train_logistic_regression.py`: train Logistic Regression với BoW + feature số
-- `predict_one.py`: dự đoán một mẫu đầu vào bằng model đã train
+
+- `Training_Data.csv`: dataset huấn luyện hiện tại, 1.000 mẫu, đúng schema dữ liệu đầu vào hiện tại.
+- `train_logistic_regression.py`: train Logistic Regression với title, description, organization và các feature số.
+- `auction_model.pkl`: model đã train.
+- `model_tester.py`: giao diện Python để nhập dữ liệu và xem quyết định của model.
+- `input_data.json`: nơi nhập dữ liệu test bằng file.
+- `predict_from_input.py`: đọc `input_data.json` và in kết quả dự đoán.
 
 ## Cài thư viện
+
 ```bash
 pip install pandas scikit-learn joblib
 ```
 
-## Chạy theo thứ tự
+`model_tester.py` dùng `tkinter`, thường có sẵn trong Python trên Windows.
+
+## Train lại model
+
 ```bash
-python generate_dataset.py
 python train_logistic_regression.py
 ```
 
-## Dự đoán thử
+Dataset được chỉnh trực tiếp trong `Training_Data.csv`; hiện không dùng script sinh dữ liệu.
+
+Dataset chỉ giữ các field: `title`, `category`, `organization`, `description`, `seller_rating`, `seller_completed_rating`, `seller_cancel_rate`, `minimum_join_amount`, `bid_step`, `start_price`, `start_price_log`, `duration_minutes`, `extension_seconds`, `start_hour`, `day_of_week`, `is_weekend`, `targeted_risk_type`, `description_style`, `review_status`, `auto_approve`.
+
+Model binary vẫn train theo `auto_approve`; các dòng `manual_review` được xem là `not_auto_approve`.
+
+`targeted_risk_type` chỉ dùng để mô tả lý do cần review, không đưa vào feature huấn luyện.
+
+`title_length` và `desc_length` không nằm trong CSV; train script tự tính trong bộ nhớ. `num_positive_keywords` không còn dùng trong dataset để tránh model học kiểu "nhiều từ tốt = approve".
+
+Nhóm nhà đất dùng giá khởi điểm và bước giá lớn hơn, có nhiễu về pháp lý, quy hoạch, đặt cọc, quyền thuê, giấy chứng nhận và giá thầu lệch thị trường.
+
+## Test bằng giao diện
+
 ```bash
-python predict_one.py \
-  --title "iphone 13 fullbox chinh hang" \
-  --description "san pham dep bao hanh day du phu kien thong tin trung thuc" \
-  --seller_rating 4.5 \
-  --seller_completed_auctions 120 \
-  --seller_cancel_rate 0.05 \
-  --title_length 28 \
-  --desc_length 75 \
-  --num_positive_keywords 3 \
-  --num_negative_keywords 0 \
-  --start_price_log 15.2 \
-  --duration_minutes 90 \
-  --extension_seconds 30 \
-  --start_hour 20 \
-  --day_of_week 6 \
-  --is_weekend 1
+python model_tester.py
+```
+
+Giao diện sẽ tự tính các feature phụ:
+
+- `title_length`
+- `desc_length`
+- `num_positive_keywords`
+- `start_price_log`
+- `is_weekend`
+
+Kết quả hiển thị gồm quyết định `APPROVE`/`REJECT` và xác suất approve.
+
+## Test bằng file nhập
+
+Sửa dữ liệu trong:
+
+```bash
+input_data.json
+```
+
+Sau đó chạy:
+
+```bash
+python predict_from_input.py
 ```

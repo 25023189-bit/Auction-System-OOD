@@ -26,44 +26,58 @@ public class DefaultAuctionTimerService implements AuctionTimer {
             return;
         }
 
-        LocalDateTime now = LocalDateTime.now();
-
-        if (now.isBefore(startTime)) {
-            timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
-                long left = ChronoUnit.SECONDS.between(LocalDateTime.now(), startTime);
-                if (left <= 0) {
-                    start(startTime, scheduledEndTime);
-                } else {
-                    long hh = left / 3600;
-                    long mm = (left % 3600) / 60;
-                    long ss = left % 60;
-                    presenter.setTimerText(String.format("Starts in: %02d:%02d:%02d", hh, mm, ss), Color.BLUE);
-                }
-            }));
-            timeline.setCycleCount(Animation.INDEFINITE);
-            timeline.play();
+        if (LocalDateTime.now().isBefore(startTime)) {
+            renderBeforeStart(startTime, scheduledEndTime);
+            timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> renderBeforeStart(startTime, scheduledEndTime)));
+            playIndefinitely();
             return;
         }
 
-        if (!now.isBefore(scheduledEndTime)) {
+        if (!LocalDateTime.now().isBefore(scheduledEndTime)) {
             presenter.setTimerText("Ended", Color.RED);
             presenter.disableBidUi("Auction has ended.");
             return;
         }
 
-        timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
-            long left = ChronoUnit.SECONDS.between(LocalDateTime.now(), scheduledEndTime);
-            if (left <= 0) {
-                presenter.setTimerText("Ended", Color.RED);
-                presenter.disableBidUi("Auction has ended.");
-                stop();
-            } else {
-                long hh = left / 3600;
-                long mm = (left % 3600) / 60;
-                long ss = left % 60;
-                presenter.setTimerText(String.format("%02d:%02d:%02d", hh, mm, ss), Color.DARKGREEN);
-            }
-        }));
+        renderRemaining(scheduledEndTime);
+        timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> renderRemaining(scheduledEndTime)));
+        playIndefinitely();
+    }
+
+    private void renderBeforeStart(LocalDateTime startTime, LocalDateTime scheduledEndTime) {
+        LocalDateTime now = LocalDateTime.now();
+        if (!now.isBefore(startTime)) {
+            start(startTime, scheduledEndTime);
+            return;
+        }
+
+        long millisLeft = ChronoUnit.MILLIS.between(now, startTime);
+        long displaySeconds = Math.max(1, (millisLeft + 999) / 1000);
+        presenter.setTimerText("Starts in: " + formatDuration(displaySeconds), Color.BLUE);
+    }
+
+    private void renderRemaining(LocalDateTime scheduledEndTime) {
+        LocalDateTime now = LocalDateTime.now();
+        if (!now.isBefore(scheduledEndTime)) {
+            presenter.setTimerText("Ended", Color.RED);
+            presenter.disableBidUi("Auction has ended.");
+            stop();
+            return;
+        }
+
+        long millisLeft = ChronoUnit.MILLIS.between(now, scheduledEndTime);
+        long displaySeconds = Math.max(1, (millisLeft + 999) / 1000);
+        presenter.setTimerText(formatDuration(displaySeconds), Color.DARKGREEN);
+    }
+
+    private String formatDuration(long totalSeconds) {
+        long hh = totalSeconds / 3600;
+        long mm = (totalSeconds % 3600) / 60;
+        long ss = totalSeconds % 60;
+        return String.format("%02d:%02d:%02d", hh, mm, ss);
+    }
+
+    private void playIndefinitely() {
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
     }
