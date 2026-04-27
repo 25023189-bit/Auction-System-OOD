@@ -44,7 +44,7 @@ public class AuctionController implements Initializable {
     @FXML private Pane paneAuctionRoom;
     @FXML private BorderPane paneMainLobby;
 
-    @FXML private TextField txtUsername, txtRegUsername, txtForgotUsername, txtRegOrganization;
+    @FXML private TextField txtUsername, txtRegCustomerId, txtRegUsername, txtForgotUsername, txtRegOrganization;
     @FXML private PasswordField txtPassword, txtRegPassword, txtRegConfirm, txtForgotNewPassword, txtForgotConfirm;
     @FXML private Label lblStatus, lblRegStatus, lblForgotStatus;
     @FXML private ComboBox<String> cbRegRole;
@@ -65,7 +65,7 @@ public class AuctionController implements Initializable {
     @FXML private TextArea txtItemDescriptionDisplay;
     @FXML private ImageView imgProduct;
     @FXML private ChatbotController chatbotController;
-
+    @FXML private TextField txtRegEmail, txtRegFullName; // Thêm vào dòng khai báo FXML
     // ==========================================================
     // CORE SERVICE
     // ==========================================================
@@ -379,6 +379,11 @@ public class AuctionController implements Initializable {
             authViewModel = new AuthViewModel();
         }
 
+        // Đọc dữ liệu từ FXML
+        String customerId = txtRegCustomerId != null ? txtRegCustomerId.getText() : "";
+        String email = txtRegEmail != null ? txtRegEmail.getText() : "";          // <-- MỚI
+        String fullName = txtRegFullName != null ? txtRegFullName.getText() : ""; // <-- MỚI
+
         authViewModel.setRegisterUsername(txtRegUsername != null ? txtRegUsername.getText() : "");
         authViewModel.setRegisterPassword(txtRegPassword != null ? txtRegPassword.getText() : "");
         authViewModel.setRegisterConfirmPassword(txtRegConfirm != null ? txtRegConfirm.getText() : "");
@@ -390,7 +395,10 @@ public class AuctionController implements Initializable {
                 new RegisterFormValidator(),
                 authPresenter,
                 new RegisterForm(
+                        customerId,
                         authViewModel.getRegisterUsername(),
+                        email,             // <-- Truyền email vào form
+                        fullName,          // <-- Truyền fullName vào form
                         authViewModel.getRegisterPassword(),
                         authViewModel.getRegisterConfirmPassword(),
                         authViewModel.getRegisterRole(),
@@ -398,7 +406,6 @@ public class AuctionController implements Initializable {
                 )
         ).execute();
     }
-
     @FXML
     private void handleSubmitForgotPassword() {
         if (authViewModel == null) {

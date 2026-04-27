@@ -34,9 +34,11 @@ public class AuctionService {
         }
     }
 
-    public void register(String username, String password, String role, String organization) {
+    public void register(String customerId, String username, String email, String fullName,
+                         String password, String role, String organization) {
         String normalizedOrganization = (organization == null || organization.trim().isEmpty()) ? "" : organization.trim();
-        String data = username + "|" + password + "|" + role + "|" + normalizedOrganization;
+        // Format: customerId|username|email|fullName|password|role|organization
+        String data = customerId + "|" + username + "|" + email + "|" + fullName + "|" + password + "|" + role + "|" + normalizedOrganization;
         clientConnection.sendMessage(new Message("REGISTER", "", data));
     }
 

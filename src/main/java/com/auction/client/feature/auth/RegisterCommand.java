@@ -28,6 +28,16 @@ public class RegisterCommand implements UiCommand {
 
         String role = "SELLER".equalsIgnoreCase(form.role()) ? "SELLER" : "BIDDER";
         String organization = "SELLER".equalsIgnoreCase(role) ? form.organization() : null;
-        auctionService.register(form.username().trim(), form.password().trim(), role, organization);
+
+        // ✅ FIXED: Now passing email and fullName
+        auctionService.register(
+                form.customerId(),
+                form.username().trim(),
+                form.email().trim(),           // <-- ADDED
+                form.fullName().trim(),        // <-- ADDED
+                form.password().trim(),
+                role,
+                organization
+        );
     }
 }

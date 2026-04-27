@@ -62,17 +62,21 @@ public class UserDAO {
         return null;
     }
 
-    public User login(String username, String rawPassword) {
+    public User login(String loginIdentifier, String rawPassword) {
+        // Sửa câu SQL: Tìm kiếm theo username HOẶC customer_id
         String sql = """
             SELECT customer_id, username, password_hash, role, organization, balance
             FROM users
-            WHERE username = ?
+            WHERE username = ? OR customer_id = ?
             """;
 
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            stmt.setString(1, username != null ? username.trim() : null);
+            String safeInput = loginIdentifier != null ? loginIdentifier.trim() : null;
+            // Set cùng 1 giá trị đầu vào cho cả 2 dấu chấm hỏi (?)
+            stmt.setString(1, safeInput);
+            stmt.setString(2, safeInput);
 
             try (ResultSet rs = stmt.executeQuery()) {
                 if (!rs.next()) {
@@ -96,25 +100,27 @@ public class UserDAO {
             return null;
         }
     }
-
     public String registerUser(User user, String rawPassword) {
         String checkSql = """
                 SELECT 1 FROM users
-                WHERE customer_id = ? OR username = ?
-                """;
+                WHERE customer_id = ? OR username = ? OR email = ?
+                """; // Thêm check trùng email luôn cho xịn
 
         String insertSql = """
-                INSERT INTO users (customer_id, username, password_hash, role, organization, balance)
-                VALUES (?, ?, ?, ?, ?, ?)
+                INSERT INTO users (customer_id, username, password_hash, role, organization, balance, email, full_name)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
                 """;
 
         try (Connection conn = DatabaseConnection.getConnection()) {
             try (PreparedStatement checkStmt = conn.prepareStatement(checkSql)) {
                 String customerId = normalizeCustomerId(user.getCustomerId() != null ? user.getCustomerId() : user.getId());
                 String username = user.getUsername() != null ? user.getUsername().trim() : null;
+                String email = user.getEmail() != null ? user.getEmail().trim() : ""; // Lấy Email thật
+                String fullName = user.getFullName() != null ? user.getFullName().trim() : ""; // Lấy Họ Tên thật
 
                 checkStmt.setString(1, customerId);
                 checkStmt.setString(2, username);
+                checkStmt.setString(3, email);
 
                 try (ResultSet rs = checkStmt.executeQuery()) {
                     if (rs.next()) {
@@ -132,6 +138,10 @@ public class UserDAO {
                     insertStmt.setString(5, normalizeOrganization(user));
                     insertStmt.setDouble(6, user.getBalance());
 
+                    // Truyền data thật xuống DB
+                    insertStmt.setString(7, email);
+                    insertStmt.setString(8, fullName);
+
                     return insertStmt.executeUpdate() > 0 ? "SUCCESS" : "FAIL_INSERT";
                 }
             }
@@ -141,7 +151,6 @@ public class UserDAO {
             return "SQL ERROR: " + e.getMessage();
         }
     }
-
     public boolean resetPassword(String customerId, String newPassword, String confirmPassword) {
         if (customerId == null || customerId.isBlank()) return false;
         if (newPassword == null || !newPassword.equals(confirmPassword)) return false;

@@ -9,11 +9,12 @@ public class AuthService {
     private final UserDAO userDAO = new UserDAO();
     private final AuctionDAO auctionDAO = new AuctionDAO();
 
-    public Message login(String username, String password) {
+    public Message login(String loginId, String password) {
         System.out.println("\n[AuthService] Login request:");
-        System.out.println("  - Username: " + username);
+        System.out.println("  - Login ID (Username/CustomerID): " + loginId);
 
-        User user = userDAO.login(username, password);
+        // Truyền thẳng dữ liệu nhập vào (có thể là ID hoặc Username) xuống DAO
+        User user = userDAO.login(loginId, password);
 
         if (user != null) {
             applySellerAuctionStats(user);
@@ -22,7 +23,7 @@ public class AuthService {
         }
 
         System.out.println("  - Result: FAILED");
-        return new Message("LOGIN_FAIL", "SERVER", "Incorrect username or password!");
+        return new Message("LOGIN_FAIL", "SERVER", "Sai tài khoản (ID/Username) hoặc mật khẩu!");
     }
 
     public Message registerUser(User user, String rawPassword) {

@@ -6,7 +6,8 @@ import java.io.Serializable;
 public class User implements Serializable, Entity {
     @Serial
     private static final long serialVersionUID = 1L;
-
+    protected String email;
+    protected String fullName;
     protected String customerId;
     protected String username;
     protected String password;
@@ -67,7 +68,11 @@ public class User implements Serializable, Entity {
     public double getSellerReputation() { return sellerReputation; }
     public double getSuccessfulAuctionRate() { return successfulAuctionRate; }
     public double getAdminCancellationRate() { return adminCancellationRate; }
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
 
+    public String getFullName() { return fullName; }
+    public void setFullName(String fullName) { this.fullName = fullName; }
     public void setCustomerId(String customerId) { this.customerId = customerId; }
     public void setUsername(String username) { this.username = username; }
     public void setPassword(String password) { this.password = password; }

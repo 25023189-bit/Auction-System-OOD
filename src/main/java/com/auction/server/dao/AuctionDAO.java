@@ -15,29 +15,27 @@ import java.util.List;
 public class AuctionDAO {
 
     public boolean saveAuction(AuctionRoom room, String itemId, String sellerId) {
+        // Cập nhật tên cột chuẩn theo DB Version 4.2
         String sql = """
                 INSERT INTO auctions (
-                    auction_id, item_id, seller_id, status,
-                    start_time, duration_minutes, actual_end_time, extension_seconds,
-                    starting_price, bid_step, minimum_join_amount
+                    auction_id, product_id, created_by, status,
+                    start_time, end_time, actual_end_time,
+                    min_bid_increment
                 )
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
                 """;
 
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setString(1, room.getRoomId());
-            pstmt.setString(2, itemId);
+            pstmt.setInt(2, Integer.parseInt(itemId)); // Ép kiểu vì DB để INT
             pstmt.setString(3, sellerId);
             pstmt.setString(4, room.getStatus() != null ? room.getStatus() : "OPEN");
             pstmt.setTimestamp(5, Timestamp.valueOf(room.getStartTime()));
-            pstmt.setInt(6, room.getDurationMinutes());
-            pstmt.setTimestamp(7, Timestamp.valueOf(room.getEndTime()));
-            pstmt.setInt(8, room.getExtensionSeconds());
-            pstmt.setDouble(9, room.getStartingPrice());
-            pstmt.setDouble(10, room.getBidStep());
-            pstmt.setDouble(11, room.getMinimumJoinAmount());
+            pstmt.setTimestamp(6, Timestamp.valueOf(room.getEndTime())); // end_time
+            pstmt.setTimestamp(7, Timestamp.valueOf(room.getEndTime())); // actual_end_time (khởi tạo bằng end_time)
+            pstmt.setDouble(8, room.getBidStep());
 
             return pstmt.executeUpdate() > 0;
         } catch (SQLException e) {
@@ -48,43 +46,43 @@ public class AuctionDAO {
     }
 
     public boolean createAuctionWithItem(AuctionRoom room, Item item, String sellerId) {
+        // Cập nhật bảng products chuẩn theo DB Version 4.2
         String insertItemSql = """
-                INSERT INTO items (item_id, name, description, current_price)
-                VALUES (?, ?, ?, ?)
+                INSERT INTO products (product_id, product_name, description, starting_price, current_price, seller_id, product_type)
+                VALUES (?, ?, ?, ?, ?, ?, 'ELECTRONICS')
                 """;
 
         String insertAuctionSql = """
                 INSERT INTO auctions (
-                    auction_id, item_id, seller_id, status,
-                    start_time, duration_minutes, actual_end_time, extension_seconds,
-                    starting_price, bid_step, minimum_join_amount
+                    auction_id, product_id, created_by, status,
+                    start_time, end_time, actual_end_time,
+                    min_bid_increment
                 )
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
                 """;
 
         try (Connection conn = DatabaseConnection.getConnection()) {
             conn.setAutoCommit(false);
 
             try (PreparedStatement itemStmt = conn.prepareStatement(insertItemSql)) {
-                itemStmt.setString(1, item.getId());
+                itemStmt.setInt(1, Integer.parseInt(item.getId())); // Ép kiểu vì DB để INT
                 itemStmt.setString(2, item.getProductName());
                 itemStmt.setString(3, item.getDescription());
                 itemStmt.setDouble(4, item.getStartingPrice());
+                itemStmt.setDouble(5, item.getStartingPrice()); // current_price khởi tạo bằng starting_price
+                itemStmt.setString(6, sellerId);
                 itemStmt.executeUpdate();
             }
 
             try (PreparedStatement auctionStmt = conn.prepareStatement(insertAuctionSql)) {
                 auctionStmt.setString(1, room.getRoomId());
-                auctionStmt.setString(2, item.getId());
+                auctionStmt.setInt(2, Integer.parseInt(item.getId()));
                 auctionStmt.setString(3, sellerId);
                 auctionStmt.setString(4, room.getStatus() != null ? room.getStatus() : "OPEN");
                 auctionStmt.setTimestamp(5, Timestamp.valueOf(room.getStartTime()));
-                auctionStmt.setInt(6, room.getDurationMinutes());
+                auctionStmt.setTimestamp(6, Timestamp.valueOf(room.getEndTime()));
                 auctionStmt.setTimestamp(7, Timestamp.valueOf(room.getEndTime()));
-                auctionStmt.setInt(8, room.getExtensionSeconds());
-                auctionStmt.setDouble(9, room.getStartingPrice());
-                auctionStmt.setDouble(10, room.getBidStep());
-                auctionStmt.setDouble(11, room.getMinimumJoinAmount());
+                auctionStmt.setDouble(8, room.getBidStep());
                 auctionStmt.executeUpdate();
             }
 
@@ -99,13 +97,13 @@ public class AuctionDAO {
 
     public List<AuctionRoom> getAllActiveAuctions() {
         List<AuctionRoom> list = new ArrayList<>();
+        // Cập nhật JOIN bảng products và alias cột
         String sql = """
-                SELECT a.auction_id, a.item_id, a.seller_id, a.status,
-                       a.start_time, a.duration_minutes, a.actual_end_time, a.extension_seconds,
-                       a.starting_price, a.bid_step, a.minimum_join_amount,
-                       i.name, i.description, i.current_price
+                SELECT a.auction_id, a.product_id, a.created_by AS seller_id, a.status,
+                       a.start_time, a.end_time, a.actual_end_time, a.min_bid_increment,
+                       p.product_name, p.description, p.current_price, p.starting_price
                 FROM auctions a
-                JOIN items i ON a.item_id = i.item_id
+                JOIN products p ON a.product_id = p.product_id
                 WHERE a.status IN ('OPEN', 'RUNNING')
                 ORDER BY a.start_time ASC
                 """;
@@ -126,12 +124,11 @@ public class AuctionDAO {
     public List<AuctionRoom> getAllAuctions() {
         List<AuctionRoom> list = new ArrayList<>();
         String sql = """
-                SELECT a.auction_id, a.item_id, a.seller_id, a.status,
-                       a.start_time, a.duration_minutes, a.actual_end_time, a.extension_seconds,
-                       a.starting_price, a.bid_step, a.minimum_join_amount,
-                       i.name, i.description, i.current_price
+                SELECT a.auction_id, a.product_id, a.created_by AS seller_id, a.status,
+                       a.start_time, a.end_time, a.actual_end_time, a.min_bid_increment,
+                       p.product_name, p.description, p.current_price, p.starting_price
                 FROM auctions a
-                JOIN items i ON a.item_id = i.item_id
+                JOIN products p ON a.product_id = p.product_id
                 ORDER BY a.start_time DESC
                 """;
 
@@ -149,7 +146,7 @@ public class AuctionDAO {
     }
 
     public boolean forceDeleteAuction(String roomId) {
-        String sql = "UPDATE auctions SET status = 'CANCELED_BY_ADMIN' WHERE auction_id = ?";
+        String sql = "UPDATE auctions SET status = 'CANCELED' WHERE auction_id = ?"; // Đổi CANCELED_BY_ADMIN thành CANCELED theo ENUM
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, roomId);
@@ -162,12 +159,11 @@ public class AuctionDAO {
 
     public AuctionRoom getAuctionById(String roomId) {
         String sql = """
-                SELECT a.auction_id, a.item_id, a.seller_id, a.status,
-                       a.start_time, a.duration_minutes, a.actual_end_time, a.extension_seconds,
-                       a.starting_price, a.bid_step, a.minimum_join_amount,
-                       i.name, i.description, i.current_price
+                SELECT a.auction_id, a.product_id, a.created_by AS seller_id, a.status,
+                       a.start_time, a.end_time, a.actual_end_time, a.min_bid_increment,
+                       p.product_name, p.description, p.current_price, p.starting_price
                 FROM auctions a
-                JOIN items i ON a.item_id = i.item_id
+                JOIN products p ON a.product_id = p.product_id
                 WHERE a.auction_id = ?
                 """;
 
@@ -191,10 +187,10 @@ public class AuctionDAO {
         String sql = """
                 SELECT
                     COUNT(*) AS total_count,
-                    SUM(CASE WHEN status = 'SOLD' THEN 1 ELSE 0 END) AS sold_count,
-                    SUM(CASE WHEN status = 'CANCELED_BY_ADMIN' THEN 1 ELSE 0 END) AS admin_canceled_count
+                    SUM(CASE WHEN status IN ('FINISHED', 'PAID') THEN 1 ELSE 0 END) AS sold_count,
+                    SUM(CASE WHEN status = 'CANCELED' THEN 1 ELSE 0 END) AS admin_canceled_count
                 FROM auctions
-                WHERE seller_id = ?
+                WHERE created_by = ?
                 """;
 
         try (Connection conn = DatabaseConnection.getConnection();
@@ -219,10 +215,11 @@ public class AuctionDAO {
     }
 
     public boolean closeAuctionBySeller(String roomId, String sellerId) {
+        // Chỉnh cột seller_id thành created_by và status CLOSED_BY_SELLER thành FINISHED/CANCELED tùy logic, tạm để CANCELED
         String sql = """
                 UPDATE auctions
-                SET status = 'CLOSED_BY_SELLER'
-                WHERE auction_id = ? AND seller_id = ? AND status IN ('OPEN', 'RUNNING')
+                SET status = 'CANCELED'
+                WHERE auction_id = ? AND created_by = ? AND status IN ('OPEN', 'RUNNING')
                 """;
 
         try (Connection conn = DatabaseConnection.getConnection();
@@ -240,7 +237,7 @@ public class AuctionDAO {
 
     public CloseAuctionResult closeAuctionByTime(String roomId) {
         String auctionSql = """
-                SELECT auction_id, seller_id, status
+                SELECT auction_id, created_by AS seller_id, status
                 FROM auctions
                 WHERE auction_id = ?
                 FOR UPDATE
@@ -260,29 +257,30 @@ public class AuctionDAO {
                 WHERE auction_id = ?
                 """;
 
+        // QUAN TRỌNG: Sửa bảng thanh toán thành wallets theo DB chuẩn
         String debitWinnerSql = """
-                UPDATE users
+                UPDATE wallets
                 SET balance = balance - ?
                 WHERE customer_id = ? AND balance >= ?
                 """;
 
         String creditSellerSql = """
-                UPDATE users
+                UPDATE wallets
                 SET balance = balance + ?
                 WHERE customer_id = ?
                 """;
 
         String selectBalancesSql = """
                 SELECT customer_id, balance
-                FROM users
+                FROM wallets
                 WHERE customer_id IN (?, ?)
                 """;
 
         try (Connection conn = DatabaseConnection.getConnection()) {
             conn.setAutoCommit(false);
 
-            String sellerId;
-            String currentStatus;
+            String sellerId = null;
+            String currentStatus = null;
 
             try (PreparedStatement pstmt = conn.prepareStatement(auctionSql)) {
                 pstmt.setString(1, roomId);
@@ -316,7 +314,7 @@ public class AuctionDAO {
 
             if (winnerId == null) {
                 try (PreparedStatement pstmt = conn.prepareStatement(updateAuctionStatusSql)) {
-                    pstmt.setString(1, "UNSOLD");
+                    pstmt.setString(1, "FINISHED"); // Đổi UNSOLD thành FINISHED
                     pstmt.setString(2, roomId);
                     pstmt.executeUpdate();
                 }
@@ -342,7 +340,7 @@ public class AuctionDAO {
             }
 
             try (PreparedStatement pstmt = conn.prepareStatement(updateAuctionStatusSql)) {
-                pstmt.setString(1, "SOLD");
+                pstmt.setString(1, "PAID"); // Đổi SOLD thành PAID theo ENUM
                 pstmt.setString(2, roomId);
                 pstmt.executeUpdate();
             }
@@ -382,15 +380,17 @@ public class AuctionDAO {
         AuctionRoom room = new AuctionRoom();
 
         room.setRoomId(rs.getString("auction_id"));
-        room.setItemId(rs.getString("item_id"));
+        room.setItemId(String.valueOf(rs.getInt("product_id"))); // Map lại ID đúng
         room.setSellerName(rs.getString("seller_id"));
         room.setStatus(rs.getString("status"));
-        room.setItemName(rs.getString("name"));
+        room.setItemName(rs.getString("product_name"));
         room.setItemDescription(rs.getString("description"));
         room.setCurrentPrice(rs.getDouble("current_price"));
         room.setStartingPrice(rs.getDouble("starting_price"));
-        room.setBidStep(rs.getDouble("bid_step"));
-        room.setMinimumJoinAmount(rs.getDouble("minimum_join_amount"));
+        room.setBidStep(rs.getDouble("min_bid_increment"));
+
+        // Cột không tồn tại ở DB nữa, set mặc định để logic phía trên không vỡ
+        room.setMinimumJoinAmount(0.0);
 
         Timestamp startTs = rs.getTimestamp("start_time");
         if (startTs != null) {
@@ -402,8 +402,10 @@ public class AuctionDAO {
             room.setEndTime(endTs.toLocalDateTime());
         }
 
-        room.setDurationMinutes(rs.getInt("duration_minutes"));
-        room.setExtensionSeconds(rs.getInt("extension_seconds"));
+        // Cột không tồn tại ở DB nữa
+        room.setDurationMinutes(0);
+        room.setExtensionSeconds(0);
+
         applySellerStats(room);
 
         return room;
@@ -419,6 +421,8 @@ public class AuctionDAO {
         room.setSellerSuccessfulAuctionRate(stats.getSuccessfulAuctionRate());
         room.setSellerAdminCancellationRate(stats.getAdminCancellationRate());
     }
+
+    // --- Các lớp Model nội bộ bên dưới mình giữ nguyên 100% không chạm vào ---
 
     public static class CloseAuctionResult {
         private final boolean success;
@@ -493,4 +497,3 @@ public class AuctionDAO {
         }
     }
 }
-
