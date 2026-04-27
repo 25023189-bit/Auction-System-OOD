@@ -23,9 +23,9 @@ public class AdminDashboardLauncher implements DashboardLauncher {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/admin-view.fxml"));
             Parent root = loader.load();
 
-            AdminController controller = loader.getController();
-            controller.setAuctionService(auctionService);
-            sessionStore.setAdminController(controller);
+            AdminController adminController = loader.getController();
+            adminController.setAuctionService(auctionService);
+            sessionStore.setAdminController(adminController);
 
             Stage stage = new Stage();
             stage.setTitle("Admin Dashboard");

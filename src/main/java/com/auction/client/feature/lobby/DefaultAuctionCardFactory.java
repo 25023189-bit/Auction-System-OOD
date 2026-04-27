@@ -26,7 +26,7 @@ public class DefaultAuctionCardFactory implements AbstractAuctionCardFactory<Lob
 
     private VBox baseCard(LobbyRoomDisplayModel model, boolean highlighted) {
         VBox card = new VBox(10);
-        card.setPrefSize(200, 170);
+        card.setPrefSize(200, 210); // Đã tăng chiều cao lên 210 để nhét đủ 2 nút không bị lẹm
         card.setAlignment(Pos.CENTER);
 
         String style = highlighted
@@ -40,11 +40,42 @@ public class DefaultAuctionCardFactory implements AbstractAuctionCardFactory<Lob
         Label lblId = new Label("ID: " + model.getRoomId());
         Label lblPrice = new Label("Price: " + model.getDisplayPrice());
 
+        // NÚT 1: VÀO PHÒNG
         Button btnJoin = new Button("Join Room");
         btnJoin.setStyle("-fx-background-color: #3498db; -fx-text-fill: white; -fx-cursor: hand;");
         btnJoin.setOnAction(e -> auctionService.joinRoom(model.getRoomId()));
 
-        card.getChildren().addAll(lblName, lblId, lblPrice, btnJoin);
+        // NÚT 2: CHI TIẾT SẢN PHẨM
+        Button btnDetails = new Button("View Details");
+        btnDetails.setStyle("-fx-background-color: #f39c12; -fx-text-fill: white; -fx-cursor: hand;");
+
+        btnDetails.setOnAction(event -> {
+            try {
+                // Tải file giao diện FXML
+                javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(getClass().getResource("/com/example/auctionprototype/product-view.fxml"));
+                javafx.scene.Parent root = loader.load();
+
+                // Lấy Controller TỪ THƯ MỤC CONTROLLERS và truyền mã phòng sang
+                com.auction.client.feature.controllers.ProductViewController controller = loader.getController();
+                controller.setRoomId(model.getRoomId());
+
+                // Mở popup
+                javafx.stage.Stage stage = new javafx.stage.Stage();
+                stage.setTitle("Chi tiết sản phẩm: " + model.getItemName());
+                stage.setScene(new javafx.scene.Scene(root));
+
+                // Khóa sảnh chính khi popup đang mở
+                stage.initModality(javafx.stage.Modality.APPLICATION_MODAL);
+                stage.show();
+            } catch (Exception e) {
+                System.out.println("Lỗi khi mở cửa sổ Chi tiết SP: " + e.getMessage());
+                e.printStackTrace();
+            }
+        });
+
+        // Add cả 2 nút vào thẻ hiển thị
+        card.getChildren().addAll(lblName, lblId, lblPrice, btnJoin, btnDetails);
+
         return card;
     }
 }
