@@ -1,18 +1,37 @@
 package com.auction.client.feature.controllers;
 
-import com.auction.client.feature.auth.*;
-import com.auction.client.core.AuthPresenter;
-import com.auction.client.core.SceneNavigator;
-import com.auction.client.core.SessionStore;
-import com.auction.client.feature.action.*;
-import com.auction.client.feature.presenter.*;
+// Import rõ ràng, bỏ dấu * để tránh lỗi "ambiguous reference"
+import com.auction.client.feature.auth.AuthPresenter;
+import com.auction.client.feature.auth.LoginCommand;
+import com.auction.client.feature.auth.LoginFormValidator;
+import com.auction.client.feature.auth.RegisterCommand;
+import com.auction.client.feature.auth.RegisterForm;
+import com.auction.client.feature.auth.RegisterFormValidator;
+
+import com.auction.client.core.navigation.SceneNavigator;
+import com.auction.client.core.navigation.FxSceneNavigator;
+import com.auction.client.session.SessionStore;
+import com.auction.client.session.InMemorySessionStore;
+
+import com.auction.client.feature.action.BidActionHandler;
+import com.auction.client.feature.action.ChatActionHandler;
+import com.auction.client.feature.action.AuctionCloseHandler;
+import com.auction.client.feature.action.RoomTransitionHandler;
+
+import com.auction.client.feature.presenter.AuctionLobbyPresenter;
+import com.auction.client.feature.presenter.AuctionTimerService;
+import com.auction.client.feature.presenter.LobbyUserInfoBinder;
+
+import com.auction.client.feature.presenter.AuctionRoomPresenter;
+
 import com.auction.client.feature.viewmodel.AuctionViewModel;
 import com.auction.client.feature.viewmodel.AuthViewModel;
+
 import com.auction.server.service.AuctionService;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
-
 
 public class AuctionController {
 
@@ -80,15 +99,36 @@ public class AuctionController {
     private AuctionCloseHandler auctionCloseHandler;
     private RoomTransitionHandler roomTransitionHandler;
 
-
     @FXML
     public void initialize() {
-        // Setup services
+        // Khởi tạo các Service và Store trước
         auctionService = new AuctionService(null);
-        sceneNavigator = new SceneNavigator();
-        sessionStore = new SessionStore();
-        authPresenter = new AuthPresenter();
-        auctionRoomPresenter = new AuctionRoomPresenter();
+        sessionStore = new InMemorySessionStore();
+
+        // ĐÃ FIX: Truyền đủ 4 tham số vào FxSceneNavigator (this, windowStateHandler, sessionStore, auctionService)
+        // Tạm truyền null cho WindowStateHandler, các tham số khác đã có
+        sceneNavigator = new FxSceneNavigator(this, null, sessionStore, auctionService);
+
+        authPresenter = new AuthPresenter(
+                lblStatus, lblRegStatus, lblForgotStatus,
+                txtUsername, txtPassword,
+                txtForgotUsername, txtForgotNewPassword, txtForgotConfirm
+        );
+
+        // Setup AuctionRoomPresenter với đúng 10 tham số giao diện
+        auctionRoomPresenter = new AuctionRoomPresenter(
+                lblItemName,           // lblAuctionItemName
+                lblCurrentBid,         // lblCurrentPrice
+                lblTimeRemaining,      // lblTimer
+                null,                  // lblParticipantCount
+                lblItemPrice,          // lblDescription
+                txtChatDisplay,        // txtChatLog
+                null,                  // txtItemDescriptionDisplay
+                null,                  // btnCloseAuction
+                null,                  // btnPlaceBid
+                txtBidAmount           // txtBidAmount
+        );
+
         auctionLobbyPresenter = new AuctionLobbyPresenter();
         auctionTimerService = new AuctionTimerService();
         lobbyUserInfoBinder = new LobbyUserInfoBinder();
@@ -107,7 +147,7 @@ public class AuctionController {
     private void updateOrganizationVisibility() {
         String selectedRole = cbRegRole.getValue();
         boolean isSeller = "SELLER".equalsIgnoreCase(selectedRole);
-        
+
         if (lblRegOrganization != null) lblRegOrganization.setVisible(isSeller);
         if (lblRegOrganization != null) lblRegOrganization.setManaged(isSeller);
         if (txtRegOrganization != null) txtRegOrganization.setVisible(isSeller);
@@ -205,7 +245,7 @@ public class AuctionController {
     @FXML
     private void handleSubmitForgotPassword() {
         String username = txtForgotUsername != null ? txtForgotUsername.getText() : "";
-        
+
         if (username == null || username.trim().isEmpty()) {
             if (lblForgotStatus != null) {
                 lblForgotStatus.setText("❌ Please enter username or customer ID!");
@@ -218,7 +258,7 @@ public class AuctionController {
             lblForgotStatus.setText("⏳ Processing...");
             lblForgotStatus.setStyle("-fx-text-fill: orange;");
         }
-        
+
         System.out.println("[ForgotPassword] Processing for: " + username);
         auctionService.forgotPassword(username.trim());
     }
@@ -241,7 +281,20 @@ public class AuctionController {
             bidActionHandler = new BidActionHandler(auctionService, sessionStore, auctionRoomPresenter);
         }
 
-        bidActionHandler.handle(new BidRequest(txtBidAmount != null ? txtBidAmount.getText() : ""));
+        String roomId = sessionStore != null ? sessionStore.getCurrentRoomId() : "";
+        double bidAmount = 0.0;
+
+        try {
+            if (txtBidAmount != null && !txtBidAmount.getText().isBlank()) {
+                bidAmount = Double.parseDouble(txtBidAmount.getText());
+            }
+        } catch (NumberFormatException e) {
+            System.err.println("[Bid Error] Invalid bid amount format.");
+            return;
+        }
+
+        // Đã đổi sang gọi hàm placeBid(roomId, amount)
+        bidActionHandler.placeBid(roomId, bidAmount);
 
         if (txtBidAmount != null) {
             txtBidAmount.clear();
@@ -255,7 +308,11 @@ public class AuctionController {
             chatActionHandler = new ChatActionHandler(auctionService);
         }
 
-        chatActionHandler.handle(new ChatRequest(txtChatInput != null ? txtChatInput.getText() : ""));
+        String roomId = sessionStore != null ? sessionStore.getCurrentRoomId() : "";
+        String message = txtChatInput != null ? txtChatInput.getText() : "";
+
+        // Đã đổi sang gọi hàm sendChatMessage(roomId, message)
+        chatActionHandler.sendChatMessage(roomId, message);
 
         if (txtChatInput != null) {
             txtChatInput.clear();
@@ -286,10 +343,21 @@ public class AuctionController {
 
     private void resetSessionState() {
         if (sessionStore != null) {
-            sessionStore.clear();
+            sessionStore.clearSession(); // Đã đổi từ clear() thành clearSession()
         }
         if (txtUsername != null) txtUsername.clear();
         if (txtPassword != null) txtPassword.clear();
         if (lblStatus != null) lblStatus.setText("");
+    }
+
+    // ============ SERVER CALLBACKS (Sửa lỗi cho ClientConnection) ============
+    public void updateConnectionStatus(String status) {
+        System.out.println("[ClientConnection] Trạng thái kết nối: " + status);
+        // Có thể gán vào lblStatus nếu bạn muốn hiển thị trên giao diện
+    }
+
+    // Dùng kiểu Object để nhận Message, tránh lỗi import chưa có
+    public void onServerResponse(Object message) {
+        System.out.println("[ClientConnection] Nhận phản hồi từ server: " + message.toString());
     }
 }

@@ -111,4 +111,8 @@ public class AuctionService {
             productDetailsCallback.accept(data);
         }
     }
+    public void sendChatMessage(String roomId, String message) {
+        // Tạm thời in ra log. Khi làm tính năng Socket, ta sẽ gửi message này qua Server
+        System.out.println("[Chat - Room " + roomId + "]: " + message);
+    }
 }

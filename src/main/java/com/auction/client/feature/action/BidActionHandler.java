@@ -20,7 +20,7 @@ public class BidActionHandler {
 
     public void placeBid(String roomId, double bidAmount) {
         if (auctionService != null) {
-            auctionService.placeBid(roomId, bidAmount);
+            auctionService.placeBid(bidAmount); // Xóa roomId đi
         }
     }
 }

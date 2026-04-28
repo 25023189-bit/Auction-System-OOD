@@ -8,7 +8,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Enhanced Forgot Password Service with OTP, rate limiting, and audit logging.
+ * Enhanced Forgot Password Service with rate limiting and audit logging.
+ * Modified to generate a new password and send directly to email.
  */
 public class ForgotPasswordService {
     private final UserDAO userDAO;
@@ -27,7 +28,7 @@ public class ForgotPasswordService {
 
     /**
      * Main method to process forgot password request.
-     * Returns status code: SUCCESS, USER_NOT_FOUND, NO_EMAIL, DB_ERROR, EMAIL_FAILED, RATE_LIMITED
+     * Generates a new password directly and sends it to the user's email.
      */
     public String processForgotPassword(String username) {
         if (username == null || username.trim().isEmpty()) {
@@ -45,7 +46,7 @@ public class ForgotPasswordService {
 
         AuditLogger.logPasswordResetRequested(username, "***@***");
 
-        // 1. Find user
+        // 1. Find user in database
         User user = userDAO.getUserByUsernameWithEmail(username);
         if (user == null) {
             AuditLogger.logPasswordResetFailure(username, "User not found");
@@ -58,40 +59,39 @@ public class ForgotPasswordService {
             return "NO_EMAIL";
         }
 
-        // 2. Generate OTP token
-        int tokenExpirationMinutes = ConfigManager.getInstance().getTokenExpirationMinutes();
-        PasswordResetTokenGenerator.PasswordResetToken token = 
-            PasswordResetTokenGenerator.createToken(user.getId(), email, tokenExpirationMinutes);
-        
-        String tokenId = token.getToken();
-        tokenStore.put(tokenId, token);
-        
-        AuditLogger.logPasswordResetTokenGenerated(user.getUsername(), tokenId);
+        // 2. Generate a new temporary password directly
+        String tempPassword = PasswordResetTokenGenerator.generateTemporaryPassword();
 
-        // 3. Send OTP email
-        boolean emailSent = emailService.sendOTPEmail(
-            email.trim(),
-            user.getUsername(),
-            token.getOtp(),
-            tokenExpirationMinutes
+        // 3. Update the new password in the database
+        String updateResult = userDAO.resetPasswordWithNewPassword(user.getId(), tempPassword);
+        if (!"SUCCESS".equals(updateResult)) {
+            AuditLogger.logPasswordResetFailure(user.getUsername(), "Database update failed");
+            return "DB_ERROR";
+        }
+
+        // 4. Send the new password to the user's email
+        boolean emailSent = emailService.sendPasswordResetEmail(
+                email.trim(),
+                user.getUsername(),
+                tempPassword
         );
 
         if (!emailSent) {
             AuditLogger.logPasswordResetFailure(user.getUsername(), "Email send failed");
-            tokenStore.remove(tokenId);
             return "EMAIL_FAILED";
         }
 
-        System.out.println("✅ OTP sent to " + maskEmail(email) + " for user: " + user.getUsername());
-        return "SUCCESS|" + tokenId; // Return success with token ID for verification
+        AuditLogger.logPasswordResetSuccess(user.getId());
+        System.out.println("✅ New password sent to " + maskEmail(email) + " for user: " + user.getUsername());
+        return "SUCCESS";
     }
 
     /**
-     * Verifies OTP and returns temporary password for user to change.
+     * Verifies OTP (Kept for compatibility if you ever decide to add OTP screen back)
      */
     public String verifyOTPAndGetTemporaryPassword(String tokenId, String otp) {
         PasswordResetTokenGenerator.PasswordResetToken token = tokenStore.get(tokenId);
-        
+
         if (token == null) {
             AuditLogger.logInvalidTokenAttempt("unknown", tokenId);
             return "INVALID_TOKEN";
@@ -113,31 +113,25 @@ public class ForgotPasswordService {
             return "INVALID_OTP";
         }
 
-        // Generate temporary password
         String tempPassword = PasswordResetTokenGenerator.generateTemporaryPassword();
-        
-        // Update in database
+
         String updateResult = userDAO.resetPasswordWithNewPassword(token.getUserId(), tempPassword);
         if (!"SUCCESS".equals(updateResult)) {
             AuditLogger.logPasswordResetFailure(token.getUserId(), "Database update failed");
             return "DB_ERROR";
         }
 
-        // Send confirmation email
         User user = userDAO.getUserById(token.getUserId());
         if (user != null) {
             emailService.sendPasswordResetEmail(
-                token.getEmail(),
-                user.getUsername(),
-                tempPassword
+                    token.getEmail(),
+                    user.getUsername(),
+                    tempPassword
             );
         }
 
-        // Mark token as used
         token.markAsUsed();
         AuditLogger.logPasswordResetSuccess(token.getUserId());
-        AuditLogger.logPasswordChanged(token.getUserId(), "Temporary password from forgot password flow");
-        
         return "SUCCESS|" + tempPassword;
     }
 
@@ -161,13 +155,13 @@ public class ForgotPasswordService {
                 LocalDateTime now = LocalDateTime.now();
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
                 emailService.sendPasswordChangedConfirmation(
-                    user.getEmail(),
-                    user.getUsername(),
-                    now.format(formatter)
+                        user.getEmail(),
+                        user.getUsername(),
+                        now.format(formatter)
                 );
             }
         }
-        
+
         return result;
     }
 
@@ -191,12 +185,12 @@ public class ForgotPasswordService {
         if (email == null || email.length() < 5) return "***@***";
         String[] parts = email.split("@");
         if (parts.length != 2) return "***@***";
-        
+
         String name = parts[0];
         String domain = parts[1];
         String maskedName = name.charAt(0) + "*".repeat(Math.max(0, name.length() - 2)) + (name.length() > 1 ? name.charAt(name.length() - 1) : "");
         String maskedDomain = domain.substring(0, Math.min(2, domain.length())) + "***";
-        
+
         return maskedName + "@" + maskedDomain;
     }
 }

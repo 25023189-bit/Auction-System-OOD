@@ -6,6 +6,7 @@ import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
+import java.io.UnsupportedEncodingException;
 
 /**
  * Enhanced Email Service with retry logic, HTML templates, and configuration management.
@@ -86,7 +87,14 @@ public class EmailService {
         });
 
         Message message = new MimeMessage(session);
-        message.setFrom(new InternetAddress(config.getEmailFrom(), "Auction System"));
+
+        // CHÈN THÊM VÀO ĐÂY ĐỂ SỬA LỖI
+        try {
+            message.setFrom(new InternetAddress(config.getEmailFrom(), "Auction System"));
+        } catch (UnsupportedEncodingException e) {
+            message.setFrom(new InternetAddress(config.getEmailFrom()));
+        }
+
         message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail));
         message.setSubject(subject);
         message.setContent(htmlContent, "text/html; charset=UTF-8");

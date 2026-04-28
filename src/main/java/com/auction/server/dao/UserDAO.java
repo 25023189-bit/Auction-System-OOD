@@ -72,9 +72,12 @@ public class UserDAO {
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            String normalized = normalizeCustomerId(username);
-            stmt.setString(1, normalized);
-            stmt.setString(2, normalized);
+            String safeInput = username != null ? username.trim() : "";
+
+            // Tham số 1: Giữ nguyên để khớp đúng username (chữ thường/hoa)
+            stmt.setString(1, safeInput);
+            // Tham số 2: In hoa để khớp với chuẩn customer_id (VD: BD50001)
+            stmt.setString(2, normalizeCustomerId(safeInput));
 
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
@@ -89,7 +92,6 @@ public class UserDAO {
     }
 
     public User login(String loginIdentifier, String rawPassword) {
-        // Sửa câu SQL: Tìm kiếm theo username HOẶC customer_id
         String sql = """
             SELECT customer_id, username, password_hash, role, organization, balance
             FROM users
@@ -99,10 +101,11 @@ public class UserDAO {
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            String safeInput = loginIdentifier != null ? loginIdentifier.trim() : null;
-            // Set cùng 1 giá trị đầu vào cho cả 2 dấu chấm hỏi (?)
+            String safeInput = loginIdentifier != null ? loginIdentifier.trim() : "";
+
+            // Sửa lỗi: Tham số 1 giữ nguyên, tham số 2 in hoa
             stmt.setString(1, safeInput);
-            stmt.setString(2, safeInput);
+            stmt.setString(2, normalizeCustomerId(safeInput));
 
             try (ResultSet rs = stmt.executeQuery()) {
                 if (!rs.next()) {
@@ -212,11 +215,11 @@ public class UserDAO {
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             String hashedPassword = PasswordUtil.hashPassword(newPassword);
-            String normalized = normalizeCustomerId(username);
-            
+            String safeInput = username != null ? username.trim() : "";
+
             stmt.setString(1, hashedPassword);
-            stmt.setString(2, normalized);
-            stmt.setString(3, normalized);
+            stmt.setString(2, safeInput);
+            stmt.setString(3, normalizeCustomerId(safeInput));
 
             return stmt.executeUpdate() > 0 ? "SUCCESS" : "FAIL";
         } catch (SQLException e) {

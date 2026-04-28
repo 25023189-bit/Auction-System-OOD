@@ -34,10 +34,20 @@ public class RoomTransitionHandler {
 
     public void leaveRoom(String roomId) {
         if (auctionService != null) {
-            auctionService.leaveRoom(roomId);
+            auctionService.leaveRoom(); // Xóa tham số roomId
         }
         if (timerService != null) {
             timerService.stop();
+        }
+    }
+
+    // Bổ sung method backToLobby() mà AuctionController đang gọi
+    public void backToLobby() {
+        if (sessionStore != null) {
+            String currentRoomId = sessionStore.getCurrentRoomId();
+            if (currentRoomId != null) {
+                leaveRoom(currentRoomId);
+            }
         }
     }
 }
