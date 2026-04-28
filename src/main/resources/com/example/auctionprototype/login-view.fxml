@@ -14,7 +14,7 @@
                     <children>
                         <Label text="Create Account" textFill="#2c3e50"><font><Font name="System Bold" size="24.0" /></font></Label>
 
-                        <TextField fx:id="txtRegCustomerId" promptText="Customer ID (e.g. BD50001)" />
+                        <TextField fx:id="txtRegCustomerId" promptText="Customer ID (e.g. BD512345)" />
                         <TextField fx:id="txtRegUsername" promptText="Username" />
 
                         <TextField fx:id="txtRegEmail" promptText="Email Address (e.g. alex@example.com)" />

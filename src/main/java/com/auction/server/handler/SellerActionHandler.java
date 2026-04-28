@@ -6,10 +6,14 @@ import com.auction.common.model.User;
 import com.auction.server.dao.AuctionDAO;
 import com.auction.server.dao.UserDAO;
 import com.auction.server.service.AuctionCreationValidator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.LocalDateTime;
 
 public class SellerActionHandler extends AbstractClientActionHandler {
+    private static final Logger LOGGER = LoggerFactory.getLogger(SellerActionHandler.class);
+
     public SellerActionHandler() {
         super("CREATE_AUCTION");
     }
@@ -104,8 +108,7 @@ public class SellerActionHandler extends AbstractClientActionHandler {
             ));
             broadcastPendingAuctionList(context);
         } catch (Exception e) {
-            System.err.println("CREATE_AUCTION error: " + e.getMessage());
-            e.printStackTrace();
+            LOGGER.error("CREATE_AUCTION error.", e);
             context.send(new Message("CREATE_AUCTION_FAIL", "SERVER", "Error: " + e.getMessage()));
         }
     }

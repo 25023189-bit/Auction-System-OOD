@@ -6,8 +6,12 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class DefaultAuctionCardFactory implements AbstractAuctionCardFactory<LobbyRoomDisplayModel, VBox> {
+    private static final Logger LOGGER = LoggerFactory.getLogger(DefaultAuctionCardFactory.class);
+
     private final AuctionService auctionService;
 
     public DefaultAuctionCardFactory(AuctionService auctionService) {
@@ -68,8 +72,7 @@ public class DefaultAuctionCardFactory implements AbstractAuctionCardFactory<Lob
                 stage.initModality(javafx.stage.Modality.APPLICATION_MODAL);
                 stage.show();
             } catch (Exception e) {
-                System.out.println("Lỗi khi mở cửa sổ Chi tiết SP: " + e.getMessage());
-                e.printStackTrace();
+                LOGGER.error("Failed to open product detail window.", e);
             }
         });
 

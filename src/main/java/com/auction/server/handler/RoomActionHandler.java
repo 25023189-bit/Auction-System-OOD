@@ -10,11 +10,15 @@ import com.auction.server.dao.TransactionDAO;
 import com.auction.server.dao.UserDAO;
 import com.auction.server.service.AuctionStateManager;
 import com.auction.server.service.ProductDetailService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
 import java.util.List;
 
 public class RoomActionHandler extends AbstractClientActionHandler {
+    private static final Logger LOGGER = LoggerFactory.getLogger(RoomActionHandler.class);
+
     public RoomActionHandler() {
         super(
                 "JOIN_ROOM",
@@ -66,7 +70,7 @@ public class RoomActionHandler extends AbstractClientActionHandler {
                 );
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Join room processing error.", e);
             context.clearCurrentRoom();
             context.send(new Message("ROOM_FAIL", "SERVER", "Join room processing error!"));
         }
@@ -78,7 +82,7 @@ public class RoomActionHandler extends AbstractClientActionHandler {
             List<AuctionRoom> allRooms = auctionDAO.getAllActiveAuctions();
             context.send(new Message("ROOM_LIST", "SERVER", allRooms));
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Unable to load rooms.", e);
             context.send(new Message("ROOM_LIST", "SERVER", Collections.emptyList()));
         }
     }
@@ -105,7 +109,7 @@ public class RoomActionHandler extends AbstractClientActionHandler {
                 context.send(bidResult);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Bid processing error.", e);
             context.send(new Message("BID_FAIL", "SERVER", "Bid processing error!"));
         }
     }
@@ -121,7 +125,7 @@ public class RoomActionHandler extends AbstractClientActionHandler {
             Message broadcastMessage = new Message("CHAT_MSG", context.getUserId(), realUsername, message.getData());
             context.broadcastToRoom(context.getCurrentRoomId(), broadcastMessage);
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Chat processing error.", e);
         }
     }
 
@@ -132,7 +136,7 @@ public class RoomActionHandler extends AbstractClientActionHandler {
             List<BidTransaction> historyList = transactionDAO.getHistoryByRoom(roomId);
             context.send(new Message("BID_HISTORY_SUCCESS", "SERVER", historyList));
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Unable to load bid history.", e);
             context.send(new Message("BID_HISTORY_FAIL", "SERVER", "Unable to load bid history!"));
         }
     }
@@ -154,8 +158,7 @@ public class RoomActionHandler extends AbstractClientActionHandler {
                 context.send(new Message("PRODUCT_DETAILS_FAIL", "SERVER", "Auction room details not found!"));
             }
         } catch (Exception e) {
-            System.err.println("GET_PRODUCT_DETAILS processing error: " + e.getMessage());
-            e.printStackTrace();
+            LOGGER.error("GET_PRODUCT_DETAILS processing error.", e);
             context.send(new Message("PRODUCT_DETAILS_FAIL", "SERVER", "System error while loading details!"));
         }
     }
@@ -180,7 +183,7 @@ public class RoomActionHandler extends AbstractClientActionHandler {
             context.notifyRoomClosed(roomId);
             broadcastRoomList(context);
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Unable to close auction.", e);
             context.send(new Message("CLOSE_AUCTION_FAIL", "SERVER", "Unable to close auction!"));
         }
     }

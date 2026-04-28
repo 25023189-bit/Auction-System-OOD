@@ -30,12 +30,15 @@ import javafx.fxml.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class AuctionController implements Initializable {
+    private static final Logger LOGGER = LoggerFactory.getLogger(AuctionController.class);
 
     // ==========================================================
     // FXML FIELDS
@@ -164,7 +167,7 @@ public class AuctionController implements Initializable {
     // ==========================================================
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("[Controller] Initializing AuctionController...");
+        LOGGER.debug("Initializing AuctionController.");
         if (!isNetworkConnected) {
             clientConnection = new ClientConnection(this);
             auctionService = new AuctionService(clientConnection);
@@ -260,7 +263,7 @@ public class AuctionController implements Initializable {
                     lobbyUserInfoBinder
             );
         }
-        System.out.println("[Controller] AuctionController initialized.");
+        LOGGER.debug("AuctionController initialized.");
     }
 
     private void wireLoginView() {
@@ -350,7 +353,7 @@ public class AuctionController implements Initializable {
     // ==========================================================
     @FXML
     private void handleLogin() {
-        System.out.println("\n[UI Event] Login button clicked.");
+        LOGGER.debug("Login button clicked.");
         if (authViewModel == null) {
             authViewModel = new AuthViewModel();
         }
@@ -358,11 +361,10 @@ public class AuctionController implements Initializable {
         authViewModel.setUsername(txtUsername != null ? txtUsername.getText() : "");
         authViewModel.setPassword(txtPassword != null ? txtPassword.getText() : "");
 
-        System.out.println("[Login] Read login form data from FXML:");
-        System.out.println("  - Username: " + authViewModel.getUsername());
-        System.out.println("  - Password: " + "*".repeat(authViewModel.getPassword().length()));
-
-        System.out.println("[Login] Sending LoginCommand.");
+        LOGGER.debug("Read login form data from FXML. username={}, password={}",
+                authViewModel.getUsername(),
+                "*".repeat(authViewModel.getPassword().length()));
+        LOGGER.debug("Sending LoginCommand.");
 
         new LoginCommand(
                 auctionService,
@@ -379,10 +381,9 @@ public class AuctionController implements Initializable {
             authViewModel = new AuthViewModel();
         }
 
-        // Đọc dữ liệu từ FXML
         String customerId = txtRegCustomerId != null ? txtRegCustomerId.getText() : "";
-        String email = txtRegEmail != null ? txtRegEmail.getText() : "";          // <-- MỚI
-        String fullName = txtRegFullName != null ? txtRegFullName.getText() : ""; // <-- MỚI
+        String email = txtRegEmail != null ? txtRegEmail.getText() : "";
+        String fullName = txtRegFullName != null ? txtRegFullName.getText() : "";
 
         authViewModel.setRegisterUsername(txtRegUsername != null ? txtRegUsername.getText() : "");
         authViewModel.setRegisterPassword(txtRegPassword != null ? txtRegPassword.getText() : "");
@@ -397,8 +398,8 @@ public class AuctionController implements Initializable {
                 new RegisterForm(
                         customerId,
                         authViewModel.getRegisterUsername(),
-                        email,             // <-- Truyền email vào form
-                        fullName,          // <-- Truyền fullName vào form
+                        email,
+                        fullName,
                         authViewModel.getRegisterPassword(),
                         authViewModel.getRegisterConfirmPassword(),
                         authViewModel.getRegisterRole(),

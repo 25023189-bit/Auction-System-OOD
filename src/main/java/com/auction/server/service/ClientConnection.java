@@ -7,8 +7,12 @@ import java.io.EOFException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ClientConnection {
+    private static final Logger LOGGER = LoggerFactory.getLogger(ClientConnection.class);
+
     public static String currentUser = null;
 
     private final String host = "localhost";
@@ -37,19 +41,19 @@ public class ClientConnection {
 
                 while (!Thread.currentThread().isInterrupted() && socket != null && !socket.isClosed()) {
                     Message response = (Message) in.readObject();
-                    System.out.println("[ClientConnection] Received action: " + response.getAction());
+                    LOGGER.debug("Received action: {}", response.getAction());
                     controller.onServerResponse(response);
                 }
             } catch (java.net.SocketException se) {
                 if (se.getMessage() != null && se.getMessage().toLowerCase().contains("socket closed")) {
-                    System.out.println("[ClientConnection] Network connection closed safely.");
+                    LOGGER.info("Network connection closed safely.");
                 } else {
-                    System.err.println("[ClientConnection] Lost connection to server: " + se.getMessage());
+                    LOGGER.warn("Lost connection to server: {}", se.getMessage());
                 }
             } catch (EOFException eof) {
-                System.out.println("[ClientConnection] Server closed the connection.");
+                LOGGER.info("Server closed the connection.");
             } catch (Exception e) {
-                System.err.println("[ClientConnection] Reader thread error: " + e.getMessage());
+                LOGGER.error("Reader thread error.", e);
             }
         }).start();
     }
@@ -61,11 +65,10 @@ public class ClientConnection {
                 out.flush();
                 out.reset();
             } else {
-                System.err.println("[ClientConnection] ObjectOutputStream is not initialized.");
+                LOGGER.warn("ObjectOutputStream is not initialized.");
             }
         } catch (Exception e) {
-            System.err.println("[ClientConnection] Failed to send message to server:");
-            e.printStackTrace();
+            LOGGER.error("Failed to send message to server.", e);
         }
     }
 
@@ -83,10 +86,9 @@ public class ClientConnection {
                 socket.close();
             }
 
-            System.out.println("[ClientConnection] Disconnected from server safely.");
+            LOGGER.info("Disconnected from server safely.");
         } catch (Exception e) {
-            System.err.println("[ClientConnection] Failed to close connection: " + e.getMessage());
-            e.printStackTrace();
+            LOGGER.error("Failed to close connection.", e);
         }
     }
 }

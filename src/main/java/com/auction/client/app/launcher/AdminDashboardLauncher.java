@@ -7,8 +7,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class AdminDashboardLauncher implements DashboardLauncher {
+    private static final Logger LOGGER = LoggerFactory.getLogger(AdminDashboardLauncher.class);
+
     private final AuctionService auctionService;
     private final SessionStore sessionStore;
 
@@ -34,7 +38,7 @@ public class AdminDashboardLauncher implements DashboardLauncher {
             stage.setMaximized(true);
             stage.show();
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Failed to launch admin dashboard.", e);
         }
     }
 }

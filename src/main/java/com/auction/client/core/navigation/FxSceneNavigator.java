@@ -11,8 +11,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class FxSceneNavigator implements SceneNavigator {
+    private static final Logger LOGGER = LoggerFactory.getLogger(FxSceneNavigator.class);
+
     private final Object controllerRef;
     private final WindowStateHandler windowStateHandler;
     private final SessionStore sessionStore;
@@ -41,7 +45,7 @@ public class FxSceneNavigator implements SceneNavigator {
                 windowStateHandler.apply(stage, "Auction System");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Failed to show login screen.", e);
         }
     }
 
@@ -61,7 +65,7 @@ public class FxSceneNavigator implements SceneNavigator {
                 windowStateHandler.apply(stage, resolveLobbyTitle());
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Failed to show lobby screen.", e);
         }
     }
 
@@ -84,7 +88,7 @@ public class FxSceneNavigator implements SceneNavigator {
                 windowStateHandler.apply(stage, resolveAuctionRoomTitle());
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Failed to show auction room.", e);
         }
     }
 
@@ -104,7 +108,7 @@ public class FxSceneNavigator implements SceneNavigator {
             stage.setMaximized(true);
             stage.show();
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Failed to open seller dashboard.", e);
         }
     }
 
@@ -125,7 +129,7 @@ public class FxSceneNavigator implements SceneNavigator {
             stage.setMaximized(true);
             stage.show();
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Failed to open admin dashboard.", e);
         }
     }
 
