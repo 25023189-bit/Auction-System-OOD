@@ -3,11 +3,15 @@ package com.auction.server.handler;
 import com.auction.common.dto.Message;
 import com.auction.common.model.AuctionRoom;
 import com.auction.server.dao.AuctionDAO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Set;
 
 public abstract class AbstractClientActionHandler implements ClientActionHandler {
+    private static final Logger LOGGER = LoggerFactory.getLogger(AbstractClientActionHandler.class);
+
     private final Set<String> supportedActions;
 
     protected AbstractClientActionHandler(String... supportedActions) {
@@ -25,7 +29,7 @@ public abstract class AbstractClientActionHandler implements ClientActionHandler
             List<AuctionRoom> rooms = auctionDAO.getAllActiveAuctions();
             context.broadcastAll(new Message("ROOM_LIST", "SERVER", rooms));
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Failed to broadcast room list.", e);
         }
     }
 
@@ -37,7 +41,7 @@ public abstract class AbstractClientActionHandler implements ClientActionHandler
                     context.getPendingAuctionApprovalService().getAllPending()
             ));
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Failed to broadcast pending auction list.", e);
         }
     }
 

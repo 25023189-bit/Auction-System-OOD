@@ -5,8 +5,12 @@ import com.auction.client.network.messaging.MessageHandler;
 import com.auction.client.session.SessionStore;
 import com.auction.common.dto.Message;
 import com.auction.common.model.AuctionRoom;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class AuctionRoomMessageHandler implements MessageHandler {
+    private static final Logger LOGGER = LoggerFactory.getLogger(AuctionRoomMessageHandler.class);
+
     private final SessionStore sessionStore;
     private final SceneNavigator sceneNavigator;
     private final AuctionRoomStateBinder binder;
@@ -132,7 +136,7 @@ public class AuctionRoomMessageHandler implements MessageHandler {
             presenter.showCurrentPrice(newPrice, null);
 
         } catch (Exception e) {
-            System.err.println("[AuctionRoomMessageHandler] Failed to handle UPDATE_PRICE: " + e.getMessage());
+            LOGGER.error("Failed to handle UPDATE_PRICE.", e);
         }
     }
 }

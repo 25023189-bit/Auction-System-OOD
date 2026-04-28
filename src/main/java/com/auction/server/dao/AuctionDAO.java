@@ -3,6 +3,8 @@ package com.auction.server.dao;
 import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.Item;
 import com.auction.server.utils.DatabaseConnection;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AuctionDAO {
+    private static final Logger LOGGER = LoggerFactory.getLogger(AuctionDAO.class);
 
     public boolean saveAuction(AuctionRoom room, String itemId, String sellerId) {
         // Cập nhật tên cột chuẩn theo DB Version 4.2
@@ -39,8 +42,7 @@ public class AuctionDAO {
 
             return pstmt.executeUpdate() > 0;
         } catch (SQLException e) {
-            System.err.println("Loi luu Auction: " + e.getMessage());
-            e.printStackTrace();
+            LOGGER.error("Failed to save auction.", e);
             return false;
         }
     }
@@ -89,8 +91,7 @@ public class AuctionDAO {
             conn.commit();
             return true;
         } catch (SQLException e) {
-            System.err.println("Transaction create auction failed: " + e.getMessage());
-            e.printStackTrace();
+            LOGGER.error("Transaction create auction failed.", e);
             return false;
         }
     }
@@ -116,7 +117,7 @@ public class AuctionDAO {
                 list.add(mapAuctionRoom(rs));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Failed to load active auctions.", e);
         }
         return list;
     }
@@ -140,7 +141,7 @@ public class AuctionDAO {
                 list.add(mapAuctionRoom(rs));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Failed to load auctions.", e);
         }
         return list;
     }
@@ -152,7 +153,7 @@ public class AuctionDAO {
             pstmt.setString(1, roomId);
             return pstmt.executeUpdate() > 0;
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Failed to force delete auction {}.", roomId, e);
             return false;
         }
     }
@@ -178,7 +179,7 @@ public class AuctionDAO {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Failed to load auction by id {}.", roomId, e);
         }
         return null;
     }
@@ -207,8 +208,7 @@ public class AuctionDAO {
                 }
             }
         } catch (SQLException e) {
-            System.err.println("Failed to load seller auction stats: " + e.getMessage());
-            e.printStackTrace();
+            LOGGER.error("Failed to load seller auction stats for {}.", sellerId, e);
         }
 
         return new SellerAuctionStats(0, 0, 0);
@@ -229,8 +229,7 @@ public class AuctionDAO {
             pstmt.setString(2, sellerId);
             return pstmt.executeUpdate() > 0;
         } catch (SQLException e) {
-            System.err.println("Loi dong phien boi seller: " + e.getMessage());
-            e.printStackTrace();
+            LOGGER.error("Failed to close auction {} by seller {}.", roomId, sellerId, e);
             return false;
         }
     }
@@ -370,8 +369,7 @@ public class AuctionDAO {
             return CloseAuctionResult.sold(winnerId, sellerId, finalPrice, winnerBalance, sellerBalance);
 
         } catch (SQLException e) {
-            System.err.println("Loi chot phien theo thoi gian: " + e.getMessage());
-            e.printStackTrace();
+            LOGGER.error("Failed to finalize auction {} by time.", roomId, e);
             return CloseAuctionResult.fail("Database error while finalizing auction.");
         }
     }

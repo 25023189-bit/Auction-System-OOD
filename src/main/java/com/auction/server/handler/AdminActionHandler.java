@@ -8,10 +8,14 @@ import com.auction.common.model.User;
 import com.auction.server.dao.AuctionDAO;
 import com.auction.server.dao.UserDAO;
 import com.auction.server.service.AuctionStateManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 public class AdminActionHandler extends AbstractClientActionHandler {
+    private static final Logger LOGGER = LoggerFactory.getLogger(AdminActionHandler.class);
+
     private final PendingAuctionRoomFactory pendingAuctionRoomFactory;
 
     public AdminActionHandler(PendingAuctionRoomFactory pendingAuctionRoomFactory) {
@@ -47,7 +51,7 @@ public class AdminActionHandler extends AbstractClientActionHandler {
             List<User> userList = userDAO.getAllUsers();
             context.send(new Message("ADMIN_USER_LIST", "SERVER", userList));
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Unable to load user list.", e);
             context.send(new Message("ADMIN_ACTION_FAIL", "SERVER", "Unable to load user list."));
         }
     }
@@ -58,7 +62,7 @@ public class AdminActionHandler extends AbstractClientActionHandler {
             List<AuctionRoom> rooms = auctionDAO.getAllAuctions();
             context.send(new Message("ADMIN_AUCTION_LIST", "SERVER", rooms));
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Unable to load auction list.", e);
             context.send(new Message("ADMIN_ACTION_FAIL", "SERVER", "Unable to load auction list."));
         }
     }
@@ -71,7 +75,7 @@ public class AdminActionHandler extends AbstractClientActionHandler {
                     context.getPendingAuctionApprovalService().getAllPending()
             ));
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Unable to load pending auction requests.", e);
             context.send(new Message("ADMIN_ACTION_FAIL", "SERVER", "Unable to load pending auction requests."));
         }
     }
@@ -103,7 +107,7 @@ public class AdminActionHandler extends AbstractClientActionHandler {
             broadcastRoomList(context);
             broadcastPendingAuctionList(context);
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Auction approval error.", e);
             context.send(new Message("ADMIN_ACTION_FAIL", "SERVER", "Auction approval error."));
         }
     }
@@ -123,7 +127,7 @@ public class AdminActionHandler extends AbstractClientActionHandler {
             ));
             broadcastPendingAuctionList(context);
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Auction rejection error.", e);
             context.send(new Message("ADMIN_ACTION_FAIL", "SERVER", "Auction rejection error."));
         }
     }
@@ -146,7 +150,7 @@ public class AdminActionHandler extends AbstractClientActionHandler {
                 context.send(new Message("ADMIN_ACTION_FAIL", "SERVER", "Unable to cancel this auction!"));
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Auction cancellation error.", e);
             context.send(new Message("ADMIN_ACTION_FAIL", "SERVER", "Auction cancellation error!"));
         }
     }
@@ -169,7 +173,7 @@ public class AdminActionHandler extends AbstractClientActionHandler {
                 context.send(new Message("ADMIN_ACTION_FAIL", "SERVER", "Unable to delete account."));
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Account deletion error.", e);
             context.send(new Message("ADMIN_ACTION_FAIL", "SERVER", "Account deletion error!"));
         }
     }

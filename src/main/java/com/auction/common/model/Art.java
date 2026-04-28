@@ -1,8 +1,13 @@
 package com.auction.common.model;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.Serial;
 
 public class Art extends Item {
+    private static final Logger LOGGER = LoggerFactory.getLogger(Art.class);
+
     @Serial
     private static final long serialVersionUID = 1L;
 
@@ -14,8 +19,7 @@ public class Art extends Item {
     }
 
     public void printInfo() {
-        System.out.println("[Art] " + getProductName() + " - Artist: " + artistName
-                + " - Starting price: $" + getStartingPrice());
+        LOGGER.info("Art {} - Artist: {} - Starting price: ${}", getProductName(), artistName, getStartingPrice());
     }
 
     public String getArtistName() {

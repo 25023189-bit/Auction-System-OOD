@@ -1,189 +1,359 @@
 package com.auction.client.feature.controllers;
 
-// Import rõ ràng, bỏ dấu * để tránh lỗi "ambiguous reference"
-import com.auction.client.feature.auth.AuthPresenter;
-import com.auction.client.feature.auth.LoginCommand;
-import com.auction.client.feature.auth.LoginFormValidator;
-import com.auction.client.feature.auth.RegisterCommand;
-import com.auction.client.feature.auth.RegisterForm;
-import com.auction.client.feature.auth.RegisterFormValidator;
-
-import com.auction.client.core.navigation.SceneNavigator;
+import com.auction.client.app.launcher.AdminDashboardLauncher;
+import com.auction.client.app.launcher.DashboardLauncher;
+import com.auction.client.app.launcher.SellerDashboardLauncher;
+import com.auction.client.core.navigation.DefaultWindowStateHandler;
 import com.auction.client.core.navigation.FxSceneNavigator;
-import com.auction.client.session.SessionStore;
-import com.auction.client.session.InMemorySessionStore;
-
-import com.auction.client.feature.action.BidActionHandler;
-import com.auction.client.feature.action.ChatActionHandler;
-import com.auction.client.feature.action.AuctionCloseHandler;
-import com.auction.client.feature.action.RoomTransitionHandler;
-
-import com.auction.client.feature.presenter.AuctionLobbyPresenter;
-import com.auction.client.feature.presenter.AuctionTimerService;
-import com.auction.client.feature.presenter.LobbyUserInfoBinder;
-
-import com.auction.client.feature.presenter.AuctionRoomPresenter;
-
-import com.auction.client.feature.viewmodel.AuctionViewModel;
+import com.auction.client.core.navigation.SceneNavigator;
+import com.auction.client.core.navigation.WindowStateHandler;
+import com.auction.client.feature.auth.*;
+import com.auction.client.feature.lobby.*;
+import com.auction.client.feature.room.*;
+import com.auction.client.feature.viewmodel.AuctionRoomViewModel;
 import com.auction.client.feature.viewmodel.AuthViewModel;
-
-import com.auction.server.service.AuctionService;
-
-import javafx.fxml.FXML;
+import com.auction.client.feature.viewmodel.LobbyRoomDisplayModel;
+import com.auction.client.feature.viewmodel.LobbyViewModel;
+import com.auction.client.network.messaging.*;
+import com.auction.client.session.*;
+import com.auction.client.shared.mapper.DisplayMapper;
+import com.auction.client.shared.mapper.RoomDisplayMapper;
+import com.auction.client.shared.mapper.RoomListMapper;
+import com.auction.client.shared.support.*;
+import com.auction.common.dto.Message;
+import com.auction.common.model.AuctionRoom;
+import com.auction.common.model.User;
+import com.auction.common.role.DefaultRolePolicy;
+import com.auction.common.role.RolePolicy;
+import com.auction.server.service.*;
+import javafx.fxml.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.control.*;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-public class AuctionController {
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
 
-    // ============ FXML COMPONENTS (AUTO-INJECT) ============
-    @FXML private VBox paneLogin;
-    @FXML private VBox paneRegister;
-    @FXML private VBox paneForgotPassword;
+public class AuctionController implements Initializable {
+    private static final Logger LOGGER = LoggerFactory.getLogger(AuctionController.class);
 
-    // ============ LOGIN COMPONENTS ============
-    @FXML private TextField txtUsername;
-    @FXML private PasswordField txtPassword;
-    @FXML private Label lblStatus;
+    // ==========================================================
+    // FXML FIELDS
+    // ==========================================================
+    @FXML private VBox paneLogin, paneRegister, paneForgotPassword;
+    @FXML private Pane paneAuctionRoom;
+    @FXML private BorderPane paneMainLobby;
 
-    // ============ REGISTER COMPONENTS ============
-    @FXML private TextField txtRegCustomerId;
-    @FXML private TextField txtRegUsername;
-    @FXML private TextField txtRegEmail;
-    @FXML private TextField txtRegFullName;
-    @FXML private PasswordField txtRegPassword;
-    @FXML private PasswordField txtRegConfirm;
+    @FXML private TextField txtUsername, txtRegCustomerId, txtRegUsername, txtForgotUsername, txtRegOrganization;
+    @FXML private PasswordField txtPassword, txtRegPassword, txtRegConfirm, txtForgotNewPassword, txtForgotConfirm;
+    @FXML private Label lblStatus, lblRegStatus, lblForgotStatus;
     @FXML private ComboBox<String> cbRegRole;
     @FXML private Label lblRegOrganization;
-    @FXML private TextField txtRegOrganization;
-    @FXML private Label lblRegStatus;
 
-    // ============ FORGOT PASSWORD COMPONENTS ============
-    @FXML private TextField txtForgotUsername;
-    @FXML private PasswordField txtForgotNewPassword;
-    @FXML private PasswordField txtForgotConfirm;
-    @FXML private Label lblForgotStatus;
+    @FXML private Label lblUsername, lblBalance, lblUsernameDisplay;
+    @FXML private Label lblCountdownTimer;
+    @FXML private Button btnCloseAuction, btnCreateAuction;
 
-    // ============ AUCTION ROOM COMPONENTS ============
-    @FXML private VBox paneAuctionLobby;
-    @FXML private VBox paneAuctionRoom;
-    @FXML private Label lblRoomId;
-    @FXML private Label lblItemName;
-    @FXML private Label lblItemPrice;
-    @FXML private Label lblCurrentBid;
-    @FXML private Label lblTimeRemaining;
-    @FXML private TextField txtBidAmount;
-    @FXML private TextField txtChatInput;
-    @FXML private TextArea txtChatDisplay;
-    @FXML private ListView<String> lstBidHistory;
-    @FXML private ListView<String> lstUsers;
-    @FXML private ListView<String> lstAvailableRooms;
-    @FXML private Label lblUserInfo;
+    @FXML private FlowPane paneSelectAuction;
 
-    // ============ SERVICES & PRESENTERS ============
+    @FXML private Label lblAuctionItemName, lblCurrentPrice, lblParticipantCount, lblTimer;
+    @FXML private Label lblProductName, lblDescription, lblTimeLeft;
+    @FXML private TextArea txtChatLog;
+    @FXML private TextField txtBidAmount, txtChatInput;
+    @FXML private VBox vboxCurrencyRates, vboxNews;
+    @FXML private Button btnPlaceBid;
+    @FXML private TextArea txtItemDescriptionDisplay;
+    @FXML private ImageView imgProduct;
+    @FXML private ChatbotController chatbotController;
+    @FXML private TextField txtRegEmail, txtRegFullName; // Thêm vào dòng khai báo FXML
+    // ==========================================================
+    // CORE SERVICE
+    // ==========================================================
+    private ClientConnection clientConnection;
     private AuctionService auctionService;
-    private SceneNavigator sceneNavigator;
+    private boolean isNetworkConnected = false;
+
+    // ==========================================================
+    // CORE ABSTRACTIONS
+    // ==========================================================
     private SessionStore sessionStore;
+    private WindowStateHandler windowStateHandler;
+    private RolePolicy rolePolicy;
+    private SceneNavigator sceneNavigator;
+
+    // ==========================================================
+    // SUPPORT SERVICES
+    // ==========================================================
+    private AlertService alertService;
+    private StageLocator stageLocator;
+    private UiResetService uiResetService;
+    private FxThreadExecutor fxThreadExecutor;
+
+    // ==========================================================
+    // VIEW MODELS
+    // ==========================================================
+    private AuthViewModel authViewModel;
+    private LobbyViewModel lobbyViewModel;
+    private AuctionRoomViewModel auctionRoomViewModel;
+
+    // ==========================================================
+    // PRESENTERS / BINDERS / RENDERERS
+    // ==========================================================
     private AuthPresenter authPresenter;
-    private AuctionRoomPresenter auctionRoomPresenter;
-    private AuctionLobbyPresenter auctionLobbyPresenter;
-    private AuctionTimerService auctionTimerService;
+    private LobbyPresenter lobbyPresenter;
     private LobbyUserInfoBinder lobbyUserInfoBinder;
 
-    // ============ VIEW MODELS ============
-    private AuthViewModel authViewModel;
-    private AuctionViewModel auctionViewModel;
+    private AuctionRoomPresenter auctionRoomPresenter;
+    private AuctionRoomStateBinder auctionRoomStateBinder;
+    private AuctionTimer auctionTimerService;
 
-    // ============ ACTION HANDLERS ============
+    private LobbyRoomListRenderer lobbyRoomListRenderer;
+    private DisplayMapper<List<AuctionRoom>, List<LobbyRoomDisplayModel>> roomDisplayMapper;
+
+    // ==========================================================
+    // MESSAGE HANDLERS
+    // ==========================================================
+    private MessageHandler authMessageHandler;
+    private MessageHandler lobbyMessageHandler;
+    private MessageHandler auctionRoomMessageHandler;
+
+    private MessageHandler auctionFlowFallbackHandler;
+    private MessageHandler balanceFallbackHandler;
+    private MessageHandler adminFallbackHandler;
+    private MessageHandler accountStatusFallbackHandler;
+
+    private ResponseRouter responseRouter;
+
+    // ==========================================================
+    // ACTION HANDLERS / COMMAND SIDE
+    // ==========================================================
     private BidActionHandler bidActionHandler;
     private ChatActionHandler chatActionHandler;
-    private AuctionCloseHandler auctionCloseHandler;
     private RoomTransitionHandler roomTransitionHandler;
+    private AuctionCloseHandler auctionCloseHandler;
 
+    // ==========================================================
+    // DASHBOARD LAUNCHERS
+    // ==========================================================
+    private DashboardLauncher sellerDashboardLauncher;
+    private DashboardLauncher adminDashboardLauncher;
+
+    // ==========================================================
+    // LOGIN / REGISTER / FORGOT SCREEN SWITCH
+    // ==========================================================
     @FXML
-    public void initialize() {
-        // Khởi tạo các Service và Store trước
-        auctionService = new AuctionService(null);
-        sessionStore = new InMemorySessionStore();
-
-        // ĐÃ FIX: Truyền đủ 4 tham số vào FxSceneNavigator (this, windowStateHandler, sessionStore, auctionService)
-        // Tạm truyền null cho WindowStateHandler, các tham số khác đã có
-        sceneNavigator = new FxSceneNavigator(this, null, sessionStore, auctionService);
-
-        authPresenter = new AuthPresenter(
-                lblStatus, lblRegStatus, lblForgotStatus,
-                txtUsername, txtPassword,
-                txtForgotUsername, txtForgotNewPassword, txtForgotConfirm
-        );
-
-        // Setup AuctionRoomPresenter với đúng 10 tham số giao diện
-        auctionRoomPresenter = new AuctionRoomPresenter(
-                lblItemName,           // lblAuctionItemName
-                lblCurrentBid,         // lblCurrentPrice
-                lblTimeRemaining,      // lblTimer
-                null,                  // lblParticipantCount
-                lblItemPrice,          // lblDescription
-                txtChatDisplay,        // txtChatLog
-                null,                  // txtItemDescriptionDisplay
-                null,                  // btnCloseAuction
-                null,                  // btnPlaceBid
-                txtBidAmount           // txtBidAmount
-        );
-
-        auctionLobbyPresenter = new AuctionLobbyPresenter();
-        auctionTimerService = new AuctionTimerService();
-        lobbyUserInfoBinder = new LobbyUserInfoBinder();
-
-        authViewModel = new AuthViewModel();
-        auctionViewModel = new AuctionViewModel();
-
-        // Setup register role combo
-        if (cbRegRole != null) {
-            cbRegRole.getItems().addAll("BIDDER", "SELLER");
-            cbRegRole.setValue("BIDDER");
-            cbRegRole.setOnAction(e -> updateOrganizationVisibility());
-        }
-    }
-
-    private void updateOrganizationVisibility() {
-        String selectedRole = cbRegRole.getValue();
-        boolean isSeller = "SELLER".equalsIgnoreCase(selectedRole);
-
-        if (lblRegOrganization != null) lblRegOrganization.setVisible(isSeller);
-        if (lblRegOrganization != null) lblRegOrganization.setManaged(isSeller);
-        if (txtRegOrganization != null) txtRegOrganization.setVisible(isSeller);
-        if (txtRegOrganization != null) txtRegOrganization.setManaged(isSeller);
+    private void showRegisterScreen() {
+        switchScreen(paneRegister);
+        if (lblRegStatus != null) lblRegStatus.setText("");
     }
 
     @FXML
     private void showLoginScreen() {
-        hideAllPanes();
-        if (paneLogin != null) paneLogin.setVisible(true);
+        switchScreen(paneLogin);
+        if (lblStatus != null) lblStatus.setText("");
     }
 
     @FXML
-    private void showRegisterScreen() {
-        hideAllPanes();
-        if (paneRegister != null) paneRegister.setVisible(true);
-        updateOrganizationVisibility();
-    }
-
-    @FXML
-    private void showForgotPasswordScreen() {
-        hideAllPanes();
-        if (paneForgotPassword != null) paneForgotPassword.setVisible(true);
+    public void showForgotPasswordScreen() {
+        switchScreen(paneForgotPassword);
         if (lblForgotStatus != null) lblForgotStatus.setText("");
     }
 
-    private void hideAllPanes() {
-        if (paneLogin != null) paneLogin.setVisible(false);
-        if (paneRegister != null) paneRegister.setVisible(false);
-        if (paneForgotPassword != null) paneForgotPassword.setVisible(false);
-        if (paneAuctionLobby != null) paneAuctionLobby.setVisible(false);
-        if (paneAuctionRoom != null) paneAuctionRoom.setVisible(false);
+    // ==========================================================
+    // INITIALIZE
+    // ==========================================================
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        LOGGER.debug("Initializing AuctionController.");
+        if (!isNetworkConnected) {
+            clientConnection = new ClientConnection(this);
+            auctionService = new AuctionService(clientConnection);
+            clientConnection.connect();
+            isNetworkConnected = true;
+        }
+
+        if (sessionStore == null) sessionStore = new InMemorySessionStore();
+        if (windowStateHandler == null) windowStateHandler = new DefaultWindowStateHandler();
+        if (rolePolicy == null) rolePolicy = new DefaultRolePolicy();
+        if (sceneNavigator == null) {
+            sceneNavigator = new FxSceneNavigator(this, windowStateHandler, sessionStore, auctionService);
+        }
+
+        if (alertService == null) alertService = new FxAlertService();
+        if (stageLocator == null) stageLocator = new DefaultStageLocator();
+        if (fxThreadExecutor == null) fxThreadExecutor = new DefaultFxThreadExecutor();
+
+        if (authViewModel == null) authViewModel = new AuthViewModel();
+        if (lobbyViewModel == null) lobbyViewModel = new LobbyViewModel();
+        if (auctionRoomViewModel == null) auctionRoomViewModel = new AuctionRoomViewModel();
+
+        if (paneLogin != null || paneRegister != null || paneForgotPassword != null) {
+            wireLoginView();
+        }
+        if (paneMainLobby != null) {
+            wireLobbyView();
+        }
+        if (paneAuctionRoom != null) {
+            wireAuctionRoomView();
+        }
+
+        if (cbRegRole != null && cbRegRole.getItems().isEmpty()) {
+            cbRegRole.getItems().addAll("BIDDER", "SELLER");
+            cbRegRole.setValue("BIDDER");
+            cbRegRole.valueProperty().addListener((obs, oldValue, newValue) -> updateRegisterOrganizationVisibility());
+        }
+        updateRegisterOrganizationVisibility();
+
+        if (sellerDashboardLauncher == null) {
+            sellerDashboardLauncher = new SellerDashboardLauncher(auctionService);
+        }
+
+        if (adminDashboardLauncher == null) {
+            adminDashboardLauncher = new AdminDashboardLauncher(auctionService, sessionStore);
+        }
+
+        if (auctionRoomPresenter == null) {
+            Label itemNameLabel = lblAuctionItemName != null ? lblAuctionItemName : lblProductName;
+            Label timerLabel = lblTimer != null ? lblTimer : lblTimeLeft;
+            auctionRoomPresenter = new AuctionRoomPresenter(
+                    itemNameLabel,
+                    lblCurrentPrice,
+                    timerLabel,
+                    lblParticipantCount,
+                    lblDescription,
+                    txtChatLog,
+                    txtItemDescriptionDisplay,
+                    btnCloseAuction,
+                    btnPlaceBid,
+                    txtBidAmount
+            );
+        }
+
+        if (auctionTimerService == null) {
+            auctionTimerService = new DefaultAuctionTimerService(auctionRoomPresenter);
+        }
+
+        if (auctionRoomStateBinder == null) {
+            auctionRoomStateBinder = new AuctionRoomStateBinder(
+                    auctionRoomPresenter,
+                    sessionStore,
+                    rolePolicy
+            );
+        }
+
+        if (auctionRoomMessageHandler == null) {
+            auctionRoomMessageHandler = new AuctionRoomMessageHandler(
+                    sessionStore,
+                    sceneNavigator,
+                    auctionRoomStateBinder,
+                    auctionRoomPresenter,
+                    auctionTimerService
+            );
+        }
+
+        if (roomTransitionHandler == null) {
+            roomTransitionHandler = new RoomTransitionHandler(
+                    auctionService,
+                    sessionStore,
+                    sceneNavigator,
+                    auctionTimerService,
+                    lobbyUserInfoBinder
+            );
+        }
+        LOGGER.debug("AuctionController initialized.");
     }
 
+    private void wireLoginView() {
+        authPresenter = new AuthPresenter(lblStatus, lblRegStatus, lblForgotStatus, txtUsername, txtPassword, txtForgotUsername, txtForgotNewPassword, txtForgotConfirm);
+        authMessageHandler = new AuthMessageHandler(authPresenter, sceneNavigator, sessionStore, rolePolicy, auctionService);
+        rebuildRouter();
+    }
+
+    private void wireLobbyView() {
+        lobbyPresenter = new LobbyPresenter(paneSelectAuction, new AuctionCardFactory(auctionService));
+        lobbyUserInfoBinder = new LobbyUserInfoBinder(lblUsername, lblBalance, btnCreateAuction, rolePolicy);
+        roomDisplayMapper = new RoomDisplayMapper();
+        lobbyRoomListRenderer = new LobbyRoomListRenderer(paneSelectAuction, new DefaultAuctionCardFactory(auctionService));
+        lobbyMessageHandler = new AdvancedLobbyMessageHandler(new RoomListMapper(), roomDisplayMapper, lobbyRoomListRenderer);
+        wireLobbyChatbot();
+
+        if (btnCreateAuction != null) {btnCreateAuction.setVisible(false);btnCreateAuction.setManaged(false);}
+
+        if (sessionStore != null && sessionStore.getCurrentUser() != null) {
+            lobbyUserInfoBinder.bind(sessionStore.getCurrentUser());
+        }
+
+        roomTransitionHandler = new RoomTransitionHandler(auctionService, sessionStore, sceneNavigator, auctionTimerService, lobbyUserInfoBinder);
+        rebuildRouter();
+    }
+
+    private void wireAuctionRoomView() {
+        Label itemNameLabel = lblAuctionItemName != null ? lblAuctionItemName : lblProductName;
+        Label timerLabel = lblTimer != null ? lblTimer : lblTimeLeft;
+        auctionRoomPresenter = new AuctionRoomPresenter(itemNameLabel, lblCurrentPrice, timerLabel, lblParticipantCount, lblDescription, txtChatLog, txtItemDescriptionDisplay, btnCloseAuction, btnPlaceBid, txtBidAmount);
+        auctionTimerService = new DefaultAuctionTimerService(auctionRoomPresenter);
+        auctionRoomStateBinder = new AuctionRoomStateBinder(auctionRoomPresenter, sessionStore, rolePolicy);
+        auctionRoomMessageHandler = new AuctionRoomMessageHandler(sessionStore, sceneNavigator,auctionRoomStateBinder, auctionRoomPresenter, auctionTimerService);
+        bidActionHandler = new BidActionHandler(auctionService, sessionStore, auctionRoomPresenter);
+        chatActionHandler = new ChatActionHandler(auctionService);
+        auctionCloseHandler = new AuctionCloseHandler(auctionService);
+        roomTransitionHandler = new RoomTransitionHandler(auctionService, sessionStore, sceneNavigator, auctionTimerService, lobbyUserInfoBinder);
+
+        if (btnCloseAuction != null) {
+            btnCloseAuction.setVisible(false);
+            btnCloseAuction.setManaged(false);
+        }
+
+        updateAuctionRoomUserLabel();
+
+        if (sessionStore != null && sessionStore.getCurrentRoom() != null) {
+            AuctionRoom room = sessionStore.getCurrentRoom();
+            auctionRoomStateBinder.bind(room);
+            auctionTimerService.start(room.getStartTime(), room.getEndTime());
+            updateCloseAuctionButtonVisibility();
+        }
+
+        rebuildRouter();
+    }
+
+    private void wireLobbyChatbot() {
+        if (chatbotController != null) {
+            chatbotController.setLobbyContext(lblBalance, paneSelectAuction);
+        }
+    }
+
+    private void rebuildRouter() {
+        auctionFlowFallbackHandler = new AuctionFlowFallbackHandler(auctionService, sessionStore, sceneNavigator, lobbyUserInfoBinder, auctionRoomPresenter);
+        balanceFallbackHandler = new BalanceFallbackHandler(auctionService, sessionStore, lobbyUserInfoBinder);
+        adminFallbackHandler = new AdminFallbackHandler(sessionStore);
+        accountStatusFallbackHandler = new AccountStatusFallbackHandler(sceneNavigator, sessionStore, auctionService);
+
+        java.util.List<MessageHandler> primaryHandlers = new java.util.ArrayList<>();
+        if (authMessageHandler != null) primaryHandlers.add(authMessageHandler);
+        if (lobbyMessageHandler != null) primaryHandlers.add(lobbyMessageHandler);
+        if (auctionRoomMessageHandler != null) primaryHandlers.add(auctionRoomMessageHandler);
+
+        java.util.List<MessageHandler> fallbackHandlers = new java.util.ArrayList<>();
+        if (auctionFlowFallbackHandler != null) fallbackHandlers.add(auctionFlowFallbackHandler);
+        if (balanceFallbackHandler != null) fallbackHandlers.add(balanceFallbackHandler);
+        if (adminFallbackHandler != null) fallbackHandlers.add(adminFallbackHandler);
+        if (accountStatusFallbackHandler != null) fallbackHandlers.add(accountStatusFallbackHandler);
+
+        responseRouter = new AuctionMessageRouter(
+                primaryHandlers,
+                new FallbackMessageHandler(fallbackHandlers)
+        );
+    }
+
+    // ==========================================================
+    // USER ACTIONS
+    // ==========================================================
     @FXML
     private void handleLogin() {
+        LOGGER.debug("Login button clicked.");
         if (authViewModel == null) {
             authViewModel = new AuthViewModel();
         }
@@ -191,9 +361,10 @@ public class AuctionController {
         authViewModel.setUsername(txtUsername != null ? txtUsername.getText() : "");
         authViewModel.setPassword(txtPassword != null ? txtPassword.getText() : "");
 
-        System.out.println("[Login] Username: " + authViewModel.getUsername());
-        System.out.println("  - Password: " + "*".repeat(authViewModel.getPassword().length()));
-        System.out.println("[Login] Sending LoginCommand.");
+        LOGGER.debug("Read login form data from FXML. username={}, password={}",
+                authViewModel.getUsername(),
+                "*".repeat(authViewModel.getPassword().length()));
+        LOGGER.debug("Sending LoginCommand.");
 
         new LoginCommand(
                 auctionService,
@@ -211,19 +382,14 @@ public class AuctionController {
         }
 
         String customerId = txtRegCustomerId != null ? txtRegCustomerId.getText() : "";
-        String username = txtRegUsername != null ? txtRegUsername.getText() : "";
         String email = txtRegEmail != null ? txtRegEmail.getText() : "";
         String fullName = txtRegFullName != null ? txtRegFullName.getText() : "";
-        String password = txtRegPassword != null ? txtRegPassword.getText() : "";
-        String confirmPassword = txtRegConfirm != null ? txtRegConfirm.getText() : "";
-        String role = cbRegRole != null ? cbRegRole.getValue() : "BIDDER";
-        String organization = txtRegOrganization != null ? txtRegOrganization.getText() : "";
 
-        authViewModel.setRegisterUsername(username);
-        authViewModel.setRegisterPassword(password);
-        authViewModel.setRegisterConfirmPassword(confirmPassword);
-        authViewModel.setRegisterRole(role);
-        authViewModel.setRegisterOrganization(organization);
+        authViewModel.setRegisterUsername(txtRegUsername != null ? txtRegUsername.getText() : "");
+        authViewModel.setRegisterPassword(txtRegPassword != null ? txtRegPassword.getText() : "");
+        authViewModel.setRegisterConfirmPassword(txtRegConfirm != null ? txtRegConfirm.getText() : "");
+        authViewModel.setRegisterRole(cbRegRole != null ? cbRegRole.getValue() : "BIDDER");
+        authViewModel.setRegisterOrganization(txtRegOrganization != null ? txtRegOrganization.getText() : "");
 
         new RegisterCommand(
                 auctionService,
@@ -231,36 +397,32 @@ public class AuctionController {
                 authPresenter,
                 new RegisterForm(
                         customerId,
-                        username,
+                        authViewModel.getRegisterUsername(),
                         email,
                         fullName,
-                        password,
-                        confirmPassword,
-                        role,
-                        organization
+                        authViewModel.getRegisterPassword(),
+                        authViewModel.getRegisterConfirmPassword(),
+                        authViewModel.getRegisterRole(),
+                        authViewModel.getRegisterOrganization()
                 )
         ).execute();
     }
-
     @FXML
     private void handleSubmitForgotPassword() {
-        String username = txtForgotUsername != null ? txtForgotUsername.getText() : "";
-
-        if (username == null || username.trim().isEmpty()) {
-            if (lblForgotStatus != null) {
-                lblForgotStatus.setText("❌ Please enter username or customer ID!");
-                lblForgotStatus.setStyle("-fx-text-fill: red;");
-            }
-            return;
+        if (authViewModel == null) {
+            authViewModel = new AuthViewModel();
         }
 
-        if (lblForgotStatus != null) {
-            lblForgotStatus.setText("⏳ Processing...");
-            lblForgotStatus.setStyle("-fx-text-fill: orange;");
-        }
+        authViewModel.setForgotUsername(txtForgotUsername != null ? txtForgotUsername.getText() : "");
+        authViewModel.setForgotPassword(txtForgotNewPassword != null ? txtForgotNewPassword.getText() : "");
+        authViewModel.setForgotConfirmPassword(txtForgotConfirm != null ? txtForgotConfirm.getText() : "");
 
-        System.out.println("[ForgotPassword] Processing for: " + username);
-        auctionService.forgotPassword(username.trim());
+        new ResetPasswordCommand(
+                auctionService,
+                new ResetPasswordFormValidator(),
+                authPresenter,
+                new ResetPasswordForm(authViewModel.getForgotUsername(), authViewModel.getForgotPassword(), authViewModel.getForgotConfirmPassword())
+        ).execute();
     }
 
     @FXML
@@ -281,20 +443,7 @@ public class AuctionController {
             bidActionHandler = new BidActionHandler(auctionService, sessionStore, auctionRoomPresenter);
         }
 
-        String roomId = sessionStore != null ? sessionStore.getCurrentRoomId() : "";
-        double bidAmount = 0.0;
-
-        try {
-            if (txtBidAmount != null && !txtBidAmount.getText().isBlank()) {
-                bidAmount = Double.parseDouble(txtBidAmount.getText());
-            }
-        } catch (NumberFormatException e) {
-            System.err.println("[Bid Error] Invalid bid amount format.");
-            return;
-        }
-
-        // Đã đổi sang gọi hàm placeBid(roomId, amount)
-        bidActionHandler.placeBid(roomId, bidAmount);
+        bidActionHandler.handle(new BidRequest(txtBidAmount != null ? txtBidAmount.getText() : ""));
 
         if (txtBidAmount != null) {
             txtBidAmount.clear();
@@ -308,11 +457,7 @@ public class AuctionController {
             chatActionHandler = new ChatActionHandler(auctionService);
         }
 
-        String roomId = sessionStore != null ? sessionStore.getCurrentRoomId() : "";
-        String message = txtChatInput != null ? txtChatInput.getText() : "";
-
-        // Đã đổi sang gọi hàm sendChatMessage(roomId, message)
-        chatActionHandler.sendChatMessage(roomId, message);
+        chatActionHandler.handle(new ChatRequest(txtChatInput != null ? txtChatInput.getText() : ""));
 
         if (txtChatInput != null) {
             txtChatInput.clear();
@@ -335,29 +480,132 @@ public class AuctionController {
         auctionCloseHandler.closeRoom(roomId);
     }
 
-    private void ensureAuctionRoomActionsReady() {
-        if (auctionService == null) {
-            auctionService = new AuctionService(null);
+    @FXML
+    private void openSellerDashboard() {
+        if (sellerDashboardLauncher == null) {
+            sellerDashboardLauncher = new SellerDashboardLauncher(auctionService);
+        }
+        sellerDashboardLauncher.launch();
+    }
+
+    // ==========================================================
+    // SERVER RESPONSE ENTRY
+    // ==========================================================
+    public void onServerResponse(Message msg) {
+        // Chặn đầu tin nhắn lấy chi tiết sản phẩm
+        if ("PRODUCT_DETAILS_SUCCESS".equals(msg.getAction())) {
+            javafx.application.Platform.runLater(() -> {
+                auctionService.fireProductDetailsReceived(msg.getData());
+            });
+            return; // Dừng luôn, không cho chạy xuống Router bên dưới nữa
+        }
+
+        // Các tin nhắn bình thường khác vẫn cho chạy qua Router như cũ
+        fxThreadExecutor.execute(() -> responseRouter.route(msg));
+    }
+
+    // ==========================================================
+    // OPTIONAL LEGACY BRIDGE
+    // ==========================================================
+    public void updateConnectionStatus(String status) {
+        if (lblStatus != null) {
+            lblStatus.setText("Status: " + status);
+        }
+    }
+
+    // ==========================================================
+    // INTERNAL HELPERS
+    // ==========================================================
+    private void switchScreen(javafx.scene.layout.Pane screenToShow) {
+        if (paneLogin != null) paneLogin.setVisible(false);
+        if (paneRegister != null) paneRegister.setVisible(false);
+        if (paneAuctionRoom != null) paneAuctionRoom.setVisible(false);
+        if (paneForgotPassword != null) paneForgotPassword.setVisible(false);
+        if (paneMainLobby != null) paneMainLobby.setVisible(false);
+
+        if (screenToShow != null) {
+            screenToShow.setVisible(true);
+            screenToShow.toFront();
         }
     }
 
     private void resetSessionState() {
-        if (sessionStore != null) {
-            sessionStore.clearSession(); // Đã đổi từ clear() thành clearSession()
+        sessionStore.clearSession();
+
+        ClientConnection.currentUser = null;
+        if (auctionService != null) {
+            auctionService.setCurrentUser(null);
         }
-        if (txtUsername != null) txtUsername.clear();
-        if (txtPassword != null) txtPassword.clear();
-        if (lblStatus != null) lblStatus.setText("");
+
+        if (auctionTimerService != null) {
+            auctionTimerService.stop();
+        }
+
+        if (uiResetService != null) {
+            uiResetService.resetSessionUi();
+        }
     }
 
-    // ============ SERVER CALLBACKS (Sửa lỗi cho ClientConnection) ============
-    public void updateConnectionStatus(String status) {
-        System.out.println("[ClientConnection] Trạng thái kết nối: " + status);
-        // Có thể gán vào lblStatus nếu bạn muốn hiển thị trên giao diện
+    private void ensureAuctionRoomActionsReady() {
+        if (auctionRoomPresenter == null) {
+            Label itemNameLabel = lblAuctionItemName != null ? lblAuctionItemName : lblProductName;
+            Label timerLabel = lblTimer != null ? lblTimer : lblTimeLeft;
+            auctionRoomPresenter = new AuctionRoomPresenter(itemNameLabel, lblCurrentPrice, timerLabel, lblParticipantCount, lblDescription, txtChatLog, txtItemDescriptionDisplay, btnCloseAuction, btnPlaceBid, txtBidAmount);
+        }
+        if (bidActionHandler == null) {
+            bidActionHandler = new BidActionHandler(auctionService, sessionStore, auctionRoomPresenter);
+        }
+        if (chatActionHandler == null) {
+            chatActionHandler = new ChatActionHandler(auctionService);
+        }
     }
 
-    // Dùng kiểu Object để nhận Message, tránh lỗi import chưa có
-    public void onServerResponse(Object message) {
-        System.out.println("[ClientConnection] Nhận phản hồi từ server: " + message.toString());
+    private void updateCloseAuctionButtonVisibility() {
+        if (btnCloseAuction == null || sessionStore == null) return;
+
+        boolean visible = false;
+
+        if (sessionStore.getCurrentUser() != null && sessionStore.getCurrentRoom() != null) {
+            String currentUserId = sessionStore.getCurrentUser().getId();
+            String role = sessionStore.getCurrentUser().getRole();
+            String sellerIdOfRoom = sessionStore.getCurrentRoom().getSellerName();
+
+            visible = "SELLER".equalsIgnoreCase(role)
+                    && currentUserId != null
+                    && currentUserId.equalsIgnoreCase(sellerIdOfRoom);
+        }
+
+        btnCloseAuction.setVisible(visible);
+        btnCloseAuction.setManaged(visible);
+    }
+
+    private void updateAuctionRoomUserLabel() {
+        if (lblUsername == null || sessionStore == null || sessionStore.getCurrentUser() == null) {
+            return;
+        }
+
+        User user = sessionStore.getCurrentUser();
+        String displayName = user.getUsername() != null && !user.getUsername().isBlank()
+                ? user.getUsername()
+                : user.getId();
+        String prefix = "SELLER".equalsIgnoreCase(user.getRole()) ? "Seller: " : "User: ";
+        lblUsername.setText(prefix + displayName);
+    }
+
+    private void updateRegisterOrganizationVisibility() {
+        boolean sellerSelected = cbRegRole != null && "SELLER".equalsIgnoreCase(cbRegRole.getValue());
+
+        if (txtRegOrganization != null) {
+            txtRegOrganization.setVisible(sellerSelected);
+            txtRegOrganization.setManaged(sellerSelected);
+            if (!sellerSelected) {
+                txtRegOrganization.clear();
+            }
+        }
+
+        if (lblRegOrganization != null) {
+            lblRegOrganization.setVisible(sellerSelected);
+            lblRegOrganization.setManaged(sellerSelected);
+        }
     }
 }

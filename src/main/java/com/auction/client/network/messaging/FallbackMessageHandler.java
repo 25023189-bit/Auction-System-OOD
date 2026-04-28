@@ -1,10 +1,14 @@
 package com.auction.client.network.messaging;
 
 import com.auction.common.dto.Message;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 public class FallbackMessageHandler implements MessageHandler {
+    private static final Logger LOGGER = LoggerFactory.getLogger(FallbackMessageHandler.class);
+
     private final List<MessageHandler> fallbackHandlers;
 
     public FallbackMessageHandler(List<MessageHandler> fallbackHandlers) {
@@ -25,6 +29,6 @@ public class FallbackMessageHandler implements MessageHandler {
             }
         }
 
-        System.out.println("[FallbackMessageHandler] No handler for action: " + message.getAction());
+        LOGGER.warn("No handler for action: {}", message.getAction());
     }
 }

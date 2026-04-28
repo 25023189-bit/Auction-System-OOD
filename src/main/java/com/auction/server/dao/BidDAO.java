@@ -1,6 +1,8 @@
 package com.auction.server.dao;
 
 import com.auction.server.utils.DatabaseConnection;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class BidDAO {
+    private static final Logger LOGGER = LoggerFactory.getLogger(BidDAO.class);
 
     public BidResult placeBid(String auctionId, String bidderId, double bidAmount) {
         String selectAuctionSql = """
@@ -96,8 +99,7 @@ public class BidDAO {
             conn.commit();
             return BidResult.success();
         } catch (SQLException e) {
-            System.err.println("Bid error: " + e.getMessage());
-            e.printStackTrace();
+            LOGGER.error("Database error while placing bid. auctionId={}, bidderId={}", auctionId, bidderId, e);
             return BidResult.fail(BidStatus.ERROR, "Database error while placing bid.");
         }
     }

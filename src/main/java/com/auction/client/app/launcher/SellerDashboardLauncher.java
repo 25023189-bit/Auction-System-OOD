@@ -6,8 +6,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class SellerDashboardLauncher implements DashboardLauncher {
+    private static final Logger LOGGER = LoggerFactory.getLogger(SellerDashboardLauncher.class);
+
     private final AuctionService auctionService;
 
     public SellerDashboardLauncher(AuctionService auctionService) {
@@ -30,7 +34,7 @@ public class SellerDashboardLauncher implements DashboardLauncher {
             stage.setMaximized(true);
             stage.show();
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Failed to launch seller dashboard.", e);
         }
     }
 }
