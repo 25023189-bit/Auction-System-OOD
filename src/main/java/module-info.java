@@ -3,7 +3,7 @@ module com.example.auctionprototype {
     requires javafx.fxml;
     requires java.sql;
     requires jbcrypt;
-
+    requires java.mail;
     opens com.auction.common.model to javafx.base;
 
     opens com.auction.client.feature.controllers to javafx.fxml;
