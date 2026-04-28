@@ -1,0 +1,23 @@
+{
+  "user_id": "U001",
+  "message": "Tôi muốn biết số dư là gì của mình và kiểm tra số dư",
+  "clauses": [
+    "Tôi muốn biết số dư là gì của mình",
+    "kiểm tra số dư"
+  ],
+  "threshold": 0.5,
+  "intent_probabilities": {
+    "ASK_BALANCE_DEFINITION": 0.7478,
+    "ASK_BID_GUIDE": 0.3694,
+    "ASK_TIME_LEFT": 0.3276,
+    "CHECK_BALANCE": 0.7364,
+    "CREATE_AUCTION_HELP": 0.2574,
+    "SEARCH_AUCTION": 0.2841,
+    "UNKNOWN": 0.2942
+  },
+  "selected_intents": [
+    "CHECK_BALANCE",
+    "ASK_BALANCE_DEFINITION"
+  ],
+  "response": "Số dư là số tiền hiện có trong tài khoản của bạn, có thể dùng để đặt giá hoặc thanh toán khi thắng phiên đấu giá.\nSố dư hiện tại của bạn là 100.000đ."
+}

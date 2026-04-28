@@ -1,3 +1,5 @@
+import sys
+
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -10,7 +12,7 @@ Khi phiên đấu giá hết thời gian, hệ thống sẽ xác định bidder 
 Bidder thắng sẽ bị trừ tiền tương ứng với giá thắng.
 Seller sẽ được cộng tiền tương ứng.
 Các bidder không thắng không bị trừ tiền.
-"""
+""",
     },
     {
         "title": "Seller chủ động kết thúc phiên",
@@ -19,7 +21,7 @@ Nếu seller chủ động kết thúc phiên đấu giá trước thời hạn,
 Bidder không bị trừ tiền.
 Seller không được cộng tiền.
 Phiên đấu giá được xem là kết thúc không giao dịch.
-"""
+""",
     },
     {
         "title": "Admin ban phiên đấu giá",
@@ -28,14 +30,14 @@ Nếu admin ban một phiên đấu giá, hệ thống sẽ dừng phiên đó n
 Không có bidder nào bị trừ tiền.
 Seller không được nhận tiền.
 Lý do là phiên đấu giá bị xem là không hợp lệ hoặc vi phạm quy định.
-"""
+""",
     },
     {
         "title": "Tạo phiên đấu giá",
         "content": """
 Seller có thể tạo phiên đấu giá bằng cách nhập thông tin sản phẩm, mô tả, giá khởi điểm và thời gian đấu giá.
 Sau khi tạo, phiên có thể cần được hệ thống hoặc admin kiểm duyệt trước khi công khai.
-"""
+""",
     },
     {
         "title": "Tham gia đấu giá",
@@ -43,7 +45,7 @@ Sau khi tạo, phiên có thể cần được hệ thống hoặc admin kiểm 
 Bidder có thể tham gia phiên đấu giá đang chạy.
 Bidder cần đặt giá cao hơn giá hiện tại.
 Nếu giá đặt hợp lệ, hệ thống cập nhật bidder đó thành người đang giữ giá cao nhất.
-"""
+""",
     },
     {
         "title": "Vai trò trong hệ thống",
@@ -52,8 +54,8 @@ Hệ thống có ba vai trò chính: BIDDER, SELLER và ADMIN.
 Bidder tham gia đấu giá và đặt giá.
 Seller tạo và quản lý phiên đấu giá của mình.
 Admin có quyền kiểm duyệt, ban phiên đấu giá và xử lý vi phạm.
-"""
-    }
+""",
+    },
 ]
 
 
@@ -68,7 +70,7 @@ class AuctionChatbot:
 
         self.vectorizer = TfidfVectorizer(
             lowercase=True,
-            ngram_range=(1, 2)
+            ngram_range=(1, 2),
         )
 
         self.doc_vectors = self.vectorizer.fit_transform(self.documents)
@@ -81,11 +83,13 @@ class AuctionChatbot:
 
         results = []
         for idx in ranked_indices[:top_k]:
-            results.append({
-                "score": similarities[idx],
-                "title": self.knowledge_base[idx]["title"],
-                "content": self.knowledge_base[idx]["content"]
-            })
+            results.append(
+                {
+                    "score": similarities[idx],
+                    "title": self.knowledge_base[idx]["title"],
+                    "content": self.knowledge_base[idx]["content"],
+                }
+            )
 
         return results
 
@@ -97,11 +101,6 @@ class AuctionChatbot:
                 "Mình chưa tìm thấy kiến thức phù hợp trong hệ thống đấu giá để trả lời câu này. "
                 "Bạn nên hỏi về tạo phiên, tham gia đấu giá, kết thúc phiên, thanh toán, admin ban hoặc vai trò người dùng."
             )
-
-        context = "\n".join(
-            f"- {doc['title']}:\n{doc['content']}"
-            for doc in retrieved_docs
-        )
 
         answer = f"""
 Dựa trên kiến thức hiện có của hệ thống đấu giá:
@@ -141,6 +140,9 @@ Tóm lại: {self.summarize(best_doc["title"])}
 
 
 def main():
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+
     bot = AuctionChatbot(KNOWLEDGE_BASE)
 
     print("=== Auction Chatbot ===")
