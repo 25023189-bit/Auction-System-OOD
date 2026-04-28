@@ -3,15 +3,14 @@ package com.auction.server.handler;
 import com.auction.common.dto.Message;
 import com.auction.common.model.User;
 import com.auction.server.dao.UserDAO;
+import com.auction.server.service.ForgotPasswordService;
+import com.auction.server.service.PasswordStrengthValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class AuthActionHandler extends AbstractClientActionHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(AuthActionHandler.class);
-import com.auction.server.service.ForgotPasswordService;
-import com.auction.server.service.PasswordStrengthValidator;
 
-public class AuthActionHandler extends AbstractClientActionHandler {
     private final ForgotPasswordService forgotPasswordService;
     private final PasswordStrengthValidator passwordValidator;
 
@@ -67,13 +66,17 @@ public class AuthActionHandler extends AbstractClientActionHandler {
             String email = regData[2].trim();
             String fullName = regData[3].trim();
             String rawPassword = regData[4].trim();
-            String role = regData[5].trim().toUpperCase();
+            String role = normalizeRole(regData[5]);
             String organization = regData[6].trim();
 
-            // Validate password strength
+            if (role == null) {
+                context.send(new Message("REGISTER_FAIL", "SERVER", "Invalid role!"));
+                return;
+            }
+
             if (!passwordValidator.isStrong(rawPassword)) {
-                context.send(new Message("REGISTER_FAIL", "SERVER", 
-                    "Password is too weak: " + passwordValidator.getLastError()));
+                context.send(new Message("REGISTER_FAIL", "SERVER",
+                        "Password is too weak: " + passwordValidator.getLastError()));
                 return;
             }
 
