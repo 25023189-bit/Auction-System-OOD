@@ -63,8 +63,36 @@ public class UserDAO {
         return null;
     }
 
+    public User getUserByUsernameWithEmail(String username) {
+        String sql = """
+                SELECT customer_id, username, password_hash, role, organization, balance, email, full_name
+                FROM users
+                WHERE username = ? OR customer_id = ?
+                """;
+
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            String safeInput = username != null ? username.trim() : "";
+
+            // Tham số 1: Giữ nguyên để khớp đúng username (chữ thường/hoa)
+            stmt.setString(1, safeInput);
+            // Tham số 2: In hoa để khớp với chuẩn customer_id (VD: BD50001)
+            stmt.setString(2, normalizeCustomerId(safeInput));
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return mapUserWithEmail(rs);
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Loi khi truy van User theo username: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public User login(String loginIdentifier, String rawPassword) {
-        // Sửa câu SQL: Tìm kiếm theo username HOẶC customer_id
         String sql = """
             SELECT customer_id, username, password_hash, role, organization, balance
             FROM users
@@ -74,10 +102,11 @@ public class UserDAO {
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            String safeInput = loginIdentifier != null ? loginIdentifier.trim() : null;
-            // Set cùng 1 giá trị đầu vào cho cả 2 dấu chấm hỏi (?)
+            String safeInput = loginIdentifier != null ? loginIdentifier.trim() : "";
+
+            // Sửa lỗi: Tham số 1 giữ nguyên, tham số 2 in hoa
             stmt.setString(1, safeInput);
-            stmt.setString(2, safeInput);
+            stmt.setString(2, normalizeCustomerId(safeInput));
 
             try (ResultSet rs = stmt.executeQuery()) {
                 if (!rs.next()) {
@@ -100,11 +129,12 @@ public class UserDAO {
             return null;
         }
     }
+
     public String registerUser(User user, String rawPassword) {
         String checkSql = """
                 SELECT 1 FROM users
                 WHERE customer_id = ? OR username = ? OR email = ?
-                """; // Thêm check trùng email luôn cho xịn
+                """;
 
         String insertSql = """
                 INSERT INTO users (customer_id, username, password_hash, role, organization, balance, email, full_name)
@@ -115,8 +145,8 @@ public class UserDAO {
             try (PreparedStatement checkStmt = conn.prepareStatement(checkSql)) {
                 String customerId = normalizeCustomerId(user.getCustomerId() != null ? user.getCustomerId() : user.getId());
                 String username = user.getUsername() != null ? user.getUsername().trim() : null;
-                String email = user.getEmail() != null ? user.getEmail().trim() : ""; // Lấy Email thật
-                String fullName = user.getFullName() != null ? user.getFullName().trim() : ""; // Lấy Họ Tên thật
+                String email = user.getEmail() != null ? user.getEmail().trim() : "";
+                String fullName = user.getFullName() != null ? user.getFullName().trim() : "";
 
                 String role = normalizeRole(user.getRole());
 
@@ -143,8 +173,6 @@ public class UserDAO {
                     insertStmt.setString(4, role);
                     insertStmt.setString(5, normalizeOrganization(user));
                     insertStmt.setDouble(6, user.getBalance());
-
-                    // Truyền data thật xuống DB
                     insertStmt.setString(7, email);
                     insertStmt.setString(8, fullName);
 
@@ -156,6 +184,7 @@ public class UserDAO {
             return "SQL ERROR: " + e.getMessage();
         }
     }
+
     public boolean resetPassword(String customerId, String newPassword, String confirmPassword) {
         if (customerId == null || customerId.isBlank()) return false;
         if (newPassword == null || !newPassword.equals(confirmPassword)) return false;
@@ -176,6 +205,31 @@ public class UserDAO {
         } catch (SQLException e) {
             LOGGER.error("Failed to reset password for customer id {}.", customerId, e);
             return false;
+        }
+    }
+
+    public String resetPasswordWithNewPassword(String username, String newPassword) {
+        String sql = """
+                UPDATE users
+                SET password_hash = ?
+                WHERE username = ? OR customer_id = ?
+                """;
+
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            String hashedPassword = PasswordUtil.hashPassword(newPassword);
+            String safeInput = username != null ? username.trim() : "";
+
+            stmt.setString(1, hashedPassword);
+            stmt.setString(2, safeInput);
+            stmt.setString(3, normalizeCustomerId(safeInput));
+
+            return stmt.executeUpdate() > 0 ? "SUCCESS" : "FAIL";
+        } catch (SQLException e) {
+            System.err.println("Error resetting password: " + e.getMessage());
+            e.printStackTrace();
+            return "ERROR: " + e.getMessage();
         }
     }
 
@@ -223,6 +277,20 @@ public class UserDAO {
                 rs.getString("organization"),
                 rs.getDouble("balance")
         );
+    }
+
+    private User mapUserWithEmail(ResultSet rs) throws SQLException {
+        User user = new User(
+                rs.getString("customer_id"),
+                rs.getString("username"),
+                rs.getString("role"),
+                rs.getString("password_hash"),
+                rs.getString("organization"),
+                rs.getDouble("balance")
+        );
+        user.setEmail(rs.getString("email"));
+        user.setFullName(rs.getString("full_name"));
+        return user;
     }
 
     private String normalizeCustomerId(String customerId) {
@@ -279,4 +347,3 @@ public class UserDAO {
         }
     }
 }
-

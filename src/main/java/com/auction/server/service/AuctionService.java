@@ -37,7 +37,6 @@ public class AuctionService {
     public void register(String customerId, String username, String email, String fullName,
                          String password, String role, String organization) {
         String normalizedOrganization = (organization == null || organization.trim().isEmpty()) ? "" : organization.trim();
-        // Format: customerId|username|email|fullName|password|role|organization
         String data = customerId + "|" + username + "|" + email + "|" + fullName + "|" + password + "|" + role + "|" + normalizedOrganization;
         clientConnection.sendMessage(new Message("REGISTER", "", data));
     }
@@ -67,6 +66,10 @@ public class AuctionService {
         clientConnection.sendMessage(new Message("RESET_PASSWORD", username, newPassword));
     }
 
+    public void forgotPassword(String username) {
+        clientConnection.sendMessage(new Message("FORGOT_PASSWORD", username, ""));
+    }
+
     public void createAuction(String itemName, String itemDesc, double startingPrice,
                               double minimumJoinAmount, double bidStep,
                               LocalDateTime startTime, int duration, int extensionSeconds) {
@@ -92,24 +95,24 @@ public class AuctionService {
     // ==========================================================
     private java.util.function.Consumer<Object> productDetailsCallback;
 
-    // Cài đặt "tai nghe" để đợi Server trả lời
     public void setProductDetailsCallback(java.util.function.Consumer<Object> callback) {
         this.productDetailsCallback = callback;
     }
 
-    // Hàm gọi lên Server xin thông tin
     public void requestProductDetails(String roomId) {
         if (clientConnection != null) {
-            // Gửi tin nhắn GET_PRODUCT_DETAILS lên Server
             com.auction.common.dto.Message msg = new com.auction.common.dto.Message("GET_PRODUCT_DETAILS", "CLIENT", roomId);
             clientConnection.sendMessage(msg);
         }
     }
 
-    // Hàm này sẽ được kích hoạt khi Server ném data về
     public void fireProductDetailsReceived(Object data) {
         if (productDetailsCallback != null) {
             productDetailsCallback.accept(data);
         }
+    }
+    public void sendChatMessage(String roomId, String message) {
+        // Tạm thời in ra log. Khi làm tính năng Socket, ta sẽ gửi message này qua Server
+        System.out.println("[Chat - Room " + roomId + "]: " + message);
     }
 }
