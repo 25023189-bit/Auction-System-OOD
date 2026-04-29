@@ -3,6 +3,7 @@ package com.auction.client.feature.controllers;
 import com.auction.client.app.launcher.AdminDashboardLauncher;
 import com.auction.client.app.launcher.DashboardLauncher;
 import com.auction.client.app.launcher.SellerDashboardLauncher;
+import com.auction.client.chatbot.ChatbotController;
 import com.auction.client.core.navigation.DefaultWindowStateHandler;
 import com.auction.client.core.navigation.FxSceneNavigator;
 import com.auction.client.core.navigation.SceneNavigator;
@@ -278,7 +279,6 @@ public class AuctionController implements Initializable {
         roomDisplayMapper = new RoomDisplayMapper();
         lobbyRoomListRenderer = new LobbyRoomListRenderer(paneSelectAuction, new DefaultAuctionCardFactory(auctionService));
         lobbyMessageHandler = new AdvancedLobbyMessageHandler(new RoomListMapper(), roomDisplayMapper, lobbyRoomListRenderer);
-        wireLobbyChatbot();
 
         if (btnCreateAuction != null) {btnCreateAuction.setVisible(false);btnCreateAuction.setManaged(false);}
 
@@ -317,12 +317,6 @@ public class AuctionController implements Initializable {
         }
 
         rebuildRouter();
-    }
-
-    private void wireLobbyChatbot() {
-        if (chatbotController != null) {
-            chatbotController.setLobbyContext(lblBalance, paneSelectAuction);
-        }
     }
 
     private void rebuildRouter() {

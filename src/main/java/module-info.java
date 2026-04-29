@@ -9,11 +9,13 @@ module com.example.auctionprototype {
     opens com.auction.common.model to javafx.base;
 
     opens com.auction.client.feature.controllers to javafx.fxml;
+    opens com.auction.client.chatbot to javafx.fxml;
 
     opens com.auction.server.main to javafx.graphics, javafx.fxml;
     opens com.example.auctionprototype to javafx.fxml;
 
     exports com.auction.client.feature.controllers;
+    exports com.auction.client.chatbot;
     exports com.auction.common.dto;
     exports com.auction.common.model;
     exports com.auction.server;
