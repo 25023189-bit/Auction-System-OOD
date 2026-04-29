@@ -8,6 +8,9 @@ import com.auction.common.dto.Message;
 import com.auction.server.service.AuctionService;
 import javafx.scene.control.Alert;
 
+/**
+ * Fallback cho các action luồng đấu giá không phụ thuộc riêng một màn hình.
+ */
 public class AuctionFlowFallbackHandler implements MessageHandler {
     private final AuctionService auctionService;
     private final SessionStore sessionStore;
@@ -29,6 +32,7 @@ public class AuctionFlowFallbackHandler implements MessageHandler {
 
     @Override
     public boolean supports(String action) {
+        // Nhóm action này bao gồm tạo phòng, lỗi vào phòng, lỗi bid và thông báo đóng phiên.
         return switch (action) {
             case "CREATE_AUCTION_SUCCESS",
                  "CREATE_AUCTION_PENDING",
@@ -68,6 +72,7 @@ public class AuctionFlowFallbackHandler implements MessageHandler {
                 }
             }
             case "ROOM_FAIL" -> {
+                // Nếu vào phòng thất bại, quay lại lobby và tải lại danh sách phòng mới nhất.
                 Alert alert = new Alert(Alert.AlertType.WARNING, String.valueOf(msg.getData()));
                 alert.setHeaderText("Unable to Join Room");
                 alert.showAndWait();
@@ -97,6 +102,7 @@ public class AuctionFlowFallbackHandler implements MessageHandler {
             case "AUCTION_CLOSED_NOTIFY" -> {
                 String currentRoomId = sessionStore.getCurrentRoomId();
                 if (currentRoomId != null && currentRoomId.equals(String.valueOf(msg.getData()))) {
+                    // Chỉ user đang ở đúng phòng bị đóng mới bị đưa về lobby.
                     Alert alert = new Alert(Alert.AlertType.WARNING, "The auction has ended. You will be returned to the main lobby.");
                     alert.setHeaderText("Auction Ended");
                     alert.showAndWait();

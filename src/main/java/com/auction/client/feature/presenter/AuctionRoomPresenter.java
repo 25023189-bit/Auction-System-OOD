@@ -6,7 +6,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 
 /**
- * Presenter for Auction Room view
+ * Presenter phòng đấu giá phiên bản nhẹ, gom các thao tác cập nhật control JavaFX.
  */
 public class AuctionRoomPresenter {
     private Label lblItemName;
@@ -58,6 +58,7 @@ public class AuctionRoomPresenter {
     }
 
     public void addChatMessage(String message) {
+        // appendText giữ lại lịch sử chat thay vì thay thế toàn bộ nội dung.
         if (txtChatLog != null) {
             txtChatLog.appendText(message + "\n");
         }

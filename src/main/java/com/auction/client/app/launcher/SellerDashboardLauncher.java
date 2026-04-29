@@ -9,6 +9,9 @@ import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Mở form tạo phiên đấu giá cho seller ở một cửa sổ riêng.
+ */
 public class SellerDashboardLauncher implements DashboardLauncher {
     private static final Logger LOGGER = LoggerFactory.getLogger(SellerDashboardLauncher.class);
 
@@ -24,6 +27,7 @@ public class SellerDashboardLauncher implements DashboardLauncher {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/seller-view.fxml"));
             Parent root = loader.load();
 
+            // Truyền AuctionService để form có thể gửi request tạo phiên lên server.
             SellerController controller = loader.getController();
             controller.setAuctionService(auctionService);
 

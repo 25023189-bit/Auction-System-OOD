@@ -6,6 +6,10 @@ import com.auction.common.model.User;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
+/**
+ * Bind thông tin user hiện tại lên header lobby.
+ * Đồng thời quyết định seller có được thấy nút tạo phiên đấu giá hay không.
+ */
 public class LobbyUserInfoBinder implements ViewStateBinder<User> {
     private final Label lblUsername;
     private final Label lblBalance;
@@ -35,6 +39,7 @@ public class LobbyUserInfoBinder implements ViewStateBinder<User> {
         }
 
         if (btnCreateAuction != null) {
+            // Quyền tạo phiên không hard-code theo chuỗi role mà đi qua RolePolicy.
             boolean canCreate = rolePolicy.canCreateAuction(user);
             btnCreateAuction.setVisible(canCreate);
             btnCreateAuction.setManaged(canCreate);

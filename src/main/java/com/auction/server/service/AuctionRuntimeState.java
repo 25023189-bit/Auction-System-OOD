@@ -29,10 +29,6 @@ public class AuctionRuntimeState {
         }
     }
 
-    public LocalDateTime getEntryLockedAt() {
-        return entryLockedAt;
-    }
-
     public Set<String> getParticipants() {
         return participants;
     }

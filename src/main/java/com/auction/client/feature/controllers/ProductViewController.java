@@ -6,6 +6,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import com.auction.common.model.AuctionRoom;
 
+/**
+ * Controller cho popup xem chi tiết sản phẩm trong lobby.
+ * Nhận roomId, yêu cầu server trả thông tin phòng và hiển thị dữ liệu sản phẩm.
+ */
 public class ProductViewController {
 
     @FXML private Label lblProductName;
@@ -13,11 +17,13 @@ public class ProductViewController {
     @FXML private Label lblStartingPrice;
 
     private AuctionService auctionService;
+    // roomId đang được popup yêu cầu chi tiết, hữu ích khi cần đối chiếu phản hồi server.
     private String currentRoomId;
 
     public void setAuctionService(AuctionService auctionService) {
         this.auctionService = auctionService;
 
+        // Callback được AuctionController kích hoạt khi server trả PRODUCT_DETAILS_SUCCESS.
         this.auctionService.setProductDetailsCallback(data -> {
             Platform.runLater(() -> {
                 if (data != null) {
@@ -31,7 +37,7 @@ public class ProductViewController {
                         if(lblDescription != null) lblDescription.setText(data.toString());
                     }
                 } else {
-                    // Đổi text báo không tìm thấy
+                    // Không có dữ liệu nghĩa là server không tìm thấy phòng/sản phẩm tương ứng.
                     if(lblDescription != null) lblDescription.setText("Product information not found!");
                 }
             });
@@ -40,7 +46,7 @@ public class ProductViewController {
 
     public void setRoomId(String roomId) {
         this.currentRoomId = roomId;
-        // Đổi text báo đang tải
+        // Hiển thị trạng thái tạm thời trong lúc chờ server trả dữ liệu.
         if (lblDescription != null) {
             lblDescription.setText("Loading data from server...");
         }

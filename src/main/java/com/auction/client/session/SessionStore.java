@@ -4,6 +4,9 @@ import com.auction.client.feature.controllers.AdminController;
 import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.User;
 
+/**
+ * Hợp đồng lưu trạng thái phiên hiện tại của client.
+ */
 public interface SessionStore {
     String getCurrentRoomId();
     void setCurrentRoomId(String roomId);

@@ -8,6 +8,9 @@ import com.auction.common.model.AuctionRoom;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Handler xử lý các message liên quan trực tiếp tới phòng đấu giá đang mở.
+ */
 public class AuctionRoomMessageHandler implements MessageHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(AuctionRoomMessageHandler.class);
 
@@ -31,6 +34,7 @@ public class AuctionRoomMessageHandler implements MessageHandler {
 
     @Override
     public boolean supports(String action) {
+        // Chỉ nhận các action làm thay đổi trạng thái phòng, giá hoặc chat.
         return switch (action) {
             case "ROOM_JOINED",
                  "ROOM_STATE_UPDATED",
@@ -53,6 +57,7 @@ public class AuctionRoomMessageHandler implements MessageHandler {
         }
     }
 
+    // Khi join thành công, lưu phòng vào session rồi điều hướng sang màn hình phòng đấu giá.
     private void handleRoomJoined(Message message) {
         if (!(message.getData() instanceof AuctionRoom room)) return;
 
@@ -63,6 +68,7 @@ public class AuctionRoomMessageHandler implements MessageHandler {
         binder.bind(room);
 
         if (room.getStartTime() != null) {
+            // scheduledEndTime phản ánh thời điểm kết thúc sau khi có gia hạn.
             auctionTimer.start(
                     room.getStartTime(),
                     room.getScheduledEndTime() != null ? room.getScheduledEndTime() : room.getEndTime()
@@ -70,6 +76,7 @@ public class AuctionRoomMessageHandler implements MessageHandler {
         }
     }
 
+    // Đồng bộ lại toàn bộ trạng thái phòng khi server broadcast cập nhật.
     private void handleRoomStateUpdated(Message message) {
         if (!(message.getData() instanceof AuctionRoom room)) return;
 
@@ -89,6 +96,7 @@ public class AuctionRoomMessageHandler implements MessageHandler {
         }
     }
 
+    // Cập nhật UI sau bid thành công, bao gồm cả trường hợp phiên được gia hạn.
     private void handleBidSuccess(Message message) {
         if (!(message.getData() instanceof AuctionRoom room)) {
             presenter.appendChat("New bid received!");
@@ -114,6 +122,7 @@ public class AuctionRoomMessageHandler implements MessageHandler {
         }
     }
 
+    // UPDATE_PRICE có dạng "roomId|price" để cập nhật nhanh giá hiện tại.
     private void handleUpdatePrice(Message message) {
         Object data = message.getData();
         if (data == null) return;

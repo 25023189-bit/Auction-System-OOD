@@ -3,7 +3,7 @@ package com.auction.client.feature.action;
 import com.auction.server.service.AuctionService;
 
 /**
- * Handles auction closing actions
+ * Handler gửi yêu cầu đóng phiên đấu giá.
  */
 public class AuctionCloseHandler {
     private AuctionService auctionService;

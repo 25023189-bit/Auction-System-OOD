@@ -5,6 +5,9 @@ import com.auction.common.model.AuctionRoom;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Parse danh sách phòng dạng chuỗi legacy: roomId|itemName|price;...
+ */
 public class RoomListMapper implements DisplayMapper<String, List<AuctionRoom>> {
     @Override
     public List<AuctionRoom> map(String rawData) {
@@ -14,6 +17,7 @@ public class RoomListMapper implements DisplayMapper<String, List<AuctionRoom>> 
             return rooms;
         }
 
+        // Mỗi phòng được ngăn bằng dấu ;, mỗi thuộc tính trong phòng ngăn bằng dấu |.
         String[] roomEntries = rawData.split(";");
         for (String entry : roomEntries) {
             if (entry == null || entry.isBlank()) continue;

@@ -14,6 +14,10 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
+/**
+ * Controller cho khung chatbot nổi trên UI.
+ * Gửi câu hỏi sang Python ở thread nền để không khóa JavaFX Application Thread.
+ */
 public class ChatbotController {
 
     @FXML private StackPane chatbotRoot;
@@ -25,10 +29,12 @@ public class ChatbotController {
     @FXML private Button btnCloseChatbot;
     @FXML private Button btnSendChatbot;
 
+    // Dùng chung một connection vì chatbot đọc/ghi cùng cặp file input/output.
     private final PythonChatbotConnection chatbotConnection = PythonChatbotConnection.getInstance();
 
     @FXML
     public void initialize() {
+        // Thiết lập trạng thái tương tác trước khi bind các sự kiện nút bấm.
         configureInteraction();
         setChatbotVisible(false);
         addBotMessage("Xin chào, tôi có thể giải thích và hướng dẫn bạn sử dụng hệ thống đấu giá.");
@@ -53,6 +59,7 @@ public class ChatbotController {
         }
     }
 
+    // Đảm bảo popup chatbot không chặn click của màn hình chính khi đang đóng.
     private void configureInteraction() {
         if (chatbotRoot != null) {
             chatbotRoot.setPickOnBounds(false);
@@ -100,6 +107,7 @@ public class ChatbotController {
         sendChatbotMessage();
     }
 
+    // Đổi giữa nút mở chatbot và panel chat đang hiển thị.
     private void setChatbotVisible(boolean visible) {
         chatbotPanel.setVisible(visible);
         chatbotPanel.setManaged(visible);
@@ -118,6 +126,7 @@ public class ChatbotController {
         }
     }
 
+    // Đọc input, hiển thị tin người dùng và gọi Python ở background thread.
     private void sendChatbotMessage() {
         String userMessage = txtChatbotInput != null ? txtChatbotInput.getText().trim() : "";
         if (userMessage.isEmpty()) {
@@ -128,6 +137,7 @@ public class ChatbotController {
         txtChatbotInput.clear();
         setSending(true);
 
+        // Task giúp xử lý I/O Python không làm đứng giao diện JavaFX.
         Task<String> chatbotTask = new Task<>() {
             @Override
             protected String call() {
@@ -148,6 +158,7 @@ public class ChatbotController {
         thread.start();
     }
 
+    // Khóa input tạm thời để tránh gửi nhiều câu hỏi chồng nhau.
     private void setSending(boolean sending) {
         if (txtChatbotInput != null) {
             txtChatbotInput.setDisable(sending);
@@ -165,6 +176,7 @@ public class ChatbotController {
         addMessage(message, "chatbot-message-bot", Pos.CENTER_LEFT);
     }
 
+    // Tạo bubble chat thống nhất cho cả user và bot.
     private void addMessage(String message, String styleClass, Pos alignment) {
         Label bubble = new Label(message);
         bubble.setWrapText(true);

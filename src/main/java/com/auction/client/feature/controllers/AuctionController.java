@@ -38,6 +38,10 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * Controller trung tâm của client JavaFX.
+ * Kết nối các màn hình login, lobby, phòng đấu giá với service, session và router xử lý tin nhắn server.
+ */
 public class AuctionController implements Initializable {
     private static final Logger LOGGER = LoggerFactory.getLogger(AuctionController.class);
 
@@ -69,17 +73,19 @@ public class AuctionController implements Initializable {
     @FXML private TextArea txtItemDescriptionDisplay;
     @FXML private ImageView imgProduct;
     @FXML private ChatbotController chatbotController;
-    @FXML private TextField txtRegEmail, txtRegFullName; // Thêm vào dòng khai báo FXML
+    @FXML private TextField txtRegEmail, txtRegFullName;
     // ==========================================================
     // CORE SERVICE
     // ==========================================================
     private ClientConnection clientConnection;
     private AuctionService auctionService;
+    // Đảm bảo mỗi controller chỉ khởi tạo kết nối socket một lần.
     private boolean isNetworkConnected = false;
 
     // ==========================================================
     // CORE ABSTRACTIONS
     // ==========================================================
+    // Lưu trạng thái phiên đăng nhập và điều hướng màn hình theo role.
     private SessionStore sessionStore;
     private WindowStateHandler windowStateHandler;
     private RolePolicy rolePolicy;
@@ -126,6 +132,7 @@ public class AuctionController implements Initializable {
     private MessageHandler adminFallbackHandler;
     private MessageHandler accountStatusFallbackHandler;
 
+    // Router gom các handler chính và fallback để tách xử lý từng loại Message.
     private ResponseRouter responseRouter;
 
     // ==========================================================
@@ -166,6 +173,10 @@ public class AuctionController implements Initializable {
     // ==========================================================
     // INITIALIZE
     // ==========================================================
+    /**
+     * JavaFX gọi sau khi FXML được nạp.
+     * Phương thức này khởi tạo service, presenter, binder và handler tương ứng với màn hình hiện tại.
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         LOGGER.debug("Initializing AuctionController.");
@@ -267,12 +278,14 @@ public class AuctionController implements Initializable {
         LOGGER.debug("AuctionController initialized.");
     }
 
+    // Ghép màn hình đăng nhập với presenter và handler nhận phản hồi xác thực.
     private void wireLoginView() {
         authPresenter = new AuthPresenter(lblStatus, lblRegStatus, lblForgotStatus, txtUsername, txtPassword, txtForgotUsername, txtForgotNewPassword, txtForgotConfirm);
         authMessageHandler = new AuthMessageHandler(authPresenter, sceneNavigator, sessionStore, rolePolicy, auctionService);
         rebuildRouter();
     }
 
+    // Ghép màn hình lobby với renderer danh sách phòng và thông tin người dùng.
     private void wireLobbyView() {
         lobbyPresenter = new LobbyPresenter(paneSelectAuction, new AuctionCardFactory(auctionService));
         lobbyUserInfoBinder = new LobbyUserInfoBinder(lblUsername, lblBalance, btnCreateAuction, rolePolicy);
@@ -290,6 +303,7 @@ public class AuctionController implements Initializable {
         rebuildRouter();
     }
 
+    // Ghép màn hình phòng đấu giá với presenter, bộ đếm giờ và các handler thao tác.
     private void wireAuctionRoomView() {
         Label itemNameLabel = lblAuctionItemName != null ? lblAuctionItemName : lblProductName;
         Label timerLabel = lblTimer != null ? lblTimer : lblTimeLeft;
@@ -319,6 +333,7 @@ public class AuctionController implements Initializable {
         rebuildRouter();
     }
 
+    // Xây lại router mỗi khi có thêm handler của màn hình mới.
     private void rebuildRouter() {
         auctionFlowFallbackHandler = new AuctionFlowFallbackHandler(auctionService, sessionStore, sceneNavigator, lobbyUserInfoBinder, auctionRoomPresenter);
         balanceFallbackHandler = new BalanceFallbackHandler(auctionService, sessionStore, lobbyUserInfoBinder);
@@ -352,6 +367,7 @@ public class AuctionController implements Initializable {
             authViewModel = new AuthViewModel();
         }
 
+        // Đưa dữ liệu form vào ViewModel trước khi validate và gửi lệnh đăng nhập.
         authViewModel.setUsername(txtUsername != null ? txtUsername.getText() : "");
         authViewModel.setPassword(txtPassword != null ? txtPassword.getText() : "");
 
@@ -375,6 +391,7 @@ public class AuctionController implements Initializable {
             authViewModel = new AuthViewModel();
         }
 
+        // Seller cần thêm organization; bidder không gửi trường này.
         String customerId = txtRegCustomerId != null ? txtRegCustomerId.getText() : "";
         String email = txtRegEmail != null ? txtRegEmail.getText() : "";
         String fullName = txtRegFullName != null ? txtRegFullName.getText() : "";
@@ -485,16 +502,20 @@ public class AuctionController implements Initializable {
     // ==========================================================
     // SERVER RESPONSE ENTRY
     // ==========================================================
+    /**
+     * Điểm vào duy nhất của phản hồi server ở phía UI.
+     * Các phản hồi đặc biệt được xử lý trước, còn lại đi qua router theo action.
+     */
     public void onServerResponse(Message msg) {
-        // Chặn đầu tin nhắn lấy chi tiết sản phẩm
+        // Tin chi tiết sản phẩm có callback riêng cho popup ProductView.
         if ("PRODUCT_DETAILS_SUCCESS".equals(msg.getAction())) {
             javafx.application.Platform.runLater(() -> {
                 auctionService.fireProductDetailsReceived(msg.getData());
             });
-            return; // Dừng luôn, không cho chạy xuống Router bên dưới nữa
+            return;
         }
 
-        // Các tin nhắn bình thường khác vẫn cho chạy qua Router như cũ
+        // Các tin nhắn còn lại luôn chạy trên JavaFX thread trước khi cập nhật UI.
         fxThreadExecutor.execute(() -> responseRouter.route(msg));
     }
 
@@ -523,6 +544,7 @@ public class AuctionController implements Initializable {
         }
     }
 
+    // Xóa dữ liệu phiên, user hiện tại và trạng thái UI khi logout/quay về login.
     private void resetSessionState() {
         sessionStore.clearSession();
 
@@ -540,6 +562,7 @@ public class AuctionController implements Initializable {
         }
     }
 
+    // Lazy-init handler để các nút bid/chat vẫn hoạt động khi controller được nạp từ FXML khác nhau.
     private void ensureAuctionRoomActionsReady() {
         if (auctionRoomPresenter == null) {
             Label itemNameLabel = lblAuctionItemName != null ? lblAuctionItemName : lblProductName;
@@ -554,6 +577,7 @@ public class AuctionController implements Initializable {
         }
     }
 
+    // Chỉ seller sở hữu phòng mới được thấy nút đóng phiên đấu giá.
     private void updateCloseAuctionButtonVisibility() {
         if (btnCloseAuction == null || sessionStore == null) return;
 
@@ -573,6 +597,7 @@ public class AuctionController implements Initializable {
         btnCloseAuction.setManaged(visible);
     }
 
+    // Hiển thị tên user trong phòng, phân biệt seller và bidder.
     private void updateAuctionRoomUserLabel() {
         if (lblUsername == null || sessionStore == null || sessionStore.getCurrentUser() == null) {
             return;
@@ -586,6 +611,7 @@ public class AuctionController implements Initializable {
         lblUsername.setText(prefix + displayName);
     }
 
+    // Ô organization chỉ cần cho seller khi đăng ký.
     private void updateRegisterOrganizationVisibility() {
         boolean sellerSelected = cbRegRole != null && "SELLER".equalsIgnoreCase(cbRegRole.getValue());
 

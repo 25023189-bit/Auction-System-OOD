@@ -12,6 +12,10 @@ import javafx.stage.Window;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Xử lý thông báo tài khoản bị khóa từ server.
+ * Client phải xóa session, quay về login và đóng các cửa sổ phụ.
+ */
 public class AccountStatusFallbackHandler implements MessageHandler {
     private final SceneNavigator sceneNavigator;
     private final SessionStore sessionStore;
@@ -38,12 +42,14 @@ public class AccountStatusFallbackHandler implements MessageHandler {
         alert.setContentText(String.valueOf(msg.getData()));
         alert.showAndWait();
 
+        // Xóa cả session cục bộ lẫn user đang lưu trong service/socket.
         sessionStore.clearSession();
         ClientConnection.currentUser = null;
         auctionService.setCurrentUser(null);
 
         sceneNavigator.showLogin();
 
+        // Đóng dashboard/popup phụ để user bị khóa không tiếp tục thao tác.
         List<Window> openWindows = new ArrayList<>(Window.getWindows());
         for (Window window : openWindows) {
             if (window instanceof Stage stage) {

@@ -104,16 +104,6 @@ public class AuctionServer {
         }
     }
 
-    // NÂNG CẤP 4: Hàm gửi tin nhắn riêng cho 1 user
-    public static void sendToUser(String userId, Message msg) {
-        ClientHandler client = userSessions.get(userId);
-        if (client != null && client.isAlive()) {
-            client.sendMessage(msg);
-        } else {
-            LOGGER.info("User {} is offline or does not exist.", userId);
-        }
-    }
-
     public static void addClient(ClientHandler client) {
         if (client != null) {
             clients.add(client);
