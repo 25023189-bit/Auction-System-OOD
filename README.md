@@ -415,6 +415,22 @@ FINAL_WINDOW_SECONDS = 30
 
 # 14. Phân công công việc:
 - Nguyễn Hữu Hùng:
-- Tô Bảo Hân: 
-- Bùi Thế Dũng: 
-- Đặng Đức Anh: 
+  + Đăng nhập
+  + Đăng ký
+  + AI
+  + Tạo phiên
+  + Biến động số dư
+  + Đặt giá
+  + Kết thúc phiên
+  + Chatting
+  + Phân quyền Admin
+- Tô Bảo Hân:
+- Bùi Thế Dũng:
+  + Database (wallet, sản phẩm, Vòng đời phiên đấu giá,lịch sử đặt giá,thông báo, thanh toán, lịch sử đặt giá, báo cáo)
+  + Kết nối database
+  + Kiểm thử và sửa lỗi nếu xuất hiện hoặc chưa tối ưu
+  + Chức năng lấy lại mật khẩu bằng email
+- Đặng Đức Anh:
+  + Login view (background, login card)
+  + Bidder,Seller,Admin,Lobbies, chatbot (background, giao diện của các nút và chức năng)
+

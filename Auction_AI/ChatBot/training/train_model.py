@@ -19,9 +19,9 @@ from sklearn.multiclass import OneVsRestClassifier
 from sklearn.pipeline import Pipeline
 
 
-ANNA_DIR = Path(__file__).resolve().parents[1]
-if str(ANNA_DIR) not in sys.path:
-    sys.path.insert(0, str(ANNA_DIR))
+CHATBOT_DIR = Path(__file__).resolve().parents[1]
+if str(CHATBOT_DIR) not in sys.path:
+    sys.path.insert(0, str(CHATBOT_DIR))
 
 from chatbot.paths import LABELS_PATH, METRICS_PATH, MODEL_PATH, TRAIN_DATA_PATH
 

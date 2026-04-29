@@ -1,9 +1,9 @@
 from pathlib import Path
 
 
-ANNA_DIR = Path(__file__).resolve().parents[1]
-DATA_DIR = ANNA_DIR / "data"
-MODEL_DIR = ANNA_DIR / "models"
+CHATBOT_DIR = Path(__file__).resolve().parents[1]
+DATA_DIR = CHATBOT_DIR / "data"
+MODEL_DIR = CHATBOT_DIR / "models"
 
 TRAIN_DATA_PATH = DATA_DIR / "train_data.csv"
 INPUT_PATH = DATA_DIR / "input.json"
