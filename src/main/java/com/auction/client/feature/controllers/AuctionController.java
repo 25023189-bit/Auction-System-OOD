@@ -1,10 +1,23 @@
 package com.auction.client.feature.controllers;
 
+<<<<<<< HEAD
+// Import rõ ràng, bỏ dấu * để tránh lỗi "ambiguous reference"
+
+import com.auction.client.feature.auth.AuthPresenter;
+import com.auction.client.feature.auth.LoginCommand;
+import com.auction.client.feature.auth.LoginFormValidator;
+import com.auction.client.feature.auth.RegisterCommand;
+import com.auction.client.feature.auth.RegisterForm;
+import com.auction.client.feature.auth.RegisterFormValidator;
+
+import com.auction.client.core.navigation.SceneNavigator;
+=======
 import com.auction.client.app.launcher.AdminDashboardLauncher;
 import com.auction.client.app.launcher.DashboardLauncher;
 import com.auction.client.app.launcher.SellerDashboardLauncher;
 import com.auction.client.chatbot.ChatbotController;
 import com.auction.client.core.navigation.DefaultWindowStateHandler;
+>>>>>>> 79695510de950987573eb4278b356292c3d972f3
 import com.auction.client.core.navigation.FxSceneNavigator;
 import com.auction.client.core.navigation.SceneNavigator;
 import com.auction.client.core.navigation.WindowStateHandler;
@@ -38,6 +51,85 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+<<<<<<< HEAD
+    // ============ FXML COMPONENTS (AUTO-INJECT) ============
+    @FXML
+    private VBox paneLogin;
+    @FXML
+    private VBox paneRegister;
+    @FXML
+    private VBox paneForgotPassword;
+
+    // ============ LOGIN COMPONENTS ============
+    @FXML
+    private TextField txtUsername;
+    @FXML
+    private PasswordField txtPassword;
+    @FXML
+    private Label lblStatus;
+
+    // ============ REGISTER COMPONENTS ============
+    @FXML
+    private TextField txtRegCustomerId;
+    @FXML
+    private TextField txtRegUsername;
+    @FXML
+    private TextField txtRegEmail;
+    @FXML
+    private TextField txtRegFullName;
+    @FXML
+    private PasswordField txtRegPassword;
+    @FXML
+    private PasswordField txtRegConfirm;
+    @FXML
+    private ComboBox<String> cbRegRole;
+    @FXML
+    private Label lblRegOrganization;
+    @FXML
+    private TextField txtRegOrganization;
+    @FXML
+    private Label lblRegStatus;
+
+    // ============ FORGOT PASSWORD COMPONENTS ============
+    @FXML
+    private TextField txtForgotUsername;
+    @FXML
+    private PasswordField txtForgotNewPassword;
+    @FXML
+    private PasswordField txtForgotConfirm;
+    @FXML
+    private Label lblForgotStatus;
+
+    // ============ AUCTION ROOM COMPONENTS ============
+    @FXML
+    private VBox paneAuctionLobby;
+    @FXML
+    private VBox paneAuctionRoom;
+    @FXML
+    private Label lblRoomId;
+    @FXML
+    private Label lblItemName;
+    @FXML
+    private Label lblItemPrice;
+    @FXML
+    private Label lblCurrentBid;
+    @FXML
+    private Label lblTimeRemaining;
+    @FXML
+    private TextField txtBidAmount;
+    @FXML
+    private TextField txtChatInput;
+    @FXML
+    private TextArea txtChatDisplay;
+    @FXML
+    private ListView<String> lstBidHistory;
+    @FXML
+    private ListView<String> lstUsers;
+    @FXML
+    private ListView<String> lstAvailableRooms;
+    @FXML
+    private Label lblUserInfo;
+=======
 /**
  * Controller trung tâm của client JavaFX.
  * Kết nối các màn hình login, lobby, phòng đấu giá với service, session và router xử lý tin nhắn server.
@@ -63,6 +155,7 @@ public class AuctionController implements Initializable {
     @FXML private Button btnCloseAuction, btnCreateAuction;
 
     @FXML private FlowPane paneSelectAuction;
+>>>>>>> 79695510de950987573eb4278b356292c3d972f3
 
     @FXML private Label lblAuctionItemName, lblCurrentPrice, lblParticipantCount, lblTimer;
     @FXML private Label lblProductName, lblDescription, lblTimeLeft;

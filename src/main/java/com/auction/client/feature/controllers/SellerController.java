@@ -17,18 +17,30 @@ import java.time.LocalTime;
  */
 public class SellerController {
 
-    @FXML private TextField txtItemName;
-    @FXML private TextArea txtItemDescription;
-    @FXML private TextField txtStartingPrice;
-    @FXML private TextField txtMinimumJoinAmount;
-    @FXML private TextField txtBidStep;
-    @FXML private Label lblStatus;
-    @FXML private Label lblReputation;
-    @FXML private DatePicker datePickerStart;
-    @FXML private TextField txtStartHour;
-    @FXML private TextField txtStartMinute;
-    @FXML private TextField txtDuration;
-    @FXML private TextField txtExtensionSeconds;
+    @FXML
+    private TextField txtItemName;
+    @FXML
+    private TextArea txtItemDescription;
+    @FXML
+    private TextField txtStartingPrice;
+    @FXML
+    private TextField txtMinimumJoinAmount;
+    @FXML
+    private TextField txtBidStep;
+    @FXML
+    private Label lblStatus;
+    @FXML
+    private Label lblReputation;
+    @FXML
+    private DatePicker datePickerStart;
+    @FXML
+    private TextField txtStartHour;
+    @FXML
+    private TextField txtStartMinute;
+    @FXML
+    private TextField txtDuration;
+    @FXML
+    private TextField txtExtensionSeconds;
 
     // Service được launcher truyền vào để controller gửi request tạo phiên đấu giá.
     private AuctionService auctionService;

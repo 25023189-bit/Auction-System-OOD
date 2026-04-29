@@ -17,8 +17,27 @@ public class LobbyRoomDisplayModel {
         this.displayPrice = String.format("%,.0f $", currentPrice);
     }
 
+<<<<<<< HEAD
+    public String getRoomId() {
+        return roomId;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public double getCurrentPrice() {
+        return currentPrice;
+    }
+
+    public String getDisplayPrice() {
+        return displayPrice;
+    }
+}
+=======
     public String getRoomId() { return roomId; }
     public String getItemName() { return itemName; }
     public double getCurrentPrice() { return currentPrice; }
     public String getDisplayPrice() { return displayPrice; }
 }
+>>>>>>> 79695510de950987573eb4278b356292c3d972f3

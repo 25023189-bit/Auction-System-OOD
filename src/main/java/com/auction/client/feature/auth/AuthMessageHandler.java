@@ -36,7 +36,8 @@ public class AuthMessageHandler implements MessageHandler {
     public boolean supports(String action) {
         // Handler này chỉ nhận nhóm action xác thực, các action khác để router chuyển tiếp.
         return switch (action) {
-            case "LOGIN_SUCCESS", "LOGIN_FAIL", "REGISTER_SUCCESS", "REGISTER_FAIL", "RESET_SUCCESS", "RESET_FAIL" -> true;
+            case "LOGIN_SUCCESS", "LOGIN_FAIL", "REGISTER_SUCCESS", "REGISTER_FAIL", "RESET_SUCCESS", "RESET_FAIL" ->
+                    true;
             default -> false;
         };
     }

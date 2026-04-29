@@ -43,7 +43,8 @@ public class RoomActionHandler extends AbstractClientActionHandler {
             case "GET_BID_HISTORY" -> handleGetBidHistory(message, context);
             case "GET_PRODUCT_DETAILS" -> handleGetProductDetails(message, context);
             case "CLOSE_AUCTION" -> handleCloseAuction(message, context);
-            default -> context.send(new Message("UNKNOWN_ACTION", "SERVER", "Unsupported action: " + message.getAction()));
+            default ->
+                    context.send(new Message("UNKNOWN_ACTION", "SERVER", "Unsupported action: " + message.getAction()));
         }
     }
 

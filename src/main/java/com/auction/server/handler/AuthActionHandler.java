@@ -29,7 +29,8 @@ public class AuthActionHandler extends AbstractClientActionHandler {
             case "FORGOT_PASSWORD" -> handleForgotPassword(message, context);
             case "VERIFY_OTP" -> handleVerifyOTP(message, context);
             case "UPDATE_NEW_PASSWORD" -> handleUpdateNewPassword(message, context);
-            default -> context.send(new Message("UNKNOWN_ACTION", "SERVER", "Unsupported action: " + message.getAction()));
+            default ->
+                    context.send(new Message("UNKNOWN_ACTION", "SERVER", "Unsupported action: " + message.getAction()));
         }
     }
 
@@ -128,7 +129,7 @@ public class AuthActionHandler extends AbstractClientActionHandler {
         try {
             String username = message.getId();
             System.out.println("[AuthActionHandler] Processing FORGOT_PASSWORD for: " + username);
-            
+
             String result = forgotPasswordService.processForgotPassword(username);
 
             if (result.startsWith("SUCCESS")) {
@@ -142,11 +143,11 @@ public class AuthActionHandler extends AbstractClientActionHandler {
                 context.send(new Message("FORGOT_PASSWORD_FAIL", "SERVER", "No email address registered for this account!"));
             } else if ("RATE_LIMITED".equals(result)) {
                 int remaining = forgotPasswordService.getRemainingRequests(username);
-                context.send(new Message("FORGOT_PASSWORD_FAIL", "SERVER", 
-                    "Too many reset requests. Please try again in 5 minutes. (" + remaining + " requests remaining)"));
+                context.send(new Message("FORGOT_PASSWORD_FAIL", "SERVER",
+                        "Too many reset requests. Please try again in 5 minutes. (" + remaining + " requests remaining)"));
             } else if ("EMAIL_FAILED".equals(result)) {
-                context.send(new Message("FORGOT_PASSWORD_FAIL", "SERVER", 
-                    "Failed to send email. Please check server configuration or try again later."));
+                context.send(new Message("FORGOT_PASSWORD_FAIL", "SERVER",
+                        "Failed to send email. Please check server configuration or try again later."));
             } else {
                 context.send(new Message("FORGOT_PASSWORD_FAIL", "SERVER", "Unknown error occurred!"));
             }

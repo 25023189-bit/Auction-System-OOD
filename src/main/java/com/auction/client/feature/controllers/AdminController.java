@@ -26,27 +26,43 @@ import java.util.Optional;
  */
 public class AdminController {
 
-    @FXML private TableView<User> tableUsers;
-    @FXML private TableColumn<User, String> colUserId, colUsername, colRole;
-    @FXML private TableColumn<User, Double> colBalance;
+    @FXML
+    private TableView<User> tableUsers;
+    @FXML
+    private TableColumn<User, String> colUserId, colUsername, colRole;
+    @FXML
+    private TableColumn<User, Double> colBalance;
 
-    @FXML private TableView<AuctionRoom> tableAuctions;
-    @FXML private TableColumn<AuctionRoom, String> colRoomId, colRoomName, colSeller, colStatus;
-    @FXML private TableColumn<AuctionRoom, Double> colPrice, colBidStep;
+    @FXML
+    private TableView<AuctionRoom> tableAuctions;
+    @FXML
+    private TableColumn<AuctionRoom, String> colRoomId, colRoomName, colSeller, colStatus;
+    @FXML
+    private TableColumn<AuctionRoom, Double> colPrice, colBidStep;
 
-    @FXML private TableView<BidTransaction> tableBidHistory;
-    @FXML private TableColumn<BidTransaction, String> colBidAuctionId;
-    @FXML private TableColumn<BidTransaction, String> colBidderId;
-    @FXML private TableColumn<BidTransaction, Double> colBidAmount;
-    @FXML private TableColumn<BidTransaction, String> colBidTime;
+    @FXML
+    private TableView<BidTransaction> tableBidHistory;
+    @FXML
+    private TableColumn<BidTransaction, String> colBidAuctionId;
+    @FXML
+    private TableColumn<BidTransaction, String> colBidderId;
+    @FXML
+    private TableColumn<BidTransaction, Double> colBidAmount;
+    @FXML
+    private TableColumn<BidTransaction, String> colBidTime;
 
-    @FXML private TableView<PendingAuctionRequest> tablePendingAuctions;
-    @FXML private TableColumn<PendingAuctionRequest, String> colPendingRequestId, colPendingSellerId,
+    @FXML
+    private TableView<PendingAuctionRequest> tablePendingAuctions;
+    @FXML
+    private TableColumn<PendingAuctionRequest, String> colPendingRequestId, colPendingSellerId,
             colPendingSellerOrganization, colPendingItemName, colPendingItemDesc;
-    @FXML private TableColumn<PendingAuctionRequest, Double> colPendingStartingPrice, colPendingMinimumJoinAmount,
+    @FXML
+    private TableColumn<PendingAuctionRequest, Double> colPendingStartingPrice, colPendingMinimumJoinAmount,
             colPendingBidStep, colPendingSellerReputation, colPendingSuccessfulAuctionRate, colPendingAdminCancellationRate;
-    @FXML private TableColumn<PendingAuctionRequest, LocalDateTime> colPendingStartTime;
-    @FXML private TableColumn<PendingAuctionRequest, Integer> colPendingDurationMinutes, colPendingExtensionSeconds;
+    @FXML
+    private TableColumn<PendingAuctionRequest, LocalDateTime> colPendingStartTime;
+    @FXML
+    private TableColumn<PendingAuctionRequest, Integer> colPendingDurationMinutes, colPendingExtensionSeconds;
 
     // Service được truyền từ launcher sau khi FXML tạo controller.
     private AuctionService auctionService;

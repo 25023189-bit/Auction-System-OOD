@@ -13,4 +13,9 @@ public record RegisterForm(
         String confirmPassword,
         String role,
         String organization
+<<<<<<< HEAD
+) {
+}
+=======
 ) {}
+>>>>>>> 79695510de950987573eb4278b356292c3d972f3
