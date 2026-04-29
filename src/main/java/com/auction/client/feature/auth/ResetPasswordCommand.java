@@ -2,6 +2,9 @@ package com.auction.client.feature.auth;
 
 import com.auction.server.service.AuctionService;
 
+/**
+ * Command xử lý form đặt lại mật khẩu.
+ */
 public class ResetPasswordCommand implements UiCommand {
     private final AuctionService auctionService;
     private final FormValidator<ResetPasswordForm> validator;
@@ -17,6 +20,7 @@ public class ResetPasswordCommand implements UiCommand {
 
     @Override
     public void execute() {
+        // Chỉ gửi username và mật khẩu mới sau khi xác nhận nhập lại khớp.
         ValidationResult result = validator.validate(form);
         if (!result.isValid()) {
             presenter.showResetError(result.getMessage());

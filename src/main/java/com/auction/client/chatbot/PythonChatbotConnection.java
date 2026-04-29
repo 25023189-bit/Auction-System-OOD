@@ -10,9 +10,15 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Cầu nối giữa JavaFX client và chatbot Python.
+ * Java ghi câu hỏi vào input.json, chạy app.py, rồi đọc câu trả lời từ output.json.
+ */
 public final class PythonChatbotConnection {
     private static final PythonChatbotConnection INSTANCE = new PythonChatbotConnection();
+    // Giới hạn thời gian để process Python lỗi không làm treo client.
     private static final Duration PROCESS_TIMEOUT = Duration.ofSeconds(20);
+    // Regex tối giản để lấy trường "response" từ output JSON do chatbot sinh ra.
     private static final Pattern RESPONSE_PATTERN = Pattern.compile("\"response\"\\s*:\\s*\"((?:\\\\.|[^\"\\\\])*)\"", Pattern.DOTALL);
 
     private final Path chatbotDirectory;
@@ -31,6 +37,10 @@ public final class PythonChatbotConnection {
         return INSTANCE;
     }
 
+    /**
+     * Gửi một câu hỏi tới chatbot.
+     * synchronized để tránh hai request ghi đè cùng file input/output.
+     */
     public synchronized String ask(String question) {
         try {
             validatePythonChatbotFiles();
@@ -46,6 +56,7 @@ public final class PythonChatbotConnection {
         }
     }
 
+    // Kiểm tra entrypoint Python và tạo thư mục data nếu chưa có.
     private void validatePythonChatbotFiles() throws IOException {
         if (!Files.isRegularFile(appPath)) {
             throw new IOException("Missing Python chatbot entrypoint: " + appPath);
@@ -54,11 +65,13 @@ public final class PythonChatbotConnection {
         Files.createDirectories(outputPath.getParent());
     }
 
+    // Ghi câu hỏi theo format JSON mà app.py đang đọc.
     private void writeQuestion(String question) throws IOException {
         String payload = "{\n  \"message\": \"" + escapeJson(question) + "\"\n}\n";
         Files.writeString(inputPath, payload, StandardCharsets.UTF_8);
     }
 
+    // Thử cả lệnh python và py -3 để chạy được trên nhiều máy Windows.
     private void runPythonChatbot() throws IOException, InterruptedException {
         if (runPythonCommand("python")) {
             return;
@@ -71,6 +84,7 @@ public final class PythonChatbotConnection {
         throw new IOException("Python chatbot failed.");
     }
 
+    // Trả về false nếu command không tồn tại, timeout hoặc process thoát lỗi.
     private boolean runPythonCommand(String... commandPrefix) throws InterruptedException {
         Process process;
         try {
@@ -87,6 +101,7 @@ public final class PythonChatbotConnection {
         return process.exitValue() == 0;
     }
 
+    // Process chạy trong thư mục chatbot để các đường dẫn tương đối của Python vẫn đúng.
     private Process startPythonProcess(String... commandPrefix) throws IOException {
         String[] command = new String[commandPrefix.length + 1];
         System.arraycopy(commandPrefix, 0, command, 0, commandPrefix.length);
@@ -99,6 +114,7 @@ public final class PythonChatbotConnection {
                 .start();
     }
 
+    // Đọc output.json và chỉ trả lời khi trường response hợp lệ.
     private Optional<String> readAnswer() throws IOException {
         if (!Files.isRegularFile(outputPath)) {
             return Optional.empty();
@@ -114,6 +130,7 @@ public final class PythonChatbotConnection {
         return response.isEmpty() ? Optional.empty() : Optional.of(response);
     }
 
+    // Tìm thư mục Auction_AI/ChatBot bằng cách đi ngược từ thư mục chạy hiện tại.
     private Path locateChatbotDirectory() {
         Path current = Path.of(System.getProperty("user.dir")).toAbsolutePath().normalize();
         while (current != null) {
@@ -126,6 +143,7 @@ public final class PythonChatbotConnection {
         return Path.of("Auction_AI", "ChatBot").toAbsolutePath().normalize();
     }
 
+    // Escape thủ công vì payload nhỏ và chỉ cần ghi một trường message.
     private String escapeJson(String value) {
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < value.length(); i++) {
@@ -150,6 +168,7 @@ public final class PythonChatbotConnection {
         return builder.toString();
     }
 
+    // Chuyển chuỗi JSON escaped về text thường để hiển thị trong bubble chat.
     private String unescapeJson(String value) {
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < value.length(); i++) {

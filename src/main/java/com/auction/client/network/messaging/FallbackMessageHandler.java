@@ -6,6 +6,9 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
+/**
+ * Handler dự phòng cho các action dùng chung nhiều màn hình.
+ */
 public class FallbackMessageHandler implements MessageHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(FallbackMessageHandler.class);
 
@@ -22,6 +25,7 @@ public class FallbackMessageHandler implements MessageHandler {
 
     @Override
     public void handle(Message message) {
+        // Duyệt các fallback nhỏ hơn để mỗi lớp chỉ xử lý một nhóm nghiệp vụ.
         for (MessageHandler handler : fallbackHandlers) {
             if (handler.supports(message.getAction())) {
                 handler.handle(message);

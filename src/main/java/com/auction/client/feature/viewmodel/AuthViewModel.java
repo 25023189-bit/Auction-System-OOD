@@ -1,5 +1,9 @@
 package com.auction.client.feature.viewmodel;
 
+/**
+ * ViewModel giữ dữ liệu đang nhập trên các form xác thực.
+ * Controller đọc FXML vào đây trước khi tạo Command tương ứng.
+ */
 public class AuthViewModel {
     private String username = "";
     private String password = "";

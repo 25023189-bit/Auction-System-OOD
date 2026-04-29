@@ -6,6 +6,10 @@ import com.auction.server.service.AuctionService;
 
 import java.time.LocalDateTime;
 
+/**
+ * Xử lý thao tác đặt giá từ UI phòng đấu giá.
+ * Kiểm tra thời gian ở client trước khi gửi bid để phản hồi nhanh cho người dùng.
+ */
 public class BidActionHandler implements ActionHandler<BidRequest> {
     private final AuctionService auctionService;
     private final SessionStore sessionStore;
@@ -26,6 +30,7 @@ public class BidActionHandler implements ActionHandler<BidRequest> {
             if (room != null) {
                 LocalDateTime now = LocalDateTime.now();
 
+                // Client chặn bid ngoài thời gian hợp lệ; server vẫn là nơi xác thực cuối cùng.
                 if (room.getStartTime() != null && now.isBefore(room.getStartTime())) {
                     presenter.appendChat("Auction has not started yet. Bidding is not available.");
                     return;
@@ -37,6 +42,7 @@ public class BidActionHandler implements ActionHandler<BidRequest> {
                 }
             }
 
+            // Parse số tiền từ TextField trước khi gọi AuctionService.
             double amount = Double.parseDouble(request.amountText());
             auctionService.placeBid(amount);
         } catch (NumberFormatException e) {

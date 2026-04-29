@@ -7,7 +7,7 @@ import com.auction.client.feature.presenter.AuctionTimerService;
 import com.auction.client.feature.presenter.LobbyUserInfoBinder;
 
 /**
- * Handles transitions between auction rooms
+ * Handler chuyển phòng phiên bản dùng cho package action cũ.
  */
 public class RoomTransitionHandler {
     private AuctionService auctionService;
@@ -28,20 +28,22 @@ public class RoomTransitionHandler {
 
     public void joinRoom(String roomId) {
         if (auctionService != null) {
+            // Gửi yêu cầu tham gia phòng lên server; server trả ROOM_JOINED nếu thành công.
             auctionService.joinRoom(roomId);
         }
     }
 
     public void leaveRoom(String roomId) {
         if (auctionService != null) {
-            auctionService.leaveRoom(); // Xóa tham số roomId
+            // Service rời phòng hiện tại nên không cần truyền roomId xuống nữa.
+            auctionService.leaveRoom();
         }
         if (timerService != null) {
             timerService.stop();
         }
     }
 
-    // Bổ sung method backToLobby() mà AuctionController đang gọi
+    // Điểm gọi tiện lợi khi UI muốn rời phòng hiện tại và quay về lobby.
     public void backToLobby() {
         if (sessionStore != null) {
             String currentRoomId = sessionStore.getCurrentRoomId();

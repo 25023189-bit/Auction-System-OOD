@@ -1,5 +1,8 @@
 package com.auction.client.feature.auth;
 
+/**
+ * Validator cho form quên mật khẩu.
+ */
 public class ResetPasswordFormValidator implements FormValidator<ResetPasswordForm> {
     @Override
     public ValidationResult validate(ResetPasswordForm form) {

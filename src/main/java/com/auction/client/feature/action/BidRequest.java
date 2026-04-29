@@ -1,7 +1,7 @@
 package com.auction.client.feature.action;
 
 /**
- * Request object for bid placement
+ * DTO mô tả một yêu cầu đặt giá ở package action cũ.
  */
 public class BidRequest {
     private String roomId;

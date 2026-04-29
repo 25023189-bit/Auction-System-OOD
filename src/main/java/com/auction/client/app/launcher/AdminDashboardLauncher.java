@@ -10,6 +10,9 @@ import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Mở dashboard quản trị ở một cửa sổ riêng và gắn controller admin với service hiện tại.
+ */
 public class AdminDashboardLauncher implements DashboardLauncher {
     private static final Logger LOGGER = LoggerFactory.getLogger(AdminDashboardLauncher.class);
 
@@ -27,6 +30,7 @@ public class AdminDashboardLauncher implements DashboardLauncher {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/admin-view.fxml"));
             Parent root = loader.load();
 
+            // Controller admin cần service để gửi lệnh và cần được lưu vào session để nhận phản hồi.
             AdminController adminController = loader.getController();
             adminController.setAuctionService(auctionService);
             sessionStore.setAdminController(adminController);

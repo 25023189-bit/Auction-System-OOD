@@ -7,6 +7,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
+/**
+ * Factory card lobby phiên bản đơn giản, dùng trực tiếp AuctionRoom.
+ */
 public class AuctionCardFactory implements CardFactory<AuctionRoom, VBox> {
     private final AuctionService auctionService;
 

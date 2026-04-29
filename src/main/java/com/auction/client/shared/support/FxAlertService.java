@@ -2,6 +2,9 @@ package com.auction.client.shared.support;
 
 import javafx.scene.control.Alert;
 
+/**
+ * Triển khai AlertService bằng JavaFX Alert.
+ */
 public class FxAlertService implements AlertService {
     @Override
     public void show(Alert.AlertType type, String title, String header, String content) {

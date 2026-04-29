@@ -4,11 +4,16 @@ import com.auction.client.feature.controllers.AdminController;
 import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.User;
 
+/**
+ * Lưu trạng thái phiên làm việc trong bộ nhớ của client.
+ * Dữ liệu này mất khi đóng ứng dụng và không ghi xuống database.
+ */
 public class InMemorySessionStore implements SessionStore {
     private String currentRoomId;
     private AuctionRoom currentRoom;
     private User currentUser;
     private String currentUsername = "";
+    // Lưu controller admin đang mở để handler có thể cập nhật bảng từ response server.
     private AdminController adminController;
 
     @Override
@@ -63,6 +68,7 @@ public class InMemorySessionStore implements SessionStore {
 
     @Override
     public void clearSession() {
+        // Dùng khi logout hoặc tài khoản bị khóa để tránh giữ lại dữ liệu user cũ.
         this.currentRoomId = null;
         this.currentRoom = null;
         this.currentUser = null;

@@ -4,7 +4,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- * ViewModel for Auction operations
+ * ViewModel JavaFX Property cho các thông tin đấu giá có thể bind trực tiếp với UI.
  */
 public class AuctionViewModel {
     private final StringProperty roomId = new SimpleStringProperty();

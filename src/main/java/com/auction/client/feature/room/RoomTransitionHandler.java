@@ -5,6 +5,9 @@ import com.auction.client.core.navigation.SceneNavigator;
 import com.auction.client.session.SessionStore;
 import com.auction.server.service.AuctionService;
 
+/**
+ * Điều phối việc rời phòng đấu giá và quay về lobby.
+ */
 public class RoomTransitionHandler {
     private final AuctionService auctionService;
     private final SessionStore sessionStore;
@@ -25,15 +28,18 @@ public class RoomTransitionHandler {
     }
 
     public void backToLobby() {
+        // Dừng timer trước khi đổi màn hình để timeline cũ không tiếp tục cập nhật UI.
         if (auctionTimer != null) {
             auctionTimer.stop();
         }
 
         if (auctionService != null) {
+            // Báo server rằng user đã rời phòng hiện tại.
             auctionService.leaveRoom();
         }
 
         if (sessionStore != null) {
+            // Xóa room khỏi session để các response cũ không còn bind vào phòng đã rời.
             sessionStore.setCurrentRoom(null);
             sessionStore.setCurrentRoomId(null);
         }
