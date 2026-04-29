@@ -5,11 +5,15 @@ import com.auction.client.network.messaging.MessageHandler;
 import com.auction.client.shared.mapper.DisplayMapper;
 import com.auction.common.dto.Message;
 import com.auction.common.model.AuctionRoom;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
 import java.util.List;
 
 public class AdvancedLobbyMessageHandler implements MessageHandler {
+    private static final Logger LOGGER = LoggerFactory.getLogger(AdvancedLobbyMessageHandler.class);
+
     private final DisplayMapper<String, List<AuctionRoom>> rawMapper;
     private final DisplayMapper<List<AuctionRoom>, List<LobbyRoomDisplayModel>> displayMapper;
     private final LobbyRoomListRenderer renderer;
@@ -48,13 +52,11 @@ public class AdvancedLobbyMessageHandler implements MessageHandler {
             } else if (rawList.get(0) instanceof AuctionRoom) {
                 rooms = (List<AuctionRoom>) rawList;
             } else {
-                System.err.println("[AdvancedLobbyMessageHandler] ROOM_LIST contains a non-AuctionRoom item: "
-                        + rawList.get(0).getClass().getName());
+                LOGGER.warn("ROOM_LIST contains a non-AuctionRoom item: {}", rawList.get(0).getClass().getName());
                 rooms = Collections.emptyList();
             }
         } else {
-            System.err.println("[AdvancedLobbyMessageHandler] Unsupported ROOM_LIST data type: "
-                    + data.getClass().getName());
+            LOGGER.warn("Unsupported ROOM_LIST data type: {}", data.getClass().getName());
             rooms = Collections.emptyList();
         }
 
@@ -75,7 +77,7 @@ public class AdvancedLobbyMessageHandler implements MessageHandler {
 
             renderer.updatePrice(roomId, newPrice);
         } catch (Exception e) {
-            System.err.println("[AdvancedLobbyMessageHandler] Failed to handle UPDATE_PRICE: " + e.getMessage());
+            LOGGER.error("Failed to handle UPDATE_PRICE.", e);
         }
     }
 }

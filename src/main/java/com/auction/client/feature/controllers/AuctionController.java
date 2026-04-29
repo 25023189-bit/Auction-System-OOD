@@ -15,7 +15,6 @@ import com.auction.client.feature.viewmodel.AuthViewModel;
 import com.auction.client.feature.viewmodel.LobbyRoomDisplayModel;
 import com.auction.client.feature.viewmodel.LobbyViewModel;
 import com.auction.client.network.messaging.*;
-import com.auction.client.service.ChatbotService;
 import com.auction.client.session.*;
 import com.auction.client.shared.mapper.DisplayMapper;
 import com.auction.client.shared.mapper.RoomDisplayMapper;
@@ -27,19 +26,19 @@ import com.auction.common.model.User;
 import com.auction.common.role.DefaultRolePolicy;
 import com.auction.common.role.RolePolicy;
 import com.auction.server.service.*;
-import javafx.application.Platform;
 import javafx.fxml.*;
-import javafx.geometry.Pos;
-import javafx.scene.input.KeyCode;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class AuctionController implements Initializable {
+    private static final Logger LOGGER = LoggerFactory.getLogger(AuctionController.class);
 
     // ==========================================================
     // FXML FIELDS
@@ -48,7 +47,7 @@ public class AuctionController implements Initializable {
     @FXML private Pane paneAuctionRoom;
     @FXML private BorderPane paneMainLobby;
 
-    @FXML private TextField txtUsername, txtRegUsername, txtForgotUsername, txtRegOrganization;
+    @FXML private TextField txtUsername, txtRegCustomerId, txtRegUsername, txtForgotUsername, txtRegOrganization;
     @FXML private PasswordField txtPassword, txtRegPassword, txtRegConfirm, txtForgotNewPassword, txtForgotConfirm;
     @FXML private Label lblStatus, lblRegStatus, lblForgotStatus;
     @FXML private ComboBox<String> cbRegRole;
@@ -68,19 +67,14 @@ public class AuctionController implements Initializable {
     @FXML private Button btnPlaceBid;
     @FXML private TextArea txtItemDescriptionDisplay;
     @FXML private ImageView imgProduct;
-    @FXML private StackPane chatbotRoot;
-    @FXML private VBox chatbotPanel, chatMessages;
-    @FXML private ScrollPane chatScrollPane;
-    @FXML private TextField txtChatbotInput;
-    @FXML private Button btnOpenChatbot, btnCloseChatbot, btnSendChatbot;
-
+    @FXML private ChatbotController chatbotController;
+    @FXML private TextField txtRegEmail, txtRegFullName; // Thêm vào dòng khai báo FXML
     // ==========================================================
     // CORE SERVICE
     // ==========================================================
     private ClientConnection clientConnection;
     private AuctionService auctionService;
     private boolean isNetworkConnected = false;
-    private final ChatbotService chatbotService = new ChatbotService();
 
     // ==========================================================
     // CORE ABSTRACTIONS
@@ -173,7 +167,7 @@ public class AuctionController implements Initializable {
     // ==========================================================
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("[Controller] Initializing AuctionController...");
+        LOGGER.debug("Initializing AuctionController.");
         if (!isNetworkConnected) {
             clientConnection = new ClientConnection(this);
             auctionService = new AuctionService(clientConnection);
@@ -269,7 +263,7 @@ public class AuctionController implements Initializable {
                     lobbyUserInfoBinder
             );
         }
-        System.out.println("[Controller] AuctionController initialized.");
+        LOGGER.debug("AuctionController initialized.");
     }
 
     private void wireLoginView() {
@@ -326,40 +320,8 @@ public class AuctionController implements Initializable {
     }
 
     private void wireLobbyChatbot() {
-        if (chatbotRoot == null || chatbotPanel == null || btnOpenChatbot == null) {
-            return;
-        }
-
-        chatbotRoot.setPickOnBounds(false);
-        chatbotRoot.setMouseTransparent(false);
-        chatbotPanel.setPickOnBounds(true);
-
-        setLobbyChatbotVisible(false);
-
-        if (chatMessages != null && chatMessages.getChildren().isEmpty()) {
-            addChatbotBotMessage("Xin chào, tôi có thể hỗ trợ bạn về đấu giá, anti-sniping, đặt giá và số dư.");
-        }
-
-        btnOpenChatbot.setOnAction(event -> showLobbyChatbot());
-
-        if (btnCloseChatbot != null) {
-            btnCloseChatbot.setOnAction(event -> hideLobbyChatbot());
-        }
-
-        if (btnSendChatbot != null) {
-            btnSendChatbot.setOnAction(event -> sendLobbyChatbotMessage());
-        }
-
-        if (txtChatbotInput != null) {
-            txtChatbotInput.setDisable(false);
-            txtChatbotInput.setEditable(true);
-            txtChatbotInput.setMouseTransparent(false);
-            txtChatbotInput.setOnKeyPressed(event -> {
-                if (event.getCode() == KeyCode.ENTER) {
-                    sendLobbyChatbotMessage();
-                    event.consume();
-                }
-            });
+        if (chatbotController != null) {
+            chatbotController.setLobbyContext(lblBalance, paneSelectAuction);
         }
     }
 
@@ -391,7 +353,7 @@ public class AuctionController implements Initializable {
     // ==========================================================
     @FXML
     private void handleLogin() {
-        System.out.println("\n[UI Event] Login button clicked.");
+        LOGGER.debug("Login button clicked.");
         if (authViewModel == null) {
             authViewModel = new AuthViewModel();
         }
@@ -399,11 +361,10 @@ public class AuctionController implements Initializable {
         authViewModel.setUsername(txtUsername != null ? txtUsername.getText() : "");
         authViewModel.setPassword(txtPassword != null ? txtPassword.getText() : "");
 
-        System.out.println("[Login] Read login form data from FXML:");
-        System.out.println("  - Username: " + authViewModel.getUsername());
-        System.out.println("  - Password: " + "*".repeat(authViewModel.getPassword().length()));
-
-        System.out.println("[Login] Sending LoginCommand.");
+        LOGGER.debug("Read login form data from FXML. username={}, password={}",
+                authViewModel.getUsername(),
+                "*".repeat(authViewModel.getPassword().length()));
+        LOGGER.debug("Sending LoginCommand.");
 
         new LoginCommand(
                 auctionService,
@@ -420,6 +381,10 @@ public class AuctionController implements Initializable {
             authViewModel = new AuthViewModel();
         }
 
+        String customerId = txtRegCustomerId != null ? txtRegCustomerId.getText() : "";
+        String email = txtRegEmail != null ? txtRegEmail.getText() : "";
+        String fullName = txtRegFullName != null ? txtRegFullName.getText() : "";
+
         authViewModel.setRegisterUsername(txtRegUsername != null ? txtRegUsername.getText() : "");
         authViewModel.setRegisterPassword(txtRegPassword != null ? txtRegPassword.getText() : "");
         authViewModel.setRegisterConfirmPassword(txtRegConfirm != null ? txtRegConfirm.getText() : "");
@@ -431,7 +396,10 @@ public class AuctionController implements Initializable {
                 new RegisterFormValidator(),
                 authPresenter,
                 new RegisterForm(
+                        customerId,
                         authViewModel.getRegisterUsername(),
+                        email,
+                        fullName,
                         authViewModel.getRegisterPassword(),
                         authViewModel.getRegisterConfirmPassword(),
                         authViewModel.getRegisterRole(),
@@ -439,7 +407,6 @@ public class AuctionController implements Initializable {
                 )
         ).execute();
     }
-
     @FXML
     private void handleSubmitForgotPassword() {
         if (authViewModel == null) {
@@ -495,77 +462,6 @@ public class AuctionController implements Initializable {
         if (txtChatInput != null) {
             txtChatInput.clear();
         }
-    }
-
-    private void showLobbyChatbot() {
-        setLobbyChatbotVisible(true);
-        if (txtChatbotInput != null) {
-            Platform.runLater(() -> txtChatbotInput.requestFocus());
-        }
-    }
-
-    private void hideLobbyChatbot() {
-        setLobbyChatbotVisible(false);
-    }
-
-    private void setLobbyChatbotVisible(boolean visible) {
-        if (chatbotPanel != null) {
-            chatbotPanel.setVisible(visible);
-            chatbotPanel.setManaged(visible);
-            chatbotPanel.setDisable(!visible);
-            chatbotPanel.setMouseTransparent(!visible);
-        }
-
-        if (btnOpenChatbot != null) {
-            btnOpenChatbot.setVisible(!visible);
-            btnOpenChatbot.setManaged(!visible);
-            btnOpenChatbot.setDisable(visible);
-            btnOpenChatbot.setMouseTransparent(visible);
-        }
-
-        if (visible && chatbotPanel != null) {
-            chatbotPanel.toFront();
-        } else if (btnOpenChatbot != null) {
-            btnOpenChatbot.toFront();
-        }
-    }
-
-    private void sendLobbyChatbotMessage() {
-        String userMessage = txtChatbotInput != null ? txtChatbotInput.getText().trim() : "";
-        if (userMessage.isEmpty()) {
-            return;
-        }
-
-        addChatbotUserMessage(userMessage);
-        addChatbotBotMessage(chatbotService.reply(userMessage));
-        txtChatbotInput.clear();
-    }
-
-    private void addChatbotUserMessage(String message) {
-        addChatbotMessage(message, "chatbot-message-user", Pos.CENTER_RIGHT);
-    }
-
-    private void addChatbotBotMessage(String message) {
-        addChatbotMessage(message, "chatbot-message-bot", Pos.CENTER_LEFT);
-    }
-
-    private void addChatbotMessage(String message, String styleClass, Pos alignment) {
-        if (chatMessages == null || chatScrollPane == null) {
-            return;
-        }
-
-        Label bubble = new Label(message);
-        bubble.setWrapText(true);
-        bubble.setMaxWidth(250);
-        bubble.getStyleClass().add(styleClass);
-
-        HBox row = new HBox(bubble);
-        row.setAlignment(alignment);
-        row.getStyleClass().add("chatbot-message-row");
-
-        chatMessages.getChildren().add(row);
-        chatScrollPane.layout();
-        chatScrollPane.setVvalue(1.0);
     }
 
     @FXML
