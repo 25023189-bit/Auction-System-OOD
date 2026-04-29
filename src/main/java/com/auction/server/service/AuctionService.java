@@ -62,7 +62,7 @@ public class AuctionService {
         clientConnection.sendMessage(msg);
     }
 
-    public void resetPassword(String username, String newPassword){
+    public void resetPassword(String username, String newPassword) {
         clientConnection.sendMessage(new Message("RESET_PASSWORD", username, newPassword));
     }
 
@@ -90,6 +90,7 @@ public class AuctionService {
         }
         this.currentUser = "";
     }
+
     // ==========================================================
     // PHẦN XỬ LÝ LẤY CHI TIẾT SẢN PHẨM (PRODUCT VIEW)
     // ==========================================================
@@ -111,6 +112,7 @@ public class AuctionService {
             productDetailsCallback.accept(data);
         }
     }
+
     public void sendChatMessage(String roomId, String message) {
         // Tạm thời in ra log. Khi làm tính năng Socket, ta sẽ gửi message này qua Server
         System.out.println("[Chat - Room " + roomId + "]: " + message);

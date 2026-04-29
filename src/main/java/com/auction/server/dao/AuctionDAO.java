@@ -461,14 +461,37 @@ public class AuctionDAO {
             return new CloseAuctionResult(false, "ERROR", null, null, 0.0, null, null, message);
         }
 
-        public boolean isSuccess() { return success; }
-        public String getFinalStatus() { return finalStatus; }
-        public String getWinnerId() { return winnerId; }
-        public String getSellerId() { return sellerId; }
-        public double getFinalPrice() { return finalPrice; }
-        public Double getWinnerBalance() { return winnerBalance; }
-        public Double getSellerBalance() { return sellerBalance; }
-        public String getMessage() { return message; }
+        public boolean isSuccess() {
+            return success;
+        }
+
+        public String getFinalStatus() {
+            return finalStatus;
+        }
+
+        public String getWinnerId() {
+            return winnerId;
+        }
+
+        public String getSellerId() {
+            return sellerId;
+        }
+
+        public double getFinalPrice() {
+            return finalPrice;
+        }
+
+        public Double getWinnerBalance() {
+            return winnerBalance;
+        }
+
+        public Double getSellerBalance() {
+            return sellerBalance;
+        }
+
+        public String getMessage() {
+            return message;
+        }
     }
 
     public static class SellerAuctionStats {
@@ -482,9 +505,17 @@ public class AuctionDAO {
             this.adminCanceledAuctions = Math.max(adminCanceledAuctions, 0);
         }
 
-        public int getTotalAuctions() { return totalAuctions; }
-        public int getSoldAuctions() { return soldAuctions; }
-        public int getAdminCanceledAuctions() { return adminCanceledAuctions; }
+        public int getTotalAuctions() {
+            return totalAuctions;
+        }
+
+        public int getSoldAuctions() {
+            return soldAuctions;
+        }
+
+        public int getAdminCanceledAuctions() {
+            return adminCanceledAuctions;
+        }
 
         public double getSuccessfulAuctionRate() {
             if (totalAuctions == 0) return 0.0;

@@ -37,23 +37,19 @@ public class AdminFallbackHandler implements MessageHandler {
         if (admin == null) return;
 
         switch (msg.getAction()) {
-            case "ADMIN_USER_LIST" ->
-                    admin.updateUsersTable((List<User>) msg.getData());
+            case "ADMIN_USER_LIST" -> admin.updateUsersTable((List<User>) msg.getData());
 
-            case "ADMIN_AUCTION_LIST" ->
-                    admin.updateAuctionsTable((List<AuctionRoom>) msg.getData());
+            case "ADMIN_AUCTION_LIST" -> admin.updateAuctionsTable((List<AuctionRoom>) msg.getData());
 
             case "ADMIN_PENDING_AUCTION_LIST" ->
                     admin.updatePendingAuctionsTable((List<PendingAuctionRequest>) msg.getData());
 
-            case "BID_HISTORY_SUCCESS" ->
-                    admin.updateBidHistoryTable((List<BidTransaction>) msg.getData());
+            case "BID_HISTORY_SUCCESS" -> admin.updateBidHistoryTable((List<BidTransaction>) msg.getData());
 
             case "ADMIN_ACTION_SUCCESS" ->
                     admin.handleAdminResponse(msg.getAction() + "_" + msg.id, String.valueOf(msg.getData()));
 
-            case "ADMIN_ACTION_FAIL" ->
-                    admin.handleAdminResponse("FAIL", String.valueOf(msg.getData()));
+            case "ADMIN_ACTION_FAIL" -> admin.handleAdminResponse("FAIL", String.valueOf(msg.getData()));
         }
     }
 }

@@ -1,6 +1,7 @@
 package com.auction.client.feature.controllers;
 
 // Import rõ ràng, bỏ dấu * để tránh lỗi "ambiguous reference"
+
 import com.auction.client.feature.auth.AuthPresenter;
 import com.auction.client.feature.auth.LoginCommand;
 import com.auction.client.feature.auth.LoginFormValidator;
@@ -36,48 +37,82 @@ import javafx.scene.layout.VBox;
 public class AuctionController {
 
     // ============ FXML COMPONENTS (AUTO-INJECT) ============
-    @FXML private VBox paneLogin;
-    @FXML private VBox paneRegister;
-    @FXML private VBox paneForgotPassword;
+    @FXML
+    private VBox paneLogin;
+    @FXML
+    private VBox paneRegister;
+    @FXML
+    private VBox paneForgotPassword;
 
     // ============ LOGIN COMPONENTS ============
-    @FXML private TextField txtUsername;
-    @FXML private PasswordField txtPassword;
-    @FXML private Label lblStatus;
+    @FXML
+    private TextField txtUsername;
+    @FXML
+    private PasswordField txtPassword;
+    @FXML
+    private Label lblStatus;
 
     // ============ REGISTER COMPONENTS ============
-    @FXML private TextField txtRegCustomerId;
-    @FXML private TextField txtRegUsername;
-    @FXML private TextField txtRegEmail;
-    @FXML private TextField txtRegFullName;
-    @FXML private PasswordField txtRegPassword;
-    @FXML private PasswordField txtRegConfirm;
-    @FXML private ComboBox<String> cbRegRole;
-    @FXML private Label lblRegOrganization;
-    @FXML private TextField txtRegOrganization;
-    @FXML private Label lblRegStatus;
+    @FXML
+    private TextField txtRegCustomerId;
+    @FXML
+    private TextField txtRegUsername;
+    @FXML
+    private TextField txtRegEmail;
+    @FXML
+    private TextField txtRegFullName;
+    @FXML
+    private PasswordField txtRegPassword;
+    @FXML
+    private PasswordField txtRegConfirm;
+    @FXML
+    private ComboBox<String> cbRegRole;
+    @FXML
+    private Label lblRegOrganization;
+    @FXML
+    private TextField txtRegOrganization;
+    @FXML
+    private Label lblRegStatus;
 
     // ============ FORGOT PASSWORD COMPONENTS ============
-    @FXML private TextField txtForgotUsername;
-    @FXML private PasswordField txtForgotNewPassword;
-    @FXML private PasswordField txtForgotConfirm;
-    @FXML private Label lblForgotStatus;
+    @FXML
+    private TextField txtForgotUsername;
+    @FXML
+    private PasswordField txtForgotNewPassword;
+    @FXML
+    private PasswordField txtForgotConfirm;
+    @FXML
+    private Label lblForgotStatus;
 
     // ============ AUCTION ROOM COMPONENTS ============
-    @FXML private VBox paneAuctionLobby;
-    @FXML private VBox paneAuctionRoom;
-    @FXML private Label lblRoomId;
-    @FXML private Label lblItemName;
-    @FXML private Label lblItemPrice;
-    @FXML private Label lblCurrentBid;
-    @FXML private Label lblTimeRemaining;
-    @FXML private TextField txtBidAmount;
-    @FXML private TextField txtChatInput;
-    @FXML private TextArea txtChatDisplay;
-    @FXML private ListView<String> lstBidHistory;
-    @FXML private ListView<String> lstUsers;
-    @FXML private ListView<String> lstAvailableRooms;
-    @FXML private Label lblUserInfo;
+    @FXML
+    private VBox paneAuctionLobby;
+    @FXML
+    private VBox paneAuctionRoom;
+    @FXML
+    private Label lblRoomId;
+    @FXML
+    private Label lblItemName;
+    @FXML
+    private Label lblItemPrice;
+    @FXML
+    private Label lblCurrentBid;
+    @FXML
+    private Label lblTimeRemaining;
+    @FXML
+    private TextField txtBidAmount;
+    @FXML
+    private TextField txtChatInput;
+    @FXML
+    private TextArea txtChatDisplay;
+    @FXML
+    private ListView<String> lstBidHistory;
+    @FXML
+    private ListView<String> lstUsers;
+    @FXML
+    private ListView<String> lstAvailableRooms;
+    @FXML
+    private Label lblUserInfo;
 
     // ============ SERVICES & PRESENTERS ============
     private AuctionService auctionService;

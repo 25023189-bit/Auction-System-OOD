@@ -23,16 +23,16 @@ public class LobbyUserInfoBinder {
 
     public void bindUserInfo(User user) {
         if (user == null) return;
-        
+
         if (lblUsername != null) {
             String displayName = user.getUsername() != null ? user.getUsername() : user.getId();
             lblUsername.setText(displayName);
         }
-        
+
         if (lblBalance != null) {
             lblBalance.setText(String.format("Balance: $%.2f", user.getBalance()));
         }
-        
+
         if (btnCreateAuction != null) {
             boolean isVisible = "SELLER".equalsIgnoreCase(user.getRole());
             btnCreateAuction.setVisible(isVisible);

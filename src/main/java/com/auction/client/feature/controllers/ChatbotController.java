@@ -22,14 +22,22 @@ import java.util.List;
 
 public class ChatbotController {
 
-    @FXML private StackPane chatbotRoot;
-    @FXML private VBox chatbotPanel;
-    @FXML private VBox chatMessages;
-    @FXML private ScrollPane chatScrollPane;
-    @FXML private TextField txtChatbotInput;
-    @FXML private Button btnOpenChatbot;
-    @FXML private Button btnCloseChatbot;
-    @FXML private Button btnSendChatbot;
+    @FXML
+    private StackPane chatbotRoot;
+    @FXML
+    private VBox chatbotPanel;
+    @FXML
+    private VBox chatMessages;
+    @FXML
+    private ScrollPane chatScrollPane;
+    @FXML
+    private TextField txtChatbotInput;
+    @FXML
+    private Button btnOpenChatbot;
+    @FXML
+    private Button btnCloseChatbot;
+    @FXML
+    private Button btnSendChatbot;
 
     private final ChatbotService chatbotService = new ChatbotService();
     private Label balanceLabel;

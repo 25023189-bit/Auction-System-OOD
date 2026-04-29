@@ -1,3 +1,4 @@
 package com.auction.client.feature.room;
 
-public record BidRequest(String amountText) {}
+public record BidRequest(String amountText) {
+}

@@ -13,32 +13,72 @@ public class AuctionRoomViewModel {
     private LocalDateTime startTime;
     private LocalDateTime endTime;
 
-    public String getRoomId() { return roomId; }
-    public void setRoomId(String roomId) { this.roomId = roomId; }
+    public String getRoomId() {
+        return roomId;
+    }
 
-    public String getItemName() { return itemName; }
-    public void setItemName(String itemName) { this.itemName = itemName; }
+    public void setRoomId(String roomId) {
+        this.roomId = roomId;
+    }
 
-    public String getItemDescription() { return itemDescription; }
-    public void setItemDescription(String itemDescription) { this.itemDescription = itemDescription; }
+    public String getItemName() {
+        return itemName;
+    }
 
-    public double getCurrentPrice() { return currentPrice; }
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+
+    public String getItemDescription() {
+        return itemDescription;
+    }
+
+    public void setItemDescription(String itemDescription) {
+        this.itemDescription = itemDescription;
+    }
+
+    public double getCurrentPrice() {
+        return currentPrice;
+    }
+
     public void setCurrentPrice(double currentPrice) {
         this.currentPrice = currentPrice;
         this.displayPrice = String.format("%,.0f $", currentPrice);
     }
 
-    public String getDisplayPrice() { return displayPrice; }
+    public String getDisplayPrice() {
+        return displayPrice;
+    }
 
-    public String getSellerName() { return sellerName; }
-    public void setSellerName(String sellerName) { this.sellerName = sellerName; }
+    public String getSellerName() {
+        return sellerName;
+    }
 
-    public boolean isOwner() { return owner; }
-    public void setOwner(boolean owner) { this.owner = owner; }
+    public void setSellerName(String sellerName) {
+        this.sellerName = sellerName;
+    }
 
-    public LocalDateTime getStartTime() { return startTime; }
-    public void setStartTime(LocalDateTime startTime) { this.startTime = startTime; }
+    public boolean isOwner() {
+        return owner;
+    }
 
-    public LocalDateTime getEndTime() { return endTime; }
-    public void setEndTime(LocalDateTime endTime) { this.endTime = endTime; }
+    public void setOwner(boolean owner) {
+        this.owner = owner;
+    }
+
+    public LocalDateTime getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(LocalDateTime startTime) {
+        this.startTime = startTime;
+    }
+
+    public LocalDateTime getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(LocalDateTime endTime) {
+        this.endTime = endTime;
+    }
 }

@@ -6,7 +6,8 @@ import java.util.concurrent.ConcurrentMap;
 public class AuctionStateManager {
     private static final ConcurrentMap<String, AuctionRuntimeState> STATES = new ConcurrentHashMap<>();
 
-    private AuctionStateManager() {}
+    private AuctionStateManager() {
+    }
 
     public static AuctionRuntimeState getState(String roomId) {
         return STATES.computeIfAbsent(roomId, id -> new AuctionRuntimeState());

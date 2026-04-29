@@ -62,51 +62,131 @@ public class PendingAuctionRequest implements Serializable {
         this.adminCancellationRate = adminCancellationRate;
     }
 
-    public String getRequestId() { return requestId; }
-    public void setRequestId(String requestId) { this.requestId = requestId; }
+    public String getRequestId() {
+        return requestId;
+    }
 
-    public String getRoomId() { return roomId; }
-    public void setRoomId(String roomId) { this.roomId = roomId; }
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-    public String getItemId() { return itemId; }
-    public void setItemId(String itemId) { this.itemId = itemId; }
+    public String getRoomId() {
+        return roomId;
+    }
 
-    public String getSellerId() { return sellerId; }
-    public void setSellerId(String sellerId) { this.sellerId = sellerId; }
+    public void setRoomId(String roomId) {
+        this.roomId = roomId;
+    }
 
-    public String getSellerOrganization() { return sellerOrganization; }
-    public void setSellerOrganization(String sellerOrganization) { this.sellerOrganization = sellerOrganization; }
+    public String getItemId() {
+        return itemId;
+    }
 
-    public String getItemName() { return itemName; }
-    public void setItemName(String itemName) { this.itemName = itemName; }
+    public void setItemId(String itemId) {
+        this.itemId = itemId;
+    }
 
-    public String getItemDesc() { return itemDesc; }
-    public void setItemDesc(String itemDesc) { this.itemDesc = itemDesc; }
+    public String getSellerId() {
+        return sellerId;
+    }
 
-    public double getStartingPrice() { return startingPrice; }
-    public void setStartingPrice(double startingPrice) { this.startingPrice = startingPrice; }
+    public void setSellerId(String sellerId) {
+        this.sellerId = sellerId;
+    }
 
-    public double getMinimumJoinAmount() { return minimumJoinAmount; }
-    public void setMinimumJoinAmount(double minimumJoinAmount) { this.minimumJoinAmount = minimumJoinAmount; }
+    public String getSellerOrganization() {
+        return sellerOrganization;
+    }
 
-    public double getBidStep() { return bidStep; }
-    public void setBidStep(double bidStep) { this.bidStep = bidStep; }
+    public void setSellerOrganization(String sellerOrganization) {
+        this.sellerOrganization = sellerOrganization;
+    }
 
-    public LocalDateTime getStartTime() { return startTime; }
-    public void setStartTime(LocalDateTime startTime) { this.startTime = startTime; }
+    public String getItemName() {
+        return itemName;
+    }
 
-    public int getDurationMinutes() { return durationMinutes; }
-    public void setDurationMinutes(int durationMinutes) { this.durationMinutes = durationMinutes; }
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
 
-    public int getExtensionSeconds() { return extensionSeconds; }
-    public void setExtensionSeconds(int extensionSeconds) { this.extensionSeconds = extensionSeconds; }
+    public String getItemDesc() {
+        return itemDesc;
+    }
 
-    public double getSellerReputation() { return sellerReputation; }
-    public void setSellerReputation(double sellerReputation) { this.sellerReputation = sellerReputation; }
+    public void setItemDesc(String itemDesc) {
+        this.itemDesc = itemDesc;
+    }
 
-    public double getSuccessfulAuctionRate() { return successfulAuctionRate; }
-    public void setSuccessfulAuctionRate(double successfulAuctionRate) { this.successfulAuctionRate = successfulAuctionRate; }
+    public double getStartingPrice() {
+        return startingPrice;
+    }
 
-    public double getAdminCancellationRate() { return adminCancellationRate; }
-    public void setAdminCancellationRate(double adminCancellationRate) { this.adminCancellationRate = adminCancellationRate; }
+    public void setStartingPrice(double startingPrice) {
+        this.startingPrice = startingPrice;
+    }
+
+    public double getMinimumJoinAmount() {
+        return minimumJoinAmount;
+    }
+
+    public void setMinimumJoinAmount(double minimumJoinAmount) {
+        this.minimumJoinAmount = minimumJoinAmount;
+    }
+
+    public double getBidStep() {
+        return bidStep;
+    }
+
+    public void setBidStep(double bidStep) {
+        this.bidStep = bidStep;
+    }
+
+    public LocalDateTime getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(LocalDateTime startTime) {
+        this.startTime = startTime;
+    }
+
+    public int getDurationMinutes() {
+        return durationMinutes;
+    }
+
+    public void setDurationMinutes(int durationMinutes) {
+        this.durationMinutes = durationMinutes;
+    }
+
+    public int getExtensionSeconds() {
+        return extensionSeconds;
+    }
+
+    public void setExtensionSeconds(int extensionSeconds) {
+        this.extensionSeconds = extensionSeconds;
+    }
+
+    public double getSellerReputation() {
+        return sellerReputation;
+    }
+
+    public void setSellerReputation(double sellerReputation) {
+        this.sellerReputation = sellerReputation;
+    }
+
+    public double getSuccessfulAuctionRate() {
+        return successfulAuctionRate;
+    }
+
+    public void setSuccessfulAuctionRate(double successfulAuctionRate) {
+        this.successfulAuctionRate = successfulAuctionRate;
+    }
+
+    public double getAdminCancellationRate() {
+        return adminCancellationRate;
+    }
+
+    public void setAdminCancellationRate(double adminCancellationRate) {
+        this.adminCancellationRate = adminCancellationRate;
+    }
 }

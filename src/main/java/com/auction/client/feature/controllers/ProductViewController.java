@@ -8,9 +8,12 @@ import com.auction.common.model.AuctionRoom;
 
 public class ProductViewController {
 
-    @FXML private Label lblProductName;
-    @FXML private Label lblDescription;
-    @FXML private Label lblStartingPrice;
+    @FXML
+    private Label lblProductName;
+    @FXML
+    private Label lblDescription;
+    @FXML
+    private Label lblStartingPrice;
 
     private AuctionService auctionService;
     private String currentRoomId;
@@ -24,15 +27,16 @@ public class ProductViewController {
                     try {
                         AuctionRoom product = (AuctionRoom) data;
 
-                        if(lblProductName != null) lblProductName.setText(product.getItemName());
-                        if(lblDescription != null) lblDescription.setText(product.getItemDescription());
-                        if(lblStartingPrice != null) lblStartingPrice.setText(String.format("%,.0f $", product.getStartingPrice()));
+                        if (lblProductName != null) lblProductName.setText(product.getItemName());
+                        if (lblDescription != null) lblDescription.setText(product.getItemDescription());
+                        if (lblStartingPrice != null)
+                            lblStartingPrice.setText(String.format("%,.0f $", product.getStartingPrice()));
                     } catch (Exception e) {
-                        if(lblDescription != null) lblDescription.setText(data.toString());
+                        if (lblDescription != null) lblDescription.setText(data.toString());
                     }
                 } else {
                     // Đổi text báo không tìm thấy
-                    if(lblDescription != null) lblDescription.setText("Product information not found!");
+                    if (lblDescription != null) lblDescription.setText("Product information not found!");
                 }
             });
         });

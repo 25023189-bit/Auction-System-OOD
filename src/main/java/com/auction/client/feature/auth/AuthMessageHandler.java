@@ -32,7 +32,8 @@ public class AuthMessageHandler implements MessageHandler {
     @Override
     public boolean supports(String action) {
         return switch (action) {
-            case "LOGIN_SUCCESS", "LOGIN_FAIL", "REGISTER_SUCCESS", "REGISTER_FAIL", "RESET_SUCCESS", "RESET_FAIL" -> true;
+            case "LOGIN_SUCCESS", "LOGIN_FAIL", "REGISTER_SUCCESS", "REGISTER_FAIL", "RESET_SUCCESS", "RESET_FAIL" ->
+                    true;
             default -> false;
         };
     }

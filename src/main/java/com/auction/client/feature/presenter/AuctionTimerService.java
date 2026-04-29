@@ -25,7 +25,7 @@ public class AuctionTimerService {
 
     public void start(long durationSeconds) {
         stop();
-        
+
         timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
             if (onTick != null) {
                 onTick.run();
