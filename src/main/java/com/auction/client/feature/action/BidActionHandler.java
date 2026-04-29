@@ -5,7 +5,7 @@ import com.auction.client.session.SessionStore;
 import com.auction.client.feature.presenter.AuctionRoomPresenter;
 
 /**
- * Handles bid placement actions
+ * Handler đặt giá phiên bản dùng cho package presenter cũ.
  */
 public class BidActionHandler {
     private AuctionService auctionService;
@@ -20,7 +20,8 @@ public class BidActionHandler {
 
     public void placeBid(String roomId, double bidAmount) {
         if (auctionService != null) {
-            auctionService.placeBid(bidAmount); // Xóa roomId đi
+            // AuctionService lấy phòng hiện tại từ session/server nên không cần gửi roomId ở đây.
+            auctionService.placeBid(bidAmount);
         }
     }
 }

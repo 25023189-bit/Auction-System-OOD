@@ -6,6 +6,10 @@ import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.User;
 import com.auction.common.role.RolePolicy;
 
+/**
+ * Bind dữ liệu AuctionRoom lên UI phòng đấu giá.
+ * Đồng thời kiểm tra quyền owner để bật/tắt control dành cho seller.
+ */
 public class AuctionRoomStateBinder implements ViewStateBinder<AuctionRoom> {
 
     private final AuctionRoomPresenter presenter;
@@ -33,6 +37,7 @@ public class AuctionRoomStateBinder implements ViewStateBinder<AuctionRoom> {
             presenter.appendChat("New participants are locked during the final 30 seconds.");
         }
 
+        // Quyền đóng phiên phụ thuộc cả role hiện tại và seller sở hữu phòng.
         User user = sessionStore.getCurrentUser();
         String currentUserId = user != null ? user.getId() : null;
         boolean isOwner = rolePolicy.canCloseAuction(user, room, currentUserId);

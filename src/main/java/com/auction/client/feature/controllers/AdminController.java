@@ -20,6 +20,10 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Controller cho cửa sổ quản trị.
+ * Admin dùng màn hình này để xem user, phòng đấu giá, lịch sử bid và duyệt yêu cầu tạo phiên đấu giá.
+ */
 public class AdminController {
 
     @FXML
@@ -60,8 +64,10 @@ public class AdminController {
     @FXML
     private TableColumn<PendingAuctionRequest, Integer> colPendingDurationMinutes, colPendingExtensionSeconds;
 
+    // Service được truyền từ launcher sau khi FXML tạo controller.
     private AuctionService auctionService;
 
+    // ObservableList là nguồn dữ liệu trực tiếp cho TableView JavaFX.
     private final ObservableList<User> userList = FXCollections.observableArrayList();
     private final ObservableList<AuctionRoom> auctionList = FXCollections.observableArrayList();
     private final ObservableList<BidTransaction> bidHistoryList = FXCollections.observableArrayList();
@@ -69,6 +75,7 @@ public class AdminController {
 
     @FXML
     public void initialize() {
+        // PropertyValueFactory map tên thuộc tính model sang cột hiển thị trên bảng.
         colUserId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colUsername.setCellValueFactory(new PropertyValueFactory<>("username"));
         colRole.setCellValueFactory(new PropertyValueFactory<>("role"));
@@ -105,6 +112,7 @@ public class AdminController {
         colPendingAdminCancellationRate.setCellValueFactory(new PropertyValueFactory<>("adminCancellationRate"));
         tablePendingAuctions.setItems(pendingAuctionList);
 
+        // Khi chọn một phòng, client yêu cầu server trả về lịch sử bid của phòng đó.
         tableAuctions.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
                 auctionService.getBidHistory(newSelection.getRoomId());
@@ -114,6 +122,7 @@ public class AdminController {
 
     public void setAuctionService(AuctionService auctionService) {
         this.auctionService = auctionService;
+        // Sau khi có service mới có thể gửi request lấy dữ liệu admin.
         loadUsers();
         loadAuctions();
         loadPendingAuctions();
@@ -121,6 +130,7 @@ public class AdminController {
 
     @FXML
     private void loadUsers() {
+        // Gửi action riêng để server phân biệt request lấy danh sách user.
         auctionService.getClientConnection().sendMessage(
                 new Message("ADMIN_GET_USERS", auctionService.getCurrentUser(), "")
         );
@@ -128,6 +138,7 @@ public class AdminController {
 
     @FXML
     private void loadAuctions() {
+        // Lấy toàn bộ phiên đấu giá để admin theo dõi hoặc hủy phiên.
         auctionService.getClientConnection().sendMessage(
                 new Message("ADMIN_GET_AUCTIONS", auctionService.getCurrentUser(), "")
         );
@@ -135,6 +146,7 @@ public class AdminController {
 
     @FXML
     private void loadPendingAuctions() {
+        // Lấy các yêu cầu tạo phiên đang chờ admin phê duyệt.
         auctionService.getClientConnection().sendMessage(
                 new Message("ADMIN_GET_PENDING_AUCTIONS", auctionService.getCurrentUser(), "")
         );
@@ -148,6 +160,7 @@ public class AdminController {
             return;
         }
 
+        // Thao tác xóa user là hành động nhạy cảm nên cần xác nhận trước khi gửi lệnh.
         Alert confirm = new Alert(Alert.AlertType.CONFIRMATION);
         confirm.setTitle("Confirm Delete");
         confirm.setHeaderText("Are you sure you want to delete account: " + selectedUser.getUsername() + "?");
@@ -168,6 +181,7 @@ public class AdminController {
             return;
         }
 
+        // Admin có quyền hủy cưỡng bức phiên đấu giá khi cần xử lý vi phạm.
         Alert confirm = new Alert(Alert.AlertType.CONFIRMATION);
         confirm.setTitle("Confirm Auction Cancellation");
         confirm.setHeaderText("Are you sure you want to force-cancel auction: " + selectedRoom.getRoomId() + "?");
@@ -188,6 +202,7 @@ public class AdminController {
             return;
         }
 
+        // Chỉ gửi requestId, phần kiểm tra và tạo phòng thật do server xử lý.
         auctionService.getClientConnection().sendMessage(
                 new Message("ADMIN_APPROVE_AUCTION", auctionService.getCurrentUser(), selectedRequest.getRequestId())
         );
@@ -201,12 +216,14 @@ public class AdminController {
             return;
         }
 
+        // Từ chối yêu cầu tạo phiên và để server cập nhật trạng thái lưu trữ.
         auctionService.getClientConnection().sendMessage(
                 new Message("ADMIN_REJECT_AUCTION", auctionService.getCurrentUser(), selectedRequest.getRequestId())
         );
     }
 
     public void updateUsersTable(List<User> users) {
+        // Server response có thể về từ thread mạng, vì vậy cập nhật TableView qua Platform.runLater.
         Platform.runLater(() -> {
             userList.clear();
             if (users != null) userList.addAll(users);
@@ -214,6 +231,7 @@ public class AdminController {
     }
 
     public void updateAuctionsTable(List<AuctionRoom> rooms) {
+        // Thay toàn bộ danh sách để bảng luôn phản ánh trạng thái mới nhất từ server.
         Platform.runLater(() -> {
             auctionList.clear();
             if (rooms != null) auctionList.addAll(rooms);
@@ -221,6 +239,7 @@ public class AdminController {
     }
 
     public void updateBidHistoryTable(List<BidTransaction> historyData) {
+        // Lịch sử bid phụ thuộc phòng đang chọn ở bảng auction.
         Platform.runLater(() -> {
             bidHistoryList.clear();
             if (historyData != null) {
@@ -230,6 +249,7 @@ public class AdminController {
     }
 
     public void updatePendingAuctionsTable(List<PendingAuctionRequest> requests) {
+        // Danh sách yêu cầu chờ duyệt được reload sau khi admin approve/reject.
         Platform.runLater(() -> {
             pendingAuctionList.clear();
             if (requests != null) pendingAuctionList.addAll(requests);

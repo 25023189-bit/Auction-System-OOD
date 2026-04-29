@@ -1,5 +1,8 @@
 package com.auction.client.feature.auth;
 
+/**
+ * Validator cho form đăng nhập.
+ */
 public class LoginFormValidator implements FormValidator<LoginForm> {
 
     @Override

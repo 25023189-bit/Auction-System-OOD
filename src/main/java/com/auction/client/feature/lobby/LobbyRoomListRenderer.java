@@ -8,6 +8,9 @@ import javafx.scene.layout.VBox;
 
 import java.util.List;
 
+/**
+ * Render danh sách phòng đấu giá thành các card trong FlowPane lobby.
+ */
 public class LobbyRoomListRenderer {
     private final FlowPane paneSelectAuction;
     private final AbstractAuctionCardFactory<LobbyRoomDisplayModel, VBox> cardFactory;
@@ -18,6 +21,7 @@ public class LobbyRoomListRenderer {
         this.cardFactory = cardFactory;
     }
 
+    // Render lại danh sách từ đầu khi server gửi ROOM_LIST mới.
     public void render(List<LobbyRoomDisplayModel> models) {
         if (paneSelectAuction == null) return;
 
@@ -31,6 +35,7 @@ public class LobbyRoomListRenderer {
         }
     }
 
+    // Tìm đúng card bằng roomId được lưu trong userData và cập nhật label giá.
     public void updatePrice(String roomId, double newPrice) {
         if (paneSelectAuction == null || roomId == null || roomId.isBlank()) return;
 

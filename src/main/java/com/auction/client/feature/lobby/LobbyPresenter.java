@@ -7,6 +7,9 @@ import javafx.scene.layout.VBox;
 
 import java.util.List;
 
+/**
+ * Presenter đơn giản cho lobby: nhận danh sách phòng và đưa card vào FlowPane.
+ */
 public class LobbyPresenter implements ViewPresenter {
     private final FlowPane paneSelectAuction;
     private final CardFactory<AuctionRoom, VBox> cardFactory;
@@ -17,6 +20,7 @@ public class LobbyPresenter implements ViewPresenter {
         this.cardFactory = cardFactory;
     }
 
+    // Xóa danh sách cũ rồi render danh sách mới từ server.
     public void showRooms(List<AuctionRoom> rooms) {
         if (paneSelectAuction == null) return;
 

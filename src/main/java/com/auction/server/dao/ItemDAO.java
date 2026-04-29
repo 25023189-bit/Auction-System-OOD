@@ -2,12 +2,15 @@ package com.auction.server.dao;
 
 import com.auction.common.model.Item;
 import com.auction.server.utils.DatabaseConnection;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class ItemDAO {
+    private static final Logger LOGGER = LoggerFactory.getLogger(ItemDAO.class);
 
     public boolean saveItem(Item item) {
         String sql = """
@@ -25,8 +28,7 @@ public class ItemDAO {
 
             return stmt.executeUpdate() > 0;
         } catch (SQLException e) {
-            System.err.println("Lỗi khi lưu Item: " + e.getMessage());
-            e.printStackTrace();
+            LOGGER.error("Failed to save item {}.", item != null ? item.getId() : null, e);
             return false;
         }
     }
@@ -41,8 +43,7 @@ public class ItemDAO {
             stmt.setString(2, itemId);
             return stmt.executeUpdate() > 0;
         } catch (SQLException e) {
-            System.err.println("Lỗi khi cập nhật current_price của item: " + e.getMessage());
-            e.printStackTrace();
+            LOGGER.error("Failed to update current price for item {}.", itemId, e);
             return false;
         }
     }

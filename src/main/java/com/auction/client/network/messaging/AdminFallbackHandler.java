@@ -10,6 +10,9 @@ import com.auction.common.model.User;
 
 import java.util.List;
 
+/**
+ * Chuyển các phản hồi admin từ router về AdminController đang mở.
+ */
 public class AdminFallbackHandler implements MessageHandler {
     private final SessionStore sessionStore;
 
@@ -33,6 +36,7 @@ public class AdminFallbackHandler implements MessageHandler {
     @Override
     @SuppressWarnings("unchecked")
     public void handle(Message msg) {
+        // Nếu dashboard admin chưa mở thì không có bảng nào cần cập nhật.
         AdminController admin = sessionStore.getAdminController();
         if (admin == null) return;
 

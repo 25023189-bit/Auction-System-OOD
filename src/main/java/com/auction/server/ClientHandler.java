@@ -1,18 +1,11 @@
 package com.auction.server;
 
 import com.auction.common.dto.Message;
-import com.auction.server.handler.AdminActionHandler;
-import com.auction.server.handler.AuctionServerEventPublisher;
-import com.auction.server.handler.AuthActionHandler;
-import com.auction.server.handler.ClientActionContext;
-import com.auction.server.handler.ClientActionRouter;
-import com.auction.server.handler.PendingAuctionRoomFactory;
-import com.auction.server.handler.RoomActionHandler;
-import com.auction.server.handler.SellerActionHandler;
+import com.auction.server.handler.*;
 import com.auction.server.main.AuctionServer;
-import com.auction.server.service.AuctionRoomService;
-import com.auction.server.service.AuthService;
-import com.auction.server.service.PendingAuctionApprovalService;
+import com.auction.server.service.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -20,6 +13,8 @@ import java.net.Socket;
 import java.util.List;
 
 public class ClientHandler implements Runnable {
+    private static final Logger LOGGER = LoggerFactory.getLogger(ClientHandler.class);
+
     private final Socket socket;
     private final ClientActionContext actionContext;
     private final ClientActionRouter actionRouter;
@@ -48,8 +43,7 @@ public class ClientHandler implements Runnable {
             this.out = new ObjectOutputStream(socket.getOutputStream());
             this.in = new ObjectInputStream(socket.getInputStream());
         } catch (Exception e) {
-            System.out.println("Error creating communication streams with client!");
-            e.printStackTrace();
+            LOGGER.error("Error creating communication streams with client.", e);
             alive = false;
         }
     }
@@ -86,7 +80,7 @@ public class ClientHandler implements Runnable {
                 actionRouter.route(msg, actionContext);
             }
         } catch (Exception e) {
-            System.out.println("Client mat ket noi: " + getUserId() + " | " + e.getMessage());
+            LOGGER.info("Client disconnected: {} | {}", getUserId(), e.getMessage());
         } finally {
             closeConnection();
         }

@@ -2,6 +2,9 @@ package com.auction.client.feature.viewmodel;
 
 import java.time.LocalDateTime;
 
+/**
+ * ViewModel biểu diễn dữ liệu phòng đấu giá đang hiển thị.
+ */
 public class AuctionRoomViewModel {
     private String roomId;
     private String itemName;
@@ -42,6 +45,7 @@ public class AuctionRoomViewModel {
     }
 
     public void setCurrentPrice(double currentPrice) {
+        // Cập nhật cả giá dạng số và chuỗi đã format để UI có thể dùng trực tiếp.
         this.currentPrice = currentPrice;
         this.displayPrice = String.format("%,.0f $", currentPrice);
     }
@@ -62,6 +66,7 @@ public class AuctionRoomViewModel {
         return owner;
     }
 
+<<<<<<< HEAD
     public void setOwner(boolean owner) {
         this.owner = owner;
     }
@@ -82,3 +87,8 @@ public class AuctionRoomViewModel {
         this.endTime = endTime;
     }
 }
+=======
+    public LocalDateTime getEndTime() { return endTime; }
+    public void setEndTime(LocalDateTime endTime) { this.endTime = endTime; }
+}
+>>>>>>> 79695510de950987573eb4278b356292c3d972f3

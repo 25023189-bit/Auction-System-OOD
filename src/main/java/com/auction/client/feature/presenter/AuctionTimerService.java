@@ -5,7 +5,7 @@ import javafx.animation.Timeline;
 import javafx.util.Duration;
 
 /**
- * Service to manage auction countdown timer
+ * Service đếm ngược phiên bản nhẹ, gọi callback onTick mỗi giây và onComplete khi kết thúc.
  */
 public class AuctionTimerService {
     private Timeline timeline;
@@ -24,6 +24,7 @@ public class AuctionTimerService {
     }
 
     public void start(long durationSeconds) {
+        // Dừng timer cũ trước khi tạo timer mới để tránh callback chạy trùng.
         stop();
 
         timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {

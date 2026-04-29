@@ -10,6 +10,9 @@ import com.auction.server.service.AuctionService;
 import com.auction.server.service.ClientConnection;
 import javafx.scene.control.Alert;
 
+/**
+ * Xử lý các phản hồi server liên quan đến đăng nhập, đăng ký và đặt lại mật khẩu.
+ */
 public class AuthMessageHandler implements MessageHandler {
     private final AuthPresenter presenter;
     private final SceneNavigator navigator;
@@ -31,6 +34,7 @@ public class AuthMessageHandler implements MessageHandler {
 
     @Override
     public boolean supports(String action) {
+        // Handler này chỉ nhận nhóm action xác thực, các action khác để router chuyển tiếp.
         return switch (action) {
             case "LOGIN_SUCCESS", "LOGIN_FAIL", "REGISTER_SUCCESS", "REGISTER_FAIL", "RESET_SUCCESS", "RESET_FAIL" ->
                     true;
@@ -59,6 +63,7 @@ public class AuthMessageHandler implements MessageHandler {
         }
     }
 
+    // Sau khi login thành công, lưu session và điều hướng theo vai trò của user.
     private void handleLoginSuccess(User user) {
         presenter.showLoginSuccess();
 
@@ -70,6 +75,7 @@ public class AuthMessageHandler implements MessageHandler {
         if (rolePolicy.isAdmin(user)) {
             navigator.openAdminDashboard();
         } else {
+            // Bidder/Seller vào lobby và yêu cầu danh sách phòng mới nhất.
             navigator.showLobby();
             auctionService.getRooms();
         }

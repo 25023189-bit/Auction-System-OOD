@@ -5,6 +5,8 @@ import com.auction.common.model.AuctionRoom;
 import com.auction.server.ClientHandler;
 import com.auction.server.dao.AuctionDAO;
 import com.auction.server.service.AuctionRoomService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -18,6 +20,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class AuctionServer {
+    private static final Logger LOGGER = LoggerFactory.getLogger(AuctionServer.class);
 
     public static List<ClientHandler> clients = new CopyOnWriteArrayList<>();
 
@@ -34,16 +37,16 @@ public class AuctionServer {
 
         // NÂNG CẤP 3: Xử lý khi tắt Server an toàn (Graceful Shutdown)
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            System.out.println("\n[Server] Initiating graceful shutdown...");
+            LOGGER.info("Initiating graceful shutdown.");
             broadcast(new Message("SERVER_SHUTDOWN", "SERVER", "System under maintenance"));
             if (AUCTION_WATCHER != null) AUCTION_WATCHER.shutdown();
             if (CLIENT_POOL != null) CLIENT_POOL.shutdown();
-            System.out.println("[Server] Shutdown complete.");
+            LOGGER.info("Shutdown complete.");
         }));
 
         try (ServerSocket serverSocket = new ServerSocket(port)) {
             startExpiredAuctionWatcher();
-            System.out.println("Server running on port: " + port);
+            LOGGER.info("Server running on port: {}", port);
 
             while (!serverSocket.isClosed()) {
                 Socket socket = serverSocket.accept();
@@ -56,13 +59,12 @@ public class AuctionServer {
             }
 
         } catch (Exception e) {
-            System.out.println("Server error: " + e.getMessage());
-            e.printStackTrace();
+            LOGGER.error("Server error.", e);
         }
     }
 
     public static void broadcast(Message msg) {
-        System.out.println("Broadcast: " + msg.getAction());
+        LOGGER.debug("Broadcast: {}", msg.getAction());
 
         for (ClientHandler client : clients) {
             if (client != null && client.isAlive()) {
@@ -102,20 +104,10 @@ public class AuctionServer {
         }
     }
 
-    // NÂNG CẤP 4: Hàm gửi tin nhắn riêng cho 1 user
-    public static void sendToUser(String userId, Message msg) {
-        ClientHandler client = userSessions.get(userId);
-        if (client != null && client.isAlive()) {
-            client.sendMessage(msg);
-        } else {
-            System.out.println("User " + userId + " is offline or does not exist.");
-        }
-    }
-
     public static void addClient(ClientHandler client) {
         if (client != null) {
             clients.add(client);
-            System.out.println("Client connected | Online: " + clients.size());
+            LOGGER.info("Client connected | Online: {}", clients.size());
         }
     }
 
@@ -126,7 +118,7 @@ public class AuctionServer {
                 userSessions.remove(client.getUserId());
             }
             client.closeConnection();
-            System.out.println("Client disconnected | Online: " + clients.size());
+            LOGGER.info("Client disconnected | Online: {}", clients.size());
         }
     }
 
@@ -143,7 +135,7 @@ public class AuctionServer {
                     }
                 }
             } catch (Exception e) {
-                System.err.println("Auction watcher error: " + e.getMessage());
+                LOGGER.error("Auction watcher error.", e);
             }
         }, 1, 1, TimeUnit.SECONDS);
     }

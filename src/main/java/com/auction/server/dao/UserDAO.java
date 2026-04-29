@@ -3,6 +3,8 @@ package com.auction.server.dao;
 import com.auction.common.model.User;
 import com.auction.server.utils.DatabaseConnection;
 import com.auction.server.utils.PasswordUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDAO {
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserDAO.class);
 
     public User getUserById(String customerId) {
         String sql = """
@@ -32,8 +35,7 @@ public class UserDAO {
                 }
             }
         } catch (SQLException e) {
-            System.err.println("Loi khi truy van User theo ID: " + e.getMessage());
-            e.printStackTrace();
+            LOGGER.error("Failed to query user by customer id {}.", customerId, e);
         }
         return null;
     }
@@ -56,8 +58,7 @@ public class UserDAO {
                 }
             }
         } catch (SQLException e) {
-            System.err.println("Loi khi truy van User theo username: " + e.getMessage());
-            e.printStackTrace();
+            LOGGER.error("Failed to query user by username {}.", username, e);
         }
         return null;
     }
@@ -124,8 +125,7 @@ public class UserDAO {
                 return mapUser(rs);
             }
         } catch (SQLException e) {
-            System.err.println("Loi khi dang nhap: " + e.getMessage());
-            e.printStackTrace();
+            LOGGER.error("Failed to login user {}.", loginIdentifier, e);
             return null;
         }
     }
@@ -148,6 +148,12 @@ public class UserDAO {
                 String email = user.getEmail() != null ? user.getEmail().trim() : "";
                 String fullName = user.getFullName() != null ? user.getFullName().trim() : "";
 
+                String role = normalizeRole(user.getRole());
+
+                if (role == null) {
+                    return "INVALID_ROLE";
+                }
+
                 checkStmt.setString(1, customerId);
                 checkStmt.setString(2, username);
                 checkStmt.setString(3, email);
@@ -164,7 +170,7 @@ public class UserDAO {
                     insertStmt.setString(1, customerId);
                     insertStmt.setString(2, username);
                     insertStmt.setString(3, passwordHash);
-                    insertStmt.setString(4, user.getRole());
+                    insertStmt.setString(4, role);
                     insertStmt.setString(5, normalizeOrganization(user));
                     insertStmt.setDouble(6, user.getBalance());
                     insertStmt.setString(7, email);
@@ -174,8 +180,7 @@ public class UserDAO {
                 }
             }
         } catch (SQLException e) {
-            System.err.println("Loi khi dang ky User moi: " + e.getMessage());
-            e.printStackTrace();
+            LOGGER.error("Failed to register user {}.", user != null ? user.getUsername() : null, e);
             return "SQL ERROR: " + e.getMessage();
         }
     }
@@ -198,8 +203,7 @@ public class UserDAO {
 
             return stmt.executeUpdate() > 0;
         } catch (SQLException e) {
-            System.err.println("Loi khi doi mat khau: " + e.getMessage());
-            e.printStackTrace();
+            LOGGER.error("Failed to reset password for customer id {}.", customerId, e);
             return false;
         }
     }
@@ -245,7 +249,7 @@ public class UserDAO {
                 userList.add(mapUser(rs));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Failed to load all users.", e);
         }
         return userList;
     }
@@ -259,8 +263,7 @@ public class UserDAO {
             stmt.setString(1, normalizeCustomerId(customerId));
             return stmt.executeUpdate() > 0;
         } catch (SQLException e) {
-            System.err.println("Loi khi xoa User: " + e.getMessage());
-            e.printStackTrace();
+            LOGGER.error("Failed to delete user {}.", customerId, e);
             return false;
         }
     }
@@ -292,6 +295,18 @@ public class UserDAO {
 
     private String normalizeCustomerId(String customerId) {
         return customerId == null ? null : customerId.trim().toUpperCase();
+    }
+
+    private String normalizeRole(String role) {
+        if (role == null) {
+            return null;
+        }
+
+        String normalizedRole = role.trim().toUpperCase();
+        return switch (normalizedRole) {
+            case "BIDDER", "SELLER", "ADMIN" -> normalizedRole;
+            default -> null;
+        };
     }
 
     private String normalizeOrganization(User user) {
@@ -327,8 +342,7 @@ public class UserDAO {
 
             return "BD500001";
         } catch (SQLException e) {
-            System.err.println("Loi khi sinh customer_id moi: " + e.getMessage());
-            e.printStackTrace();
+            LOGGER.error("Failed to generate next customer id.", e);
             return "BD500001";
         }
     }

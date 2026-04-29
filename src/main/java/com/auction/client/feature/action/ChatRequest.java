@@ -1,7 +1,7 @@
 package com.auction.client.feature.action;
 
 /**
- * Request object for chat messages
+ * DTO mô tả một tin nhắn chat ở package action cũ.
  */
 public class ChatRequest {
     private String roomId;

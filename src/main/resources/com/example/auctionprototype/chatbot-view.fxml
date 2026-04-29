@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<StackPane fx:id="chatbotRoot" prefHeight="520.0" prefWidth="360.0" pickOnBounds="false" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.ChatbotController">
+<StackPane fx:id="chatbotRoot" prefHeight="520.0" prefWidth="360.0" pickOnBounds="false" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.chatbot.ChatbotController">
     <children>
         <VBox fx:id="chatbotPanel" alignment="TOP_CENTER" disable="true" managed="false" maxHeight="460.0" maxWidth="340.0" mouseTransparent="true" spacing="0" styleClass="chatbot-panel" visible="false" StackPane.alignment="BOTTOM_RIGHT">
             <children>
@@ -19,7 +19,7 @@
                 </ScrollPane>
                 <HBox alignment="CENTER" spacing="8" styleClass="chatbot-input-bar">
                     <children>
-                        <TextField fx:id="txtChatbotInput" promptText="Nhap tin nhan..." HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="txtChatbotInput" promptText="Nhập câu hỏi..." HBox.hgrow="ALWAYS" />
                         <Button fx:id="btnSendChatbot" text="Gửi" styleClass="chatbot-send-button" />
                     </children>
                 </HBox>

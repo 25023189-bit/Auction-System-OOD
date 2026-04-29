@@ -5,7 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 
 /**
- * Binds user information to UI components in lobby
+ * Binder thông tin user cho lobby phiên bản nhẹ.
  */
 public class LobbyUserInfoBinder {
     private Label lblUsername;
@@ -34,6 +34,7 @@ public class LobbyUserInfoBinder {
         }
 
         if (btnCreateAuction != null) {
+            // Chỉ seller được thấy nút tạo phiên đấu giá.
             boolean isVisible = "SELLER".equalsIgnoreCase(user.getRole());
             btnCreateAuction.setVisible(isVisible);
             btnCreateAuction.setManaged(isVisible);

@@ -1,5 +1,9 @@
 package com.auction.client.feature.auth;
 
+/**
+ * Kết quả validate form.
+ * valid=false luôn đi kèm message để presenter hiển thị cho người dùng.
+ */
 public class ValidationResult {
     private final boolean valid;
     private final String message;

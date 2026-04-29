@@ -3,7 +3,7 @@ package com.auction.client.feature.action;
 import com.auction.server.service.AuctionService;
 
 /**
- * Handles chat message actions
+ * Handler gửi tin nhắn chat phiên bản dùng cho package action cũ.
  */
 public class ChatActionHandler {
     private AuctionService auctionService;
@@ -14,6 +14,7 @@ public class ChatActionHandler {
 
     public void sendChatMessage(String roomId, String message) {
         if (auctionService != null) {
+            // Gửi cả roomId để server biết tin nhắn thuộc phòng nào.
             auctionService.sendChatMessage(roomId, message);
         }
     }

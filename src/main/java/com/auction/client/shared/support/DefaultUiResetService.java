@@ -5,6 +5,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
+/**
+ * Reset các control UI về trạng thái sạch khi user logout hoặc session bị xóa.
+ */
 public class DefaultUiResetService implements UiResetService {
     private final Button btnCreateAuction;
     private final Button btnCloseAuction;
@@ -44,6 +47,7 @@ public class DefaultUiResetService implements UiResetService {
 
     @Override
     public void resetSessionUi() {
+        // Ẩn các nút phụ thuộc role để user kế tiếp không thấy quyền của user cũ.
         if (btnCreateAuction != null) {
             btnCreateAuction.setVisible(false);
             btnCreateAuction.setManaged(false);
@@ -68,6 +72,7 @@ public class DefaultUiResetService implements UiResetService {
             txtChatInput.setDisable(false);
         }
 
+        // Xóa dữ liệu hiển thị thuộc phiên cũ.
         if (txtChatLog != null) txtChatLog.clear();
         if (lblUsername != null) lblUsername.setText("");
         if (lblBalance != null) lblBalance.setText("");

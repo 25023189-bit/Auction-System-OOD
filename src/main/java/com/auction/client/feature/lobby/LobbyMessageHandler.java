@@ -7,6 +7,9 @@ import com.auction.common.model.AuctionRoom;
 
 import java.util.List;
 
+/**
+ * Handler lobby phiên bản đơn giản cho response ROOM_LIST dạng chuỗi.
+ */
 public class LobbyMessageHandler implements MessageHandler {
     private final LobbyPresenter presenter;
     private final DisplayMapper<String, List<AuctionRoom>> mapper;

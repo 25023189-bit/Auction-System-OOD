@@ -5,7 +5,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 /**
- * Presenter for authentication screens (Login, Register, Forgot Password)
+ * Presenter xác thực phiên bản nhẹ, cập nhật trạng thái cho login/register/forgot password.
  */
 public class AuthPresenter {
     private Label lblStatus;

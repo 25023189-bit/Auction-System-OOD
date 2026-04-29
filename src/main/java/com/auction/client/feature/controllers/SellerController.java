@@ -11,6 +11,10 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
+/**
+ * Controller cho popup tạo phiên đấu giá của seller.
+ * Thu thập dữ liệu từ form, validate cơ bản và gửi yêu cầu tạo phiên lên server.
+ */
 public class SellerController {
 
     @FXML
@@ -38,6 +42,7 @@ public class SellerController {
     @FXML
     private TextField txtExtensionSeconds;
 
+    // Service được launcher truyền vào để controller gửi request tạo phiên đấu giá.
     private AuctionService auctionService;
 
     public void setAuctionService(AuctionService service) {
@@ -58,6 +63,7 @@ public class SellerController {
         }
 
         try {
+            // Chuẩn hóa input trước khi parse số và ghép thời điểm bắt đầu.
             String itemName = safeText(txtItemName);
             String itemDesc = safeText(txtItemDescription);
             double startingPrice = Double.parseDouble(safeText(txtStartingPrice));
@@ -74,6 +80,7 @@ public class SellerController {
                 return;
             }
 
+            // Server sẽ quyết định duyệt ngay hay đưa vào danh sách chờ admin phê duyệt.
             auctionService.createAuction(
                     itemName,
                     itemDesc,
@@ -85,6 +92,7 @@ public class SellerController {
                     extensionSeconds
             );
 
+            // Đóng popup sau khi gửi request thành công để người dùng quay về lobby.
             javafx.stage.Stage stage = (javafx.stage.Stage) txtItemName.getScene().getWindow();
             stage.close();
         } catch (NumberFormatException e) {
@@ -94,10 +102,12 @@ public class SellerController {
         }
     }
 
+    // Tránh NullPointerException khi FXML thiếu field hoặc field chưa có text.
     private String safeText(TextField field) {
         return field == null || field.getText() == null ? "" : field.getText().trim();
     }
 
+    // Phiên bản cho TextArea dùng với mô tả sản phẩm.
     private String safeText(TextArea field) {
         return field == null || field.getText() == null ? "" : field.getText().trim();
     }

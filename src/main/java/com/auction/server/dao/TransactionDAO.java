@@ -3,6 +3,8 @@ package com.auction.server.dao;
 import com.auction.common.model.BidTransaction;
 import com.auction.common.model.Item;
 import com.auction.server.utils.DatabaseConnection;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.*;
 import java.text.SimpleDateFormat;
@@ -10,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TransactionDAO {
+    private static final Logger LOGGER = LoggerFactory.getLogger(TransactionDAO.class);
 
     public List<BidTransaction> getHistoryByRoom(String roomId) {
         List<BidTransaction> list = new ArrayList<>();
@@ -43,7 +46,7 @@ public class TransactionDAO {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Failed to load bid history for room {}.", roomId, e);
         }
         return list;
     }
@@ -70,7 +73,7 @@ public class TransactionDAO {
                 list.add(item);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Failed to load all items.", e);
         }
         return list;
     }

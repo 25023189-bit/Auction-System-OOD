@@ -5,11 +5,19 @@ import com.auction.client.network.messaging.MessageHandler;
 import com.auction.client.shared.mapper.DisplayMapper;
 import com.auction.common.dto.Message;
 import com.auction.common.model.AuctionRoom;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Handler nhận dữ liệu lobby từ server.
+ * Dữ liệu có thể là chuỗi legacy hoặc List<AuctionRoom>, sau đó được map sang model hiển thị.
+ */
 public class AdvancedLobbyMessageHandler implements MessageHandler {
+    private static final Logger LOGGER = LoggerFactory.getLogger(AdvancedLobbyMessageHandler.class);
+
     private final DisplayMapper<String, List<AuctionRoom>> rawMapper;
     private final DisplayMapper<List<AuctionRoom>, List<LobbyRoomDisplayModel>> displayMapper;
     private final LobbyRoomListRenderer renderer;
@@ -38,6 +46,7 @@ public class AdvancedLobbyMessageHandler implements MessageHandler {
         Object data = message.getData();
         List<AuctionRoom> rooms;
 
+        // Chấp nhận nhiều định dạng để client tương thích với các kiểu response server khác nhau.
         if (data == null) {
             rooms = Collections.emptyList();
         } else if (data instanceof String raw) {
@@ -48,20 +57,20 @@ public class AdvancedLobbyMessageHandler implements MessageHandler {
             } else if (rawList.get(0) instanceof AuctionRoom) {
                 rooms = (List<AuctionRoom>) rawList;
             } else {
-                System.err.println("[AdvancedLobbyMessageHandler] ROOM_LIST contains a non-AuctionRoom item: "
-                        + rawList.get(0).getClass().getName());
+                LOGGER.warn("ROOM_LIST contains a non-AuctionRoom item: {}", rawList.get(0).getClass().getName());
                 rooms = Collections.emptyList();
             }
         } else {
-            System.err.println("[AdvancedLobbyMessageHandler] Unsupported ROOM_LIST data type: "
-                    + data.getClass().getName());
+            LOGGER.warn("Unsupported ROOM_LIST data type: {}", data.getClass().getName());
             rooms = Collections.emptyList();
         }
 
+        // Chỉ đưa dữ liệu đã chuẩn hóa sang renderer để UI không phụ thuộc model server.
         List<LobbyRoomDisplayModel> models = displayMapper.map(rooms);
         renderer.render(models);
     }
 
+    // Cập nhật nhanh giá trên card lobby mà không cần render lại toàn bộ danh sách.
     private void handleUpdatePrice(Message message) {
         Object data = message.getData();
         if (data == null) return;
@@ -75,7 +84,7 @@ public class AdvancedLobbyMessageHandler implements MessageHandler {
 
             renderer.updatePrice(roomId, newPrice);
         } catch (Exception e) {
-            System.err.println("[AdvancedLobbyMessageHandler] Failed to handle UPDATE_PRICE: " + e.getMessage());
+            LOGGER.error("Failed to handle UPDATE_PRICE.", e);
         }
     }
 }

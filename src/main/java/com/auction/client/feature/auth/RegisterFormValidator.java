@@ -1,5 +1,9 @@
 package com.auction.client.feature.auth;
 
+/**
+ * Validator cho form đăng ký.
+ * Seller bắt buộc có organization vì thông tin này dùng để xét duyệt phiên đấu giá.
+ */
 public class RegisterFormValidator implements FormValidator<RegisterForm> {
 
     @Override
