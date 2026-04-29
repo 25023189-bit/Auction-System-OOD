@@ -412,3 +412,9 @@ FINAL_WINDOW_SECONDS = 30
 - https://www.ebay.com/
 - https://www.catawiki.com/en
 - https://www.dealdash.com/
+
+# 14. Phân công công việc:
+- Nguyễn Hữu Hùng:
+- Tô Bảo Hân: 
+- Bùi Thế Dũng: 
+- Đặng Đức Anh: 

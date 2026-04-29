@@ -1,4 +1,5 @@
 import json
+import sys
 from pathlib import Path
 
 import pandas as pd
@@ -18,11 +19,12 @@ from sklearn.multiclass import OneVsRestClassifier
 from sklearn.pipeline import Pipeline
 
 
-BASE_DIR = Path(__file__).resolve().parent
-DATA_PATH = BASE_DIR / "train_data.csv"
-MODEL_PATH = BASE_DIR / "chatbot_intent_model.joblib"
-LABELS_PATH = BASE_DIR / "labels.json"
-METRICS_PATH = BASE_DIR / "metrics.json"
+ANNA_DIR = Path(__file__).resolve().parents[1]
+if str(ANNA_DIR) not in sys.path:
+    sys.path.insert(0, str(ANNA_DIR))
+
+from chatbot.paths import LABELS_PATH, METRICS_PATH, MODEL_PATH, TRAIN_DATA_PATH
+
 
 TEXT_COLUMN = "text"
 
@@ -122,7 +124,10 @@ def save_artifacts(model: Pipeline, label_columns: list[str], evaluation: dict) 
 
 
 def main() -> None:
-    X, y, label_columns = load_training_data(DATA_PATH)
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+
+    X, y, label_columns = load_training_data(TRAIN_DATA_PATH)
 
     X_train, X_test, y_train, y_test = train_test_split(
         X,
