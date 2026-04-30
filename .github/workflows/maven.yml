@@ -20,7 +20,7 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
-          java-version: '25' # Bạn có thể sửa thành '25' nếu GitHub hỗ trợ bản Java 25 của bạn
+          java-version: '21' # Bạn có thể sửa thành '25' nếu GitHub hỗ trợ bản Java 25 của bạn
           distribution: 'temurin'
           cache: maven # Lưu cache lại để lần sau chạy nhanh hơn
 
