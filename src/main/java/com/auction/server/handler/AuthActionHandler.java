@@ -8,6 +8,9 @@ import com.auction.server.service.PasswordStrengthValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Handler cho nhóm action xác thực: login, register, reset password và OTP.
+ */
 public class AuthActionHandler extends AbstractClientActionHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(AuthActionHandler.class);
 
@@ -22,6 +25,7 @@ public class AuthActionHandler extends AbstractClientActionHandler {
 
     @Override
     public void handle(Message message, ClientActionContext context) {
+        // Tách theo action để mỗi luồng xác thực có validate và response riêng.
         switch (message.getAction()) {
             case "LOGIN" -> handleLogin(message, context);
             case "REGISTER" -> handleRegister(message, context);
@@ -40,6 +44,7 @@ public class AuthActionHandler extends AbstractClientActionHandler {
 
             Message loginResponse = context.getAuthService().login(username, password);
             if ("LOGIN_SUCCESS".equals(loginResponse.getAction()) && loginResponse.getData() instanceof User loggedInUser) {
+                // Lưu userId vào context để các action sau biết client này là ai.
                 context.setUserId(loggedInUser.getId());
             }
 
@@ -52,6 +57,7 @@ public class AuthActionHandler extends AbstractClientActionHandler {
 
     private void handleRegister(Message message, ClientActionContext context) {
         try {
+            // Client gửi dữ liệu đăng ký theo format: customerId|username|email|fullName|password|role|organization.
             String[] regData = message.getData() != null
                     ? message.getData().toString().split("\\|", -1)
                     : new String[0];
@@ -81,10 +87,12 @@ public class AuthActionHandler extends AbstractClientActionHandler {
             }
 
             UserDAO userDAO = new UserDAO();
+            // Nếu client không nhập customerId, server tự sinh mã theo quy tắc BD5xxxxx.
             String resolvedCustomerId = customerId.isBlank()
                     ? userDAO.generateNextCustomerId()
                     : customerId;
 
+            // Bidder được cấp số dư ban đầu; seller phải chờ admin duyệt phiên tạo đấu giá.
             User user = new User(
                     resolvedCustomerId,
                     username,
@@ -108,6 +116,7 @@ public class AuthActionHandler extends AbstractClientActionHandler {
             return null;
         }
 
+        // Chỉ cho phép các role mà server thật sự hỗ trợ.
         String role = rawRole.trim().toUpperCase();
         return switch (role) {
             case "BIDDER", "SELLER", "ADMIN" -> role;
@@ -129,6 +138,7 @@ public class AuthActionHandler extends AbstractClientActionHandler {
             String username = message.getId();
             System.out.println("[AuthActionHandler] Processing FORGOT_PASSWORD for: " + username);
             
+            // Service trả mã trạng thái dạng String để handler map sang Message cho client.
             String result = forgotPasswordService.processForgotPassword(username);
 
             if (result.startsWith("SUCCESS")) {
@@ -158,6 +168,7 @@ public class AuthActionHandler extends AbstractClientActionHandler {
 
     private void handleVerifyOTP(Message message, ClientActionContext context) {
         try {
+            // Dữ liệu OTP gồm tokenId và mã OTP người dùng nhập.
             String[] data = message.getData() != null
                     ? message.getData().toString().split("\\|", -1)
                     : new String[0];
@@ -193,6 +204,7 @@ public class AuthActionHandler extends AbstractClientActionHandler {
 
     private void handleUpdateNewPassword(Message message, ClientActionContext context) {
         try {
+            // Sau OTP, client gửi mật khẩu mới và xác nhận lại để server validate lần cuối.
             String[] data = message.getData() != null
                     ? message.getData().toString().split("\\|", -1)
                     : new String[0];

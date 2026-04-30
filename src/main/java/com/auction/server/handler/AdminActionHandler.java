@@ -13,9 +13,13 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
+/**
+ * Handler cho các action quản trị: xem dữ liệu, duyệt/từ chối phiên chờ, hủy phiên và xóa user.
+ */
 public class AdminActionHandler extends AbstractClientActionHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(AdminActionHandler.class);
 
+    // Factory chuyển request chờ duyệt thành entity AuctionRoom/Item khi admin approve.
     private final PendingAuctionRoomFactory pendingAuctionRoomFactory;
 
     public AdminActionHandler(PendingAuctionRoomFactory pendingAuctionRoomFactory) {
@@ -47,6 +51,7 @@ public class AdminActionHandler extends AbstractClientActionHandler {
 
     private void handleAdminGetUsers(ClientActionContext context) {
         try {
+            // Admin dashboard nhận toàn bộ user để hiển thị bảng quản lý.
             UserDAO userDAO = new UserDAO();
             List<User> userList = userDAO.getAllUsers();
             context.send(new Message("ADMIN_USER_LIST", "SERVER", userList));
@@ -58,6 +63,7 @@ public class AdminActionHandler extends AbstractClientActionHandler {
 
     private void handleAdminGetAuctions(ClientActionContext context) {
         try {
+            // Lấy cả phiên đang chạy và phiên đã kết thúc để admin theo dõi.
             AuctionDAO auctionDAO = new AuctionDAO();
             List<AuctionRoom> rooms = auctionDAO.getAllAuctions();
             context.send(new Message("ADMIN_AUCTION_LIST", "SERVER", rooms));
@@ -89,11 +95,13 @@ public class AdminActionHandler extends AbstractClientActionHandler {
                 return;
             }
 
+            // Approve nghĩa là tạo sản phẩm và phiên đấu giá thật trong database.
             AuctionRoom room = pendingAuctionRoomFactory.createRoom(request);
             Item item = pendingAuctionRoomFactory.createItem(request);
             AuctionDAO auctionDAO = new AuctionDAO();
 
             if (!auctionDAO.createAuctionWithItem(room, item, request.getSellerId())) {
+                // Nếu lưu DB lỗi thì đưa request trở lại hàng chờ để admin không mất dữ liệu.
                 context.getPendingAuctionApprovalService().submit(request);
                 context.send(new Message("ADMIN_ACTION_FAIL", "SERVER", "Unable to approve auction request."));
                 return;
@@ -120,6 +128,7 @@ public class AdminActionHandler extends AbstractClientActionHandler {
                 return;
             }
 
+            // Reject chỉ xóa khỏi danh sách chờ, không tạo auction trong DB.
             context.send(new Message(
                     "ADMIN_ACTION_SUCCESS",
                     "AUCTION_REJECTED",
@@ -138,6 +147,7 @@ public class AdminActionHandler extends AbstractClientActionHandler {
             AuctionDAO auctionDAO = new AuctionDAO();
 
             if (auctionDAO.forceDeleteAuction(targetRoomId)) {
+                // Khi admin hủy phiên, runtime state và client trong phòng đều phải được cập nhật.
                 AuctionStateManager.removeState(targetRoomId);
                 context.send(new Message(
                         "ADMIN_ACTION_SUCCESS",
@@ -163,6 +173,7 @@ public class AdminActionHandler extends AbstractClientActionHandler {
             UserDAO userDAO = new UserDAO();
 
             if (userDAO.deleteUser(targetUserId)) {
+                // Nếu user đang online, server sẽ gửi BANNED và đóng kết nối.
                 context.send(new Message(
                         "ADMIN_ACTION_SUCCESS",
                         "USER_DELETED",

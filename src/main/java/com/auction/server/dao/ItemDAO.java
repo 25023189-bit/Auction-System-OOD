@@ -9,6 +9,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+/**
+ * DAO thao tác cơ bản với bảng items.
+ */
 public class ItemDAO {
     private static final Logger LOGGER = LoggerFactory.getLogger(ItemDAO.class);
 
@@ -34,6 +37,7 @@ public class ItemDAO {
     }
 
     public boolean updateCurrentPrice(String itemId, double newPrice) {
+        // Giá hiện tại của item được cập nhật sau mỗi bid hợp lệ.
         String sql = "UPDATE items SET current_price = ? WHERE item_id = ?";
 
         try (Connection conn = DatabaseConnection.getConnection();

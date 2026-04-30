@@ -2,7 +2,11 @@ package com.auction.server.service;
 
 import java.time.LocalDateTime;
 
+/**
+ * Validator nghiệp vụ cho request tạo phiên đấu giá của seller.
+ */
 public class AuctionCreationValidator {
+    // Lưu lỗi cuối cùng để handler trả thông báo rõ ràng cho client.
     private String errorMessage = "Auction information is invalid.";
 
     public boolean validateAuction(String sellerId,

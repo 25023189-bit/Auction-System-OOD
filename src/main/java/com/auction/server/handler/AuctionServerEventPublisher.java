@@ -3,6 +3,9 @@ package com.auction.server.handler;
 import com.auction.common.dto.Message;
 import com.auction.server.main.AuctionServer;
 
+/**
+ * Adapter nối handler nghiệp vụ với các hàm static broadcast của AuctionServer.
+ */
 public class AuctionServerEventPublisher implements ServerEventPublisher {
     @Override
     public void broadcastAll(Message message) {

@@ -2,6 +2,9 @@ package com.auction.server.handler;
 
 import com.auction.common.dto.Message;
 
+/**
+ * Hợp đồng phát sự kiện từ handler ra các client khác.
+ */
 public interface ServerEventPublisher {
     void broadcastAll(Message message);
 

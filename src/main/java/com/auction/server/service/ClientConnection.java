@@ -10,9 +10,14 @@ import java.net.Socket;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Kết nối socket phía client tới AuctionServer.
+ * Lớp này chạy một thread đọc response liên tục và đẩy Message về AuctionController.
+ */
 public class ClientConnection {
     private static final Logger LOGGER = LoggerFactory.getLogger(ClientConnection.class);
 
+    // Biến legacy lưu user hiện tại cho một số đoạn code cũ.
     public static String currentUser = null;
 
     private final String host = "localhost";
@@ -39,6 +44,7 @@ public class ClientConnection {
 
                 controller.updateConnectionStatus("Connected to server!");
 
+                // Reader loop nhận Message từ server cho đến khi socket đóng.
                 while (!Thread.currentThread().isInterrupted() && socket != null && !socket.isClosed()) {
                     Message response = (Message) in.readObject();
                     LOGGER.debug("Received action: {}", response.getAction());
@@ -61,6 +67,7 @@ public class ClientConnection {
     public void sendMessage(Message msg) {
         try {
             if (out != null) {
+                // reset() tránh gửi lại object cũ khi cùng Message instance được tái sử dụng.
                 out.writeObject(msg);
                 out.flush();
                 out.reset();

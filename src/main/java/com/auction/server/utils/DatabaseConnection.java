@@ -7,6 +7,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+/**
+ * Factory tạo JDBC connection cho MySQL.
+ * Ưu tiên cấu hình từ environment/system property, sau đó mới đọc db.properties.
+ */
 public final class DatabaseConnection {
 
     private static final String DEFAULT_DRIVER = "com.mysql.cj.jdbc.Driver";
@@ -17,6 +21,7 @@ public final class DatabaseConnection {
     public static Connection getConnection() throws SQLException {
         Properties props = loadDatabaseProperties();
 
+        // Cho phép override cấu hình khi deploy mà không cần sửa file resource.
         String url = firstNonBlank(
                 System.getenv("AUCTION_DB_URL"),
                 System.getProperty("auction.db.url"),
@@ -61,6 +66,7 @@ public final class DatabaseConnection {
         }
     }
 
+    // Đọc db.properties thật, nếu không có thì dùng db.properties.example để hỗ trợ môi trường mẫu.
     private static Properties loadDatabaseProperties() throws SQLException {
         Properties props = new Properties();
         URL resource = findDatabasePropertiesResource();
@@ -79,6 +85,7 @@ public final class DatabaseConnection {
         }
     }
 
+    // Tìm file cấu hình database trên classpath.
     private static URL findDatabasePropertiesResource() {
         ClassLoader classLoader = DatabaseConnection.class.getClassLoader();
         URL resource = classLoader.getResource("db.properties");
@@ -91,6 +98,7 @@ public final class DatabaseConnection {
         }
     }
 
+    // Lấy giá trị đầu tiên không null/không rỗng trong danh sách ưu tiên.
     private static String firstNonBlank(String... values) {
         if (values == null) {
             return null;
@@ -103,6 +111,7 @@ public final class DatabaseConnection {
         return null;
     }
 
+    // Tạo lỗi có ngữ cảnh để dễ chẩn đoán sai cấu hình DB.
     private static String buildHelpfulConnectionError(String url, String user, String driver) {
         return "Database connection failed. Check that MySQL is running, database 'auction_system' exists, " +
                 "and the connection configuration is correct. " +

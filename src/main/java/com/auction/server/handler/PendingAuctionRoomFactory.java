@@ -6,8 +6,12 @@ import com.auction.common.model.PendingAuctionRequest;
 
 import java.time.LocalDateTime;
 
+/**
+ * Chuyển PendingAuctionRequest đã được admin duyệt thành AuctionRoom và Item để lưu DB.
+ */
 public class PendingAuctionRoomFactory {
     public AuctionRoom createRoom(PendingAuctionRequest request) {
+        // Room nhận lại toàn bộ thông tin seller đã submit, kèm trạng thái theo thời điểm bắt đầu.
         AuctionRoom room = new AuctionRoom(
                 request.getRoomId(),
                 request.getItemName(),
@@ -32,6 +36,7 @@ public class PendingAuctionRoomFactory {
     }
 
     public Item createItem(PendingAuctionRequest request) {
+        // Item là phần sản phẩm được tách riêng khỏi auction trong database.
         return new Item(
                 request.getItemId(),
                 request.getItemName(),

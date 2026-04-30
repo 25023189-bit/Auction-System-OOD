@@ -9,10 +9,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * DAO xử lý đặt giá và lưu bid transaction.
+ */
 public class BidDAO {
     private static final Logger LOGGER = LoggerFactory.getLogger(BidDAO.class);
 
     public BidResult placeBid(String auctionId, String bidderId, double bidAmount) {
+        // Transaction này khóa auction để kiểm tra giá hiện tại và số dư trước khi ghi bid mới.
         String selectAuctionSql = """
                 SELECT a.item_id, i.current_price, u.balance, a.bid_step
                 FROM auctions a
@@ -65,6 +69,7 @@ public class BidDAO {
                 }
             }
 
+            // Giá mới phải cao hơn giá hiện tại ít nhất một bidStep.
             double minimumAllowedBid = currentPrice + bidStep;
             if (bidAmount < minimumAllowedBid) {
                 conn.rollback();
@@ -76,6 +81,7 @@ public class BidDAO {
                 return BidResult.fail(BidStatus.INSUFFICIENT_BALANCE, "Current balance is not enough for this bid amount.");
             }
 
+            // Chỉ một bid được đánh dấu highest tại một thời điểm.
             try (PreparedStatement pstmt = conn.prepareStatement(clearHighestSql)) {
                 pstmt.setString(1, auctionId);
                 pstmt.executeUpdate();
@@ -104,6 +110,9 @@ public class BidDAO {
         }
     }
 
+    /**
+     * Mã trạng thái đặt giá để service biết lý do fail cụ thể.
+     */
     public enum BidStatus {
         SUCCESS,
         AUCTION_NOT_FOUND,
@@ -112,6 +121,9 @@ public class BidDAO {
         ERROR
     }
 
+    /**
+     * Kết quả đặt giá trả về cho AuctionRoomService.
+     */
     public static class BidResult {
         private final boolean success;
         private final BidStatus status;

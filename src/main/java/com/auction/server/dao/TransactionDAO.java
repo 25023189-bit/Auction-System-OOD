@@ -11,10 +11,14 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * DAO đọc lịch sử bid/transaction để phục vụ admin và popup chi tiết sản phẩm.
+ */
 public class TransactionDAO {
     private static final Logger LOGGER = LoggerFactory.getLogger(TransactionDAO.class);
 
     public List<BidTransaction> getHistoryByRoom(String roomId) {
+        // Sắp xếp bid cao nhất trước, cùng giá thì bid sớm hơn đứng trước.
         List<BidTransaction> list = new ArrayList<>();
         String sql = """
                 SELECT auction_id, bidder_id, bid_amount, bid_time
@@ -35,6 +39,7 @@ public class TransactionDAO {
                     bt.setBidderId(rs.getString("bidder_id"));
                     bt.setBidAmount(rs.getDouble("bid_amount"));
 
+                    // Format thời gian thành chuỗi để TableView client hiển thị trực tiếp.
                     Timestamp timestamp = rs.getTimestamp("bid_time");
                     if (timestamp != null) {
                         bt.setBidTime(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(timestamp));
@@ -52,6 +57,7 @@ public class TransactionDAO {
     }
 
     public List<Item> getAllItems() {
+        // API phụ để đọc danh sách item nếu cần hiển thị kho sản phẩm.
         List<Item> list = new ArrayList<>();
         String sql = """
                 SELECT item_id, name, description, current_price

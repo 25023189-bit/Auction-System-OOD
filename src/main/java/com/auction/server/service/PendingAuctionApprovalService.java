@@ -7,7 +7,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * Lưu các yêu cầu tạo phiên đấu giá đang chờ admin duyệt.
+ * Hiện dùng bộ nhớ server, chưa persist xuống database.
+ */
 public class PendingAuctionApprovalService {
+    // Static map để mọi ClientHandler nhìn thấy cùng một danh sách pending.
     private static final Map<String, PendingAuctionRequest> PENDING_REQUESTS = new ConcurrentHashMap<>();
 
     public void submit(PendingAuctionRequest request) {
@@ -22,6 +27,7 @@ public class PendingAuctionApprovalService {
     }
 
     public PendingAuctionRequest approve(String requestId) {
+        // Approve lấy request ra khỏi hàng chờ để AdminActionHandler tạo auction thật.
         if (requestId == null || requestId.isBlank()) {
             return null;
         }
@@ -29,6 +35,7 @@ public class PendingAuctionApprovalService {
     }
 
     public boolean reject(String requestId) {
+        // Reject chỉ cần xóa request khỏi hàng chờ.
         if (requestId == null || requestId.isBlank()) {
             return false;
         }

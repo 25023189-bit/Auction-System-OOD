@@ -5,10 +5,10 @@ import java.time.LocalDateTime;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Rate limiter for password reset requests.
- * Prevents abuse by limiting requests per user within a time window.
+ * Giới hạn số lần yêu cầu reset mật khẩu trong một khoảng thời gian.
  */
 public class RateLimiter {
+    // Dùng static map để mọi instance cùng chia sẻ log request.
     private static final ConcurrentHashMap<String, RequestLog> requestLogs = new ConcurrentHashMap<>();
     private final int maxRequests;
     private final int windowMinutes;
@@ -23,16 +23,16 @@ public class RateLimiter {
         LocalDateTime now = LocalDateTime.now();
         RequestLog log = requestLogs.getOrDefault(userId, new RequestLog());
 
-        // Clean old requests outside the time window
+        // Xóa request cũ nằm ngoài cửa sổ thời gian.
         log.cleanOldRequests(now, windowMinutes);
 
-        // Check if user exceeded the limit
+        // Từ chối nếu user đã vượt giới hạn.
         if (log.getRequestCount() >= maxRequests) {
             System.out.println("⚠️ Rate limit exceeded for user: " + userId);
             return false;
         }
 
-        // Add new request
+        // Ghi nhận request mới.
         log.addRequest(now);
         requestLogs.put(userId, log);
         return true;
@@ -44,7 +44,7 @@ public class RateLimiter {
         return Math.max(0, maxRequests - log.getRequestCount());
     }
 
-    // Inner class to track requests
+    // Lưu timestamp các request của một user.
     private static class RequestLog {
         private final java.util.List<LocalDateTime> requests = new java.util.ArrayList<>();
 

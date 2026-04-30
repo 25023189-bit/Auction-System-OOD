@@ -8,13 +8,20 @@ import com.auction.server.service.PendingAuctionApprovalService;
 import java.util.Objects;
 import java.util.function.Consumer;
 
+/**
+ * Ngữ cảnh xử lý cho một client.
+ * Handler dùng context để gửi response, broadcast event và truy cập service theo phiên hiện tại.
+ */
 public class ClientActionContext {
+    // responder gửi message trực tiếp về client hiện tại.
     private final Consumer<Message> responder;
+    // eventPublisher dùng cho broadcast toàn hệ thống hoặc theo phòng.
     private final ServerEventPublisher eventPublisher;
     private final AuthService authService;
     private final AuctionRoomService roomService;
     private final PendingAuctionApprovalService pendingAuctionApprovalService;
 
+    // volatile vì trạng thái này có thể được đọc khi server broadcast/đóng phòng từ thread khác.
     private volatile String currentRoomId = "";
     private volatile String userId = "";
 
@@ -57,6 +64,7 @@ public class ClientActionContext {
     }
 
     public void leaveCurrentRoomIfMatches(String roomId) {
+        // Dùng khi phòng bị đóng để chỉ xóa session nếu client đang ở đúng phòng đó.
         if (roomId != null && roomId.equals(currentRoomId)) {
             clearCurrentRoom();
         }

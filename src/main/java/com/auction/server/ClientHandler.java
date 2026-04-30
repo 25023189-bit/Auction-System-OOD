@@ -12,10 +12,15 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.List;
 
+/**
+ * Đại diện cho một kết nối socket từ client.
+ * Mỗi ClientHandler đọc Message từ client, chuyển cho router xử lý và gửi response ngược lại.
+ */
 public class ClientHandler implements Runnable {
     private static final Logger LOGGER = LoggerFactory.getLogger(ClientHandler.class);
 
     private final Socket socket;
+    // Context giữ userId/currentRoomId và các service cần dùng trong suốt vòng đời kết nối.
     private final ClientActionContext actionContext;
     private final ClientActionRouter actionRouter;
 
@@ -32,6 +37,7 @@ public class ClientHandler implements Runnable {
                 new AuctionRoomService(),
                 new PendingAuctionApprovalService()
         );
+        // Router gom các nhóm handler theo nghiệp vụ: auth, room, seller, admin.
         this.actionRouter = new ClientActionRouter(List.of(
                 new AuthActionHandler(),
                 new RoomActionHandler(),
@@ -77,6 +83,7 @@ public class ClientHandler implements Runnable {
                     continue;
                 }
 
+                // Message hợp lệ được chuyển cho router dựa trên action.
                 actionRouter.route(msg, actionContext);
             }
         } catch (Exception e) {
@@ -92,6 +99,7 @@ public class ClientHandler implements Runnable {
                 return;
             }
 
+            // reset() tránh ObjectOutputStream gửi lại object cache cũ khi nội dung Message thay đổi.
             out.writeObject(response);
             out.flush();
             out.reset();
@@ -103,6 +111,7 @@ public class ClientHandler implements Runnable {
     public synchronized void closeConnection() {
         boolean wasAlive = alive;
         alive = false;
+        // Rời phòng hiện tại để các broadcast sau không còn gửi nhầm tới client đã ngắt.
         actionContext.clearCurrentRoom();
 
         try {

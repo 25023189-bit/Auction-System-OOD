@@ -4,6 +4,9 @@ import com.auction.common.dto.Message;
 
 import java.util.List;
 
+/**
+ * Router chọn ClientActionHandler theo Message.action.
+ */
 public class ClientActionRouter {
     private final List<ClientActionHandler> handlers;
 
@@ -12,6 +15,7 @@ public class ClientActionRouter {
     }
 
     public void route(Message message, ClientActionContext context) {
+        // Handler đầu tiên nhận action sẽ xử lý và kết thúc luồng.
         for (ClientActionHandler handler : handlers) {
             if (handler.canHandle(message.getAction())) {
                 handler.handle(message, context);

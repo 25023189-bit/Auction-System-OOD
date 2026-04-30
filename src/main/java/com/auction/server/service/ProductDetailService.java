@@ -12,6 +12,9 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Service gom dữ liệu chi tiết sản phẩm/phòng để trả cho popup product detail.
+ */
 public class ProductDetailService {
 
     private final AuctionDAO auctionDAO;
@@ -36,6 +39,7 @@ public class ProductDetailService {
         detail.setCurrentPrice(room.getCurrentPrice());
         detail.setTimeLeftMillis(calculateRemainingTime(room.getEndTime()));
 
+        // Chuyển lịch sử bid từ model DB sang DTO hiển thị cho client.
         List<BidTransaction> dbTransactions = transactionDAO.getHistoryByRoom(roomId);
         List<BidHistoryDTO> historyDTOs = new ArrayList<>();
 
@@ -54,6 +58,7 @@ public class ProductDetailService {
         return detail;
     }
 
+    // Trả về milliseconds còn lại; nếu hết giờ hoặc thiếu endTime thì trả 0.
     private long calculateRemainingTime(LocalDateTime endTime) {
         if (endTime == null) return 0;
         LocalDateTime now = LocalDateTime.now();

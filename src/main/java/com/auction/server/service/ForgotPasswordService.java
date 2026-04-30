@@ -8,8 +8,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Enhanced Forgot Password Service with rate limiting and audit logging.
- * Modified to generate a new password and send directly to email.
+ * Service xử lý quên mật khẩu.
+ * Kiểm tra rate limit, tạo mật khẩu tạm, cập nhật DB và gửi email thông báo.
  */
 public class ForgotPasswordService {
     private final UserDAO userDAO;
@@ -27,8 +27,7 @@ public class ForgotPasswordService {
     }
 
     /**
-     * Main method to process forgot password request.
-     * Generates a new password directly and sends it to the user's email.
+     * Xử lý yêu cầu quên mật khẩu và trả về mã trạng thái cho AuthActionHandler.
      */
     public String processForgotPassword(String username) {
         if (username == null || username.trim().isEmpty()) {
@@ -38,7 +37,7 @@ public class ForgotPasswordService {
 
         username = username.trim();
 
-        // Check rate limiting
+        // Chặn spam reset password theo từng username.
         if (!rateLimiter.isAllowed(username)) {
             AuditLogger.logPasswordResetFailure(username, "Rate limit exceeded");
             return "RATE_LIMITED";
@@ -46,7 +45,7 @@ public class ForgotPasswordService {
 
         AuditLogger.logPasswordResetRequested(username, "***@***");
 
-        // 1. Find user in database
+        // 1. Tìm user và email đã đăng ký.
         User user = userDAO.getUserByUsernameWithEmail(username);
         if (user == null) {
             AuditLogger.logPasswordResetFailure(username, "User not found");
@@ -59,17 +58,17 @@ public class ForgotPasswordService {
             return "NO_EMAIL";
         }
 
-        // 2. Generate a new temporary password directly
+        // 2. Sinh mật khẩu tạm thời đủ mạnh.
         String tempPassword = PasswordResetTokenGenerator.generateTemporaryPassword();
 
-        // 3. Update the new password in the database
+        // 3. Lưu hash mật khẩu mới vào database trước khi gửi email.
         String updateResult = userDAO.resetPasswordWithNewPassword(user.getId(), tempPassword);
         if (!"SUCCESS".equals(updateResult)) {
             AuditLogger.logPasswordResetFailure(user.getUsername(), "Database update failed");
             return "DB_ERROR";
         }
 
-        // 4. Send the new password to the user's email
+        // 4. Gửi mật khẩu tạm tới email của user.
         boolean emailSent = emailService.sendPasswordResetEmail(
                 email.trim(),
                 user.getUsername(),
@@ -87,7 +86,7 @@ public class ForgotPasswordService {
     }
 
     /**
-     * Verifies OTP (Kept for compatibility if you ever decide to add OTP screen back)
+     * Xác thực OTP, hiện giữ để tương thích nếu bật lại màn hình OTP.
      */
     public String verifyOTPAndGetTemporaryPassword(String tokenId, String otp) {
         PasswordResetTokenGenerator.PasswordResetToken token = tokenStore.get(tokenId);
@@ -136,7 +135,7 @@ public class ForgotPasswordService {
     }
 
     /**
-     * Validates and updates password after user changes it from temporary password.
+     * Validate và cập nhật mật khẩu mới sau khi user đổi từ mật khẩu tạm.
      */
     public String validateAndUpdatePassword(String userId, String newPassword, String confirmPassword) {
         if (!newPassword.equals(confirmPassword)) {
@@ -166,14 +165,14 @@ public class ForgotPasswordService {
     }
 
     /**
-     * Gets remaining password reset requests for a user in current window.
+     * Trả về số lượt reset còn lại trong cửa sổ rate limit hiện tại.
      */
     public int getRemainingRequests(String username) {
         return rateLimiter.getRemainingRequests(username);
     }
 
     /**
-     * Cleans up expired tokens (should be called periodically).
+     * Dọn token OTP hết hạn nếu luồng OTP được sử dụng.
      */
     public void cleanupExpiredTokens() {
         LocalDateTime now = LocalDateTime.now();
@@ -181,6 +180,7 @@ public class ForgotPasswordService {
         System.out.println("🧹 Cleanup: Removed expired password reset tokens");
     }
 
+    // Che bớt email khi ghi log để tránh lộ thông tin cá nhân.
     private String maskEmail(String email) {
         if (email == null || email.length() < 5) return "***@***";
         String[] parts = email.split("@");

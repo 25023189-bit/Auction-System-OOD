@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
- * Logs security-related events for audit purposes.
+ * Ghi log các sự kiện bảo mật của luồng reset password.
  */
 public class AuditLogger {
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -40,6 +40,7 @@ public class AuditLogger {
         System.out.println(LOG_PREFIX + " " + timestamp + " - Invalid/expired token used by user: " + username + " (token: " + tokenId.substring(0, 8) + "...)");
     }
 
+    // Chỉ hiển thị một phần email trong log để giảm rủi ro lộ dữ liệu cá nhân.
     private static String maskEmail(String email) {
         if (email == null || email.length() < 5) return "***@***";
         String[] parts = email.split("@");

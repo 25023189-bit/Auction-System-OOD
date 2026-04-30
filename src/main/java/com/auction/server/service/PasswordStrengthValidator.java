@@ -1,7 +1,7 @@
 package com.auction.server.service;
 
 /**
- * Validates password strength based on security criteria.
+ * Kiểm tra độ mạnh mật khẩu theo các tiêu chí bảo mật cơ bản.
  */
 public class PasswordStrengthValidator {
     private static final int MIN_LENGTH = 8;
@@ -10,6 +10,7 @@ public class PasswordStrengthValidator {
     private static final int MIN_DIGITS = 1;
     private static final int MIN_SPECIAL = 1;
 
+    // Lưu lỗi cuối cùng để handler trả lý do cụ thể cho client.
     private String lastError = "";
 
     public boolean isStrong(String password) {
@@ -18,6 +19,7 @@ public class PasswordStrengthValidator {
             return false;
         }
 
+        // Đếm từng nhóm ký tự để báo lỗi chính xác tiêu chí còn thiếu.
         int uppercaseCount = 0, lowercaseCount = 0, digitCount = 0, specialCount = 0;
         String specialChars = "!@#$%^&*()_+-=[]{}|;:,.<>?";
 

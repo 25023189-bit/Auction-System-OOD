@@ -4,8 +4,13 @@ import com.auction.common.dto.Message;
 
 import java.time.LocalDateTime;
 
+/**
+ * Service phía client dùng để đóng gói Message gửi tới server.
+ * Dù nằm trong package server.service, lớp này đang đóng vai trò client-side API cho JavaFX controller.
+ */
 public class AuctionService {
     private ClientConnection clientConnection;
+    // currentUser là customer_id của user đã đăng nhập, được gửi kèm các action cần xác thực.
     private String currentUser = "";
 
     public AuctionService(ClientConnection connection) {
@@ -36,6 +41,7 @@ public class AuctionService {
 
     public void register(String customerId, String username, String email, String fullName,
                          String password, String role, String organization) {
+        // Dùng dấu | làm protocol đơn giản giữa client và AuthActionHandler.
         String normalizedOrganization = (organization == null || organization.trim().isEmpty()) ? "" : organization.trim();
         String data = customerId + "|" + username + "|" + email + "|" + fullName + "|" + password + "|" + role + "|" + normalizedOrganization;
         clientConnection.sendMessage(new Message("REGISTER", "", data));
@@ -73,6 +79,7 @@ public class AuctionService {
     public void createAuction(String itemName, String itemDesc, double startingPrice,
                               double minimumJoinAmount, double bidStep,
                               LocalDateTime startTime, int duration, int extensionSeconds) {
+        // SellerActionHandler sẽ parse lại chuỗi này và validate ở server.
         String data = itemName + "|" + itemDesc + "|" + startingPrice + "|" +
                 minimumJoinAmount + "|" + bidStep + "|" +
                 startTime + "|" + duration + "|" + extensionSeconds;
@@ -91,8 +98,9 @@ public class AuctionService {
         this.currentUser = "";
     }
     // ==========================================================
-    // PHẦN XỬ LÝ LẤY CHI TIẾT SẢN PHẨM (PRODUCT VIEW)
+    // PRODUCT DETAIL CALLBACK
     // ==========================================================
+    // Callback cho popup product detail khi server trả PRODUCT_DETAILS_SUCCESS.
     private java.util.function.Consumer<Object> productDetailsCallback;
 
     public void setProductDetailsCallback(java.util.function.Consumer<Object> callback) {
@@ -112,7 +120,7 @@ public class AuctionService {
         }
     }
     public void sendChatMessage(String roomId, String message) {
-        // Tạm thời in ra log. Khi làm tính năng Socket, ta sẽ gửi message này qua Server
+        // Hỗ trợ package action cũ: hiện chỉ log local, luồng chat mới dùng sendChat().
         System.out.println("[Chat - Room " + roomId + "]: " + message);
     }
 }
