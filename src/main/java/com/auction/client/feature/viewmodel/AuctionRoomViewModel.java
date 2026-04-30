@@ -65,30 +65,4 @@ public class AuctionRoomViewModel {
     public boolean isOwner() {
         return owner;
     }
-
-<<<<<<< HEAD
-    public void setOwner(boolean owner) {
-        this.owner = owner;
-    }
-
-    public LocalDateTime getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(LocalDateTime startTime) {
-        this.startTime = startTime;
-    }
-
-    public LocalDateTime getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(LocalDateTime endTime) {
-        this.endTime = endTime;
-    }
 }
-=======
-    public LocalDateTime getEndTime() { return endTime; }
-    public void setEndTime(LocalDateTime endTime) { this.endTime = endTime; }
-}
->>>>>>> 79695510de950987573eb4278b356292c3d972f3

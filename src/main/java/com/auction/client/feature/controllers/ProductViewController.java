@@ -41,13 +41,12 @@ public class ProductViewController {
                         if (lblDescription != null) lblDescription.setText(data.toString());
                     }
                 } else {
-<<<<<<< HEAD
+
                     // Đổi text báo không tìm thấy
                     if (lblDescription != null) lblDescription.setText("Product information not found!");
-=======
+
                     // Không có dữ liệu nghĩa là server không tìm thấy phòng/sản phẩm tương ứng.
                     if(lblDescription != null) lblDescription.setText("Product information not found!");
->>>>>>> 79695510de950987573eb4278b356292c3d972f3
                 }
             });
         });
