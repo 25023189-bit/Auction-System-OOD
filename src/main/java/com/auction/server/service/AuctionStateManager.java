@@ -25,7 +25,8 @@ import java.util.concurrent.ConcurrentMap;
 public class AuctionStateManager {
     private static final ConcurrentMap<String, AuctionRuntimeState> STATES = new ConcurrentHashMap<>();
 
-    private AuctionStateManager() {}
+    private AuctionStateManager() {
+    }
 
     public static AuctionRuntimeState getState(String roomId) {
         // Tạo state mới khi phòng lần đầu có user join/bid.

@@ -32,18 +32,24 @@ public class ItemDAO {
     private static final Logger LOGGER = LoggerFactory.getLogger(ItemDAO.class);
 
     public boolean saveItem(Item item) {
+        LOGGER.error("Cannot save product without seller_id. Use saveItem(Item, String) with the current schema.");
+        return false;
+    }
+
+    public boolean saveItem(Item item, String sellerId) {
         String sql = """
-                INSERT INTO items (item_id, name, description, current_price)
-                VALUES (?, ?, ?, ?)
+                INSERT INTO products (product_name, description, starting_price, current_price, seller_id, product_type)
+                VALUES (?, ?, ?, ?, ?, 'ELECTRONICS')
                 """;
 
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            stmt.setString(1, item.getId());
-            stmt.setString(2, item.getProductName());
-            stmt.setString(3, item.getDescription());
+            stmt.setString(1, item.getProductName());
+            stmt.setString(2, item.getDescription());
+            stmt.setDouble(3, item.getStartingPrice());
             stmt.setDouble(4, item.getStartingPrice());
+            stmt.setString(5, sellerId);
 
             return stmt.executeUpdate() > 0;
         } catch (SQLException e) {
@@ -54,7 +60,7 @@ public class ItemDAO {
 
     public boolean updateCurrentPrice(String itemId, double newPrice) {
         // Giá hiện tại của item được cập nhật sau mỗi bid hợp lệ.
-        String sql = "UPDATE items SET current_price = ? WHERE item_id = ?";
+        String sql = "UPDATE products SET current_price = ? WHERE product_id = ?";
 
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {

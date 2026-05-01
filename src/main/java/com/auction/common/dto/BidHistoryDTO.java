@@ -12,7 +12,8 @@ public class BidHistoryDTO implements Serializable {
     private String time; // Thời điểm đặt giá
 
     // Constructor mặc định
-    public BidHistoryDTO() {}
+    public BidHistoryDTO() {
+    }
 
     // Constructor có tham số để khởi tạo nhanh
     public BidHistoryDTO(String bidderName, double amount, String time) {
@@ -21,11 +22,21 @@ public class BidHistoryDTO implements Serializable {
         this.time = time;
     }
 
-    public String getBidderName() { return bidderName; }
-    public void setBidderName(String bidderName) { this.bidderName = bidderName; }
+    public String getBidderName() {
+        return bidderName;
+    }
 
-    public double getAmount() { return amount; }
-    public void setAmount(double amount) { this.amount = amount; }
+    public void setBidderName(String bidderName) {
+        this.bidderName = bidderName;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
 
     public String getTime() {
         return time;

@@ -61,7 +61,8 @@ public class AdminActionHandler extends AbstractClientActionHandler {
             case "ADMIN_REJECT_AUCTION" -> handleAdminRejectAuction(message, context);
             case "ADMIN_DELETE_AUCTION" -> handleAdminDeleteAuction(message, context);
             case "ADMIN_DELETE_USER" -> handleAdminDeleteUser(message, context);
-            default -> context.send(new Message("UNKNOWN_ACTION", "SERVER", "Unsupported action: " + message.getAction()));
+            default ->
+                    context.send(new Message("UNKNOWN_ACTION", "SERVER", "Unsupported action: " + message.getAction()));
         }
     }
 

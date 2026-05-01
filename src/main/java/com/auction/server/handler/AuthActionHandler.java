@@ -153,7 +153,7 @@ public class AuthActionHandler extends AbstractClientActionHandler {
         try {
             String username = message.getId();
             System.out.println("[AuthActionHandler] Processing FORGOT_PASSWORD for: " + username);
-            
+
             // Service trả mã trạng thái dạng String để handler map sang Message cho client.
             String result = forgotPasswordService.processForgotPassword(username);
 

@@ -1,5 +1,8 @@
 package com.auction.client.feature.room;
 
+
+public record BidRequest(String amountText) {
+}
 /**
  * DTO chứa text số tiền bid lấy trực tiếp từ UI.
  *
@@ -19,4 +22,3 @@ package com.auction.client.feature.room;
  * - Thread-safe: record immutable sau khi khởi tạo.
  * - Dependency: BidActionHandler.
  */
-public record BidRequest(String amountText) {}

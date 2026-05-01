@@ -42,7 +42,7 @@ public class AuctionTimerService {
     public void start(long durationSeconds) {
         // Dừng timer cũ trước khi tạo timer mới để tránh callback chạy trùng.
         stop();
-        
+
         timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
             if (onTick != null) {
                 onTick.run();

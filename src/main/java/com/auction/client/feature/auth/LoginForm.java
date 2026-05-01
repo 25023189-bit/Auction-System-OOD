@@ -1,5 +1,8 @@
 package com.auction.client.feature.auth;
 
+public record LoginForm(String customerId, String password) {
+}
+
 /**
  * DTO chứa dữ liệu form đăng nhập trước khi validate.
  *
@@ -19,4 +22,4 @@ package com.auction.client.feature.auth;
  * - Thread-safe: record immutable sau khi khởi tạo.
  * - Dependency: LoginCommand và LoginFormValidator.
  */
-public record LoginForm(String customerId, String password) {}
+

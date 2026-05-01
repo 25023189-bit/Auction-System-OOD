@@ -116,10 +116,10 @@ public class UserDAO {
     public User login(String loginIdentifier, String rawPassword) {
         // Cho phép đăng nhập bằng username hoặc customer_id.
         String sql = """
-            SELECT customer_id, username, password_hash, role, organization, balance
-            FROM users
-            WHERE username = ? OR customer_id = ?
-            """;
+                SELECT customer_id, username, password_hash, role, organization, balance
+                FROM users
+                WHERE username = ? OR customer_id = ?
+                """;
 
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -355,12 +355,12 @@ public class UserDAO {
     public String generateNextCustomerId() {
         // Tự sinh mã bidder tiếp theo theo prefix BD5.
         String sql = """
-            SELECT customer_id
-            FROM users
-            WHERE customer_id LIKE 'BD5%'
-            ORDER BY customer_id DESC
-            LIMIT 1
-            """;
+                SELECT customer_id
+                FROM users
+                WHERE customer_id LIKE 'BD5%'
+                ORDER BY customer_id DESC
+                LIMIT 1
+                """;
 
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql);

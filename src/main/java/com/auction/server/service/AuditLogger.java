@@ -61,12 +61,12 @@ public class AuditLogger {
         if (email == null || email.length() < 5) return "***@***";
         String[] parts = email.split("@");
         if (parts.length != 2) return "***@***";
-        
+
         String name = parts[0];
         String domain = parts[1];
         String maskedName = name.charAt(0) + "*".repeat(Math.max(0, name.length() - 2)) + name.charAt(name.length() - 1);
         String maskedDomain = domain.substring(0, Math.min(2, domain.length())) + "***";
-        
+
         return maskedName + "@" + maskedDomain;
     }
 }

@@ -28,4 +28,4 @@ public record RegisterForm(
         String confirmPassword,
         String role,
         String organization
-) {}
+){};

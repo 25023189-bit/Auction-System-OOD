@@ -1,5 +1,8 @@
 package com.auction.client.feature.auth;
 
+public record ResetPasswordForm(String username, String newPassword, String confirmPassword) {
+}
+
 /**
  * DTO chứa dữ liệu đặt lại mật khẩu trước khi validate.
  *
@@ -19,4 +22,4 @@ package com.auction.client.feature.auth;
  * - Thread-safe: record immutable sau khi khởi tạo.
  * - Dependency: ResetPasswordCommand và ResetPasswordFormValidator.
  */
-public record ResetPasswordForm(String username, String newPassword, String confirmPassword) {}
+

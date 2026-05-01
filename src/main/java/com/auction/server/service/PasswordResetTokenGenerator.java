@@ -109,13 +109,33 @@ public class PasswordResetTokenGenerator {
             return !used && !isExpired();
         }
 
-        // Getter phục vụ ForgotPasswordService kiểm tra trạng thái token.
-        public String getToken() { return token; }
-        public String getOtp() { return otp; }
-        public String getUserId() { return userId; }
-        public String getEmail() { return email; }
-        public LocalDateTime getExpiresAt() { return expiresAt; }
-        public boolean isUsed() { return used; }
-        public void markAsUsed() { this.used = true; }
+        // Getters
+        public String getToken() {
+            return token;
+        }
+
+        public String getOtp() {
+            return otp;
+        }
+
+        public String getUserId() {
+            return userId;
+        }
+
+        public String getEmail() {
+            return email;
+        }
+
+        public LocalDateTime getExpiresAt() {
+            return expiresAt;
+        }
+
+        public boolean isUsed() {
+            return used;
+        }
+
+        public void markAsUsed() {
+            this.used = true;
+        }
     }
 }

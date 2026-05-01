@@ -76,9 +76,9 @@ public class TransactionDAO {
         // API phụ để đọc danh sách item nếu cần hiển thị kho sản phẩm.
         List<Item> list = new ArrayList<>();
         String sql = """
-                SELECT item_id, name, description, current_price
-                FROM items
-                ORDER BY item_id
+                SELECT product_id, product_name, description, current_price
+                FROM products
+                ORDER BY product_id
                 """;
 
         try (Connection conn = DatabaseConnection.getConnection();
@@ -87,8 +87,8 @@ public class TransactionDAO {
 
             while (rs.next()) {
                 Item item = new Item(
-                        rs.getString("item_id"),
-                        rs.getString("name"),
+                        rs.getString("product_id"),
+                        rs.getString("product_name"),
                         rs.getString("description"),
                         rs.getDouble("current_price")
                 );

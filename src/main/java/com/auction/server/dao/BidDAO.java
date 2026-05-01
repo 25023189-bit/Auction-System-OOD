@@ -34,9 +34,9 @@ public class BidDAO {
     public BidResult placeBid(String auctionId, String bidderId, double bidAmount) {
         // Transaction này khóa auction để kiểm tra giá hiện tại và số dư trước khi ghi bid mới.
         String selectAuctionSql = """
-                SELECT a.item_id, i.current_price, u.balance, a.bid_step
+                SELECT a.product_id, p.current_price, u.balance, a.min_bid_increment
                 FROM auctions a
-                JOIN items i ON a.item_id = i.item_id
+                JOIN products p ON a.product_id = p.product_id
                 JOIN users u ON u.customer_id = ?
                 WHERE a.auction_id = ?
                 FOR UPDATE
@@ -51,13 +51,19 @@ public class BidDAO {
         String insertBidSql = """
                 INSERT INTO bid_transactions
                 (auction_id, bidder_id, bid_amount, bid_rank, is_highest, bid_time)
-                VALUES (?, ?, ?, ?, ?, NOW())
+                VALUES (?, ?, ?, (
+                    SELECT next_rank FROM (
+                        SELECT COALESCE(MAX(bid_rank), 0) + 1 AS next_rank
+                        FROM bid_transactions
+                        WHERE auction_id = ?
+                    ) ranks
+                ), ?, NOW())
                 """;
 
         String updateItemPriceSql = """
-                UPDATE items
+                UPDATE products
                 SET current_price = ?
-                WHERE item_id = ?
+                WHERE product_id = ?
                 """;
 
         try (Connection conn = DatabaseConnection.getConnection()) {
@@ -78,10 +84,10 @@ public class BidDAO {
                         return BidResult.fail(BidStatus.AUCTION_NOT_FOUND, "Auction not found.");
                     }
 
-                    itemId = rs.getString("item_id");
+                    itemId = rs.getString("product_id");
                     currentPrice = rs.getDouble("current_price");
                     currentBalance = rs.getDouble("balance");
-                    bidStep = rs.getDouble("bid_step");
+                    bidStep = rs.getDouble("min_bid_increment");
                 }
             }
 
@@ -107,7 +113,7 @@ public class BidDAO {
                 pstmt.setString(1, auctionId);
                 pstmt.setString(2, bidderId);
                 pstmt.setDouble(3, bidAmount);
-                pstmt.setInt(4, 1);
+                pstmt.setString(4, auctionId);
                 pstmt.setInt(5, 1);
                 pstmt.executeUpdate();
             }

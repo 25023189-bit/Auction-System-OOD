@@ -83,7 +83,7 @@ public class AuctionService {
         clientConnection.sendMessage(msg);
     }
 
-    public void resetPassword(String username, String newPassword){
+    public void resetPassword(String username, String newPassword) {
         clientConnection.sendMessage(new Message("RESET_PASSWORD", username, newPassword));
     }
 
@@ -112,6 +112,7 @@ public class AuctionService {
         }
         this.currentUser = "";
     }
+
     // ==========================================================
     // PRODUCT DETAIL CALLBACK
     // ==========================================================
@@ -134,6 +135,7 @@ public class AuctionService {
             productDetailsCallback.accept(data);
         }
     }
+
     public void sendChatMessage(String roomId, String message) {
         // Hỗ trợ package action cũ: hiện chỉ log local, luồng chat mới dùng sendChat().
         System.out.println("[Chat - Room " + roomId + "]: " + message);
