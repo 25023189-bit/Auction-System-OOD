@@ -424,6 +424,7 @@ FINAL_WINDOW_SECONDS = 30
   + Kết thúc phiên
   + Chatting
   + Phân quyền Admin
+  + Vẽ UML
 - Tô Bảo Hân:
 - Bùi Thế Dũng:
   + Database (wallet, sản phẩm, Vòng đời phiên đấu giá,lịch sử đặt giá,thông báo, thanh toán, lịch sử đặt giá, báo cáo)

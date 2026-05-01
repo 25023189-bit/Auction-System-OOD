@@ -10,9 +10,29 @@ import java.net.Socket;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Kết nối socket phía client tới AuctionServer.
+ *
+ * Vai trò:
+ * - Mở socket, tạo stream object và gửi Message từ client lên server.
+ * - Chạy reader thread nhận response liên tục rồi chuyển về AuctionController.
+ *
+ * Luồng chính:
+ * 1. connect() tạo thread nền, kết nối localhost:8080 và khởi tạo ObjectInputStream/ObjectOutputStream.
+ * 2. Reader loop đọc Message từ server, gọi controller.onServerResponse(), còn sendMessage() ghi request ra socket.
+ *
+ * Business rules:
+ * - UI phải được cập nhật trạng thái kết nối khi bắt đầu và sau khi connect thành công.
+ * - Khi disconnect phải đóng input, output và socket để reader loop kết thúc sạch.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe đầy đủ: socket/stream được dùng giữa UI thread và reader thread nhưng không có synchronized.
+ * - Dependency: AuctionController, Socket, ObjectInputStream/ObjectOutputStream, Message, SLF4J.
+ */
 public class ClientConnection {
     private static final Logger LOGGER = LoggerFactory.getLogger(ClientConnection.class);
 
+    // Biến legacy lưu user hiện tại cho một số đoạn code cũ.
     public static String currentUser = null;
 
     private final String host = "localhost";
@@ -39,6 +59,7 @@ public class ClientConnection {
 
                 controller.updateConnectionStatus("Connected to server!");
 
+                // Reader loop nhận Message từ server cho đến khi socket đóng.
                 while (!Thread.currentThread().isInterrupted() && socket != null && !socket.isClosed()) {
                     Message response = (Message) in.readObject();
                     LOGGER.debug("Received action: {}", response.getAction());
@@ -61,6 +82,7 @@ public class ClientConnection {
     public void sendMessage(Message msg) {
         try {
             if (out != null) {
+                // reset() tránh gửi lại object cũ khi cùng Message instance được tái sử dụng.
                 out.writeObject(msg);
                 out.flush();
                 out.reset();

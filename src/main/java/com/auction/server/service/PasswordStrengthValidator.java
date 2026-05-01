@@ -1,7 +1,23 @@
 package com.auction.server.service;
 
 /**
- * Validates password strength based on security criteria.
+ * Validator kiểm tra độ mạnh mật khẩu theo tiêu chí bảo mật cơ bản.
+ *
+ * Vai trò:
+ * - Kiểm tra độ dài, chữ hoa, chữ thường, chữ số và ký tự đặc biệt.
+ * - Lưu lỗi cuối cùng để handler/service trả thông báo cụ thể cho client.
+ *
+ * Luồng chính:
+ * 1. AuthActionHandler hoặc ForgotPasswordService gọi isStrong(password).
+ * 2. Nếu fail, caller đọc getLastError() để gửi lý do cho người dùng.
+ *
+ * Business rules:
+ * - Mật khẩu tối thiểu 8 ký tự.
+ * - Mật khẩu phải có ít nhất 1 chữ hoa, 1 chữ thường, 1 chữ số và 1 ký tự đặc biệt.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: lastError là state mutable theo lần validate gần nhất.
+ * - Dependency: Chỉ dùng API chuẩn của Java Character/String.
  */
 public class PasswordStrengthValidator {
     private static final int MIN_LENGTH = 8;
@@ -10,6 +26,7 @@ public class PasswordStrengthValidator {
     private static final int MIN_DIGITS = 1;
     private static final int MIN_SPECIAL = 1;
 
+    // Lưu lỗi cuối cùng để handler trả lý do cụ thể cho client.
     private String lastError = "";
 
     public boolean isStrong(String password) {
@@ -18,6 +35,7 @@ public class PasswordStrengthValidator {
             return false;
         }
 
+        // Đếm từng nhóm ký tự để báo lỗi chính xác tiêu chí còn thiếu.
         int uppercaseCount = 0, lowercaseCount = 0, digitCount = 0, specialCount = 0;
         String specialChars = "!@#$%^&*()_+-=[]{}|;:,.<>?";
 

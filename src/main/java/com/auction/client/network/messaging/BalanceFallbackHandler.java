@@ -7,7 +7,23 @@ import com.auction.common.model.User;
 import com.auction.server.service.AuctionService;
 
 /**
- * Cập nhật số dư ví của user hiện tại khi server gửi UPDATE_BALANCE.
+ * Fallback handler cập nhật số dư ví khi server gửi UPDATE_BALANCE.
+ *
+ * Vai trò:
+ * - Lọc message số dư đúng với user đang đăng nhập trên client này.
+ * - Cập nhật User trong SessionStore và bind lại header lobby nếu có.
+ *
+ * Luồng chính:
+ * 1. FallbackMessageHandler chuyển UPDATE_BALANCE vào handler.
+ * 2. Handler kiểm tra msg.id, đọc balance mới, cập nhật session user và LobbyUserInfoBinder.
+ *
+ * Business rules:
+ * - Bỏ qua message không dành cho currentUser của AuctionService.
+ * - Bỏ qua payload không phải Double để tránh cập nhật sai số dư.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: SessionStore/User và binder UI mutable, gọi trên luồng UI.
+ * - Dependency: MessageHandler, AuctionService, SessionStore, LobbyUserInfoBinder, User.
  */
 public class BalanceFallbackHandler implements MessageHandler {
     private final AuctionService auctionService;

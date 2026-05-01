@@ -3,8 +3,23 @@ package com.auction.client.feature.auth;
 import com.auction.server.service.AuctionService;
 
 /**
- * Command xử lý submit đăng ký tài khoản.
- * Chuẩn hóa role trước khi gọi service để server nhận dữ liệu nhất quán.
+ * Command xử lý submit form đăng ký tài khoản.
+ *
+ * Vai trò:
+ * - Validate RegisterForm phía client trước khi gửi request.
+ * - Chuẩn hóa role/organization rồi gọi AuctionService.register().
+ *
+ * Luồng chính:
+ * 1. execute() chạy RegisterFormValidator và hiển thị lỗi nếu form không hợp lệ.
+ * 2. Khi hợp lệ, command normalize role, trim các field hồ sơ và gửi REGISTER lên server.
+ *
+ * Business rules:
+ * - Role không phải SELLER được gửi như BIDDER.
+ * - Organization chỉ gửi khi role là SELLER.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: giữ form/service/presenter theo một lần submit.
+ * - Dependency: UiCommand, AuctionService, FormValidator<RegisterForm>, AuthPresenter.
  */
 public class RegisterCommand implements UiCommand {
     private final AuctionService auctionService;

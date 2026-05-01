@@ -1,8 +1,23 @@
 package com.auction.client.feature.viewmodel;
 
 /**
- * ViewModel giữ dữ liệu đang nhập trên các form xác thực.
- * Controller đọc FXML vào đây trước khi tạo Command tương ứng.
+ * ViewModel giữ dữ liệu người dùng đang nhập trên các form xác thực.
+ *
+ * Vai trò:
+ * - Lưu tạm input login, register và forgot/reset password.
+ * - Làm lớp trung gian giữa FXML controls và các Command xác thực.
+ *
+ * Luồng chính:
+ * 1. AuctionController đọc text từ FXML controls vào AuthViewModel.
+ * 2. Controller tạo LoginCommand/RegisterCommand/ResetPasswordCommand từ dữ liệu đã lưu.
+ *
+ * Business rules:
+ * - registerRole mặc định là BIDDER nếu UI chưa chọn giá trị khác.
+ * - ViewModel chỉ giữ input, không hash mật khẩu hoặc gọi server.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: field mutable, dùng trong luồng UI.
+ * - Dependency: các command và validator trong feature.auth.
  */
 public class AuthViewModel {
     private String username = "";

@@ -5,5 +5,21 @@ public record ResetPasswordForm(String username, String newPassword, String conf
 
 /**
  * DTO chứa dữ liệu đặt lại mật khẩu trước khi validate.
+ *
+ * Vai trò:
+ * - Gom username, newPassword và confirmPassword từ form quên mật khẩu.
+ * - Là input cho ResetPasswordFormValidator và ResetPasswordCommand.
+ *
+ * Luồng chính:
+ * 1. AuctionController tạo ResetPasswordForm từ các field forgot password.
+ * 2. Validator kiểm tra dữ liệu, command gửi request nếu hợp lệ.
+ *
+ * Business rules:
+ * - newPassword và confirmPassword phải khớp ở bước validate.
+ * - DTO không tự xử lý độ mạnh mật khẩu; server vẫn kiểm tra cuối cùng.
+ *
+ * Ghi chú kỹ thuật:
+ * - Thread-safe: record immutable sau khi khởi tạo.
+ * - Dependency: ResetPasswordCommand và ResetPasswordFormValidator.
  */
 

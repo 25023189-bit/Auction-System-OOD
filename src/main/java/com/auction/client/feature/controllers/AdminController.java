@@ -21,8 +21,23 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Controller cho cửa sổ quản trị.
- * Admin dùng màn hình này để xem user, phòng đấu giá, lịch sử bid và duyệt yêu cầu tạo phiên đấu giá.
+ * Controller cho cửa sổ quản trị của admin.
+ *
+ * Vai trò:
+ * - Hiển thị và cập nhật bảng user, auction, bid history và pending auction request.
+ * - Gửi các lệnh admin như xóa user, hủy auction, approve/reject request lên server.
+ *
+ * Luồng chính:
+ * 1. initialize() cấu hình TableView/column binding và listener chọn auction để tải bid history.
+ * 2. setAuctionService() nhận service hiện tại, load dữ liệu admin và các handler cập nhật bảng khi server phản hồi.
+ *
+ * Business rules:
+ * - Xóa user và hủy auction phải có item được chọn và cần xác nhận trước khi gửi lệnh.
+ * - Approve/reject pending auction chỉ gửi requestId, server chịu trách nhiệm tạo hoặc loại bỏ request.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: TableView/ObservableList JavaFX được cập nhật qua Platform.runLater khi nhận response.
+ * - Dependency: AuctionService, Message, JavaFX TableView/TableColumn/Alert, User, AuctionRoom, BidTransaction, PendingAuctionRequest.
  */
 public class AdminController {
 

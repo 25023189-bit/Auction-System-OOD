@@ -5,7 +5,23 @@ import com.auction.client.session.SessionStore;
 import com.auction.client.feature.presenter.AuctionRoomPresenter;
 
 /**
- * Handler đặt giá phiên bản dùng cho package presenter cũ.
+ * Handler legacy xử lý thao tác đặt giá cho package presenter cũ.
+ *
+ * Vai trò:
+ * - Bọc lời gọi AuctionService.placeBid() cho luồng UI cũ.
+ * - Giữ dependency SessionStore/Presenter để tương thích constructor hiện có.
+ *
+ * Luồng chính:
+ * 1. UI legacy gọi placeBid(roomId, bidAmount).
+ * 2. Handler gửi số tiền bid lên AuctionService nếu service khả dụng.
+ *
+ * Business rules:
+ * - roomId không được dùng trực tiếp ở đây vì service/server dựa vào phòng hiện tại của session.
+ * - Validate quyền bid và giá hợp lệ vẫn do server/service phòng xử lý cuối cùng.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: giữ service/session/presenter mutable.
+ * - Dependency: AuctionService, SessionStore, feature.presenter.AuctionRoomPresenter.
  */
 public class BidActionHandler {
     private AuctionService auctionService;

@@ -4,7 +4,23 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
- * Logs security-related events for audit purposes.
+ * Logger đơn giản cho các sự kiện bảo mật của luồng reset password.
+ *
+ * Vai trò:
+ * - Ghi audit log khi request reset, tạo token, đổi mật khẩu thành công hoặc thất bại.
+ * - Che bớt email/token trong log để giảm rủi ro lộ dữ liệu nhạy cảm.
+ *
+ * Luồng chính:
+ * 1. ForgotPasswordService gọi method log tương ứng với từng mốc trong luồng reset.
+ * 2. AuditLogger format timestamp và in log ra standard output.
+ *
+ * Business rules:
+ * - Email trong log phải được mask, không in đầy đủ địa chỉ người dùng.
+ * - Token chỉ được log prefix ngắn để phục vụ debug mà không lộ toàn bộ token.
+ *
+ * Ghi chú kỹ thuật:
+ * - Thread-safe: method static không giữ mutable shared state, DateTimeFormatter là immutable.
+ * - Dependency: LocalDateTime, DateTimeFormatter, System.out.
  */
 public class AuditLogger {
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -40,6 +56,7 @@ public class AuditLogger {
         System.out.println(LOG_PREFIX + " " + timestamp + " - Invalid/expired token used by user: " + username + " (token: " + tokenId.substring(0, 8) + "...)");
     }
 
+    // Chỉ hiển thị một phần email trong log để giảm rủi ro lộ dữ liệu cá nhân.
     private static String maskEmail(String email) {
         if (email == null || email.length() < 5) return "***@***";
         String[] parts = email.split("@");

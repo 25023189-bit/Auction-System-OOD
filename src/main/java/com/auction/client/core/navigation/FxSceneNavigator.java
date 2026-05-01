@@ -15,8 +15,23 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Triển khai điều hướng màn hình bằng JavaFX FXMLLoader.
- * Lớp này chọn FXML theo role hiện tại và giữ lại service/session khi chuyển scene.
+ * SceneNavigator triển khai điều hướng màn hình bằng JavaFX FXMLLoader.
+ *
+ * Vai trò:
+ * - Chuyển giữa login, lobby, auction room và mở các dashboard phụ.
+ * - Chọn FXML theo role hiện tại và giữ lại service/session khi thay scene.
+ *
+ * Luồng chính:
+ * 1. Controller gọi showLogin(), showLobby(), showAuctionRoom() hoặc open dashboard theo hành động người dùng.
+ * 2. Navigator load FXML, tạo/tái sử dụng controller, gắn scene vào Stage và áp dụng WindowStateHandler.
+ *
+ * Business rules:
+ * - Seller và bidder dùng FXML lobby/room khác nhau theo quyền thao tác.
+ * - Trước khi vào auction room phải lưu room hiện tại vào SessionStore để controller mới bind đúng dữ liệu.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: FXMLLoader, Stage và Window phải thao tác trên JavaFX Application Thread.
+ * - Dependency: SceneNavigator, WindowStateHandler, SessionStore, AuctionService, FXMLLoader, Stage, User/AuctionRoom.
  */
 public class FxSceneNavigator implements SceneNavigator {
     private static final Logger LOGGER = LoggerFactory.getLogger(FxSceneNavigator.class);

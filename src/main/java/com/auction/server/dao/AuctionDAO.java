@@ -10,10 +10,30 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Truy cập dữ liệu cho phiên đấu giá, sản phẩm liên quan và thao tác chốt phiên.
+ *
+ * Vai trò:
+ * - Tạo, đọc, hủy mềm và đóng phiên đấu giá trong database.
+ * - Gom dữ liệu auctions/products thành AuctionRoom và thống kê hiệu quả của seller.
+ *
+ * Luồng chính:
+ * 1. Nhận yêu cầu từ service/handler, mở JDBC connection và thực thi SQL tương ứng.
+ * 2. Map ResultSet về model dùng chung hoặc trả về kết quả nghiệp vụ cho tầng gọi.
+ *
+ * Business rules:
+ * - Tạo auction kèm item phải nằm trong cùng một transaction để tránh lệch dữ liệu.
+ * - Chốt phiên hết giờ phải khóa auction, xác định bid cao nhất, chuyển tiền và cập nhật trạng thái atomically.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe theo instance, nhưng mỗi method dùng connection local nên có thể gọi đồng thời nếu DB chịu tải.
+ * - Dependency: DatabaseConnection, AuctionRoom, Item, JDBC, SLF4J.
+ */
 public class AuctionDAO {
     private static final Logger LOGGER = LoggerFactory.getLogger(AuctionDAO.class);
 
@@ -22,7 +42,8 @@ public class AuctionDAO {
         String sql = """
                 INSERT INTO auctions (
                     auction_id, product_id, created_by, status,
-                    start_time, end_time, actual_end_time, min_bid_increment
+                    start_time, end_time, actual_end_time,
+                    min_bid_increment
                 )
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)
                 """;
@@ -31,7 +52,7 @@ public class AuctionDAO {
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setString(1, room.getRoomId());
-            pstmt.setInt(2, Integer.parseInt(itemId));
+            pstmt.setInt(2, Integer.parseInt(itemId)); // DB lưu product_id dạng INT.
             pstmt.setString(3, sellerId);
             pstmt.setString(4, room.getStatus() != null ? room.getStatus() : "OPEN");
             pstmt.setTimestamp(5, Timestamp.valueOf(room.getStartTime()));
@@ -47,16 +68,17 @@ public class AuctionDAO {
     }
 
     public boolean createAuctionWithItem(AuctionRoom room, Item item, String sellerId) {
-        // Cập nhật theo Schema V4.3: Bảng products có seller_id, product_type
+        // Cập nhật bảng products chuẩn theo DB Version 4.2
         String insertItemSql = """
-                INSERT INTO products (product_id, seller_id, product_type, product_name, description, starting_price, current_price)
-                VALUES (?, ?, 'ELECTRONICS', ?, ?, ?, ?)
+                INSERT INTO products (product_name, description, starting_price, current_price, seller_id, product_type)
+                VALUES (?, ?, ?, ?, ?, 'ELECTRONICS')
                 """;
 
         String insertAuctionSql = """
                 INSERT INTO auctions (
                     auction_id, product_id, created_by, status,
-                    start_time, end_time, actual_end_time, min_bid_increment
+                    start_time, end_time, actual_end_time,
+                    min_bid_increment
                 )
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)
                 """;
@@ -64,19 +86,28 @@ public class AuctionDAO {
         try (Connection conn = DatabaseConnection.getConnection()) {
             conn.setAutoCommit(false);
 
-            try (PreparedStatement itemStmt = conn.prepareStatement(insertItemSql)) {
-                itemStmt.setInt(1, Integer.parseInt(item.getId()));
-                itemStmt.setString(2, sellerId);
-                itemStmt.setString(3, item.getProductName());
-                itemStmt.setString(4, item.getDescription());
-                itemStmt.setDouble(5, item.getStartingPrice());
-                itemStmt.setDouble(6, item.getStartingPrice());
+            int productId;
+            try (PreparedStatement itemStmt = conn.prepareStatement(insertItemSql, Statement.RETURN_GENERATED_KEYS)) {
+                itemStmt.setString(1, item.getProductName());
+                itemStmt.setString(2, item.getDescription());
+                itemStmt.setDouble(3, item.getStartingPrice());
+                itemStmt.setDouble(4, item.getStartingPrice());
+                itemStmt.setString(5, sellerId);
                 itemStmt.executeUpdate();
+
+                try (ResultSet generatedKeys = itemStmt.getGeneratedKeys()) {
+                    if (!generatedKeys.next()) {
+                        conn.rollback();
+                        LOGGER.error("Transaction create auction failed: generated product_id was not returned.");
+                        return false;
+                    }
+                    productId = generatedKeys.getInt(1);
+                }
             }
 
             try (PreparedStatement auctionStmt = conn.prepareStatement(insertAuctionSql)) {
                 auctionStmt.setString(1, room.getRoomId());
-                auctionStmt.setInt(2, Integer.parseInt(item.getId()));
+                auctionStmt.setInt(2, productId);
                 auctionStmt.setString(3, sellerId);
                 auctionStmt.setString(4, room.getStatus() != null ? room.getStatus() : "OPEN");
                 auctionStmt.setTimestamp(5, Timestamp.valueOf(room.getStartTime()));
@@ -96,7 +127,7 @@ public class AuctionDAO {
 
     public List<AuctionRoom> getAllActiveAuctions() {
         List<AuctionRoom> list = new ArrayList<>();
-        // Cập nhật theo Schema V4.3
+        // Cập nhật JOIN bảng products và alias cột
         String sql = """
                 SELECT a.auction_id, a.product_id, a.created_by AS seller_id, a.status,
                        a.start_time, a.end_time, a.actual_end_time, a.min_bid_increment,
@@ -145,7 +176,7 @@ public class AuctionDAO {
     }
 
     public boolean forceDeleteAuction(String roomId) {
-        String sql = "UPDATE auctions SET status = 'CANCELED' WHERE auction_id = ?";
+        String sql = "UPDATE auctions SET status = 'CANCELED' WHERE auction_id = ?"; // Đổi CANCELED_BY_ADMIN thành CANCELED theo ENUM
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, roomId);
@@ -183,6 +214,7 @@ public class AuctionDAO {
     }
 
     public SellerAuctionStats getSellerAuctionStats(String sellerId) {
+        // Thống kê dùng để đánh giá seller khi tạo phiên mới.
         String sql = """
                 SELECT
                     COUNT(*) AS total_count,
@@ -213,6 +245,7 @@ public class AuctionDAO {
     }
 
     public boolean closeAuctionBySeller(String roomId, String sellerId) {
+        // Seller chỉ được đóng phiên do chính mình tạo và phiên vẫn đang mở/chạy.
         String sql = """
                 UPDATE auctions
                 SET status = 'CANCELED'
@@ -232,6 +265,7 @@ public class AuctionDAO {
     }
 
     public CloseAuctionResult closeAuctionByTime(String roomId) {
+        // Chốt phiên hết giờ trong transaction: khóa auction, tìm bid cao nhất, chuyển tiền và cập nhật status.
         String auctionSql = """
                 SELECT auction_id, created_by AS seller_id, status
                 FROM auctions
@@ -249,11 +283,14 @@ public class AuctionDAO {
 
         String updateAuctionStatusSql = """
                 UPDATE auctions
-                SET status = ?
+                SET status = ?,
+                    winner_id = ?,
+                    final_price = ?,
+                    actual_end_time = NOW(3)
                 WHERE auction_id = ?
                 """;
 
-        // Trừ và cộng tiền cập nhật vào bảng wallets theo Schema 4.3
+        // Wallet winner bị trừ và wallet seller được cộng trong cùng transaction.
         String debitWinnerSql = """
                 UPDATE wallets
                 SET balance = balance - ?
@@ -310,8 +347,10 @@ public class AuctionDAO {
 
             if (winnerId == null) {
                 try (PreparedStatement pstmt = conn.prepareStatement(updateAuctionStatusSql)) {
-                    pstmt.setString(1, "FINISHED");
-                    pstmt.setString(2, roomId);
+                    pstmt.setString(1, "FINISHED"); // Không có winner: phiên kết thúc nhưng không phát sinh thanh toán.
+                    pstmt.setString(2, null);
+                    pstmt.setNull(3, java.sql.Types.DECIMAL);
+                    pstmt.setString(4, roomId);
                     pstmt.executeUpdate();
                 }
 
@@ -336,8 +375,10 @@ public class AuctionDAO {
             }
 
             try (PreparedStatement pstmt = conn.prepareStatement(updateAuctionStatusSql)) {
-                pstmt.setString(1, "PAID");
-                pstmt.setString(2, roomId);
+                pstmt.setString(1, "PAID"); // Đổi SOLD thành PAID theo ENUM
+                pstmt.setString(2, winnerId);
+                pstmt.setDouble(3, finalPrice);
+                pstmt.setString(4, roomId);
                 pstmt.executeUpdate();
             }
 
@@ -371,6 +412,7 @@ public class AuctionDAO {
         }
     }
 
+    // Map ResultSet từ JOIN auctions/products sang AuctionRoom dùng chung cho client.
     private AuctionRoom mapAuctionRoom(ResultSet rs) throws SQLException {
         AuctionRoom room = new AuctionRoom();
 
@@ -384,7 +426,7 @@ public class AuctionDAO {
         room.setStartingPrice(rs.getDouble("starting_price"));
         room.setBidStep(rs.getDouble("min_bid_increment"));
 
-        // Mặc định cho Model Java
+        // Cột không tồn tại ở DB nữa, set mặc định để logic phía trên không vỡ
         room.setMinimumJoinAmount(0.0);
         room.setDurationMinutes(0);
         room.setExtensionSeconds(0);
@@ -394,7 +436,7 @@ public class AuctionDAO {
             room.setStartTime(startTs.toLocalDateTime());
         }
 
-        Timestamp endTs = rs.getTimestamp("end_time");
+        Timestamp endTs = rs.getTimestamp("actual_end_time");
         if (endTs != null) {
             room.setEndTime(endTs.toLocalDateTime());
         }
@@ -404,6 +446,7 @@ public class AuctionDAO {
         return room;
     }
 
+    // Gắn thống kê seller vào room để client/admin có dữ liệu đánh giá.
     private void applySellerStats(AuctionRoom room) {
         if (room == null || room.getSellerName() == null || room.getSellerName().isBlank()) {
             return;
@@ -415,6 +458,25 @@ public class AuctionDAO {
         room.setSellerAdminCancellationRate(stats.getAdminCancellationRate());
     }
 
+    /**
+     * Giá trị kết quả trả về sau khi chốt phiên đấu giá.
+     *
+     * Vai trò:
+     * - Mang trạng thái cuối cùng của phiên sau khi closeAuctionByTime() xử lý.
+     * - Cung cấp dữ liệu số dư winner/seller để service broadcast lại cho client.
+     *
+     * Luồng chính:
+     * 1. AuctionDAO tạo instance thông qua factory sold(), unsold() hoặc fail().
+     * 2. AuctionRoomService đọc các getter để quyết định message và event cần phát.
+     *
+     * Business rules:
+     * - SOLD chỉ hợp lệ khi có winner và giao dịch chuyển tiền thành công.
+     * - UNSOLD là kết quả thành công nhưng không phát sinh winner hoặc thanh toán.
+     *
+     * Ghi chú kỹ thuật:
+     * - Thread-safe: immutable sau khi khởi tạo, các field đều final.
+     * - Dependency: Không phụ thuộc DB trực tiếp; là DTO nội bộ của AuctionDAO/AuctionRoomService.
+     */
     public static class CloseAuctionResult {
         private final boolean success;
         private final String finalStatus;
@@ -452,39 +514,35 @@ public class AuctionDAO {
             return new CloseAuctionResult(false, "ERROR", null, null, 0.0, null, null, message);
         }
 
-        public boolean isSuccess() {
-            return success;
-        }
-
-        public String getFinalStatus() {
-            return finalStatus;
-        }
-
-        public String getWinnerId() {
-            return winnerId;
-        }
-
-        public String getSellerId() {
-            return sellerId;
-        }
-
-        public double getFinalPrice() {
-            return finalPrice;
-        }
-
-        public Double getWinnerBalance() {
-            return winnerBalance;
-        }
-
-        public Double getSellerBalance() {
-            return sellerBalance;
-        }
-
-        public String getMessage() {
-            return message;
-        }
+        public boolean isSuccess() { return success; }
+        public String getFinalStatus() { return finalStatus; }
+        public String getWinnerId() { return winnerId; }
+        public String getSellerId() { return sellerId; }
+        public double getFinalPrice() { return finalPrice; }
+        public Double getWinnerBalance() { return winnerBalance; }
+        public Double getSellerBalance() { return sellerBalance; }
+        public String getMessage() { return message; }
     }
 
+    /**
+     * Thống kê hiệu quả đấu giá của một seller.
+     *
+     * Vai trò:
+     * - Lưu tổng số phiên, số phiên bán thành công và số phiên bị admin hủy.
+     * - Tính tỷ lệ thành công/tỷ lệ bị hủy để đưa vào AuctionRoom hoặc User.
+     *
+     * Luồng chính:
+     * 1. AuctionDAO truy vấn aggregate theo sellerId và tạo SellerAuctionStats.
+     * 2. Tầng service/handler đọc tỷ lệ để hiển thị hoặc validate yêu cầu tạo phiên.
+     *
+     * Business rules:
+     * - Số lượng âm được chuẩn hóa về 0 khi khởi tạo.
+     * - Nếu seller chưa có phiên nào thì các tỷ lệ trả về 0.0 để tránh chia cho 0.
+     *
+     * Ghi chú kỹ thuật:
+     * - Thread-safe: immutable sau khi khởi tạo, các field đều final.
+     * - Dependency: Không phụ thuộc ngoài; được tạo từ dữ liệu aggregate của AuctionDAO.
+     */
     public static class SellerAuctionStats {
         private final int totalAuctions;
         private final int soldAuctions;
