@@ -5,7 +5,23 @@ import java.time.LocalDateTime;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Giới hạn số lần yêu cầu reset mật khẩu trong một khoảng thời gian.
+ * Bộ giới hạn số lần request reset mật khẩu theo cửa sổ thời gian.
+ *
+ * Vai trò:
+ * - Theo dõi timestamp các request reset password theo từng userId/username.
+ * - Cho biết request hiện tại có được phép tiếp tục và còn bao nhiêu lượt.
+ *
+ * Luồng chính:
+ * 1. ForgotPasswordService gọi isAllowed(username) trước khi xử lý reset.
+ * 2. RateLimiter dọn request cũ ngoài window, kiểm tra quota rồi ghi nhận request mới nếu hợp lệ.
+ *
+ * Business rules:
+ * - Số request tối đa và window thời gian lấy từ ConfigManager.
+ * - Vượt giới hạn thì không ghi thêm request mới và trả false.
+ *
+ * Ghi chú kỹ thuật:
+ * - Thread-safe một phần: map là ConcurrentHashMap nhưng RequestLog bên trong dùng ArrayList không synchronized.
+ * - Dependency: ConfigManager, LocalDateTime, ConcurrentHashMap.
  */
 public class RateLimiter {
     // Dùng static map để mọi instance cùng chia sẻ log request.
@@ -44,7 +60,25 @@ public class RateLimiter {
         return Math.max(0, maxRequests - log.getRequestCount());
     }
 
-    // Lưu timestamp các request của một user.
+    /**
+     * Nhật ký timestamp request reset password của một user.
+     *
+     * Vai trò:
+     * - Lưu các mốc thời gian request còn nằm trong window rate limit.
+     * - Dọn request cũ và trả số lượng request hiện tại.
+     *
+     * Luồng chính:
+     * 1. RateLimiter lấy hoặc tạo RequestLog theo userId.
+     * 2. RequestLog cleanOldRequests(), addRequest() và getRequestCount() cho quyết định quota.
+     *
+     * Business rules:
+     * - Request cũ hơn cutoff window phải bị loại trước khi đếm quota.
+     * - Count hiện tại là cơ sở để so với maxRequests của cấu hình.
+     *
+     * Ghi chú kỹ thuật:
+     * - Không thread-safe: requests là ArrayList mutable, caller chưa synchronized quanh từng log.
+     * - Dependency: LocalDateTime, ArrayList.
+     */
     private static class RequestLog {
         private final java.util.List<LocalDateTime> requests = new java.util.ArrayList<>();
 

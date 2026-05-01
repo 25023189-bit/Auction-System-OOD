@@ -8,8 +8,23 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Lưu các yêu cầu tạo phiên đấu giá đang chờ admin duyệt.
- * Hiện dùng bộ nhớ server, chưa persist xuống database.
+ * Service lưu và xử lý yêu cầu tạo phiên đấu giá đang chờ admin duyệt.
+ *
+ * Vai trò:
+ * - Nhận PendingAuctionRequest từ seller sau khi validate.
+ * - Cung cấp danh sách pending, approve hoặc reject request cho admin.
+ *
+ * Luồng chính:
+ * 1. SellerActionHandler submit request vào map pending dùng chung toàn server.
+ * 2. AdminActionHandler lấy danh sách pending, approve để remove và tạo auction thật hoặc reject để xóa.
+ *
+ * Business rules:
+ * - Request không có requestId hợp lệ sẽ bị bỏ qua.
+ * - Approve/reject đều remove request khỏi hàng chờ; nếu approve lưu DB lỗi thì handler có thể submit lại.
+ *
+ * Ghi chú kỹ thuật:
+ * - Thread-safe ở cấp map nhờ ConcurrentHashMap; thứ tự getAllPending() không được đảm bảo.
+ * - Dependency: PendingAuctionRequest, ConcurrentHashMap, List/ArrayList.
  */
 public class PendingAuctionApprovalService {
     // Static map để mọi ClientHandler nhìn thấy cùng một danh sách pending.

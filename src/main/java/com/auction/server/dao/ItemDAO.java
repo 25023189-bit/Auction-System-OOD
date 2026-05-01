@@ -10,7 +10,23 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /**
- * DAO thao tác cơ bản với bảng items.
+ * Truy cập dữ liệu cơ bản cho item được dùng trong phiên đấu giá.
+ *
+ * Vai trò:
+ * - Lưu item mới vào database.
+ * - Cập nhật current price của item sau khi có bid hợp lệ.
+ *
+ * Luồng chính:
+ * 1. Nhận Item hoặc itemId/newPrice từ tầng service/DAO khác.
+ * 2. Thực thi INSERT/UPDATE qua JDBC và trả về trạng thái thành công.
+ *
+ * Business rules:
+ * - Giá hiện tại ban đầu lấy từ starting price của item.
+ * - current_price chỉ nên cập nhật sau khi bid đã qua validate nghiệp vụ.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe theo instance; mỗi method dùng connection local nên không giữ state dùng chung.
+ * - Dependency: DatabaseConnection, Item, JDBC, SLF4J.
  */
 public class ItemDAO {
     private static final Logger LOGGER = LoggerFactory.getLogger(ItemDAO.class);

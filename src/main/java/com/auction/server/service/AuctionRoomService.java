@@ -14,8 +14,23 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 
 /**
- * Service nghiệp vụ cho phòng đấu giá.
- * Chịu trách nhiệm join phòng, đặt giá, khóa vào phòng cuối giờ và kết thúc phiên hết hạn.
+ * Service nghiệp vụ điều phối trạng thái phòng đấu giá trong runtime.
+ *
+ * Vai trò:
+ * - Xử lý join room, đặt bid, khóa người mới vào cuối phiên và finalize phiên hết hạn.
+ * - Đồng bộ dữ liệu runtime trong bộ nhớ với AuctionRoom trả về client.
+ *
+ * Luồng chính:
+ * 1. Handler gọi joinRoom(), placeNewBid() hoặc watcher gọi finalizeExpiredAuctionIfNeeded().
+ * 2. Service đọc DB, kiểm tra status/time/runtime state, gọi DAO transaction rồi broadcast các event cần thiết.
+ *
+ * Business rules:
+ * - Trong 30 giây cuối, người mới bị khóa vào phòng nhưng participant đã join vẫn được bid.
+ * - Bid hợp lệ trong 30 giây cuối được gia hạn thêm theo cấu hình extensionSeconds của room.
+ *
+ * Ghi chú kỹ thuật:
+ * - Thread-safe theo room: synchronized trên AuctionRuntimeState từng room để tránh join/bid/finalize đụng nhau.
+ * - Dependency: AuctionDAO, BidDAO, UserDAO, AuctionStateManager, AuctionServer, Message.
  */
 public class AuctionRoomService {
     private static final long FINAL_WINDOW_SECONDS = 30L;

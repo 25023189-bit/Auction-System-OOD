@@ -3,7 +3,23 @@ package com.auction.server.service;
 import java.time.LocalDateTime;
 
 /**
- * Validator nghiệp vụ cho request tạo phiên đấu giá của seller.
+ * Validator nghiệp vụ cho yêu cầu seller tạo phiên đấu giá mới.
+ *
+ * Vai trò:
+ * - Kiểm tra dữ liệu form tạo phiên trước khi đưa vào hàng chờ admin duyệt.
+ * - Lưu thông báo lỗi cuối cùng để handler trả lý do cụ thể cho client.
+ *
+ * Luồng chính:
+ * 1. SellerActionHandler truyền seller, item, giá, thời gian và chỉ số uy tín vào validateAuction().
+ * 2. Validator dừng ở lỗi đầu tiên hoặc trả true khi toàn bộ điều kiện hợp lệ.
+ *
+ * Business rules:
+ * - Seller phải có organization, item/description không được rỗng, giá và bid step phải lớn hơn 0.
+ * - Minimum join amount phải nhỏ hơn 75% starting price; extension nằm trong khoảng 1 đến 120 giây.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: errorMessage là state mutable theo lần validate gần nhất.
+ * - Dependency: LocalDateTime; được dùng bởi SellerActionHandler.
  */
 public class AuctionCreationValidator {
     // Lưu lỗi cuối cùng để handler trả thông báo rõ ràng cho client.

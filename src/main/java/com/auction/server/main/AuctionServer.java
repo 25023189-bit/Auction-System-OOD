@@ -20,8 +20,23 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Entry point của server socket.
- * Quản lý danh sách client đang online, broadcast message và watcher tự kết thúc phiên hết giờ.
+ * Entry point của socket server cho hệ thống đấu giá.
+ *
+ * Vai trò:
+ * - Lắng nghe client trên cổng server, tạo ClientHandler và quản lý danh sách client online.
+ * - Broadcast message, notify theo room/user và chạy watcher chốt phiên hết thời gian.
+ *
+ * Luồng chính:
+ * 1. Khởi tạo shutdown hook, ServerSocket, watcher và thread pool xử lý client.
+ * 2. Chấp nhận socket mới, đưa vào danh sách client và giao ClientHandler cho CLIENT_POOL.
+ *
+ * Business rules:
+ * - Phiên hết giờ phải được watcher kiểm tra định kỳ và finalize qua AuctionRoomService.
+ * - User bị admin xóa khi đang online phải nhận BANNED rồi bị ngắt kết nối.
+ *
+ * Ghi chú kỹ thuật:
+ * - Thread-safe một phần: dùng CopyOnWriteArrayList, ConcurrentHashMap và executor; method static vẫn cần cẩn trọng khi gọi chéo close/remove.
+ * - Dependency: ServerSocket, ClientHandler, AuctionDAO, AuctionRoomService, Message, java.util.concurrent, SLF4J.
  */
 public class AuctionServer {
     private static final Logger LOGGER = LoggerFactory.getLogger(AuctionServer.class);

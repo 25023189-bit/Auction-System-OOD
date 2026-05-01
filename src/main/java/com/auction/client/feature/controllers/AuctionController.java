@@ -40,7 +40,22 @@ import java.util.ResourceBundle;
 
 /**
  * Controller trung tâm của client JavaFX.
- * Kết nối các màn hình login, lobby, phòng đấu giá với service, session và router xử lý tin nhắn server.
+ *
+ * Vai trò:
+ * - Kết nối các màn hình login, register, lobby và phòng đấu giá với service, session, presenter và handler.
+ * - Nhận response từ server rồi điều phối qua ResponseRouter hoặc callback chi tiết sản phẩm.
+ *
+ * Luồng chính:
+ * 1. initialize() tạo socket/service, session, navigator, presenter, binder, timer, handler và router theo FXML hiện tại.
+ * 2. Các action FXML tạo command/request tương ứng, gửi qua AuctionService và cập nhật UI khi onServerResponse() nhận Message.
+ *
+ * Business rules:
+ * - Mỗi controller chỉ tạo kết nối socket một lần trong vòng đời của nó.
+ * - Role quyết định màn hình lobby/room, nút tạo phiên và nút đóng phiên được hiển thị.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: control JavaFX phải cập nhật trên JavaFX Application Thread; response server được dispatch qua FxThreadExecutor.
+ * - Dependency: AuctionService, ClientConnection, SessionStore, SceneNavigator, presenter/binder/handler client, JavaFX FXML controls, Message.
  */
 public class AuctionController implements Initializable {
     private static final Logger LOGGER = LoggerFactory.getLogger(AuctionController.class);

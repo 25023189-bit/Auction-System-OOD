@@ -8,8 +8,23 @@ import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 
 /**
- * Presenter cho màn hình phòng đấu giá.
- * Lớp này chỉ cập nhật control JavaFX, không gọi server và không giữ nghiệp vụ đấu giá.
+ * Presenter cập nhật UI cho màn hình phòng đấu giá.
+ *
+ * Vai trò:
+ * - Hiển thị thông tin sản phẩm, giá hiện tại, participant, timer và chat log.
+ * - Bật/tắt control dành cho owner và khóa UI bid khi phiên không cho phép đặt giá.
+ *
+ * Luồng chính:
+ * 1. Binder/message handler gọi presenter khi room state hoặc bid/chat thay đổi.
+ * 2. Presenter cập nhật label, textarea, button và text field tương ứng.
+ *
+ * Business rules:
+ * - Nút đóng phiên chỉ hiển thị với seller sở hữu phòng.
+ * - Khi phiên chưa bắt đầu/kết thúc hoặc user không được bid thì phải disable bid UI.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: control JavaFX phải cập nhật trên JavaFX Application Thread.
+ * - Dependency: ViewPresenter, Label, TextArea, TextField, Button, Color.
  */
 public class AuctionRoomPresenter implements ViewPresenter {
     private final Label lblAuctionItemName;

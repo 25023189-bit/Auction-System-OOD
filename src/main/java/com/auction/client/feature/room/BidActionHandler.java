@@ -7,8 +7,23 @@ import com.auction.server.service.AuctionService;
 import java.time.LocalDateTime;
 
 /**
- * Xử lý thao tác đặt giá từ UI phòng đấu giá.
- * Kiểm tra thời gian ở client trước khi gửi bid để phản hồi nhanh cho người dùng.
+ * ActionHandler xử lý thao tác đặt giá từ UI phòng đấu giá.
+ *
+ * Vai trò:
+ * - Parse số tiền bid từ TextField request.
+ * - Kiểm tra nhanh trạng thái thời gian phía client trước khi gọi AuctionService.placeBid().
+ *
+ * Luồng chính:
+ * 1. AuctionController tạo BidRequest và gọi handle().
+ * 2. Handler đọc room hiện tại, kiểm tra start/end time, parse amount và gửi bid lên server.
+ *
+ * Business rules:
+ * - Không cho bid trước startTime hoặc sau scheduledEndTime trên UI.
+ * - NumberFormatException phải được chuyển thành thông báo thân thiện trong chat log.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: dùng SessionStore/Presenter mutable trên luồng UI.
+ * - Dependency: ActionHandler<BidRequest>, AuctionService, SessionStore, AuctionRoomPresenter, AuctionRoom.
  */
 public class BidActionHandler implements ActionHandler<BidRequest> {
     private final AuctionService auctionService;

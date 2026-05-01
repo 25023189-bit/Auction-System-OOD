@@ -10,8 +10,23 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
 /**
- * Bộ đếm giờ cho phòng đấu giá.
- * Dựa vào startTime và scheduledEndTime để hiển thị trạng thái chưa bắt đầu, đang chạy hoặc đã kết thúc.
+ * AuctionTimer triển khai bằng JavaFX Timeline cho phòng đấu giá.
+ *
+ * Vai trò:
+ * - Hiển thị countdown trước khi bắt đầu, thời gian còn lại khi đang chạy và trạng thái ended.
+ * - Dừng/khởi tạo lại Timeline khi server gửi thời gian mới hoặc user rời phòng.
+ *
+ * Luồng chính:
+ * 1. start(startTime, scheduledEndTime) dừng timer cũ rồi chọn mode trước giờ chạy, đang chạy hoặc đã kết thúc.
+ * 2. Timeline tick mỗi giây, cập nhật presenter và stop khi phiên hết giờ.
+ *
+ * Business rules:
+ * - Mỗi lần start phải stop timeline cũ để tránh nhiều timer chạy song song.
+ * - Khi hết giờ phải hiển thị Ended và disable bid UI.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: Timeline và presenter JavaFX phải chạy trên JavaFX Application Thread.
+ * - Dependency: AuctionTimer, AuctionRoomPresenter, Timeline, KeyFrame, Duration, ChronoUnit, Color.
  */
 public class DefaultAuctionTimerService implements AuctionTimer {
     private final AuctionRoomPresenter presenter;

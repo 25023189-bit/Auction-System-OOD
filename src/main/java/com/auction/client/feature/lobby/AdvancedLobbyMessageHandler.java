@@ -12,8 +12,23 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Handler nhận dữ liệu lobby từ server.
- * Dữ liệu có thể là chuỗi legacy hoặc List<AuctionRoom>, sau đó được map sang model hiển thị.
+ * MessageHandler xử lý dữ liệu lobby từ server.
+ *
+ * Vai trò:
+ * - Nhận ROOM_LIST dạng legacy String hoặc List<AuctionRoom> và chuẩn hóa dữ liệu.
+ * - Xử lý UPDATE_PRICE để cập nhật nhanh giá trên card lobby.
+ *
+ * Luồng chính:
+ * 1. ResponseRouter chuyển ROOM_LIST/UPDATE_PRICE vào handler.
+ * 2. Handler map dữ liệu room sang LobbyRoomDisplayModel rồi gọi renderer render/update.
+ *
+ * Business rules:
+ * - ROOM_LIST không hợp lệ hoặc null phải render danh sách rỗng thay vì làm lỗi UI.
+ * - UPDATE_PRICE có payload roomId|price và chỉ cập nhật card tương ứng.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: renderer JavaFX mutable, cần gọi trên JavaFX Application Thread.
+ * - Dependency: MessageHandler, DisplayMapper, AuctionRoom, LobbyRoomDisplayModel, LobbyRoomListRenderer, SLF4J.
  */
 public class AdvancedLobbyMessageHandler implements MessageHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(AdvancedLobbyMessageHandler.class);

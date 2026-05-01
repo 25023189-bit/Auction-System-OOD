@@ -13,8 +13,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Xử lý thông báo tài khoản bị khóa từ server.
- * Client phải xóa session, quay về login và đóng các cửa sổ phụ.
+ * Fallback handler xử lý thông báo tài khoản bị khóa từ server.
+ *
+ * Vai trò:
+ * - Hiển thị thông báo BANNED cho người dùng.
+ * - Xóa session, reset currentUser, quay về login và đóng các cửa sổ phụ.
+ *
+ * Luồng chính:
+ * 1. FallbackMessageHandler chuyển action BANNED vào handler này.
+ * 2. Handler show alert, clear session/service user, gọi showLogin() và đóng dashboard/popup phụ.
+ *
+ * Business rules:
+ * - User bị xóa/khóa không được tiếp tục thao tác trên dashboard hoặc popup đang mở.
+ * - Cửa sổ chính Auction System được giữ lại, các Stage phụ bị đóng.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: Alert, Stage và Window JavaFX phải thao tác trên JavaFX Application Thread.
+ * - Dependency: MessageHandler, SceneNavigator, SessionStore, AuctionService, ClientConnection, Alert, Stage/Window.
  */
 public class AccountStatusFallbackHandler implements MessageHandler {
     private final SceneNavigator sceneNavigator;

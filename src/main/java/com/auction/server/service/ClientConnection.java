@@ -12,7 +12,22 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Kết nối socket phía client tới AuctionServer.
- * Lớp này chạy một thread đọc response liên tục và đẩy Message về AuctionController.
+ *
+ * Vai trò:
+ * - Mở socket, tạo stream object và gửi Message từ client lên server.
+ * - Chạy reader thread nhận response liên tục rồi chuyển về AuctionController.
+ *
+ * Luồng chính:
+ * 1. connect() tạo thread nền, kết nối localhost:8080 và khởi tạo ObjectInputStream/ObjectOutputStream.
+ * 2. Reader loop đọc Message từ server, gọi controller.onServerResponse(), còn sendMessage() ghi request ra socket.
+ *
+ * Business rules:
+ * - UI phải được cập nhật trạng thái kết nối khi bắt đầu và sau khi connect thành công.
+ * - Khi disconnect phải đóng input, output và socket để reader loop kết thúc sạch.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe đầy đủ: socket/stream được dùng giữa UI thread và reader thread nhưng không có synchronized.
+ * - Dependency: AuctionController, Socket, ObjectInputStream/ObjectOutputStream, Message, SLF4J.
  */
 public class ClientConnection {
     private static final Logger LOGGER = LoggerFactory.getLogger(ClientConnection.class);

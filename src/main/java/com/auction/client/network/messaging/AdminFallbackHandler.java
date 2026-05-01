@@ -11,7 +11,23 @@ import com.auction.common.model.User;
 import java.util.List;
 
 /**
- * Chuyển các phản hồi admin từ router về AdminController đang mở.
+ * Fallback handler chuyển phản hồi admin về AdminController đang mở.
+ *
+ * Vai trò:
+ * - Route danh sách user, auction, pending request và bid history vào bảng admin.
+ * - Chuyển kết quả thao tác admin thành thông báo success/fail trên dashboard.
+ *
+ * Luồng chính:
+ * 1. ResponseRouter/FallbackMessageHandler chuyển các action ADMIN_* hoặc BID_HISTORY_SUCCESS vào handler.
+ * 2. Handler lấy AdminController từ SessionStore và gọi method cập nhật tương ứng.
+ *
+ * Business rules:
+ * - Nếu dashboard admin chưa mở thì bỏ qua response admin.
+ * - ADMIN_ACTION_SUCCESS cần giữ thêm mã con trong msg.id để controller reload bảng phù hợp.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: phụ thuộc AdminController/TableView JavaFX, controller tự dùng Platform.runLater khi cần.
+ * - Dependency: MessageHandler, SessionStore, AdminController, User, AuctionRoom, BidTransaction, PendingAuctionRequest.
  */
 public class AdminFallbackHandler implements MessageHandler {
     private final SessionStore sessionStore;

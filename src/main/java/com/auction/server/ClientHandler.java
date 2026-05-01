@@ -13,8 +13,23 @@ import java.net.Socket;
 import java.util.List;
 
 /**
- * Đại diện cho một kết nối socket từ client.
- * Mỗi ClientHandler đọc Message từ client, chuyển cho router xử lý và gửi response ngược lại.
+ * Đại diện cho một kết nối socket đang hoạt động giữa client và server.
+ *
+ * Vai trò:
+ * - Khởi tạo input/output stream và giữ trạng thái phiên của client hiện tại.
+ * - Đọc Message từ socket, chuyển cho router xử lý và gửi response ngược lại client.
+ *
+ * Luồng chính:
+ * 1. Tạo ClientActionContext, ClientActionRouter và stream giao tiếp cho socket.
+ * 2. Vòng lặp run() nhận Message hợp lệ, route theo action, sau đó dọn kết nối khi client ngắt.
+ *
+ * Business rules:
+ * - Message không có action hoặc không đúng kiểu Message sẽ bị bỏ qua.
+ * - Khi đóng kết nối phải rời phòng hiện tại và xóa session khỏi AuctionServer.
+ *
+ * Ghi chú kỹ thuật:
+ * - Thread-safe một phần: sendMessage() và closeConnection() synchronized, alive là volatile.
+ * - Dependency: Socket, ObjectInputStream/ObjectOutputStream, ClientActionRouter, ClientActionContext, các service server.
  */
 public class ClientHandler implements Runnable {
     private static final Logger LOGGER = LoggerFactory.getLogger(ClientHandler.class);

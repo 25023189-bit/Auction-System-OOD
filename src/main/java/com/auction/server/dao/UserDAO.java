@@ -15,7 +15,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * DAO thao tác với bảng users và các xử lý liên quan tài khoản.
+ * Truy cập dữ liệu tài khoản người dùng và các thao tác mật khẩu.
+ *
+ * Vai trò:
+ * - Đọc, đăng nhập, đăng ký, xóa user và reset password trong bảng users.
+ * - Chuẩn hóa customerId, role, organization và map dữ liệu DB sang model User.
+ *
+ * Luồng chính:
+ * 1. Nhận input từ AuthService, ForgotPasswordService hoặc AdminActionHandler.
+ * 2. Validate/normalize dữ liệu, thực thi SQL và trả User, boolean hoặc mã trạng thái nghiệp vụ.
+ *
+ * Business rules:
+ * - Mật khẩu luôn được hash bằng BCrypt trước khi lưu và chỉ so sánh qua hash.
+ * - Role chỉ nhận BIDDER, SELLER, ADMIN; organization chỉ có ý nghĩa với SELLER.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe theo instance; mỗi method dùng connection local, không giữ cache user.
+ * - Dependency: DatabaseConnection, PasswordUtil, User, JDBC, SLF4J.
  */
 public class UserDAO {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserDAO.class);

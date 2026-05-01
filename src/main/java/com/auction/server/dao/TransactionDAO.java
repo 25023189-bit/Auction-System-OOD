@@ -12,7 +12,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * DAO đọc lịch sử bid/transaction để phục vụ admin và popup chi tiết sản phẩm.
+ * Truy cập dữ liệu lịch sử bid và danh sách item phục vụ màn hình tra cứu.
+ *
+ * Vai trò:
+ * - Đọc lịch sử bid theo room để admin hoặc popup sản phẩm hiển thị.
+ * - Đọc danh sách item nếu client cần dữ liệu sản phẩm độc lập với room.
+ *
+ * Luồng chính:
+ * 1. Nhận roomId hoặc yêu cầu đọc item từ handler/service.
+ * 2. Query database, map ResultSet thành BidTransaction hoặc Item rồi trả danh sách.
+ *
+ * Business rules:
+ * - Lịch sử bid được sắp xếp theo giá giảm dần, cùng giá thì bid sớm hơn đứng trước.
+ * - Thời gian bid được format thành chuỗi để TableView client hiển thị trực tiếp.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe theo instance; không giữ state dùng chung giữa các lời gọi.
+ * - Dependency: DatabaseConnection, BidTransaction, Item, JDBC, SimpleDateFormat, SLF4J.
  */
 public class TransactionDAO {
     private static final Logger LOGGER = LoggerFactory.getLogger(TransactionDAO.class);

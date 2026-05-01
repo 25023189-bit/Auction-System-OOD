@@ -8,7 +8,23 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 /**
- * Factory card lobby phiên bản đơn giản, dùng trực tiếp AuctionRoom.
+ * Factory đơn giản tạo card lobby trực tiếp từ AuctionRoom.
+ *
+ * Vai trò:
+ * - Dựng VBox card hiển thị tên sản phẩm, roomId, giá hiện tại và nút Join Room.
+ * - Gắn sự kiện joinRoom() vào nút tham gia phòng.
+ *
+ * Luồng chính:
+ * 1. LobbyPresenter gọi create(room) cho từng AuctionRoom.
+ * 2. Factory tạo các control JavaFX, gắn action và trả VBox cho FlowPane.
+ *
+ * Business rules:
+ * - Nút Join Room phải gửi roomId của đúng card.
+ * - Factory này dùng model server trực tiếp, không format qua LobbyRoomDisplayModel.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: tạo node JavaFX trên JavaFX Application Thread.
+ * - Dependency: CardFactory, AuctionRoom, AuctionService, VBox, Label, Button.
  */
 public class AuctionCardFactory implements CardFactory<AuctionRoom, VBox> {
     private final AuctionService auctionService;

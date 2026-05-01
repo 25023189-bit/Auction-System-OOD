@@ -17,7 +17,23 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Handler cho các action trong lobby/phòng đấu giá: join, bid, chat, lịch sử bid, chi tiết sản phẩm.
+ * Handler xử lý các action trong lobby và phòng đấu giá.
+ *
+ * Vai trò:
+ * - Điều phối join/leave room, lấy danh sách room, đặt giá, chat và xem lịch sử bid.
+ * - Gọi service/DAO để lấy chi tiết sản phẩm và đóng phiên theo yêu cầu seller.
+ *
+ * Luồng chính:
+ * 1. Nhận Message room-related, switch theo action và parse roomId/bid/payload.
+ * 2. Gọi AuctionRoomService hoặc DAO/service phù hợp rồi gửi response/broadcast cho client liên quan.
+ *
+ * Business rules:
+ * - Client phải join room thành công trước khi được bid trong room đó.
+ * - Bid thành công phải broadcast state trong phòng và cập nhật giá cho lobby.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe theo instance; trạng thái room nằm trong ClientActionContext và AuctionStateManager.
+ * - Dependency: AbstractClientActionHandler, AuctionRoomService, AuctionDAO, TransactionDAO, ProductDetailService, AuctionStateManager.
  */
 public class RoomActionHandler extends AbstractClientActionHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(RoomActionHandler.class);

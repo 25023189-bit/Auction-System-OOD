@@ -9,7 +9,23 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Handler cho nhóm action xác thực: login, register, reset password và OTP.
+ * Handler xử lý nhóm action xác thực và quản lý mật khẩu.
+ *
+ * Vai trò:
+ * - Điều phối login, register, reset password, forgot password, OTP và đổi mật khẩu mới.
+ * - Validate dữ liệu request ở tầng protocol trước khi gọi AuthService/ForgotPasswordService.
+ *
+ * Luồng chính:
+ * 1. Nhận Message, switch theo action xác thực và parse payload tương ứng.
+ * 2. Gọi service nghiệp vụ, map mã kết quả thành Message response cho client.
+ *
+ * Business rules:
+ * - Đăng ký chỉ chấp nhận role BIDDER, SELLER, ADMIN và mật khẩu phải đủ mạnh.
+ * - Login thành công phải lưu userId vào context để các action sau biết danh tính client.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe theo instance: giữ ForgotPasswordService và PasswordStrengthValidator có state nội bộ.
+ * - Dependency: AbstractClientActionHandler, AuthService, ForgotPasswordService, PasswordStrengthValidator, UserDAO.
  */
 public class AuthActionHandler extends AbstractClientActionHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(AuthActionHandler.class);

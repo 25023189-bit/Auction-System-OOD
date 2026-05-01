@@ -10,8 +10,23 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Base class cho các handler xử lý action từ client.
- * Cung cấp danh sách action hỗ trợ và helper broadcast/parse dùng chung.
+ * Lớp cơ sở cho các handler xử lý action từ client.
+ *
+ * Vai trò:
+ * - Lưu danh sách action mà handler con hỗ trợ.
+ * - Cung cấp helper dùng chung để broadcast room, broadcast pending request, parse bid và sinh id tạm.
+ *
+ * Luồng chính:
+ * 1. Handler con truyền danh sách supportedActions vào constructor.
+ * 2. Router gọi canHandle() trước khi chuyển Message cho handler con xử lý.
+ *
+ * Business rules:
+ * - Chỉ action nằm trong supportedActions mới được handler xử lý.
+ * - Sau thay đổi room/pending request, helper broadcast phải gửi dữ liệu mới nhất cho client liên quan.
+ *
+ * Ghi chú kỹ thuật:
+ * - Thread-safe: supportedActions bất biến; helper tạo DAO local cho từng lần gọi.
+ * - Dependency: ClientActionHandler, ClientActionContext, AuctionDAO, Message, SLF4J.
  */
 public abstract class AbstractClientActionHandler implements ClientActionHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(AbstractClientActionHandler.class);

@@ -7,8 +7,23 @@ import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 
 /**
- * Presenter của nhóm màn hình xác thực.
- * Chỉ chịu trách nhiệm cập nhật label/form, không gửi request mạng.
+ * Presenter cập nhật trạng thái UI cho nhóm màn hình xác thực.
+ *
+ * Vai trò:
+ * - Hiển thị lỗi/thành công cho login, register và reset password.
+ * - Dọn các field mật khẩu/form sau khi thao tác hoàn tất.
+ *
+ * Luồng chính:
+ * 1. Command hoặc AuthMessageHandler gọi method hiển thị trạng thái phù hợp.
+ * 2. Presenter cập nhật label, màu chữ và các field liên quan trên form.
+ *
+ * Business rules:
+ * - Không giữ mật khẩu trên UI sau khi đăng ký/đăng nhập/reset thành công.
+ * - Presenter chỉ cập nhật control, không gửi request mạng hoặc tự điều hướng.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: Label/TextField/PasswordField phải cập nhật trên JavaFX Application Thread.
+ * - Dependency: ViewPresenter, Label, TextField, PasswordField, Color.
  */
 public class AuthPresenter implements ViewPresenter {
     // Các label trạng thái tách riêng cho login/register/forgot password.

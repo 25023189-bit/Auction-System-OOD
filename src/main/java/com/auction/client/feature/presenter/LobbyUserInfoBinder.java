@@ -5,7 +5,23 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 
 /**
- * Binder thông tin user cho lobby phiên bản nhẹ.
+ * Binder thông tin user cho lobby legacy.
+ *
+ * Vai trò:
+ * - Gắn các control header lobby qua bind().
+ * - Hiển thị username, số dư và quyền hiện nút tạo phiên theo role.
+ *
+ * Luồng chính:
+ * 1. Controller legacy gọi bind(labelUsername, labelBalance, btnCreateAuction).
+ * 2. Khi có user hoặc balance mới, caller gọi bindUserInfo() hoặc updateBalance().
+ *
+ * Business rules:
+ * - Chỉ SELLER được thấy nút tạo phiên đấu giá.
+ * - Nếu username null thì fallback sang user id.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: control JavaFX phải cập nhật trên JavaFX Application Thread.
+ * - Dependency: User, Label, Button.
  */
 public class LobbyUserInfoBinder {
     private Label lblUsername;

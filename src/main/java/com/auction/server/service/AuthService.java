@@ -8,8 +8,23 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Service xác thực và đăng ký tài khoản.
- * AuthActionHandler gọi lớp này để tách nghiệp vụ khỏi protocol Message.
+ * Service nghiệp vụ cho xác thực, đăng ký và reset mật khẩu cơ bản.
+ *
+ * Vai trò:
+ * - Gọi UserDAO để login, register và reset password.
+ * - Bổ sung thống kê seller vào User trước khi trả LOGIN_SUCCESS.
+ *
+ * Luồng chính:
+ * 1. AuthActionHandler truyền input đã parse vào AuthService.
+ * 2. Service gọi DAO, map kết quả DAO thành Message response cho client.
+ *
+ * Business rules:
+ * - Login chấp nhận username hoặc customer_id và chỉ thành công khi BCrypt verify pass.
+ * - Seller login thành công phải có tỷ lệ đấu giá thành công/hủy bởi admin để client hiển thị đúng.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe theo instance: giữ UserDAO/AuctionDAO instance, nhưng không lưu state phiên.
+ * - Dependency: UserDAO, AuctionDAO, Message, User, SLF4J.
  */
 public class AuthService {
     private static final Logger LOGGER = LoggerFactory.getLogger(AuthService.class);

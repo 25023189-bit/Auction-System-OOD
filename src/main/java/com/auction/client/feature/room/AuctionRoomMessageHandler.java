@@ -9,7 +9,23 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Handler xử lý các message liên quan trực tiếp tới phòng đấu giá đang mở.
+ * MessageHandler xử lý các phản hồi liên quan trực tiếp tới phòng đấu giá đang mở.
+ *
+ * Vai trò:
+ * - Đồng bộ trạng thái room, giá, chat và timer khi server gửi event phòng.
+ * - Lưu room hiện tại vào session và bind dữ liệu lên presenter.
+ *
+ * Luồng chính:
+ * 1. ResponseRouter chuyển ROOM_JOINED, ROOM_STATE_UPDATED, BID_SUCCESS, CHAT_MSG hoặc UPDATE_PRICE vào handler.
+ * 2. Handler lọc đúng currentRoomId, cập nhật SessionStore, binder, presenter và AuctionTimer.
+ *
+ * Business rules:
+ * - Chỉ cập nhật UI nếu message thuộc đúng phòng hiện tại.
+ * - BID_SUCCESS_EXTENDED phải thông báo việc gia hạn phiên cho người trong phòng.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: cập nhật presenter/session/timer mutable trên luồng UI.
+ * - Dependency: MessageHandler, SessionStore, SceneNavigator, AuctionRoomStateBinder, AuctionRoomPresenter, AuctionTimer.
  */
 public class AuctionRoomMessageHandler implements MessageHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(AuctionRoomMessageHandler.class);

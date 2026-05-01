@@ -5,8 +5,23 @@ import com.auction.common.dto.Message;
 import java.time.LocalDateTime;
 
 /**
- * Service phía client dùng để đóng gói Message gửi tới server.
- * Dù nằm trong package server.service, lớp này đang đóng vai trò client-side API cho JavaFX controller.
+ * API phía client để đóng gói Message gửi tới AuctionServer.
+ *
+ * Vai trò:
+ * - Cung cấp các hàm tiện ích cho JavaFX controller gọi login, register, join, bid, chat và tạo auction.
+ * - Giữ currentUser và chuyển tham số UI thành payload theo protocol Message.
+ *
+ * Luồng chính:
+ * 1. Controller gọi method tương ứng với hành động người dùng.
+ * 2. AuctionService tạo Message đúng action/id/data rồi gửi qua ClientConnection.
+ *
+ * Business rules:
+ * - Các action cần xác thực phải gửi kèm currentUser sau khi login thành công.
+ * - Payload register/createAuction dùng dấu |, nên các bên gửi/nhận phải thống nhất thứ tự field.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: currentUser và callback product detail là state mutable phía client.
+ * - Dependency: ClientConnection, Message, LocalDateTime, JavaFX controller callback.
  */
 public class AuctionService {
     private ClientConnection clientConnection;

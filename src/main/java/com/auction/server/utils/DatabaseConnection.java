@@ -8,8 +8,23 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 /**
- * Factory tạo JDBC connection cho MySQL.
- * Ưu tiên cấu hình từ environment/system property, sau đó mới đọc db.properties.
+ * Factory tạo JDBC connection cho database MySQL của hệ thống đấu giá.
+ *
+ * Vai trò:
+ * - Đọc cấu hình kết nối database từ environment, system property hoặc resource properties.
+ * - Load JDBC driver và tạo Connection mới cho các DAO.
+ *
+ * Luồng chính:
+ * 1. DAO gọi getConnection(), lớp này load cấu hình và chọn giá trị ưu tiên đầu tiên không rỗng.
+ * 2. Validate url/user/driver, load driver rồi gọi DriverManager.getConnection().
+ *
+ * Business rules:
+ * - Environment variable/system property được ưu tiên hơn db.properties để thuận tiện deploy.
+ * - Thiếu cấu hình bắt buộc phải ném SQLException có thông tin chẩn đoán rõ ràng.
+ *
+ * Ghi chú kỹ thuật:
+ * - Thread-safe: stateless, chỉ dùng method static và biến local.
+ * - Dependency: DriverManager, Properties, ClassLoader resource db.properties/db.properties.example.
  */
 public final class DatabaseConnection {
 

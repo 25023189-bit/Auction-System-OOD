@@ -12,8 +12,23 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 /**
- * Controller cho popup tạo phiên đấu giá của seller.
- * Thu thập dữ liệu từ form, validate cơ bản và gửi yêu cầu tạo phiên lên server.
+ * Controller cho popup seller tạo yêu cầu mở phiên đấu giá.
+ *
+ * Vai trò:
+ * - Thu thập dữ liệu item, giá, thời gian, duration và extension từ form.
+ * - Validate cơ bản phía client rồi gửi request tạo auction qua AuctionService.
+ *
+ * Luồng chính:
+ * 1. Launcher gắn AuctionService bằng setAuctionService().
+ * 2. handleCreateAuction() parse form, kiểm tra start time, gọi createAuction() và đóng popup nếu gửi thành công.
+ *
+ * Business rules:
+ * - Seller phải chọn ngày bắt đầu và start time không được ở quá khứ.
+ * - Các trường giá, giờ, phút, duration và extension phải parse được thành số hợp lệ.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: control JavaFX và Stage phải thao tác trên JavaFX Application Thread.
+ * - Dependency: AuctionService, DatePicker, TextField, TextArea, Label, LocalDateTime.
  */
 public class SellerController {
 

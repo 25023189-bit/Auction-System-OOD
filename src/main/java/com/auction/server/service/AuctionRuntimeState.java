@@ -5,8 +5,23 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Trạng thái runtime của một phòng đấu giá, chỉ lưu trong bộ nhớ server.
- * Dùng cho phần gia hạn thời gian, khóa vào phòng cuối giờ và danh sách participant.
+ * Trạng thái runtime trong bộ nhớ của một phòng đấu giá.
+ *
+ * Vai trò:
+ * - Lưu tổng thời gian đã gia hạn, trạng thái khóa người mới và danh sách participant.
+ * - Cung cấp dữ liệu bổ sung để AuctionRoomService tính scheduled end time và quyền bid.
+ *
+ * Luồng chính:
+ * 1. AuctionStateManager tạo hoặc trả state theo roomId khi có join/bid/finalize.
+ * 2. AuctionRoomService synchronized trên state rồi đọc/ghi extension, lock và participant.
+ *
+ * Business rules:
+ * - Participant phải được add sau khi join hợp lệ thì mới được bid.
+ * - Entry chỉ ghi nhận khóa lần đầu khi phòng bước vào final window.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe tự thân: caller phải đồng bộ bên ngoài khi đọc/ghi state.
+ * - Dependency: LocalDateTime, Set/HashSet; được quản lý bởi AuctionStateManager.
  */
 public class AuctionRuntimeState {
     private long totalExtendedSeconds = 0;

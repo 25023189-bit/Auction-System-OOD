@@ -1,0 +1,126 @@
+﻿@startuml ServerCore
+title Server Core - Socket Runtime and Action Dispatch
+
+top to bottom direction
+skinparam linetype ortho
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam nodesep 60
+skinparam ranksep 75
+hide empty members
+
+package "External Layer" as External {
+  interface Runnable {
+    +run()
+  }
+  class Application {
+    +start(stage: Stage)
+  }
+  class Socket
+}
+
+package "Entry Point" as Entry {
+  class Main {
+    +main(args: String[]): void
+    +start(stage: Stage): void
+  }
+  class AuctionServer {
+    +clients: List<ClientHandler>
+    +userSessions: ConcurrentHashMap
+    +main(args: String[]): void
+    +broadcast(msg: Message): void
+    +broadcastToRoom(msg: Message, roomId: String): void
+    +notifyRoomClosed(roomId: String): void
+  }
+}
+
+package "Connection Runtime" as Runtime {
+  class ClientHandler {
+    -socket: Socket
+    -actionContext: ClientActionContext
+    -alive: boolean
+    +run(): void
+    +sendMessage(message: Message): void
+    +closeConnection(): void
+  }
+  class ClientActionContext {
+    -userId: String
+    -currentRoomId: String
+    +send(message: Message): void
+    +broadcastToRoom(roomId: String, message: Message): void
+    +setUserId(userId: String): void
+  }
+  class ClientActionRouter {
+    -handlers: List<ClientActionHandler>
+    +route(message: Message, context: ClientActionContext): void
+  }
+}
+
+package "Action Handler Contracts" as HandlerContracts {
+  interface ClientActionHandler {
+    +canHandle(action: String): boolean
+    +handle(message: Message, context: ClientActionContext): void
+  }
+  abstract class AbstractClientActionHandler {
+    #supportedActions: Set<String>
+    +canHandle(action: String): boolean
+  }
+}
+
+package "Concrete Action Handlers" as Handlers {
+  class AuthActionHandler {
+    +handle(message: Message, context: ClientActionContext): void
+  }
+  class RoomActionHandler {
+    +handle(message: Message, context: ClientActionContext): void
+  }
+  class SellerActionHandler {
+    +handle(message: Message, context: ClientActionContext): void
+  }
+  class AdminActionHandler {
+    +handle(message: Message, context: ClientActionContext): void
+  }
+  class AuctionServerEventPublisher
+  class ServerEventPublisher
+}
+
+package "Services Used By Core" as Services {
+  class AuthService
+  class AuctionRoomService
+  class PendingAuctionApprovalService
+}
+
+package "Protocol / Domain" as Protocol {
+  class Message
+  class User
+  class AuctionRoom
+}
+
+Application <|-- Main
+Runnable <|.. ClientHandler
+ClientActionHandler <|.. AbstractClientActionHandler
+AbstractClientActionHandler <|-- AuthActionHandler
+AbstractClientActionHandler <|-- RoomActionHandler
+AbstractClientActionHandler <|-- SellerActionHandler
+AbstractClientActionHandler <|-- AdminActionHandler
+
+Main ..> AuctionServer
+AuctionServer o-- ClientHandler : active clients
+ClientHandler ..> Socket
+ClientHandler ..> ClientActionContext
+ClientHandler ..> ClientActionRouter
+ClientActionRouter o-- ClientActionHandler
+ClientActionContext ..> AuthService
+ClientActionContext ..> AuctionRoomService
+ClientActionContext ..> PendingAuctionApprovalService
+
+AuthActionHandler ..> AuthService
+RoomActionHandler ..> AuctionRoomService
+SellerActionHandler ..> PendingAuctionApprovalService
+AdminActionHandler ..> PendingAuctionApprovalService
+Handlers ..> Message
+Runtime ..> Protocol
+@enduml
+
+

@@ -12,8 +12,23 @@ import org.slf4j.LoggerFactory;
 import java.time.LocalDateTime;
 
 /**
- * Handler cho seller tạo yêu cầu mở phiên đấu giá.
- * Phiên mới không vào DB ngay mà được đưa vào hàng chờ admin phê duyệt.
+ * Handler xử lý yêu cầu seller tạo phiên đấu giá mới.
+ *
+ * Vai trò:
+ * - Parse form tạo phiên từ client và xác thực seller hiện tại.
+ * - Validate điều kiện tạo phiên rồi đưa request vào hàng chờ admin duyệt.
+ *
+ * Luồng chính:
+ * 1. Nhận CREATE_AUCTION, tách payload item/giá/thời gian/extension và đọc seller từ DB.
+ * 2. Chạy AuctionCreationValidator, tạo PendingAuctionRequest và broadcast danh sách pending cho admin.
+ *
+ * Business rules:
+ * - Chỉ user role SELLER mới được tạo yêu cầu đấu giá.
+ * - Phiên mới chưa ghi DB ngay; phải chờ admin approve trước khi trở thành auction thật.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe theo instance; pending request dùng service với ConcurrentHashMap.
+ * - Dependency: AbstractClientActionHandler, UserDAO, AuctionDAO, AuctionCreationValidator, PendingAuctionApprovalService.
  */
 public class SellerActionHandler extends AbstractClientActionHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(SellerActionHandler.class);

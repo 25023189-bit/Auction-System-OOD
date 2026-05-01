@@ -9,8 +9,23 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * Ngữ cảnh xử lý cho một client.
- * Handler dùng context để gửi response, broadcast event và truy cập service theo phiên hiện tại.
+ * Ngữ cảnh xử lý gắn với một client connection.
+ *
+ * Vai trò:
+ * - Cung cấp responder, event publisher và các service cần dùng cho handler.
+ * - Lưu userId/currentRoomId của phiên client hiện tại.
+ *
+ * Luồng chính:
+ * 1. ClientHandler tạo context khi mở socket và truyền vào router/handler.
+ * 2. Handler đọc/ghi trạng thái phiên, gửi response hoặc phát event qua context.
+ *
+ * Business rules:
+ * - currentRoomId phải được xóa khi client rời phòng hoặc phòng bị đóng.
+ * - userId chỉ được set sau khi login thành công để các action có thể kiểm tra danh tính.
+ *
+ * Ghi chú kỹ thuật:
+ * - Thread-safe một phần: currentRoomId và userId là volatile, nhưng service bên trong không được bảo vệ thêm.
+ * - Dependency: Consumer<Message>, ServerEventPublisher, AuthService, AuctionRoomService, PendingAuctionApprovalService.
  */
 public class ClientActionContext {
     // responder gửi message trực tiếp về client hiện tại.

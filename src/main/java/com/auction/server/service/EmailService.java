@@ -9,8 +9,23 @@ import java.util.Properties;
 import java.io.UnsupportedEncodingException;
 
 /**
- * Service gửi email cho chức năng quên mật khẩu.
- * Đọc cấu hình SMTP từ ConfigManager, có retry và dùng HTML template.
+ * Service gửi email cho luồng quên mật khẩu và xác nhận đổi mật khẩu.
+ *
+ * Vai trò:
+ * - Gửi email mật khẩu tạm, OTP và thông báo đổi mật khẩu thành công.
+ * - Đọc cấu hình SMTP từ ConfigManager và render HTML template cho từng loại email.
+ *
+ * Luồng chính:
+ * 1. ForgotPasswordService gọi method gửi email phù hợp với luồng reset.
+ * 2. EmailService build subject/template, retry gửi qua JavaMail và trả boolean kết quả.
+ *
+ * Business rules:
+ * - Nội dung email phải escape dữ liệu người dùng trước khi chèn vào HTML.
+ * - Số lần retry lấy từ cấu hình deploy thay vì hard-code trong logic nghiệp vụ.
+ *
+ * Ghi chú kỹ thuật:
+ * - Thread-safe một phần: config/maxRetries là immutable sau constructor, method gửi email dùng biến local.
+ * - Dependency: ConfigManager, JavaMail Session/Transport/MimeMessage, Properties.
  */
 public class EmailService {
     private final ConfigManager config;

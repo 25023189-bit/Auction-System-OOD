@@ -14,7 +14,23 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 
 /**
- * Handler cho các action quản trị: xem dữ liệu, duyệt/từ chối phiên chờ, hủy phiên và xóa user.
+ * Handler xử lý các action quản trị của admin.
+ *
+ * Vai trò:
+ * - Trả danh sách user, auction và yêu cầu tạo phiên đang chờ duyệt.
+ * - Duyệt/từ chối yêu cầu tạo phiên, hủy phiên đấu giá và xóa tài khoản.
+ *
+ * Luồng chính:
+ * 1. Nhận Message admin, switch theo action và gọi DAO/service tương ứng.
+ * 2. Gửi response cho admin, đồng thời broadcast room list hoặc pending list khi dữ liệu thay đổi.
+ *
+ * Business rules:
+ * - Approve request phải tạo cả Item và Auction trong DB; nếu thất bại thì đưa request về hàng chờ.
+ * - Hủy auction phải xóa runtime state, báo client trong phòng; xóa user online phải gửi thông báo khóa phiên.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe theo instance; dùng service/context bên ngoài và tạo DAO local theo action.
+ * - Dependency: AbstractClientActionHandler, PendingAuctionRoomFactory, UserDAO, AuctionDAO, AuctionStateManager.
  */
 public class AdminActionHandler extends AbstractClientActionHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(AdminActionHandler.class);

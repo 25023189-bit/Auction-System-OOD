@@ -15,7 +15,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * DAO thao tác với bảng auctions/products và các nghiệp vụ chốt phiên đấu giá.
+ * Truy cập dữ liệu cho phiên đấu giá, sản phẩm liên quan và thao tác chốt phiên.
+ *
+ * Vai trò:
+ * - Tạo, đọc, hủy mềm và đóng phiên đấu giá trong database.
+ * - Gom dữ liệu auctions/products thành AuctionRoom và thống kê hiệu quả của seller.
+ *
+ * Luồng chính:
+ * 1. Nhận yêu cầu từ service/handler, mở JDBC connection và thực thi SQL tương ứng.
+ * 2. Map ResultSet về model dùng chung hoặc trả về kết quả nghiệp vụ cho tầng gọi.
+ *
+ * Business rules:
+ * - Tạo auction kèm item phải nằm trong cùng một transaction để tránh lệch dữ liệu.
+ * - Chốt phiên hết giờ phải khóa auction, xác định bid cao nhất, chuyển tiền và cập nhật trạng thái atomically.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe theo instance, nhưng mỗi method dùng connection local nên có thể gọi đồng thời nếu DB chịu tải.
+ * - Dependency: DatabaseConnection, AuctionRoom, Item, JDBC, SLF4J.
  */
 public class AuctionDAO {
     private static final Logger LOGGER = LoggerFactory.getLogger(AuctionDAO.class);
@@ -429,7 +445,23 @@ public class AuctionDAO {
     }
 
     /**
-     * Kết quả chốt phiên đấu giá sau khi hết thời gian.
+     * Giá trị kết quả trả về sau khi chốt phiên đấu giá.
+     *
+     * Vai trò:
+     * - Mang trạng thái cuối cùng của phiên sau khi closeAuctionByTime() xử lý.
+     * - Cung cấp dữ liệu số dư winner/seller để service broadcast lại cho client.
+     *
+     * Luồng chính:
+     * 1. AuctionDAO tạo instance thông qua factory sold(), unsold() hoặc fail().
+     * 2. AuctionRoomService đọc các getter để quyết định message và event cần phát.
+     *
+     * Business rules:
+     * - SOLD chỉ hợp lệ khi có winner và giao dịch chuyển tiền thành công.
+     * - UNSOLD là kết quả thành công nhưng không phát sinh winner hoặc thanh toán.
+     *
+     * Ghi chú kỹ thuật:
+     * - Thread-safe: immutable sau khi khởi tạo, các field đều final.
+     * - Dependency: Không phụ thuộc DB trực tiếp; là DTO nội bộ của AuctionDAO/AuctionRoomService.
      */
     public static class CloseAuctionResult {
         private final boolean success;
@@ -479,7 +511,23 @@ public class AuctionDAO {
     }
 
     /**
-     * Thống kê hiệu quả phiên đấu giá của seller.
+     * Thống kê hiệu quả đấu giá của một seller.
+     *
+     * Vai trò:
+     * - Lưu tổng số phiên, số phiên bán thành công và số phiên bị admin hủy.
+     * - Tính tỷ lệ thành công/tỷ lệ bị hủy để đưa vào AuctionRoom hoặc User.
+     *
+     * Luồng chính:
+     * 1. AuctionDAO truy vấn aggregate theo sellerId và tạo SellerAuctionStats.
+     * 2. Tầng service/handler đọc tỷ lệ để hiển thị hoặc validate yêu cầu tạo phiên.
+     *
+     * Business rules:
+     * - Số lượng âm được chuẩn hóa về 0 khi khởi tạo.
+     * - Nếu seller chưa có phiên nào thì các tỷ lệ trả về 0.0 để tránh chia cho 0.
+     *
+     * Ghi chú kỹ thuật:
+     * - Thread-safe: immutable sau khi khởi tạo, các field đều final.
+     * - Dependency: Không phụ thuộc ngoài; được tạo từ dữ liệu aggregate của AuctionDAO.
      */
     public static class SellerAuctionStats {
         private final int totalAuctions;

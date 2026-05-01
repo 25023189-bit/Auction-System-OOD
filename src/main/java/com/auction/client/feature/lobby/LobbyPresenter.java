@@ -8,7 +8,23 @@ import javafx.scene.layout.VBox;
 import java.util.List;
 
 /**
- * Presenter đơn giản cho lobby: nhận danh sách phòng và đưa card vào FlowPane.
+ * Presenter đơn giản render danh sách phòng vào lobby.
+ *
+ * Vai trò:
+ * - Xóa và render lại các card phòng trong FlowPane.
+ * - Dùng CardFactory để tách việc tạo card khỏi presenter.
+ *
+ * Luồng chính:
+ * 1. LobbyMessageHandler gọi showRooms(rooms) khi nhận ROOM_LIST.
+ * 2. Presenter clear FlowPane rồi thêm card mới cho từng AuctionRoom.
+ *
+ * Business rules:
+ * - Danh sách null chỉ clear UI, không ném lỗi.
+ * - Mỗi room được render thành một card độc lập qua CardFactory.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: FlowPane JavaFX phải cập nhật trên JavaFX Application Thread.
+ * - Dependency: ViewPresenter, FlowPane, CardFactory<AuctionRoom, VBox>, AuctionRoom.
  */
 public class LobbyPresenter implements ViewPresenter {
     private final FlowPane paneSelectAuction;

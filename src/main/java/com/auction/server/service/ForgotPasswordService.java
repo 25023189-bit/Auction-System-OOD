@@ -8,8 +8,23 @@ import java.time.format.DateTimeFormatter;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Service xử lý quên mật khẩu.
- * Kiểm tra rate limit, tạo mật khẩu tạm, cập nhật DB và gửi email thông báo.
+ * Service xử lý toàn bộ luồng quên mật khẩu.
+ *
+ * Vai trò:
+ * - Kiểm tra rate limit, tìm user/email, tạo mật khẩu tạm và cập nhật database.
+ * - Gửi email reset, xác thực OTP legacy và đổi mật khẩu mới sau khi user nhận mật khẩu tạm.
+ *
+ * Luồng chính:
+ * 1. AuthActionHandler gọi processForgotPassword(), verifyOTPAndGetTemporaryPassword() hoặc validateAndUpdatePassword().
+ * 2. Service gọi UserDAO, PasswordResetTokenGenerator, EmailService, AuditLogger và trả mã trạng thái dạng String.
+ *
+ * Business rules:
+ * - Request reset bị giới hạn theo username để tránh spam.
+ * - Mật khẩu mới sau OTP/mật khẩu tạm phải khớp confirm và đạt PasswordStrengthValidator.
+ *
+ * Ghi chú kỹ thuật:
+ * - Thread-safe một phần: tokenStore là ConcurrentHashMap, nhưng validator/rate limiter có state cần dùng cẩn trọng theo instance.
+ * - Dependency: UserDAO, EmailService, PasswordStrengthValidator, RateLimiter, PasswordResetTokenGenerator, ConfigManager.
  */
 public class ForgotPasswordService {
     private final UserDAO userDAO;

@@ -10,7 +10,23 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 /**
- * Entry point JavaFX của ứng dụng client khi chạy từ module server.main.
+ * Entry point JavaFX mở giao diện client từ module hiện tại.
+ *
+ * Vai trò:
+ * - Load màn hình login ban đầu của ứng dụng JavaFX.
+ * - Cấu hình kích thước cửa sổ chính để các view kế tiếp dùng cùng stage.
+ *
+ * Luồng chính:
+ * 1. JavaFX gọi start(), FXML login-view được load và gắn vào Scene.
+ * 2. Stage được đặt title, min size, kích thước theo màn hình và hiển thị.
+ *
+ * Business rules:
+ * - Ứng dụng luôn bắt đầu ở màn hình login.
+ * - Cửa sổ chính giữ kích thước tối thiểu 1000x600 để layout các view đủ không gian.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: chạy trên JavaFX Application Thread.
+ * - Dependency: JavaFX Application, FXMLLoader, Stage, Screen và resource login-view.fxml.
  */
 public class Main extends Application {
     @Override

@@ -1,8 +1,23 @@
 package com.auction.client.feature.auth;
 
 /**
- * Kết quả validate form.
- * valid=false luôn đi kèm message để presenter hiển thị cho người dùng.
+ * Giá trị kết quả validate form phía client.
+ *
+ * Vai trò:
+ * - Đóng gói cờ hợp lệ và thông báo lỗi nếu có.
+ * - Cung cấp factory ok()/fail() để validator trả kết quả thống nhất.
+ *
+ * Luồng chính:
+ * 1. FormValidator tạo ValidationResult sau khi kiểm tra input.
+ * 2. Command đọc isValid()/getMessage() để gửi request hoặc hiển thị lỗi.
+ *
+ * Business rules:
+ * - valid=false phải đi kèm message rõ ràng cho người dùng.
+ * - ok() trả message rỗng vì không có lỗi cần hiển thị.
+ *
+ * Ghi chú kỹ thuật:
+ * - Thread-safe: immutable sau khi khởi tạo, các field đều final.
+ * - Dependency: FormValidator và các command xác thực.
  */
 public class ValidationResult {
     private final boolean valid;
