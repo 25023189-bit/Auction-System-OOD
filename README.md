@@ -415,8 +415,7 @@ FINAL_WINDOW_SECONDS = 30
 
 # 14. Phân công công việc:
 - Nguyễn Hữu Hùng:
-  + Đăng nhập
-  + Đăng ký
+  + Đăng nhập, Đăng ký
   + AI
   + Tạo phiên
   + Biến động số dư
