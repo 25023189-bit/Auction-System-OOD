@@ -418,13 +418,14 @@ FINAL_WINDOW_SECONDS = 30
   + Đăng nhập, Đăng ký
   + AI
   + Tạo phiên
-  + Biến động số dư
-  + Đặt giá
-  + Kết thúc phiên
-  + Chatting
+  + Biến động số dư, Đặt giá, Kết thúc phiên, Chatting
   + Phân quyền Admin
-  + Vẽ UML
 - Tô Bảo Hân:
+  + Lập trình mạng & Xử lý Server
+  + Xử lý đa luồng (Multithreading)
+  + Quản trị trạng thái hệ thống
+  + Tính năng bổ sung
+  + Quản lý mã nguồn
 - Bùi Thế Dũng:
   + Database (wallet, sản phẩm, Vòng đời phiên đấu giá,lịch sử đặt giá,thông báo, thanh toán, lịch sử đặt giá, báo cáo)
   + Kết nối database
@@ -433,4 +434,6 @@ FINAL_WINDOW_SECONDS = 30
 - Đặng Đức Anh:
   + Login view (background, login card)
   + Bidder,Seller,Admin,Lobbies, chatbot (background, giao diện của các nút và chức năng)
+
+
 

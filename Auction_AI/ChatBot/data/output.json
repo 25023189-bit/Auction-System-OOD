@@ -1,3 +1,3 @@
 {
-  "response": "Để tìm phiên đấu giá, bạn mở danh sách phiên đang hoạt động, nhập từ khóa sản phẩm hoặc chọn danh mục phù hợp, sau đó xem thông tin chi tiết của phiên còn hiệu lực.\nĐể tạo phiên đấu giá, seller nhập thông tin sản phẩm, mô tả, giá khởi điểm, bước giá, thời gian diễn ra và gửi yêu cầu tạo phiên để hệ thống xử lý."
+  "response": "Để đặt giá, bạn vào phiên đấu giá đang chạy, nhập mức giá cao hơn giá hiện tại và xác nhận đặt giá. Nếu giá hợp lệ, hệ thống sẽ ghi nhận bạn là người đang giữ mức giá cao nhất."
 }
