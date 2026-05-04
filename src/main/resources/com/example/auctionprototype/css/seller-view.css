@@ -1,6 +1,6 @@
 /* Nền chính là bức ảnh bạn gửi */
 .main-container {
-    -fx-background-image: url("seller-view.jpg"); /* Đảm bảo tên file ảnh khớp 100% */
+    -fx-background-image: url("../images/seller-view.jpg"); /* Đảm bảo tên file ảnh khớp 100% */
     -fx-background-size: cover;
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
