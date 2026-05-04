@@ -38,8 +38,10 @@
     /* Đổi màu nền bên trong TextArea và TextField */
     -fx-control-inner-background: white !important;
 
-    /* Các thuộc tính còn lại giữ nguyên để đồng bộ */
-    -fx-text-fill: white;
+    /* ĐÃ FIX: Đổi màu chữ thành đen để hiện rõ trên nền trắng */
+    -fx-text-fill: black !important;
+    -fx-text-inner-color: black !important;
+
     -fx-border-color: #e67e22;
     -fx-border-radius: 5;
     -fx-background-radius: 5;
@@ -50,7 +52,6 @@
 .glass-input .content {
     -fx-background-color: transparent !important;
 }
-
 /* Nút bấm màu cam đồng nhất */
 .btn-create-orange {
     -fx-background-color: #e67e22;
@@ -68,6 +69,11 @@
 
 /* Chỉnh màu cho DatePicker */
 .date-picker .text-field {
-    -fx-background-color: transparent;
+    -fx-background-color: white !important; /* Cho nền trắng để dễ nhìn */
+    -fx-text-fill: black !important;        /* Chữ đen rõ mồn một */
+}
+
+.date-picker .button {
+    -fx-background-color: #e67e22;
     -fx-text-fill: white;
 }
