@@ -14,9 +14,29 @@ import javafx.stage.Window;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * SceneNavigator triển khai điều hướng màn hình bằng JavaFX FXMLLoader.
+ *
+ * Vai trò:
+ * - Chuyển giữa login, lobby, auction room và mở các dashboard phụ.
+ * - Chọn FXML theo role hiện tại và giữ lại service/session khi thay scene.
+ *
+ * Luồng chính:
+ * 1. Controller gọi showLogin(), showLobby(), showAuctionRoom() hoặc open dashboard theo hành động người dùng.
+ * 2. Navigator load FXML, tạo/tái sử dụng controller, gắn scene vào Stage và áp dụng WindowStateHandler.
+ *
+ * Business rules:
+ * - Seller và bidder dùng FXML lobby/room khác nhau theo quyền thao tác.
+ * - Trước khi vào auction room phải lưu room hiện tại vào SessionStore để controller mới bind đúng dữ liệu.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: FXMLLoader, Stage và Window phải thao tác trên JavaFX Application Thread.
+ * - Dependency: SceneNavigator, WindowStateHandler, SessionStore, AuctionService, FXMLLoader, Stage, User/AuctionRoom.
+ */
 public class FxSceneNavigator implements SceneNavigator {
     private static final Logger LOGGER = LoggerFactory.getLogger(FxSceneNavigator.class);
 
+    // Controller hiện tại được tái sử dụng cho các FXML chung để không mất kết nối socket.
     private final Object controllerRef;
     private final WindowStateHandler windowStateHandler;
     private final SessionStore sessionStore;
@@ -36,6 +56,7 @@ public class FxSceneNavigator implements SceneNavigator {
     public void showLogin() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/login-view.fxml"));
+            // Cho phép FXMLLoader dùng lại controllerRef nếu FXML trỏ cùng controller.
             loader.setControllerFactory(this::createController);
             Parent root = loader.load();
 
@@ -53,6 +74,7 @@ public class FxSceneNavigator implements SceneNavigator {
     public void showLobby() {
         try {
             Stage stage = resolveStage();
+            // Lưu trạng thái cửa sổ trước khi thay Scene.
             windowStateHandler.capture(stage);
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource(resolveLobbyViewPath()));
@@ -72,6 +94,7 @@ public class FxSceneNavigator implements SceneNavigator {
     @Override
     public void showAuctionRoom(AuctionRoom room) {
         try {
+            // Lưu room hiện tại trước khi nạp FXML để controller mới bind đúng dữ liệu.
             sessionStore.setCurrentRoom(room);
             sessionStore.setCurrentRoomId(room != null ? room.getRoomId() : null);
 
@@ -101,6 +124,7 @@ public class FxSceneNavigator implements SceneNavigator {
             SellerController sellerController = loader.getController();
             sellerController.setAuctionService(auctionService);
 
+            // Dashboard tạo phiên mở Stage riêng để seller không mất lobby chính.
             Stage stage = new Stage();
             stage.setTitle("Create Auction");
             stage.setScene(new Scene(root));
@@ -120,6 +144,7 @@ public class FxSceneNavigator implements SceneNavigator {
 
             AdminController adminController = loader.getController();
             adminController.setAuctionService(auctionService);
+            // Lưu controller admin để AdminFallbackHandler có thể cập nhật bảng khi server phản hồi.
             sessionStore.setAdminController(adminController);
 
             Stage stage = new Stage();
@@ -133,6 +158,7 @@ public class FxSceneNavigator implements SceneNavigator {
         }
     }
 
+    // Tìm Stage đang hiển thị để thay Scene hiện tại.
     private Stage resolveStage() {
         return (Stage) Window.getWindows().stream()
                 .filter(Window::isShowing)
@@ -140,6 +166,7 @@ public class FxSceneNavigator implements SceneNavigator {
                 .orElse(null);
     }
 
+    // Factory giúp tái sử dụng controller chính hoặc tạo controller phụ khi cần.
     private Object createController(Class<?> controllerClass) {
         if (controllerClass.isInstance(controllerRef)) {
             return controllerRef;
@@ -152,6 +179,7 @@ public class FxSceneNavigator implements SceneNavigator {
         }
     }
 
+    // Seller và bidder dùng FXML phòng khác nhau vì quyền thao tác khác nhau.
     private String resolveAuctionRoomViewPath() {
         User currentUser = sessionStore != null ? sessionStore.getCurrentUser() : null;
         String role = currentUser != null ? currentUser.getRole() : null;
@@ -162,6 +190,7 @@ public class FxSceneNavigator implements SceneNavigator {
         return "/com/example/auctionprototype/bidder-auction-view.fxml";
     }
 
+    // Chọn lobby theo role để seller có nút tạo phiên, bidder chỉ tham gia phòng.
     private String resolveLobbyViewPath() {
         User currentUser = sessionStore != null ? sessionStore.getCurrentUser() : null;
         String role = currentUser != null ? currentUser.getRole() : null;

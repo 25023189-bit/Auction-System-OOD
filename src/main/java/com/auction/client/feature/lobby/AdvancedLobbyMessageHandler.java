@@ -11,6 +11,25 @@ import org.slf4j.LoggerFactory;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * MessageHandler xử lý dữ liệu lobby từ server.
+ *
+ * Vai trò:
+ * - Nhận ROOM_LIST dạng legacy String hoặc List<AuctionRoom> và chuẩn hóa dữ liệu.
+ * - Xử lý UPDATE_PRICE để cập nhật nhanh giá trên card lobby.
+ *
+ * Luồng chính:
+ * 1. ResponseRouter chuyển ROOM_LIST/UPDATE_PRICE vào handler.
+ * 2. Handler map dữ liệu room sang LobbyRoomDisplayModel rồi gọi renderer render/update.
+ *
+ * Business rules:
+ * - ROOM_LIST không hợp lệ hoặc null phải render danh sách rỗng thay vì làm lỗi UI.
+ * - UPDATE_PRICE có payload roomId|price và chỉ cập nhật card tương ứng.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: renderer JavaFX mutable, cần gọi trên JavaFX Application Thread.
+ * - Dependency: MessageHandler, DisplayMapper, AuctionRoom, LobbyRoomDisplayModel, LobbyRoomListRenderer, SLF4J.
+ */
 public class AdvancedLobbyMessageHandler implements MessageHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(AdvancedLobbyMessageHandler.class);
 
@@ -42,6 +61,7 @@ public class AdvancedLobbyMessageHandler implements MessageHandler {
         Object data = message.getData();
         List<AuctionRoom> rooms;
 
+        // Chấp nhận nhiều định dạng để client tương thích với các kiểu response server khác nhau.
         if (data == null) {
             rooms = Collections.emptyList();
         } else if (data instanceof String raw) {
@@ -60,10 +80,12 @@ public class AdvancedLobbyMessageHandler implements MessageHandler {
             rooms = Collections.emptyList();
         }
 
+        // Chỉ đưa dữ liệu đã chuẩn hóa sang renderer để UI không phụ thuộc model server.
         List<LobbyRoomDisplayModel> models = displayMapper.map(rooms);
         renderer.render(models);
     }
 
+    // Cập nhật nhanh giá trên card lobby mà không cần render lại toàn bộ danh sách.
     private void handleUpdatePrice(Message message) {
         Object data = message.getData();
         if (data == null) return;

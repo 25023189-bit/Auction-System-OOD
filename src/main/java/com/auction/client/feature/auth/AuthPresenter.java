@@ -6,7 +6,27 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 
+/**
+ * Presenter cập nhật trạng thái UI cho nhóm màn hình xác thực.
+ *
+ * Vai trò:
+ * - Hiển thị lỗi/thành công cho login, register và reset password.
+ * - Dọn các field mật khẩu/form sau khi thao tác hoàn tất.
+ *
+ * Luồng chính:
+ * 1. Command hoặc AuthMessageHandler gọi method hiển thị trạng thái phù hợp.
+ * 2. Presenter cập nhật label, màu chữ và các field liên quan trên form.
+ *
+ * Business rules:
+ * - Không giữ mật khẩu trên UI sau khi đăng ký/đăng nhập/reset thành công.
+ * - Presenter chỉ cập nhật control, không gửi request mạng hoặc tự điều hướng.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: Label/TextField/PasswordField phải cập nhật trên JavaFX Application Thread.
+ * - Dependency: ViewPresenter, Label, TextField, PasswordField, Color.
+ */
 public class AuthPresenter implements ViewPresenter {
+    // Các label trạng thái tách riêng cho login/register/forgot password.
     private final Label lblStatus;
     private final Label lblRegStatus;
     private final Label lblForgotStatus;
@@ -34,6 +54,7 @@ public class AuthPresenter implements ViewPresenter {
         this.txtForgotConfirm = txtForgotConfirm;
     }
 
+    // Hiển thị lỗi đăng nhập do validator hoặc server trả về.
     public void showLoginError(String message) {
         if (lblStatus != null) {
             lblStatus.setText("Error: " + message);
@@ -62,12 +83,14 @@ public class AuthPresenter implements ViewPresenter {
         }
     }
 
+    // Xóa form sau khi đổi mật khẩu thành công.
     public void clearResetForm() {
         if (txtForgotUsername != null) txtForgotUsername.clear();
         if (txtForgotNewPassword != null) txtForgotNewPassword.clear();
         if (txtForgotConfirm != null) txtForgotConfirm.clear();
     }
 
+    // Không giữ mật khẩu trên UI sau khi thao tác xong.
     public void clearLoginPassword() {
         if (txtPassword != null) txtPassword.clear();
     }

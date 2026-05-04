@@ -6,7 +6,23 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 
 /**
- * Presenter for Auction Room view
+ * Presenter phòng đấu giá legacy gom thao tác cập nhật control JavaFX.
+ *
+ * Vai trò:
+ * - Cập nhật các label thông tin item, giá, timer, participant và mô tả.
+ * - Quản lý chat log và text bid amount cho luồng UI cũ.
+ *
+ * Luồng chính:
+ * 1. Handler/presenter legacy gọi các method update/add/clear tương ứng.
+ * 2. Presenter cập nhật control JavaFX nếu control đã được gắn.
+ *
+ * Business rules:
+ * - addChatMessage() append vào lịch sử chat, không thay thế toàn bộ nội dung.
+ * - getBidAmount() trả chuỗi rỗng khi field chưa được gắn để caller xử lý an toàn.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: control JavaFX phải cập nhật trên JavaFX Application Thread.
+ * - Dependency: Label, TextArea, TextField, Button.
  */
 public class AuctionRoomPresenter {
     private Label lblItemName;
@@ -58,6 +74,7 @@ public class AuctionRoomPresenter {
     }
 
     public void addChatMessage(String message) {
+        // appendText giữ lại lịch sử chat thay vì thay thế toàn bộ nội dung.
         if (txtChatLog != null) {
             txtChatLog.appendText(message + "\n");
         }

@@ -6,6 +6,25 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
+/**
+ * Handler dự phòng gom các fallback handler nhỏ hơn.
+ *
+ * Vai trò:
+ * - Nhận mọi action chưa được handler chính xử lý.
+ * - Duyệt fallbackHandlers và chuyển message cho handler đầu tiên hỗ trợ action.
+ *
+ * Luồng chính:
+ * 1. AuctionMessageRouter gọi handle(message) khi không có primary handler match.
+ * 2. FallbackMessageHandler duyệt danh sách fallback, gọi handler phù hợp hoặc log warning.
+ *
+ * Business rules:
+ * - supports() luôn trả true để router có thể dùng làm fallback cuối.
+ * - Action không có fallback phải được log để dễ phát hiện thiếu handler.
+ *
+ * Ghi chú kỹ thuật:
+ * - Thread-safe một phần: danh sách fallback không copy defensive, caller không nên mutate sau khi tạo.
+ * - Dependency: MessageHandler, Message, List, SLF4J.
+ */
 public class FallbackMessageHandler implements MessageHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(FallbackMessageHandler.class);
 
@@ -22,6 +41,7 @@ public class FallbackMessageHandler implements MessageHandler {
 
     @Override
     public void handle(Message message) {
+        // Duyệt các fallback nhỏ hơn để mỗi lớp chỉ xử lý một nhóm nghiệp vụ.
         for (MessageHandler handler : fallbackHandlers) {
             if (handler.supports(message.getAction())) {
                 handler.handle(message);

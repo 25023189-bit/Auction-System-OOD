@@ -4,7 +4,23 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- * ViewModel for Auction operations
+ * ViewModel dùng JavaFX Property cho thông tin đấu giá có thể bind với UI.
+ *
+ * Vai trò:
+ * - Lưu roomId, itemName, currentPrice, timeRemaining và bidAmount dạng StringProperty.
+ * - Cung cấp getter/property/setter để FXML hoặc presenter bind trực tiếp.
+ *
+ * Luồng chính:
+ * 1. Controller tạo ViewModel khi khởi tạo màn hình đấu giá.
+ * 2. UI hoặc presenter đọc property và cập nhật value khi server/user thay đổi.
+ *
+ * Business rules:
+ * - Các field hiển thị dạng String để phù hợp label/text field JavaFX.
+ * - ViewModel không tự validate bid hoặc trạng thái phiên.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: JavaFX Property nên cập nhật trên JavaFX Application Thread.
+ * - Dependency: SimpleStringProperty, StringProperty.
  */
 public class AuctionViewModel {
     private final StringProperty roomId = new SimpleStringProperty();

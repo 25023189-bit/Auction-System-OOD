@@ -13,6 +13,25 @@ import com.auction.server.main.AuctionServer;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
+/**
+ * Service nghiệp vụ điều phối trạng thái phòng đấu giá trong runtime.
+ *
+ * Vai trò:
+ * - Xử lý join room, đặt bid, khóa người mới vào cuối phiên và finalize phiên hết hạn.
+ * - Đồng bộ dữ liệu runtime trong bộ nhớ với AuctionRoom trả về client.
+ *
+ * Luồng chính:
+ * 1. Handler gọi joinRoom(), placeNewBid() hoặc watcher gọi finalizeExpiredAuctionIfNeeded().
+ * 2. Service đọc DB, kiểm tra status/time/runtime state, gọi DAO transaction rồi broadcast các event cần thiết.
+ *
+ * Business rules:
+ * - Trong 30 giây cuối, người mới bị khóa vào phòng nhưng participant đã join vẫn được bid.
+ * - Bid hợp lệ trong 30 giây cuối được gia hạn thêm theo cấu hình extensionSeconds của room.
+ *
+ * Ghi chú kỹ thuật:
+ * - Thread-safe theo room: synchronized trên AuctionRuntimeState từng room để tránh join/bid/finalize đụng nhau.
+ * - Dependency: AuctionDAO, BidDAO, UserDAO, AuctionStateManager, AuctionServer, Message.
+ */
 public class AuctionRoomService {
     private static final long FINAL_WINDOW_SECONDS = 30L;
 
@@ -31,6 +50,7 @@ public class AuctionRoomService {
         }
 
         LocalDateTime now = LocalDateTime.now();
+        // Kiểm tra trạng thái DB trước khi đụng tới runtime state trong bộ nhớ.
         Message preCheck = validateJoinByStatus(room, user, now);
         if (preCheck != null) {
             return preCheck;
@@ -49,6 +69,7 @@ public class AuctionRoomService {
             }
 
             long remainingSeconds = Duration.between(now, scheduledEnd).getSeconds();
+            // Khi vào 30 giây cuối, server khóa người tham gia mới.
             applyFinalWindowRules(state, now, remainingSeconds);
 
             if (state.isEntryLocked() && !state.hasParticipant(userId)) {
@@ -59,6 +80,7 @@ public class AuctionRoomService {
                 return fail("ROOM_FAIL", "Your balance does not meet the minimum join amount for this auction.");
             }
 
+            // Chỉ user đã join hợp lệ mới được phép bid trong phiên hiện tại.
             state.addParticipant(userId);
             syncRuntimeInfoToRoom(room, state);
 
@@ -86,6 +108,7 @@ public class AuctionRoomService {
         }
 
         LocalDateTime now = LocalDateTime.now();
+        // Server validate lại thời gian/trạng thái dù client đã chặn UI.
         Message preCheck = validateBidByStatus(room, now);
         if (preCheck != null) {
             return preCheck;
@@ -111,6 +134,7 @@ public class AuctionRoomService {
             }
 
             BidDAO bidDAO = new BidDAO();
+            // DAO xử lý transaction: clear highest cũ, insert bid mới, update current price.
             BidResult bidResult = bidDAO.placeBid(roomId, userId, amount);
             if (!bidResult.isSuccess()) {
                 return fail("BID_FAIL", bidResult.getMessage() != null
@@ -122,6 +146,7 @@ public class AuctionRoomService {
             room.setHighestBidder(user.getUsername());
 
             boolean extended = false;
+            // Bid trong 30 giây cuối được gia hạn thêm theo cấu hình của phòng.
             if (remainingSeconds <= FINAL_WINDOW_SECONDS) {
                 int extensionSeconds = room.getExtensionSeconds();
                 if (extensionSeconds > 0) {
@@ -153,6 +178,7 @@ public class AuctionRoomService {
         }
 
         AuctionRuntimeState state = AuctionStateManager.getState(roomId);
+        // Đồng bộ theo từng phòng để watcher không finalize trùng với bid/join đang xử lý.
         synchronized (state) {
             LocalDateTime scheduledEnd = calculateScheduledEnd(room, state);
             if (scheduledEnd == null) {
@@ -219,11 +245,13 @@ public class AuctionRoomService {
         }
     }
 
+    // Nếu client thao tác vào phiên đã hết giờ, server finalize trước rồi trả lỗi phù hợp.
     private Message handleExpiredAuction(String roomId, String failAction) {
         CloseAuctionResult result = finalizeAuction(roomId);
         return fail(failAction, result.getMessage());
     }
 
+    // Kết thúc phiên: cập nhật DB, dọn runtime state, báo client và refresh lobby.
     private CloseAuctionResult finalizeAuction(String roomId) {
         AuctionDAO auctionDAO = new AuctionDAO();
         CloseAuctionResult result = auctionDAO.closeAuctionByTime(roomId);
@@ -236,6 +264,7 @@ public class AuctionRoomService {
         return result;
     }
 
+    // Sau khi bán thành công, winner và seller cần thấy số dư mới.
     private void broadcastBalancesAfterTimeout(CloseAuctionResult result) {
         if (result == null || !result.isSuccess()) {
             return;
@@ -258,12 +287,14 @@ public class AuctionRoomService {
         AuctionServer.broadcast(new Message("ROOM_LIST", "SERVER", auctionDAO.getAllActiveAuctions()));
     }
 
+    // Rule 30 giây cuối: khóa người mới vào phòng nhưng người đã join vẫn được bid.
     private void applyFinalWindowRules(AuctionRuntimeState state, LocalDateTime now, long remainingSeconds) {
         if (!state.isEntryLocked() && remainingSeconds <= FINAL_WINDOW_SECONDS) {
             state.lockEntry(now);
         }
     }
 
+    // End time thực tế = endTime gốc trong DB + tổng số giây đã được gia hạn.
     private LocalDateTime calculateScheduledEnd(AuctionRoom room, AuctionRuntimeState state) {
         if (room == null || room.getEndTime() == null) {
             return null;
@@ -271,6 +302,7 @@ public class AuctionRoomService {
         return room.getEndTime().plusSeconds(state.getTotalExtendedSeconds());
     }
 
+    // Đưa runtime state vào AuctionRoom để client hiển thị đúng timer, lock và số người tham gia.
     private void syncRuntimeInfoToRoom(AuctionRoom room, AuctionRuntimeState state) {
         room.setExtendedSeconds(state.getTotalExtendedSeconds());
         room.setEntryLocked(state.isEntryLocked());

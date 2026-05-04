@@ -7,6 +7,25 @@ import com.auction.server.dao.UserDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Service nghiệp vụ cho xác thực, đăng ký và reset mật khẩu cơ bản.
+ *
+ * Vai trò:
+ * - Gọi UserDAO để login, register và reset password.
+ * - Bổ sung thống kê seller vào User trước khi trả LOGIN_SUCCESS.
+ *
+ * Luồng chính:
+ * 1. AuthActionHandler truyền input đã parse vào AuthService.
+ * 2. Service gọi DAO, map kết quả DAO thành Message response cho client.
+ *
+ * Business rules:
+ * - Login chấp nhận username hoặc customer_id và chỉ thành công khi BCrypt verify pass.
+ * - Seller login thành công phải có tỷ lệ đấu giá thành công/hủy bởi admin để client hiển thị đúng.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe theo instance: giữ UserDAO/AuctionDAO instance, nhưng không lưu state phiên.
+ * - Dependency: UserDAO, AuctionDAO, Message, User, SLF4J.
+ */
 public class AuthService {
     private static final Logger LOGGER = LoggerFactory.getLogger(AuthService.class);
 
@@ -16,10 +35,11 @@ public class AuthService {
     public Message login(String loginId, String password) {
         LOGGER.info("Login request. loginId={}", loginId);
 
-        // Truyền thẳng dữ liệu nhập vào (có thể là ID hoặc Username) xuống DAO
+        // loginId có thể là username hoặc customer_id; DAO chịu trách nhiệm chuẩn hóa.
         User user = userDAO.login(loginId, password);
 
         if (user != null) {
+            // Seller cần thêm thống kê để client/seller validator hiển thị đúng uy tín.
             applySellerAuctionStats(user);
             LOGGER.info("Login result: SUCCESS. role={}", user.getRole());
             return new Message("LOGIN_SUCCESS", "SERVER", user);
@@ -69,6 +89,7 @@ public class AuthService {
     }
 
     private void applySellerAuctionStats(User user) {
+        // Chỉ seller mới cần tỷ lệ thành công/hủy bởi admin.
         if (user == null || !"SELLER".equalsIgnoreCase(user.getRole())) {
             return;
         }

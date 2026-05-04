@@ -5,6 +5,25 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
+/**
+ * Service reset các control UI phụ thuộc session về trạng thái sạch.
+ *
+ * Vai trò:
+ * - Xóa dữ liệu hiển thị của user/room cũ khi logout hoặc session bị vô hiệu.
+ * - Khôi phục trạng thái enable/visible mặc định cho nút bid, tạo phiên và đóng phiên.
+ *
+ * Luồng chính:
+ * 1. AuctionController tạo service với các control có trong FXML hiện tại.
+ * 2. Khi logout/reset session, controller gọi resetSessionUi() để dọn UI.
+ *
+ * Business rules:
+ * - Control theo role như create/close auction phải bị ẩn để user sau không thấy quyền của user trước.
+ * - Dữ liệu chat, giá, timer và thông tin user cũ phải được xóa khỏi màn hình.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: thao tác control JavaFX phải chạy trên JavaFX Application Thread.
+ * - Dependency: UiResetService, Button, TextField, TextArea, Label.
+ */
 public class DefaultUiResetService implements UiResetService {
     private final Button btnCreateAuction;
     private final Button btnCloseAuction;
@@ -44,6 +63,7 @@ public class DefaultUiResetService implements UiResetService {
 
     @Override
     public void resetSessionUi() {
+        // Ẩn các nút phụ thuộc role để user kế tiếp không thấy quyền của user cũ.
         if (btnCreateAuction != null) {
             btnCreateAuction.setVisible(false);
             btnCreateAuction.setManaged(false);
@@ -68,6 +88,7 @@ public class DefaultUiResetService implements UiResetService {
             txtChatInput.setDisable(false);
         }
 
+        // Xóa dữ liệu hiển thị thuộc phiên cũ.
         if (txtChatLog != null) txtChatLog.clear();
         if (lblUsername != null) lblUsername.setText("");
         if (lblBalance != null) lblBalance.setText("");

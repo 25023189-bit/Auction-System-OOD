@@ -4,8 +4,28 @@ import com.auction.common.dto.Message;
 
 import java.time.LocalDateTime;
 
+/**
+ * API phía client để đóng gói Message gửi tới AuctionServer.
+ *
+ * Vai trò:
+ * - Cung cấp các hàm tiện ích cho JavaFX controller gọi login, register, join, bid, chat và tạo auction.
+ * - Giữ currentUser và chuyển tham số UI thành payload theo protocol Message.
+ *
+ * Luồng chính:
+ * 1. Controller gọi method tương ứng với hành động người dùng.
+ * 2. AuctionService tạo Message đúng action/id/data rồi gửi qua ClientConnection.
+ *
+ * Business rules:
+ * - Các action cần xác thực phải gửi kèm currentUser sau khi login thành công.
+ * - Payload register/createAuction dùng dấu |, nên các bên gửi/nhận phải thống nhất thứ tự field.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: currentUser và callback product detail là state mutable phía client.
+ * - Dependency: ClientConnection, Message, LocalDateTime, JavaFX controller callback.
+ */
 public class AuctionService {
     private ClientConnection clientConnection;
+    // currentUser là customer_id của user đã đăng nhập, được gửi kèm các action cần xác thực.
     private String currentUser = "";
 
     public AuctionService(ClientConnection connection) {
@@ -36,6 +56,7 @@ public class AuctionService {
 
     public void register(String customerId, String username, String email, String fullName,
                          String password, String role, String organization) {
+        // Dùng dấu | làm protocol đơn giản giữa client và AuthActionHandler.
         String normalizedOrganization = (organization == null || organization.trim().isEmpty()) ? "" : organization.trim();
         String data = customerId + "|" + username + "|" + email + "|" + fullName + "|" + password + "|" + role + "|" + normalizedOrganization;
         clientConnection.sendMessage(new Message("REGISTER", "", data));
@@ -62,7 +83,7 @@ public class AuctionService {
         clientConnection.sendMessage(msg);
     }
 
-    public void resetPassword(String username, String newPassword){
+    public void resetPassword(String username, String newPassword) {
         clientConnection.sendMessage(new Message("RESET_PASSWORD", username, newPassword));
     }
 
@@ -73,6 +94,7 @@ public class AuctionService {
     public void createAuction(String itemName, String itemDesc, double startingPrice,
                               double minimumJoinAmount, double bidStep,
                               LocalDateTime startTime, int duration, int extensionSeconds) {
+        // SellerActionHandler sẽ parse lại chuỗi này và validate ở server.
         String data = itemName + "|" + itemDesc + "|" + startingPrice + "|" +
                 minimumJoinAmount + "|" + bidStep + "|" +
                 startTime + "|" + duration + "|" + extensionSeconds;
@@ -90,9 +112,11 @@ public class AuctionService {
         }
         this.currentUser = "";
     }
+
     // ==========================================================
-    // PHẦN XỬ LÝ LẤY CHI TIẾT SẢN PHẨM (PRODUCT VIEW)
+    // PRODUCT DETAIL CALLBACK
     // ==========================================================
+    // Callback cho popup product detail khi server trả PRODUCT_DETAILS_SUCCESS.
     private java.util.function.Consumer<Object> productDetailsCallback;
 
     public void setProductDetailsCallback(java.util.function.Consumer<Object> callback) {
@@ -111,8 +135,9 @@ public class AuctionService {
             productDetailsCallback.accept(data);
         }
     }
+
     public void sendChatMessage(String roomId, String message) {
-        // Tạm thời in ra log. Khi làm tính năng Socket, ta sẽ gửi message này qua Server
+        // Hỗ trợ package action cũ: hiện chỉ log local, luồng chat mới dùng sendChat().
         System.out.println("[Chat - Room " + roomId + "]: " + message);
     }
 }

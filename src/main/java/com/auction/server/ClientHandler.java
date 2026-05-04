@@ -1,18 +1,9 @@
 package com.auction.server;
 
 import com.auction.common.dto.Message;
-import com.auction.server.handler.AdminActionHandler;
-import com.auction.server.handler.AuctionServerEventPublisher;
-import com.auction.server.handler.AuthActionHandler;
-import com.auction.server.handler.ClientActionContext;
-import com.auction.server.handler.ClientActionRouter;
-import com.auction.server.handler.PendingAuctionRoomFactory;
-import com.auction.server.handler.RoomActionHandler;
-import com.auction.server.handler.SellerActionHandler;
+import com.auction.server.handler.*;
 import com.auction.server.main.AuctionServer;
-import com.auction.server.service.AuctionRoomService;
-import com.auction.server.service.AuthService;
-import com.auction.server.service.PendingAuctionApprovalService;
+import com.auction.server.service.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,10 +12,30 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.List;
 
+/**
+ * Đại diện cho một kết nối socket đang hoạt động giữa client và server.
+ *
+ * Vai trò:
+ * - Khởi tạo input/output stream và giữ trạng thái phiên của client hiện tại.
+ * - Đọc Message từ socket, chuyển cho router xử lý và gửi response ngược lại client.
+ *
+ * Luồng chính:
+ * 1. Tạo ClientActionContext, ClientActionRouter và stream giao tiếp cho socket.
+ * 2. Vòng lặp run() nhận Message hợp lệ, route theo action, sau đó dọn kết nối khi client ngắt.
+ *
+ * Business rules:
+ * - Message không có action hoặc không đúng kiểu Message sẽ bị bỏ qua.
+ * - Khi đóng kết nối phải rời phòng hiện tại và xóa session khỏi AuctionServer.
+ *
+ * Ghi chú kỹ thuật:
+ * - Thread-safe một phần: sendMessage() và closeConnection() synchronized, alive là volatile.
+ * - Dependency: Socket, ObjectInputStream/ObjectOutputStream, ClientActionRouter, ClientActionContext, các service server.
+ */
 public class ClientHandler implements Runnable {
     private static final Logger LOGGER = LoggerFactory.getLogger(ClientHandler.class);
 
     private final Socket socket;
+    // Context giữ userId/currentRoomId và các service cần dùng trong suốt vòng đời kết nối.
     private final ClientActionContext actionContext;
     private final ClientActionRouter actionRouter;
 
@@ -41,6 +52,7 @@ public class ClientHandler implements Runnable {
                 new AuctionRoomService(),
                 new PendingAuctionApprovalService()
         );
+        // Router gom các nhóm handler theo nghiệp vụ: auth, room, seller, admin.
         this.actionRouter = new ClientActionRouter(List.of(
                 new AuthActionHandler(),
                 new RoomActionHandler(),
@@ -86,6 +98,7 @@ public class ClientHandler implements Runnable {
                     continue;
                 }
 
+                // Message hợp lệ được chuyển cho router dựa trên action.
                 actionRouter.route(msg, actionContext);
             }
         } catch (Exception e) {
@@ -101,6 +114,7 @@ public class ClientHandler implements Runnable {
                 return;
             }
 
+            // reset() tránh ObjectOutputStream gửi lại object cache cũ khi nội dung Message thay đổi.
             out.writeObject(response);
             out.flush();
             out.reset();
@@ -112,6 +126,7 @@ public class ClientHandler implements Runnable {
     public synchronized void closeConnection() {
         boolean wasAlive = alive;
         alive = false;
+        // Rời phòng hiện tại để các broadcast sau không còn gửi nhầm tới client đã ngắt.
         actionContext.clearCurrentRoom();
 
         try {

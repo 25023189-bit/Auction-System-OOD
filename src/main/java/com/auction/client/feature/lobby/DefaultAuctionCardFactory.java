@@ -9,6 +9,25 @@ import javafx.scene.layout.VBox;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Factory tạo card phòng đấu giá cho lobby bằng LobbyRoomDisplayModel.
+ *
+ * Vai trò:
+ * - Dựng card có tên sản phẩm, roomId, giá, nút Join Room và nút View Details.
+ * - Mở popup chi tiết sản phẩm qua FXML khi người dùng muốn xem thông tin phòng.
+ *
+ * Luồng chính:
+ * 1. LobbyRoomListRenderer gọi createDefault() hoặc createHighlighted().
+ * 2. Factory dựng VBox card, gắn action joinRoom và mở ProductView popup.
+ *
+ * Business rules:
+ * - Join Room phải gửi đúng roomId của model lên server.
+ * - Popup chi tiết dùng stage modal để tránh thao tác lệch ngữ cảnh khi đang xem chi tiết.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: tạo Node/FXMLLoader/Stage JavaFX trên JavaFX Application Thread.
+ * - Dependency: AbstractAuctionCardFactory, LobbyRoomDisplayModel, AuctionService, FXMLLoader, ProductViewController, SLF4J.
+ */
 public class DefaultAuctionCardFactory implements AbstractAuctionCardFactory<LobbyRoomDisplayModel, VBox> {
     private static final Logger LOGGER = LoggerFactory.getLogger(DefaultAuctionCardFactory.class);
 
@@ -28,9 +47,10 @@ public class DefaultAuctionCardFactory implements AbstractAuctionCardFactory<Lob
         return baseCard(model, true);
     }
 
+    // highlighted dùng cho trường hợp muốn nhấn mạnh một phòng trong danh sách.
     private VBox baseCard(LobbyRoomDisplayModel model, boolean highlighted) {
         VBox card = new VBox(10);
-        card.setPrefSize(200, 210); // Đã tăng chiều cao lên 210 để nhét đủ 2 nút không bị lẹm
+        card.setPrefSize(200, 210); // Chiều cao đủ cho thông tin phòng và hai nút thao tác.
         card.setAlignment(Pos.CENTER);
 
         String style = highlighted
@@ -44,31 +64,31 @@ public class DefaultAuctionCardFactory implements AbstractAuctionCardFactory<Lob
         Label lblId = new Label("ID: " + model.getRoomId());
         Label lblPrice = new Label("Price: " + model.getDisplayPrice());
 
-        // NÚT 1: VÀO PHÒNG
+        // Nút vào phòng gửi request joinRoom lên server.
         Button btnJoin = new Button("Join Room");
         btnJoin.setStyle("-fx-background-color: #3498db; -fx-text-fill: white; -fx-cursor: hand;");
         btnJoin.setOnAction(e -> auctionService.joinRoom(model.getRoomId()));
 
-        // NÚT 2: CHI TIẾT SẢN PHẨM
+        // Nút chi tiết mở popup ProductView, dữ liệu chi tiết vẫn lấy từ server.
         Button btnDetails = new Button("View Details");
         btnDetails.setStyle("-fx-background-color: #f39c12; -fx-text-fill: white; -fx-cursor: hand;");
 
         btnDetails.setOnAction(event -> {
             try {
-                // Tải file giao diện FXML
+                // Tải file giao diện FXML cho popup chi tiết.
                 javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(getClass().getResource("/com/example/auctionprototype/product-view.fxml"));
                 javafx.scene.Parent root = loader.load();
 
-                // Lấy Controller TỪ THƯ MỤC CONTROLLERS và truyền mã phòng sang
+                // Truyền roomId để ProductViewController yêu cầu server trả dữ liệu sản phẩm.
                 com.auction.client.feature.controllers.ProductViewController controller = loader.getController();
                 controller.setRoomId(model.getRoomId());
 
-                // Mở popup
+                // Mở popup chi tiết ở Stage riêng.
                 javafx.stage.Stage stage = new javafx.stage.Stage();
                 stage.setTitle("Chi tiết sản phẩm: " + model.getItemName());
                 stage.setScene(new javafx.scene.Scene(root));
 
-                // Khóa sảnh chính khi popup đang mở
+                // Khóa cửa sổ chính khi popup đang mở để tránh thao tác lệch ngữ cảnh.
                 stage.initModality(javafx.stage.Modality.APPLICATION_MODAL);
                 stage.show();
             } catch (Exception e) {
@@ -76,7 +96,7 @@ public class DefaultAuctionCardFactory implements AbstractAuctionCardFactory<Lob
             }
         });
 
-        // Add cả 2 nút vào thẻ hiển thị
+        // Gắn đầy đủ thông tin và các nút thao tác vào card.
         card.getChildren().addAll(lblName, lblId, lblPrice, btnJoin, btnDetails);
 
         return card;

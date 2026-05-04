@@ -7,6 +7,25 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+/**
+ * Factory tạo JDBC connection cho database MySQL của hệ thống đấu giá.
+ *
+ * Vai trò:
+ * - Đọc cấu hình kết nối database từ environment, system property hoặc resource properties.
+ * - Load JDBC driver và tạo Connection mới cho các DAO.
+ *
+ * Luồng chính:
+ * 1. DAO gọi getConnection(), lớp này load cấu hình và chọn giá trị ưu tiên đầu tiên không rỗng.
+ * 2. Validate url/user/driver, load driver rồi gọi DriverManager.getConnection().
+ *
+ * Business rules:
+ * - Environment variable/system property được ưu tiên hơn db.properties để thuận tiện deploy.
+ * - Thiếu cấu hình bắt buộc phải ném SQLException có thông tin chẩn đoán rõ ràng.
+ *
+ * Ghi chú kỹ thuật:
+ * - Thread-safe: stateless, chỉ dùng method static và biến local.
+ * - Dependency: DriverManager, Properties, ClassLoader resource db.properties/db.properties.example.
+ */
 public final class DatabaseConnection {
 
     private static final String DEFAULT_DRIVER = "com.mysql.cj.jdbc.Driver";
@@ -17,6 +36,7 @@ public final class DatabaseConnection {
     public static Connection getConnection() throws SQLException {
         Properties props = loadDatabaseProperties();
 
+        // Cho phép override cấu hình khi deploy mà không cần sửa file resource.
         String url = firstNonBlank(
                 System.getenv("AUCTION_DB_URL"),
                 System.getProperty("auction.db.url"),
@@ -61,6 +81,7 @@ public final class DatabaseConnection {
         }
     }
 
+    // Đọc db.properties thật, nếu không có thì dùng db.properties.example để hỗ trợ môi trường mẫu.
     private static Properties loadDatabaseProperties() throws SQLException {
         Properties props = new Properties();
         URL resource = findDatabasePropertiesResource();
@@ -79,6 +100,7 @@ public final class DatabaseConnection {
         }
     }
 
+    // Tìm file cấu hình database trên classpath.
     private static URL findDatabasePropertiesResource() {
         ClassLoader classLoader = DatabaseConnection.class.getClassLoader();
         URL resource = classLoader.getResource("db.properties");
@@ -91,6 +113,7 @@ public final class DatabaseConnection {
         }
     }
 
+    // Lấy giá trị đầu tiên không null/không rỗng trong danh sách ưu tiên.
     private static String firstNonBlank(String... values) {
         if (values == null) {
             return null;
@@ -103,6 +126,7 @@ public final class DatabaseConnection {
         return null;
     }
 
+    // Tạo lỗi có ngữ cảnh để dễ chẩn đoán sai cấu hình DB.
     private static String buildHelpfulConnectionError(String url, String user, String driver) {
         return "Database connection failed. Check that MySQL is running, database 'auction_system' exists, " +
                 "and the connection configuration is correct. " +

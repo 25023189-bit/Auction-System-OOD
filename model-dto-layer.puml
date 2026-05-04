@@ -1,0 +1,137 @@
+﻿@startuml ModelDTOLayer
+title Model / DTO Layer - Domain Objects and Protocol Payloads
+
+top to bottom direction
+skinparam linetype ortho
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam nodesep 60
+skinparam ranksep 75
+hide empty members
+
+package "Contracts" as Contracts {
+  interface Entity {
+    +getId(): String
+    +getName(): String
+  }
+  interface RolePolicy {
+    +canCreateAuction(role: String): boolean
+    +canBid(role: String): boolean
+  }
+}
+
+package "Users" as Users {
+  class User {
+    #customerId: String
+    #username: String
+    #role: String
+    #balance: double
+    +getId(): String
+    +getName(): String
+    +getBalance(): double
+    +setBalance(balance: double): void
+  }
+  class Bidder {
+    +deposit(amount: double): void
+  }
+  class Seller
+  class Admin
+}
+
+package "Auction Domain" as AuctionDomain {
+  class Item {
+    -id: String
+    -name: String
+    -startingPrice: double
+    +getProductId(): String
+    +getProductName(): String
+  }
+  class Art {
+    -artistName: String
+    +printInfo(): void
+  }
+  class AuctionRoom {
+    -roomId: String
+    -itemId: String
+    -currentPrice: double
+    -status: String
+    -startTime: LocalDateTime
+    -endTime: LocalDateTime
+    +getRoomId(): String
+    +setCurrentPrice(currentPrice: double): void
+  }
+  class BidTransaction {
+    -auctionId: String
+    -bidderId: String
+    -bidAmount: double
+    +getAuctionId(): String
+    +getBidAmount(): double
+  }
+  class AutoBiddingRule {
+    -auctionId: String
+    -bidderId: String
+    -maxBid: BigDecimal
+  }
+  class PendingAuctionRequest {
+    -requestId: String
+    -roomId: String
+    -sellerId: String
+    -startingPrice: double
+    +getRequestId(): String
+  }
+}
+
+package "Notification / Status" as Status {
+  class Notification {
+    -userId: String
+    -auctionId: String
+    -message: String
+  }
+  enum NotificationType
+  enum PaymentStatus
+  enum TransactionType
+}
+
+package "DTO / Protocol" as DTO {
+  class Message {
+    +action: String
+    +id: String
+    +data: Object
+    +username: String
+    +role: String
+    +getAction(): String
+    +getData(): Object
+  }
+  class BidHistoryDTO
+  class ProductDetailResponse
+}
+
+package "Role Policy" as Policy {
+  class DefaultRolePolicy
+}
+
+Entity <|.. User
+RolePolicy <|.. DefaultRolePolicy
+User <|-- Bidder
+User <|-- Seller
+User <|-- Admin
+Item <|-- Art
+
+AuctionRoom o-- Item : item
+AuctionRoom ..> Seller : seller
+BidTransaction ..> AuctionRoom
+BidTransaction ..> Bidder
+AutoBiddingRule ..> AuctionRoom
+AutoBiddingRule ..> Bidder
+PendingAuctionRequest ..> Seller
+PendingAuctionRequest ..> Item
+Notification ..> User
+Notification ..> AuctionRoom
+Notification ..> NotificationType
+ProductDetailResponse ..> AuctionRoom
+ProductDetailResponse o-- BidHistoryDTO
+Message ..> DTO : protocol envelope
+@enduml
+
+

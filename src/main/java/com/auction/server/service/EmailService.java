@@ -9,10 +9,27 @@ import java.util.Properties;
 import java.io.UnsupportedEncodingException;
 
 /**
- * Enhanced Email Service with retry logic, HTML templates, and configuration management.
+ * Service gửi email cho luồng quên mật khẩu và xác nhận đổi mật khẩu.
+ *
+ * Vai trò:
+ * - Gửi email mật khẩu tạm, OTP và thông báo đổi mật khẩu thành công.
+ * - Đọc cấu hình SMTP từ ConfigManager và render HTML template cho từng loại email.
+ *
+ * Luồng chính:
+ * 1. ForgotPasswordService gọi method gửi email phù hợp với luồng reset.
+ * 2. EmailService build subject/template, retry gửi qua JavaMail và trả boolean kết quả.
+ *
+ * Business rules:
+ * - Nội dung email phải escape dữ liệu người dùng trước khi chèn vào HTML.
+ * - Số lần retry lấy từ cấu hình deploy thay vì hard-code trong logic nghiệp vụ.
+ *
+ * Ghi chú kỹ thuật:
+ * - Thread-safe một phần: config/maxRetries là immutable sau constructor, method gửi email dùng biến local.
+ * - Dependency: ConfigManager, JavaMail Session/Transport/MimeMessage, Properties.
  */
 public class EmailService {
     private final ConfigManager config;
+    // Số lần gửi lại lấy từ file cấu hình để dễ chỉnh khi deploy.
     private final int maxRetries;
 
     public EmailService() {
@@ -21,7 +38,7 @@ public class EmailService {
     }
 
     /**
-     * Sends a password reset email with secure temporary password and instructions.
+     * Gửi mật khẩu tạm thời cho user khi họ yêu cầu reset password.
      */
     public boolean sendPasswordResetEmail(String toEmail, String username, String newPassword) {
         String subject = "🔑 Auction System - Password Reset";
@@ -30,7 +47,7 @@ public class EmailService {
     }
 
     /**
-     * Sends an OTP verification email for password reset.
+     * Gửi mã OTP nếu bật lại luồng xác thực bằng OTP.
      */
     public boolean sendOTPEmail(String toEmail, String username, String otp, int expirationMinutes) {
         String subject = "🔐 Your Auction System Password Reset Code";
@@ -39,7 +56,7 @@ public class EmailService {
     }
 
     /**
-     * Sends a confirmation email after successful password change.
+     * Gửi email xác nhận sau khi đổi mật khẩu thành công.
      */
     public boolean sendPasswordChangedConfirmation(String toEmail, String username, String timestamp) {
         String subject = "✅ Auction System - Password Changed Successfully";
@@ -57,7 +74,7 @@ public class EmailService {
                 System.err.println("⚠️ Email send attempt " + attempt + "/" + maxRetries + " failed: " + e.getMessage());
                 if (attempt < maxRetries) {
                     try {
-                        Thread.sleep(2000); // Wait 2 seconds before retry
+                        Thread.sleep(2000); // Chờ ngắn trước khi thử gửi lại.
                     } catch (InterruptedException ie) {
                         Thread.currentThread().interrupt();
                         break;
@@ -88,7 +105,7 @@ public class EmailService {
 
         Message message = new MimeMessage(session);
 
-        // CHÈN THÊM VÀO ĐÂY ĐỂ SỬA LỖI
+        // Gắn tên người gửi thân thiện; nếu encoding lỗi thì fallback về email thô.
         try {
             message.setFrom(new InternetAddress(config.getEmailFrom(), "Auction System"));
         } catch (UnsupportedEncodingException e) {
@@ -224,6 +241,7 @@ public class EmailService {
                 "</html>";
     }
 
+    // Escape dữ liệu user nhập để không phá cấu trúc HTML email.
     private String escapeHtml(String text) {
         if (text == null) return "";
         return text.replace("&", "&amp;")

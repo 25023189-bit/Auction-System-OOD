@@ -42,17 +42,18 @@ public class Message implements Serializable {
 
     /**
      * Constructor khởi tạo một gói tin Message.
+     *
      * @param action Hành động / Lệnh
-     * @param id Người gửi / ID ngữ cảnh
-     * @param data Dữ liệu đính kèm
+     * @param id     Người gửi / ID ngữ cảnh
+     * @param data   Dữ liệu đính kèm
      */
-    public Message(String action,String id, Object data) {
+    public Message(String action, String id, Object data) {
         this.action = action;
         this.id = id;
         this.data = data;
     }
 
-    public Message(String action,Object data) {
+    public Message(String action, Object data) {
         this.action = action;
         this.data = data;
     }
@@ -60,11 +61,11 @@ public class Message implements Serializable {
     public Message(String action, String id, String username, Object data) {
         this.action = action;
         this.username = username;
-        this.id= id;
+        this.id = id;
         this.data = data;
     }
 
-    public Message(String action,String id, String username, String role, Object data) {
+    public Message(String action, String id, String username, String role, Object data) {
         this.action = action;
         this.id = id;
         this.username = username;
@@ -73,9 +74,23 @@ public class Message implements Serializable {
     }
 
     // --- GETTERS ---
-    public String getAction() { return action; }
-    public String getId() { return id; }
-    public String getUsername() { return username; }
-    public String getRole() { return role; }
-    public Object getData() { return data; }
+    public String getAction() {
+        return action;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public Object getData() {
+        return data;
+    }
 }
