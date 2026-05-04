@@ -10,7 +10,23 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Mở form tạo phiên đấu giá cho seller ở một cửa sổ riêng.
+ * Launcher mở form tạo phiên đấu giá cho seller trong Stage riêng.
+ *
+ * Vai trò:
+ * - Load seller-view.fxml và lấy SellerController do FXMLLoader tạo.
+ * - Truyền AuctionService hiện tại để form gửi yêu cầu tạo phiên lên server.
+ *
+ * Luồng chính:
+ * 1. FXMLLoader nạp seller-view.fxml và lấy controller.
+ * 2. Controller được gắn service, Stage mới được tạo, maximize và hiển thị.
+ *
+ * Business rules:
+ * - Form tạo phiên phải dùng phiên đăng nhập/socket hiện tại của seller.
+ * - Mở form ở cửa sổ phụ để seller không mất lobby chính.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: thao tác Stage/FXML phải chạy trên JavaFX Application Thread.
+ * - Dependency: AuctionService, SellerController, FXMLLoader, Stage, SLF4J.
  */
 public class SellerDashboardLauncher implements DashboardLauncher {
     private static final Logger LOGGER = LoggerFactory.getLogger(SellerDashboardLauncher.class);

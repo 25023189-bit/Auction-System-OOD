@@ -1,0 +1,108 @@
+﻿@startuml SystemOverview
+title Auction System - Clean Architecture Overview
+
+top to bottom direction
+skinparam linetype ortho
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam nodesep 70
+skinparam ranksep 85
+hide members
+
+package "External Layer" as External {
+  interface Runnable
+  class Application
+  database "MySQL Database" as MySQL
+}
+
+package "Client Layer" as Client {
+  class Launcher
+  class AuctionController
+  class AdminController
+  class SellerController
+  class AuctionService <<client facade>>
+  class AuctionMessageRouter
+}
+
+package "Server Core" as Core {
+  class Main
+  class AuctionServer
+  class ClientHandler
+  class ClientActionRouter
+  interface ClientActionHandler
+  class AuthActionHandler
+  class RoomActionHandler
+  class SellerActionHandler
+  class AdminActionHandler
+}
+
+package "Service Layer" as Services {
+  class AuthService
+  class AuctionRoomService
+  class PendingAuctionApprovalService
+  class ProductDetailService
+  class AuctionStateManager
+}
+
+package "DAO Layer" as DAO {
+  class UserDAO
+  class AuctionDAO
+  class BidDAO
+  class TransactionDAO
+  class ItemDAO
+}
+
+package "Model / DTO Layer" as ModelDTO {
+  class Message <<dto>>
+  class User
+  class AuctionRoom
+  class PendingAuctionRequest
+  class BidTransaction
+  class Item
+}
+
+Application <|-- Main
+Runnable <|.. ClientHandler
+
+Launcher ..> AuctionService : uses
+AuctionController ..> AuctionService : sends commands
+AuctionService ..> Message : creates
+AuctionService ..> ClientHandler : socket protocol
+
+AuctionServer o-- ClientHandler : clients
+ClientHandler ..> ClientActionRouter : route
+ClientActionRouter o-- ClientActionHandler : handlers
+ClientActionHandler <|.. AuthActionHandler
+ClientActionHandler <|.. RoomActionHandler
+ClientActionHandler <|.. SellerActionHandler
+ClientActionHandler <|.. AdminActionHandler
+
+AuthActionHandler ..> AuthService
+RoomActionHandler ..> AuctionRoomService
+SellerActionHandler ..> PendingAuctionApprovalService
+AdminActionHandler ..> PendingAuctionApprovalService
+RoomActionHandler ..> ProductDetailService
+AuctionRoomService ..> AuctionStateManager
+
+AuthService ..> UserDAO
+AuctionRoomService ..> AuctionDAO
+AuctionRoomService ..> BidDAO
+ProductDetailService ..> AuctionDAO
+ProductDetailService ..> TransactionDAO
+PendingAuctionApprovalService ..> PendingAuctionRequest
+
+UserDAO ..> User
+AuctionDAO ..> AuctionRoom
+AuctionDAO ..> Item
+BidDAO ..> BidTransaction
+TransactionDAO ..> BidTransaction
+DAO ..> MySQL
+
+Client ..> ModelDTO : exchanges DTOs
+Core ..> Message : reads/writes protocol
+Services ..> ModelDTO : validates state
+DAO ..> ModelDTO : persists
+@enduml
+
+

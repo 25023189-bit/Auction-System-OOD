@@ -9,7 +9,23 @@ import com.auction.server.service.AuctionService;
 import javafx.scene.control.Alert;
 
 /**
- * Fallback cho các action luồng đấu giá không phụ thuộc riêng một màn hình.
+ * Fallback handler cho các action luồng đấu giá dùng chung nhiều màn hình.
+ *
+ * Vai trò:
+ * - Xử lý kết quả tạo auction, lỗi join/bid, đóng phiên và thông báo phiên kết thúc.
+ * - Điều hướng về lobby, refresh room list và cập nhật presenter khi action không thuộc handler chính.
+ *
+ * Luồng chính:
+ * 1. FallbackMessageHandler chuyển action được supports() vào handler.
+ * 2. Handler show alert/cập nhật presenter/session/navigator rồi gọi AuctionService khi cần refresh.
+ *
+ * Business rules:
+ * - ROOM_FAIL phải xóa room khỏi session, quay về lobby và tải lại danh sách phòng.
+ * - AUCTION_CLOSED_NOTIFY chỉ tác động nếu roomId trong message khớp room hiện tại.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: thao tác Alert, presenter, session và navigator trên luồng UI.
+ * - Dependency: MessageHandler, AuctionService, SessionStore, SceneNavigator, LobbyUserInfoBinder, AuctionRoomPresenter, Alert.
  */
 public class AuctionFlowFallbackHandler implements MessageHandler {
     private final AuctionService auctionService;

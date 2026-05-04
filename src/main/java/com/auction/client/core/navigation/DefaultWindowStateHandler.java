@@ -6,8 +6,23 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 /**
- * Chuẩn hóa trạng thái cửa sổ sau mỗi lần đổi Scene.
- * Mục tiêu là luôn mở full màn hình làm việc thay vì giữ kích thước nhỏ trước đó.
+ * Handler chuẩn hóa trạng thái Stage sau mỗi lần đổi Scene.
+ *
+ * Vai trò:
+ * - Đặt title và trạng thái cửa sổ cho màn hình hiện tại.
+ * - Maximize Stage theo vùng nhìn thấy của màn hình chính sau khi scene thay đổi.
+ *
+ * Luồng chính:
+ * 1. SceneNavigator gọi capture() trước khi đổi scene và apply()/applyFixed() sau khi gắn scene mới.
+ * 2. Handler đặt kích thước, tọa độ, maximized và lặp lại qua Platform.runLater để layout ổn định.
+ *
+ * Business rules:
+ * - Client luôn ưu tiên màn hình làm việc lớn thay vì giữ kích thước nhỏ trước đó.
+ * - Title của Stage phải phản ánh ngữ cảnh hiện tại như login, lobby hoặc auction room.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: thao tác Stage phải chạy trên JavaFX Application Thread.
+ * - Dependency: WindowStateHandler, Stage, Screen, Rectangle2D, Platform.
  */
 public class DefaultWindowStateHandler implements WindowStateHandler {
 

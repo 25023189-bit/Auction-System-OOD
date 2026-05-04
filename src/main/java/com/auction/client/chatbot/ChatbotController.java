@@ -15,8 +15,23 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
 /**
- * Controller cho khung chatbot nổi trên UI.
- * Gửi câu hỏi sang Python ở thread nền để không khóa JavaFX Application Thread.
+ * Controller điều khiển khung chatbot nổi trên giao diện JavaFX.
+ *
+ * Vai trò:
+ * - Quản lý trạng thái mở/đóng panel chatbot và render bubble tin nhắn.
+ * - Gửi câu hỏi sang chatbot Python bằng task nền để không khóa JavaFX Application Thread.
+ *
+ * Luồng chính:
+ * 1. initialize() cấu hình interaction, sự kiện nút/Enter và tin nhắn chào ban đầu.
+ * 2. Người dùng gửi câu hỏi, controller hiển thị tin user, gọi PythonChatbotConnection và render phản hồi bot.
+ *
+ * Business rules:
+ * - Không gửi câu hỏi rỗng và khóa input tạm thời khi đang chờ phản hồi.
+ * - Khi Python lỗi hoặc phản hồi không hợp lệ thì hiển thị ChatbotFallback.MESSAGE.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: control JavaFX chỉ được cập nhật trên JavaFX Application Thread.
+ * - Dependency: FXML controls, Task, Platform, PythonChatbotConnection, ChatbotFallback.
  */
 public class ChatbotController {
 

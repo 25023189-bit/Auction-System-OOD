@@ -10,8 +10,23 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Tạo card phòng đấu giá cho lobby.
- * Card có nút vào phòng và nút xem chi tiết sản phẩm.
+ * Factory tạo card phòng đấu giá cho lobby bằng LobbyRoomDisplayModel.
+ *
+ * Vai trò:
+ * - Dựng card có tên sản phẩm, roomId, giá, nút Join Room và nút View Details.
+ * - Mở popup chi tiết sản phẩm qua FXML khi người dùng muốn xem thông tin phòng.
+ *
+ * Luồng chính:
+ * 1. LobbyRoomListRenderer gọi createDefault() hoặc createHighlighted().
+ * 2. Factory dựng VBox card, gắn action joinRoom và mở ProductView popup.
+ *
+ * Business rules:
+ * - Join Room phải gửi đúng roomId của model lên server.
+ * - Popup chi tiết dùng stage modal để tránh thao tác lệch ngữ cảnh khi đang xem chi tiết.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: tạo Node/FXMLLoader/Stage JavaFX trên JavaFX Application Thread.
+ * - Dependency: AbstractAuctionCardFactory, LobbyRoomDisplayModel, AuctionService, FXMLLoader, ProductViewController, SLF4J.
  */
 public class DefaultAuctionCardFactory implements AbstractAuctionCardFactory<LobbyRoomDisplayModel, VBox> {
     private static final Logger LOGGER = LoggerFactory.getLogger(DefaultAuctionCardFactory.class);

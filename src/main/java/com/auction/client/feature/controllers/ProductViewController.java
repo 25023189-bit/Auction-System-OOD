@@ -7,8 +7,23 @@ import javafx.scene.control.Label;
 import com.auction.common.model.AuctionRoom;
 
 /**
- * Controller cho popup xem chi tiết sản phẩm trong lobby.
- * Nhận roomId, yêu cầu server trả thông tin phòng và hiển thị dữ liệu sản phẩm.
+ * Controller cho popup xem chi tiết sản phẩm từ lobby.
+ *
+ * Vai trò:
+ * - Nhận roomId cần xem chi tiết và yêu cầu server trả dữ liệu sản phẩm/phòng.
+ * - Bind dữ liệu phản hồi vào các label trong popup.
+ *
+ * Luồng chính:
+ * 1. setAuctionService() gắn callback PRODUCT_DETAILS_SUCCESS thông qua AuctionService.
+ * 2. setRoomId() lưu roomId, hiển thị trạng thái loading và gọi requestProductDetails(roomId).
+ *
+ * Business rules:
+ * - Nếu server không trả dữ liệu thì popup phải hiển thị thông báo không tìm thấy sản phẩm.
+ * - Callback phải cập nhật UI qua Platform.runLater vì response đến từ luồng mạng.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: label JavaFX phải cập nhật trên JavaFX Application Thread.
+ * - Dependency: AuctionService, Platform, FXML Label, AuctionRoom.
  */
 public class ProductViewController {
 
@@ -41,13 +56,12 @@ public class ProductViewController {
                         if (lblDescription != null) lblDescription.setText(data.toString());
                     }
                 } else {
-<<<<<<< HEAD
+
                     // Đổi text báo không tìm thấy
                     if (lblDescription != null) lblDescription.setText("Product information not found!");
-=======
+
                     // Không có dữ liệu nghĩa là server không tìm thấy phòng/sản phẩm tương ứng.
                     if(lblDescription != null) lblDescription.setText("Product information not found!");
->>>>>>> 79695510de950987573eb4278b356292c3d972f3
                 }
             });
         });

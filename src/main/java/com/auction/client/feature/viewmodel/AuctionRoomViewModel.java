@@ -4,6 +4,22 @@ import java.time.LocalDateTime;
 
 /**
  * ViewModel biểu diễn dữ liệu phòng đấu giá đang hiển thị.
+ *
+ * Vai trò:
+ * - Lưu các trường cần render cho màn hình auction room.
+ * - Chuẩn bị displayPrice khi currentPrice thay đổi để UI dùng trực tiếp.
+ *
+ * Luồng chính:
+ * 1. Controller/binder nạp dữ liệu room từ server hoặc session vào ViewModel.
+ * 2. Presenter đọc getter để cập nhật label/control tương ứng.
+ *
+ * Business rules:
+ * - setCurrentPrice() phải đồng bộ cả giá số và chuỗi giá đã format.
+ * - owner cho biết user hiện tại có quyền thao tác owner như đóng phiên hay không.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: field mutable, không có synchronization/property binding.
+ * - Dependency: LocalDateTime và các presenter/controller dùng ViewModel.
  */
 public class AuctionRoomViewModel {
     private String roomId;
@@ -65,30 +81,4 @@ public class AuctionRoomViewModel {
     public boolean isOwner() {
         return owner;
     }
-
-<<<<<<< HEAD
-    public void setOwner(boolean owner) {
-        this.owner = owner;
-    }
-
-    public LocalDateTime getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(LocalDateTime startTime) {
-        this.startTime = startTime;
-    }
-
-    public LocalDateTime getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(LocalDateTime endTime) {
-        this.endTime = endTime;
-    }
 }
-=======
-    public LocalDateTime getEndTime() { return endTime; }
-    public void setEndTime(LocalDateTime endTime) { this.endTime = endTime; }
-}
->>>>>>> 79695510de950987573eb4278b356292c3d972f3

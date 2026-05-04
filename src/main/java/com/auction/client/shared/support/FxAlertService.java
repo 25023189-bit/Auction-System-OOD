@@ -3,7 +3,23 @@ package com.auction.client.shared.support;
 import javafx.scene.control.Alert;
 
 /**
- * Triển khai AlertService bằng JavaFX Alert.
+ * AlertService triển khai bằng JavaFX Alert.
+ *
+ * Vai trò:
+ * - Tạo dialog thông báo cho các mức information, warning và error.
+ * - Gom cấu hình title/header/content vào một điểm dùng chung.
+ *
+ * Luồng chính:
+ * 1. Caller gọi show(), info(), warning() hoặc error().
+ * 2. Service tạo Alert, gán nội dung và showAndWait().
+ *
+ * Business rules:
+ * - Dialog được hiển thị dạng blocking để người dùng xác nhận trước khi tiếp tục.
+ * - Shortcut info/warning/error phải map đúng Alert.AlertType.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: JavaFX Alert phải được tạo/hiển thị trên JavaFX Application Thread.
+ * - Dependency: AlertService, javafx.scene.control.Alert.
  */
 public class FxAlertService implements AlertService {
     @Override

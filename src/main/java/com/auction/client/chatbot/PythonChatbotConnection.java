@@ -11,8 +11,23 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Cầu nối giữa JavaFX client và chatbot Python.
- * Java ghi câu hỏi vào input.json, chạy app.py, rồi đọc câu trả lời từ output.json.
+ * Cầu nối singleton giữa JavaFX client và chatbot Python.
+ *
+ * Vai trò:
+ * - Ghi câu hỏi vào input.json, chạy app.py và đọc câu trả lời từ output.json.
+ * - Cung cấp timeout/fallback để lỗi Python không làm treo client.
+ *
+ * Luồng chính:
+ * 1. ChatbotController gọi ask(question) từ background task.
+ * 2. Connection validate file, ghi input, chạy Python, đọc response và trả text hoặc fallback.
+ *
+ * Business rules:
+ * - Mỗi lần chỉ xử lý một câu hỏi để tránh ghi đè input/output của chatbot.
+ * - Nếu thiếu file, process lỗi, timeout hoặc output không có response thì trả ChatbotFallback.MESSAGE.
+ *
+ * Ghi chú kỹ thuật:
+ * - Thread-safe cho ask(): method synchronized bảo vệ cặp file input/output dùng chung.
+ * - Dependency: Files/Path, ProcessBuilder, Pattern, Duration, ChatbotFallback.
  */
 public final class PythonChatbotConnection {
     private static final PythonChatbotConnection INSTANCE = new PythonChatbotConnection();

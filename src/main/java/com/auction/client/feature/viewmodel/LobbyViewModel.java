@@ -6,7 +6,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ViewModel giữ user hiện tại và danh sách phòng đã chuẩn hóa cho lobby.
+ * ViewModel giữ trạng thái hiển thị của lobby.
+ *
+ * Vai trò:
+ * - Lưu user hiện tại đang xem lobby.
+ * - Lưu danh sách LobbyRoomDisplayModel đã chuẩn hóa để render card.
+ *
+ * Luồng chính:
+ * 1. Sau login hoặc ROOM_LIST, controller/handler cập nhật currentUser và rooms.
+ * 2. Presenter/renderer đọc dữ liệu để cập nhật header và danh sách phòng.
+ *
+ * Business rules:
+ * - replaceRooms() phải thay toàn bộ danh sách để tránh trộn response cũ và mới.
+ * - rooms không được trả null, caller luôn nhận list hiện tại.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: rooms là ArrayList mutable, dùng trong luồng UI.
+ * - Dependency: User, LobbyRoomDisplayModel, List/ArrayList.
  */
 public class LobbyViewModel {
     private User currentUser;
