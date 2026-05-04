@@ -7,6 +7,25 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 
+/**
+ * Presenter cập nhật UI cho màn hình phòng đấu giá.
+ *
+ * Vai trò:
+ * - Hiển thị thông tin sản phẩm, giá hiện tại, participant, timer và chat log.
+ * - Bật/tắt control dành cho owner và khóa UI bid khi phiên không cho phép đặt giá.
+ *
+ * Luồng chính:
+ * 1. Binder/message handler gọi presenter khi room state hoặc bid/chat thay đổi.
+ * 2. Presenter cập nhật label, textarea, button và text field tương ứng.
+ *
+ * Business rules:
+ * - Nút đóng phiên chỉ hiển thị với seller sở hữu phòng.
+ * - Khi phiên chưa bắt đầu/kết thúc hoặc user không được bid thì phải disable bid UI.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: control JavaFX phải cập nhật trên JavaFX Application Thread.
+ * - Dependency: ViewPresenter, Label, TextArea, TextField, Button, Color.
+ */
 public class AuctionRoomPresenter implements ViewPresenter {
     private final Label lblAuctionItemName;
     private final Label lblCurrentPrice;
@@ -41,6 +60,7 @@ public class AuctionRoomPresenter implements ViewPresenter {
         this.txtBidAmount = txtBidAmount;
     }
 
+    // Hiển thị thông tin cơ bản của phòng: tên sản phẩm, giá hiện tại và mô tả.
     public void showRoomInfo(String itemName, double currentPrice, String description) {
         if (lblAuctionItemName != null) {
             lblAuctionItemName.setText(itemName);
@@ -70,6 +90,7 @@ public class AuctionRoomPresenter implements ViewPresenter {
         }
     }
 
+    // Cập nhật giá hiện tại; nếu có holderName thì ghi thêm vào chat log.
     public void showCurrentPrice(double price, String holderName) {
         if (lblCurrentPrice != null) {
             lblCurrentPrice.setText("Current Price: " + String.format("%,.0f $", price));
@@ -79,6 +100,7 @@ public class AuctionRoomPresenter implements ViewPresenter {
         }
     }
 
+    // Nút đóng phiên chỉ hiện với seller sở hữu phòng.
     public void setOwnerControlsVisible(boolean visible) {
         if (btnCloseAuction != null) {
             btnCloseAuction.setVisible(visible);
@@ -86,6 +108,7 @@ public class AuctionRoomPresenter implements ViewPresenter {
         }
     }
 
+    // Khóa nhập bid khi phiên chưa bắt đầu, đã kết thúc hoặc user không được bid.
     public void disableBidUi(String reason) {
         if (btnPlaceBid != null) {
             btnPlaceBid.setDisable(true);
@@ -98,6 +121,7 @@ public class AuctionRoomPresenter implements ViewPresenter {
         }
     }
 
+    // Timer đổi cả text và màu để người dùng nhận biết trạng thái thời gian.
     public void setTimerText(String text, Color color) {
         if (lblTimer != null) {
             lblTimer.setText(text);

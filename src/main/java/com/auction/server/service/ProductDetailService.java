@@ -12,6 +12,25 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Service tổng hợp dữ liệu chi tiết sản phẩm cho popup product detail.
+ *
+ * Vai trò:
+ * - Đọc AuctionRoom và lịch sử bid để tạo ProductDetailResponse.
+ * - Chuyển BidTransaction từ DB sang BidHistoryDTO phù hợp cho client hiển thị.
+ *
+ * Luồng chính:
+ * 1. RoomActionHandler gọi getProductDetails(roomId) khi client mở popup.
+ * 2. Service lấy room, tính thời gian còn lại, map lịch sử bid và trả DTO tổng hợp.
+ *
+ * Business rules:
+ * - Nếu không tìm thấy room thì trả null để handler gửi PRODUCT_DETAILS_FAIL.
+ * - Thời gian còn lại không âm; hết giờ hoặc thiếu endTime thì trả 0 milliseconds.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe theo instance: giữ DAO instance, không có synchronization.
+ * - Dependency: AuctionDAO, TransactionDAO, ProductDetailResponse, BidHistoryDTO, ChronoUnit.
+ */
 public class ProductDetailService {
 
     private final AuctionDAO auctionDAO;
@@ -36,6 +55,7 @@ public class ProductDetailService {
         detail.setCurrentPrice(room.getCurrentPrice());
         detail.setTimeLeftMillis(calculateRemainingTime(room.getEndTime()));
 
+        // Chuyển lịch sử bid từ model DB sang DTO hiển thị cho client.
         List<BidTransaction> dbTransactions = transactionDAO.getHistoryByRoom(roomId);
         List<BidHistoryDTO> historyDTOs = new ArrayList<>();
 
@@ -54,6 +74,7 @@ public class ProductDetailService {
         return detail;
     }
 
+    // Trả về milliseconds còn lại; nếu hết giờ hoặc thiếu endTime thì trả 0.
     private long calculateRemainingTime(LocalDateTime endTime) {
         if (endTime == null) return 0;
         LocalDateTime now = LocalDateTime.now();

@@ -10,6 +10,25 @@ import com.auction.server.service.AuctionService;
 import com.auction.server.service.ClientConnection;
 import javafx.scene.control.Alert;
 
+/**
+ * MessageHandler xử lý phản hồi server cho nhóm xác thực.
+ *
+ * Vai trò:
+ * - Nhận LOGIN/REGISTER/RESET response và cập nhật presenter tương ứng.
+ * - Lưu session sau login thành công rồi điều hướng theo role của user.
+ *
+ * Luồng chính:
+ * 1. ResponseRouter gọi supports() để xác định action thuộc nhóm auth.
+ * 2. handle() map action thành cập nhật UI, lưu SessionStore, set currentUser và điều hướng.
+ *
+ * Business rules:
+ * - Login thành công phải lưu User vào session và set userId cho AuctionService/ClientConnection.
+ * - Admin mở dashboard riêng; bidder/seller vào lobby và request ROOM_LIST mới nhất.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: phụ thuộc presenter/navigator/session mutable và JavaFX UI.
+ * - Dependency: MessageHandler, AuthPresenter, SceneNavigator, SessionStore, RolePolicy, AuctionService.
+ */
 public class AuthMessageHandler implements MessageHandler {
     private final AuthPresenter presenter;
     private final SceneNavigator navigator;
@@ -31,8 +50,10 @@ public class AuthMessageHandler implements MessageHandler {
 
     @Override
     public boolean supports(String action) {
+        // Handler này chỉ nhận nhóm action xác thực, các action khác để router chuyển tiếp.
         return switch (action) {
-            case "LOGIN_SUCCESS", "LOGIN_FAIL", "REGISTER_SUCCESS", "REGISTER_FAIL", "RESET_SUCCESS", "RESET_FAIL" -> true;
+            case "LOGIN_SUCCESS", "LOGIN_FAIL", "REGISTER_SUCCESS", "REGISTER_FAIL", "RESET_SUCCESS", "RESET_FAIL" ->
+                    true;
             default -> false;
         };
     }
@@ -58,6 +79,7 @@ public class AuthMessageHandler implements MessageHandler {
         }
     }
 
+    // Sau khi login thành công, lưu session và điều hướng theo vai trò của user.
     private void handleLoginSuccess(User user) {
         presenter.showLoginSuccess();
 
@@ -69,6 +91,7 @@ public class AuthMessageHandler implements MessageHandler {
         if (rolePolicy.isAdmin(user)) {
             navigator.openAdminDashboard();
         } else {
+            // Bidder/Seller vào lobby và yêu cầu danh sách phòng mới nhất.
             navigator.showLobby();
             auctionService.getRooms();
         }

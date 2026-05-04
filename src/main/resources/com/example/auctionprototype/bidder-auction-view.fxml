@@ -71,7 +71,7 @@
                             </children>
                         </HBox>
 
-                        <HBox spacing="25.0" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
+                        <HBox spacing="25.0" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
                             <padding>
                                 <Insets bottom="20.0" left="25.0" right="25.0" top="10.0" />
                             </padding>
@@ -97,7 +97,7 @@
                                 <VBox spacing="15.0" styleClass="chat-container" HBox.hgrow="ALWAYS">
                                     <children>
                                         <Label text="Bid History &amp; Chat" textFill="#2c3e50"><font><Font name="System Bold" size="18.0" /></font></Label>
-                                        <TextArea fx:id="txtChatLog" editable="false" wrapText="true" VBox.vgrow="ALWAYS" />
+                                        <TextArea fx:id="txtChatLog" editable="false" VBox.vgrow="ALWAYS" wrapText="true" />
                                         <VBox spacing="10.0">
                                             <children>
                                                 <HBox spacing="10.0">

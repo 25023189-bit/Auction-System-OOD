@@ -74,6 +74,8 @@
     -fx-border-color: rgba(255, 255, 255, 0.85);
     -fx-border-radius: 28px;
     -fx-border-width: 1px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
     -fx-padding: 0;
     -fx-cursor: hand;
     -fx-effect: dropshadow(gaussian, rgba(23, 105, 224, 0.32), 18, 0.18, 0, 7);
@@ -87,10 +89,6 @@
 .chatbot-open-button:pressed {
     -fx-background-color: #0c4fb2;
     -fx-translate-y: 1px;
-}
-
-.chatbot-open-icon {
-    -fx-fill: white;
 }
 
 .chatbot-panel {

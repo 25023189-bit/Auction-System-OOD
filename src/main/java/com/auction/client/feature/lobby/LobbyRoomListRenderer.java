@@ -8,6 +8,25 @@ import javafx.scene.layout.VBox;
 
 import java.util.List;
 
+/**
+ * Renderer chuyển danh sách phòng lobby đã chuẩn hóa thành card trong FlowPane.
+ *
+ * Vai trò:
+ * - Render lại toàn bộ danh sách LobbyRoomDisplayModel thành card.
+ * - Cập nhật nhanh giá của một card khi nhận UPDATE_PRICE.
+ *
+ * Luồng chính:
+ * 1. AdvancedLobbyMessageHandler gọi render(models) sau ROOM_LIST.
+ * 2. Khi có UPDATE_PRICE, handler gọi updatePrice(roomId, newPrice) để sửa label trên card hiện có.
+ *
+ * Business rules:
+ * - render() phải clear danh sách cũ trước khi thêm card mới.
+ * - updatePrice() chỉ sửa card có userData khớp roomId.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: FlowPane/Node JavaFX phải cập nhật trên JavaFX Application Thread.
+ * - Dependency: FlowPane, AbstractAuctionCardFactory, LobbyRoomDisplayModel, VBox, Label.
+ */
 public class LobbyRoomListRenderer {
     private final FlowPane paneSelectAuction;
     private final AbstractAuctionCardFactory<LobbyRoomDisplayModel, VBox> cardFactory;
@@ -18,6 +37,7 @@ public class LobbyRoomListRenderer {
         this.cardFactory = cardFactory;
     }
 
+    // Render lại danh sách từ đầu khi server gửi ROOM_LIST mới.
     public void render(List<LobbyRoomDisplayModel> models) {
         if (paneSelectAuction == null) return;
 
@@ -31,6 +51,7 @@ public class LobbyRoomListRenderer {
         }
     }
 
+    // Tìm đúng card bằng roomId được lưu trong userData và cập nhật label giá.
     public void updatePrice(String roomId, double newPrice) {
         if (paneSelectAuction == null || roomId == null || roomId.isBlank()) return;
 

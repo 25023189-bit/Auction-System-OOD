@@ -3,6 +3,7 @@ package com.auction.client.feature.controllers;
 import com.auction.client.app.launcher.AdminDashboardLauncher;
 import com.auction.client.app.launcher.DashboardLauncher;
 import com.auction.client.app.launcher.SellerDashboardLauncher;
+import com.auction.client.chatbot.ChatbotController;
 import com.auction.client.core.navigation.DefaultWindowStateHandler;
 import com.auction.client.core.navigation.FxSceneNavigator;
 import com.auction.client.core.navigation.SceneNavigator;
@@ -15,7 +16,6 @@ import com.auction.client.feature.viewmodel.AuthViewModel;
 import com.auction.client.feature.viewmodel.LobbyRoomDisplayModel;
 import com.auction.client.feature.viewmodel.LobbyViewModel;
 import com.auction.client.network.messaging.*;
-import com.auction.client.service.ChatbotService;
 import com.auction.client.session.*;
 import com.auction.client.shared.mapper.DisplayMapper;
 import com.auction.client.shared.mapper.RoomDisplayMapper;
@@ -27,19 +27,38 @@ import com.auction.common.model.User;
 import com.auction.common.role.DefaultRolePolicy;
 import com.auction.common.role.RolePolicy;
 import com.auction.server.service.*;
-import javafx.application.Platform;
 import javafx.fxml.*;
-import javafx.geometry.Pos;
-import javafx.scene.input.KeyCode;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * Controller trung tâm của client JavaFX.
+ *
+ * Vai trò:
+ * - Kết nối các màn hình login, register, lobby và phòng đấu giá với service, session, presenter và handler.
+ * - Nhận response từ server rồi điều phối qua ResponseRouter hoặc callback chi tiết sản phẩm.
+ *
+ * Luồng chính:
+ * 1. initialize() tạo socket/service, session, navigator, presenter, binder, timer, handler và router theo FXML hiện tại.
+ * 2. Các action FXML tạo command/request tương ứng, gửi qua AuctionService và cập nhật UI khi onServerResponse() nhận Message.
+ *
+ * Business rules:
+ * - Mỗi controller chỉ tạo kết nối socket một lần trong vòng đời của nó.
+ * - Role quyết định màn hình lobby/room, nút tạo phiên và nút đóng phiên được hiển thị.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe: control JavaFX phải cập nhật trên JavaFX Application Thread; response server được dispatch qua FxThreadExecutor.
+ * - Dependency: AuctionService, ClientConnection, SessionStore, SceneNavigator, presenter/binder/handler client, JavaFX FXML controls, Message.
+ */
 public class AuctionController implements Initializable {
+    private static final Logger LOGGER = LoggerFactory.getLogger(AuctionController.class);
 
     // ==========================================================
     // FXML FIELDS
@@ -48,7 +67,7 @@ public class AuctionController implements Initializable {
     @FXML private Pane paneAuctionRoom;
     @FXML private BorderPane paneMainLobby;
 
-    @FXML private TextField txtUsername, txtRegUsername, txtForgotUsername, txtRegOrganization;
+    @FXML private TextField txtUsername, txtRegCustomerId, txtRegUsername, txtForgotUsername, txtRegOrganization;
     @FXML private PasswordField txtPassword, txtRegPassword, txtRegConfirm, txtForgotNewPassword, txtForgotConfirm;
     @FXML private Label lblStatus, lblRegStatus, lblForgotStatus;
     @FXML private ComboBox<String> cbRegRole;
@@ -68,23 +87,20 @@ public class AuctionController implements Initializable {
     @FXML private Button btnPlaceBid;
     @FXML private TextArea txtItemDescriptionDisplay;
     @FXML private ImageView imgProduct;
-    @FXML private StackPane chatbotRoot;
-    @FXML private VBox chatbotPanel, chatMessages;
-    @FXML private ScrollPane chatScrollPane;
-    @FXML private TextField txtChatbotInput;
-    @FXML private Button btnOpenChatbot, btnCloseChatbot, btnSendChatbot;
-
+    @FXML private ChatbotController chatbotController;
+    @FXML private TextField txtRegEmail, txtRegFullName;
     // ==========================================================
     // CORE SERVICE
     // ==========================================================
     private ClientConnection clientConnection;
     private AuctionService auctionService;
+    // Đảm bảo mỗi controller chỉ khởi tạo kết nối socket một lần.
     private boolean isNetworkConnected = false;
-    private final ChatbotService chatbotService = new ChatbotService();
 
     // ==========================================================
     // CORE ABSTRACTIONS
     // ==========================================================
+    // Lưu trạng thái phiên đăng nhập và điều hướng màn hình theo role.
     private SessionStore sessionStore;
     private WindowStateHandler windowStateHandler;
     private RolePolicy rolePolicy;
@@ -131,6 +147,7 @@ public class AuctionController implements Initializable {
     private MessageHandler adminFallbackHandler;
     private MessageHandler accountStatusFallbackHandler;
 
+    // Router gom các handler chính và fallback để tách xử lý từng loại Message.
     private ResponseRouter responseRouter;
 
     // ==========================================================
@@ -171,9 +188,13 @@ public class AuctionController implements Initializable {
     // ==========================================================
     // INITIALIZE
     // ==========================================================
+    /**
+     * JavaFX gọi sau khi FXML được nạp.
+     * Phương thức này khởi tạo service, presenter, binder và handler tương ứng với màn hình hiện tại.
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("[Controller] Initializing AuctionController...");
+        LOGGER.debug("Initializing AuctionController.");
         if (!isNetworkConnected) {
             clientConnection = new ClientConnection(this);
             auctionService = new AuctionService(clientConnection);
@@ -269,22 +290,23 @@ public class AuctionController implements Initializable {
                     lobbyUserInfoBinder
             );
         }
-        System.out.println("[Controller] AuctionController initialized.");
+        LOGGER.debug("AuctionController initialized.");
     }
 
+    // Ghép màn hình đăng nhập với presenter và handler nhận phản hồi xác thực.
     private void wireLoginView() {
         authPresenter = new AuthPresenter(lblStatus, lblRegStatus, lblForgotStatus, txtUsername, txtPassword, txtForgotUsername, txtForgotNewPassword, txtForgotConfirm);
         authMessageHandler = new AuthMessageHandler(authPresenter, sceneNavigator, sessionStore, rolePolicy, auctionService);
         rebuildRouter();
     }
 
+    // Ghép màn hình lobby với renderer danh sách phòng và thông tin người dùng.
     private void wireLobbyView() {
         lobbyPresenter = new LobbyPresenter(paneSelectAuction, new AuctionCardFactory(auctionService));
         lobbyUserInfoBinder = new LobbyUserInfoBinder(lblUsername, lblBalance, btnCreateAuction, rolePolicy);
         roomDisplayMapper = new RoomDisplayMapper();
         lobbyRoomListRenderer = new LobbyRoomListRenderer(paneSelectAuction, new DefaultAuctionCardFactory(auctionService));
         lobbyMessageHandler = new AdvancedLobbyMessageHandler(new RoomListMapper(), roomDisplayMapper, lobbyRoomListRenderer);
-        wireLobbyChatbot();
 
         if (btnCreateAuction != null) {btnCreateAuction.setVisible(false);btnCreateAuction.setManaged(false);}
 
@@ -296,6 +318,7 @@ public class AuctionController implements Initializable {
         rebuildRouter();
     }
 
+    // Ghép màn hình phòng đấu giá với presenter, bộ đếm giờ và các handler thao tác.
     private void wireAuctionRoomView() {
         Label itemNameLabel = lblAuctionItemName != null ? lblAuctionItemName : lblProductName;
         Label timerLabel = lblTimer != null ? lblTimer : lblTimeLeft;
@@ -325,44 +348,7 @@ public class AuctionController implements Initializable {
         rebuildRouter();
     }
 
-    private void wireLobbyChatbot() {
-        if (chatbotRoot == null || chatbotPanel == null || btnOpenChatbot == null) {
-            return;
-        }
-
-        chatbotRoot.setPickOnBounds(false);
-        chatbotRoot.setMouseTransparent(false);
-        chatbotPanel.setPickOnBounds(true);
-
-        setLobbyChatbotVisible(false);
-
-        if (chatMessages != null && chatMessages.getChildren().isEmpty()) {
-            addChatbotBotMessage("Xin chào, tôi có thể hỗ trợ bạn về đấu giá, anti-sniping, đặt giá và số dư.");
-        }
-
-        btnOpenChatbot.setOnAction(event -> showLobbyChatbot());
-
-        if (btnCloseChatbot != null) {
-            btnCloseChatbot.setOnAction(event -> hideLobbyChatbot());
-        }
-
-        if (btnSendChatbot != null) {
-            btnSendChatbot.setOnAction(event -> sendLobbyChatbotMessage());
-        }
-
-        if (txtChatbotInput != null) {
-            txtChatbotInput.setDisable(false);
-            txtChatbotInput.setEditable(true);
-            txtChatbotInput.setMouseTransparent(false);
-            txtChatbotInput.setOnKeyPressed(event -> {
-                if (event.getCode() == KeyCode.ENTER) {
-                    sendLobbyChatbotMessage();
-                    event.consume();
-                }
-            });
-        }
-    }
-
+    // Xây lại router mỗi khi có thêm handler của màn hình mới.
     private void rebuildRouter() {
         auctionFlowFallbackHandler = new AuctionFlowFallbackHandler(auctionService, sessionStore, sceneNavigator, lobbyUserInfoBinder, auctionRoomPresenter);
         balanceFallbackHandler = new BalanceFallbackHandler(auctionService, sessionStore, lobbyUserInfoBinder);
@@ -391,19 +377,19 @@ public class AuctionController implements Initializable {
     // ==========================================================
     @FXML
     private void handleLogin() {
-        System.out.println("\n[UI Event] Login button clicked.");
+        LOGGER.debug("Login button clicked.");
         if (authViewModel == null) {
             authViewModel = new AuthViewModel();
         }
 
+        // Đưa dữ liệu form vào ViewModel trước khi validate và gửi lệnh đăng nhập.
         authViewModel.setUsername(txtUsername != null ? txtUsername.getText() : "");
         authViewModel.setPassword(txtPassword != null ? txtPassword.getText() : "");
 
-        System.out.println("[Login] Read login form data from FXML:");
-        System.out.println("  - Username: " + authViewModel.getUsername());
-        System.out.println("  - Password: " + "*".repeat(authViewModel.getPassword().length()));
-
-        System.out.println("[Login] Sending LoginCommand.");
+        LOGGER.debug("Read login form data from FXML. username={}, password={}",
+                authViewModel.getUsername(),
+                "*".repeat(authViewModel.getPassword().length()));
+        LOGGER.debug("Sending LoginCommand.");
 
         new LoginCommand(
                 auctionService,
@@ -420,6 +406,11 @@ public class AuctionController implements Initializable {
             authViewModel = new AuthViewModel();
         }
 
+        // Seller cần thêm organization; bidder không gửi trường này.
+        String customerId = txtRegCustomerId != null ? txtRegCustomerId.getText() : "";
+        String email = txtRegEmail != null ? txtRegEmail.getText() : "";
+        String fullName = txtRegFullName != null ? txtRegFullName.getText() : "";
+
         authViewModel.setRegisterUsername(txtRegUsername != null ? txtRegUsername.getText() : "");
         authViewModel.setRegisterPassword(txtRegPassword != null ? txtRegPassword.getText() : "");
         authViewModel.setRegisterConfirmPassword(txtRegConfirm != null ? txtRegConfirm.getText() : "");
@@ -431,7 +422,10 @@ public class AuctionController implements Initializable {
                 new RegisterFormValidator(),
                 authPresenter,
                 new RegisterForm(
+                        customerId,
                         authViewModel.getRegisterUsername(),
+                        email,
+                        fullName,
                         authViewModel.getRegisterPassword(),
                         authViewModel.getRegisterConfirmPassword(),
                         authViewModel.getRegisterRole(),
@@ -439,7 +433,6 @@ public class AuctionController implements Initializable {
                 )
         ).execute();
     }
-
     @FXML
     private void handleSubmitForgotPassword() {
         if (authViewModel == null) {
@@ -497,77 +490,6 @@ public class AuctionController implements Initializable {
         }
     }
 
-    private void showLobbyChatbot() {
-        setLobbyChatbotVisible(true);
-        if (txtChatbotInput != null) {
-            Platform.runLater(() -> txtChatbotInput.requestFocus());
-        }
-    }
-
-    private void hideLobbyChatbot() {
-        setLobbyChatbotVisible(false);
-    }
-
-    private void setLobbyChatbotVisible(boolean visible) {
-        if (chatbotPanel != null) {
-            chatbotPanel.setVisible(visible);
-            chatbotPanel.setManaged(visible);
-            chatbotPanel.setDisable(!visible);
-            chatbotPanel.setMouseTransparent(!visible);
-        }
-
-        if (btnOpenChatbot != null) {
-            btnOpenChatbot.setVisible(!visible);
-            btnOpenChatbot.setManaged(!visible);
-            btnOpenChatbot.setDisable(visible);
-            btnOpenChatbot.setMouseTransparent(visible);
-        }
-
-        if (visible && chatbotPanel != null) {
-            chatbotPanel.toFront();
-        } else if (btnOpenChatbot != null) {
-            btnOpenChatbot.toFront();
-        }
-    }
-
-    private void sendLobbyChatbotMessage() {
-        String userMessage = txtChatbotInput != null ? txtChatbotInput.getText().trim() : "";
-        if (userMessage.isEmpty()) {
-            return;
-        }
-
-        addChatbotUserMessage(userMessage);
-        addChatbotBotMessage(chatbotService.reply(userMessage));
-        txtChatbotInput.clear();
-    }
-
-    private void addChatbotUserMessage(String message) {
-        addChatbotMessage(message, "chatbot-message-user", Pos.CENTER_RIGHT);
-    }
-
-    private void addChatbotBotMessage(String message) {
-        addChatbotMessage(message, "chatbot-message-bot", Pos.CENTER_LEFT);
-    }
-
-    private void addChatbotMessage(String message, String styleClass, Pos alignment) {
-        if (chatMessages == null || chatScrollPane == null) {
-            return;
-        }
-
-        Label bubble = new Label(message);
-        bubble.setWrapText(true);
-        bubble.setMaxWidth(250);
-        bubble.getStyleClass().add(styleClass);
-
-        HBox row = new HBox(bubble);
-        row.setAlignment(alignment);
-        row.getStyleClass().add("chatbot-message-row");
-
-        chatMessages.getChildren().add(row);
-        chatScrollPane.layout();
-        chatScrollPane.setVvalue(1.0);
-    }
-
     @FXML
     public void handleBackToSelection() {
         roomTransitionHandler = new RoomTransitionHandler(auctionService, sessionStore, sceneNavigator, auctionTimerService, lobbyUserInfoBinder);
@@ -595,16 +517,20 @@ public class AuctionController implements Initializable {
     // ==========================================================
     // SERVER RESPONSE ENTRY
     // ==========================================================
+    /**
+     * Điểm vào duy nhất của phản hồi server ở phía UI.
+     * Các phản hồi đặc biệt được xử lý trước, còn lại đi qua router theo action.
+     */
     public void onServerResponse(Message msg) {
-        // Chặn đầu tin nhắn lấy chi tiết sản phẩm
+        // Tin chi tiết sản phẩm có callback riêng cho popup ProductView.
         if ("PRODUCT_DETAILS_SUCCESS".equals(msg.getAction())) {
             javafx.application.Platform.runLater(() -> {
                 auctionService.fireProductDetailsReceived(msg.getData());
             });
-            return; // Dừng luôn, không cho chạy xuống Router bên dưới nữa
+            return;
         }
 
-        // Các tin nhắn bình thường khác vẫn cho chạy qua Router như cũ
+        // Các tin nhắn còn lại luôn chạy trên JavaFX thread trước khi cập nhật UI.
         fxThreadExecutor.execute(() -> responseRouter.route(msg));
     }
 
@@ -633,6 +559,7 @@ public class AuctionController implements Initializable {
         }
     }
 
+    // Xóa dữ liệu phiên, user hiện tại và trạng thái UI khi logout/quay về login.
     private void resetSessionState() {
         sessionStore.clearSession();
 
@@ -650,6 +577,7 @@ public class AuctionController implements Initializable {
         }
     }
 
+    // Lazy-init handler để các nút bid/chat vẫn hoạt động khi controller được nạp từ FXML khác nhau.
     private void ensureAuctionRoomActionsReady() {
         if (auctionRoomPresenter == null) {
             Label itemNameLabel = lblAuctionItemName != null ? lblAuctionItemName : lblProductName;
@@ -664,6 +592,7 @@ public class AuctionController implements Initializable {
         }
     }
 
+    // Chỉ seller sở hữu phòng mới được thấy nút đóng phiên đấu giá.
     private void updateCloseAuctionButtonVisibility() {
         if (btnCloseAuction == null || sessionStore == null) return;
 
@@ -683,6 +612,7 @@ public class AuctionController implements Initializable {
         btnCloseAuction.setManaged(visible);
     }
 
+    // Hiển thị tên user trong phòng, phân biệt seller và bidder.
     private void updateAuctionRoomUserLabel() {
         if (lblUsername == null || sessionStore == null || sessionStore.getCurrentUser() == null) {
             return;
@@ -696,6 +626,7 @@ public class AuctionController implements Initializable {
         lblUsername.setText(prefix + displayName);
     }
 
+    // Ô organization chỉ cần cho seller khi đăng ký.
     private void updateRegisterOrganizationVisibility() {
         boolean sellerSelected = cbRegRole != null && "SELLER".equalsIgnoreCase(cbRegRole.getValue());
 

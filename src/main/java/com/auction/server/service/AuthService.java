@@ -4,48 +4,70 @@ import com.auction.common.dto.Message;
 import com.auction.common.model.User;
 import com.auction.server.dao.AuctionDAO;
 import com.auction.server.dao.UserDAO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+/**
+ * Service nghiệp vụ cho xác thực, đăng ký và reset mật khẩu cơ bản.
+ *
+ * Vai trò:
+ * - Gọi UserDAO để login, register và reset password.
+ * - Bổ sung thống kê seller vào User trước khi trả LOGIN_SUCCESS.
+ *
+ * Luồng chính:
+ * 1. AuthActionHandler truyền input đã parse vào AuthService.
+ * 2. Service gọi DAO, map kết quả DAO thành Message response cho client.
+ *
+ * Business rules:
+ * - Login chấp nhận username hoặc customer_id và chỉ thành công khi BCrypt verify pass.
+ * - Seller login thành công phải có tỷ lệ đấu giá thành công/hủy bởi admin để client hiển thị đúng.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe theo instance: giữ UserDAO/AuctionDAO instance, nhưng không lưu state phiên.
+ * - Dependency: UserDAO, AuctionDAO, Message, User, SLF4J.
+ */
 public class AuthService {
+    private static final Logger LOGGER = LoggerFactory.getLogger(AuthService.class);
+
     private final UserDAO userDAO = new UserDAO();
     private final AuctionDAO auctionDAO = new AuctionDAO();
 
-    public Message login(String username, String password) {
-        System.out.println("\n[AuthService] Login request:");
-        System.out.println("  - Username: " + username);
+    public Message login(String loginId, String password) {
+        LOGGER.info("Login request. loginId={}", loginId);
 
-        User user = userDAO.login(username, password);
+        // loginId có thể là username hoặc customer_id; DAO chịu trách nhiệm chuẩn hóa.
+        User user = userDAO.login(loginId, password);
 
         if (user != null) {
+            // Seller cần thêm thống kê để client/seller validator hiển thị đúng uy tín.
             applySellerAuctionStats(user);
-            System.out.println("  - Result: SUCCESS (Role: " + user.getRole() + ")");
+            LOGGER.info("Login result: SUCCESS. role={}", user.getRole());
             return new Message("LOGIN_SUCCESS", "SERVER", user);
         }
 
-        System.out.println("  - Result: FAILED");
-        return new Message("LOGIN_FAIL", "SERVER", "Incorrect username or password!");
+        LOGGER.info("Login result: FAILED.");
+        return new Message("LOGIN_FAIL", "SERVER", "Sai tài khoản (ID/Username) hoặc mật khẩu!");
     }
 
     public Message registerUser(User user, String rawPassword) {
-        System.out.println("\n[AuthService] Register request:");
-        System.out.println("  - New ID: " + user.getId());
-        System.out.println("  - New username: " + user.getUsername());
+        LOGGER.info("Register request. id={}, username={}", user.getId(), user.getUsername());
 
         String resultStatus = userDAO.registerUser(user, rawPassword);
 
         if ("SUCCESS".equals(resultStatus)) {
-            System.out.println(" - Result: REGISTER SUCCESS");
+            LOGGER.info("Register result: SUCCESS.");
             return new Message("REGISTER_SUCCESS", "SERVER", user.getUsername());
         } else if ("DUPLICATE".equals(resultStatus)) {
-            System.out.println(" - Result: DUPLICATE DATA");
+            LOGGER.info("Register result: DUPLICATE DATA.");
             return new Message("REGISTER_FAIL", "SERVER", "Username is already in use!");
         } else {
-            System.out.println(" - Result: DATABASE ERROR - " + resultStatus);
+            LOGGER.warn("Register result: DATABASE ERROR - {}", resultStatus);
             return new Message("REGISTER_FAIL", "SERVER", resultStatus);
         }
     }
 
     public Message resetPassword(String customerId, String data) {
-        System.out.println("\n[AuthService] Password reset request for: " + customerId);
+        LOGGER.info("Password reset request for: {}", customerId);
 
         String[] parts = data.split(":");
         if (parts.length < 2) {
@@ -58,15 +80,16 @@ public class AuthService {
         boolean isSuccess = userDAO.resetPassword(customerId, newPassword, confirmPassword);
 
         if (isSuccess) {
-            System.out.println("  - Result: PASSWORD RESET SUCCESS");
+            LOGGER.info("Password reset result: SUCCESS.");
             return new Message("RESET_SUCCESS", "SERVER", "Password changed successfully!");
         }
 
-        System.out.println("  - Result: PASSWORD RESET FAILED");
+        LOGGER.info("Password reset result: FAILED.");
         return new Message("RESET_FAIL", "SERVER", "Unable to change password. Please check your data and try again!");
     }
 
     private void applySellerAuctionStats(User user) {
+        // Chỉ seller mới cần tỷ lệ thành công/hủy bởi admin.
         if (user == null || !"SELLER".equalsIgnoreCase(user.getRole())) {
             return;
         }

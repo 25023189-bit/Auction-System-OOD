@@ -6,10 +6,33 @@ import com.auction.common.model.User;
 import com.auction.server.dao.AuctionDAO;
 import com.auction.server.dao.UserDAO;
 import com.auction.server.service.AuctionCreationValidator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.LocalDateTime;
 
+/**
+ * Handler xử lý yêu cầu seller tạo phiên đấu giá mới.
+ *
+ * Vai trò:
+ * - Parse form tạo phiên từ client và xác thực seller hiện tại.
+ * - Validate điều kiện tạo phiên rồi đưa request vào hàng chờ admin duyệt.
+ *
+ * Luồng chính:
+ * 1. Nhận CREATE_AUCTION, tách payload item/giá/thời gian/extension và đọc seller từ DB.
+ * 2. Chạy AuctionCreationValidator, tạo PendingAuctionRequest và broadcast danh sách pending cho admin.
+ *
+ * Business rules:
+ * - Chỉ user role SELLER mới được tạo yêu cầu đấu giá.
+ * - Phiên mới chưa ghi DB ngay; phải chờ admin approve trước khi trở thành auction thật.
+ *
+ * Ghi chú kỹ thuật:
+ * - Không thread-safe theo instance; pending request dùng service với ConcurrentHashMap.
+ * - Dependency: AbstractClientActionHandler, UserDAO, AuctionDAO, AuctionCreationValidator, PendingAuctionApprovalService.
+ */
 public class SellerActionHandler extends AbstractClientActionHandler {
+    private static final Logger LOGGER = LoggerFactory.getLogger(SellerActionHandler.class);
+
     public SellerActionHandler() {
         super("CREATE_AUCTION");
     }
@@ -21,6 +44,7 @@ public class SellerActionHandler extends AbstractClientActionHandler {
 
     private void handleCreateAuction(Message message, ClientActionContext context) {
         try {
+            // Client gửi thông tin form theo format item|desc|price|minJoin|bidStep|start|duration|extension.
             String[] parts = message.getData() != null
                     ? message.getData().toString().split("\\|", -1)
                     : new String[0];
@@ -41,6 +65,7 @@ public class SellerActionHandler extends AbstractClientActionHandler {
 
             String sellerId = message.getId() != null ? message.getId().trim().toUpperCase() : "";
             UserDAO userDAO = new UserDAO();
+            // Server luôn kiểm tra lại sellerId và role, không tin hoàn toàn dữ liệu client.
             User seller = userDAO.getUserById(sellerId);
             if (seller == null) {
                 context.send(new Message("CREATE_AUCTION_FAIL", "SERVER", "Seller account not found!"));
@@ -53,6 +78,7 @@ public class SellerActionHandler extends AbstractClientActionHandler {
             }
 
             AuctionDAO auctionDAO = new AuctionDAO();
+            // Thống kê seller là một phần điều kiện đánh giá yêu cầu tạo phiên.
             AuctionDAO.SellerAuctionStats sellerStats = auctionDAO.getSellerAuctionStats(sellerId);
             seller.setSuccessfulAuctionRate(sellerStats.getSuccessfulAuctionRate());
             seller.setAdminCancellationRate(sellerStats.getAdminCancellationRate());
@@ -77,6 +103,7 @@ public class SellerActionHandler extends AbstractClientActionHandler {
                 return;
             }
 
+            // Request chờ duyệt giữ đủ dữ liệu để admin approve mà không cần hỏi lại seller.
             PendingAuctionRequest request = new PendingAuctionRequest(
                     generateId("PA", 6),
                     generateId("AU", 6),
@@ -96,6 +123,7 @@ public class SellerActionHandler extends AbstractClientActionHandler {
                     seller.getAdminCancellationRate()
             );
 
+            // Lưu request vào bộ nhớ server và báo client biết đang chờ admin.
             context.getPendingAuctionApprovalService().submit(request);
             context.send(new Message(
                     "CREATE_AUCTION_PENDING",
@@ -104,8 +132,7 @@ public class SellerActionHandler extends AbstractClientActionHandler {
             ));
             broadcastPendingAuctionList(context);
         } catch (Exception e) {
-            System.err.println("CREATE_AUCTION error: " + e.getMessage());
-            e.printStackTrace();
+            LOGGER.error("CREATE_AUCTION error.", e);
             context.send(new Message("CREATE_AUCTION_FAIL", "SERVER", "Error: " + e.getMessage()));
         }
     }
