@@ -13,22 +13,7 @@ import java.time.LocalTime;
 
 /**
  * Controller cho popup seller tạo yêu cầu mở phiên đấu giá.
- *
- * Vai trò:
- * - Thu thập dữ liệu item, giá, thời gian, duration và extension từ form.
- * - Validate cơ bản phía client rồi gửi request tạo auction qua AuctionService.
- *
- * Luồng chính:
- * 1. Launcher gắn AuctionService bằng setAuctionService().
- * 2. handleCreateAuction() parse form, kiểm tra start time, gọi createAuction() và đóng popup nếu gửi thành công.
- *
- * Business rules:
- * - Seller phải chọn ngày bắt đầu và start time không được ở quá khứ.
- * - Các trường giá, giờ, phút, duration và extension phải parse được thành số hợp lệ.
- *
- * Ghi chú kỹ thuật:
- * - Không thread-safe: control JavaFX và Stage phải thao tác trên JavaFX Application Thread.
- * - Dependency: AuctionService, DatePicker, TextField, TextArea, Label, LocalDateTime.
+ * Tích hợp kiểm tra Real-time Validation cho tiền cọc, duration và extension.
  */
 public class SellerController {
 
@@ -57,11 +42,115 @@ public class SellerController {
     @FXML
     private TextField txtExtensionSeconds;
 
-    // Service được launcher truyền vào để controller gửi request tạo phiên đấu giá.
     private AuctionService auctionService;
 
     public void setAuctionService(AuctionService service) {
         this.auctionService = service;
+    }
+
+    @FXML
+    public void initialize() {
+        if (txtStartingPrice != null) {
+            txtStartingPrice.textProperty().addListener((observable, oldValue, newValue) -> {
+                validateJoinAmountRealTime();
+            });
+        }
+
+        if (txtMinimumJoinAmount != null) {
+            txtMinimumJoinAmount.textProperty().addListener((observable, oldValue, newValue) -> {
+                validateJoinAmountRealTime();
+            });
+        }
+
+        if (txtExtensionSeconds != null) {
+            txtExtensionSeconds.textProperty().addListener((observable, oldValue, newValue) -> {
+                validateExtensionRealTime();
+            });
+        }
+
+        if (txtDuration != null) {
+            txtDuration.textProperty().addListener((observable, oldValue, newValue) -> {
+                validateDurationRealTime();
+            });
+        }
+    }
+
+    private void validateJoinAmountRealTime() {
+        try {
+            String startPriceStr = safeText(txtStartingPrice);
+            String joinAmountStr = safeText(txtMinimumJoinAmount);
+
+            if (startPriceStr.isEmpty() || joinAmountStr.isEmpty()) {
+                if (lblStatus != null && lblStatus.getText().contains("75%")) lblStatus.setText("");
+                txtMinimumJoinAmount.setStyle("-fx-border-color: #e67e22;");
+                return;
+            }
+
+            double startPrice = Double.parseDouble(startPriceStr);
+            double joinAmount = Double.parseDouble(joinAmountStr);
+
+            if (joinAmount >= 0.75 * startPrice) {
+                showError("Error: Minimum join amount must be < 75% of starting price");
+                txtMinimumJoinAmount.setStyle("-fx-border-color: red; -fx-border-width: 2px;");
+            } else {
+                if (lblStatus != null) lblStatus.setText("");
+                txtMinimumJoinAmount.setStyle("-fx-border-color: #e67e22; -fx-border-width: 1px;");
+            }
+        } catch (NumberFormatException e) {
+            // Ignore
+        }
+    }
+
+    private void validateExtensionRealTime() {
+        String extStr = safeText(txtExtensionSeconds);
+
+        if (extStr.isEmpty()) {
+            if (lblStatus != null && lblStatus.getText().contains("Extension")) {
+                lblStatus.setText("");
+            }
+            txtExtensionSeconds.setStyle("-fx-border-color: #e67e22;");
+            return;
+        }
+
+        try {
+            int extSecs = Integer.parseInt(extStr);
+            if (extSecs <= 0) {
+                showError("Error: Extension time must be greater than 0");
+                txtExtensionSeconds.setStyle("-fx-border-color: red; -fx-border-width: 2px;");
+            } else {
+                if (lblStatus != null) lblStatus.setText("");
+                txtExtensionSeconds.setStyle("-fx-border-color: #e67e22; -fx-border-width: 1px;");
+            }
+        } catch (NumberFormatException e) {
+            showError("Error: Extension must be a valid integer number");
+            txtExtensionSeconds.setStyle("-fx-border-color: red; -fx-border-width: 2px;");
+        }
+    }
+
+    private void validateDurationRealTime() {
+        String durationStr = safeText(txtDuration);
+
+        if (durationStr.isEmpty()) {
+            if (lblStatus != null && lblStatus.getText().contains("Duration")) {
+                lblStatus.setText("");
+            }
+            txtDuration.setStyle("-fx-border-color: #e67e22;");
+            return;
+        }
+
+        try {
+            int duration = Integer.parseInt(durationStr);
+            if (duration <= 0) {
+                showError("Error: Duration must be greater than 0 minutes");
+                txtDuration.setStyle("-fx-border-color: red; -fx-border-width: 2px;");
+            } else {
+                if (lblStatus != null) lblStatus.setText("");
+                txtDuration.setStyle("-fx-border-color: #e67e22; -fx-border-width: 1px;");
+            }
+        } catch (NumberFormatException e) {
+            showError("Error: Duration must be a valid integer number");
+            txtDuration.setStyle("-fx-border-color: red; -fx-border-width: 2px;");
+        }
     }
 
     @FXML
@@ -78,7 +167,6 @@ public class SellerController {
         }
 
         try {
-            // Chuẩn hóa input trước khi parse số và ghép thời điểm bắt đầu.
             String itemName = safeText(txtItemName);
             String itemDesc = safeText(txtItemDescription);
             double startingPrice = Double.parseDouble(safeText(txtStartingPrice));
@@ -89,13 +177,26 @@ public class SellerController {
             int duration = Integer.parseInt(safeText(txtDuration));
             int extensionSeconds = safeText(txtExtensionSeconds).isEmpty() ? 60 : Integer.parseInt(safeText(txtExtensionSeconds));
 
+            // CHỐT CHẶN CUỐI CÙNG
+            if (minimumJoinAmount >= 0.75 * startingPrice) {
+                showError("Cannot create: Minimum join amount must be < 75% of starting price.");
+                return;
+            }
+            if (extensionSeconds <= 0) {
+                showError("Cannot create: Extension time must be greater than 0.");
+                return;
+            }
+            if (duration <= 0) {
+                showError("Cannot create: Duration must be greater than 0 minutes.");
+                return;
+            }
+
             LocalDateTime startTime = LocalDateTime.of(date, LocalTime.of(hour, minute));
             if (startTime.isBefore(LocalDateTime.now())) {
                 showError("Start time must be now or in the future.");
                 return;
             }
 
-            // Server sẽ quyết định duyệt ngay hay đưa vào danh sách chờ admin phê duyệt.
             auctionService.createAuction(
                     itemName,
                     itemDesc,
@@ -107,7 +208,6 @@ public class SellerController {
                     extensionSeconds
             );
 
-            // Đóng popup sau khi gửi request thành công để người dùng quay về lobby.
             javafx.stage.Stage stage = (javafx.stage.Stage) txtItemName.getScene().getWindow();
             stage.close();
         } catch (NumberFormatException e) {
@@ -117,12 +217,10 @@ public class SellerController {
         }
     }
 
-    // Tránh NullPointerException khi FXML thiếu field hoặc field chưa có text.
     private String safeText(TextField field) {
         return field == null || field.getText() == null ? "" : field.getText().trim();
     }
 
-    // Phiên bản cho TextArea dùng với mô tả sản phẩm.
     private String safeText(TextArea field) {
         return field == null || field.getText() == null ? "" : field.getText().trim();
     }
