@@ -1,0 +1,11 @@
+.chatbot-open-button {
+    -fx-background-color: #2284e6;
+    -fx-background-radius: 50%;
+    -fx-min-width: 60px;
+    -fx-max-width: 60px;
+    -fx-min-height: 60px;
+    -fx-max-height: 60px;
+    -fx-text-fill: white;
+    -fx-font-size: 24px; /* Chỉnh icon to ra */
+    -fx-alignment: CENTER;
+}
