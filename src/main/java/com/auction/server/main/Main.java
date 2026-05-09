@@ -31,7 +31,9 @@ import javafx.stage.Stage;
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/login-view.fxml"));
+        // Thêm /com/example/auctionprototype/fxml/ vào trước tên file
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/fxml/login-view.fxml"));
+        //FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/login-view.fxml"));
         Parent root = loader.load();
 
         // Mở màn hình login ở kích thước tối đa để các view phía sau kế thừa cùng trạng thái cửa sổ.

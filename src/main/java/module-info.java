@@ -12,7 +12,7 @@ module com.example.auctionprototype {
     opens com.auction.client.chatbot to javafx.fxml;
 
     opens com.auction.server.main to javafx.graphics, javafx.fxml;
-    opens com.example.auctionprototype to javafx.fxml;
+    //opens com.example.auctionprototype to javafx.fxml;
 
     exports com.auction.client.feature.controllers;
     exports com.auction.client.chatbot;

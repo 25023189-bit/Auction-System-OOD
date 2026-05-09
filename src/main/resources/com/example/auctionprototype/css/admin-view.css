@@ -1,5 +1,5 @@
 .main-container {
-    -fx-background-image: url("admin-background.jpg");
+    -fx-background-image: url("../images/admin-background.jpg");
     -fx-background-size: cover;
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;

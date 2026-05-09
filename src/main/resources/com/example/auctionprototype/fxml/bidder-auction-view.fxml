@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="paneAuctionRoom" prefHeight="720.0" prefWidth="1280.0" styleClass="main-container" stylesheets="@bidder-auction-view.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.AuctionController">
+<BorderPane fx:id="paneAuctionRoom" prefHeight="720.0" prefWidth="1280.0" styleClass="main-container" stylesheets="@../css/bidder-auction-view.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.AuctionController">
     <center>
         <AnchorPane style="-fx-background-color: transparent;">
             <children>
@@ -43,7 +43,7 @@
                                                     <Font name="System Bold" size="20.0" />
                                                 </font>
                                             </Label>
-                                        </children>
+                                            </children>
                                         </HBox>
                                         <HBox alignment="CENTER" spacing="8" style="-fx-border-color: #3498db;" styleClass="header-info-box">
                                             <children>

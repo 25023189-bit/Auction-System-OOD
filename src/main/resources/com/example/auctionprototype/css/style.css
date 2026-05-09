@@ -5,7 +5,7 @@
 
 /* Login background */
 .my-background {
-    -fx-background-image: url("login-card.png");
+    -fx-background-image: url("../images/login-card.png");
     -fx-background-size: cover;
     -fx-background-position: center center;
 }
