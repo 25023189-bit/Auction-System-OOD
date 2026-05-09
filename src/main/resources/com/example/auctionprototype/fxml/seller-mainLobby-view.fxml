@@ -35,7 +35,7 @@
                             <Label text="Vietnam (VND): 26,336.30" />
                         </VBox>
                     </VBox>
-                    <VBox spacing="12" HBox.hgrow="ALWAYS" style="-fx-background-color: white; -fx-padding: 14;">
+
                         <HBox alignment="CENTER_LEFT" spacing="10">
                             <Label text="Seller Auction Sessions" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
                             <Region HBox.hgrow="ALWAYS" />
@@ -45,7 +45,7 @@
                             <content>
                                 <FlowPane fx:id="paneSelectAuction" hgap="14" vgap="14" style="-fx-padding: 4;" />
                             </content>
-                        </ScrollPane>
+                        </ScrollPane><VBox spacing="12" HBox.hgrow="ALWAYS" style="-fx-background-color: white; -fx-padding: 14;">
                     </VBox>
                     <VBox spacing="10" prefWidth="220" style="-fx-background-color: white; -fx-padding: 14;">
                         <Label text="Seller Notes" style="-fx-font-weight: bold;" />
