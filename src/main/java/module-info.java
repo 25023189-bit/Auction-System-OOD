@@ -11,7 +11,7 @@ module com.example.auctionprototype {
     opens com.auction.client.feature.controllers to javafx.fxml;
     opens com.auction.client.chatbot to javafx.fxml;
 
-    opens com.auction.server.main to javafx.graphics, javafx.fxml;
+    opens com.auction.client.app to javafx.graphics, javafx.fxml;
     //opens com.example.auctionprototype to javafx.fxml;
 
     exports com.auction.client.feature.controllers;
@@ -20,5 +20,6 @@ module com.example.auctionprototype {
     exports com.auction.common.model;
     exports com.auction.server;
     exports com.auction.server.main;
-    exports com.auction.server.service;
+    exports com.auction.client.service;
+    exports com.auction.client.network.socket;
 }

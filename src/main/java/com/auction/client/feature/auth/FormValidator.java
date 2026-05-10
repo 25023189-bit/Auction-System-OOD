@@ -1,15 +1,15 @@
 package com.auction.client.feature.auth;
 
 /**
- * Hợp đồng validate dữ liệu form trước khi command gọi service.
+ * Hợp đồng validate dữ liệu form trước khi facade gọi service.
  *
  * Vai trò:
  * - Chuẩn hóa validate cho từng DTO form như login, register và reset password.
- * - Trả ValidationResult để command biết có được gửi request mạng hay không.
+ * - Trả ValidationResult để facade biết có được gửi request mạng hay không.
  *
  * Luồng chính:
- * 1. UiCommand tạo form DTO từ dữ liệu control.
- * 2. Command gọi validate(form) và chỉ tiếp tục khi kết quả hợp lệ.
+ * 1. AuthActionFacade tạo form DTO từ dữ liệu control.
+ * 2. AuthActionFacade gọi validate(form) và chỉ tiếp tục khi kết quả hợp lệ.
  *
  * Business rules:
  * - Dữ liệu không hợp lệ phải trả ValidationResult.fail(message) có lý do rõ ràng.

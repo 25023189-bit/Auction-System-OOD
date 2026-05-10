@@ -5,7 +5,7 @@ import com.auction.client.feature.controllers.SellerController;
 import com.auction.client.session.SessionStore;
 import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.User;
-import com.auction.server.service.AuctionService;
+import com.auction.client.service.AuctionService;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -55,7 +55,7 @@ public class FxSceneNavigator implements SceneNavigator {
     @Override
     public void showLogin() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/login-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/fxml/login-view.fxml"));
             // Cho phép FXMLLoader dùng lại controllerRef nếu FXML trỏ cùng controller.
             loader.setControllerFactory(this::createController);
             Parent root = loader.load();
@@ -118,7 +118,7 @@ public class FxSceneNavigator implements SceneNavigator {
     @Override
     public void openSellerDashboard() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/seller-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/fxml/seller-view.fxml"));
             Parent root = loader.load();
 
             SellerController sellerController = loader.getController();
@@ -139,7 +139,7 @@ public class FxSceneNavigator implements SceneNavigator {
     @Override
     public void openAdminDashboard() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/admin-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/fxml/admin-view.fxml"));
             Parent root = loader.load();
 
             AdminController adminController = loader.getController();
@@ -185,9 +185,9 @@ public class FxSceneNavigator implements SceneNavigator {
         String role = currentUser != null ? currentUser.getRole() : null;
 
         if ("SELLER".equalsIgnoreCase(role)) {
-            return "/com/example/auctionprototype/seller-auction-view.fxml";
+            return "/com/example/auctionprototype/fxml/seller-auction-view.fxml";
         }
-        return "/com/example/auctionprototype/bidder-auction-view.fxml";
+        return "/com/example/auctionprototype/fxml/bidder-auction-view.fxml";
     }
 
     // Chọn lobby theo role để seller có nút tạo phiên, bidder chỉ tham gia phòng.
@@ -196,9 +196,9 @@ public class FxSceneNavigator implements SceneNavigator {
         String role = currentUser != null ? currentUser.getRole() : null;
 
         if ("SELLER".equalsIgnoreCase(role)) {
-            return "/com/example/auctionprototype/seller-mainLobby-view.fxml";
+            return "/com/example/auctionprototype/fxml/seller-mainLobby-view.fxml";
         }
-        return "/com/example/auctionprototype/bidder-mainLobby-view.fxml";
+        return "/com/example/auctionprototype/fxml/bidder-mainLobby-view.fxml";
     }
 
     private String resolveLobbyTitle() {

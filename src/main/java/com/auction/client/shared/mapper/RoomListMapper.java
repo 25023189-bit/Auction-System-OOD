@@ -13,7 +13,7 @@ import java.util.List;
  * - Tạo AuctionRoom tối thiểu để các renderer cũ vẫn hiển thị được lobby.
  *
  * Luồng chính:
- * 1. LobbyMessageHandler hoặc AdvancedLobbyMessageHandler truyền rawData dạng String.
+ * 1. AdvancedLobbyMessageHandler truyền rawData dạng String.
  * 2. Mapper tách từng entry, parse giá và trả List<AuctionRoom>.
  *
  * Business rules:

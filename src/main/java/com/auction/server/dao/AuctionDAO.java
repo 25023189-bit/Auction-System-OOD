@@ -125,6 +125,32 @@ public class AuctionDAO {
         }
     }
 
+    public String generateNextAuctionId() {
+        String sql = """
+                SELECT auction_id
+                FROM auctions
+                WHERE auction_id REGEXP '^AU1[0-9]{5}$'
+                ORDER BY auction_id DESC
+                LIMIT 1
+                """;
+
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            if (rs.next()) {
+                String lastId = rs.getString("auction_id");
+                int nextNumber = Integer.parseInt(lastId.substring(3)) + 1;
+                return "AU1" + String.format("%05d", nextNumber);
+            }
+
+            return "AU100001";
+        } catch (SQLException | NumberFormatException e) {
+            LOGGER.error("Failed to generate next auction id.", e);
+            return "AU1" + String.format("%05d", System.currentTimeMillis() % 100000);
+        }
+    }
+
     public List<AuctionRoom> getAllActiveAuctions() {
         List<AuctionRoom> list = new ArrayList<>();
         // Cập nhật JOIN bảng products và alias cột

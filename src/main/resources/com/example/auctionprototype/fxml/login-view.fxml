@@ -25,7 +25,7 @@
                         <TextField fx:id="txtRegCustomerId" promptText="Customer ID (e.g. BD512345)" />
                         <TextField fx:id="txtRegUsername" promptText="Username" />
 
-                        <TextField fx:id="txtRegEmail" promptText="Email Address (e.g. alex@example.com)" />
+                        <TextField fx:id="txtRegEmail" managed="false" promptText="Email Address (e.g. alex@example.com)" visible="false" />
                         <TextField fx:id="txtRegFullName" promptText="Your Full Name" />
 
                         <PasswordField fx:id="txtRegPassword" promptText="Password" />

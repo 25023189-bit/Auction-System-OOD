@@ -106,7 +106,7 @@ public class SellerActionHandler extends AbstractClientActionHandler {
             // Request chờ duyệt giữ đủ dữ liệu để admin approve mà không cần hỏi lại seller.
             PendingAuctionRequest request = new PendingAuctionRequest(
                     generateId("PA", 6),
-                    generateId("AU", 6),
+                    auctionDAO.generateNextAuctionId(),
                     generateId("IT", 5),
                     sellerId,
                     seller.getOrganization(),

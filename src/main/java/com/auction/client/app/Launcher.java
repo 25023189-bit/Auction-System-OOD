@@ -1,7 +1,5 @@
 package com.auction.client.app;
 
-import com.auction.server.main.Main;
-
 /**
  * Entry point phụ để khởi chạy client JavaFX.
  *
@@ -15,11 +13,11 @@ import com.auction.server.main.Main;
  *
  * Business rules:
  * - Không tự tạo service, session hoặc scene tại lớp này.
- * - Luồng khởi chạy thực tế vẫn do com.auction.server.main.Main đảm nhiệm.
+ * - Luồng khởi chạy thực tế vẫn do com.auction.client.app.Main đảm nhiệm.
  *
  * Ghi chú kỹ thuật:
  * - Thread-safe: stateless, chỉ gọi static main.
- * - Dependency: com.auction.server.main.Main.
+ * - Dependency: com.auction.client.app.Main.
  */
 public class Launcher {
     public static void main(String[] args) {

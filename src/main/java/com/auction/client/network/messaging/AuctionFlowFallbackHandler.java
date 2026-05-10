@@ -5,7 +5,7 @@ import com.auction.client.feature.lobby.LobbyUserInfoBinder;
 import com.auction.client.feature.room.AuctionRoomPresenter;
 import com.auction.client.session.SessionStore;
 import com.auction.common.dto.Message;
-import com.auction.server.service.AuctionService;
+import com.auction.client.service.AuctionService;
 import javafx.scene.control.Alert;
 
 /**

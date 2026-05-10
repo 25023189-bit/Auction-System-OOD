@@ -113,9 +113,13 @@ public class AdminActionHandler extends AbstractClientActionHandler {
             }
 
             // Approve nghĩa là tạo sản phẩm và phiên đấu giá thật trong database.
+            AuctionDAO auctionDAO = new AuctionDAO();
+            if (!isValidAuctionId(request.getRoomId())) {
+                request.setRoomId(auctionDAO.generateNextAuctionId());
+            }
+
             AuctionRoom room = pendingAuctionRoomFactory.createRoom(request);
             Item item = pendingAuctionRoomFactory.createItem(request);
-            AuctionDAO auctionDAO = new AuctionDAO();
 
             if (!auctionDAO.createAuctionWithItem(room, item, request.getSellerId())) {
                 // Nếu lưu DB lỗi thì đưa request trở lại hàng chờ để admin không mất dữ liệu.
@@ -135,6 +139,10 @@ public class AdminActionHandler extends AbstractClientActionHandler {
             LOGGER.error("Auction approval error.", e);
             context.send(new Message("ADMIN_ACTION_FAIL", "SERVER", "Auction approval error."));
         }
+    }
+
+    private boolean isValidAuctionId(String roomId) {
+        return roomId != null && roomId.matches("^AU1\\d{5}$");
     }
 
     private void handleAdminRejectAuction(Message message, ClientActionContext context) {

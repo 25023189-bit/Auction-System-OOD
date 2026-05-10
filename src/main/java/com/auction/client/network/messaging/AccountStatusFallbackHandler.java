@@ -3,8 +3,7 @@ package com.auction.client.network.messaging;
 import com.auction.client.core.navigation.SceneNavigator;
 import com.auction.client.session.SessionStore;
 import com.auction.common.dto.Message;
-import com.auction.server.service.AuctionService;
-import com.auction.server.service.ClientConnection;
+import com.auction.client.service.AuctionService;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import javafx.stage.Window;
@@ -59,7 +58,6 @@ public class AccountStatusFallbackHandler implements MessageHandler {
 
         // Xóa cả session cục bộ lẫn user đang lưu trong service/socket.
         sessionStore.clearSession();
-        ClientConnection.currentUser = null;
         auctionService.setCurrentUser(null);
 
         sceneNavigator.showLogin();

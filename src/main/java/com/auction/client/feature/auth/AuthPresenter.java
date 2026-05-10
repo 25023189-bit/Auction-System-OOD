@@ -14,7 +14,7 @@ import javafx.scene.paint.Color;
  * - Dọn các field mật khẩu/form sau khi thao tác hoàn tất.
  *
  * Luồng chính:
- * 1. Command hoặc AuthMessageHandler gọi method hiển thị trạng thái phù hợp.
+ * 1. AuthActionFacade hoặc AuthMessageHandler gọi method hiển thị trạng thái phù hợp.
  * 2. Presenter cập nhật label, màu chữ và các field liên quan trên form.
  *
  * Business rules:

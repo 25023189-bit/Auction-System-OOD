@@ -22,7 +22,7 @@ import java.util.List;
  * - Action không có fallback phải được log để dễ phát hiện thiếu handler.
  *
  * Ghi chú kỹ thuật:
- * - Thread-safe một phần: danh sách fallback không copy defensive, caller không nên mutate sau khi tạo.
+ * - Thread-safe một phần: danh sách fallback được copy bất biến khi tạo handler.
  * - Dependency: MessageHandler, Message, List, SLF4J.
  */
 public class FallbackMessageHandler implements MessageHandler {
@@ -31,7 +31,7 @@ public class FallbackMessageHandler implements MessageHandler {
     private final List<MessageHandler> fallbackHandlers;
 
     public FallbackMessageHandler(List<MessageHandler> fallbackHandlers) {
-        this.fallbackHandlers = fallbackHandlers;
+        this.fallbackHandlers = List.copyOf(fallbackHandlers);
     }
 
     @Override

@@ -1,6 +1,7 @@
-package com.auction.server.service;
+package com.auction.client.service;
 
 import com.auction.common.dto.Message;
+import com.auction.client.network.socket.ClientConnection;
 
 import java.time.LocalDateTime;
 
@@ -136,8 +137,4 @@ public class AuctionService {
         }
     }
 
-    public void sendChatMessage(String roomId, String message) {
-        // Hỗ trợ package action cũ: hiện chỉ log local, luồng chat mới dùng sendChat().
-        System.out.println("[Chat - Room " + roomId + "]: " + message);
-    }
 }

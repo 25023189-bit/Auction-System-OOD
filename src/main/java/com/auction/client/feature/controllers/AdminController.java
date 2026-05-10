@@ -5,7 +5,7 @@ import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.BidTransaction;
 import com.auction.common.model.PendingAuctionRequest;
 import com.auction.common.model.User;
-import com.auction.server.service.AuctionService;
+import com.auction.client.service.AuctionService;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

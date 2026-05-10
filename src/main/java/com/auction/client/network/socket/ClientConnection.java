@@ -1,6 +1,5 @@
-package com.auction.server.service;
+package com.auction.client.network.socket;
 
-import com.auction.client.feature.controllers.AuctionController;
 import com.auction.common.dto.Message;
 
 import java.io.EOFException;
@@ -27,13 +26,10 @@ import org.slf4j.LoggerFactory;
  *
  * Ghi chú kỹ thuật:
  * - Không thread-safe đầy đủ: socket/stream được dùng giữa UI thread và reader thread nhưng không có synchronized.
- * - Dependency: AuctionController, Socket, ObjectInputStream/ObjectOutputStream, Message, SLF4J.
+ * - Dependency: ServerMessageListener, Socket, ObjectInputStream/ObjectOutputStream, Message, SLF4J.
  */
 public class ClientConnection {
     private static final Logger LOGGER = LoggerFactory.getLogger(ClientConnection.class);
-
-    // Biến legacy lưu user hiện tại cho một số đoạn code cũ.
-    public static String currentUser = null;
 
     private final String host = "localhost";
     private final int port = 8080;
@@ -42,28 +38,28 @@ public class ClientConnection {
     private ObjectOutputStream out;
     private ObjectInputStream in;
 
-    private final AuctionController controller;
+    private final ServerMessageListener listener;
 
-    public ClientConnection(AuctionController controller) {
-        this.controller = controller;
+    public ClientConnection(ServerMessageListener listener) {
+        this.listener = listener;
     }
 
     public void connect() {
         new Thread(() -> {
             try {
-                controller.updateConnectionStatus("Connecting...");
+                listener.updateConnectionStatus("Connecting...");
 
                 socket = new Socket(host, port);
                 out = new ObjectOutputStream(socket.getOutputStream());
                 in = new ObjectInputStream(socket.getInputStream());
 
-                controller.updateConnectionStatus("Connected to server!");
+                listener.updateConnectionStatus("Connected to server!");
 
                 // Reader loop nhận Message từ server cho đến khi socket đóng.
                 while (!Thread.currentThread().isInterrupted() && socket != null && !socket.isClosed()) {
                     Message response = (Message) in.readObject();
                     LOGGER.debug("Received action: {}", response.getAction());
-                    controller.onServerResponse(response);
+                    listener.onServerResponse(response);
                 }
             } catch (java.net.SocketException se) {
                 if (se.getMessage() != null && se.getMessage().toLowerCase().contains("socket closed")) {

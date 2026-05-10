@@ -8,7 +8,7 @@ package com.auction.client.feature.auth;
  * - Kiểm tra mật khẩu xác nhận khớp với mật khẩu mới.
  *
  * Luồng chính:
- * 1. ResetPasswordCommand gọi validate(ResetPasswordForm).
+ * 1. AuthActionFacade.resetPassword gọi validate(ResetPasswordForm).
  * 2. Validator trả fail ở lỗi đầu tiên hoặc ok nếu có thể gửi request.
  *
  * Business rules:

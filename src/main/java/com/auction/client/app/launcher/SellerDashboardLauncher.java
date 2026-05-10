@@ -1,7 +1,7 @@
 package com.auction.client.app.launcher;
 
 import com.auction.client.feature.controllers.SellerController;
-import com.auction.server.service.AuctionService;
+import com.auction.client.service.AuctionService;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -40,7 +40,7 @@ public class SellerDashboardLauncher implements DashboardLauncher {
     @Override
     public void launch() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/seller-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/fxml/seller-view.fxml"));
             Parent root = loader.load();
 
             // Truyền AuctionService để form có thể gửi request tạo phiên lên server.

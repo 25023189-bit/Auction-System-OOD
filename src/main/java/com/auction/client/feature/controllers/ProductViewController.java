@@ -1,6 +1,6 @@
 package com.auction.client.feature.controllers;
 
-import com.auction.server.service.AuctionService;
+import com.auction.client.service.AuctionService;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

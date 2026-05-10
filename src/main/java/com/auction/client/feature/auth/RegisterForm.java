@@ -9,7 +9,7 @@ package com.auction.client.feature.auth;
  *
  * Luồng chính:
  * 1. AuctionController đọc các field đăng ký và tạo RegisterForm.
- * 2. RegisterFormValidator kiểm tra dữ liệu, RegisterCommand gửi dữ liệu hợp lệ lên server.
+ * 2. RegisterFormValidator kiểm tra dữ liệu, AuthActionFacade.register gửi dữ liệu hợp lệ lên server.
  *
  * Business rules:
  * - password và confirmPassword phải khớp ở bước validate.
@@ -17,7 +17,7 @@ package com.auction.client.feature.auth;
  *
  * Ghi chú kỹ thuật:
  * - Thread-safe: record immutable sau khi khởi tạo.
- * - Dependency: RegisterCommand và RegisterFormValidator.
+ * - Dependency: AuthActionFacade.register và RegisterFormValidator.
  */
 public record RegisterForm(
         String customerId,

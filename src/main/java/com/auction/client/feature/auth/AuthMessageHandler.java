@@ -6,8 +6,7 @@ import com.auction.common.role.RolePolicy;
 import com.auction.client.session.SessionStore;
 import com.auction.common.dto.Message;
 import com.auction.common.model.User;
-import com.auction.server.service.AuctionService;
-import com.auction.server.service.ClientConnection;
+import com.auction.client.service.AuctionService;
 import javafx.scene.control.Alert;
 
 /**
@@ -85,7 +84,6 @@ public class AuthMessageHandler implements MessageHandler {
 
         sessionStore.setCurrentUser(user);
         sessionStore.setCurrentUsername(user.getUsername());
-        ClientConnection.currentUser = user.getId();
         auctionService.setCurrentUser(user.getId());
 
         if (rolePolicy.isAdmin(user)) {

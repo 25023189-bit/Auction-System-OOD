@@ -2,7 +2,7 @@ package com.auction.client.feature.room;
 
 import com.auction.client.session.SessionStore;
 import com.auction.common.model.AuctionRoom;
-import com.auction.server.service.AuctionService;
+import com.auction.client.service.AuctionService;
 
 import java.time.LocalDateTime;
 
