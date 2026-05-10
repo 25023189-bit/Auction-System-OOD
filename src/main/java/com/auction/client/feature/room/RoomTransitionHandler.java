@@ -3,7 +3,7 @@ package com.auction.client.feature.room;
 import com.auction.client.feature.lobby.LobbyUserInfoBinder;
 import com.auction.client.core.navigation.SceneNavigator;
 import com.auction.client.session.SessionStore;
-import com.auction.server.service.AuctionService;
+import com.auction.client.service.AuctionService;
 
 /**
  * Handler điều phối việc rời phòng đấu giá và quay về lobby.

@@ -25,14 +25,14 @@ import java.util.List;
  *
  * Ghi chú kỹ thuật:
  * - Không thread-safe: FlowPane/Node JavaFX phải cập nhật trên JavaFX Application Thread.
- * - Dependency: FlowPane, AbstractAuctionCardFactory, LobbyRoomDisplayModel, VBox, Label.
+ * - Dependency: FlowPane, DefaultAuctionCardFactory, LobbyRoomDisplayModel, VBox, Label.
  */
 public class LobbyRoomListRenderer {
     private final FlowPane paneSelectAuction;
-    private final AbstractAuctionCardFactory<LobbyRoomDisplayModel, VBox> cardFactory;
+    private final DefaultAuctionCardFactory cardFactory;
 
     public LobbyRoomListRenderer(FlowPane paneSelectAuction,
-                                 AbstractAuctionCardFactory<LobbyRoomDisplayModel, VBox> cardFactory) {
+                                 DefaultAuctionCardFactory cardFactory) {
         this.paneSelectAuction = paneSelectAuction;
         this.cardFactory = cardFactory;
     }

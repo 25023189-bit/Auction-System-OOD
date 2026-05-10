@@ -5,11 +5,11 @@ package com.auction.client.feature.viewmodel;
  *
  * Vai trò:
  * - Lưu tạm input login, register và forgot/reset password.
- * - Làm lớp trung gian giữa FXML controls và các Command xác thực.
+ * - Làm lớp trung gian giữa FXML controls và AuthActionFacade xác thực.
  *
  * Luồng chính:
  * 1. AuctionController đọc text từ FXML controls vào AuthViewModel.
- * 2. Controller tạo LoginCommand/RegisterCommand/ResetPasswordCommand từ dữ liệu đã lưu.
+ * 2. Controller tạo AuthActionFacade.login/AuthActionFacade.register/AuthActionFacade.resetPassword từ dữ liệu đã lưu.
  *
  * Business rules:
  * - registerRole mặc định là BIDDER nếu UI chưa chọn giá trị khác.
@@ -17,7 +17,7 @@ package com.auction.client.feature.viewmodel;
  *
  * Ghi chú kỹ thuật:
  * - Không thread-safe: field mutable, dùng trong luồng UI.
- * - Dependency: các command và validator trong feature.auth.
+ * - Dependency: AuthActionFacade và validator trong feature.auth.
  */
 public class AuthViewModel {
     private String username = "";

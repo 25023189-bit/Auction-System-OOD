@@ -1,6 +1,6 @@
 package com.auction.client.feature.room;
 
-import com.auction.server.service.AuctionService;
+import com.auction.client.service.AuctionService;
 
 /**
  * Handler gửi yêu cầu đóng phiên đấu giá từ màn hình phòng.

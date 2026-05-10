@@ -9,7 +9,7 @@ package com.auction.client.feature.auth;
  *
  * Luồng chính:
  * 1. FormValidator tạo ValidationResult sau khi kiểm tra input.
- * 2. Command đọc isValid()/getMessage() để gửi request hoặc hiển thị lỗi.
+ * 2. AuthActionFacade đọc isValid()/getMessage() để gửi request hoặc hiển thị lỗi.
  *
  * Business rules:
  * - valid=false phải đi kèm message rõ ràng cho người dùng.
@@ -17,7 +17,7 @@ package com.auction.client.feature.auth;
  *
  * Ghi chú kỹ thuật:
  * - Thread-safe: immutable sau khi khởi tạo, các field đều final.
- * - Dependency: FormValidator và các command xác thực.
+ * - Dependency: FormValidator và AuthActionFacade xác thực.
  */
 public class ValidationResult {
     private final boolean valid;

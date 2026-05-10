@@ -1,6 +1,6 @@
 package com.auction.server.service;
 
-import com.auction.config.ConfigManager;
+import com.auction.server.config.ConfigManager;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;

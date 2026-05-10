@@ -2,7 +2,7 @@ package com.auction.client.app.launcher;
 
 import com.auction.client.feature.controllers.AdminController;
 import com.auction.client.session.SessionStore;
-import com.auction.server.service.AuctionService;
+import com.auction.client.service.AuctionService;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -43,7 +43,7 @@ public class AdminDashboardLauncher implements DashboardLauncher {
     @Override
     public void launch() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/admin-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/fxml/admin-view.fxml"));
             Parent root = loader.load();
 
             // Controller admin cần service để gửi lệnh và cần được lưu vào session để nhận phản hồi.

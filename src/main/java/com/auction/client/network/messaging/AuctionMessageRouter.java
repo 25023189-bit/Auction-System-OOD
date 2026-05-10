@@ -20,7 +20,7 @@ import java.util.List;
  * - Fallback handler được gọi khi không handler chính nào nhận message.
  *
  * Ghi chú kỹ thuật:
- * - Thread-safe một phần: danh sách handler không copy defensive, caller không nên mutate sau khi tạo.
+ * - Thread-safe một phần: danh sách handler được copy bất biến khi tạo router.
  * - Dependency: ResponseRouter, MessageHandler, Message, List.
  */
 public class AuctionMessageRouter implements ResponseRouter {
@@ -28,7 +28,7 @@ public class AuctionMessageRouter implements ResponseRouter {
     private final MessageHandler fallbackHandler;
 
     public AuctionMessageRouter(List<MessageHandler> handlers, MessageHandler fallbackHandler) {
-        this.handlers = handlers;
+        this.handlers = List.copyOf(handlers);
         this.fallbackHandler = fallbackHandler;
     }
 

@@ -4,7 +4,7 @@ import com.auction.client.feature.lobby.LobbyUserInfoBinder;
 import com.auction.client.session.SessionStore;
 import com.auction.common.dto.Message;
 import com.auction.common.model.User;
-import com.auction.server.service.AuctionService;
+import com.auction.client.service.AuctionService;
 
 /**
  * Fallback handler cập nhật số dư ví khi server gửi UPDATE_BALANCE.

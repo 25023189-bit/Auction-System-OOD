@@ -8,7 +8,7 @@ package com.auction.client.feature.auth;
  * - Áp dụng điều kiện organization bắt buộc cho seller.
  *
  * Luồng chính:
- * 1. RegisterCommand gọi validate(RegisterForm) khi user submit đăng ký.
+ * 1. AuthActionFacade.register gọi validate(RegisterForm) khi user submit đăng ký.
  * 2. Validator trả fail ở lỗi đầu tiên hoặc ok nếu form đủ điều kiện gửi server.
  *
  * Business rules:

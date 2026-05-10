@@ -11,11 +11,12 @@ import com.auction.client.core.navigation.WindowStateHandler;
 import com.auction.client.feature.auth.*;
 import com.auction.client.feature.lobby.*;
 import com.auction.client.feature.room.*;
-import com.auction.client.feature.viewmodel.AuctionRoomViewModel;
 import com.auction.client.feature.viewmodel.AuthViewModel;
 import com.auction.client.feature.viewmodel.LobbyRoomDisplayModel;
-import com.auction.client.feature.viewmodel.LobbyViewModel;
 import com.auction.client.network.messaging.*;
+import com.auction.client.network.socket.ClientConnection;
+import com.auction.client.network.socket.ServerMessageListener;
+import com.auction.client.service.AuctionService;
 import com.auction.client.session.*;
 import com.auction.client.shared.mapper.DisplayMapper;
 import com.auction.client.shared.mapper.RoomDisplayMapper;
@@ -26,7 +27,6 @@ import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.User;
 import com.auction.common.role.DefaultRolePolicy;
 import com.auction.common.role.RolePolicy;
-import com.auction.server.service.*;
 import javafx.fxml.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.*;
@@ -47,7 +47,7 @@ import java.util.ResourceBundle;
  *
  * Luồng chính:
  * 1. initialize() tạo socket/service, session, navigator, presenter, binder, timer, handler và router theo FXML hiện tại.
- * 2. Các action FXML tạo command/request tương ứng, gửi qua AuctionService và cập nhật UI khi onServerResponse() nhận Message.
+ * 2. Các action FXML tạo request/action tương ứng, gửi qua AuctionService và cập nhật UI khi onServerResponse() nhận Message.
  *
  * Business rules:
  * - Mỗi controller chỉ tạo kết nối socket một lần trong vòng đời của nó.
@@ -57,7 +57,7 @@ import java.util.ResourceBundle;
  * - Không thread-safe: control JavaFX phải cập nhật trên JavaFX Application Thread; response server được dispatch qua FxThreadExecutor.
  * - Dependency: AuctionService, ClientConnection, SessionStore, SceneNavigator, presenter/binder/handler client, JavaFX FXML controls, Message.
  */
-public class AuctionController implements Initializable {
+public class AuctionController implements Initializable, ServerMessageListener {
     private static final Logger LOGGER = LoggerFactory.getLogger(AuctionController.class);
 
     // ==========================================================
@@ -113,19 +113,17 @@ public class AuctionController implements Initializable {
     private StageLocator stageLocator;
     private UiResetService uiResetService;
     private FxThreadExecutor fxThreadExecutor;
+    private AuthActionFacade authActionFacade;
 
     // ==========================================================
     // VIEW MODELS
     // ==========================================================
     private AuthViewModel authViewModel;
-    private LobbyViewModel lobbyViewModel;
-    private AuctionRoomViewModel auctionRoomViewModel;
 
     // ==========================================================
     // PRESENTERS / BINDERS / RENDERERS
     // ==========================================================
     private AuthPresenter authPresenter;
-    private LobbyPresenter lobbyPresenter;
     private LobbyUserInfoBinder lobbyUserInfoBinder;
 
     private AuctionRoomPresenter auctionRoomPresenter;
@@ -151,7 +149,7 @@ public class AuctionController implements Initializable {
     private ResponseRouter responseRouter;
 
     // ==========================================================
-    // ACTION HANDLERS / COMMAND SIDE
+    // ACTION HANDLERS
     // ==========================================================
     private BidActionHandler bidActionHandler;
     private ChatActionHandler chatActionHandler;
@@ -214,8 +212,6 @@ public class AuctionController implements Initializable {
         if (fxThreadExecutor == null) fxThreadExecutor = new DefaultFxThreadExecutor();
 
         if (authViewModel == null) authViewModel = new AuthViewModel();
-        if (lobbyViewModel == null) lobbyViewModel = new LobbyViewModel();
-        if (auctionRoomViewModel == null) auctionRoomViewModel = new AuctionRoomViewModel();
 
         if (paneLogin != null || paneRegister != null || paneForgotPassword != null) {
             wireLoginView();
@@ -296,13 +292,13 @@ public class AuctionController implements Initializable {
     // Ghép màn hình đăng nhập với presenter và handler nhận phản hồi xác thực.
     private void wireLoginView() {
         authPresenter = new AuthPresenter(lblStatus, lblRegStatus, lblForgotStatus, txtUsername, txtPassword, txtForgotUsername, txtForgotNewPassword, txtForgotConfirm);
+        authActionFacade = new AuthActionFacade(auctionService, authPresenter);
         authMessageHandler = new AuthMessageHandler(authPresenter, sceneNavigator, sessionStore, rolePolicy, auctionService);
         rebuildRouter();
     }
 
     // Ghép màn hình lobby với renderer danh sách phòng và thông tin người dùng.
     private void wireLobbyView() {
-        lobbyPresenter = new LobbyPresenter(paneSelectAuction, new AuctionCardFactory(auctionService));
         lobbyUserInfoBinder = new LobbyUserInfoBinder(lblUsername, lblBalance, btnCreateAuction, rolePolicy);
         roomDisplayMapper = new RoomDisplayMapper();
         lobbyRoomListRenderer = new LobbyRoomListRenderer(paneSelectAuction, new DefaultAuctionCardFactory(auctionService));
@@ -389,15 +385,7 @@ public class AuctionController implements Initializable {
         LOGGER.debug("Read login form data from FXML. username={}, password={}",
                 authViewModel.getUsername(),
                 "*".repeat(authViewModel.getPassword().length()));
-        LOGGER.debug("Sending LoginCommand.");
-
-        new LoginCommand(
-                auctionService,
-                new LoginFormValidator(),
-                authPresenter,
-                authViewModel.getUsername(),
-                authViewModel.getPassword()
-        ).execute();
+        authActionFacade.login(authViewModel.getUsername(), authViewModel.getPassword());
     }
 
     @FXML
@@ -417,21 +405,16 @@ public class AuctionController implements Initializable {
         authViewModel.setRegisterRole(cbRegRole != null ? cbRegRole.getValue() : "BIDDER");
         authViewModel.setRegisterOrganization(txtRegOrganization != null ? txtRegOrganization.getText() : "");
 
-        new RegisterCommand(
-                auctionService,
-                new RegisterFormValidator(),
-                authPresenter,
-                new RegisterForm(
-                        customerId,
-                        authViewModel.getRegisterUsername(),
-                        email,
-                        fullName,
-                        authViewModel.getRegisterPassword(),
-                        authViewModel.getRegisterConfirmPassword(),
-                        authViewModel.getRegisterRole(),
-                        authViewModel.getRegisterOrganization()
-                )
-        ).execute();
+        authActionFacade.register(new RegisterForm(
+                customerId,
+                authViewModel.getRegisterUsername(),
+                email,
+                fullName,
+                authViewModel.getRegisterPassword(),
+                authViewModel.getRegisterConfirmPassword(),
+                authViewModel.getRegisterRole(),
+                authViewModel.getRegisterOrganization()
+        ));
     }
     @FXML
     private void handleSubmitForgotPassword() {
@@ -443,12 +426,11 @@ public class AuctionController implements Initializable {
         authViewModel.setForgotPassword(txtForgotNewPassword != null ? txtForgotNewPassword.getText() : "");
         authViewModel.setForgotConfirmPassword(txtForgotConfirm != null ? txtForgotConfirm.getText() : "");
 
-        new ResetPasswordCommand(
-                auctionService,
-                new ResetPasswordFormValidator(),
-                authPresenter,
-                new ResetPasswordForm(authViewModel.getForgotUsername(), authViewModel.getForgotPassword(), authViewModel.getForgotConfirmPassword())
-        ).execute();
+        authActionFacade.resetPassword(new ResetPasswordForm(
+                authViewModel.getForgotUsername(),
+                authViewModel.getForgotPassword(),
+                authViewModel.getForgotConfirmPassword()
+        ));
     }
 
     @FXML
@@ -535,7 +517,7 @@ public class AuctionController implements Initializable {
     }
 
     // ==========================================================
-    // OPTIONAL LEGACY BRIDGE
+    // CONNECTION STATUS
     // ==========================================================
     public void updateConnectionStatus(String status) {
         if (lblStatus != null) {
@@ -563,7 +545,6 @@ public class AuctionController implements Initializable {
     private void resetSessionState() {
         sessionStore.clearSession();
 
-        ClientConnection.currentUser = null;
         if (auctionService != null) {
             auctionService.setCurrentUser(null);
         }

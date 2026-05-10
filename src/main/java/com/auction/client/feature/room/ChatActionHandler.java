@@ -1,6 +1,6 @@
 package com.auction.client.feature.room;
 
-import com.auction.server.service.AuctionService;
+import com.auction.client.service.AuctionService;
 
 /**
  * ActionHandler xử lý gửi chat trong phòng đấu giá.

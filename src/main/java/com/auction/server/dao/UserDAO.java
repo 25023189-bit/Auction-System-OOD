@@ -169,8 +169,8 @@ public class UserDAO {
             try (PreparedStatement checkStmt = conn.prepareStatement(checkSql)) {
                 String customerId = normalizeCustomerId(user.getCustomerId() != null ? user.getCustomerId() : user.getId());
                 String username = user.getUsername() != null ? user.getUsername().trim() : null;
-                String email = user.getEmail() != null ? user.getEmail().trim() : "";
-                String fullName = user.getFullName() != null ? user.getFullName().trim() : "";
+                String email = normalizeEmail(user, customerId);
+                String fullName = normalizeFullName(user, username);
 
                 String role = normalizeRole(user.getRole());
 
@@ -350,6 +350,26 @@ public class UserDAO {
             return null;
         }
         return organization.trim();
+    }
+
+    private String normalizeEmail(User user, String customerId) {
+        String email = user != null ? user.getEmail() : null;
+        if (email != null && !email.trim().isEmpty()) {
+            return email.trim();
+        }
+
+        String safeCustomerId = customerId != null && !customerId.isBlank()
+                ? customerId.trim().toLowerCase()
+                : "user";
+        return safeCustomerId + "@auction.local";
+    }
+
+    private String normalizeFullName(User user, String username) {
+        String fullName = user != null ? user.getFullName() : null;
+        if (fullName != null && !fullName.trim().isEmpty()) {
+            return fullName.trim();
+        }
+        return username != null ? username.trim() : "";
     }
 
     public String generateNextCustomerId() {

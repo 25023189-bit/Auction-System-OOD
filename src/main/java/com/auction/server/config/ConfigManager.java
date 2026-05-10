@@ -1,4 +1,4 @@
-package com.auction.config;
+package com.auction.server.config;
 
 import java.io.IOException;
 import java.io.InputStream;

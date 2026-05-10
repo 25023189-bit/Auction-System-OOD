@@ -8,11 +8,11 @@ public record ResetPasswordForm(String username, String newPassword, String conf
  *
  * Vai trò:
  * - Gom username, newPassword và confirmPassword từ form quên mật khẩu.
- * - Là input cho ResetPasswordFormValidator và ResetPasswordCommand.
+ * - Là input cho ResetPasswordFormValidator và AuthActionFacade.resetPassword.
  *
  * Luồng chính:
  * 1. AuctionController tạo ResetPasswordForm từ các field forgot password.
- * 2. Validator kiểm tra dữ liệu, command gửi request nếu hợp lệ.
+ * 2. Validator kiểm tra dữ liệu, facade gửi request nếu hợp lệ.
  *
  * Business rules:
  * - newPassword và confirmPassword phải khớp ở bước validate.
@@ -20,6 +20,6 @@ public record ResetPasswordForm(String username, String newPassword, String conf
  *
  * Ghi chú kỹ thuật:
  * - Thread-safe: record immutable sau khi khởi tạo.
- * - Dependency: ResetPasswordCommand và ResetPasswordFormValidator.
+ * - Dependency: AuthActionFacade.resetPassword và ResetPasswordFormValidator.
  */
 

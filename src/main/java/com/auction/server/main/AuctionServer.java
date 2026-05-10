@@ -53,8 +53,9 @@ public class AuctionServer {
     // Thread pool giới hạn số client xử lý đồng thời thay vì tạo thread không kiểm soát.
     private static final ExecutorService CLIENT_POOL = Executors.newFixedThreadPool(100);
 
+    private static final int  port = 8080;
+
     public static void main(String[] args) {
-        int port = 8080;
 
         // Graceful shutdown: thông báo client và dừng các executor khi server tắt.
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {

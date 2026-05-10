@@ -11,7 +11,7 @@ public record LoginForm(String customerId, String password) {
  * - Là input cho LoginFormValidator.
  *
  * Luồng chính:
- * 1. LoginCommand tạo LoginForm từ text field/password field.
+ * 1. AuthActionFacade.login tạo LoginForm từ text field/password field.
  * 2. Validator đọc record component để kiểm tra dữ liệu bắt buộc.
  *
  * Business rules:
@@ -20,6 +20,6 @@ public record LoginForm(String customerId, String password) {
  *
  * Ghi chú kỹ thuật:
  * - Thread-safe: record immutable sau khi khởi tạo.
- * - Dependency: LoginCommand và LoginFormValidator.
+ * - Dependency: AuthActionFacade.login và LoginFormValidator.
  */
 

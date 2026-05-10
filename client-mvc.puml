@@ -1,0 +1,106 @@
+@startuml ClientMVC
+title Client MVC - JavaFX Presentation Layer
+
+top to bottom direction
+skinparam linetype ortho
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam nodesep 55
+skinparam ranksep 70
+hide members
+
+package "View\n(FXML Screens)" as View {
+  class LoginView <<FXML>>
+  class LobbyView <<FXML>>
+  class AuctionRoomView <<FXML>>
+  class ProductView <<FXML>>
+}
+
+package "Controller" as Controller {
+  class AuctionController
+  class AdminController
+  class SellerController
+  class ProductViewController
+}
+
+package "Presenter / Renderer" as Presenter {
+  class AuthPresenter
+  class LobbyUserInfoBinder
+  class LobbyRoomListRenderer
+  class DefaultAuctionCardFactory
+  class AuctionRoomPresenter
+  class AuctionRoomStateBinder
+}
+
+package "Client Model / Form Data" as ClientModel {
+  class AuthViewModel
+  class LoginForm
+  class RegisterForm
+  class ResetPasswordForm
+  class LobbyRoomDisplayModel
+}
+
+package "Client Service / Network" as Network {
+  class AuthActionFacade <<Facade>>
+  class AuctionService <<Facade>>
+  class ClientConnection
+  interface ServerMessageListener
+}
+
+package "Response Routing" as Routing {
+  interface ResponseRouter
+  class AuctionMessageRouter
+  interface MessageHandler
+  class AuthMessageHandler
+  class AdvancedLobbyMessageHandler
+  class AuctionRoomMessageHandler
+  class FallbackMessageHandler
+}
+
+package "Shared Contract" as Common {
+  class Message
+  class User
+  class AuctionRoom
+}
+
+View --> AuctionController : user events
+ProductView --> ProductViewController
+
+AuctionController --> AuthActionFacade
+AuctionController --> AuctionService
+AuctionController --> AuthPresenter
+AuctionController --> LobbyRoomListRenderer
+AuctionController --> LobbyUserInfoBinder
+AuctionController --> AuctionRoomPresenter
+AuctionController --> AuctionRoomStateBinder
+AuctionController --> ResponseRouter
+AuctionController ..|> ServerMessageListener
+
+AuthActionFacade --> LoginForm
+AuthActionFacade --> RegisterForm
+AuthActionFacade --> ResetPasswordForm
+AuthActionFacade --> AuctionService
+AuthActionFacade --> AuthPresenter
+
+AuctionService --> ClientConnection
+AuctionService ..> Message : creates request
+ClientConnection --> ServerMessageListener : callback
+
+ResponseRouter <|.. AuctionMessageRouter
+AuctionMessageRouter o-- MessageHandler
+MessageHandler <|.. AuthMessageHandler
+MessageHandler <|.. AdvancedLobbyMessageHandler
+MessageHandler <|.. AuctionRoomMessageHandler
+MessageHandler <|.. FallbackMessageHandler
+
+AdvancedLobbyMessageHandler --> LobbyRoomDisplayModel
+LobbyRoomListRenderer --> DefaultAuctionCardFactory
+DefaultAuctionCardFactory --> ProductViewController
+AuctionRoomStateBinder --> AuctionRoomPresenter
+AuthMessageHandler --> AuthPresenter
+
+AuthViewModel --> LoginForm
+AuthViewModel --> RegisterForm
+AuthViewModel --> ResetPasswordForm
+@enduml

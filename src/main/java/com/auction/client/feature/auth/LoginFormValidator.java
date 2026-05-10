@@ -8,7 +8,7 @@ package com.auction.client.feature.auth;
  * - Bảo đảm password không rỗng trước khi gửi request.
  *
  * Luồng chính:
- * 1. LoginCommand gọi validate(LoginForm) khi user submit.
+ * 1. AuthActionFacade.login gọi validate(LoginForm) khi user submit.
  * 2. Validator trả fail ở lỗi đầu tiên hoặc ok nếu đủ dữ liệu.
  *
  * Business rules:

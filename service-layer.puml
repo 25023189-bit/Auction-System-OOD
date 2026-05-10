@@ -1,127 +1,78 @@
-﻿@startuml ServiceLayer
-title Service Layer - Business Rules and Runtime Auction State
+@startuml ServiceLayer
+title Server Service and DAO Layer
 
 top to bottom direction
 skinparam linetype ortho
 skinparam shadowing false
 skinparam classAttributeIconSize 0
 skinparam packageStyle rectangle
-skinparam nodesep 60
-skinparam ranksep 75
-hide empty members
+skinparam nodesep 55
+skinparam ranksep 70
+hide members
 
-package "Service Contracts / Runtime State" as ServiceContracts {
-  class ClientConnection {
-    +send(message: Message): void
-  }
-  class AuctionRuntimeState {
-    -totalExtendedSeconds: long
-    -entryLocked: boolean
-    -participants: Set<String>
-    +extendBySeconds(seconds: long): void
-    +lockEntry(time: LocalDateTime): void
-    +addParticipant(userId: String): void
-  }
-  class AuctionStateManager {
-    -STATES: ConcurrentHashMap<String, AuctionRuntimeState>
-    +getState(roomId: String): AuctionRuntimeState
-    +removeState(roomId: String): void
-  }
+package "Business Services" as Business {
+  class AuthService
+  class AuctionRoomService
+  class ProductDetailService
+  class PendingAuctionApprovalService
+  class ForgotPasswordService
 }
 
-package "Business Services" as BusinessServices {
-  class AuthService {
-    +login(username: String, password: String): Message
-    +registerUser(user: User, rawPassword: String): Message
-    +resetPassword(username: String, password: String): Message
-  }
-  class AuctionRoomService {
-    -FINAL_WINDOW_SECONDS: long
-    +joinRoom(roomId: String, userId: String): Message
-    +placeNewBid(roomId: String, userId: String, amount: double): Message
-    +finalizeExpiredAuctionIfNeeded(roomId: String): boolean
-    -validate...(): Message
-    -finalizeAuction(roomId: String)
-  }
-  class PendingAuctionApprovalService {
-    -pendingRequests: Map<String, PendingAuctionRequest>
-    +submit(request: PendingAuctionRequest): void
-    +approve(requestId: String): PendingAuctionRequest
-    +reject(requestId: String): boolean
-  }
-  class ProductDetailService {
-    +getProductDetails(roomId: String): ProductDetailResponse
-  }
-  class ForgotPasswordService {
-    +processForgotPassword(username: String): String
-    +verifyOTPAndGetTemporaryPassword(tokenId: String, otp: String): String
-    +validateAndUpdatePassword(...): String
-  }
+package "Runtime State" as Runtime {
+  class AuctionStateManager
+  class AuctionRuntimeState
 }
 
-package "Validation / Support Services" as SupportServices {
-  class AuctionCreationValidator {
-    -errorMessage: String
-    +validateAuction(...): boolean
-    +getErrorMessage(): String
-  }
-  class PasswordStrengthValidator {
-    +isStrong(password: String): boolean
-    +getLastError(): String
-  }
-  class PasswordResetTokenGenerator {
-    +generateToken(): String
-  }
-  class RateLimiter {
-    +isAllowed(key: String): boolean
-  }
-  class EmailService {
-    +sendOtp(email: String, otp: String): boolean
-  }
-  class AuditLogger {
-    +log(action: String): void
-  }
+package "Validation / Support" as Support {
+  class AuctionCreationValidator
+  class PasswordStrengthValidator
+  class PasswordResetTokenGenerator
+  class RateLimiter
+  class EmailService
 }
 
 package "DAO Layer" as DAO {
   class UserDAO
   class AuctionDAO
   class BidDAO
+  class ItemDAO
   class TransactionDAO
 }
 
-package "Model / DTO Layer" as ModelDTO {
+package "Domain / DTO" as Common {
   class Message
   class User
   class AuctionRoom
   class PendingAuctionRequest
-  class BidTransaction
   class ProductDetailResponse
 }
 
-AuctionStateManager o-- AuctionRuntimeState : states
-AuctionRoomService ..> AuctionStateManager
-AuctionRoomService ..> AuctionRuntimeState
+database "MySQL" as MySQL
 
-AuthService ..> UserDAO
-AuthService ..> PasswordStrengthValidator
+AuthService --> UserDAO
+AuthService --> PasswordStrengthValidator
 AuthService ..> Message
-AuctionRoomService ..> AuctionDAO
-AuctionRoomService ..> BidDAO
-AuctionRoomService ..> UserDAO
-AuctionRoomService ..> Message
-PendingAuctionApprovalService o-- PendingAuctionRequest
-ProductDetailService ..> AuctionDAO
-ProductDetailService ..> TransactionDAO
+
+AuctionRoomService --> AuctionDAO
+AuctionRoomService --> BidDAO
+AuctionRoomService --> UserDAO
+AuctionRoomService --> AuctionStateManager
+AuctionStateManager o-- AuctionRuntimeState
+
+ProductDetailService --> AuctionDAO
+ProductDetailService --> TransactionDAO
 ProductDetailService ..> ProductDetailResponse
-ForgotPasswordService ..> UserDAO
-ForgotPasswordService ..> EmailService
-ForgotPasswordService ..> RateLimiter
-ForgotPasswordService ..> PasswordResetTokenGenerator
 
-AuctionCreationValidator ..> PendingAuctionRequest
-DAO ..> ModelDTO
-BusinessServices ..> ModelDTO
+PendingAuctionApprovalService o-- PendingAuctionRequest
+PendingAuctionApprovalService --> AuctionCreationValidator
+
+ForgotPasswordService --> UserDAO
+ForgotPasswordService --> EmailService
+ForgotPasswordService --> RateLimiter
+ForgotPasswordService --> PasswordResetTokenGenerator
+
+UserDAO ..> User
+AuctionDAO ..> AuctionRoom
+DAO --> MySQL
+Business ..> Common
 @enduml
-
-
