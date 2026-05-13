@@ -35,15 +35,18 @@ import java.time.LocalDateTime;
 public class AuctionRoomService {
     private static final long FINAL_WINDOW_SECONDS = 30L;
 
+    // Rút các DAO lên đây làm biến instance để Mockito có thể Inject (tráo đổi) dễ dàng
+    private AuctionDAO auctionDAO = new AuctionDAO();
+    private UserDAO userDAO = new UserDAO();
+    private BidDAO bidDAO = new BidDAO();
+
     public Message joinRoom(String roomId, String userId) {
-        AuctionDAO auctionDAO = new AuctionDAO();
         AuctionRoom room = auctionDAO.getAuctionById(roomId);
 
         if (room == null) {
             return fail("ROOM_FAIL", "Room not found or the auction has ended.");
         }
 
-        UserDAO userDAO = new UserDAO();
         User user = userDAO.getUserById(userId);
         if (user == null) {
             return fail("ROOM_FAIL", "User not found.");
@@ -89,7 +92,6 @@ public class AuctionRoomService {
     }
 
     public Message placeNewBid(String roomId, String userId, double amount) {
-        UserDAO userDAO = new UserDAO();
         User user = userDAO.getUserById(userId);
 
         if (user == null) {
@@ -100,7 +102,6 @@ public class AuctionRoomService {
             return fail("BID_FAIL", "Only bidders can place bids.");
         }
 
-        AuctionDAO auctionDAO = new AuctionDAO();
         AuctionRoom room = auctionDAO.getAuctionById(roomId);
 
         if (room == null) {
@@ -133,7 +134,6 @@ public class AuctionRoomService {
                 return fail("BID_FAIL", "You are not in the valid participant list for this auction.");
             }
 
-            BidDAO bidDAO = new BidDAO();
             // DAO xử lý transaction: clear highest cũ, insert bid mới, update current price.
             BidResult bidResult = bidDAO.placeBid(roomId, userId, amount);
             if (!bidResult.isSuccess()) {
@@ -166,7 +166,6 @@ public class AuctionRoomService {
     }
 
     public boolean finalizeExpiredAuctionIfNeeded(String roomId) {
-        AuctionDAO auctionDAO = new AuctionDAO();
         AuctionRoom room = auctionDAO.getAuctionById(roomId);
         if (room == null) {
             return false;
@@ -253,7 +252,6 @@ public class AuctionRoomService {
 
     // Kết thúc phiên: cập nhật DB, dọn runtime state, báo client và refresh lobby.
     private CloseAuctionResult finalizeAuction(String roomId) {
-        AuctionDAO auctionDAO = new AuctionDAO();
         CloseAuctionResult result = auctionDAO.closeAuctionByTime(roomId);
 
         AuctionStateManager.removeState(roomId);
@@ -283,7 +281,6 @@ public class AuctionRoomService {
     }
 
     private void broadcastRoomList() {
-        AuctionDAO auctionDAO = new AuctionDAO();
         AuctionServer.broadcast(new Message("ROOM_LIST", "SERVER", auctionDAO.getAllActiveAuctions()));
     }
 

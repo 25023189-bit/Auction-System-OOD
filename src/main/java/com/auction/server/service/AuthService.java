@@ -29,8 +29,8 @@ import org.slf4j.LoggerFactory;
 public class AuthService {
     private static final Logger LOGGER = LoggerFactory.getLogger(AuthService.class);
 
-    private final UserDAO userDAO = new UserDAO();
-    private final AuctionDAO auctionDAO = new AuctionDAO();
+    private UserDAO userDAO = new UserDAO();
+    private AuctionDAO auctionDAO = new AuctionDAO();
 
     public Message login(String loginId, String password) {
         LOGGER.info("Login request. loginId={}", loginId);
