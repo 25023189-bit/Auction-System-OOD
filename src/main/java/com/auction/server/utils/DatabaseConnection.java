@@ -77,7 +77,7 @@ public final class DatabaseConnection {
         try {
             return DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
-            throw new SQLException(buildHelpfulConnectionError(url, user, driver), e);
+            throw new SQLException(buildHelpfulConnectionError(url, user, driver, e), e);
         }
     }
 
@@ -127,10 +127,52 @@ public final class DatabaseConnection {
     }
 
     // Tạo lỗi có ngữ cảnh để dễ chẩn đoán sai cấu hình DB.
-    private static String buildHelpfulConnectionError(String url, String user, String driver) {
-        return "Database connection failed. Check that MySQL is running, database 'auction_system' exists, " +
-                "and the connection configuration is correct. " +
-                "[url=" + safe(url) + ", user=" + safe(user) + ", driver=" + safe(driver) + "]";
+    private static String buildHelpfulConnectionError(String url, String user, String driver, SQLException cause) {
+        String databaseName = extractDatabaseName(url);
+        StringBuilder message = new StringBuilder("Database connection failed. Check that MySQL is running, ");
+        if (databaseName == null) {
+            message.append("the configured database exists, ");
+        } else {
+            message.append("database '").append(databaseName).append("' exists, ");
+        }
+        message.append("and the connection configuration is correct.");
+
+        String causeMessage = cause.getMessage();
+        if (causeMessage != null && !causeMessage.trim().isEmpty()) {
+            message.append(" MySQL said: ").append(causeMessage.trim());
+        }
+
+        message.append(" [url=").append(safe(url))
+                .append(", user=").append(safe(user))
+                .append(", driver=").append(safe(driver))
+                .append("]");
+        return message.toString();
+    }
+
+    private static String extractDatabaseName(String url) {
+        if (url == null || url.trim().isEmpty()) {
+            return null;
+        }
+
+        int hostStart = url.indexOf("//");
+        int databaseStart = hostStart >= 0 ? url.indexOf('/', hostStart + 2) : url.indexOf('/');
+        if (databaseStart < 0 || databaseStart + 1 >= url.length()) {
+            return null;
+        }
+
+        int databaseEnd = url.length();
+        int queryStart = url.indexOf('?', databaseStart + 1);
+        if (queryStart >= 0) {
+            databaseEnd = Math.min(databaseEnd, queryStart);
+        }
+
+        int attributesStart = url.indexOf(';', databaseStart + 1);
+        if (attributesStart >= 0) {
+            databaseEnd = Math.min(databaseEnd, attributesStart);
+        }
+
+        String databaseName = url.substring(databaseStart + 1, databaseEnd).trim();
+        return databaseName.isEmpty() ? null : databaseName;
     }
 
     private static String safe(String value) {

@@ -154,7 +154,7 @@ public class AuctionServer {
         AUCTION_WATCHER.scheduleAtFixedRate(() -> {
             try {
                 // Mỗi giây quét các phiên đang mở để đóng những phiên đã hết thời gian.
-                List<AuctionRoom> activeRooms = auctionDAO.getAllActiveAuctions();
+                List<AuctionRoom> activeRooms = auctionDAO.getAllOpenOrRunningAuctions();
                 for (AuctionRoom room : activeRooms) {
                     if (room != null && room.getRoomId() != null) {
                         roomService.finalizeExpiredAuctionIfNeeded(room.getRoomId());

@@ -3,7 +3,7 @@ package com.auction.client.feature.controllers;
 import com.auction.client.app.launcher.AdminDashboardLauncher;
 import com.auction.client.app.launcher.DashboardLauncher;
 import com.auction.client.app.launcher.SellerDashboardLauncher;
-import com.auction.client.chatbot.ChatbotController;
+import com.auction.client.AI.chatbot.ChatbotController;
 import com.auction.client.core.navigation.DefaultWindowStateHandler;
 import com.auction.client.core.navigation.FxSceneNavigator;
 import com.auction.client.core.navigation.SceneNavigator;
@@ -11,8 +11,11 @@ import com.auction.client.core.navigation.WindowStateHandler;
 import com.auction.client.feature.auth.*;
 import com.auction.client.feature.lobby.*;
 import com.auction.client.feature.room.*;
-import com.auction.client.feature.viewmodel.AuthViewModel;
-import com.auction.client.feature.viewmodel.LobbyRoomDisplayModel;
+import com.auction.client.feature.controllers.viewmodel.AuthViewModel;
+import com.auction.client.feature.controllers.viewmodel.LobbyRoomDisplayModel;
+import com.auction.client.network.dispatcher.AuctionMessageDispatcher;
+import com.auction.client.network.dispatcher.MessageRouteResult;
+import com.auction.client.network.dispatcher.ResponseDispatcher;
 import com.auction.client.network.messaging.*;
 import com.auction.client.network.socket.ClientConnection;
 import com.auction.client.network.socket.ServerMessageListener;
@@ -43,7 +46,7 @@ import java.util.ResourceBundle;
  *
  * Vai trò:
  * - Kết nối các màn hình login, register, lobby và phòng đấu giá với service, session, presenter và handler.
- * - Nhận response từ server rồi điều phối qua ResponseRouter hoặc callback chi tiết sản phẩm.
+ * - Nhận response từ server, route qua ResponseRouter rồi dispatch tới MessageHandler phù hợp.
  *
  * Luồng chính:
  * 1. initialize() tạo socket/service, session, navigator, presenter, binder, timer, handler và router theo FXML hiện tại.
@@ -147,6 +150,8 @@ public class AuctionController implements Initializable, ServerMessageListener {
 
     // Router gom các handler chính và fallback để tách xử lý từng loại Message.
     private ResponseRouter responseRouter;
+    // Dispatcher thực thi handler do router chọn.
+    private ResponseDispatcher responseDispatcher;
 
     // ==========================================================
     // ACTION HANDLERS
@@ -366,6 +371,9 @@ public class AuctionController implements Initializable, ServerMessageListener {
                 primaryHandlers,
                 new FallbackMessageHandler(fallbackHandlers)
         );
+        if (responseDispatcher == null) {
+            responseDispatcher = new AuctionMessageDispatcher();
+        }
     }
 
     // ==========================================================
@@ -513,7 +521,10 @@ public class AuctionController implements Initializable, ServerMessageListener {
         }
 
         // Các tin nhắn còn lại luôn chạy trên JavaFX thread trước khi cập nhật UI.
-        fxThreadExecutor.execute(() -> responseRouter.route(msg));
+        fxThreadExecutor.execute(() -> {
+            MessageRouteResult routeResult = responseRouter.route(msg);
+            responseDispatcher.dispatch(routeResult);
+        });
     }
 
     // ==========================================================

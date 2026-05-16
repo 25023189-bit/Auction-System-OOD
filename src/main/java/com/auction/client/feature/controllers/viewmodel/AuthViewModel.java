@@ -1,4 +1,4 @@
-package com.auction.client.feature.viewmodel;
+package com.auction.client.feature.controllers.viewmodel;
 
 /**
  * ViewModel giữ dữ liệu người dùng đang nhập trên các form xác thực.

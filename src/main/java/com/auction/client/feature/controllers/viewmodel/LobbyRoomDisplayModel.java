@@ -1,4 +1,4 @@
-package com.auction.client.feature.viewmodel;
+package com.auction.client.feature.controllers.viewmodel;
 
 /**
  * Model hiển thị cho một card phòng trong lobby.

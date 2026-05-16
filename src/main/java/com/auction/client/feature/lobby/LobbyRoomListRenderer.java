@@ -1,6 +1,6 @@
 package com.auction.client.feature.lobby;
 
-import com.auction.client.feature.viewmodel.LobbyRoomDisplayModel;
+import com.auction.client.feature.controllers.viewmodel.LobbyRoomDisplayModel;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;

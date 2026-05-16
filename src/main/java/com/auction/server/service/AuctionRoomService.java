@@ -9,6 +9,8 @@ import com.auction.server.dao.BidDAO;
 import com.auction.server.dao.BidDAO.BidResult;
 import com.auction.server.dao.UserDAO;
 import com.auction.server.main.AuctionServer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -33,6 +35,7 @@ import java.time.LocalDateTime;
  * - Dependency: AuctionDAO, BidDAO, UserDAO, AuctionStateManager, AuctionServer, Message.
  */
 public class AuctionRoomService {
+    private static final Logger LOGGER = LoggerFactory.getLogger(AuctionRoomService.class);
     private static final long FINAL_WINDOW_SECONDS = 30L;
 
     public Message joinRoom(String roomId, String userId) {
@@ -255,6 +258,17 @@ public class AuctionRoomService {
     private CloseAuctionResult finalizeAuction(String roomId) {
         AuctionDAO auctionDAO = new AuctionDAO();
         CloseAuctionResult result = auctionDAO.closeAuctionByTime(roomId);
+
+        if (result == null || !result.isSuccess()) {
+            LOGGER.warn(
+                    "Auction {} reached its end time but could not be finalized: {}",
+                    roomId,
+                    result != null ? result.getMessage() : "Unknown finalization error."
+            );
+            return result != null
+                    ? result
+                    : CloseAuctionResult.fail("Unable to finalize auction.");
+        }
 
         AuctionStateManager.removeState(roomId);
         broadcastBalancesAfterTimeout(result);

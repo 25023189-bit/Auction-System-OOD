@@ -1,4 +1,4 @@
-package com.auction.client.chatbot;
+package com.auction.client.AI.chatbot;
 
 import javafx.application.Platform;
 import javafx.concurrent.Task;

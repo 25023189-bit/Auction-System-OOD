@@ -1,27 +1,28 @@
 package com.auction.client.network.messaging;
 
+import com.auction.client.network.dispatcher.MessageRouteResult;
 import com.auction.common.dto.Message;
 
 import java.util.List;
 
 /**
- * Router phân phối Message server tới handler phù hợp.
+ * Router chọn MessageHandler phù hợp cho phản hồi từ server.
  *
  * Vai trò:
  * - Duyệt danh sách handler chính theo thứ tự ưu tiên.
- * - Chuyển message không có handler chính sang fallback handler.
+ * - Chọn fallback handler khi không có handler chính nhận action.
  *
  * Luồng chính:
  * 1. AuctionController.onServerResponse() gọi route(message).
- * 2. Router tìm handler đầu tiên supports(action), gọi handle(), hoặc chuyển sang fallback.
+ * 2. Router tìm handler đầu tiên supports(action) và trả MessageRouteResult cho dispatcher.
  *
  * Business rules:
  * - Thứ tự handler quyết định nơi xử lý khi nhiều handler cùng supports một action.
- * - Fallback handler được gọi khi không handler chính nào nhận message.
+ * - Fallback handler là đích đến khi không handler chính nào nhận message.
  *
  * Ghi chú kỹ thuật:
  * - Thread-safe một phần: danh sách handler được copy bất biến khi tạo router.
- * - Dependency: ResponseRouter, MessageHandler, Message, List.
+ * - Dependency: ResponseRouter, MessageHandler, MessageRouteResult, Message, List.
  */
 public class AuctionMessageRouter implements ResponseRouter {
     private final List<MessageHandler> handlers;
@@ -33,17 +34,18 @@ public class AuctionMessageRouter implements ResponseRouter {
     }
 
     @Override
-    public void route(Message message) {
-        // Ưu tiên handler theo màn hình hiện tại trước khi chuyển sang fallback.
+    public MessageRouteResult route(Message message) {
+        // Ưu tiên handler theo màn hình hiện tại trước khi chọn fallback.
         for (MessageHandler handler : handlers) {
             if (handler.supports(message.getAction())) {
-                handler.handle(message);
-                return;
+                return MessageRouteResult.matched(handler, message);
             }
         }
 
         if (fallbackHandler != null) {
-            fallbackHandler.handle(message);
+            return MessageRouteResult.matched(fallbackHandler, message);
         }
+
+        return MessageRouteResult.unmatched(message);
     }
 }

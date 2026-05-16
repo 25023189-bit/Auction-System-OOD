@@ -1,6 +1,6 @@
 package com.auction.client.feature.lobby;
 
-import com.auction.client.feature.viewmodel.LobbyRoomDisplayModel;
+import com.auction.client.feature.controllers.viewmodel.LobbyRoomDisplayModel;
 import com.auction.client.service.AuctionService;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;

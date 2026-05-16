@@ -177,7 +177,6 @@ public class SellerController {
             int duration = Integer.parseInt(safeText(txtDuration));
             int extensionSeconds = safeText(txtExtensionSeconds).isEmpty() ? 60 : Integer.parseInt(safeText(txtExtensionSeconds));
 
-            // CHỐT CHẶN CUỐI CÙNG
             if (minimumJoinAmount >= 0.75 * startingPrice) {
                 showError("Cannot create: Minimum join amount must be < 75% of starting price.");
                 return;

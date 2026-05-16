@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<StackPane fx:id="chatbotRoot" prefHeight="520.0" prefWidth="360.0" pickOnBounds="false" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.chatbot.ChatbotController">
+<StackPane fx:id="chatbotRoot" prefHeight="520.0" prefWidth="360.0" pickOnBounds="false" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.AI.chatbot.ChatbotController">
     <children>
         <VBox fx:id="chatbotPanel" alignment="TOP_CENTER" disable="true" managed="false" maxHeight="460.0" maxWidth="340.0" mouseTransparent="true" spacing="0" styleClass="chatbot-panel" visible="false" StackPane.alignment="BOTTOM_RIGHT">
             <children>

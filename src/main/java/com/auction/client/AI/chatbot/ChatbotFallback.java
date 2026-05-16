@@ -1,4 +1,4 @@
-package com.auction.client.chatbot;
+package com.auction.client.AI.chatbot;
 
 /**
  * Hằng số phản hồi dự phòng cho chatbot.

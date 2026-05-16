@@ -153,7 +153,34 @@ public class AuctionDAO {
 
     public List<AuctionRoom> getAllActiveAuctions() {
         List<AuctionRoom> list = new ArrayList<>();
-        // Cập nhật JOIN bảng products và alias cột
+        // Lobby chỉ hiển thị phiên còn mở/chạy và chưa quá thời điểm kết thúc.
+        String sql = """
+                SELECT a.auction_id, a.product_id, a.created_by AS seller_id, a.status,
+                       a.start_time, a.end_time, a.actual_end_time, a.min_bid_increment,
+                       p.product_name, p.description, p.current_price, p.starting_price
+                FROM auctions a
+                JOIN products p ON a.product_id = p.product_id
+                WHERE a.status IN ('OPEN', 'RUNNING')
+                  AND COALESCE(a.actual_end_time, a.end_time) > NOW(3)
+                ORDER BY a.start_time ASC
+                """;
+
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
+
+            while (rs.next()) {
+                list.add(mapAuctionRoom(rs));
+            }
+        } catch (SQLException e) {
+            LOGGER.error("Failed to load active auctions.", e);
+        }
+        return list;
+    }
+
+    public List<AuctionRoom> getAllOpenOrRunningAuctions() {
+        List<AuctionRoom> list = new ArrayList<>();
+        // Watcher cần thấy cả các phiên quá giờ để còn chốt trạng thái trong DB.
         String sql = """
                 SELECT a.auction_id, a.product_id, a.created_by AS seller_id, a.status,
                        a.start_time, a.end_time, a.actual_end_time, a.min_bid_increment,
@@ -172,7 +199,7 @@ public class AuctionDAO {
                 list.add(mapAuctionRoom(rs));
             }
         } catch (SQLException e) {
-            LOGGER.error("Failed to load active auctions.", e);
+            LOGGER.error("Failed to load open or running auctions.", e);
         }
         return list;
     }
@@ -316,22 +343,22 @@ public class AuctionDAO {
                 WHERE auction_id = ?
                 """;
 
-        // Wallet winner bị trừ và wallet seller được cộng trong cùng transaction.
+        // BidDAO và UI dùng users.balance, nên chốt phiên cũng cập nhật cùng nguồn số dư.
         String debitWinnerSql = """
-                UPDATE wallets
+                UPDATE users
                 SET balance = balance - ?
                 WHERE customer_id = ? AND balance >= ?
                 """;
 
         String creditSellerSql = """
-                UPDATE wallets
+                UPDATE users
                 SET balance = balance + ?
                 WHERE customer_id = ?
                 """;
 
         String selectBalancesSql = """
                 SELECT customer_id, balance
-                FROM wallets
+                FROM users
                 WHERE customer_id IN (?, ?)
                 """;
 
@@ -463,6 +490,9 @@ public class AuctionDAO {
         }
 
         Timestamp endTs = rs.getTimestamp("actual_end_time");
+        if (endTs == null) {
+            endTs = rs.getTimestamp("end_time");
+        }
         if (endTs != null) {
             room.setEndTime(endTs.toLocalDateTime());
         }
