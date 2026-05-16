@@ -5,7 +5,7 @@ import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.User;
 import com.auction.server.dao.AuctionDAO;
 import com.auction.server.dao.BidDAO;
-import com.auction.server.dao.BidDAO.BidResult;
+import com.auction.server.dao.IBidDAO;
 import com.auction.server.dao.UserDAO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -19,7 +19,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.time.LocalDateTime;
 import java.util.Collections;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -153,7 +154,7 @@ class AuctionRoomServiceTest {
         when(mockState.hasParticipant("U001")).thenReturn(true);
 
         // Làm giả kết quả đặt giá thành công từ DB
-        BidResult mockBidResult = mock(BidResult.class);
+        IBidDAO.BidResult mockBidResult = mock(IBidDAO.BidResult.class);
         when(mockBidResult.isSuccess()).thenReturn(true);
         when(mockBidDAO.placeBid("R001", "U001", 1500.0)).thenReturn(mockBidResult);
 

@@ -34,9 +34,10 @@ import java.util.List;
  * - Không thread-safe theo instance, nhưng mỗi method dùng connection local nên có thể gọi đồng thời nếu DB chịu tải.
  * - Dependency: DatabaseConnection, AuctionRoom, Item, JDBC, SLF4J.
  */
-public class AuctionDAO {
+public class AuctionDAO implements IAuctionDAO {
     private static final Logger LOGGER = LoggerFactory.getLogger(AuctionDAO.class);
 
+    @Override
     public boolean saveAuction(AuctionRoom room, String itemId, String sellerId) {
         // Cập nhật theo Schema V4.3: dùng product_id, created_by, end_time, min_bid_increment
         String sql = """
@@ -67,6 +68,7 @@ public class AuctionDAO {
         }
     }
 
+    @Override
     public boolean createAuctionWithItem(AuctionRoom room, Item item, String sellerId) {
         // Cập nhật bảng products chuẩn theo DB Version 4.2
         String insertItemSql = """
@@ -125,6 +127,7 @@ public class AuctionDAO {
         }
     }
 
+    @Override
     public String generateNextAuctionId() {
         String sql = """
                 SELECT auction_id
@@ -151,6 +154,7 @@ public class AuctionDAO {
         }
     }
 
+    @Override
     public List<AuctionRoom> getAllActiveAuctions() {
         List<AuctionRoom> list = new ArrayList<>();
         // Cập nhật JOIN bảng products và alias cột
@@ -177,6 +181,7 @@ public class AuctionDAO {
         return list;
     }
 
+    @Override
     public List<AuctionRoom> getAllAuctions() {
         List<AuctionRoom> list = new ArrayList<>();
         String sql = """
@@ -201,6 +206,7 @@ public class AuctionDAO {
         return list;
     }
 
+    @Override
     public boolean forceDeleteAuction(String roomId) {
         String sql = "UPDATE auctions SET status = 'CANCELED' WHERE auction_id = ?"; // Đổi CANCELED_BY_ADMIN thành CANCELED theo ENUM
         try (Connection conn = DatabaseConnection.getConnection();
@@ -213,6 +219,7 @@ public class AuctionDAO {
         }
     }
 
+    @Override
     public AuctionRoom getAuctionById(String roomId) {
         String sql = """
                 SELECT a.auction_id, a.product_id, a.created_by AS seller_id, a.status,
@@ -239,6 +246,7 @@ public class AuctionDAO {
         return null;
     }
 
+    @Override
     public SellerAuctionStats getSellerAuctionStats(String sellerId) {
         // Thống kê dùng để đánh giá seller khi tạo phiên mới.
         String sql = """
@@ -270,6 +278,7 @@ public class AuctionDAO {
         return new SellerAuctionStats(0, 0, 0);
     }
 
+    @Override
     public boolean closeAuctionBySeller(String roomId, String sellerId) {
         // Seller chỉ được đóng phiên do chính mình tạo và phiên vẫn đang mở/chạy.
         String sql = """
@@ -290,6 +299,7 @@ public class AuctionDAO {
         }
     }
 
+    @Override
     public CloseAuctionResult closeAuctionByTime(String roomId) {
         // Chốt phiên hết giờ trong transaction: khóa auction, tìm bid cao nhất, chuyển tiền và cập nhật status.
         String auctionSql = """
@@ -438,168 +448,4 @@ public class AuctionDAO {
         }
     }
 
-    // Map ResultSet từ JOIN auctions/products sang AuctionRoom dùng chung cho client.
-    private AuctionRoom mapAuctionRoom(ResultSet rs) throws SQLException {
-        AuctionRoom room = new AuctionRoom();
-
-        room.setRoomId(rs.getString("auction_id"));
-        room.setItemId(String.valueOf(rs.getInt("product_id")));
-        room.setSellerName(rs.getString("seller_id"));
-        room.setStatus(rs.getString("status"));
-        room.setItemName(rs.getString("product_name"));
-        room.setItemDescription(rs.getString("description"));
-        room.setCurrentPrice(rs.getDouble("current_price"));
-        room.setStartingPrice(rs.getDouble("starting_price"));
-        room.setBidStep(rs.getDouble("min_bid_increment"));
-
-        // Cột không tồn tại ở DB nữa, set mặc định để logic phía trên không vỡ
-        room.setMinimumJoinAmount(0.0);
-        room.setDurationMinutes(0);
-        room.setExtensionSeconds(0);
-
-        Timestamp startTs = rs.getTimestamp("start_time");
-        if (startTs != null) {
-            room.setStartTime(startTs.toLocalDateTime());
-        }
-
-        Timestamp endTs = rs.getTimestamp("actual_end_time");
-        if (endTs != null) {
-            room.setEndTime(endTs.toLocalDateTime());
-        }
-
-        applySellerStats(room);
-
-        return room;
-    }
-
-    // Gắn thống kê seller vào room để client/admin có dữ liệu đánh giá.
-    private void applySellerStats(AuctionRoom room) {
-        if (room == null || room.getSellerName() == null || room.getSellerName().isBlank()) {
-            return;
-        }
-
-        SellerAuctionStats stats = getSellerAuctionStats(room.getSellerName());
-        room.setSellerReputation(5.0);
-        room.setSellerSuccessfulAuctionRate(stats.getSuccessfulAuctionRate());
-        room.setSellerAdminCancellationRate(stats.getAdminCancellationRate());
-    }
-
-    /**
-     * Giá trị kết quả trả về sau khi chốt phiên đấu giá.
-     *
-     * Vai trò:
-     * - Mang trạng thái cuối cùng của phiên sau khi closeAuctionByTime() xử lý.
-     * - Cung cấp dữ liệu số dư winner/seller để service broadcast lại cho client.
-     *
-     * Luồng chính:
-     * 1. AuctionDAO tạo instance thông qua factory sold(), unsold() hoặc fail().
-     * 2. AuctionRoomService đọc các getter để quyết định message và event cần phát.
-     *
-     * Business rules:
-     * - SOLD chỉ hợp lệ khi có winner và giao dịch chuyển tiền thành công.
-     * - UNSOLD là kết quả thành công nhưng không phát sinh winner hoặc thanh toán.
-     *
-     * Ghi chú kỹ thuật:
-     * - Thread-safe: immutable sau khi khởi tạo, các field đều final.
-     * - Dependency: Không phụ thuộc DB trực tiếp; là DTO nội bộ của AuctionDAO/AuctionRoomService.
-     */
-    public static class CloseAuctionResult {
-        private final boolean success;
-        private final String finalStatus;
-        private final String winnerId;
-        private final String sellerId;
-        private final double finalPrice;
-        private final Double winnerBalance;
-        private final Double sellerBalance;
-        private final String message;
-
-        private CloseAuctionResult(boolean success, String finalStatus, String winnerId, String sellerId,
-                                   double finalPrice, Double winnerBalance, Double sellerBalance, String message) {
-            this.success = success;
-            this.finalStatus = finalStatus;
-            this.winnerId = winnerId;
-            this.sellerId = sellerId;
-            this.finalPrice = finalPrice;
-            this.winnerBalance = winnerBalance;
-            this.sellerBalance = sellerBalance;
-            this.message = message;
-        }
-
-        public static CloseAuctionResult sold(String winnerId, String sellerId, double finalPrice,
-                                              Double winnerBalance, Double sellerBalance) {
-            return new CloseAuctionResult(true, "SOLD", winnerId, sellerId, finalPrice, winnerBalance, sellerBalance,
-                    "Auction sold successfully.");
-        }
-
-        public static CloseAuctionResult unsold() {
-            return new CloseAuctionResult(true, "UNSOLD", null, null, 0.0, null, null,
-                    "Auction ended without a buyer.");
-        }
-
-        public static CloseAuctionResult fail(String message) {
-            return new CloseAuctionResult(false, "ERROR", null, null, 0.0, null, null, message);
-        }
-
-        public boolean isSuccess() { return success; }
-        public String getFinalStatus() { return finalStatus; }
-        public String getWinnerId() { return winnerId; }
-        public String getSellerId() { return sellerId; }
-        public double getFinalPrice() { return finalPrice; }
-        public Double getWinnerBalance() { return winnerBalance; }
-        public Double getSellerBalance() { return sellerBalance; }
-        public String getMessage() { return message; }
-    }
-
-    /**
-     * Thống kê hiệu quả đấu giá của một seller.
-     *
-     * Vai trò:
-     * - Lưu tổng số phiên, số phiên bán thành công và số phiên bị admin hủy.
-     * - Tính tỷ lệ thành công/tỷ lệ bị hủy để đưa vào AuctionRoom hoặc User.
-     *
-     * Luồng chính:
-     * 1. AuctionDAO truy vấn aggregate theo sellerId và tạo SellerAuctionStats.
-     * 2. Tầng service/handler đọc tỷ lệ để hiển thị hoặc validate yêu cầu tạo phiên.
-     *
-     * Business rules:
-     * - Số lượng âm được chuẩn hóa về 0 khi khởi tạo.
-     * - Nếu seller chưa có phiên nào thì các tỷ lệ trả về 0.0 để tránh chia cho 0.
-     *
-     * Ghi chú kỹ thuật:
-     * - Thread-safe: immutable sau khi khởi tạo, các field đều final.
-     * - Dependency: Không phụ thuộc ngoài; được tạo từ dữ liệu aggregate của AuctionDAO.
-     */
-    public static class SellerAuctionStats {
-        private final int totalAuctions;
-        private final int soldAuctions;
-        private final int adminCanceledAuctions;
-
-        public SellerAuctionStats(int totalAuctions, int soldAuctions, int adminCanceledAuctions) {
-            this.totalAuctions = Math.max(totalAuctions, 0);
-            this.soldAuctions = Math.max(soldAuctions, 0);
-            this.adminCanceledAuctions = Math.max(adminCanceledAuctions, 0);
-        }
-
-        public int getTotalAuctions() {
-            return totalAuctions;
-        }
-
-        public int getSoldAuctions() {
-            return soldAuctions;
-        }
-
-        public int getAdminCanceledAuctions() {
-            return adminCanceledAuctions;
-        }
-
-        public double getSuccessfulAuctionRate() {
-            if (totalAuctions == 0) return 0.0;
-            return (double) soldAuctions / totalAuctions;
-        }
-
-        public double getAdminCancellationRate() {
-            if (totalAuctions == 0) return 0.0;
-            return (double) adminCanceledAuctions / totalAuctions;
-        }
-    }
 }

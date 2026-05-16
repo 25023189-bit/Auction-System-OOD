@@ -4,12 +4,11 @@ import com.auction.common.dto.Message;
 import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.User;
 import com.auction.server.dao.AuctionDAO;
-import com.auction.server.dao.AuctionDAO.CloseAuctionResult;
 import com.auction.server.dao.BidDAO;
-import com.auction.server.dao.BidDAO.BidResult;
 import com.auction.server.dao.UserDAO;
 import com.auction.server.main.AuctionServer;
-
+import com.auction.server.dao.IBidDAO.BidResult;
+import com.auction.server.dao.IAuctionDAO.CloseAuctionResult;
 import java.time.Duration;
 import java.time.LocalDateTime;
 

@@ -33,9 +33,10 @@ import java.util.List;
  * - Không thread-safe theo instance; mỗi method dùng connection local, không giữ cache user.
  * - Dependency: DatabaseConnection, PasswordUtil, User, JDBC, SLF4J.
  */
-public class UserDAO {
+public class UserDAO implements IUserDAO {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserDAO.class);
 
+    @Override
     public User getUserById(String customerId) {
         // customer_id trong DB được chuẩn hóa chữ hoa trước khi query.
         String sql = """
@@ -60,6 +61,7 @@ public class UserDAO {
         return null;
     }
 
+    @Override
     public User getUserByUsername(String username) {
         String sql = """
                 SELECT customer_id, username, password_hash, role, organization, balance
@@ -83,6 +85,7 @@ public class UserDAO {
         return null;
     }
 
+    @Override
     public User getUserByUsernameWithEmail(String username) {
         // Dùng cho forgot password vì cần lấy thêm email/full_name.
         String sql = """
@@ -113,6 +116,7 @@ public class UserDAO {
         return null;
     }
 
+    @Override
     public User login(String loginIdentifier, String rawPassword) {
         // Cho phép đăng nhập bằng username hoặc customer_id.
         String sql = """
@@ -153,6 +157,7 @@ public class UserDAO {
         }
     }
 
+    @Override
     public String registerUser(User user, String rawPassword) {
         // Kiểm tra trùng customer_id/username/email trước khi insert.
         String checkSql = """
@@ -210,6 +215,7 @@ public class UserDAO {
         }
     }
 
+    @Override
     public boolean resetPassword(String customerId, String newPassword, String confirmPassword) {
         // Luồng reset cũ yêu cầu nhập lại mật khẩu xác nhận.
         if (customerId == null || customerId.isBlank()) return false;
@@ -234,6 +240,7 @@ public class UserDAO {
         }
     }
 
+    @Override
     public String resetPasswordWithNewPassword(String username, String newPassword) {
         // Luồng forgot password có thể nhận username hoặc customer_id.
         String sql = """
@@ -260,6 +267,7 @@ public class UserDAO {
         }
     }
 
+    @Override
     public List<User> getAllUsers() {
         List<User> userList = new ArrayList<>();
         String sql = """
@@ -281,6 +289,7 @@ public class UserDAO {
         return userList;
     }
 
+    @Override
     public boolean deleteUser(String customerId) {
         String sql = "DELETE FROM users WHERE customer_id = ?";
 
@@ -295,83 +304,7 @@ public class UserDAO {
         }
     }
 
-    // Map các cột cơ bản của bảng users sang model User.
-    private User mapUser(ResultSet rs) throws SQLException {
-        return new User(
-                rs.getString("customer_id"),
-                rs.getString("username"),
-                rs.getString("role"),
-                rs.getString("password_hash"),
-                rs.getString("organization"),
-                rs.getDouble("balance")
-        );
-    }
-
-    // Map thêm email/fullName cho luồng quên mật khẩu.
-    private User mapUserWithEmail(ResultSet rs) throws SQLException {
-        User user = new User(
-                rs.getString("customer_id"),
-                rs.getString("username"),
-                rs.getString("role"),
-                rs.getString("password_hash"),
-                rs.getString("organization"),
-                rs.getDouble("balance")
-        );
-        user.setEmail(rs.getString("email"));
-        user.setFullName(rs.getString("full_name"));
-        return user;
-    }
-
-    // customer_id trong hệ thống dùng chữ hoa để tránh sai khác khi query.
-    private String normalizeCustomerId(String customerId) {
-        return customerId == null ? null : customerId.trim().toUpperCase();
-    }
-
-    // Chỉ chấp nhận role nằm trong tập hệ thống hỗ trợ.
-    private String normalizeRole(String role) {
-        if (role == null) {
-            return null;
-        }
-
-        String normalizedRole = role.trim().toUpperCase();
-        return switch (normalizedRole) {
-            case "BIDDER", "SELLER", "ADMIN" -> normalizedRole;
-            default -> null;
-        };
-    }
-
-    // Organization chỉ có ý nghĩa với seller.
-    private String normalizeOrganization(User user) {
-        if (user == null || !"SELLER".equalsIgnoreCase(user.getRole())) {
-            return null;
-        }
-        String organization = user.getOrganization();
-        if (organization == null || organization.trim().isEmpty()) {
-            return null;
-        }
-        return organization.trim();
-    }
-
-    private String normalizeEmail(User user, String customerId) {
-        String email = user != null ? user.getEmail() : null;
-        if (email != null && !email.trim().isEmpty()) {
-            return email.trim();
-        }
-
-        String safeCustomerId = customerId != null && !customerId.isBlank()
-                ? customerId.trim().toLowerCase()
-                : "user";
-        return safeCustomerId + "@auction.local";
-    }
-
-    private String normalizeFullName(User user, String username) {
-        String fullName = user != null ? user.getFullName() : null;
-        if (fullName != null && !fullName.trim().isEmpty()) {
-            return fullName.trim();
-        }
-        return username != null ? username.trim() : "";
-    }
-
+    @Override
     public String generateNextCustomerId() {
         // Tự sinh mã bidder tiếp theo theo prefix BD5.
         String sql = """
