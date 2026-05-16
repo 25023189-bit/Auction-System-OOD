@@ -22,4 +22,6 @@ module com.example.auctionprototype {
     exports com.auction.server.main;
     exports com.auction.client.service;
     exports com.auction.client.network.socket;
+    opens com.auction.server.dao to org.mockito;
+    opens com.auction.server.service to org.mockito;
 }
