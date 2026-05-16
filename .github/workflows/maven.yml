@@ -25,5 +25,8 @@ jobs:
           cache: maven # Lưu cache lại để lần sau chạy nhanh hơn
 
       # Bước 3: Chạy lệnh Maven để đóng gói và kiểm tra Checkstyle
+      - name: Make Maven Wrapper executable
+        run: chmod +x mvnw
+
       - name: Build and Checkstyle with Maven
-        run: mvn clean install
+        run: ./mvnw -q clean install

@@ -4,9 +4,12 @@ import com.auction.common.dto.Message;
 import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.User;
 import com.auction.server.dao.AuctionDAO;
-import com.auction.server.dao.AuctionDAO.CloseAuctionResult;
 import com.auction.server.dao.BidDAO;
-import com.auction.server.dao.BidDAO.BidResult;
+import com.auction.server.dao.IAuctionDAO;
+import com.auction.server.dao.IAuctionDAO.CloseAuctionResult;
+import com.auction.server.dao.IBidDAO;
+import com.auction.server.dao.IBidDAO.BidResult;
+import com.auction.server.dao.IUserDAO;
 import com.auction.server.dao.UserDAO;
 import com.auction.server.main.AuctionServer;
 import org.slf4j.Logger;
@@ -38,15 +41,17 @@ public class AuctionRoomService {
     private static final Logger LOGGER = LoggerFactory.getLogger(AuctionRoomService.class);
     private static final long FINAL_WINDOW_SECONDS = 30L;
 
+    // Dùng interface để service dễ mock trong unit test và không bị khóa vào class DAO cụ thể.
+    private IAuctionDAO auctionDAO = new AuctionDAO();
+    private IUserDAO userDAO = new UserDAO();
+    private IBidDAO bidDAO = new BidDAO();
     public Message joinRoom(String roomId, String userId) {
-        AuctionDAO auctionDAO = new AuctionDAO();
         AuctionRoom room = auctionDAO.getAuctionById(roomId);
 
         if (room == null) {
             return fail("ROOM_FAIL", "Room not found or the auction has ended.");
         }
 
-        UserDAO userDAO = new UserDAO();
         User user = userDAO.getUserById(userId);
         if (user == null) {
             return fail("ROOM_FAIL", "User not found.");
@@ -92,7 +97,6 @@ public class AuctionRoomService {
     }
 
     public Message placeNewBid(String roomId, String userId, double amount) {
-        UserDAO userDAO = new UserDAO();
         User user = userDAO.getUserById(userId);
 
         if (user == null) {
@@ -103,7 +107,6 @@ public class AuctionRoomService {
             return fail("BID_FAIL", "Only bidders can place bids.");
         }
 
-        AuctionDAO auctionDAO = new AuctionDAO();
         AuctionRoom room = auctionDAO.getAuctionById(roomId);
 
         if (room == null) {
@@ -136,7 +139,6 @@ public class AuctionRoomService {
                 return fail("BID_FAIL", "You are not in the valid participant list for this auction.");
             }
 
-            BidDAO bidDAO = new BidDAO();
             // DAO xử lý transaction: clear highest cũ, insert bid mới, update current price.
             BidResult bidResult = bidDAO.placeBid(roomId, userId, amount);
             if (!bidResult.isSuccess()) {
@@ -169,7 +171,6 @@ public class AuctionRoomService {
     }
 
     public boolean finalizeExpiredAuctionIfNeeded(String roomId) {
-        AuctionDAO auctionDAO = new AuctionDAO();
         AuctionRoom room = auctionDAO.getAuctionById(roomId);
         if (room == null) {
             return false;
@@ -256,7 +257,6 @@ public class AuctionRoomService {
 
     // Kết thúc phiên: cập nhật DB, dọn runtime state, báo client và refresh lobby.
     private CloseAuctionResult finalizeAuction(String roomId) {
-        AuctionDAO auctionDAO = new AuctionDAO();
         CloseAuctionResult result = auctionDAO.closeAuctionByTime(roomId);
 
         if (result == null || !result.isSuccess()) {
@@ -297,7 +297,6 @@ public class AuctionRoomService {
     }
 
     private void broadcastRoomList() {
-        AuctionDAO auctionDAO = new AuctionDAO();
         AuctionServer.broadcast(new Message("ROOM_LIST", "SERVER", auctionDAO.getAllActiveAuctions()));
     }
 

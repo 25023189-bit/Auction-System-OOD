@@ -31,7 +31,7 @@ Project mô phỏng một hệ thống đấu giá với các chức năng chín
 
 ## 3.1. Yêu cầu
 
-- JDK 17 trở lên để chạy runtime JavaFX hiện tại
+- JDK 25 để biên dịch và chạy JavaFX 25
 - MySQL 8 trở lên
 - IntelliJ IDEA hoặc IDE tương đương
 

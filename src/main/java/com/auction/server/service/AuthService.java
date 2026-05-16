@@ -2,8 +2,8 @@ package com.auction.server.service;
 
 import com.auction.common.dto.Message;
 import com.auction.common.model.User;
-import com.auction.server.dao.AuctionDAO;
-import com.auction.server.dao.UserDAO;
+import com.auction.server.dao.IAuctionDAO;
+import com.auction.server.dao.IUserDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,14 +23,26 @@ import org.slf4j.LoggerFactory;
  * - Seller login thành công phải có tỷ lệ đấu giá thành công/hủy bởi admin để client hiển thị đúng.
  *
  * Ghi chú kỹ thuật:
- * - Không thread-safe theo instance: giữ UserDAO/AuctionDAO instance, nhưng không lưu state phiên.
- * - Dependency: UserDAO, AuctionDAO, Message, User, SLF4J.
+ * - Sử dụng dependency injection với interfaces (IUserDAO, IAuctionDAO) để dễ test.
+ * - Dependency: IUserDAO, IAuctionDAO, Message, User, SLF4J.
  */
 public class AuthService {
     private static final Logger LOGGER = LoggerFactory.getLogger(AuthService.class);
 
-    private final UserDAO userDAO = new UserDAO();
-    private final AuctionDAO auctionDAO = new AuctionDAO();
+    private final IUserDAO userDAO;
+    private final IAuctionDAO auctionDAO;
+
+    // Constructor cho dependency injection (sử dụng trong tests)
+    public AuthService(IUserDAO userDAO, IAuctionDAO auctionDAO) {
+        this.userDAO = userDAO;
+        this.auctionDAO = auctionDAO;
+    }
+
+    // Default constructor cho production (nếu không inject)
+    public AuthService() {
+        this.userDAO = new com.auction.server.dao.UserDAO();
+        this.auctionDAO = new com.auction.server.dao.AuctionDAO();
+    }
 
     public Message login(String loginId, String password) {
         LOGGER.info("Login request. loginId={}", loginId);
@@ -94,7 +106,7 @@ public class AuthService {
             return;
         }
 
-        AuctionDAO.SellerAuctionStats stats = auctionDAO.getSellerAuctionStats(user.getId());
+        IAuctionDAO.SellerAuctionStats stats = auctionDAO.getSellerAuctionStats(user.getId());
         user.setSuccessfulAuctionRate(stats.getSuccessfulAuctionRate());
         user.setAdminCancellationRate(stats.getAdminCancellationRate());
     }

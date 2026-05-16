@@ -2,6 +2,7 @@ module com.example.auctionprototype {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
+    requires mysql.connector.j;
     requires jbcrypt;
     requires org.slf4j;
 
@@ -22,4 +23,6 @@ module com.example.auctionprototype {
     exports com.auction.server.main;
     exports com.auction.client.service;
     exports com.auction.client.network.socket;
+    opens com.auction.server.dao to org.mockito;
+    opens com.auction.server.service to org.mockito;
 }

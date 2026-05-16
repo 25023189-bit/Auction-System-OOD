@@ -148,7 +148,8 @@ public class AuctionServer {
     }
 
     private static void startExpiredAuctionWatcher() {
-        AuctionDAO auctionDAO = new AuctionDAO();
+        // Dùng interface để server không phụ thuộc trực tiếp vào implementation của DAO.
+        com.auction.server.dao.IAuctionDAO auctionDAO = new com.auction.server.dao.AuctionDAO();
         AuctionRoomService roomService = new AuctionRoomService();
 
         AUCTION_WATCHER.scheduleAtFixedRate(() -> {
@@ -165,7 +166,6 @@ public class AuctionServer {
             }
         }, 1, 1, TimeUnit.SECONDS);
     }
-
     public static void notifyDeletedUser(String userId) {
         // Tìm user trong danh sách đang online.
         ClientHandler client = userSessions.get(userId);
