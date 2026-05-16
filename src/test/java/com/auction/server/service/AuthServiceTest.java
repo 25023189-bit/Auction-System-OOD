@@ -2,13 +2,12 @@ package com.auction.server.service;
 
 import com.auction.common.dto.Message;
 import com.auction.common.model.User;
-import com.auction.server.dao.AuctionDAO;
-import com.auction.server.dao.UserDAO;
+import com.auction.server.dao.IAuctionDAO;
+import com.auction.server.dao.IUserDAO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -19,18 +18,18 @@ import static org.mockito.Mockito.*;
 class AuthServiceTest {
 
     @Mock
-    private UserDAO mockUserDAO;
+    private IUserDAO mockUserDAO;
 
     @Mock
-    private AuctionDAO mockAuctionDAO;
+    private IAuctionDAO mockAuctionDAO;
 
-    @InjectMocks
     private AuthService authService;
-
     private User sampleUser;
 
     @BeforeEach
     void setUp() {
+        authService = new AuthService(mockUserDAO, mockAuctionDAO);
+
         sampleUser = new User();
         sampleUser.setCustomerId("U001");
         sampleUser.setUsername("testuser");
@@ -49,9 +48,10 @@ class AuthServiceTest {
     }
 
     @Test
-    @DisplayName("Login thành công với quyền BUYER (Không tính toán tỷ lệ)")
+    @DisplayName("Login thành công với quyền BIDDER (Không tính toán tỷ lệ)")
     void login_ValidBuyer_ReturnsSuccessMessage() {
-        sampleUser.setRole("BUYER");
+        // CHỈNH SỬA: Thay "BUYER" thành "BIDDER" để đồng bộ với business rules của bạn
+        sampleUser.setRole("BIDDER");
         when(mockUserDAO.login("validUser", "validPass")).thenReturn(sampleUser);
 
         Message response = authService.login("validUser", "validPass");
@@ -67,8 +67,7 @@ class AuthServiceTest {
         sampleUser.setRole("SELLER");
         when(mockUserDAO.login("sellerUser", "validPass")).thenReturn(sampleUser);
 
-        // GIẢI PHÁP: Dùng Mockito làm giả luôn cái SellerAuctionStats để né lỗi Constructor
-        AuctionDAO.SellerAuctionStats mockStats = mock(AuctionDAO.SellerAuctionStats.class);
+        IAuctionDAO.SellerAuctionStats mockStats = mock(IAuctionDAO.SellerAuctionStats.class);
         when(mockStats.getSuccessfulAuctionRate()).thenReturn(85.5);
         when(mockStats.getAdminCancellationRate()).thenReturn(2.0);
 

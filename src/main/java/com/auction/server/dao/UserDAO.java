@@ -2,7 +2,7 @@ package com.auction.server.dao;
 
 import com.auction.common.model.User;
 import com.auction.server.utils.DatabaseConnection;
-import com.auction.server.utils.PasswordUtil;
+import org.mindrot.jbcrypt.BCrypt;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -10,326 +10,204 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Truy cập dữ liệu tài khoản người dùng và các thao tác mật khẩu.
- *
- * Vai trò:
- * - Đọc, đăng nhập, đăng ký, xóa user và reset password trong bảng users.
- * - Chuẩn hóa customerId, role, organization và map dữ liệu DB sang model User.
- *
- * Luồng chính:
- * 1. Nhận input từ AuthService, ForgotPasswordService hoặc AdminActionHandler.
- * 2. Validate/normalize dữ liệu, thực thi SQL và trả User, boolean hoặc mã trạng thái nghiệp vụ.
- *
- * Business rules:
- * - Mật khẩu luôn được hash bằng BCrypt trước khi lưu và chỉ so sánh qua hash.
- * - Role chỉ nhận BIDDER, SELLER, ADMIN; organization chỉ có ý nghĩa với SELLER.
- *
- * Ghi chú kỹ thuật:
- * - Không thread-safe theo instance; mỗi method dùng connection local, không giữ cache user.
- * - Dependency: DatabaseConnection, PasswordUtil, User, JDBC, SLF4J.
+ * Thực thi các thao tác truy cập dữ liệu liên quan đến User.
+ * Triển khai interface IUserDAO để phục vụ Mocking và Dependency Injection.
  */
 public class UserDAO implements IUserDAO {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserDAO.class);
 
     @Override
     public User getUserById(String customerId) {
-        // customer_id trong DB được chuẩn hóa chữ hoa trước khi query.
-        String sql = """
-                SELECT customer_id, username, password_hash, role, organization, balance
-                FROM users
-                WHERE customer_id = ?
-                """;
-
+        String sql = "SELECT * FROM users WHERE customer_id = ?";
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
-
-            stmt.setString(1, normalizeCustomerId(customerId));
-
+            stmt.setString(1, customerId);
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
                     return mapUser(rs);
                 }
             }
         } catch (SQLException e) {
-            LOGGER.error("Failed to query user by customer id {}.", customerId, e);
+            LOGGER.error("Lỗi khi lấy user bằng ID: {}", customerId, e);
         }
         return null;
     }
 
     @Override
     public User getUserByUsername(String username) {
-        String sql = """
-                SELECT customer_id, username, password_hash, role, organization, balance
-                FROM users
-                WHERE username = ?
-                """;
-
+        String sql = "SELECT * FROM users WHERE username = ?";
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
-
-            stmt.setString(1, username != null ? username.trim() : null);
-
+            stmt.setString(1, username);
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
                     return mapUser(rs);
                 }
             }
         } catch (SQLException e) {
-            LOGGER.error("Failed to query user by username {}.", username, e);
+            LOGGER.error("Lỗi khi lấy user bằng username: {}", username, e);
         }
         return null;
     }
 
     @Override
     public User getUserByUsernameWithEmail(String username) {
-        // Dùng cho forgot password vì cần lấy thêm email/full_name.
-        String sql = """
-                SELECT customer_id, username, password_hash, role, organization, balance, email, full_name
-                FROM users
-                WHERE username = ? OR customer_id = ?
-                """;
+        // Nếu DB của bạn thiết kế gộp chung hoặc có logic riêng, có thể dùng chung với getUserByUsername
+        return getUserByUsername(username);
+    }
 
+    @Override
+    public User login(String loginIdentifier, String rawPassword) {
+        // Chấp nhận đăng nhập bằng cả username hoặc customer_id
+        String sql = "SELECT * FROM users WHERE username = ? OR customer_id = ?";
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
-
-            String safeInput = username != null ? username.trim() : "";
-
-            // Tham số 1 giữ nguyên để khớp username đúng như user nhập.
-            stmt.setString(1, safeInput);
-            // Tham số 2 in hoa để khớp chuẩn customer_id, ví dụ BD50001.
-            stmt.setString(2, normalizeCustomerId(safeInput));
-
+            stmt.setString(1, loginIdentifier);
+            stmt.setString(2, loginIdentifier);
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
-                    return mapUserWithEmail(rs);
+                    User user = mapUser(rs);
+                    // Kiểm tra mật khẩu mã hóa bằng BCrypt
+                    if (user != null && BCrypt.checkpw(rawPassword, rs.getString("password_hash"))) {
+                        return user;
+                    }
                 }
             }
-        } catch (SQLException e) {
-            System.err.println("Loi khi truy van User theo username: " + e.getMessage());
-            e.printStackTrace();
+        } catch (Exception e) {
+            LOGGER.error("Lỗi trong quá trình xử lý đăng nhập cho: {}", loginIdentifier, e);
         }
         return null;
     }
 
     @Override
-    public User login(String loginIdentifier, String rawPassword) {
-        // Cho phép đăng nhập bằng username hoặc customer_id.
-        String sql = """
-                SELECT customer_id, username, password_hash, role, organization, balance
-                FROM users
-                WHERE username = ? OR customer_id = ?
-                """;
+    public String registerUser(User user, String rawPassword) {
+        if (getUserByUsername(user.getUsername()) != null) {
+            return "DUPLICATE";
+        }
 
+        String sql = """
+                INSERT INTO users (customer_id, username, password_hash, role, organization, balance)
+                VALUES (?, ?, ?, ?, ?, ?)
+                """;
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            String safeInput = loginIdentifier != null ? loginIdentifier.trim() : "";
+            String nextId = user.getId() != null ? user.getId() : generateNextCustomerId();
+            String hashedPass = BCrypt.hashpw(rawPassword, BCrypt.gensalt());
 
-            // Username giữ nguyên; customer_id được chuẩn hóa chữ hoa.
-            stmt.setString(1, safeInput);
-            stmt.setString(2, normalizeCustomerId(safeInput));
+            stmt.setString(1, nextId);
+            stmt.setString(2, user.getUsername());
+            stmt.setString(3, hashedPass);
+            stmt.setString(4, user.getRole() != null ? user.getRole().toUpperCase() : "BIDDER");
+            stmt.setString(5, user.getOrganization());
+            stmt.setDouble(6, user.getBalance());
 
-            try (ResultSet rs = stmt.executeQuery()) {
-                if (!rs.next()) {
-                    return null;
-                }
-
-                // Chỉ so sánh bằng BCrypt, không so sánh mật khẩu thô.
-                String storedHash = rs.getString("password_hash");
-                if (storedHash == null || storedHash.isBlank()) {
-                    return null;
-                }
-
-                if (!PasswordUtil.checkPassword(rawPassword, storedHash)) {
-                    return null;
-                }
-
-                return mapUser(rs);
+            if (stmt.executeUpdate() > 0) {
+                user.setCustomerId(nextId);
+                return "SUCCESS";
             }
         } catch (SQLException e) {
-            LOGGER.error("Failed to login user {}.", loginIdentifier, e);
-            return null;
+            LOGGER.error("Lỗi khi ghi nhận đăng ký user mới: {}", user.getUsername(), e);
+            return e.getMessage();
         }
-    }
-
-    @Override
-    public String registerUser(User user, String rawPassword) {
-        // Kiểm tra trùng customer_id/username/email trước khi insert.
-        String checkSql = """
-                SELECT 1 FROM users
-                WHERE customer_id = ? OR username = ? OR email = ?
-                """;
-
-        String insertSql = """
-                INSERT INTO users (customer_id, username, password_hash, role, organization, balance, email, full_name)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-                """;
-
-        try (Connection conn = DatabaseConnection.getConnection()) {
-            try (PreparedStatement checkStmt = conn.prepareStatement(checkSql)) {
-                String customerId = normalizeCustomerId(user.getCustomerId() != null ? user.getCustomerId() : user.getId());
-                String username = user.getUsername() != null ? user.getUsername().trim() : null;
-                String email = normalizeEmail(user, customerId);
-                String fullName = normalizeFullName(user, username);
-
-                String role = normalizeRole(user.getRole());
-
-                if (role == null) {
-                    return "INVALID_ROLE";
-                }
-
-                checkStmt.setString(1, customerId);
-                checkStmt.setString(2, username);
-                checkStmt.setString(3, email);
-
-                try (ResultSet rs = checkStmt.executeQuery()) {
-                    if (rs.next()) {
-                        return "DUPLICATE";
-                    }
-                }
-
-                try (PreparedStatement insertStmt = conn.prepareStatement(insertSql)) {
-                    // Mật khẩu luôn hash trước khi lưu xuống DB.
-                    String passwordHash = PasswordUtil.hashPassword(rawPassword);
-
-                    insertStmt.setString(1, customerId);
-                    insertStmt.setString(2, username);
-                    insertStmt.setString(3, passwordHash);
-                    insertStmt.setString(4, role);
-                    insertStmt.setString(5, normalizeOrganization(user));
-                    insertStmt.setDouble(6, user.getBalance());
-                    insertStmt.setString(7, email);
-                    insertStmt.setString(8, fullName);
-
-                    return insertStmt.executeUpdate() > 0 ? "SUCCESS" : "FAIL_INSERT";
-                }
-            }
-        } catch (SQLException e) {
-            LOGGER.error("Failed to register user {}.", user != null ? user.getUsername() : null, e);
-            return "SQL ERROR: " + e.getMessage();
-        }
+        return "FAILED";
     }
 
     @Override
     public boolean resetPassword(String customerId, String newPassword, String confirmPassword) {
-        // Luồng reset cũ yêu cầu nhập lại mật khẩu xác nhận.
-        if (customerId == null || customerId.isBlank()) return false;
-        if (newPassword == null || !newPassword.equals(confirmPassword)) return false;
-
-        String sql = """
-                UPDATE users
-                SET password_hash = ?
-                WHERE customer_id = ?
-                """;
-
+        if (newPassword == null || !newPassword.equals(confirmPassword)) {
+            return false;
+        }
+        String hashedPass = BCrypt.hashpw(newPassword, BCrypt.gensalt());
+        String sql = "UPDATE users SET password_hash = ? WHERE customer_id = ?";
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
-
-            stmt.setString(1, PasswordUtil.hashPassword(newPassword));
-            stmt.setString(2, normalizeCustomerId(customerId));
-
+            stmt.setString(1, hashedPass);
+            stmt.setString(2, customerId);
             return stmt.executeUpdate() > 0;
         } catch (SQLException e) {
-            LOGGER.error("Failed to reset password for customer id {}.", customerId, e);
+            LOGGER.error("Lỗi khi đổi mật khẩu cho user ID: {}", customerId, e);
             return false;
         }
     }
 
     @Override
     public String resetPasswordWithNewPassword(String username, String newPassword) {
-        // Luồng forgot password có thể nhận username hoặc customer_id.
-        String sql = """
-                UPDATE users
-                SET password_hash = ?
-                WHERE username = ? OR customer_id = ?
-                """;
+        User user = getUserByUsername(username);
+        if (user == null) return "USER_NOT_FOUND";
 
+        String hashedPass = BCrypt.hashpw(newPassword, BCrypt.gensalt());
+        String sql = "UPDATE users SET password_hash = ? WHERE username = ?";
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
-
-            String hashedPassword = PasswordUtil.hashPassword(newPassword);
-            String safeInput = username != null ? username.trim() : "";
-
-            stmt.setString(1, hashedPassword);
-            stmt.setString(2, safeInput);
-            stmt.setString(3, normalizeCustomerId(safeInput));
-
-            return stmt.executeUpdate() > 0 ? "SUCCESS" : "FAIL";
+            stmt.setString(1, hashedPass);
+            stmt.setString(2, username);
+            return stmt.executeUpdate() > 0 ? "SUCCESS" : "FAILED";
         } catch (SQLException e) {
-            System.err.println("Error resetting password: " + e.getMessage());
-            e.printStackTrace();
-            return "ERROR: " + e.getMessage();
+            LOGGER.error("Lỗi khi reset mật khẩu cho username: {}", username, e);
+            return "ERROR";
         }
     }
 
     @Override
     public List<User> getAllUsers() {
-        List<User> userList = new ArrayList<>();
-        String sql = """
-                SELECT customer_id, username, password_hash, role, organization, balance
-                FROM users
-                ORDER BY customer_id
-                """;
-
+        List<User> list = new ArrayList<>();
+        String sql = "SELECT * FROM users";
         try (Connection conn = DatabaseConnection.getConnection();
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)) {
-
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {
-                userList.add(mapUser(rs));
+                list.add(mapUser(rs));
             }
         } catch (SQLException e) {
-            LOGGER.error("Failed to load all users.", e);
+            LOGGER.error("Lỗi khi lấy danh sách toàn bộ user", e);
         }
-        return userList;
+        return list;
     }
 
     @Override
     public boolean deleteUser(String customerId) {
         String sql = "DELETE FROM users WHERE customer_id = ?";
-
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
-
-            stmt.setString(1, normalizeCustomerId(customerId));
+            stmt.setString(1, customerId);
             return stmt.executeUpdate() > 0;
         } catch (SQLException e) {
-            LOGGER.error("Failed to delete user {}.", customerId, e);
+            LOGGER.error("Lỗi khi xóa user khỏi hệ thống. ID: {}", customerId, e);
             return false;
         }
     }
 
     @Override
     public String generateNextCustomerId() {
-        // Tự sinh mã bidder tiếp theo theo prefix BD5.
-        String sql = """
-                SELECT customer_id
-                FROM users
-                WHERE customer_id LIKE 'BD5%'
-                ORDER BY customer_id DESC
-                LIMIT 1
-                """;
-
+        String sql = "SELECT customer_id FROM users ORDER BY customer_id DESC LIMIT 1";
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql);
              ResultSet rs = stmt.executeQuery()) {
-
             if (rs.next()) {
                 String lastId = rs.getString("customer_id");
-                String numberPart = lastId.substring(3);
-                int nextNumber = Integer.parseInt(numberPart) + 1;
-                return "BD5" + String.format("%05d", nextNumber);
+                if (lastId != null && lastId.startsWith("U")) {
+                    int num = Integer.parseInt(lastId.substring(1));
+                    return String.format("U%03d", num + 1);
+                }
             }
-
-            return "BD500001";
-        } catch (SQLException e) {
-            LOGGER.error("Failed to generate next customer id.", e);
-            return "BD500001";
+        } catch (Exception e) {
+            LOGGER.error("Lỗi khi tự động sinh mã ID khách hàng tiếp theo", e);
         }
+        return "U001";
+    }
+
+    private User mapUser(ResultSet rs) throws SQLException {
+        User user = new User();
+        user.setCustomerId(rs.getString("customer_id"));
+        user.setUsername(rs.getString("username"));
+        user.setRole(rs.getString("role"));
+        user.setOrganization(rs.getString("organization"));
+        user.setBalance(rs.getDouble("balance"));
+        return user;
     }
 }

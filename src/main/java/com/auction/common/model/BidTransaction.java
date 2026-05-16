@@ -69,4 +69,24 @@ public class BidTransaction implements Serializable {
     public void setBidTime(String bidTime) {
         this.bidTime = bidTime;
     }
+    // Thêm thuộc tính đánh dấu giá cao nhất
+    private boolean isHighest;
+
+    // Getter và Setter cho transactionId
+    public int getTransactionId() {
+        return transactionId;
+    }
+
+    public void setTransactionId(int transactionId) {
+        this.transactionId = transactionId;
+    }
+
+    // Getter và Setter cho isHighest
+    public boolean isHighest() {
+        return isHighest;
+    }
+
+    public void setHighest(boolean highest) {
+        isHighest = highest;
+    }
 }

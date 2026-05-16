@@ -34,11 +34,10 @@ import java.time.LocalDateTime;
 public class AuctionRoomService {
     private static final long FINAL_WINDOW_SECONDS = 30L;
 
-    // Rút các DAO lên đây làm biến instance để Mockito có thể Inject (tráo đổi) dễ dàng
-    private AuctionDAO auctionDAO = new AuctionDAO();
-    private UserDAO userDAO = new UserDAO();
-    private BidDAO bidDAO = new BidDAO();
-
+    // Đổi sang dùng Interface để dứt điểm lỗi Mockito và lỗi biên dịch
+    private com.auction.server.dao.IAuctionDAO auctionDAO = new com.auction.server.dao.AuctionDAO();
+    private com.auction.server.dao.IUserDAO userDAO = new com.auction.server.dao.UserDAO();
+    private com.auction.server.dao.IBidDAO bidDAO = new com.auction.server.dao.BidDAO();
     public Message joinRoom(String roomId, String userId) {
         AuctionRoom room = auctionDAO.getAuctionById(roomId);
 

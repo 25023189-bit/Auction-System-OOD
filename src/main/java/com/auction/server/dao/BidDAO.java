@@ -8,25 +8,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Truy cập dữ liệu cho thao tác đặt giá trong một phiên đấu giá.
- *
- * Vai trò:
- * - Kiểm tra giá hiện tại, số dư bidder và bước giá trước khi ghi bid mới.
- * - Ghi bid transaction và cập nhật current price của item trong cùng transaction.
- *
- * Luồng chính:
- * 1. Khóa phiên đấu giá liên quan, đọc giá hiện tại, số dư và bid step.
- * 2. Xóa cờ highest cũ, insert bid mới, cập nhật giá item rồi commit.
- *
- * Business rules:
- * - Bid mới phải lớn hơn hoặc bằng current price cộng bid step.
- * - Bidder phải có số dư đủ cho số tiền bid, và chỉ một bid được đánh dấu highest tại một thời điểm.
- *
- * Ghi chú kỹ thuật:
- * - Không thread-safe theo instance, nhưng transaction DB và FOR UPDATE bảo vệ luồng đặt giá đồng thời.
- * - Dependency: DatabaseConnection, JDBC, BidStatus, BidResult, SLF4J.
+ * Triển khai interface IBidDAO để phục vụ Mocking và Dependency Injection.
  */
 public class BidDAO implements IBidDAO {
     private static final Logger LOGGER = LoggerFactory.getLogger(BidDAO.class);
@@ -82,7 +69,7 @@ public class BidDAO implements IBidDAO {
                 try (ResultSet rs = pstmt.executeQuery()) {
                     if (!rs.next()) {
                         conn.rollback();
-                        return BidResult.fail(BidStatus.AUCTION_NOT_FOUND, "Auction not found.");
+                        return BidResult.fail("Auction not found.");
                     }
 
                     itemId = rs.getString("product_id");
@@ -96,12 +83,12 @@ public class BidDAO implements IBidDAO {
             double minimumAllowedBid = currentPrice + bidStep;
             if (bidAmount < minimumAllowedBid) {
                 conn.rollback();
-                return BidResult.fail(BidStatus.BID_TOO_LOW, "Bid must increase by at least " + bidStep + " from the current price.");
+                return BidResult.fail("Bid must increase by at least " + bidStep + " from the current price.");
             }
 
             if (bidAmount > currentBalance) {
                 conn.rollback();
-                return BidResult.fail(BidStatus.INSUFFICIENT_BALANCE, "Current balance is not enough for this bid amount.");
+                return BidResult.fail("Current balance is not enough for this bid amount.");
             }
 
             // Chỉ một bid được đánh dấu highest tại một thời điểm.
@@ -129,9 +116,51 @@ public class BidDAO implements IBidDAO {
             return BidResult.success();
         } catch (SQLException e) {
             LOGGER.error("Database error while placing bid. auctionId={}, bidderId={}", auctionId, bidderId, e);
-            return BidResult.fail(BidStatus.ERROR, "Database error while placing bid.");
+            return BidResult.fail("Database error while placing bid.");
         }
     }
 
-}
+    @Override
+    public List<com.auction.common.model.BidTransaction> getHistoryByRoom(String roomId) {
+        List<com.auction.common.model.BidTransaction> list = new ArrayList<>();
+        String sql = """
+                SELECT bid_id, auction_id, bidder_id, bid_amount, bid_rank, is_highest, bid_time
+                FROM bid_transactions
+                WHERE auction_id = ?
+                ORDER BY bid_amount DESC
+                """;
 
+        // Khai báo Formatter với đường dẫn thư viện đầy đủ để không bị lỗi đỏ
+        java.time.format.DateTimeFormatter dtf = java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, roomId);
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    com.auction.common.model.BidTransaction tx = new com.auction.common.model.BidTransaction();
+
+                    // Đã sửa thành setTransactionId để khớp với Model của bạn
+                    tx.setTransactionId(rs.getInt("bid_id"));
+                    tx.setAuctionId(rs.getString("auction_id"));
+                    tx.setBidderId(rs.getString("bidder_id"));
+                    tx.setBidAmount(rs.getDouble("bid_amount"));
+                    tx.setBidRank(rs.getInt("bid_rank"));
+                    tx.setHighest(rs.getInt("is_highest") == 1);
+
+                    // Xử lý convert thời gian sang chuỗi chuẩn xác
+                    if (rs.getTimestamp("bid_time") != null) {
+                        java.time.LocalDateTime dateTime = rs.getTimestamp("bid_time").toLocalDateTime();
+                        tx.setBidTime(dtf.format(dateTime));
+                    }
+
+                    list.add(tx);
+                }
+            }
+        } catch (SQLException e) {
+            LOGGER.error("Lỗi khi lấy lịch sử đặt giá của phòng: {}", roomId, e);
+        }
+        return list;
+    }
+}

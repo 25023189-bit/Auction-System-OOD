@@ -148,12 +148,12 @@ public class AuctionServer {
     }
 
     private static void startExpiredAuctionWatcher() {
-        AuctionDAO auctionDAO = new AuctionDAO();
+        // Đổi kiểu khai báo từ AuctionDAO sang IAuctionDAO
+        com.auction.server.dao.IAuctionDAO auctionDAO = new com.auction.server.dao.AuctionDAO();
         AuctionRoomService roomService = new AuctionRoomService();
 
         AUCTION_WATCHER.scheduleAtFixedRate(() -> {
             try {
-                // Mỗi giây quét các phiên đang mở để đóng những phiên đã hết thời gian.
                 List<AuctionRoom> activeRooms = auctionDAO.getAllActiveAuctions();
                 for (AuctionRoom room : activeRooms) {
                     if (room != null && room.getRoomId() != null) {
@@ -165,7 +165,6 @@ public class AuctionServer {
             }
         }, 1, 1, TimeUnit.SECONDS);
     }
-
     public static void notifyDeletedUser(String userId) {
         // Tìm user trong danh sách đang online.
         ClientHandler client = userSessions.get(userId);
