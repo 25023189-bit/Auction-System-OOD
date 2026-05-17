@@ -20,7 +20,7 @@ package com.auction.client.AI.chatbot;
  * - Dependency: Không phụ thuộc ngoài.
  */
 public final class ChatbotFallback {
-    public static final String MESSAGE = "Chat hiện đang lỗi, có thể gọi đến tư vấn viên theo số 038xxxxxxx";
+    public static final String MESSAGE = "Chatbot hiện chưa phản hồi được. Bạn có thể hỏi lại về đăng ký, đăng nhập, tìm phiên, đặt giá hoặc số dư.";
 
     private ChatbotFallback() {
     }

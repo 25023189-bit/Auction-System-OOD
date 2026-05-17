@@ -14,29 +14,17 @@ import java.util.regex.Pattern;
 
 public final class PythonChatbotConnection {
     private static final PythonChatbotConnection INSTANCE = new PythonChatbotConnection();
-    private static final Duration PROCESS_TIMEOUT = Duration.ofSeconds(75);
+    private static final Duration PROCESS_TIMEOUT = Duration.ofSeconds(90);
 
-    private final BotSpec aurora;
-    private final BotSpec atlas;
-    private final Path finalOutputPath;
+    private final BotSpec chatbot;
 
     private PythonChatbotConnection() {
         Path projectRoot = locateProjectRoot();
-        this.aurora = new BotSpec(
-                projectRoot.resolve("Auction_AI").resolve("LLM_Chatbot"),
-                Path.of("input.json"),
-                Path.of("output.json"),
-                "question",
+        this.chatbot = new BotSpec(
+                projectRoot.resolve("Auction_AI").resolve("ChatBot"),
+                Path.of("IOdata").resolve("output.json"),
                 "answer"
         );
-        this.atlas = new BotSpec(
-                projectRoot.resolve("Auction_AI").resolve("ChatBot"),
-                Path.of("data").resolve("input.json"),
-                Path.of("data").resolve("output.json"),
-                "message",
-                "response"
-        );
-        this.finalOutputPath = aurora.outputPath();
     }
 
     public static PythonChatbotConnection getInstance() {
@@ -44,47 +32,45 @@ public final class PythonChatbotConnection {
     }
 
     public synchronized String ask(String question) {
-        boolean interrupted = false;
         String normalizedQuestion = question == null ? "" : question.trim();
+        if (normalizedQuestion.isEmpty()) {
+            return "Bạn hãy nhập câu hỏi về hệ thống đấu giá để chatbot hỗ trợ.";
+        }
+
+        boolean interrupted = false;
         Optional<String> answer = Optional.empty();
 
         try {
-            answer = askBot(aurora, normalizedQuestion);
+            answer = askBot(normalizedQuestion);
         } catch (InterruptedException ex) {
             interrupted = true;
         }
-
-        if (answer.isEmpty()) {
-            try {
-                answer = askBot(atlas, normalizedQuestion);
-            } catch (InterruptedException ex) {
-                interrupted = true;
-            }
-        }
-
-        String finalAnswer = answer.orElse(ChatbotFallback.MESSAGE);
-        writeFinalAnswer(finalAnswer);
 
         if (interrupted) {
             Thread.currentThread().interrupt();
         }
 
-        return finalAnswer;
+        return answer.orElse(ChatbotFallback.MESSAGE);
     }
 
-    private Optional<String> askBot(BotSpec bot, String question) throws InterruptedException {
+    private Optional<String> askBot(String question) throws InterruptedException {
         try {
-            validateBotFiles(bot);
-            writeJsonStringField(bot.inputPath(), bot.inputField(), question);
-            Files.deleteIfExists(bot.outputPath());
+            validateBotFiles();
+            Files.deleteIfExists(chatbot.outputPath());
+            Files.deleteIfExists(chatbot.errorInfoPath());
 
-            if (!runPythonBot(bot)) {
+            if (!runPythonBot(question)) {
                 return Optional.empty();
             }
 
-            Optional<String> answer = readJsonStringField(bot.outputPath(), bot.outputField())
-                    .map(String::trim)
-                    .filter(value -> !value.isEmpty());
+            Optional<String> answer = readJsonStringField(chatbot.outputPath(), chatbot.outputField());
+            if (answer.isEmpty()) {
+                answer = readJsonStringField(chatbot.outputPath(), "response");
+            }
+            if (answer.isEmpty()) {
+                answer = readJsonStringField(chatbot.outputPath(), "message");
+            }
+            answer = answer.map(String::trim).filter(value -> !value.isEmpty());
 
             if (answer.isEmpty() || looksLikeErrorAnswer(answer.get())) {
                 return Optional.empty();
@@ -96,31 +82,31 @@ public final class PythonChatbotConnection {
         }
     }
 
-    private void validateBotFiles(BotSpec bot) throws IOException {
-        if (!Files.isRegularFile(bot.appPath())) {
-            throw new IOException("Missing Python chatbot entrypoint: " + bot.appPath());
+    private void validateBotFiles() throws IOException {
+        if (!Files.isRegularFile(chatbot.appPath())) {
+            throw new IOException("Missing Python chatbot entrypoint: " + chatbot.appPath());
         }
-        Files.createDirectories(bot.inputPath().getParent());
-        Files.createDirectories(bot.outputPath().getParent());
+        Files.createDirectories(chatbot.outputPath().getParent());
+        Files.createDirectories(chatbot.errorInfoPath().getParent());
     }
 
-    private boolean runPythonBot(BotSpec bot) throws InterruptedException {
-        RunStatus status = runPythonCommand(bot, "python");
+    private boolean runPythonBot(String question) throws InterruptedException {
+        RunStatus status = runPythonCommand(question, "python");
         if (status == RunStatus.SUCCESS) {
             return true;
         }
 
         if (status == RunStatus.START_FAILED) {
-            return runPythonCommand(bot, "py", "-3") == RunStatus.SUCCESS;
+            return runPythonCommand(question, "py", "-3") == RunStatus.SUCCESS;
         }
 
         return false;
     }
 
-    private RunStatus runPythonCommand(BotSpec bot, String... commandPrefix) throws InterruptedException {
+    private RunStatus runPythonCommand(String question, String... commandPrefix) throws InterruptedException {
         Process process;
         try {
-            process = startPythonProcess(bot, commandPrefix);
+            process = startPythonProcess(question, commandPrefix);
         } catch (IOException ex) {
             return RunStatus.START_FAILED;
         }
@@ -138,24 +124,18 @@ public final class PythonChatbotConnection {
         return process.exitValue() == 0 ? RunStatus.SUCCESS : RunStatus.FAILED;
     }
 
-    private Process startPythonProcess(BotSpec bot, String... commandPrefix) throws IOException {
-        String[] command = new String[commandPrefix.length + 1];
+    private Process startPythonProcess(String question, String... commandPrefix) throws IOException {
+        String[] command = new String[commandPrefix.length + 3];
         System.arraycopy(commandPrefix, 0, command, 0, commandPrefix.length);
-        command[command.length - 1] = bot.appPath().getFileName().toString();
+        command[commandPrefix.length] = chatbot.appPath().getFileName().toString();
+        command[commandPrefix.length + 1] = "--question";
+        command[commandPrefix.length + 2] = question;
 
         return new ProcessBuilder(command)
-                .directory(bot.directory().toFile())
+                .directory(chatbot.appDirectory().toFile())
                 .redirectErrorStream(true)
                 .redirectOutput(ProcessBuilder.Redirect.DISCARD)
                 .start();
-    }
-
-    private void writeFinalAnswer(String answer) {
-        try {
-            writeJsonStringField(finalOutputPath, "answer", answer);
-        } catch (IOException ignored) {
-            // The UI already has the answer. Atlas fallback should not be blocked by a final file write issue.
-        }
     }
 
     private Optional<String> readJsonStringField(Path path, String field) throws IOException {
@@ -176,59 +156,26 @@ public final class PythonChatbotConnection {
         return Optional.of(unescapeJson(matcher.group(1)));
     }
 
-    private void writeJsonStringField(Path path, String field, String value) throws IOException {
-        Path parent = path.getParent();
-        if (parent != null) {
-            Files.createDirectories(parent);
-        }
-
-        String payload = "{\n  \"" + field + "\": \"" + escapeJson(value) + "\"\n}\n";
-        Files.writeString(path, payload, StandardCharsets.UTF_8);
-    }
-
     private boolean looksLikeErrorAnswer(String answer) {
         String normalized = Normalizer.normalize(answer, Normalizer.Form.NFD)
                 .replaceAll("\\p{M}", "")
                 .toLowerCase(Locale.ROOT)
                 .trim();
-        return normalized.startsWith("loi:");
+        return normalized.startsWith("loi:")
+                || normalized.startsWith("error:")
+                || normalized.contains("traceback");
     }
 
     private Path locateProjectRoot() {
         Path current = Path.of(System.getProperty("user.dir")).toAbsolutePath().normalize();
         while (current != null) {
-            Path auroraDirectory = current.resolve("Auction_AI").resolve("LLM_Chatbot");
-            Path atlasDirectory = current.resolve("Auction_AI").resolve("ChatBot");
-            if (Files.isDirectory(auroraDirectory) && Files.isDirectory(atlasDirectory)) {
+            Path chatbotEntrypoint = current.resolve("Auction_AI").resolve("ChatBot").resolve("Main").resolve("app.py");
+            if (Files.isRegularFile(chatbotEntrypoint)) {
                 return current;
             }
             current = current.getParent();
         }
         return Path.of("").toAbsolutePath().normalize();
-    }
-
-    private String escapeJson(String value) {
-        StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < value.length(); i++) {
-            char character = value.charAt(i);
-            switch (character) {
-                case '"' -> builder.append("\\\"");
-                case '\\' -> builder.append("\\\\");
-                case '\b' -> builder.append("\\b");
-                case '\f' -> builder.append("\\f");
-                case '\n' -> builder.append("\\n");
-                case '\r' -> builder.append("\\r");
-                case '\t' -> builder.append("\\t");
-                default -> {
-                    if (character < 0x20) {
-                        builder.append(String.format("\\u%04x", (int) character));
-                    } else {
-                        builder.append(character);
-                    }
-                }
-            }
-        }
-        return builder.toString();
     }
 
     private String unescapeJson(String value) {
@@ -267,21 +214,23 @@ public final class PythonChatbotConnection {
 
     private record BotSpec(
             Path directory,
-            Path relativeInputPath,
             Path relativeOutputPath,
-            String inputField,
             String outputField
     ) {
         private Path appPath() {
-            return directory.resolve("app.py");
+            return appDirectory().resolve("app.py");
         }
 
-        private Path inputPath() {
-            return directory.resolve(relativeInputPath);
+        private Path appDirectory() {
+            return directory.resolve("Main");
         }
 
         private Path outputPath() {
             return directory.resolve(relativeOutputPath);
+        }
+
+        private Path errorInfoPath() {
+            return directory.resolve("status").resolve("errol_info.json");
         }
     }
 
