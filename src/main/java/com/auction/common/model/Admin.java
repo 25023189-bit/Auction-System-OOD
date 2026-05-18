@@ -9,7 +9,7 @@ public class Admin extends User {
     public Admin(String customerId, String password) {
         super(); // Gọi constructor rỗng của class User
 
-        // Gọi các hàm Setter (Lưu ý: Nếu hàm bên class User của ông tên khác thì đổi lại cho đúng nhé)
+        this.setCustomerId(customerId); // FIX: Thêm dòng này để ID không bị null nữa
         this.setUsername(customerId);
         this.setPassword(password);
         this.setRole("ADMIN");
