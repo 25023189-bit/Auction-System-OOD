@@ -28,5 +28,8 @@ jobs:
       - name: Make Maven Wrapper executable
         run: chmod +x mvnw
 
+      - name: Install Xvfb
+        run: sudo apt-get update && sudo apt-get install -y xvfb
+
       - name: Build and Checkstyle with Maven
-        run: ./mvnw -q clean install
+        run: xvfb-run -a ./mvnw -q clean install

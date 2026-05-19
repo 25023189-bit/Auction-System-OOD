@@ -33,8 +33,8 @@ import java.util.List;
  */
 public class ProductDetailService {
 
-    private final AuctionDAO auctionDAO;
-    private final TransactionDAO transactionDAO;
+    private AuctionDAO auctionDAO;
+    private TransactionDAO transactionDAO;
 
     public ProductDetailService() {
         this.auctionDAO = new AuctionDAO();

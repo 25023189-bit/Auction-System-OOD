@@ -27,11 +27,11 @@ import java.util.concurrent.ConcurrentHashMap;
  * - Dependency: UserDAO, EmailService, PasswordStrengthValidator, RateLimiter, PasswordResetTokenGenerator, ConfigManager.
  */
 public class ForgotPasswordService {
-    private final UserDAO userDAO;
-    private final EmailService emailService;
-    private final PasswordStrengthValidator passwordValidator;
-    private final RateLimiter rateLimiter;
-    private final ConcurrentHashMap<String, PasswordResetTokenGenerator.PasswordResetToken> tokenStore;
+    private UserDAO userDAO;
+    private EmailService emailService;
+    private PasswordStrengthValidator passwordValidator;
+    private RateLimiter rateLimiter;
+    private ConcurrentHashMap<String, PasswordResetTokenGenerator.PasswordResetToken> tokenStore;
 
     public ForgotPasswordService() {
         this.userDAO = new UserDAO();
