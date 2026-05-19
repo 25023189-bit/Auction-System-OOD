@@ -9,7 +9,9 @@ import org.mockito.Mockito;
 
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -25,78 +27,231 @@ class PythonChatbotConnectionTest {
     }
 
     @Test
-    @DisplayName("Test gọi bot Python thành công và bóc tách dữ liệu JSON")
-    void testAsk_Success() throws Exception {
-        // FIX: Thêm Mockito.CALLS_REAL_METHODS để bảo vệ trình tải lớp hệ thống của JDK 25
-        try (MockedStatic<Files> mockedFiles = mockStatic(Files.class, Mockito.CALLS_REAL_METHODS);
-             MockedConstruction<ProcessBuilder> mockedProcessBuilder = mockConstruction(
-                     ProcessBuilder.class,
-                     withSettings().defaultAnswer(Answers.RETURNS_SELF),
-                     (mock, context) -> {
-                         Process mockProcess = mock(Process.class);
-                         when(mockProcess.waitFor(anyLong(), any(TimeUnit.class))).thenReturn(true);
-                         when(mockProcess.exitValue()).thenReturn(0);
-                         when(mock.start()).thenReturn(mockProcess);
-                     })) {
+    @DisplayName("Test gọi bot Python thành công và bóc tách JSON có unicode/escape")
+    void testAsk_SuccessWithEscapedUnicodeJson() throws Exception {
+        String outputJson = "{\"answer\":\"Xin chào Hân UET!\\nDòng 2: \\\"bid\\\" \\\\ path \\u0111ấu giá\"}";
 
-            // Chỉ giả lập trúng đích các file liên quan trực tiếp tới Chatbot Python
-            mockedFiles.when(() -> Files.isRegularFile(argThat(path -> path != null &&
-                    (path.toString().contains("app.py") || path.toString().contains("output.json"))))).thenReturn(true);
-
-            mockedFiles.when(() -> Files.readString(argThat(path -> path != null &&
-                    path.toString().contains("output.json")), any())).thenReturn("{\"answer\":\"\\u0058\\u0069\\u006e \\u0063\\u0068\\u00e0\\u006f Hân UET!\"}");
+        try (MockedStatic<Files> mockedFiles = mockChatbotFiles(outputJson, true);
+             MockedConstruction<ProcessBuilder> ignored = mockSuccessfulPythonProcess()) {
 
             PythonChatbotConnection connection = PythonChatbotConnection.getInstance();
             String response = connection.ask("Hệ thống là gì?");
 
-            assertEquals("Xin chào Hân UET!", response, "Phải giải mã unicode JSON chuẩn xác");
+            assertEquals("Xin chào Hân UET!\nDòng 2: \"bid\" \\ path đấu giá", response);
         }
     }
 
     @Test
-    @DisplayName("Test kịch bản Python văng lỗi hoặc file JSON chứa Traceback lỗi")
+    @DisplayName("Test đọc fallback field response khi output không có answer")
+    void testAsk_ReadsResponseFieldWhenAnswerMissing() throws Exception {
+        try (MockedStatic<Files> mockedFiles = mockChatbotFiles("{\"response\":\"Trả lời từ response\"}", true);
+             MockedConstruction<ProcessBuilder> ignored = mockSuccessfulPythonProcess()) {
+
+            String response = PythonChatbotConnection.getInstance().ask("Câu hỏi hợp lệ");
+
+            assertEquals("Trả lời từ response", response);
+        }
+    }
+
+    @Test
+    @DisplayName("Test đọc fallback field message khi output không có answer/response")
+    void testAsk_ReadsMessageFieldWhenAnswerAndResponseMissing() throws Exception {
+        try (MockedStatic<Files> mockedFiles = mockChatbotFiles("{\"message\":\"Trả lời từ message\"}", true);
+             MockedConstruction<ProcessBuilder> ignored = mockSuccessfulPythonProcess()) {
+
+            String response = PythonChatbotConnection.getInstance().ask("Câu hỏi hợp lệ");
+
+            assertEquals("Trả lời từ message", response);
+        }
+    }
+
+    @Test
+    @DisplayName("Test output JSON thiếu schema hợp lệ phải trả fallback")
+    void testAsk_InvalidOutputSchemaReturnsFallback() throws Exception {
+        try (MockedStatic<Files> mockedFiles = mockChatbotFiles("{\"unexpected\":\"value\"}", true);
+             MockedConstruction<ProcessBuilder> ignored = mockSuccessfulPythonProcess()) {
+
+            String response = PythonChatbotConnection.getInstance().ask("Câu hỏi hợp lệ");
+
+            assertEquals(ChatbotFallback.MESSAGE, response);
+        }
+    }
+
+    @Test
+    @DisplayName("Test process thành công nhưng không tạo output.json phải trả fallback")
+    void testAsk_MissingOutputFileReturnsFallback() throws Exception {
+        try (MockedStatic<Files> mockedFiles = mockChatbotFiles(null, false);
+             MockedConstruction<ProcessBuilder> ignored = mockSuccessfulPythonProcess()) {
+
+            String response = PythonChatbotConnection.getInstance().ask("Câu hỏi hợp lệ");
+
+            assertEquals(ChatbotFallback.MESSAGE, response);
+        }
+    }
+
+    @Test
+    @DisplayName("Test kịch bản Python trả lỗi hoặc JSON chứa Traceback")
     void testAsk_PythonErrorResponse() throws Exception {
-        try (MockedStatic<Files> mockedFiles = mockStatic(Files.class, Mockito.CALLS_REAL_METHODS);
-             MockedConstruction<ProcessBuilder> mockedProcessBuilder = mockConstruction(
+        try (MockedStatic<Files> mockedFiles = mockChatbotFiles("{\"answer\":\"Error: Traceback lỗi runtime\"}", true);
+             MockedConstruction<ProcessBuilder> ignored = mockSuccessfulPythonProcess()) {
+
+            String response = PythonChatbotConnection.getInstance().ask("Test lỗi");
+
+            assertEquals(ChatbotFallback.MESSAGE, response);
+        }
+    }
+
+    @Test
+    @DisplayName("Test process Python timeout phải trả fallback")
+    void testAsk_ProcessTimeoutReturnsFallback() throws Exception {
+        try (MockedStatic<Files> mockedFiles = mockChatbotFiles("{\"answer\":\"Không được đọc\"}", true);
+             MockedConstruction<ProcessBuilder> ignored = mockPythonProcess(false, 0)) {
+
+            String response = PythonChatbotConnection.getInstance().ask("Timeout test");
+
+            assertEquals(ChatbotFallback.MESSAGE, response);
+        }
+    }
+
+    @Test
+    @DisplayName("Test process Python exit code lỗi phải trả fallback")
+    void testAsk_ProcessNonZeroExitReturnsFallback() throws Exception {
+        try (MockedStatic<Files> mockedFiles = mockChatbotFiles("{\"answer\":\"Không được đọc\"}", true);
+             MockedConstruction<ProcessBuilder> ignored = mockPythonProcess(true, 1)) {
+
+            String response = PythonChatbotConnection.getInstance().ask("Exit code test");
+
+            assertEquals(ChatbotFallback.MESSAGE, response);
+        }
+    }
+
+    @Test
+    @DisplayName("Test python start fail nhưng py -3 thành công")
+    void testAsk_FallsBackToPyLauncherWhenPythonCommandCannotStart() throws Exception {
+        AtomicInteger attempts = new AtomicInteger();
+
+        try (MockedStatic<Files> mockedFiles = mockChatbotFiles("{\"answer\":\"Trả lời sau khi dùng py launcher\"}", true);
+             MockedConstruction<ProcessBuilder> ignored = mockConstruction(
                      ProcessBuilder.class,
                      withSettings().defaultAnswer(Answers.RETURNS_SELF),
                      (mock, context) -> {
+                         int attempt = attempts.incrementAndGet();
+                         if (attempt == 1) {
+                             when(mock.start()).thenThrow(new IOException("python command missing"));
+                             return;
+                         }
                          Process mockProcess = mock(Process.class);
                          when(mockProcess.waitFor(anyLong(), any(TimeUnit.class))).thenReturn(true);
                          when(mockProcess.exitValue()).thenReturn(0);
                          when(mock.start()).thenReturn(mockProcess);
                      })) {
 
-            mockedFiles.when(() -> Files.isRegularFile(argThat(path -> path != null &&
-                    (path.toString().contains("app.py") || path.toString().contains("output.json"))))).thenReturn(true);
+            String response = PythonChatbotConnection.getInstance().ask("Fallback command test");
 
-            mockedFiles.when(() -> Files.readString(argThat(path -> path != null &&
-                    path.toString().contains("output.json")), any())).thenReturn("{\"answer\":\"Lỗi kết nối hoặc Traceback error\"}");
+            assertEquals("Trả lời sau khi dùng py launcher", response);
+            assertEquals(2, attempts.get(), "Must try python first, then py -3");
+        }
+    }
 
-            PythonChatbotConnection connection = PythonChatbotConnection.getInstance();
-            String response = connection.ask("Test lỗi");
+    @Test
+    @DisplayName("Test cả python và py -3 đều không start được phải trả fallback")
+    void testAsk_BothPythonCommandsCannotStartReturnsFallback() throws Exception {
+        AtomicInteger attempts = new AtomicInteger();
+
+        try (MockedStatic<Files> mockedFiles = mockChatbotFiles("{\"answer\":\"Không được đọc\"}", true);
+             MockedConstruction<ProcessBuilder> ignored = mockConstruction(
+                     ProcessBuilder.class,
+                     withSettings().defaultAnswer(Answers.RETURNS_SELF),
+                     (mock, context) -> {
+                         attempts.incrementAndGet();
+                         when(mock.start()).thenThrow(new IOException("command missing"));
+                     })) {
+
+            String response = PythonChatbotConnection.getInstance().ask("No command test");
+
+            assertEquals(ChatbotFallback.MESSAGE, response);
+            assertEquals(2, attempts.get(), "Must try both configured Python launch commands");
+        }
+    }
+
+    @Test
+    @DisplayName("Test lỗi IO khi chuẩn bị file runtime phải trả fallback")
+    void testAsk_IOExceptionThrown() throws Exception {
+        try (MockedStatic<Files> mockedFiles = mockChatbotFiles("{\"answer\":\"Không được đọc\"}", true)) {
+            mockedFiles.when(() -> Files.deleteIfExists(argThat(PythonChatbotConnectionTest::isRuntimeFile)))
+                    .thenThrow(new IOException("Disk Full"));
+
+            String response = PythonChatbotConnection.getInstance().ask("Crash test");
 
             assertEquals(ChatbotFallback.MESSAGE, response);
         }
     }
 
-    @Test
-    @DisplayName("Test lỗi hệ thống IO hoặc sập nguồn tiến trình đột ngột")
-    void testAsk_IOExceptionThrown() throws Exception {
-        try (MockedStatic<Files> mockedFiles = mockStatic(Files.class, Mockito.CALLS_REAL_METHODS)) {
-            // Cho phép hệ thống nhận diện file app.py để vượt qua vòng validate cơ bản
-            mockedFiles.when(() -> Files.isRegularFile(argThat(path -> path != null &&
-                    path.toString().contains("app.py")))).thenReturn(true);
+    private static MockedStatic<Files> mockChatbotFiles(String outputJson, boolean outputExists) throws IOException {
+        MockedStatic<Files> mockedFiles = mockStatic(Files.class, Mockito.CALLS_REAL_METHODS);
 
-            // Ép riêng hàm xóa các file dữ liệu tạm của Chatbot ném ra lỗi IO
-            mockedFiles.when(() -> Files.deleteIfExists(argThat(path -> path != null &&
-                            (path.toString().contains("output.json") || path.toString().contains("errol_info.json")))))
-                    .thenThrow(new IOException("Disk Full"));
+        mockedFiles.when(() -> Files.isRegularFile(argThat(PythonChatbotConnectionTest::isAppPath)))
+                .thenReturn(true);
+        mockedFiles.when(() -> Files.isRegularFile(argThat(PythonChatbotConnectionTest::isOutputPath)))
+                .thenReturn(outputExists);
+        mockedFiles.when(() -> Files.createDirectories(argThat(PythonChatbotConnectionTest::isRuntimeDirectory)))
+                .thenAnswer(invocation -> invocation.getArgument(0));
+        mockedFiles.when(() -> Files.deleteIfExists(argThat(PythonChatbotConnectionTest::isRuntimeFile)))
+                .thenReturn(false);
 
-            PythonChatbotConnection connection = PythonChatbotConnection.getInstance();
-            String response = connection.ask("Crash test");
-
-            assertEquals(ChatbotFallback.MESSAGE, response);
+        if (outputJson != null) {
+            mockedFiles.when(() -> Files.readString(argThat(PythonChatbotConnectionTest::isOutputPath), any()))
+                    .thenReturn(outputJson);
         }
+
+        return mockedFiles;
+    }
+
+    private static MockedConstruction<ProcessBuilder> mockSuccessfulPythonProcess() {
+        return mockPythonProcess(true, 0);
+    }
+
+    private static MockedConstruction<ProcessBuilder> mockPythonProcess(boolean completed, int exitCode) {
+        return mockConstruction(
+                ProcessBuilder.class,
+                withSettings().defaultAnswer(Answers.RETURNS_SELF),
+                (mock, context) -> {
+                    Process mockProcess = mock(Process.class);
+                    when(mockProcess.waitFor(anyLong(), any(TimeUnit.class))).thenReturn(completed);
+                    when(mockProcess.exitValue()).thenReturn(exitCode);
+                    when(mockProcess.destroyForcibly()).thenReturn(mockProcess);
+                    when(mock.start()).thenReturn(mockProcess);
+                }
+        );
+    }
+
+    private static boolean isAppPath(Path path) {
+        return path != null && normalized(path).endsWith("Auction_AI/ChatBot/Main/app.py");
+    }
+
+    private static boolean isOutputPath(Path path) {
+        return path != null && normalized(path).endsWith("Auction_AI/ChatBot/IOdata/output.json");
+    }
+
+    private static boolean isRuntimeFile(Path path) {
+        if (path == null) {
+            return false;
+        }
+        String value = normalized(path);
+        return value.endsWith("Auction_AI/ChatBot/IOdata/output.json")
+                || value.endsWith("Auction_AI/ChatBot/status/errol_info.json");
+    }
+
+    private static boolean isRuntimeDirectory(Path path) {
+        if (path == null) {
+            return false;
+        }
+        String value = normalized(path);
+        return value.endsWith("Auction_AI/ChatBot/IOdata")
+                || value.endsWith("Auction_AI/ChatBot/status");
+    }
+
+    private static String normalized(Path path) {
+        return path.toAbsolutePath().normalize().toString().replace('\\', '/');
     }
 }

@@ -45,7 +45,8 @@ def test_generate_llm_answer_builds_prompt_and_returns_answer():
 
     assert answer == "Bạn có thể nhập giá hợp lệ khi phiên đang diễn ra."
     assert len(client.prompts) == 1
-    assert f"Nhãn đã chọn: {LABEL}" in client.prompts[0]
+    assert f"- label_line: {LABEL}." in client.prompts[0]
+    assert "Nội dung chuẩn: Bidder có thể đặt giá khi phiên đấu giá đang diễn ra." in client.prompts[0]
     assert QUESTION in client.prompts[0]
 
 

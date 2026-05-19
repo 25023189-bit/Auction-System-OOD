@@ -14,6 +14,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
 
 import java.lang.reflect.Field;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -44,8 +46,6 @@ class ChatbotControllerTest {
 
     @BeforeEach
     void setUp() throws Exception {
-        controller = new ChatbotController();
-
         // Khởi tạo thực thể cho các linh kiện giao diện
         chatbotRoot = new StackPane();
         chatbotPanel = new VBox();
@@ -58,21 +58,35 @@ class ChatbotControllerTest {
 
         chatScrollPane.setContent(chatMessages);
 
-        // Bơm các linh kiện này vào các trường private @FXML của Controller bằng Reflection
-        injectField("chatbotRoot", chatbotRoot);
-        injectField("chatbotPanel", chatbotPanel);
-        injectField("chatMessages", chatMessages);
-        injectField("chatScrollPane", chatScrollPane);
-        injectField("txtChatbotInput", txtChatbotInput);
-        injectField("btnOpenChatbot", btnOpenChatbot);
-        injectField("btnCloseChatbot", btnCloseChatbot);
-        injectField("btnSendChatbot", btnSendChatbot);
+        controller = createController();
     }
 
-    private void injectField(String fieldName, Object value) throws Exception {
+    private ChatbotController createController() throws Exception {
+        ChatbotController newController = new ChatbotController();
+
+        // Bơm các linh kiện này vào các trường private @FXML của Controller bằng Reflection
+        injectField(newController, "chatbotRoot", chatbotRoot);
+        injectField(newController, "chatbotPanel", chatbotPanel);
+        injectField(newController, "chatMessages", chatMessages);
+        injectField(newController, "chatScrollPane", chatScrollPane);
+        injectField(newController, "txtChatbotInput", txtChatbotInput);
+        injectField(newController, "btnOpenChatbot", btnOpenChatbot);
+        injectField(newController, "btnCloseChatbot", btnCloseChatbot);
+        injectField(newController, "btnSendChatbot", btnSendChatbot);
+
+        return newController;
+    }
+
+    private void injectField(ChatbotController target, String fieldName, Object value) throws Exception {
         Field field = ChatbotController.class.getDeclaredField(fieldName);
         field.setAccessible(true);
-        field.set(controller, value);
+        field.set(target, value);
+    }
+
+    private void waitForFxEvents() throws InterruptedException {
+        CountDownLatch latch = new CountDownLatch(1);
+        Platform.runLater(latch::countDown);
+        assertTrue(latch.await(2, TimeUnit.SECONDS), "JavaFX event queue must drain in time");
     }
 
     @Test
@@ -105,28 +119,43 @@ class ChatbotControllerTest {
     @Test
     @DisplayName("Test luồng gửi tin nhắn trống hoặc gửi tin nhắn hợp lệ kích hoạt Thread nền")
     void testSendChatbotMessage_Scenarios() throws Exception {
-        controller.initialize();
-
-        // Kịch bản 1: Ô nhập trống rỗng -> Không xử lý, không thêm bubble chat mới
-        txtChatbotInput.setText("   ");
-        int initialMessagesSize = chatMessages.getChildren().size();
-        controller.handleSendChatbotMessage(new ActionEvent());
-        assertEquals(initialMessagesSize, chatMessages.getChildren().size());
-
         // Kịch bản 2: Ô nhập nội dung hợp lệ -> Chặn đứng hàm ask của Python bằng MockStatic để tránh chạy ngầm thật
         try (MockedStatic<PythonChatbotConnection> mockedStaticConn = mockStatic(PythonChatbotConnection.class)) {
             PythonChatbotConnection mockConn = mock(PythonChatbotConnection.class);
-            when(mockConn.ask("Xin chào Bot")).thenReturn("Phản hồi giả lập");
+            CountDownLatch askStarted = new CountDownLatch(1);
+            CountDownLatch releaseAnswer = new CountDownLatch(1);
+
+            when(mockConn.ask("Xin chào Bot")).thenAnswer(invocation -> {
+                askStarted.countDown();
+                assertTrue(releaseAnswer.await(2, TimeUnit.SECONDS), "Test must release mocked chatbot answer");
+                return "Phản hồi giả lập";
+            });
             mockedStaticConn.when(PythonChatbotConnection::getInstance).thenReturn(mockConn);
+
+            controller = createController();
+            controller.initialize();
+
+            // Kịch bản 1: Ô nhập trống rỗng -> Không xử lý, không thêm bubble chat mới
+            txtChatbotInput.setText("   ");
+            int initialMessagesSize = chatMessages.getChildren().size();
+            controller.handleSendChatbotMessage(new ActionEvent());
+            assertEquals(initialMessagesSize, chatMessages.getChildren().size());
+            verifyNoInteractions(mockConn);
 
             txtChatbotInput.setText("Xin chào Bot");
             controller.handleSendChatbotMessage(new ActionEvent());
 
             // Ô nhập liệu phải được clear sạch ngay lập tức để người dùng gõ câu tiếp theo
             assertEquals("", txtChatbotInput.getText());
+            assertTrue(askStarted.await(2, TimeUnit.SECONDS), "Chatbot request must run on background thread");
+            assertTrue(txtChatbotInput.isDisable(), "Input must be disabled while waiting for chatbot");
 
-            // Chờ một chút xíu mili giây để luồng daemon background thread chạy xong tác vụ hoàn tất coverage
-            Thread.sleep(150);
+            releaseAnswer.countDown();
+            verify(mockConn, timeout(2000)).ask("Xin chào Bot");
+            waitForFxEvents();
+
+            assertFalse(txtChatbotInput.isDisable(), "Input must be re-enabled after chatbot response");
+            assertEquals(initialMessagesSize + 2, chatMessages.getChildren().size());
         }
     }
 }
