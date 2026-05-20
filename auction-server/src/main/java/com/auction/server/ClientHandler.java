@@ -62,7 +62,8 @@ public class ClientHandler implements Runnable {
                 new AuthActionHandler(),
                 new RoomActionHandler(),
                 new SellerActionHandler(),
-                new AdminActionHandler(new PendingAuctionRoomFactory())
+                new AdminActionHandler(new PendingAuctionRoomFactory()),
+                new ProductDetailHandler()
         ));
 
         try {

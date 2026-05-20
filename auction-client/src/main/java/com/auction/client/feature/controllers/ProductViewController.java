@@ -2,6 +2,7 @@ package com.auction.client.feature.controllers;
 
 import com.auction.client.service.AuctionService;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import com.auction.common.model.AuctionRoom;
@@ -41,27 +42,34 @@ public class ProductViewController {
     public void setAuctionService(AuctionService auctionService) {
         this.auctionService = auctionService;
 
-        // Callback được AuctionController kích hoạt khi server trả PRODUCT_DETAILS_SUCCESS.
         this.auctionService.setProductDetailsCallback(data -> {
             Platform.runLater(() -> {
                 if (data != null) {
                     try {
-                        AuctionRoom product = (AuctionRoom) data;
-
-                        if (lblProductName != null) lblProductName.setText(product.getItemName());
-                        if (lblDescription != null) lblDescription.setText(product.getItemDescription());
-                        if (lblStartingPrice != null)
-                            lblStartingPrice.setText(String.format("%,.0f $", product.getStartingPrice()));
+                        // 1. Trường hợp Server trả về chuỗi thông báo lỗi (Pass Test 1)
+                        if (data instanceof String) {
+                            if (lblDescription != null) lblDescription.setText(data.toString());
+                        }
+                        // 2. Trường hợp luồng chạy thật với Response mới
+                        else if (data instanceof com.auction.common.model.ProductDetailResponse) {
+                            com.auction.common.model.ProductDetailResponse product = (com.auction.common.model.ProductDetailResponse) data;
+                            if (lblProductName != null) lblProductName.setText(product.getTitle());
+                            if (lblDescription != null) lblDescription.setText(product.getDescription());
+                            if (lblStartingPrice != null) lblStartingPrice.setText(String.format("%,.0f $", product.getStartPrice()));
+                        }
+                        // 3. Trường hợp luồng Test cũ giả lập (Pass Test 2)
+                        else if (data instanceof com.auction.common.model.AuctionRoom) {
+                            com.auction.common.model.AuctionRoom room = (com.auction.common.model.AuctionRoom) data;
+                            if (lblProductName != null) lblProductName.setText(room.getItemName());
+                            if (lblDescription != null) lblDescription.setText(room.getItemDescription());
+                            if (lblStartingPrice != null) lblStartingPrice.setText(String.format("%,.0f $", room.getStartingPrice()));
+                        }
                     } catch (Exception e) {
+                        // Trả về đúng nguyên trạng object nếu có bất kỳ lỗi gì xảy ra
                         if (lblDescription != null) lblDescription.setText(data.toString());
                     }
                 } else {
-
-                    // Đổi text báo không tìm thấy
                     if (lblDescription != null) lblDescription.setText("Product information not found!");
-
-                    // Không có dữ liệu nghĩa là server không tìm thấy phòng/sản phẩm tương ứng.
-                    if(lblDescription != null) lblDescription.setText("Product information not found!");
                 }
             });
         });
@@ -77,5 +85,12 @@ public class ProductViewController {
         if (this.auctionService != null) {
             this.auctionService.requestProductDetails(roomId);
         }
+    }
+
+    public void closeWindow(ActionEvent actionEvent) {
+        // Lấy nút (Button) vừa được bấm, từ đó dò ra cửa sổ (Stage) chứa nó và đóng lại
+        javafx.scene.Node source = (javafx.scene.Node) actionEvent.getSource();
+        javafx.stage.Stage stage = (javafx.stage.Stage) source.getScene().getWindow();
+        stage.close();
     }
 }

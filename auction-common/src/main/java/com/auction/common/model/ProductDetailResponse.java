@@ -86,4 +86,6 @@ public class ProductDetailResponse implements Serializable {
     public void setBidHistory(List<BidHistoryDTO> bidHistory) {
         this.bidHistory = bidHistory;
     }
+
+
 }

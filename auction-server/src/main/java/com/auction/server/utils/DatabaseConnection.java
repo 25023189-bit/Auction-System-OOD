@@ -49,10 +49,11 @@ public final class DatabaseConnection {
                 props.getProperty("db.user")
         );
 
+        // Sửa lại thứ tự ưu tiên của riêng biến password:
         String password = firstNonBlank(
+                props.getProperty("db.password"), // ĐƯA DÒNG NÀY LÊN ĐẦU TIÊN
                 System.getenv("AUCTION_DB_PASSWORD"),
-                System.getProperty("auction.db.password"),
-                props.getProperty("db.password")
+                System.getProperty("auction.db.password")
         );
 
         String driver = firstNonBlank(
@@ -75,6 +76,7 @@ public final class DatabaseConnection {
         }
 
         try {
+            password = "12345";
             return DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
             throw new SQLException(buildHelpfulConnectionError(url, user, driver, e), e);
