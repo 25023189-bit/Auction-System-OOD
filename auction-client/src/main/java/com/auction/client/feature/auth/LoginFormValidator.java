@@ -12,7 +12,7 @@ package com.auction.client.feature.auth;
  * 2. Validator trả fail ở lỗi đầu tiên hoặc ok nếu đủ dữ liệu.
  *
  * Business rules:
- * - Username/customerId là bắt buộc.
+ * - Username là bắt buộc.
  * - Password là bắt buộc và không được chỉ chứa khoảng trắng.
  *
  * Ghi chú kỹ thuật:
@@ -23,7 +23,7 @@ public class LoginFormValidator implements FormValidator<LoginForm> {
 
     @Override
     public ValidationResult validate(LoginForm form) {
-        if (form.customerId() == null || form.customerId().trim().isEmpty()) {
+        if (form.username() == null || form.username().trim().isEmpty()) {
             return ValidationResult.fail("Username is required!");
         }
 

@@ -55,13 +55,16 @@ public class UserDAO implements IUserDAO {
     }
 
     @Override
-    public User login(String loginIdentifier, String rawPassword) {
-        // Chấp nhận đăng nhập bằng cả username hoặc customer_id
-        String sql = "SELECT * FROM users WHERE username = ? OR customer_id = ?";
+    public User login(String username, String rawPassword) {
+        // Dang nhap chi dung username; customer_id la ma noi bo sau khi xac thuc.
+        if (username == null || username.isBlank() || rawPassword == null) {
+            return null;
+        }
+
+        String sql = "SELECT * FROM users WHERE username = ?";
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, loginIdentifier);
-            stmt.setString(2, loginIdentifier);
+            stmt.setString(1, username.trim());
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
                     User user = mapUser(rs);
@@ -72,7 +75,7 @@ public class UserDAO implements IUserDAO {
                 }
             }
         } catch (Exception e) {
-            LOGGER.error("Lỗi trong quá trình xử lý đăng nhập cho: {}", loginIdentifier, e);
+            LOGGER.error("Lỗi trong quá trình xử lý đăng nhập cho username: {}", username, e);
         }
         return null;
     }

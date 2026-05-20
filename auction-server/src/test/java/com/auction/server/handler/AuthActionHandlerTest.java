@@ -9,9 +9,11 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
 import org.mockito.MockedConstruction;
 
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 class AuthActionHandlerTest {
@@ -123,6 +125,13 @@ class AuthActionHandlerTest {
         });
 
         handler.handle(message, mockContext);
+        ArgumentCaptor<User> userCaptor = ArgumentCaptor.forClass(User.class);
+        verify(mockAuthService).registerUser(userCaptor.capture(), eq("StrongPass123!"));
+
+        User registeredUser = userCaptor.getValue();
+        assertEquals("hanto", registeredUser.getUsername());
+        assertEquals("To Bao Han", registeredUser.getFullName());
+
         verify(mockContext).send(successResponse);
     }
 

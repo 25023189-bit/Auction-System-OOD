@@ -72,6 +72,33 @@ class AuctionServiceTest {
     }
 
     @Test
+    @DisplayName("Login sends username as the message id")
+    void testLoginUsesUsernameMessageId() {
+        service.login("hanto", "pass");
+
+        ArgumentCaptor<Message> captor = ArgumentCaptor.forClass(Message.class);
+        verify(mockConnection).sendMessage(captor.capture());
+
+        Message message = captor.getValue();
+        assertEquals("LOGIN", message.getAction());
+        assertEquals("hanto", message.getId());
+        assertEquals("pass", message.getData());
+    }
+
+    @Test
+    @DisplayName("Register payload keeps username before full name")
+    void testRegisterPayloadKeepsUsernameBeforeFullName() {
+        service.register("BD50001", "hanto", "To Bao Han", "pass", "BIDDER", null);
+
+        ArgumentCaptor<Message> captor = ArgumentCaptor.forClass(Message.class);
+        verify(mockConnection).sendMessage(captor.capture());
+
+        Message message = captor.getValue();
+        assertEquals("REGISTER", message.getAction());
+        assertEquals("BD50001|hanto|To Bao Han|pass|BIDDER|", message.getData());
+    }
+
+    @Test
     @DisplayName("Test tạo phiên đấu giá (Create Auction)")
     void testCreateAuction() {
         service.createAuction("Item", "Desc", 100, 10, 5, LocalDateTime.now(), 60, 30);

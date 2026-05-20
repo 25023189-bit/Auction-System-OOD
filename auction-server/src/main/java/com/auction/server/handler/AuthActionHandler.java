@@ -11,9 +11,9 @@ import org.slf4j.LoggerFactory;
  * Handles account authentication actions.
  *
  * Supported protocol:
- * - LOGIN: id=username/customerId, data=password.
+ * - LOGIN: id=username, data=password.
  * - REGISTER: data=customerId|username|fullName|password|role|organization.
- * - RESET_PASSWORD: id=username/customerId, data=newPassword:confirmPassword.
+ * - RESET_PASSWORD: id=username, data=newPassword:confirmPassword.
  */
 public class AuthActionHandler extends AbstractClientActionHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(AuthActionHandler.class);

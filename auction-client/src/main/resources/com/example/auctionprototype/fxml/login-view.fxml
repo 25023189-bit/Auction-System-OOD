@@ -46,7 +46,7 @@
                 <VBox fx:id="paneForgotPassword" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 10);" visible="false">
                     <children>
                         <Label text="Reset Password" textFill="#2c3e50"><font><Font name="System Bold" size="24.0" /></font></Label>
-                        <TextField fx:id="txtForgotUsername" promptText="Customer ID or Username" />
+                        <TextField fx:id="txtForgotUsername" promptText="Username" />
                         <PasswordField fx:id="txtForgotNewPassword" promptText="New password" />
                         <PasswordField fx:id="txtForgotConfirm" promptText="Confirm new password" />
                         <Label fx:id="lblForgotStatus" textFill="RED" />
@@ -66,7 +66,7 @@
                                 <Label text="System Login" textFill="#2c3e50"><font><Font name="System Bold" size="24.0" /></font></Label>
                             </children>
                         </HBox>
-                        <TextField fx:id="txtUsername" prefHeight="40.0" prefWidth="300.0" promptText="Customer ID or Username" />
+                        <TextField fx:id="txtUsername" prefHeight="40.0" prefWidth="300.0" promptText="Username" />
                         <PasswordField fx:id="txtPassword" prefHeight="40.0" promptText="Password" />
                         <Label fx:id="lblStatus" textFill="RED" />
                         <Button onAction="#handleLogin" prefWidth="200.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" styleClass="login-button" text="Login" />

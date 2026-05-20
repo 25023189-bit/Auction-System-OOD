@@ -1,7 +1,5 @@
 package com.auction.server.handler;
 
-import com.auction.client.AI.autoApprove.AuctionAiAutoApproveConnector;
-import com.auction.client.AI.autoApprove.AutoApproveListingInput;
 import com.auction.common.dto.Message;
 import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.Item;
@@ -38,19 +36,24 @@ import java.util.Objects;
 public class SellerActionHandler extends AbstractClientActionHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(SellerActionHandler.class);
 
-    private final AuctionAiAutoApproveConnector autoApproveConnector;
+    @FunctionalInterface
+    public interface AutoApproveDecider {
+        boolean shouldApprove(PendingAuctionRequest request);
+    }
+
+    private final AutoApproveDecider autoApproveDecider;
     private final PendingAuctionRoomFactory pendingAuctionRoomFactory;
 
     public SellerActionHandler() {
-        this(new AuctionAiAutoApproveConnector(), new PendingAuctionRoomFactory());
+        this(request -> false, new PendingAuctionRoomFactory());
     }
 
     public SellerActionHandler(
-            AuctionAiAutoApproveConnector autoApproveConnector,
+            AutoApproveDecider autoApproveDecider,
             PendingAuctionRoomFactory pendingAuctionRoomFactory
     ) {
         super("CREATE_AUCTION");
-        this.autoApproveConnector = Objects.requireNonNull(autoApproveConnector);
+        this.autoApproveDecider = Objects.requireNonNull(autoApproveDecider);
         this.pendingAuctionRoomFactory = Objects.requireNonNull(pendingAuctionRoomFactory);
     }
 
@@ -140,7 +143,7 @@ public class SellerActionHandler extends AbstractClientActionHandler {
                     seller.getAdminCancellationRate()
             );
 
-            if (autoApproveConnector.requestDecision(AutoApproveListingInput.fromPendingRequest(request))
+            if (autoApproveDecider.shouldApprove(request)
                     && approveAutomatically(request, auctionDAO, context)) {
                 return;
             }
