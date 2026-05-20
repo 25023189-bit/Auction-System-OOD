@@ -1,5 +1,8 @@
 package com.auction.client.autoApprove;
 
+import com.auction.client.AI.autoApprove.AutoApproveFileGateway;
+import com.auction.client.AI.autoApprove.AutoApproveListingInput;
+import com.auction.client.AI.autoApprove.AutoApproveValidationException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 

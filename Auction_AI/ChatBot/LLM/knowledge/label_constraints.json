@@ -101,6 +101,10 @@
       "content": "Hệ thống có chatbot hỗ trợ giải đáp nhanh cho người dùng trong ứng dụng. Chatbot có thể xử lý các câu hỏi về chào hỏi, xác nhận, khen, liên hệ admin, số dư, tìm phiên, đặt giá, tạo phiên, thời gian còn lại và anti-sniping."
     },
     {
+      "title": "Ngoài lề",
+      "content": "Đây là nhãn dành cho câu hỏi không liên quan đến hệ thống đấu giá, ví dụ thời tiết, địa điểm ngoài đời, sức khỏe, học tập, giải trí, lập trình chung hoặc câu hỏi cá nhân. Chatbot không trả lời chi tiết nội dung ngoài lề, chỉ thông báo chưa có thông tin phù hợp và gợi ý người dùng hỏi về thao tác trong hệ thống đấu giá."
+    },
+    {
       "title": "AI hỗ trợ auto approve",
       "content": "Thư mục Auction_AI có mô hình hỗ trợ dự đoán khả năng tự động duyệt phiên đấu giá dựa trên dữ liệu huấn luyện. Chức năng này phục vụ hỗ trợ quyết định hoặc thử nghiệm AI, không thay thế hoàn toàn quyền duyệt của admin."
     }

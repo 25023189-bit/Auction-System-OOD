@@ -1,5 +1,8 @@
 package com.auction.client.autoApprove;
 
+import com.auction.client.AI.autoApprove.AuctionAiAutoApproveConnector;
+import com.auction.client.AI.autoApprove.AutoApproveListingInput;
+import com.auction.client.AI.autoApprove.AutoApproveProcessResult;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 

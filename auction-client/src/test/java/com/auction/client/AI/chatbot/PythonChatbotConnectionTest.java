@@ -170,7 +170,7 @@ class PythonChatbotConnectionTest {
             String response = PythonChatbotConnection.getInstance().ask("No command test");
 
             assertEquals(ChatbotFallback.MESSAGE, response);
-            assertEquals(2, attempts.get(), "Must try both configured Python launch commands");
+            assertEquals(3, attempts.get(), "Must try python, python3, and py -3 launch commands");
         }
     }
 
@@ -194,6 +194,8 @@ class PythonChatbotConnectionTest {
                 .thenReturn(true);
         mockedFiles.when(() -> Files.isRegularFile(argThat(PythonChatbotConnectionTest::isOutputPath)))
                 .thenReturn(outputExists);
+        mockedFiles.when(() -> Files.isRegularFile(argThat(PythonChatbotConnectionTest::isInformationPath)))
+                .thenReturn(false);
         mockedFiles.when(() -> Files.createDirectories(argThat(PythonChatbotConnectionTest::isRuntimeDirectory)))
                 .thenAnswer(invocation -> invocation.getArgument(0));
         mockedFiles.when(() -> Files.deleteIfExists(argThat(PythonChatbotConnectionTest::isRuntimeFile)))
@@ -231,6 +233,10 @@ class PythonChatbotConnectionTest {
 
     private static boolean isOutputPath(Path path) {
         return path != null && normalized(path).endsWith("Auction_AI/ChatBot/IOdata/output.json");
+    }
+
+    private static boolean isInformationPath(Path path) {
+        return path != null && normalized(path).endsWith("Auction_AI/ChatBot/status/infomation.json");
     }
 
     private static boolean isRuntimeFile(Path path) {

@@ -10,6 +10,7 @@ from ChatBot.Logist.chatbot.intent_chatbot import classify_message, predict_mess
 
 
 LABELS = ["ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ", "ĐĂNG NHẬP HỆ THỐNG"]
+LABELS_WITH_OUT_OF_SCOPE = [*LABELS, "NGOÀI LỀ"]
 
 
 class FakeModel:
@@ -44,9 +45,32 @@ def test_rule_based_answer_uses_selected_label():
     assert "đặt giá" in answer.lower()
 
 
+def test_low_confidence_prediction_uses_out_of_scope_label():
+    prediction = classify_message(
+        "Bệnh viện ở đâu?",
+        model=FakeModel([0.21, 0.19, 0.12]),
+        labels=LABELS_WITH_OUT_OF_SCOPE,
+    )
+
+    assert prediction.labels == ["NGOÀI LỀ"]
+
+
+def test_out_of_scope_answer_redirects_to_auction_support():
+    answer = predict_message(
+        "Thời tiết hôm nay thế nào?",
+        model=FakeModel([0.21, 0.19, 0.12]),
+        labels=LABELS_WITH_OUT_OF_SCOPE,
+    )
+
+    assert "hệ thống đấu giá" in answer.lower()
+    assert "thời tiết" not in answer.lower()
+
+
 def main() -> None:
     test_selects_highest_probability_label()
     test_rule_based_answer_uses_selected_label()
+    test_low_confidence_prediction_uses_out_of_scope_label()
+    test_out_of_scope_answer_redirects_to_auction_support()
     print("Logistic chatbot tests passed.")
 
 

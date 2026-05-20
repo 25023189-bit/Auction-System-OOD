@@ -14,6 +14,7 @@ from ChatBot.Connect import middleware
 QUESTION = "Tôi muốn đặt giá trong phiên đấu giá"
 LABEL = "ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ"
 OTHER_LABEL = "XEM DANH SÁCH PHIÊN ĐẤU GIÁ"
+OUT_OF_SCOPE_LABEL = "NGOÀI LỀ"
 
 
 @dataclass
@@ -84,7 +85,7 @@ def test_handle_question_llm_error_forwards_context_to_logist():
         patched(middleware, "forward_error_to_logist", forward_error), \
         patched(middleware, "write_error_info_file", capture_error_info), \
         patched(middleware, "write_information_file", lambda path, payload: calls.append(("information", payload["answer_source"], payload["fallback_answer_source"], payload["selected_labels"], payload["remaining_scores"]))), \
-        patched(middleware, "write_output_file", lambda path, payload: calls.append(("output", payload["status"], payload["message"]))):
+        patched(middleware, "write_output_file", lambda path, payload: calls.append(("output", payload["status"], payload.get("answer") or payload.get("message")))):
 
         result = middleware.handle_question(
             QUESTION,
@@ -93,15 +94,15 @@ def test_handle_question_llm_error_forwards_context_to_logist():
             error_info_path="error-path",
         )
 
-    assert result["status"] == "error"
-    assert result["message"] == "Không thể kết nối tới LLM API."
+    assert result["status"] == "fallback"
+    assert result["answer"] == "fallback"
     assert calls == [
         ("input", QUESTION),
         ("llm", QUESTION),
         ("logist", QUESTION, "RuntimeError"),
         ("error_info", QUESTION, "forwarded", [LABEL]),
         ("information", "ERROR", "Logist", [LABEL], {OTHER_LABEL: 0.1}),
-        ("output", "error", "Không thể kết nối tới LLM API."),
+        ("output", "fallback", "fallback"),
     ]
 
 
@@ -154,6 +155,33 @@ def test_call_llm_uses_logist_prediction_before_generating_answer():
     ]
 
 
+def test_call_llm_skips_llm_for_out_of_scope_prediction():
+    calls = []
+
+    def fail_if_called(*args, **kwargs):
+        raise AssertionError("Out-of-scope questions must be answered by Logist fallback.")
+
+    with patched(middleware, "load_chatbot_model", lambda: "model"), \
+        patched(middleware, "load_labels", lambda: [LABEL, OUT_OF_SCOPE_LABEL]), \
+        patched(middleware, "documents_by_label", lambda: {}), \
+        patched(middleware, "classify_message", lambda question, model=None, labels=None: calls.append(("classify", question, model, labels)) or Prediction([OUT_OF_SCOPE_LABEL], {LABEL: 0.12, OUT_OF_SCOPE_LABEL: 0.31})), \
+        patched(middleware, "generate_llm_answer", fail_if_called):
+
+        result, information = middleware._call_llm("Bệnh viện ở đâu?", llm_client="client")
+
+    assert "hệ thống đấu giá" in result["answer"].lower()
+    assert information["prediction_model"] == "Logist"
+    assert information["answer_source"] == "Logist"
+    assert information["llm_used_for_answer"] is False
+    assert information["logist_used_for_answer"] is True
+    assert information["selected_labels"] == [OUT_OF_SCOPE_LABEL]
+    assert information["selected_scores"] == {OUT_OF_SCOPE_LABEL: 0.31}
+    assert information["remaining_scores"] == {LABEL: 0.12}
+    assert calls == [
+        ("classify", "Bệnh viện ở đâu?", "model", [LABEL, OUT_OF_SCOPE_LABEL]),
+    ]
+
+
 def test_build_information_payload_splits_selected_and_remaining_scores():
     payload = middleware.build_information_payload(
         QUESTION,
@@ -175,6 +203,7 @@ def main():
     test_handle_question_llm_error_forwards_context_to_logist()
     test_handle_question_invalid_question_skips_logist_forwarding()
     test_call_llm_uses_logist_prediction_before_generating_answer()
+    test_call_llm_skips_llm_for_out_of_scope_prediction()
     test_build_information_payload_splits_selected_and_remaining_scores()
     print("Connect middleware logic tests passed.")
 

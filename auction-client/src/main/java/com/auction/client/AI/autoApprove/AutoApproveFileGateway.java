@@ -1,4 +1,4 @@
-package com.auction.client.autoApprove;
+package com.auction.client.AI.autoApprove;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

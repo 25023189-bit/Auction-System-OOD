@@ -1,4 +1,4 @@
-package com.auction.client.autoApprove;
+package com.auction.client.AI.autoApprove;
 
 import java.nio.file.Path;
 import java.time.Duration;

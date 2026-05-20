@@ -7,6 +7,7 @@ LOGIST_DIR = Path(__file__).resolve().parents[1]
 CHATBOT_DIR = LOGIST_DIR.parent
 TRAIN_DATA_PATH = LOGIST_DIR / "data" / "train_data.csv"
 KNOWLEDGE_PATH = CHATBOT_DIR / "LLM" / "knowledge" / "label_constraints.json"
+SPECIAL_LABELS = ["Không Rõ"]
 
 
 SAMPLE_ROWS = [
@@ -28,7 +29,9 @@ SAMPLE_ROWS = [
     ([22], "Seller đóng phiên đấu giá của mình trong trường hợp nào?"),
     ([23], "Thông báo trạng thái phiên được gửi khi tham gia đặt giá hoặc đóng phiên ra sao?"),
     ([24], "Chatbot hỗ trợ người dùng có thể trả lời những nội dung nào?"),
-    ([25], "AI hỗ trợ auto approve dùng để dự đoán khả năng duyệt phiên như thế nào?"),
+    ([25], "Bệnh viện ở đâu và thời tiết hôm nay thế nào?"),
+    ([26], "AI hỗ trợ auto approve dùng để dự đoán khả năng duyệt phiên như thế nào?"),
+    ([27], "Tôi cần hỗ trợ nhưng chưa biết phải hỏi thế nào."),
 ]
 
 
@@ -38,7 +41,8 @@ def normalize_label(label: str) -> str:
 
 def load_labels() -> list[str]:
     payload = json.loads(KNOWLEDGE_PATH.read_text(encoding="utf-8"))
-    return [normalize_label(document["title"]) for document in payload["documents"]]
+    labels = [normalize_label(document["title"]) for document in payload["documents"]]
+    return [*labels, *SPECIAL_LABELS]
 
 
 def make_row(text: str, active_labels: list[str], labels: list[str]) -> dict[str, str | int]:

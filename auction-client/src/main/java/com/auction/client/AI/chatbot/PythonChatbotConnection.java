@@ -6,6 +6,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.text.Normalizer;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
@@ -15,16 +17,22 @@ import java.util.regex.Pattern;
 public final class PythonChatbotConnection {
     private static final PythonChatbotConnection INSTANCE = new PythonChatbotConnection();
     private static final Duration PROCESS_TIMEOUT = Duration.ofSeconds(90);
+    private static final String CHATBOT_DIR_PROPERTY = "auction.chatbot.dir";
+    private static final String CHATBOT_DIR_ENV = "AUCTION_CHATBOT_DIR";
+    private static final String PYTHON_COMMAND_PROPERTY = "auction.chatbot.python";
+    private static final String PYTHON_COMMAND_ENV = "AUCTION_CHATBOT_PYTHON";
 
     private final BotSpec chatbot;
+    private final String configuredPythonCommand;
 
     private PythonChatbotConnection() {
-        Path projectRoot = locateProjectRoot();
         this.chatbot = new BotSpec(
-                projectRoot.resolve("Auction_AI").resolve("ChatBot"),
+                resolveChatbotDirectory(),
                 Path.of("IOdata").resolve("output.json"),
+                Path.of("status").resolve("infomation.json"),
                 "answer"
         );
+        this.configuredPythonCommand = resolvePythonCommand();
     }
 
     public static PythonChatbotConnection getInstance() {
@@ -60,6 +68,7 @@ public final class PythonChatbotConnection {
             Files.deleteIfExists(chatbot.errorInfoPath());
 
             if (!runPythonBot(question)) {
+                writeClientErrorInfo("Python chatbot process failed. See " + chatbot.processLogPath());
                 return Optional.empty();
             }
 
@@ -73,11 +82,15 @@ public final class PythonChatbotConnection {
             answer = answer.map(String::trim).filter(value -> !value.isEmpty());
 
             if (answer.isEmpty() || looksLikeErrorAnswer(answer.get())) {
-                return Optional.empty();
+                Optional<String> fallbackAnswer = readJsonStringField(chatbot.informationPath(), "fallback_answer")
+                        .map(String::trim)
+                        .filter(value -> !value.isEmpty());
+                return fallbackAnswer.filter(value -> !looksLikeErrorAnswer(value));
             }
 
             return answer;
         } catch (IOException | RuntimeException ex) {
+            writeClientErrorInfo(ex.getMessage());
             return Optional.empty();
         }
     }
@@ -91,16 +104,32 @@ public final class PythonChatbotConnection {
     }
 
     private boolean runPythonBot(String question) throws InterruptedException {
-        RunStatus status = runPythonCommand(question, "python");
-        if (status == RunStatus.SUCCESS) {
-            return true;
-        }
-
-        if (status == RunStatus.START_FAILED) {
-            return runPythonCommand(question, "py", "-3") == RunStatus.SUCCESS;
+        for (String[] command : pythonCommands()) {
+            if (runPythonCommand(question, command) == RunStatus.SUCCESS) {
+                return true;
+            }
         }
 
         return false;
+    }
+
+    private List<String[]> pythonCommands() {
+        List<String[]> commands = new ArrayList<>();
+        if (configuredPythonCommand != null && !configuredPythonCommand.isBlank()) {
+            commands.add(new String[]{configuredPythonCommand.trim()});
+        }
+        commands.add(new String[]{"python"});
+        commands.add(new String[]{"python3"});
+        commands.add(new String[]{"py", "-3"});
+        return commands;
+    }
+
+    private static String resolvePythonCommand() {
+        String configured = System.getProperty(PYTHON_COMMAND_PROPERTY);
+        if (configured == null || configured.isBlank()) {
+            configured = System.getenv(PYTHON_COMMAND_ENV);
+        }
+        return configured;
     }
 
     private RunStatus runPythonCommand(String question, String... commandPrefix) throws InterruptedException {
@@ -134,7 +163,7 @@ public final class PythonChatbotConnection {
         return new ProcessBuilder(command)
                 .directory(chatbot.appDirectory().toFile())
                 .redirectErrorStream(true)
-                .redirectOutput(ProcessBuilder.Redirect.DISCARD)
+                .redirectOutput(ProcessBuilder.Redirect.to(chatbot.processLogPath().toFile()))
                 .start();
     }
 
@@ -163,7 +192,22 @@ public final class PythonChatbotConnection {
                 .trim();
         return normalized.startsWith("loi:")
                 || normalized.startsWith("error:")
+                || normalized.contains("khong goi duoc ollama")
+                || normalized.contains("khong the ket noi toi llm")
                 || normalized.contains("traceback");
+    }
+
+    private Path resolveChatbotDirectory() {
+        String configured = System.getProperty(CHATBOT_DIR_PROPERTY);
+        if (configured == null || configured.isBlank()) {
+            configured = System.getenv(CHATBOT_DIR_ENV);
+        }
+        if (configured != null && !configured.isBlank()) {
+            return Path.of(configured).toAbsolutePath().normalize();
+        }
+
+        Path projectRoot = locateProjectRoot();
+        return projectRoot.resolve("Auction_AI").resolve("ChatBot");
     }
 
     private Path locateProjectRoot() {
@@ -176,6 +220,33 @@ public final class PythonChatbotConnection {
             current = current.getParent();
         }
         return Path.of("").toAbsolutePath().normalize();
+    }
+
+    private void writeClientErrorInfo(String message) {
+        try {
+            Files.createDirectories(chatbot.errorInfoPath().getParent());
+            String safeMessage = message == null || message.isBlank()
+                    ? "Python chatbot is not available on this machine."
+                    : message;
+            String payload = """
+                    {
+                      "status": "error",
+                      "source": "java-client",
+                      "message": "%s"
+                    }
+                    """.formatted(escapeJson(safeMessage));
+            Files.writeString(chatbot.errorInfoPath(), payload, StandardCharsets.UTF_8);
+        } catch (IOException ignored) {
+            // The UI already returns a fallback answer; diagnostics are best-effort only.
+        }
+    }
+
+    private String escapeJson(String value) {
+        return value
+                .replace("\\", "\\\\")
+                .replace("\"", "\\\"")
+                .replace("\r", "\\r")
+                .replace("\n", "\\n");
     }
 
     private String unescapeJson(String value) {
@@ -215,6 +286,7 @@ public final class PythonChatbotConnection {
     private record BotSpec(
             Path directory,
             Path relativeOutputPath,
+            Path relativeInformationPath,
             String outputField
     ) {
         private Path appPath() {
@@ -229,8 +301,16 @@ public final class PythonChatbotConnection {
             return directory.resolve(relativeOutputPath);
         }
 
+        private Path informationPath() {
+            return directory.resolve(relativeInformationPath);
+        }
+
         private Path errorInfoPath() {
             return directory.resolve("status").resolve("errol_info.json");
+        }
+
+        private Path processLogPath() {
+            return directory.resolve("status").resolve("chatbot_process.log");
         }
     }
 

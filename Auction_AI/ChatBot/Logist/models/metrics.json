@@ -1,206 +1,212 @@
 {
   "summary": {
-    "precision_micro": 0.7878,
-    "recall_micro": 0.911,
-    "f1_micro": 0.8449,
-    "precision_macro": 0.7649,
-    "recall_macro": 0.8787,
-    "f1_macro": 0.8144,
-    "precision_weighted": 0.7997,
-    "recall_weighted": 0.911,
-    "f1_weighted": 0.8487,
-    "precision_samples": 0.8113,
-    "recall_samples": 0.9126,
-    "f1_samples": 0.8395,
-    "exact_match_ratio": 0.658,
-    "hamming_loss": 0.0161
+    "precision_micro": 0.7738,
+    "recall_micro": 0.9025,
+    "f1_micro": 0.8332,
+    "precision_macro": 0.752,
+    "recall_macro": 0.8397,
+    "f1_macro": 0.7874,
+    "precision_weighted": 0.789,
+    "recall_weighted": 0.9025,
+    "f1_weighted": 0.8377,
+    "precision_samples": 0.796,
+    "recall_samples": 0.9066,
+    "f1_samples": 0.8265,
+    "exact_match_ratio": 0.6153,
+    "hamming_loss": 0.0169
   },
   "per_label_report": {
     "ĐĂNG KÝ TÀI KHOẢN": {
-      "precision": 0.8395061728395061,
-      "recall": 0.9855072463768116,
-      "f1-score": 0.9066666666666666,
-      "support": 69.0
+      "precision": 0.8554216867469879,
+      "recall": 0.9466666666666667,
+      "f1-score": 0.8987341772151899,
+      "support": 75.0
     },
     "ĐĂNG NHẬP HỆ THỐNG": {
-      "precision": 0.8904109589041096,
-      "recall": 0.9027777777777778,
-      "f1-score": 0.896551724137931,
-      "support": 72.0
+      "precision": 0.875,
+      "recall": 0.8873239436619719,
+      "f1-score": 0.8811188811188811,
+      "support": 71.0
     },
     "QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU": {
-      "precision": 0.8939393939393939,
-      "recall": 0.9833333333333333,
-      "f1-score": 0.9365079365079365,
-      "support": 60.0
+      "precision": 0.9402985074626866,
+      "recall": 0.984375,
+      "f1-score": 0.9618320610687023,
+      "support": 64.0
     },
     "PHÂN QUYỀN NGƯỜI DÙNG": {
-      "precision": 0.8055555555555556,
-      "recall": 0.8787878787878788,
-      "f1-score": 0.8405797101449275,
-      "support": 66.0
+      "precision": 0.7051282051282052,
+      "recall": 0.8870967741935484,
+      "f1-score": 0.7857142857142857,
+      "support": 62.0
     },
     "QUẢN LÝ SỐ DƯ TÀI KHOẢN": {
-      "precision": 0.825,
-      "recall": 0.88,
-      "f1-score": 0.8516129032258064,
+      "precision": 0.810126582278481,
+      "recall": 0.8533333333333334,
+      "f1-score": 0.8311688311688312,
       "support": 75.0
     },
     "XEM DANH SÁCH PHIÊN ĐẤU GIÁ": {
-      "precision": 0.8194444444444444,
-      "recall": 0.9672131147540983,
-      "f1-score": 0.8872180451127819,
-      "support": 61.0
+      "precision": 0.8493150684931506,
+      "recall": 0.9538461538461539,
+      "f1-score": 0.8985507246376812,
+      "support": 65.0
     },
     "XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ": {
-      "precision": 0.75,
+      "precision": 0.7894736842105263,
       "recall": 0.8823529411764706,
-      "f1-score": 0.8108108108108109,
+      "f1-score": 0.8333333333333334,
       "support": 17.0
     },
     "THAM GIA PHÒNG ĐẤU GIÁ": {
-      "precision": 0.6470588235294118,
-      "recall": 0.9428571428571428,
-      "f1-score": 0.7674418604651163,
-      "support": 70.0
+      "precision": 0.6396396396396397,
+      "recall": 0.9466666666666667,
+      "f1-score": 0.7634408602150538,
+      "support": 75.0
     },
     "RỜI PHÒNG ĐẤU GIÁ": {
-      "precision": 0.9814814814814815,
-      "recall": 0.8983050847457628,
-      "f1-score": 0.9380530973451328,
-      "support": 59.0
+      "precision": 0.9583333333333334,
+      "recall": 0.9583333333333334,
+      "f1-score": 0.9583333333333334,
+      "support": 48.0
     },
     "ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ": {
-      "precision": 0.6538461538461539,
-      "recall": 0.8717948717948718,
-      "f1-score": 0.7472527472527473,
-      "support": 78.0
+      "precision": 0.5585585585585585,
+      "recall": 0.8857142857142857,
+      "f1-score": 0.6850828729281768,
+      "support": 70.0
     },
     "CẬP NHẬT GIÁ REALTIME": {
-      "precision": 0.6966292134831461,
-      "recall": 0.9253731343283582,
-      "f1-score": 0.7948717948717948,
-      "support": 67.0
+      "precision": 0.7375,
+      "recall": 0.921875,
+      "f1-score": 0.8194444444444444,
+      "support": 64.0
     },
     "XEM LỊCH SỬ ĐẶT GIÁ": {
-      "precision": 0.8461538461538461,
-      "recall": 0.9166666666666666,
-      "f1-score": 0.88,
-      "support": 12.0
+      "precision": 0.9333333333333333,
+      "recall": 0.9333333333333333,
+      "f1-score": 0.9333333333333333,
+      "support": 15.0
     },
     "CHAT TRONG PHÒNG ĐẤU GIÁ": {
-      "precision": 0.8727272727272727,
-      "recall": 0.96,
-      "f1-score": 0.9142857142857143,
-      "support": 50.0
+      "precision": 0.9152542372881356,
+      "recall": 1.0,
+      "f1-score": 0.9557522123893806,
+      "support": 54.0
     },
     "XEM THỜI GIAN CÒN LẠI CỦA PHIÊN": {
-      "precision": 0.6875,
-      "recall": 0.8870967741935484,
-      "f1-score": 0.7746478873239436,
-      "support": 62.0
+      "precision": 0.6635514018691588,
+      "recall": 0.8875,
+      "f1-score": 0.7593582887700535,
+      "support": 80.0
     },
     "ANTI-SNIPING": {
-      "precision": 0.8985507246376812,
-      "recall": 0.96875,
-      "f1-score": 0.9323308270676691,
-      "support": 64.0
+      "precision": 0.9516129032258065,
+      "recall": 0.8939393939393939,
+      "f1-score": 0.921875,
+      "support": 66.0
     },
     "KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN": {
       "precision": 0.5,
-      "recall": 0.6,
-      "f1-score": 0.5454545454545454,
-      "support": 10.0
+      "recall": 0.5714285714285714,
+      "f1-score": 0.5333333333333333,
+      "support": 7.0
     },
     "TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ": {
-      "precision": 0.75,
-      "recall": 0.9622641509433962,
-      "f1-score": 0.8429752066115702,
-      "support": 53.0
+      "precision": 0.7532467532467533,
+      "recall": 0.9508196721311475,
+      "f1-score": 0.8405797101449275,
+      "support": 61.0
     },
     "XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC": {
-      "precision": 0.7413793103448276,
-      "recall": 0.7962962962962963,
-      "f1-score": 0.7678571428571429,
-      "support": 54.0
+      "precision": 0.7777777777777778,
+      "recall": 1.0,
+      "f1-score": 0.875,
+      "support": 42.0
     },
     "TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY": {
-      "precision": 0.3333333333333333,
-      "recall": 0.6,
-      "f1-score": 0.42857142857142855,
-      "support": 5.0
-    },
-    "SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ": {
-      "precision": 0.8088235294117647,
-      "recall": 0.8870967741935484,
-      "f1-score": 0.8461538461538461,
-      "support": 62.0
-    },
-    "KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ": {
-      "precision": 0.7142857142857143,
-      "recall": 0.8333333333333334,
-      "f1-score": 0.7692307692307693,
-      "support": 6.0
-    },
-    "YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ": {
-      "precision": 0.6153846153846154,
-      "recall": 0.8888888888888888,
-      "f1-score": 0.7272727272727273,
-      "support": 9.0
-    },
-    "SELLER ĐÓNG PHIÊN ĐẤU GIÁ": {
-      "precision": 0.6,
-      "recall": 0.75,
-      "f1-score": 0.6666666666666666,
+      "precision": 0.36363636363636365,
+      "recall": 0.5,
+      "f1-score": 0.42105263157894735,
       "support": 8.0
     },
-    "THÔNG BÁO TRẠNG THÁI PHIÊN": {
-      "precision": 0.5882352941176471,
-      "recall": 0.6666666666666666,
+    "SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ": {
+      "precision": 0.8656716417910447,
+      "recall": 0.9206349206349206,
+      "f1-score": 0.8923076923076924,
+      "support": 63.0
+    },
+    "KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ": {
+      "precision": 0.5555555555555556,
+      "recall": 0.7142857142857143,
       "f1-score": 0.625,
-      "support": 15.0
+      "support": 7.0
+    },
+    "YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ": {
+      "precision": 0.6666666666666666,
+      "recall": 0.6,
+      "f1-score": 0.631578947368421,
+      "support": 10.0
+    },
+    "SELLER ĐÓNG PHIÊN ĐẤU GIÁ": {
+      "precision": 0.5714285714285714,
+      "recall": 0.8888888888888888,
+      "f1-score": 0.6956521739130435,
+      "support": 9.0
+    },
+    "THÔNG BÁO TRẠNG THÁI PHIÊN": {
+      "precision": 0.4375,
+      "recall": 0.4375,
+      "f1-score": 0.4375,
+      "support": 16.0
     },
     "CHATBOT HỖ TRỢ NGƯỜI DÙNG": {
-      "precision": 0.9629629629629629,
-      "recall": 0.9811320754716981,
-      "f1-score": 0.9719626168224299,
-      "support": 53.0
+      "precision": 0.9107142857142857,
+      "recall": 0.9107142857142857,
+      "f1-score": 0.9107142857142857,
+      "support": 56.0
+    },
+    "NGOÀI LỀ": {
+      "precision": 0.6666666666666666,
+      "recall": 0.6363636363636364,
+      "f1-score": 0.6511627906976745,
+      "support": 22.0
     },
     "AI HỖ TRỢ AUTO APPROVE": {
       "precision": 1.0,
-      "recall": 1.0,
-      "f1-score": 1.0,
-      "support": 1.0
+      "recall": 0.6666666666666666,
+      "f1-score": 0.8,
+      "support": 3.0
     },
     "Không Rõ": {
-      "precision": 0.9302325581395349,
-      "recall": 0.9090909090909091,
-      "f1-score": 0.9195402298850575,
-      "support": 44.0
+      "precision": 0.803921568627451,
+      "recall": 0.8913043478260869,
+      "f1-score": 0.845360824742268,
+      "support": 46.0
     },
     "micro avg": {
-      "precision": 0.7877697841726619,
-      "recall": 0.910981697171381,
-      "f1-score": 0.8449074074074074,
-      "support": 1202.0
+      "precision": 0.7738176833447566,
+      "recall": 0.9024780175859313,
+      "f1-score": 0.8332103321033211,
+      "support": 1251.0
     },
     "macro avg": {
-      "precision": 0.7649052355378669,
-      "recall": 0.8787253726547207,
-      "f1-score": 0.8144265520275987,
-      "support": 1202.0
+      "precision": 0.7519761783099693,
+      "recall": 0.8396772689216098,
+      "f1-score": 0.7873683939096885,
+      "support": 1251.0
     },
     "weighted avg": {
-      "precision": 0.799717951735404,
-      "recall": 0.910981697171381,
-      "f1-score": 0.8487347776028801,
-      "support": 1202.0
+      "precision": 0.7890149197304231,
+      "recall": 0.9024780175859313,
+      "f1-score": 0.8376609511653097,
+      "support": 1251.0
     },
     "samples avg": {
-      "precision": 0.8112729234088457,
-      "recall": 0.912621359223301,
-      "f1-score": 0.8394590846047157,
-      "support": 1202.0
+      "precision": 0.7960342417889589,
+      "recall": 0.9066212438853949,
+      "f1-score": 0.826544873714685,
+      "support": 1251.0
     }
   }
 }

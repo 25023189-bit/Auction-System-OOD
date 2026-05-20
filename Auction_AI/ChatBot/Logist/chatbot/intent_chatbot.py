@@ -11,6 +11,7 @@ from .paths import KNOWLEDGE_PATH, LABELS_PATH, MODEL_PATH
 DEFAULT_THRESHOLD = 0.25
 MAX_SELECTED_LABELS = 1
 UNCLEAR_LABEL = "KHÔNG RÕ"
+OUT_OF_SCOPE_LABEL = "NGOÀI LỀ"
 
 
 @dataclass(frozen=True)
@@ -21,6 +22,20 @@ class IntentPrediction:
 
 def normalize_label(label: str) -> str:
     return " ".join(label.strip().upper().split())
+
+
+def has_out_of_scope_label(labels: list[str]) -> bool:
+    return any(normalize_label(label) == OUT_OF_SCOPE_LABEL for label in labels)
+
+
+def _fallback_label(scores: dict[str, float], ranked: list[tuple[str, float]]) -> str:
+    special_labels = [
+        label for label in scores
+        if normalize_label(label) in {OUT_OF_SCOPE_LABEL, UNCLEAR_LABEL}
+    ]
+    if special_labels:
+        return max(special_labels, key=lambda label: scores[label])
+    return ranked[0][0]
 
 
 def load_documents(path: Path = KNOWLEDGE_PATH) -> list[dict[str, str]]:
@@ -79,7 +94,7 @@ def select_labels(
     ]
 
     if not selected and ranked:
-        selected = [ranked[0][0]]
+        selected = [_fallback_label(scores, ranked)]
 
     return selected[:max_labels]
 
@@ -115,6 +130,13 @@ def build_rule_based_answer(
         return (
             "Mình chưa xác định được chủ đề phù hợp. Bạn có thể hỏi về đăng ký, đăng nhập, "
             "tìm phiên đấu giá, tham gia phòng, đặt giá, số dư, thời gian còn lại hoặc anti-sniping."
+        )
+
+    if has_out_of_scope_label(labels):
+        return (
+            "Mình chưa có thông tin phù hợp để trả lời nội dung đó. "
+            "Bạn cần hỗ trợ thao tác nào trong hệ thống đấu giá như đăng ký, đăng nhập, "
+            "xem phiên, đặt giá hoặc quản lý số dư?"
         )
 
     if any(normalize_label(label) == UNCLEAR_LABEL for label in labels):

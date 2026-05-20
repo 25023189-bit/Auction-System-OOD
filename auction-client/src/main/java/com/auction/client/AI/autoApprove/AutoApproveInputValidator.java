@@ -1,4 +1,4 @@
-package com.auction.client.autoApprove;
+package com.auction.client.AI.autoApprove;
 
 public class AutoApproveInputValidator {
     public void validate(AutoApproveListingInput input) throws AutoApproveValidationException {

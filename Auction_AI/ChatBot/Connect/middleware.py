@@ -7,6 +7,7 @@ from ChatBot.Logist.chatbot.intent_chatbot import (
     build_rule_based_answer,
     classify_message,
     documents_by_label,
+    has_out_of_scope_label,
     load_chatbot_model,
     load_labels,
 )
@@ -118,7 +119,6 @@ def handle_error(
     error_info_path=ERROR_INFO_PATH,
     information_path=INFORMATION_PATH,
 ):
-    error_output = build_error_output(exc)
     normalized_question = question.strip() if isinstance(question, str) else ""
     logist_context = (
         forward_error_to_logist(normalized_question, exc)
@@ -144,6 +144,13 @@ def handle_error(
     )
     write_error_info_file(error_info_path, exc, normalized_question, logist_context)
     write_information_file(information_path, information)
+
+    if has_logist_fallback:
+        fallback_output = build_fallback_output(logist_context["answer"])
+        write_output_file(output_path, fallback_output)
+        return fallback_output
+
+    error_output = build_error_output(exc)
     write_output_file(output_path, error_output)
     return error_output
 
@@ -153,6 +160,18 @@ def _call_llm(question, llm_client=None):
     labels = load_labels()
     documents = documents_by_label()
     prediction = classify_message(question, model=model, labels=labels)
+
+    if has_out_of_scope_label(prediction.labels):
+        answer = build_rule_based_answer(question, prediction.labels, documents)
+        information = build_information_payload(
+            question,
+            labels=prediction.labels,
+            scores=prediction.scores,
+            answer_source="Logist",
+            status="success",
+        )
+        return {"answer": answer}, information
+
     answer = generate_llm_answer(
         question,
         prediction.labels,
@@ -195,6 +214,15 @@ def build_error_output(exc):
     return {
         "status": "error",
         "message": _user_error_message(exc),
+        "timestamp": _timestamp(),
+    }
+
+
+def build_fallback_output(answer):
+    return {
+        "status": "fallback",
+        "answer_source": "Logist",
+        "answer": answer,
         "timestamp": _timestamp(),
     }
 
