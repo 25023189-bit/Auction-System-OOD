@@ -11,5 +11,10 @@
         <module name="AuctionSystem" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="auction-client" target="25" />
+      <module name="auction-common" target="25" />
+      <module name="auction-server" target="25" />
+    </bytecodeTargetLevel>
   </component>
 </project>
