@@ -44,7 +44,7 @@ class AuthServiceTest {
 
         assertEquals("LOGIN_FAIL", response.getAction());
         assertEquals("SERVER", response.getId());
-        assertEquals("Sai tài khoản (ID/Username) hoặc mật khẩu!", response.getData());
+        assertEquals("Sai username hoặc mật khẩu!", response.getData());
     }
 
     @Test
@@ -113,7 +113,7 @@ class AuthServiceTest {
 
     @Test
     void resetPassword_InvalidDataFormat_ReturnsFailMessage() {
-        Message response = authService.resetPassword("U001", "newPassNoColon");
+        Message response = authService.resetPassword("hanto", "newPassNoColon");
 
         assertEquals("RESET_FAIL", response.getAction());
         assertEquals("Invalid request data!", response.getData());
@@ -121,9 +121,9 @@ class AuthServiceTest {
 
     @Test
     void resetPassword_ValidDataButDatabaseFails_ReturnsFailMessage() {
-        when(mockUserDAO.resetPassword("U001", "newPass", "confirmPass")).thenReturn(false);
+        when(mockUserDAO.resetPasswordWithNewPassword("hanto", "newPass")).thenReturn("FAILED");
 
-        Message response = authService.resetPassword("U001", "newPass:confirmPass");
+        Message response = authService.resetPassword("hanto", "newPass:newPass");
 
         assertEquals("RESET_FAIL", response.getAction());
         assertTrue(response.getData().toString().contains("Unable to change password"));
@@ -131,9 +131,9 @@ class AuthServiceTest {
 
     @Test
     void resetPassword_ValidDataAndSuccess_ReturnsSuccessMessage() {
-        when(mockUserDAO.resetPassword("U001", "newPass", "newPass")).thenReturn(true);
+        when(mockUserDAO.resetPasswordWithNewPassword("hanto", "newPass")).thenReturn("SUCCESS");
 
-        Message response = authService.resetPassword("U001", "newPass:newPass");
+        Message response = authService.resetPassword("hanto", "newPass:newPass");
 
         assertEquals("RESET_SUCCESS", response.getAction());
         assertEquals("Password changed successfully!", response.getData());

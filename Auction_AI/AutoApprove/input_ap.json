@@ -3,26 +3,26 @@
   "source": "auction-system",
   "samples": [
     {
-      "title": "Son",
+      "title": "Tivt",
       "category": "",
-      "organization": "Đấu giá",
-      "description": "bóng",
+      "organization": "Samsung",
+      "description": "jowewfwfe",
       "seller_rating": 5.0,
       "seller_completed_rating": 0.0,
       "seller_cancel_rate": 0.0,
-      "minimum_join_amount": 40.0,
-      "minimum_join_ratio": 0.4,
-      "bid_step": 5.0,
-      "bid_step_ratio": 0.05,
-      "start_price": 100.0,
-      "start_price_log": 4.605170185988092,
-      "duration_minutes": 1000.0,
-      "extension_seconds": 30.0,
+      "minimum_join_amount": 4000.0,
+      "minimum_join_ratio": 0.3333333333333333,
+      "bid_step": 500.0,
+      "bid_step_ratio": 0.041666666666666664,
+      "start_price": 12000.0,
+      "start_price_log": 9.392661928770137,
+      "duration_minutes": 50.0,
+      "extension_seconds": 23.0,
       "start_hour": 14.0,
       "day_of_week": 2.0,
       "is_weekend": 0.0,
-      "title_length": 3.0,
-      "desc_length": 4.0
+      "title_length": 4.0,
+      "desc_length": 9.0
     }
   ]
 }

@@ -19,7 +19,7 @@ import org.slf4j.LoggerFactory;
  * 2. Service gọi DAO, map kết quả DAO thành Message response cho client.
  *
  * Business rules:
- * - Login chấp nhận username hoặc customer_id và chỉ thành công khi BCrypt verify pass.
+ * - Login chỉ chấp nhận username và chỉ thành công khi BCrypt verify pass.
  * - Seller login thành công phải có tỷ lệ đấu giá thành công/hủy bởi admin để client hiển thị đúng.
  *
  * Ghi chú kỹ thuật:
@@ -44,11 +44,10 @@ public class AuthService {
         this.auctionDAO = new com.auction.server.dao.AuctionDAO();
     }
 
-    public Message login(String loginId, String password) {
-        LOGGER.info("Login request. loginId={}", loginId);
+    public Message login(String username, String password) {
+        LOGGER.info("Login request. username={}", username);
 
-        // loginId có thể là username hoặc customer_id; DAO chịu trách nhiệm chuẩn hóa.
-        User user = userDAO.login(loginId, password);
+        User user = userDAO.login(username, password);
 
         if (user != null) {
             // Seller cần thêm thống kê để client/seller validator hiển thị đúng uy tín.
@@ -58,7 +57,7 @@ public class AuthService {
         }
 
         LOGGER.info("Login result: FAILED.");
-        return new Message("LOGIN_FAIL", "SERVER", "Sai tài khoản (ID/Username) hoặc mật khẩu!");
+        return new Message("LOGIN_FAIL", "SERVER", "Sai username hoặc mật khẩu!");
     }
 
     public Message registerUser(User user, String rawPassword) {
@@ -78,8 +77,8 @@ public class AuthService {
         }
     }
 
-    public Message resetPassword(String customerId, String data) {
-        LOGGER.info("Password reset request for: {}", customerId);
+    public Message resetPassword(String username, String data) {
+        LOGGER.info("Password reset request for username: {}", username);
 
         String[] parts = data.split(":");
         if (parts.length < 2) {
@@ -89,9 +88,13 @@ public class AuthService {
         String newPassword = parts[0];
         String confirmPassword = parts[1];
 
-        boolean isSuccess = userDAO.resetPassword(customerId, newPassword, confirmPassword);
+        if (!newPassword.equals(confirmPassword)) {
+            return new Message("RESET_FAIL", "SERVER", "Password confirmation does not match!");
+        }
 
-        if (isSuccess) {
+        String resultStatus = userDAO.resetPasswordWithNewPassword(username, newPassword);
+
+        if ("SUCCESS".equals(resultStatus)) {
             LOGGER.info("Password reset result: SUCCESS.");
             return new Message("RESET_SUCCESS", "SERVER", "Password changed successfully!");
         }

@@ -392,7 +392,7 @@ public class AuctionController implements Initializable, ServerMessageListener {
         authViewModel.setRegisterOrganization(txtRegOrganization != null ? txtRegOrganization.getText() : "");
 
         authActionFacade.register(new RegisterForm(
-                customerId, fullName, authViewModel.getRegisterUsername(),
+                customerId, authViewModel.getRegisterUsername(), fullName,
                 authViewModel.getRegisterPassword(), authViewModel.getRegisterConfirmPassword(),
                 authViewModel.getRegisterRole(), authViewModel.getRegisterOrganization()
         ));

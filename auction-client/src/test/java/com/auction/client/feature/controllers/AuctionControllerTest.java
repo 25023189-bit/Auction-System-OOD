@@ -1,5 +1,7 @@
 package com.auction.client.feature.controllers;
 
+import com.auction.client.feature.auth.AuthActionFacade;
+import com.auction.client.feature.auth.RegisterForm;
 import com.auction.client.service.AuctionService;
 import com.auction.client.network.socket.ClientConnection;
 import com.auction.client.session.SessionStore;
@@ -7,12 +9,18 @@ import com.auction.common.dto.Message;
 import javafx.application.Platform;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -72,11 +80,52 @@ class AuctionControllerTest {
 
         // Giả lập Server bắn gói tin chi tiết sản phẩm về máy Client
         Message responseMsg = new Message("PRODUCT_DETAILS_SUCCESS", "SERVER", "MockProductData");
+        CountDownLatch callbackLatch = new CountDownLatch(1);
+        doAnswer(invocation -> {
+            callbackLatch.countDown();
+            return null;
+        }).when(mockAuctionService).fireProductDetailsReceived("MockProductData");
 
         controller.onServerResponse(responseMsg);
 
         // Xác thực luồng sự kiện callback chi tiết sản phẩm đã được kích hoạt
-        Thread.sleep(120);
+        assertTrue(callbackLatch.await(1, TimeUnit.SECONDS));
         verify(mockAuctionService).fireProductDetailsReceived("MockProductData");
+    }
+
+    @Test
+    @DisplayName("Register form keeps username and full name in the correct order")
+    void testHandleSubmitRegister_MapsUsernameBeforeFullName() throws Exception {
+        AuthActionFacade mockAuthActionFacade = mock(AuthActionFacade.class);
+        injectField("authActionFacade", mockAuthActionFacade);
+
+        TextField txtRegCustomerId = new TextField("BD50001");
+        TextField txtRegUsername = new TextField("hanto");
+        TextField txtRegFullName = new TextField("To Bao Han");
+        PasswordField txtRegPassword = new PasswordField();
+        txtRegPassword.setText("StrongPass123!");
+        PasswordField txtRegConfirm = new PasswordField();
+        txtRegConfirm.setText("StrongPass123!");
+        ComboBox<String> cbRegRole = new ComboBox<>();
+        cbRegRole.setValue("BIDDER");
+
+        injectField("txtRegCustomerId", txtRegCustomerId);
+        injectField("txtRegUsername", txtRegUsername);
+        injectField("txtRegFullName", txtRegFullName);
+        injectField("txtRegPassword", txtRegPassword);
+        injectField("txtRegConfirm", txtRegConfirm);
+        injectField("cbRegRole", cbRegRole);
+        injectField("txtRegOrganization", new TextField());
+
+        Method submitRegister = AuctionController.class.getDeclaredMethod("handleSubmitRegister");
+        submitRegister.setAccessible(true);
+        submitRegister.invoke(controller);
+
+        ArgumentCaptor<RegisterForm> captor = ArgumentCaptor.forClass(RegisterForm.class);
+        verify(mockAuthActionFacade).register(captor.capture());
+
+        RegisterForm form = captor.getValue();
+        assertEquals("hanto", form.username());
+        assertEquals("To Bao Han", form.fullName());
     }
 }

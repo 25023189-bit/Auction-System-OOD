@@ -63,9 +63,12 @@ class UserDAOTest {
 
             UserDAO dao = new UserDAO();
             User newUser = new User("U999", "new_user", "BIDDER", "UET", 1000.0);
+            newUser.setFullName("Nguyen Van A");
 
             String result = dao.registerUser(newUser, "password123");
             assertEquals("SUCCESS", result);
+            verify(mockStmt).setString(2, "new_user");
+            verify(mockStmt).setString(4, "Nguyen Van A");
         }
     }
 
@@ -88,9 +91,12 @@ class UserDAOTest {
             when(mockRs.getString("password_hash")).thenReturn(hashedPass); // Giả lập DB trả về hash
 
             UserDAO dao = new UserDAO();
-            User user = dao.login("U001", "mat_khau_chuan");
+            User user = dao.login("hanto", "mat_khau_chuan");
 
             assertNotNull(user);
+            verify(mockConn).prepareStatement("SELECT * FROM users WHERE username = ?");
+            verify(mockStmt).setString(1, "hanto");
+            verify(mockStmt, never()).setString(eq(2), anyString());
         }
     }
 }

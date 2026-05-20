@@ -1,7 +1,5 @@
 package com.auction.server.handler;
 
-import com.auction.client.AI.autoApprove.AuctionAiAutoApproveConnector;
-import com.auction.client.AI.autoApprove.AutoApproveListingInput;
 import com.auction.common.dto.Message;
 import com.auction.common.model.User;
 import com.auction.server.dao.AuctionDAO;
@@ -31,13 +29,8 @@ class SellerActionHandlerTest {
 
     @BeforeEach
     void setUp() {
-        AuctionAiAutoApproveConnector fakeAutoApproveConnector = new AuctionAiAutoApproveConnector() {
-            @Override
-            public boolean requestDecision(AutoApproveListingInput input) {
-                return false;
-            }
-        };
-        handler = new SellerActionHandler(fakeAutoApproveConnector, new PendingAuctionRoomFactory());
+        SellerActionHandler.AutoApproveDecider autoApproveDecider = request -> false;
+        handler = new SellerActionHandler(autoApproveDecider, new PendingAuctionRoomFactory());
         mockContext = mock(ClientActionContext.class);
         mockApprovalService = mock(PendingAuctionApprovalService.class);
 
@@ -157,13 +150,8 @@ class SellerActionHandlerTest {
     @Test
     @DisplayName("Test AI auto approve true tạo phiên thật và không đưa vào hàng chờ admin")
     void testHandleCreateAuction_AutoApproveSuccess() {
-        AuctionAiAutoApproveConnector autoApproveTrueConnector = new AuctionAiAutoApproveConnector() {
-            @Override
-            public boolean requestDecision(AutoApproveListingInput input) {
-                return true;
-            }
-        };
-        handler = new SellerActionHandler(autoApproveTrueConnector, new PendingAuctionRoomFactory());
+        SellerActionHandler.AutoApproveDecider autoApproveTrueDecider = request -> true;
+        handler = new SellerActionHandler(autoApproveTrueDecider, new PendingAuctionRoomFactory());
 
         String futureTimeStr = LocalDateTime.now().plusDays(2).toString();
         String validPayload = "May anh co|Mo ta day du|1000.0|200.0|50.0|" + futureTimeStr + "|120|30";

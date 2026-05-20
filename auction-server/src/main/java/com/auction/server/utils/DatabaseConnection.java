@@ -76,7 +76,7 @@ public final class DatabaseConnection {
         }
 
         try {
-            password = "12345";
+            password = "123456";
             return DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
             throw new SQLException(buildHelpfulConnectionError(url, user, driver, e), e);
