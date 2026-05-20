@@ -1,201 +1,190 @@
-text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,TÌM KIẾM VÀ LỌC PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,ADMIN DUYỆT PHIÊN ĐẤU GIÁ,ADMIN TỪ CHỐI PHIÊN ĐẤU GIÁ,ADMIN XEM DANH SÁCH NGƯỜI DÙNG,ADMIN XÓA TÀI KHOẢN NGƯỜI DÙNG,ADMIN XEM DANH SÁCH PHIÊN ĐẤU GIÁ,ADMIN HỦY HOẶC XÓA PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,LƯU DỮ LIỆU ĐẤU GIÁ VÀO DATABASE,CHATBOT HỖ TRỢ NGƯỜI DÙNG,KẾT NỐI CHATBOT PYTHON,AI HỖ TRỢ AUTO APPROVE,GIÁM SÁT DỮ LIỆU AI,GHI LOG VÀ AUDIT,RATE LIMIT VÀ BẢO VỆ THAO TÁC NHẠY CẢM,Không Rõ
-Khi phiên kết thúc thì tiền của người thắng được xử lý thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Sau khi đấu giá xong hệ thống trừ tiền bidder thắng ra sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Seller nhận tiền bán hàng vào lúc nào sau phiên,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Người thắng phiên bị trừ số dư ngay khi nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Phiên kết thúc thành công thì tiền chuyển từ bidder sang seller thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết quy trình thanh toán khi chốt phiên đấu giá,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Hệ thống có tự cộng tiền cho người bán sau khi có người thắng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Sau khi phiên hoàn tất, số tiền thắng được trừ ở đâu",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu phiên có người thắng thì balance của họ bị xử lý ra sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tiền thanh toán sau phiên được tính theo giá thắng cuối cùng đúng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Tôi thắng phiên rồi, tiền có tự trừ khỏi tài khoản không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tại sao sau khi thắng đấu giá số dư của tôi giảm,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Khi seller bán thành công thì tiền vào tài khoản seller thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Phiên kết thúc có tự chuyển tiền cho seller không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Hệ thống xử lý tiền mua hàng sau khi phiên đóng như thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Sau khi chốt phiên, ai bị trừ tiền và ai được cộng tiền",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tiền của bidder thắng có bị trừ một lần duy nhất không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn kiểm tra logic trừ tiền sau khi phiên kết thúc,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Người không thắng có bị trừ tiền khi phiên kết thúc không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu tôi không thắng phiên thì tiền có bị giữ lại không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tiền giữ tạm của người không thắng được trả lại lúc nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Khi phiên kết thúc mà không có người mua thì có chuyển tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Phiên không có bid nào thì seller có nhận tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu không có người thắng thì hệ thống xử lý số dư ra sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Admin hủy phiên thì tiền bidder có bị trừ không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Seller đóng phiên thủ công thì có cộng tiền bán hàng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Phiên bị hủy trước khi bán xong thì tiền xử lý thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu phiên bị xóa thì số dư của người tham gia có thay đổi không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Tôi thấy tiền bị trừ dù phiên bị hủy, kiểm tra giúp",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Không bán được sản phẩm thì hệ thống có chuyển tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Khi phiên thất bại, tiền của bidder có được giữ nguyên không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Sau phiên kết thúc, balance của tôi chưa cập nhật",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tiền thắng phiên chưa trừ khỏi tài khoản là do đâu,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Seller chưa nhận được tiền sau khi phiên thành công,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi bị trừ tiền hai lần sau khi thắng phiên,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số dư giảm sai sau khi đấu giá kết thúc,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Hệ thống cộng tiền seller bị chậm sau phiên,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có log giao dịch khi phiên kết thúc không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn xem tiền đã chuyển sau khi chốt phiên,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Sau khi phiên đóng, giao dịch thanh toán được ghi nhận ở đâu",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Khi kết thúc thành công thì hệ thống tạo transaction như thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tiền thanh toán cuối phiên có lưu vào database không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết trạng thái settlement sau phiên,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Thanh toán phiên đấu giá đã hoàn tất chưa,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Phiên đã chốt nhưng tiền vẫn đang pending,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tại sao giao dịch sau phiên còn ở trạng thái chờ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Người thắng có cần xác nhận thanh toán sau khi phiên kết thúc không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Hệ thống tự xử lý tiền hay cần admin can thiệp,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có cần seller xác nhận trước khi nhận tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số tiền seller nhận có bằng giá thắng cuối cùng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Phí hoặc khoản trừ sau phiên có được tính không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tiền của người thắng bị trừ theo giá cuối hay giá khởi điểm,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Sau khi phiên thành công, số dư buyer cập nhật thế nào",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Seller có thấy tiền ngay sau khi hệ thống chốt không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu buyer thắng nhưng thiếu số dư thì hệ thống xử lý sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Người thắng không đủ tiền lúc chốt phiên thì có trừ được không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Khi balance người thắng không đủ, giao dịch sau phiên ra sao",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần biết trường hợp thanh toán thất bại khi phiên kết thúc,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu trừ tiền thất bại thì seller có được cộng tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Phiên kết thúc rồi nhưng người thắng không thanh toán được thì sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-xong phien thi tien tru nhu nao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-seller nhan tien sau dau gia luc nao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-nguoi thang bi tru balance khi nao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-phien ket thuc co tu chuyen tien ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-bidder khong thang co bi tru tien khong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-admin huy phien co mat tien ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-seller dong phien co duoc cong tien ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-khong co nguoi mua thi xu ly tien sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-tien bi tru 2 lan sau dau gia,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-balance chua update sau khi chot phien,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-settlement sau phien dang pending,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-giao dich ket thuc phien luu o dau,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-tien nguoi thang tru theo gia nao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-tien ban hang vao tk seller chua,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-phien thanh cong thi cong tien seller sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-neu thang dau gia thi tien tu dong tru a,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-khong thang co duoc hoan tien giu khong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-sau khi dong phien co chuyen tien ngay ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-xu ly tien cuoi phien bi loi,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-tien dau gia cuoi phien tinh sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi thắng phiên nhưng app chưa trừ tiền,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Seller báo chưa nhận được tiền dù phiên đã kết thúc,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tiền của tôi bị giữ sau khi phiên kết thúc nhưng tôi không thắng,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn hỏi tiền giữ tạm có được nhả sau phiên không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Phiên kết thúc thành công nhưng số dư seller không tăng,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tiền của người thắng có chuyển thẳng sang seller không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Sau khi chốt người thắng, hệ thống cập nhật ví hai bên thế nào",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu phiên có giá thắng cuối cùng thì thanh toán lấy số đó đúng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có trường hợp nào kết thúc phiên mà không xử lý tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Khi seller tự đóng phiên thì tiền có đứng yên không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Phiên bị admin hủy thì hệ thống rollback tiền thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết có hoàn tiền cho bidder khác sau khi có người thắng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Người trả giá thấp hơn có bị ảnh hưởng số dư khi phiên kết thúc không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Sau khi kết thúc, các khoản giữ của bidder không thắng có được giải phóng không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần đối chiếu số tiền trừ sau phiên với giá thắng,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá cuối là 3 triệu mà số dư bị trừ khác là sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số dư seller tăng sai so với giá chốt,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có chống trừ tiền lặp khi chốt phiên nhiều lần không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu server nhận lệnh chốt hai lần thì tiền có bị xử lý hai lần không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Khi retry settlement thì có trừ tiền thêm lần nữa không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết hệ thống tránh cộng tiền seller hai lần thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Phiên đã thanh toán rồi mà trạng thái chưa cập nhật,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Lỗi mạng lúc chốt phiên có làm mất tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu client mất kết nối khi phiên kết thúc thì tiền vẫn xử lý chứ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi thoát app lúc hết phiên thì số dư có tự xử lý không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Đóng cửa sổ room trước khi chốt có ảnh hưởng thanh toán không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tiền xử lý ở server hay trên app của người dùng,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Khi kết thúc phiên, client có cần gửi yêu cầu trừ tiền không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Hệ thống có kiểm tra người thắng trước khi chuyển tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu người thắng bị xóa tài khoản sau phiên thì tiền xử lý sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Seller nhận tiền sau khi hệ thống xác định winner đúng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết thứ tự xử lý: chốt người thắng rồi trừ tiền hay ngược lại,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Khi không có winner thì transaction có được tạo không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Phiên kết thúc với giá cuối bằng 0 thì có trừ tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản buyer có bị âm sau khi chốt phiên không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu số dư không đủ thì hệ thống có cho âm tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số tiền đang pending được chuyển thành thanh toán khi nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Sau phiên, tiền pending có chuyển sang đã thanh toán không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần kiểm tra vì tiền vẫn bị khóa sau khi seller đóng phiên,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Kết thúc phiên mà seller đóng thủ công thì khoản giữ xử lý sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Phiên hủy bởi admin có hoàn khoản giữ về bidder không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có thông báo nào khi tiền đã được trừ sau phiên không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết thanh toán sau phiên có báo thành công không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Sau khi xử lý tiền, hệ thống hiển thị kết quả ở đâu",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Quy trình kết toán tiền phiên đấu giá là gì,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Kết toán cuối phiên hoạt động thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Thanh toán tự động sau phiên có bị delay không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tại sao vài phút sau khi hết phiên tiền mới cập nhật,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tiền seller nhận có cần chờ xác nhận giao hàng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Bid thắng xong tiền bị trừ nhưng seller chưa cộng là lỗi gì,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Cộng tiền seller trước hay trừ tiền bidder trước,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Sau phiên đấu giá, khoản thanh toán được khóa hay chuyển ngay",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Khi hệ thống chốt người thắng thì số tiền cuối cùng được quyết toán ra sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết giao dịch bán hàng được hoàn tất sau phiên thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu phiên kết thúc hợp lệ thì tiền buyer và seller thay đổi ra sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tiền sau phiên có tự đối soát giữa hai tài khoản không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Khi phiên đóng thành công, hệ thống có cập nhật ví người mua và người bán không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần giải thích bước kết toán tiền sau khi đấu giá xong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Sau khi xác định winner, tiền trong tài khoản được cập nhật theo quy tắc nào",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Kết thúc phiên mà chưa thấy giao dịch thanh toán thì kiểm tra ở đâu,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Khi phiên tự chốt, hệ thống trừ tiền người thắng và cộng cho seller thế nào",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Sau khi timer về 0 và tự động chốt phiên, tiền winner bị xử lý ra sao",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Hệ thống tự chốt xong có tạo giao dịch trừ tiền ngay không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu tự động chốt phiên không thành công thì tiền có bị trừ không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Tôi vừa thắng lượt bid cuối, khi chốt phiên tiền bị trừ thế nào",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Đặt giá cao nhất rồi phiên kết thúc thì số dư của tôi xử lý ra sao,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Bid thắng có bị giữ tiền trước rồi mới trừ khi kết thúc không,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Sau khi đặt giá cuối cùng, seller nhận tiền lúc nào",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn xem lịch sử bid để đối chiếu số tiền bị trừ cuối phiên,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Lịch sử đặt giá có giúp kiểm tra giá thắng dùng để trừ tiền không,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Sau phiên, tôi muốn xem lại lượt bid thắng và giao dịch thanh toán",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá realtime cuối cùng có phải số tiền người thắng bị trừ không,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Khi giá live cập nhật ở giây cuối, settlement lấy giá nào",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá hiện tại nhảy trước khi chốt thì tiền sau phiên tính sao,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Anti-sniping kéo dài phiên thì tiền người thắng đã bị trừ chưa,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Nếu có bid cuối làm gia hạn, hệ thống chờ hết anti-sniping rồi mới xử lý tiền đúng không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Phiên được extension thêm thời gian thì seller nhận tiền khi nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Sau khi hết thời gian gia hạn chống sniping, tiền được chuyển thế nào",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn xem còn bao lâu nữa thì hệ thống trừ tiền người thắng,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Khi countdown kết thúc, balance của winner cập nhật ra sao",0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Phiên còn 0 giây nhưng tiền chưa trừ là do chưa chốt à,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần kiểm tra số dư sau khi phiên kết thúc và tiền bị trừ,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Số dư của tôi giảm sau phiên, giải thích giúp quy trình xử lý tiền",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Seller muốn xem số dư đã được cộng sau khi bán thành công,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu tôi không thắng thì khoản giữ trong balance có được trả lại sau phiên không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Sau khi xử lý tiền, app có thông báo người thắng đã thanh toán không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
-Thông báo trạng thái phiên kết thúc có kèm kết quả trừ tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
-Tôi muốn nhận thông báo khi seller đã được cộng tiền,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
-"Khi settlement lỗi, hệ thống có báo trạng thái thất bại không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
-Sau khi xử lý tiền xong có tự đưa người dùng về lobby không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Phiên kết thúc, trừ tiền xong rồi app chuyển về lobby đúng không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu thanh toán cuối phiên thất bại thì có đưa về lobby không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi rời phòng trước khi hết phiên thì nếu đang thắng tiền có bị trừ không,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Thoát room trước khi chốt có ảnh hưởng chuyển tiền cho seller không,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Rời phòng rồi nhưng vẫn thắng thì balance xử lý ra sao,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn vào phòng để xem sau khi kết thúc tiền xử lý thế nào,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tham gia room xong nếu thắng thì hệ thống trừ tiền lúc phiên đóng đúng không,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Vào phòng muộn mà thắng phiên thì thanh toán cuối phiên vẫn tự xử lý chứ,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Xem chi tiết sản phẩm cho biết giá thắng cuối cùng dùng để trừ tiền không,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Trong chi tiết phiên, seller có thấy số tiền sẽ nhận sau khi kết thúc không",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Seller đóng phiên thủ công thì hệ thống không chuyển tiền bán hàng đúng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
-Nếu seller đóng phiên trước khi có winner thì tiền bidder xử lý sao,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
-Seller đóng phòng sau khi đã có người bid thì có cộng tiền seller không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
-Admin hủy phiên thì giao dịch thanh toán có bị rollback không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
-Nếu admin xóa phiên sau khi chốt thì tiền đã trừ xử lý thế nào,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
-Phiên bị admin hủy trước khi kết thúc thì seller không nhận tiền đúng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
-Lưu giao dịch trừ tiền người thắng vào database sau phiên như thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-Settlement cuối phiên có ghi transaction cho bidder và seller không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-Database có lưu trạng thái đã cộng tiền seller sau phiên không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-Nếu lưu database lỗi thì tiền cuối phiên có bị xử lý lặp không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-Chatbot giải thích giúp tiền được trừ và cộng khi phiên kết thúc,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
-Hỏi chatbot vì sao thắng phiên xong balance bị giảm,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
-Chatbot cho biết seller nhận tiền sau phiên thành công lúc nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
-Bấm chốt hoặc refresh thanh toán nhiều lần có bị rate limit không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
-Spam kiểm tra settlement sau phiên có bị chặn thao tác không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
-Nếu gọi API xử lý tiền liên tục thì hệ thống có chống trừ lặp không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
-"Sau phiên, người thắng bị trừ tiền rồi có xem được trạng thái trong danh sách phiên không",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tìm lại phiên đã kết thúc để kiểm tra tiền đã chuyển cho seller chưa,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Nếu phiên đã thanh toán xong, lịch sử bid và số dư phải khớp đúng không",0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Khi seller nhận tiền, trạng thái phiên chuyển sang hoàn tất đúng không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+Khi phiên kết thúc thì tiền của người thắng được xử lý thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Sau khi đấu giá xong hệ thống trừ tiền bidder thắng ra sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Seller nhận tiền bán hàng vào lúc nào sau phiên,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Người thắng phiên bị trừ số dư ngay khi nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Phiên kết thúc thành công thì tiền chuyển từ bidder sang seller thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tôi muốn biết quy trình thanh toán khi chốt phiên đấu giá,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Hệ thống có tự cộng tiền cho người bán sau khi có người thắng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Sau khi phiên hoàn tất, số tiền thắng được trừ ở đâu",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Nếu phiên có người thắng thì balance của họ bị xử lý ra sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tiền thanh toán sau phiên được tính theo giá thắng cuối cùng đúng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Tôi thắng phiên rồi, tiền có tự trừ khỏi tài khoản không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tại sao sau khi thắng đấu giá số dư của tôi giảm,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Khi seller bán thành công thì tiền vào tài khoản seller thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Phiên kết thúc có tự chuyển tiền cho seller không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Hệ thống xử lý tiền mua hàng sau khi phiên đóng như thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Sau khi chốt phiên, ai bị trừ tiền và ai được cộng tiền",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tiền của bidder thắng có bị trừ một lần duy nhất không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tôi muốn kiểm tra logic trừ tiền sau khi phiên kết thúc,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Người không thắng có bị trừ tiền khi phiên kết thúc không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Nếu tôi không thắng phiên thì tiền có bị giữ lại không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tiền giữ tạm của người không thắng được trả lại lúc nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Khi phiên kết thúc mà không có người mua thì có chuyển tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Phiên không có bid nào thì seller có nhận tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Nếu không có người thắng thì hệ thống xử lý số dư ra sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Admin hủy phiên thì tiền bidder có bị trừ không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Seller đóng phiên thủ công thì có cộng tiền bán hàng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Phiên bị hủy trước khi bán xong thì tiền xử lý thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Nếu phiên bị xóa thì số dư của người tham gia có thay đổi không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Tôi thấy tiền bị trừ dù phiên bị hủy, kiểm tra giúp",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Không bán được sản phẩm thì hệ thống có chuyển tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Khi phiên thất bại, tiền của bidder có được giữ nguyên không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Sau phiên kết thúc, balance của tôi chưa cập nhật",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tiền thắng phiên chưa trừ khỏi tài khoản là do đâu,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Seller chưa nhận được tiền sau khi phiên thành công,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tôi bị trừ tiền hai lần sau khi thắng phiên,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Số dư giảm sai sau khi đấu giá kết thúc,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Hệ thống cộng tiền seller bị chậm sau phiên,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Có log giao dịch khi phiên kết thúc không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tôi muốn xem tiền đã chuyển sau khi chốt phiên,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Sau khi phiên đóng, giao dịch thanh toán được ghi nhận ở đâu",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Khi kết thúc thành công thì hệ thống tạo transaction như thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tiền thanh toán cuối phiên có lưu vào database không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tôi muốn biết trạng thái settlement sau phiên,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Thanh toán phiên đấu giá đã hoàn tất chưa,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Phiên đã chốt nhưng tiền vẫn đang pending,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tại sao giao dịch sau phiên còn ở trạng thái chờ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Người thắng có cần xác nhận thanh toán sau khi phiên kết thúc không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Hệ thống tự xử lý tiền hay cần admin can thiệp,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Có cần seller xác nhận trước khi nhận tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Số tiền seller nhận có bằng giá thắng cuối cùng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Phí hoặc khoản trừ sau phiên có được tính không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tiền của người thắng bị trừ theo giá cuối hay giá khởi điểm,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Sau khi phiên thành công, số dư buyer cập nhật thế nào",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Seller có thấy tiền ngay sau khi hệ thống chốt không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Nếu buyer thắng nhưng thiếu số dư thì hệ thống xử lý sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Người thắng không đủ tiền lúc chốt phiên thì có trừ được không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Khi balance người thắng không đủ, giao dịch sau phiên ra sao",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tôi cần biết trường hợp thanh toán thất bại khi phiên kết thúc,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Nếu trừ tiền thất bại thì seller có được cộng tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Phiên kết thúc rồi nhưng người thắng không thanh toán được thì sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+xong phien thi tien tru nhu nao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+seller nhan tien sau dau gia luc nao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+nguoi thang bi tru balance khi nao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+phien ket thuc co tu chuyen tien ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+bidder khong thang co bi tru tien khong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+admin huy phien co mat tien ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+seller dong phien co duoc cong tien ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+khong co nguoi mua thi xu ly tien sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+tien bi tru 2 lan sau dau gia,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+balance chua update sau khi chot phien,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+settlement sau phien dang pending,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+giao dich ket thuc phien luu o dau,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+tien nguoi thang tru theo gia nao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+tien ban hang vao tk seller chua,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+phien thanh cong thi cong tien seller sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+neu thang dau gia thi tien tu dong tru a,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+khong thang co duoc hoan tien giu khong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+sau khi dong phien co chuyen tien ngay ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+xu ly tien cuoi phien bi loi,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+tien dau gia cuoi phien tinh sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tôi thắng phiên nhưng app chưa trừ tiền,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Seller báo chưa nhận được tiền dù phiên đã kết thúc,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tiền của tôi bị giữ sau khi phiên kết thúc nhưng tôi không thắng,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tôi muốn hỏi tiền giữ tạm có được nhả sau phiên không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Phiên kết thúc thành công nhưng số dư seller không tăng,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tiền của người thắng có chuyển thẳng sang seller không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Sau khi chốt người thắng, hệ thống cập nhật ví hai bên thế nào",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Nếu phiên có giá thắng cuối cùng thì thanh toán lấy số đó đúng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Có trường hợp nào kết thúc phiên mà không xử lý tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Khi seller tự đóng phiên thì tiền có đứng yên không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Phiên bị admin hủy thì hệ thống rollback tiền thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tôi muốn biết có hoàn tiền cho bidder khác sau khi có người thắng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Người trả giá thấp hơn có bị ảnh hưởng số dư khi phiên kết thúc không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Sau khi kết thúc, các khoản giữ của bidder không thắng có được giải phóng không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tôi cần đối chiếu số tiền trừ sau phiên với giá thắng,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Giá cuối là 3 triệu mà số dư bị trừ khác là sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Số dư seller tăng sai so với giá chốt,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Có chống trừ tiền lặp khi chốt phiên nhiều lần không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Nếu server nhận lệnh chốt hai lần thì tiền có bị xử lý hai lần không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Khi retry settlement thì có trừ tiền thêm lần nữa không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tôi muốn biết hệ thống tránh cộng tiền seller hai lần thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Phiên đã thanh toán rồi mà trạng thái chưa cập nhật,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Lỗi mạng lúc chốt phiên có làm mất tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Nếu client mất kết nối khi phiên kết thúc thì tiền vẫn xử lý chứ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tôi thoát app lúc hết phiên thì số dư có tự xử lý không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Đóng cửa sổ room trước khi chốt có ảnh hưởng thanh toán không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tiền xử lý ở server hay trên app của người dùng,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Khi kết thúc phiên, client có cần gửi yêu cầu trừ tiền không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Hệ thống có kiểm tra người thắng trước khi chuyển tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Nếu người thắng bị xóa tài khoản sau phiên thì tiền xử lý sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Seller nhận tiền sau khi hệ thống xác định winner đúng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tôi muốn biết thứ tự xử lý: chốt người thắng rồi trừ tiền hay ngược lại,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Khi không có winner thì transaction có được tạo không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Phiên kết thúc với giá cuối bằng 0 thì có trừ tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tài khoản buyer có bị âm sau khi chốt phiên không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Nếu số dư không đủ thì hệ thống có cho âm tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Số tiền đang pending được chuyển thành thanh toán khi nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Sau phiên, tiền pending có chuyển sang đã thanh toán không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tôi cần kiểm tra vì tiền vẫn bị khóa sau khi seller đóng phiên,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Kết thúc phiên mà seller đóng thủ công thì khoản giữ xử lý sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Phiên hủy bởi admin có hoàn khoản giữ về bidder không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Có thông báo nào khi tiền đã được trừ sau phiên không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tôi muốn biết thanh toán sau phiên có báo thành công không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Sau khi xử lý tiền, hệ thống hiển thị kết quả ở đâu",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Quy trình kết toán tiền phiên đấu giá là gì,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Kết toán cuối phiên hoạt động thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Thanh toán tự động sau phiên có bị delay không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tại sao vài phút sau khi hết phiên tiền mới cập nhật,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tiền seller nhận có cần chờ xác nhận giao hàng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Bid thắng xong tiền bị trừ nhưng seller chưa cộng là lỗi gì,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Cộng tiền seller trước hay trừ tiền bidder trước,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Sau phiên đấu giá, khoản thanh toán được khóa hay chuyển ngay",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Khi hệ thống chốt người thắng thì số tiền cuối cùng được quyết toán ra sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tôi muốn biết giao dịch bán hàng được hoàn tất sau phiên thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Nếu phiên kết thúc hợp lệ thì tiền buyer và seller thay đổi ra sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tiền sau phiên có tự đối soát giữa hai tài khoản không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Khi phiên đóng thành công, hệ thống có cập nhật ví người mua và người bán không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tôi cần giải thích bước kết toán tiền sau khi đấu giá xong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Sau khi xác định winner, tiền trong tài khoản được cập nhật theo quy tắc nào",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Kết thúc phiên mà chưa thấy giao dịch thanh toán thì kiểm tra ở đâu,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Khi phiên tự chốt, hệ thống trừ tiền người thắng và cộng cho seller thế nào",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0
+"Sau khi timer về 0 và tự động chốt phiên, tiền winner bị xử lý ra sao",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0
+Hệ thống tự chốt xong có tạo giao dịch trừ tiền ngay không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0
+Nếu tự động chốt phiên không thành công thì tiền có bị trừ không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0
+"Tôi vừa thắng lượt bid cuối, khi chốt phiên tiền bị trừ thế nào",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Đặt giá cao nhất rồi phiên kết thúc thì số dư của tôi xử lý ra sao,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Bid thắng có bị giữ tiền trước rồi mới trừ khi kết thúc không,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Sau khi đặt giá cuối cùng, seller nhận tiền lúc nào",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tôi muốn xem lịch sử bid để đối chiếu số tiền bị trừ cuối phiên,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Lịch sử đặt giá có giúp kiểm tra giá thắng dùng để trừ tiền không,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Sau phiên, tôi muốn xem lại lượt bid thắng và giao dịch thanh toán",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Giá realtime cuối cùng có phải số tiền người thắng bị trừ không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Khi giá live cập nhật ở giây cuối, settlement lấy giá nào",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Giá hiện tại nhảy trước khi chốt thì tiền sau phiên tính sao,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Anti-sniping kéo dài phiên thì tiền người thắng đã bị trừ chưa,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0
+"Nếu có bid cuối làm gia hạn, hệ thống chờ hết anti-sniping rồi mới xử lý tiền đúng không",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0
+Phiên được extension thêm thời gian thì seller nhận tiền khi nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0
+"Sau khi hết thời gian gia hạn chống sniping, tiền được chuyển thế nào",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0
+Tôi muốn xem còn bao lâu nữa thì hệ thống trừ tiền người thắng,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Khi countdown kết thúc, balance của winner cập nhật ra sao",0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0
+Phiên còn 0 giây nhưng tiền chưa trừ là do chưa chốt à,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0
+Tôi cần kiểm tra số dư sau khi phiên kết thúc và tiền bị trừ,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Số dư của tôi giảm sau phiên, giải thích giúp quy trình xử lý tiền",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Seller muốn xem số dư đã được cộng sau khi bán thành công,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Nếu tôi không thắng thì khoản giữ trong balance có được trả lại sau phiên không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Sau khi xử lý tiền, app có thông báo người thắng đã thanh toán không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0
+Thông báo trạng thái phiên kết thúc có kèm kết quả trừ tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0
+Tôi muốn nhận thông báo khi seller đã được cộng tiền,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0
+"Khi settlement lỗi, hệ thống có báo trạng thái thất bại không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0
+Sau khi xử lý tiền xong có tự đưa người dùng về lobby không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"Phiên kết thúc, trừ tiền xong rồi app chuyển về lobby đúng không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+Nếu thanh toán cuối phiên thất bại thì có đưa về lobby không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+Tôi rời phòng trước khi hết phiên thì nếu đang thắng tiền có bị trừ không,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Thoát room trước khi chốt có ảnh hưởng chuyển tiền cho seller không,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Rời phòng rồi nhưng vẫn thắng thì balance xử lý ra sao,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tôi muốn vào phòng để xem sau khi kết thúc tiền xử lý thế nào,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tham gia room xong nếu thắng thì hệ thống trừ tiền lúc phiên đóng đúng không,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Vào phòng muộn mà thắng phiên thì thanh toán cuối phiên vẫn tự xử lý chứ,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Xem chi tiết sản phẩm cho biết giá thắng cuối cùng dùng để trừ tiền không,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Trong chi tiết phiên, seller có thấy số tiền sẽ nhận sau khi kết thúc không",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Seller đóng phiên thủ công thì hệ thống không chuyển tiền bán hàng đúng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0
+Nếu seller đóng phiên trước khi có winner thì tiền bidder xử lý sao,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0
+Seller đóng phòng sau khi đã có người bid thì có cộng tiền seller không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0
+Chatbot giải thích giúp tiền được trừ và cộng khi phiên kết thúc,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0
+Hỏi chatbot vì sao thắng phiên xong balance bị giảm,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0
+Chatbot cho biết seller nhận tiền sau phiên thành công lúc nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0
+"Sau phiên, người thắng bị trừ tiền rồi có xem được trạng thái trong danh sách phiên không",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Nếu phiên đã thanh toán xong, lịch sử bid và số dư phải khớp đúng không",0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Khi seller nhận tiền, trạng thái phiên chuyển sang hoàn tất đúng không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0
