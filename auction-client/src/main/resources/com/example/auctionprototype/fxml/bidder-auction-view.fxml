@@ -99,19 +99,14 @@
                                 <VBox spacing="15.0" styleClass="chat-container" HBox.hgrow="ALWAYS">
                                     <children>
                                         <Label text="Bid History &amp; Chat" textFill="#2c3e50"><font><Font name="System Bold" size="18.0" /></font></Label>
-                                        <VBox spacing="15.0" styleClass="chat-container" HBox.hgrow="ALWAYS">
-                                            <children>
-                                                <Label text="Bid History &amp; Chat" textFill="#2c3e50"><font><Font name="System Bold" size="18.0" /></font></Label>
-                                                <LineChart fx:id="priceChart" animated="false" prefHeight="250.0" VBox.vgrow="NEVER">
-                                                    <xAxis>
-                                                        <CategoryAxis fx:id="xAxis" label="Thời gian" />
-                                                    </xAxis>
-                                                    <yAxis>
-                                                        <NumberAxis fx:id="yAxis" label="Mức giá ($)" />
-                                                    </yAxis>
-                                                </LineChart>
-                                                <TextArea fx:id="txtChatLog" editable="false" VBox.vgrow="ALWAYS" wrapText="true" />
-                                                <VBox spacing="10.0">
+                                        <LineChart fx:id="priceChart" animated="false" prefHeight="250.0" VBox.vgrow="NEVER">
+                                            <xAxis>
+                                                <CategoryAxis fx:id="xAxis" label="Thời gian" />
+                                            </xAxis>
+                                            <yAxis>
+                                                <NumberAxis fx:id="yAxis" label="Mức giá ($)" />
+                                            </yAxis>
+                                        </LineChart>
                                         <TextArea fx:id="txtChatLog" editable="false" VBox.vgrow="ALWAYS" wrapText="true" />
                                         <VBox spacing="10.0">
                                             <children>
