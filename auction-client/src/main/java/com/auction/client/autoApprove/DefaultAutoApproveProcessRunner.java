@@ -1,4 +1,4 @@
-package com.auction.client.AI.auto_approve;
+package com.auction.client.autoApprove;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;

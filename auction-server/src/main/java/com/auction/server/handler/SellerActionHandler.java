@@ -1,7 +1,7 @@
 package com.auction.server.handler;
 
-import com.auction.client.AI.auto_approve.AuctionAiAutoApproveConnector;
-import com.auction.client.AI.auto_approve.AutoApproveListingInput;
+import com.auction.client.autoApprove.AuctionAiAutoApproveConnector;
+import com.auction.client.autoApprove.AutoApproveListingInput;
 import com.auction.common.dto.Message;
 import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.Item;

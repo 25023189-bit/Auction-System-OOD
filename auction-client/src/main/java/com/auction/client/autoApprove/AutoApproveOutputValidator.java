@@ -1,4 +1,4 @@
-package com.auction.client.AI.auto_approve;
+package com.auction.client.autoApprove;
 
 public class AutoApproveOutputValidator {
     public boolean parseDecision(String rawValue) throws AutoApproveValidationException {
