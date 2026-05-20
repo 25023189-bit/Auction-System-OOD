@@ -4,13 +4,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class AuctionAiAutoApproveConnector {
     private static final Logger LOGGER = LoggerFactory.getLogger(AuctionAiAutoApproveConnector.class);
@@ -25,17 +21,28 @@ public class AuctionAiAutoApproveConnector {
     private final String pythonCommand;
     private final Duration timeout;
     private final AutoApproveFileGateway fileGateway;
+    private final AutoApproveProcessRunner processRunner;
 
     public AuctionAiAutoApproveConnector() {
         this(resolveDefaultAiDirectory(), resolvePythonCommand(), resolveTimeout());
     }
 
     public AuctionAiAutoApproveConnector(Path aiDirectory, String pythonCommand, Duration timeout) {
+        this(aiDirectory, pythonCommand, timeout, new DefaultAutoApproveProcessRunner());
+    }
+
+    public AuctionAiAutoApproveConnector(
+            Path aiDirectory,
+            String pythonCommand,
+            Duration timeout,
+            AutoApproveProcessRunner processRunner
+    ) {
         this.aiDirectory = aiDirectory.toAbsolutePath().normalize();
         this.scriptPath = this.aiDirectory.resolve("predict_from_input.py");
         this.pythonCommand = pythonCommand;
         this.timeout = timeout;
         this.fileGateway = new AutoApproveFileGateway(this.aiDirectory);
+        this.processRunner = processRunner;
     }
 
     public boolean requestDecision(AutoApproveListingInput input) {
@@ -48,17 +55,25 @@ public class AuctionAiAutoApproveConnector {
                 return false;
             }
 
-            Process process = startProcess();
-            boolean finished = process.waitFor(timeout.toMillis(), TimeUnit.MILLISECONDS);
-            if (!finished) {
-                process.destroyForcibly();
+            AutoApproveProcessResult processResult = processRunner.run(
+                    pythonCommand,
+                    scriptPath,
+                    fileGateway.getInputPath(),
+                    fileGateway.getOutputPath(),
+                    aiDirectory,
+                    timeout
+            );
+            if (processResult.isTimedOut()) {
                 LOGGER.warn("Auto approve AI timed out after {} ms.", timeout.toMillis());
                 return false;
             }
 
-            String processOutput = readProcessOutput(process);
-            if (process.exitValue() != 0) {
-                LOGGER.warn("Auto approve AI exited with code {}. Output: {}", process.exitValue(), processOutput);
+            if (processResult.getExitCode() != 0) {
+                LOGGER.warn(
+                        "Auto approve AI exited with code {}. Output: {}",
+                        processResult.getExitCode(),
+                        processResult.getOutput()
+                );
                 return false;
             }
 
@@ -76,30 +91,6 @@ public class AuctionAiAutoApproveConnector {
         }
     }
 
-    private Process startProcess() throws IOException {
-        List<String> command = new ArrayList<>();
-        command.add(pythonCommand);
-        command.add(scriptPath.toString());
-        command.add("--input");
-        command.add(fileGateway.getInputPath().toString());
-        command.add("--output");
-        command.add(fileGateway.getOutputPath().toString());
-
-        ProcessBuilder processBuilder = new ProcessBuilder(command);
-        processBuilder.directory(aiDirectory.toFile());
-        processBuilder.redirectErrorStream(true);
-        return processBuilder.start();
-    }
-
-    private String readProcessOutput(Process process) {
-        try {
-            return new String(process.getInputStream().readAllBytes(), StandardCharsets.UTF_8).trim();
-        } catch (IOException e) {
-            LOGGER.warn("Unable to read auto approve AI process output.", e);
-            return "";
-        }
-    }
-
     private void clearPreviousOutput() {
         try {
             Files.deleteIfExists(fileGateway.getOutputPath());
@@ -109,7 +100,21 @@ public class AuctionAiAutoApproveConnector {
     }
 
     private static Path resolveDefaultAiDirectory() {
-        return Path.of(System.getProperty(AI_DIR_PROPERTY, DEFAULT_AI_DIR));
+        String configuredPath = System.getProperty(AI_DIR_PROPERTY);
+        if (configuredPath != null && !configuredPath.isBlank()) {
+            return Path.of(configuredPath);
+        }
+
+        Path current = Path.of("").toAbsolutePath().normalize();
+        while (current != null) {
+            Path candidate = current.resolve(DEFAULT_AI_DIR);
+            if (Files.exists(candidate)) {
+                return candidate;
+            }
+            current = current.getParent();
+        }
+
+        return Path.of(DEFAULT_AI_DIR);
     }
 
     private static String resolvePythonCommand() {
