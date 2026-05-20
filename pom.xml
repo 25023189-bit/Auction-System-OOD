@@ -26,7 +26,6 @@
         <logback.version>1.5.18</logback.version>
         <mysql.version>8.0.33</mysql.version>
         <jbcrypt.version>0.4</jbcrypt.version>
-        <javax.mail.version>1.6.2</javax.mail.version>
     </properties>
 
     <dependencyManagement>
@@ -55,11 +54,6 @@
                 <groupId>org.mindrot</groupId>
                 <artifactId>jbcrypt</artifactId>
                 <version>${jbcrypt.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.sun.mail</groupId>
-                <artifactId>javax.mail</artifactId>
-                <version>${javax.mail.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>

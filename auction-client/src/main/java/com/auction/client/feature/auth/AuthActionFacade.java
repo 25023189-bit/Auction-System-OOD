@@ -43,7 +43,6 @@ public class AuthActionFacade {
         auctionService.register(
                 form.customerId(),
                 form.username().trim(),
-                safeTrim(form.email()),
                 safeTrim(form.fullName()),
                 form.password().trim(),
                 role,
@@ -58,7 +57,11 @@ public class AuthActionFacade {
             return;
         }
 
-        auctionService.resetPassword(form.username().trim(), form.newPassword().trim());
+        auctionService.resetPassword(
+                form.username().trim(),
+                form.newPassword().trim(),
+                form.confirmPassword().trim()
+        );
     }
 
     private String safeTrim(String value) {

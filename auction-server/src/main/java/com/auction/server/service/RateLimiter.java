@@ -13,7 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * - Cho biết request hiện tại có được phép tiếp tục và còn bao nhiêu lượt.
  *
  * Luồng chính:
- * 1. ForgotPasswordService gọi isAllowed(username) trước khi xử lý reset.
+ * 1. Luồng reset mật khẩu gọi isAllowed(username) trước khi xử lý request.
  * 2. RateLimiter dọn request cũ ngoài window, kiểm tra quota rồi ghi nhận request mới nếu hợp lệ.
  *
  * Business rules:

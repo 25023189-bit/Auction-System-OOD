@@ -1,0 +1,13 @@
+{
+  "status": "idle",
+  "timestamp": null,
+  "question": "",
+  "prediction_model": "Logist",
+  "answer_source": "NONE",
+  "llm_used_for_answer": false,
+  "logist_used_for_answer": false,
+  "selected_labels": [],
+  "selected_scores": {},
+  "remaining_scores": {},
+  "all_scores": {}
+}

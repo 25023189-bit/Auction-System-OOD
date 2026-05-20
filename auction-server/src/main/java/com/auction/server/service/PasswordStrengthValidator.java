@@ -8,7 +8,7 @@ package com.auction.server.service;
  * - Lưu lỗi cuối cùng để handler/service trả thông báo cụ thể cho client.
  *
  * Luồng chính:
- * 1. AuthActionHandler hoặc ForgotPasswordService gọi isStrong(password).
+ * 1. AuthActionHandler gọi isStrong(password).
  * 2. Nếu fail, caller đọc getLastError() để gửi lý do cho người dùng.
  *
  * Business rules:

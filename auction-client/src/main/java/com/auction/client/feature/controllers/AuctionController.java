@@ -91,7 +91,7 @@ public class AuctionController implements Initializable, ServerMessageListener {
     @FXML private TextArea txtItemDescriptionDisplay;
     @FXML private ImageView imgProduct;
     @FXML private ChatbotController chatbotController;
-    @FXML private TextField txtRegEmail, txtRegFullName;
+    @FXML private TextField txtRegFullName;
     // ==========================================================
     // CORE SERVICE
     // ==========================================================
@@ -404,7 +404,6 @@ public class AuctionController implements Initializable, ServerMessageListener {
 
         // Seller cần thêm organization; bidder không gửi trường này.
         String customerId = txtRegCustomerId != null ? txtRegCustomerId.getText() : "";
-        String email = txtRegEmail != null ? txtRegEmail.getText() : "";
         String fullName = txtRegFullName != null ? txtRegFullName.getText() : "";
 
         authViewModel.setRegisterUsername(txtRegUsername != null ? txtRegUsername.getText() : "");
@@ -416,7 +415,6 @@ public class AuctionController implements Initializable, ServerMessageListener {
         authActionFacade.register(new RegisterForm(
                 customerId,
                 authViewModel.getRegisterUsername(),
-                email,
                 fullName,
                 authViewModel.getRegisterPassword(),
                 authViewModel.getRegisterConfirmPassword(),

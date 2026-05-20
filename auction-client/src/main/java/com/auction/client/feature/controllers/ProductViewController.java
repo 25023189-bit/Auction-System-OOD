@@ -42,27 +42,26 @@ public class ProductViewController {
     public void setAuctionService(AuctionService auctionService) {
         this.auctionService = auctionService;
 
-        // Callback được AuctionController kích hoạt khi server trả PRODUCT_DETAILS_SUCCESS.
         this.auctionService.setProductDetailsCallback(data -> {
             Platform.runLater(() -> {
                 if (data != null) {
                     try {
-                        AuctionRoom product = (AuctionRoom) data;
+                        // 1. SỬA CHỖ NÀY: Ép về đúng kiểu mà Server trả ra
+                        com.auction.common.model.ProductDetailResponse product = (com.auction.common.model.ProductDetailResponse) data;
 
-                        if (lblProductName != null) lblProductName.setText(product.getItemName());
-                        if (lblDescription != null) lblDescription.setText(product.getItemDescription());
-                        if (lblStartingPrice != null)
-                            lblStartingPrice.setText(String.format("%,.0f $", product.getStartingPrice()));
+                        // 2. GỌI CÁC HÀM GETTER TƯƠNG ỨNG
+                        // (Hân nhớ kiểm tra lại xem trong class ProductDetailResponse của nhóm đặt tên hàm get là gì nhé, tôi đang ví dụ)
+                        if (lblProductName != null) lblProductName.setText(product.getTitle()); // hoặc getProductName()
+                        if (lblDescription != null) lblDescription.setText(product.getDescription()); // hoặc getItemDescription()
+                        if (lblStartingPrice != null) lblStartingPrice.setText(String.format("%,.0f $", product.getStartPrice()));
+
                     } catch (Exception e) {
-                        if (lblDescription != null) lblDescription.setText(data.toString());
+                        // Nếu vẫn lỗi, in lỗi thật ra thay vì in toString() của Object
+                        if (lblDescription != null) lblDescription.setText("Lỗi ánh xạ dữ liệu: " + e.getMessage());
+                        e.printStackTrace();
                     }
                 } else {
-
-                    // Đổi text báo không tìm thấy
                     if (lblDescription != null) lblDescription.setText("Product information not found!");
-
-                    // Không có dữ liệu nghĩa là server không tìm thấy phòng/sản phẩm tương ứng.
-                    if(lblDescription != null) lblDescription.setText("Product information not found!");
                 }
             });
         });

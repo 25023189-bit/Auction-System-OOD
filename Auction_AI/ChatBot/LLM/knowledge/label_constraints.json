@@ -25,10 +25,6 @@
       "content": "Người dùng có thể xem danh sách các phiên đấu giá đang hoạt động ở lobby. Danh sách phòng được lấy từ server và cập nhật lại khi có thay đổi về phiên đấu giá."
     },
     {
-      "title": "Tìm kiếm và lọc phiên đấu giá",
-      "content": "Người dùng có thể tìm hoặc lọc các phiên đấu giá trong lobby để chọn phiên phù hợp. Chức năng này hỗ trợ người dùng nhanh chóng xem các sản phẩm hoặc phòng đấu giá đang quan tâm."
-    },
-    {
       "title": "Xem chi tiết sản phẩm đấu giá",
       "content": "Người dùng có thể xem thông tin chi tiết của sản phẩm trong phiên đấu giá, bao gồm tên sản phẩm, mô tả, giá hiện tại, thông tin phiên và lịch sử đặt giá liên quan."
     },
@@ -93,30 +89,6 @@
       "content": "Phiên đấu giá do seller tạo không được mở trực tiếp ngay mà được đưa vào danh sách chờ duyệt. Admin có thể xem danh sách này để quyết định phê duyệt hoặc từ chối."
     },
     {
-      "title": "Admin duyệt phiên đấu giá",
-      "content": "Admin có thể phê duyệt yêu cầu tạo phiên đấu giá. Khi được duyệt, phiên được lưu vào database và xuất hiện trong danh sách phiên đấu giá theo trạng thái phù hợp."
-    },
-    {
-      "title": "Admin từ chối phiên đấu giá",
-      "content": "Admin có thể từ chối yêu cầu tạo phiên đấu giá. Khi bị từ chối, yêu cầu được loại khỏi danh sách chờ và phiên không được mở trong hệ thống."
-    },
-    {
-      "title": "Admin xem danh sách người dùng",
-      "content": "Admin có thể xem danh sách tài khoản người dùng trong hệ thống. Danh sách này hỗ trợ admin theo dõi các tài khoản bidder, seller và admin."
-    },
-    {
-      "title": "Admin xóa tài khoản người dùng",
-      "content": "Admin có thể xóa tài khoản người dùng khi cần quản trị hệ thống. Sau thao tác xóa, danh sách người dùng được tải lại để phản ánh dữ liệu mới."
-    },
-    {
-      "title": "Admin xem danh sách phiên đấu giá",
-      "content": "Admin có thể xem danh sách các phiên đấu giá trong hệ thống để quản lý trạng thái và kiểm tra thông tin phiên."
-    },
-    {
-      "title": "Admin hủy hoặc xóa phiên đấu giá",
-      "content": "Admin có thể hủy hoặc xóa phiên đấu giá theo quyền quản trị. Khi phiên bị admin hủy, hệ thống không chuyển tiền giữa bidder và seller."
-    },
-    {
       "title": "Seller đóng phiên đấu giá",
       "content": "Seller có thể chủ động đóng phiên đấu giá của mình trong trường hợp phù hợp. Khi seller đóng phiên, hệ thống không thực hiện chuyển tiền bán hàng."
     },
@@ -125,32 +97,12 @@
       "content": "Hệ thống gửi thông báo về các thay đổi quan trọng của phiên như tham gia phòng thành công, đặt giá thành công, cập nhật giá, cập nhật số dư và phiên đã đóng."
     },
     {
-      "title": "Lưu dữ liệu đấu giá vào database",
-      "content": "Hệ thống lưu thông tin người dùng, sản phẩm, phiên đấu giá và lịch sử đặt giá vào database MySQL. Dữ liệu này được dùng để hiển thị, kiểm tra trạng thái và xử lý nghiệp vụ."
-    },
-    {
       "title": "Chatbot hỗ trợ người dùng",
       "content": "Hệ thống có chatbot hỗ trợ giải đáp nhanh cho người dùng trong ứng dụng. Chatbot có thể xử lý các câu hỏi về chào hỏi, xác nhận, khen, liên hệ admin, số dư, tìm phiên, đặt giá, tạo phiên, thời gian còn lại và anti-sniping."
     },
     {
-      "title": "Kết nối chatbot Python",
-      "content": "Client Java có cầu nối sang chatbot Python để gửi câu hỏi và nhận kết quả dự đoán intent hoặc câu trả lời. Nếu chatbot Python không hoạt động, hệ thống có fallback để tránh làm gián đoạn trải nghiệm."
-    },
-    {
       "title": "AI hỗ trợ auto approve",
       "content": "Thư mục Auction_AI có mô hình hỗ trợ dự đoán khả năng tự động duyệt phiên đấu giá dựa trên dữ liệu huấn luyện. Chức năng này phục vụ hỗ trợ quyết định hoặc thử nghiệm AI, không thay thế hoàn toàn quyền duyệt của admin."
-    },
-    {
-      "title": "Giám sát dữ liệu AI",
-      "content": "Hệ thống AI có các script monitor để theo dõi phân phối dữ liệu như giá khởi điểm, bước giá, thời lượng, thời gian gia hạn, rating seller và số tiền tối thiểu. Các báo cáo giúp kiểm tra dữ liệu huấn luyện và dữ liệu dự đoán."
-    },
-    {
-      "title": "Ghi log và audit",
-      "content": "Hệ thống có cơ chế logging và audit để ghi nhận hoạt động quan trọng. Log hỗ trợ kiểm tra lỗi, theo dõi hành vi nghiệp vụ và phục vụ quá trình debug."
-    },
-    {
-      "title": "Rate limit và bảo vệ thao tác nhạy cảm",
-      "content": "Một số thao tác nhạy cảm có thể được giới hạn tần suất để giảm rủi ro spam hoặc lạm dụng. Chức năng này hỗ trợ bảo vệ hệ thống khi xử lý request từ client."
     }
   ]
 }

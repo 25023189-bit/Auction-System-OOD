@@ -1,5 +1,7 @@
 package com.auction.server.handler;
 
+import com.auction.client.AI.auto_approve.AuctionAiAutoApproveConnector;
+import com.auction.client.AI.auto_approve.AutoApproveListingInput;
 import com.auction.common.dto.Message;
 import com.auction.common.model.User;
 import com.auction.server.dao.AuctionDAO;
@@ -29,7 +31,13 @@ class SellerActionHandlerTest {
 
     @BeforeEach
     void setUp() {
-        handler = new SellerActionHandler();
+        AuctionAiAutoApproveConnector fakeAutoApproveConnector = new AuctionAiAutoApproveConnector() {
+            @Override
+            public boolean requestDecision(AutoApproveListingInput input) {
+                return false;
+            }
+        };
+        handler = new SellerActionHandler(fakeAutoApproveConnector, new PendingAuctionRoomFactory());
         mockContext = mock(ClientActionContext.class);
         mockApprovalService = mock(PendingAuctionApprovalService.class);
 
@@ -144,5 +152,52 @@ class SellerActionHandlerTest {
 
         // Kiểm chứng xem hàm submit lên hàng chờ duyệt có được gọi không
         verify(mockApprovalService, times(1)).submit(any());
+    }
+
+    @Test
+    @DisplayName("Test AI auto approve true tạo phiên thật và không đưa vào hàng chờ admin")
+    void testHandleCreateAuction_AutoApproveSuccess() {
+        AuctionAiAutoApproveConnector autoApproveTrueConnector = new AuctionAiAutoApproveConnector() {
+            @Override
+            public boolean requestDecision(AutoApproveListingInput input) {
+                return true;
+            }
+        };
+        handler = new SellerActionHandler(autoApproveTrueConnector, new PendingAuctionRoomFactory());
+
+        String futureTimeStr = LocalDateTime.now().plusDays(2).toString();
+        String validPayload = "May anh co|Mo ta day du|1000.0|200.0|50.0|" + futureTimeStr + "|120|30";
+        Message message = new Message("CREATE_AUCTION", "SELLER_OK", validPayload);
+
+        User validSeller = new User();
+        validSeller.setCustomerId("SELLER_OK");
+        validSeller.setRole("SELLER");
+        validSeller.setSellerReputation(5.0);
+        validSeller.setOrganization("UET_GALLERY");
+
+        mockedUserDAO = mockConstruction(UserDAO.class, (mock, context) -> {
+            when(mock.getUserById("SELLER_OK")).thenReturn(validSeller);
+        });
+
+        mockedAuctionDAO = mockConstruction(AuctionDAO.class, (mock, context) -> {
+            AuctionDAO.SellerAuctionStats mockStats = mock(AuctionDAO.SellerAuctionStats.class);
+            when(mockStats.getSuccessfulAuctionRate()).thenReturn(1.0);
+            when(mockStats.getAdminCancellationRate()).thenReturn(0.0);
+            when(mock.getSellerAuctionStats("SELLER_OK")).thenReturn(mockStats);
+            when(mock.generateNextAuctionId()).thenReturn("AU100001");
+            when(mock.createAuctionWithItem(any(), any(), eq("SELLER_OK"))).thenReturn(true);
+            when(mock.getAllActiveAuctions()).thenReturn(java.util.List.of());
+        });
+
+        handler.handle(message, mockContext);
+
+        ArgumentCaptor<Message> responseCaptor = ArgumentCaptor.forClass(Message.class);
+        verify(mockContext, atLeastOnce()).send(responseCaptor.capture());
+
+        boolean hasSuccessResponse = responseCaptor.getAllValues().stream()
+                .anyMatch(msg -> "CREATE_AUCTION_SUCCESS".equals(msg.getAction()));
+
+        assertTrue(hasSuccessResponse);
+        verify(mockApprovalService, never()).submit(any());
     }
 }

@@ -9,7 +9,7 @@ if str(AUCTION_AI_DIR) not in sys.path:
     sys.path.insert(0, str(AUCTION_AI_DIR))
 
 from ChatBot.Connect.middleware import handle_question, run_from_file
-from ChatBot.Connect.paths import ERROR_INFO_PATH, INPUT_PATH, OUTPUT_PATH
+from ChatBot.Connect.paths import ERROR_INFO_PATH, INFORMATION_PATH, INPUT_PATH, OUTPUT_PATH
 
 
 def configure_stdout() -> None:
@@ -23,6 +23,7 @@ def parse_args():
     parser.add_argument("--input", default=str(INPUT_PATH))
     parser.add_argument("--output", default=str(OUTPUT_PATH))
     parser.add_argument("--error-info", default=str(ERROR_INFO_PATH))
+    parser.add_argument("--information", default=str(INFORMATION_PATH))
     return parser.parse_args()
 
 
@@ -36,12 +37,14 @@ def main() -> int:
             input_path=args.input,
             output_path=args.output,
             error_info_path=args.error_info,
+            information_path=args.information,
         )
     else:
         result = run_from_file(
             input_path=args.input,
             output_path=args.output,
             error_info_path=args.error_info,
+            information_path=args.information,
         )
 
     sys.stdout.write(json.dumps(result, ensure_ascii=False))

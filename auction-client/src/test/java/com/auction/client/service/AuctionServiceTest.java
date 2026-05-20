@@ -41,7 +41,7 @@ class AuctionServiceTest {
         service.login("user", "pass");
         verifyActionSent("LOGIN");
 
-        service.register("C1", "user", "email", "name", "pass", "BIDDER", null);
+        service.register("C1", "user", "name", "pass", "BIDDER", null);
         verifyActionSent("REGISTER");
 
         service.joinRoom("R1");
@@ -66,11 +66,9 @@ class AuctionServiceTest {
     @Test
     @DisplayName("Test quên và đổi mật khẩu")
     void testPasswordActions() {
-        service.resetPassword("user", "newPass");
+        service.resetPassword("user", "newPass", "newPass");
         verifyActionSent("RESET_PASSWORD");
 
-        service.forgotPassword("user");
-        verifyActionSent("FORGOT_PASSWORD");
     }
 
     @Test

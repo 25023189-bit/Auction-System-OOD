@@ -5,8 +5,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 /**
- * Centralized configuration manager for email and system settings.
- * Loads configuration from environment variables and config files.
+ * Centralized configuration manager for system settings.
  */
 public class ConfigManager {
     private static ConfigManager instance;
@@ -36,43 +35,11 @@ public class ConfigManager {
         }
 
         // Override with environment variables (higher priority)
-        String emailFrom = System.getenv("AUCTION_EMAIL_FROM");
-        String emailPassword = System.getenv("AUCTION_EMAIL_PASSWORD");
-        String smtpHost = System.getenv("AUCTION_SMTP_HOST");
-        String smtpPort = System.getenv("AUCTION_SMTP_PORT");
-        String maxRetries = System.getenv("AUCTION_EMAIL_MAX_RETRIES");
-        String tokenExpiration = System.getenv("AUCTION_TOKEN_EXPIRATION_MINUTES");
+        String rateLimitRequests = System.getenv("AUCTION_RATE_LIMIT_REQUESTS");
+        String rateLimitWindowMinutes = System.getenv("AUCTION_RATE_LIMIT_WINDOW_MINUTES");
 
-        if (emailFrom != null) properties.setProperty("email.from", emailFrom);
-        if (emailPassword != null) properties.setProperty("email.password", emailPassword);
-        if (smtpHost != null) properties.setProperty("smtp.host", smtpHost);
-        if (smtpPort != null) properties.setProperty("smtp.port", smtpPort);
-        if (maxRetries != null) properties.setProperty("email.max.retries", maxRetries);
-        if (tokenExpiration != null) properties.setProperty("token.expiration.minutes", tokenExpiration);
-    }
-
-    public String getEmailFrom() {
-        return properties.getProperty("email.from", "no-reply@auctionsystem.com");
-    }
-
-    public String getEmailPassword() {
-        return properties.getProperty("email.password", "");
-    }
-
-    public String getSmtpHost() {
-        return properties.getProperty("smtp.host", "smtp.gmail.com");
-    }
-
-    public int getSmtpPort() {
-        return Integer.parseInt(properties.getProperty("smtp.port", "587"));
-    }
-
-    public int getEmailMaxRetries() {
-        return Integer.parseInt(properties.getProperty("email.max.retries", "3"));
-    }
-
-    public int getTokenExpirationMinutes() {
-        return Integer.parseInt(properties.getProperty("token.expiration.minutes", "60"));
+        if (rateLimitRequests != null) properties.setProperty("rate.limit.requests", rateLimitRequests);
+        if (rateLimitWindowMinutes != null) properties.setProperty("rate.limit.window.minutes", rateLimitWindowMinutes);
     }
 
     public int getRateLimitRequests() {

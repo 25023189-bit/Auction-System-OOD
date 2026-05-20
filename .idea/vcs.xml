@@ -4,5 +4,10 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Auction-System-OOD" vcs="Git" />
+<<<<<<< HEAD
+=======
+    <mapping directory="$PROJECT_DIR$/_codex_repo_eval_Chess" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/main/java" vcs="Git" />
+>>>>>>> 13d5b58cf763c8f4f5b073378ff7a222a89a56c7
   </component>
 </project>

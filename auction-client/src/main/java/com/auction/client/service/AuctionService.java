@@ -55,11 +55,11 @@ public class AuctionService {
         }
     }
 
-    public void register(String customerId, String username, String email, String fullName,
+    public void register(String customerId, String username, String fullName,
                          String password, String role, String organization) {
         // Dùng dấu | làm protocol đơn giản giữa client và AuthActionHandler.
         String normalizedOrganization = (organization == null || organization.trim().isEmpty()) ? "" : organization.trim();
-        String data = customerId + "|" + username + "|" + email + "|" + fullName + "|" + password + "|" + role + "|" + normalizedOrganization;
+        String data = customerId + "|" + username + "|" + fullName + "|" + password + "|" + role + "|" + normalizedOrganization;
         clientConnection.sendMessage(new Message("REGISTER", "", data));
     }
 
@@ -84,12 +84,8 @@ public class AuctionService {
         clientConnection.sendMessage(msg);
     }
 
-    public void resetPassword(String username, String newPassword) {
-        clientConnection.sendMessage(new Message("RESET_PASSWORD", username, newPassword));
-    }
-
-    public void forgotPassword(String username) {
-        clientConnection.sendMessage(new Message("FORGOT_PASSWORD", username, ""));
+    public void resetPassword(String username, String newPassword, String confirmPassword) {
+        clientConnection.sendMessage(new Message("RESET_PASSWORD", username, newPassword + ":" + confirmPassword));
     }
 
     public void createAuction(String itemName, String itemDesc, double startingPrice,
