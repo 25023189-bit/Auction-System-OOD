@@ -1,6 +1,10 @@
 package com.auction.server.handler;
 
+import com.auction.client.AI.auto_approve.AuctionAiAutoApproveConnector;
+import com.auction.client.AI.auto_approve.AutoApproveListingInput;
 import com.auction.common.dto.Message;
+import com.auction.common.model.AuctionRoom;
+import com.auction.common.model.Item;
 import com.auction.common.model.PendingAuctionRequest;
 import com.auction.common.model.User;
 import com.auction.server.dao.AuctionDAO;
@@ -10,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 /**
  * Handler xử lý yêu cầu seller tạo phiên đấu giá mới.
@@ -33,8 +38,20 @@ import java.time.LocalDateTime;
 public class SellerActionHandler extends AbstractClientActionHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(SellerActionHandler.class);
 
+    private final AuctionAiAutoApproveConnector autoApproveConnector;
+    private final PendingAuctionRoomFactory pendingAuctionRoomFactory;
+
     public SellerActionHandler() {
+        this(new AuctionAiAutoApproveConnector(), new PendingAuctionRoomFactory());
+    }
+
+    public SellerActionHandler(
+            AuctionAiAutoApproveConnector autoApproveConnector,
+            PendingAuctionRoomFactory pendingAuctionRoomFactory
+    ) {
         super("CREATE_AUCTION");
+        this.autoApproveConnector = Objects.requireNonNull(autoApproveConnector);
+        this.pendingAuctionRoomFactory = Objects.requireNonNull(pendingAuctionRoomFactory);
     }
 
     @Override
@@ -123,6 +140,11 @@ public class SellerActionHandler extends AbstractClientActionHandler {
                     seller.getAdminCancellationRate()
             );
 
+            if (autoApproveConnector.requestDecision(AutoApproveListingInput.fromPendingRequest(request))
+                    && approveAutomatically(request, auctionDAO, context)) {
+                return;
+            }
+
             // Lưu request vào bộ nhớ server và báo client biết đang chờ admin.
             context.getPendingAuctionApprovalService().submit(request);
             context.send(new Message(
@@ -134,6 +156,41 @@ public class SellerActionHandler extends AbstractClientActionHandler {
         } catch (Exception e) {
             LOGGER.error("CREATE_AUCTION error.", e);
             context.send(new Message("CREATE_AUCTION_FAIL", "SERVER", "Error: " + e.getMessage()));
+        }
+    }
+
+    private boolean approveAutomatically(
+            PendingAuctionRequest request,
+            AuctionDAO auctionDAO,
+            ClientActionContext context
+    ) {
+        try {
+            AuctionRoom room = pendingAuctionRoomFactory.createRoom(request);
+            Item item = pendingAuctionRoomFactory.createItem(request);
+
+            if (!auctionDAO.createAuctionWithItem(room, item, request.getSellerId())) {
+                LOGGER.warn(
+                        "Auto approve returned true, but database persistence failed for request {}.",
+                        request.getRequestId()
+                );
+                return false;
+            }
+
+            context.send(new Message(
+                    "CREATE_AUCTION_SUCCESS",
+                    request.getRoomId(),
+                    "Auction auto-approved by AI."
+            ));
+            broadcastRoomList(context);
+            broadcastPendingAuctionList(context);
+            return true;
+        } catch (Exception e) {
+            LOGGER.warn(
+                    "Auto approve returned true, but approval handling failed for request {}.",
+                    request.getRequestId(),
+                    e
+            );
+            return false;
         }
     }
 }
