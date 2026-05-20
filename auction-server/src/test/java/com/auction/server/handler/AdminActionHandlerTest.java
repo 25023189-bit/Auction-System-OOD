@@ -4,8 +4,6 @@ import com.auction.common.dto.Message;
 import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.Item;
 import com.auction.common.model.PendingAuctionRequest;
-import com.auction.server.dao.AuctionDAO;
-import com.auction.server.dao.UserDAO;
 import com.auction.server.service.AuctionStateManager;
 import com.auction.server.service.PendingAuctionApprovalService;
 import org.junit.jupiter.api.AfterEach;
@@ -14,6 +12,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedConstruction;
 import org.mockito.MockedStatic;
+import com.auction.server.dao.AuctionDAO;
+import com.auction.server.dao.UserDAO;
 
 import java.util.Collections;
 
