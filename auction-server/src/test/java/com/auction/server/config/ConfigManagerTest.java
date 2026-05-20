@@ -18,12 +18,6 @@ class ConfigManagerTest {
         assertSame(config1, config2);
 
         // 2. Kiểm tra các hàm getter không bao giờ bị crash và có giá trị fallback an toàn
-        assertNotNull(config1.getEmailFrom());
-        assertNotNull(config1.getEmailPassword());
-        assertNotNull(config1.getSmtpHost());
-        assertTrue(config1.getSmtpPort() > 0);
-        assertTrue(config1.getEmailMaxRetries() > 0);
-        assertTrue(config1.getTokenExpirationMinutes() > 0);
         assertTrue(config1.getRateLimitRequests() > 0);
         assertTrue(config1.getRateLimitWindowMinutes() > 0);
     }

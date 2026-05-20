@@ -58,7 +58,6 @@ class UserTest {
         assertEquals(0.0, user.getAdminCancellationRate());
 
         // Test Setters
-        user.setEmail("han@vnu.edu.vn");
         user.setFullName("To Bao Han");
         user.setCustomerId("U123");
         user.setUsername("hanto");
@@ -71,7 +70,6 @@ class UserTest {
         user.setAdminCancellationRate(0.02);
 
         // Test Getters
-        assertEquals("han@vnu.edu.vn", user.getEmail());
         assertEquals("To Bao Han", user.getFullName());
         assertEquals("U123", user.getCustomerId());
         assertEquals("hanto", user.getUsername());

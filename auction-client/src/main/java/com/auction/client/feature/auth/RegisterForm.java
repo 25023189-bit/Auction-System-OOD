@@ -22,7 +22,6 @@ package com.auction.client.feature.auth;
 public record RegisterForm(
         String customerId,
         String username,
-        String email,
         String fullName,
         String password,
         String confirmPassword,

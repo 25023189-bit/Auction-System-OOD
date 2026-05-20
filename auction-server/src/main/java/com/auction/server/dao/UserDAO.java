@@ -55,12 +55,6 @@ public class UserDAO implements IUserDAO {
     }
 
     @Override
-    public User getUserByUsernameWithEmail(String username) {
-        // Nếu DB của bạn thiết kế gộp chung hoặc có logic riêng, có thể dùng chung với getUserByUsername
-        return getUserByUsername(username);
-    }
-
-    @Override
     public User login(String loginIdentifier, String rawPassword) {
         // Chấp nhận đăng nhập bằng cả username hoặc customer_id
         String sql = "SELECT * FROM users WHERE username = ? OR customer_id = ?";
@@ -90,8 +84,8 @@ public class UserDAO implements IUserDAO {
         }
 
         String sql = """
-                INSERT INTO users (customer_id, username, password_hash, role, organization, balance)
-                VALUES (?, ?, ?, ?, ?, ?)
+                INSERT INTO users (customer_id, username, password_hash, full_name, role, organization, balance)
+                VALUES (?, ?, ?, ?, ?, ?, ?)
                 """;
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -102,9 +96,10 @@ public class UserDAO implements IUserDAO {
             stmt.setString(1, nextId);
             stmt.setString(2, user.getUsername());
             stmt.setString(3, hashedPass);
-            stmt.setString(4, user.getRole() != null ? user.getRole().toUpperCase() : "BIDDER");
-            stmt.setString(5, user.getOrganization());
-            stmt.setDouble(6, user.getBalance());
+            stmt.setString(4, resolveFullName(user));
+            stmt.setString(5, user.getRole() != null ? user.getRole().toUpperCase() : "BIDDER");
+            stmt.setString(6, user.getOrganization());
+            stmt.setDouble(7, user.getBalance());
 
             if (stmt.executeUpdate() > 0) {
                 user.setCustomerId(nextId);
@@ -205,9 +200,18 @@ public class UserDAO implements IUserDAO {
         User user = new User();
         user.setCustomerId(rs.getString("customer_id"));
         user.setUsername(rs.getString("username"));
+        user.setFullName(rs.getString("full_name"));
         user.setRole(rs.getString("role"));
         user.setOrganization(rs.getString("organization"));
         user.setBalance(rs.getDouble("balance"));
         return user;
+    }
+
+    private String resolveFullName(User user) {
+        String fullName = user.getFullName();
+        if (fullName != null && !fullName.isBlank()) {
+            return fullName.trim();
+        }
+        return user.getUsername();
     }
 }

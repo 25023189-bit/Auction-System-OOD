@@ -19,7 +19,6 @@ CREATE TABLE users (
                        customer_id VARCHAR(8) PRIMARY KEY COMMENT 'Format: BD5XXXXX',
                        username VARCHAR(50) UNIQUE COMMENT 'Tên đăng nhập (Thêm theo yêu cầu Frontend)',
                        password_hash VARCHAR(255) NOT NULL COMMENT 'Bcrypt hash',
-                       email VARCHAR(255) UNIQUE NOT NULL,
                        full_name VARCHAR(255) NOT NULL,
                        phone VARCHAR(20),
                        avatar_url VARCHAR(500),
@@ -31,7 +30,6 @@ CREATE TABLE users (
                        balance DECIMAL(15, 2) DEFAULT 0.00 COMMENT 'Số dư tài khoản cơ bản',
 
                        status ENUM('ACTIVE', 'INACTIVE', 'BANNED', 'SUSPENDED') DEFAULT 'ACTIVE',
-                       verification_status ENUM('UNVERIFIED', 'VERIFIED', 'FAILED') DEFAULT 'UNVERIFIED',
                        identity_number VARCHAR(50) COMMENT 'National ID / Passport',
                        identity_verified_at TIMESTAMP(3) NULL,
 
@@ -43,9 +41,8 @@ CREATE TABLE users (
                        updated_at TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3),
                        last_login_at TIMESTAMP(3) NULL,
 
-    -- Đánh Index để tìm kiếm nhanh theo email, username hoặc lọc theo vai trò
+    -- Đánh Index để tìm kiếm nhanh theo username hoặc lọc theo vai trò
                        INDEX idx_username (username),
-                       INDEX idx_email (email),
                        INDEX idx_role (role),
                        INDEX idx_status (status),
                        INDEX idx_reputation (reputation_score)
@@ -279,7 +276,7 @@ CREATE TABLE notifications (
                                is_read BOOLEAN DEFAULT FALSE,
                                read_at TIMESTAMP(3) NULL,
                                priority ENUM('LOW', 'MEDIUM', 'HIGH', 'URGENT') DEFAULT 'MEDIUM',
-                               notification_channel ENUM('IN_APP', 'EMAIL', 'SMS', 'BOTH') DEFAULT 'IN_APP',
+                               notification_channel ENUM('IN_APP', 'SMS') DEFAULT 'IN_APP',
                                sent_at TIMESTAMP(3),
                                created_at TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP(3),
 
@@ -355,7 +352,7 @@ DELIMITER ;
 CREATE VIEW auction_winners_info AS
 SELECT
     a.auction_id, p.product_name, u.customer_id as winner_id, u.full_name as winner_name,
-    u.email, a.final_price as winning_price, a.end_time, pa.status as payment_status, a.status as auction_status
+    a.final_price as winning_price, a.end_time, pa.status as payment_status, a.status as auction_status
 FROM auctions a
          JOIN products p ON a.product_id = p.product_id
          JOIN users u ON a.winner_id = u.customer_id
