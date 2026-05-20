@@ -70,6 +70,7 @@ public class DefaultAuctionCardFactory {
 
                 // Truyền roomId để ProductViewController yêu cầu server trả dữ liệu sản phẩm.
                 com.auction.client.feature.controllers.ProductViewController controller = loader.getController();
+                controller.setAuctionService(this.auctionService);
                 controller.setRoomId(model.getRoomId());
 
                 // Mở popup chi tiết ở Stage riêng.

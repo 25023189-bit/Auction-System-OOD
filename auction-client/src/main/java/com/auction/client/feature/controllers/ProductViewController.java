@@ -2,6 +2,7 @@ package com.auction.client.feature.controllers;
 
 import com.auction.client.service.AuctionService;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import com.auction.common.model.AuctionRoom;
@@ -77,5 +78,12 @@ public class ProductViewController {
         if (this.auctionService != null) {
             this.auctionService.requestProductDetails(roomId);
         }
+    }
+
+    public void closeWindow(ActionEvent actionEvent) {
+        // Lấy nút (Button) vừa được bấm, từ đó dò ra cửa sổ (Stage) chứa nó và đóng lại
+        javafx.scene.Node source = (javafx.scene.Node) actionEvent.getSource();
+        javafx.stage.Stage stage = (javafx.stage.Stage) source.getScene().getWindow();
+        stage.close();
     }
 }
