@@ -101,7 +101,7 @@ public class SellerController {
         }
     }
 
-    private void validateExtensionRealTime() {
+    private boolean validateExtensionRealTime() { // Đổi từ void thành boolean
         String extStr = safeText(txtExtensionSeconds);
 
         if (extStr.isEmpty()) {
@@ -109,21 +109,25 @@ public class SellerController {
                 lblStatus.setText("");
             }
             txtExtensionSeconds.setStyle("-fx-border-color: #e67e22;");
-            return;
+            showError("Error: Extension Seconds cannot be empty!"); // Báo lỗi nếu bỏ trống khi bấm tạo
+            return false; // Trống là không hợp lệ
         }
 
         try {
             int extSecs = Integer.parseInt(extStr);
-            if (extSecs <= 0) {
-                showError("Error: Extension time must be greater than 0");
+            if (extSecs < 60 || extSecs > 120) {
+                showError("Error: Extension Seconds must be between 60 and 120 seconds!");
                 txtExtensionSeconds.setStyle("-fx-border-color: red; -fx-border-width: 2px;");
+                return false; // SAI -> Trả về false để chặn
             } else {
                 if (lblStatus != null) lblStatus.setText("");
                 txtExtensionSeconds.setStyle("-fx-border-color: #e67e22; -fx-border-width: 1px;");
+                return true; // ĐÚNG -> Trả về true để cho qua
             }
         } catch (NumberFormatException e) {
             showError("Error: Extension must be a valid integer number");
             txtExtensionSeconds.setStyle("-fx-border-color: red; -fx-border-width: 2px;");
+            return false; // SAI -> Trả về false để chặn
         }
     }
 
@@ -158,6 +162,10 @@ public class SellerController {
         if (auctionService == null) {
             showError("Error: Service is not available.");
             return;
+        }
+
+        if (!validateExtensionRealTime()) {
+            return; // Chặn đứng luồng, không chạy các đoạn code gửi lên server ở dưới nữa
         }
 
         LocalDate date = datePickerStart.getValue();

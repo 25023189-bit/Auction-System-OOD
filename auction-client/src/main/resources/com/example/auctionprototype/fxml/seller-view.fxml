@@ -76,7 +76,7 @@
                                                 </VBox>
                                                 <VBox spacing="5.0" HBox.hgrow="ALWAYS">
                                                     <children>
-                                                        <Label styleClass="orange-text-small" text="Extension (Sec):" />
+                                                        <Label styleClass="orange-text-small" text="Extension (Sec): 60 - 120" />
                                                         <TextField fx:id="txtExtensionSeconds" styleClass="glass-input" />
                                                     </children>
                                                 </VBox>
