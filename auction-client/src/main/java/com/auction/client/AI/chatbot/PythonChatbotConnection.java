@@ -164,11 +164,13 @@ public final class PythonChatbotConnection {
         command[commandPrefix.length + 1] = "--question";
         command[commandPrefix.length + 2] = question;
 
-        return new ProcessBuilder(command)
+        ProcessBuilder processBuilder = new ProcessBuilder(command)
                 .directory(chatbot.appDirectory().toFile())
                 .redirectErrorStream(true)
-                .redirectOutput(ProcessBuilder.Redirect.to(chatbot.processLogPath().toFile()))
-                .start();
+                .redirectOutput(ProcessBuilder.Redirect.to(chatbot.processLogPath().toFile()));
+        processBuilder.environment().put("PYTHONUTF8", "1");
+        processBuilder.environment().put("PYTHONIOENCODING", "utf-8");
+        return processBuilder.start();
     }
 
     private Optional<String> readJsonStringField(Path path, String field) throws IOException {
@@ -198,6 +200,11 @@ public final class PythonChatbotConnection {
                 || normalized.startsWith("error:")
                 || normalized.contains("khong goi duoc ollama")
                 || normalized.contains("khong the ket noi toi llm")
+                || normalized.contains("object has no attribute")
+                || normalized.contains("attributeerror")
+                || normalized.contains("modulenotfounderror")
+                || normalized.contains("importerror")
+                || normalized.contains("permission denied")
                 || normalized.contains("traceback");
     }
 
