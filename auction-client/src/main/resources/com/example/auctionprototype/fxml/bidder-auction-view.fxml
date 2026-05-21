@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
@@ -13,10 +16,7 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.LineChart?>
-<?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.chart.AreaChart?>
+
 <BorderPane fx:id="paneAuctionRoom" prefHeight="720.0" prefWidth="1280.0" styleClass="main-container" stylesheets="@../css/bidder-auction-view.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.AuctionController">
     <center>
         <AnchorPane style="-fx-background-color: transparent;">
@@ -28,7 +28,7 @@
                                 <VBox alignment="CENTER_LEFT">
                                     <children>
                                         <Label style="-fx-font-size: 11px; -fx-font-weight: bold;" text="MANAGEMENT SYSTEM" textFill="#bdc3c7" />
-                                        <Label text="AUCTION ROOM (BIDDER)" textFill="WHITE">
+                                        <Label text="AUCTION ROOM" textFill="BLACK">
                                             <font>
                                                 <Font name="System Bold" size="20.0" />
                                             </font>
@@ -62,7 +62,7 @@
                                             <children>
                                                 <VBox alignment="CENTER_RIGHT">
                                                     <children>
-                                                        <Label fx:id="lblUsername" style="-fx-font-weight: bold; -fx-font-size: 14px;" text="User: Adam" textFill="WHITE" />
+                                                        <Label fx:id="lblUsername" style="-fx-font-weight: bold; -fx-font-size: 14px;" text="User: Adam" textFill="BLACK" />
                                                         <Label style="-fx-font-size: 10px;" text="Online" textFill="#2ecc71" />
                                                     </children>
                                                 </VBox>
@@ -74,7 +74,7 @@
                             </children>
                         </HBox>
 
-                        <HBox spacing="25.0" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
+                        <HBox spacing="25.0" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
                             <padding>
                                 <Insets bottom="20.0" left="25.0" right="25.0" top="10.0" />
                             </padding>
@@ -100,48 +100,23 @@
                                 <VBox spacing="15.0" styleClass="chat-container" HBox.hgrow="ALWAYS">
                                     <children>
                                         <Label text="Bid History &amp; Chat" textFill="#2c3e50"><font><Font name="System Bold" size="18.0" /></font></Label>
-                                        <AreaChart fx:id="priceChart" animated="false" prefHeight="250.0" VBox.vgrow="NEVER" styleClass="price-trend-chart">
+                                        <AreaChart fx:id="priceChart" animated="false" prefHeight="250.0" VBox.vgrow="NEVER">
                                             <xAxis>
-                                                <CategoryAxis fx:id="xAxis" label="Thời gian" />
+                                                <CategoryAxis label="Thời gian" fx:id="xAxis" />
                                             </xAxis>
                                             <yAxis>
                                                 <NumberAxis fx:id="yAxis" label="Mức giá ($)" />
                                             </yAxis>
                                         </AreaChart>
-                                        <TextArea fx:id="txtChatLog" editable="false" VBox.vgrow="ALWAYS" wrapText="true" />
-
+                                        <TextArea fx:id="txtChatLog" editable="false" wrapText="true" VBox.vgrow="ALWAYS" />
                                         <VBox spacing="10.0">
                                             <children>
                                                 <HBox spacing="10.0">
                                                     <children>
                                                         <TextField fx:id="txtBidAmount" prefHeight="40.0" promptText="Enter your bid amount..." HBox.hgrow="ALWAYS" />
                                                         <Button fx:id="btnPlaceBid" minWidth="120.0" onAction="#handleBid" prefHeight="40.0" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" text="PLACE BID" />
-                                                        <Button fx:id="btnToggleAutoBid" minWidth="100.0" onAction="#toggleAutoBidPanel" prefHeight="40.0" style="-fx-background-color: #f1c40f; -fx-text-fill: #2c3e50; -fx-font-weight: bold; -fx-background-radius: 8;" text="AUTO BID ⚙" />
                                                     </children>
                                                 </HBox>
-
-                                                <VBox fx:id="paneAutoBid" managed="false" spacing="10.0" style="-fx-background-color: #fff9c4; -fx-padding: 15; -fx-background-radius: 8; -fx-border-color: #f1c40f; -fx-border-radius: 8;" visible="false">
-                                                    <children>
-                                                        <Label style="-fx-font-weight: bold;" text="Cấu hình Tự động Đấu giá (Auto-Bidding)" textFill="#2c3e50" />
-                                                        <HBox spacing="10.0">
-                                                            <children>
-                                                                <VBox HBox.hgrow="ALWAYS">
-                                                                    <Label text="Giá tối đa (Max Bid):" textFill="#7f8c8d" />
-                                                                    <TextField fx:id="txtMaxBid" promptText="VD: 5000" />
-                                                                </VBox>
-                                                                <VBox HBox.hgrow="ALWAYS">
-                                                                    <Label text="Bước giá (Increment):" textFill="#7f8c8d" />
-                                                                    <TextField fx:id="txtAutoBidStep" promptText="VD: 50" />
-                                                                </VBox>
-                                                            </children>
-                                                        </HBox>
-                                                        <HBox alignment="CENTER_RIGHT" spacing="10.0">
-                                                            <Button onAction="#handleCancelAutoBid" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 5;" text="Hủy Auto" />
-                                                            <Button onAction="#handleSetAutoBid" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;" text="Thiết lập &amp; Chạy" />
-                                                        </HBox>
-                                                    </children>
-                                                </VBox>
-
                                                 <HBox spacing="10.0">
                                                     <children>
                                                         <TextField fx:id="txtChatInput" prefHeight="40.0" promptText="Type a message..." HBox.hgrow="ALWAYS" />

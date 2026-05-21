@@ -1,0 +1,141 @@
+/* ==========================================================================
+   STYLE THE THÔNG TIN CHI TIẾT SẢN PHẨM PHONG CÁCH SCI-FI GLASSMORPHISM
+   ========================================================================== */
+
+/* Thẻ bọc lớn bên ngoài */
+.product-detail-card {
+    -fx-background-color: rgba(20, 26, 36, 0.75); /* Nền tối mờ xuyên thấu */
+    -fx-background-radius: 18px;
+    -fx-border-color: rgba(0, 242, 254, 0.25); /* Viền hiệu ứng Cyan phát sáng nhẹ */
+    -fx-border-radius: 18px;
+    -fx-border-width: 1.5px;
+    /* Tạo độ sâu bóng đổ mềm mại phủ lên hình nền phía sau */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 20, 0, 0, 12);
+}
+
+/* Thanh tiêu đề phía trên */
+.card-header-bar {
+    -fx-border-color: rgba(255, 255, 255, 0.08);
+    -fx-border-width: 0 0 1 0; /* Chỉ kẻ đường line mảnh phía dưới */
+}
+
+.card-main-title {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-weight: bold;
+    -fx-font-size: 22px;
+    -fx-text-fill: linear-gradient(to right, #00f2fe, #4facfe); /* Chữ chuyển màu xanh ngọc */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 242, 254, 0.3), 8, 0, 0, 0);
+}
+
+.card-close-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 16px;
+    -fx-cursor: hand;
+}
+.card-close-btn:hover {
+    -fx-text-fill: #ff4757;
+}
+
+/* Khung bọc ảnh sản phẩm */
+.image-container-wrapper {
+    -fx-background-color: rgba(0, 0, 0, 0.3);
+    -fx-background-radius: 14px;
+    -fx-padding: 10px;
+    -fx-border-color: rgba(255, 255, 255, 0.05);
+    -fx-border-radius: 14px;
+}
+
+.product-image-view {
+    -fx-background-radius: 10px;
+}
+
+/* Khối hộp thông số (Stats box) */
+.live-stats-row {
+    -fx-background-color: rgba(255, 255, 255, 0.03);
+    -fx-padding: 8px 12px;
+    -fx-background-radius: 10px;
+    -fx-border-color: rgba(255, 255, 255, 0.05);
+    -fx-border-radius: 10px;
+}
+
+.stat-box {
+    -fx-padding: 0 15 0 0;
+}
+
+.stat-label {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 11px;
+    -fx-text-transform: uppercase;
+}
+
+.stat-value {
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-font-size: 18px;
+}
+
+.stat-value-price {
+    -fx-text-fill: #00f2fe; /* Màu xanh neon rực rỡ */
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
+
+.stat-value-time {
+    -fx-text-fill: #ff9f43; /* Màu cam cảnh báo thời gian */
+    -fx-font-weight: bold;
+    -fx-font-size: 18px;
+}
+
+/* Chấm tròn list và text đính kèm */
+.neon-bullet {
+    -fx-fill: #00f2fe;
+    -fx-effect: dropshadow(three-pass-box, #00f2fe, 10, 0, 0, 0);
+}
+
+.info-text-highlight {
+    -fx-text-fill: #e2e8f0;
+    -fx-font-size: 13px;
+}
+
+/* Mô tả sản phẩm */
+.product-description-text {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 13px;
+    -fx-line-spacing: 4px;
+}
+
+/* Hàng tương tác nút bấm phía dưới */
+.link-view-bids {
+    -fx-background-color: transparent;
+    -fx-text-fill: #00f2fe;
+    -fx-underline: true;
+    -fx-cursor: hand;
+    -fx-padding: 0;
+}
+.link-view-bids:hover {
+    -fx-text-fill: #4facfe;
+}
+
+/* NÚT BẤM PLACE BID PHÁT QUANG CHUẨN KĨ THUẬT CÔNG NGHỆ */
+.btn-neon-action {
+    -fx-background-color: linear-gradient(to right, rgba(0, 242, 254, 0.15), rgba(79, 172, 254, 0.15));
+    -fx-text-fill: #00f2fe;
+    -fx-border-color: #00f2fe;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 10px 25px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 242, 254, 0.2), 8, 0, 0, 0);
+    -fx-transition: all 0.3s ease;
+}
+
+.btn-neon-action:hover {
+    -fx-background-color: linear-gradient(to right, #00f2fe, #4facfe);
+    -fx-text-fill: #0c0f16; /* Chữ chuyển tối khi hover */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 242, 254, 0.6), 15, 0, 0, 0);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
