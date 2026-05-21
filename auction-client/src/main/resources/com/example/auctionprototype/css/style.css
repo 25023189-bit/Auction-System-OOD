@@ -41,7 +41,7 @@
     -fx-font-size: 16px;
     -fx-font-weight: bold;
     -fx-cursor: hand;
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 122, 255, 0.3), 10, 0, 0, 5);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 122, 255, 0.30), 10, 0, 0, 5);
 }
 
 .login-button:hover {
@@ -67,7 +67,10 @@
     -fx-underline: true;
 }
 
-/* Chatbot */
+/* =========================
+   Chatbot
+   ========================= */
+
 .chatbot-open-button {
     -fx-background-color: #1769e0;
     -fx-background-radius: 28px;
@@ -163,7 +166,10 @@
     -fx-cursor: hand;
 }
 
-/* Bidder Main Lobby */
+/* =========================
+   Bidder Main Lobby
+   ========================= */
+
 .bidder-root {
     -fx-font-family: "Segoe UI", "Arial", sans-serif;
     -fx-background-color: linear-gradient(to bottom right, #eef5ff, #f8f4ec 62%, #f6f8fc);
@@ -173,6 +179,7 @@
     -fx-background-color: transparent;
 }
 
+/* Header */
 .bidder-header {
     -fx-padding: 18px 26px 16px 26px;
     -fx-background-color: linear-gradient(to right, #ffffff, #eef5ff);
@@ -236,19 +243,21 @@
     -fx-text-fill: #0d2646;
 }
 
+/* Main content */
 .bidder-main-content {
-    -fx-padding: 24px 26px 28px 26px;
+    -fx-padding: 22px 24px 26px 24px;
 }
 
+/* Base cards */
 .bidder-premium-card,
 .bidder-exchange-card,
 .bidder-auctions-card,
 .bidder-notes-card {
     -fx-padding: 18px;
     -fx-background-color: #ffffff;
-    -fx-background-radius: 16px;
+    -fx-background-radius: 18px;
     -fx-border-color: #e8d7b8;
-    -fx-border-radius: 16px;
+    -fx-border-radius: 18px;
     -fx-border-width: 1px;
     -fx-effect: dropshadow(gaussian, rgba(13, 38, 70, 0.10), 22, 0.16, 0, 8);
 }
@@ -256,34 +265,6 @@
 .bidder-exchange-card,
 .bidder-notes-card {
     -fx-background-color: #fffcf6;
-}
-
-.bidder-auctions-card {
-    -fx-background-color: linear-gradient(to bottom, #ffffff, #fbfdff);
-}
-
-.bidder-auction-content-stack {
-    -fx-alignment: center;
-    -fx-padding: 6px;
-    -fx-background-color: #ffffff;
-    -fx-background-radius: 18px;
-    -fx-min-height: 520px;
-    -fx-border-color: rgba(232, 215, 184, 0.55);
-    -fx-border-radius: 18px;
-    -fx-border-width: 1px;
-}
-
-.bidder-auction-background-image {
-    -fx-background-image: url("../images/bidder_mainLobby/auction_available_background.png");
-    -fx-background-size: cover;
-    -fx-background-position: center center;
-    -fx-background-repeat: no-repeat;
-    -fx-background-radius: 16px;
-}
-
-.bidder-auction-glass-overlay {
-    -fx-background-color: rgba(255, 255, 255, 0.20);
-    -fx-background-radius: 16px;
 }
 
 .bidder-card-title,
@@ -310,22 +291,42 @@
     -fx-background-radius: 999px;
 }
 
-.bidder-rate-row {
+/* =========================
+   Title ornament dividers
+   ========================= */
+
+.bidder-header-divider {
+    -fx-opacity: 0.88;
+}
+
+.bidder-card-title-block {
+    -fx-alignment: center-left;
+}
+
+.bidder-title-divider {
+    -fx-opacity: 0.82;
+}
+
+/* =========================
+   Exchange Rates
+   ========================= */
+
+.bidder-rate-row,
+.bidder-rate-row-featured {
     -fx-padding: 7px 8px;
-    -fx-background-color: rgba(255, 255, 255, 0.70);
     -fx-background-radius: 10px;
-    -fx-border-color: rgba(232, 215, 184, 0.65);
     -fx-border-radius: 10px;
     -fx-border-width: 1px;
 }
 
+.bidder-rate-row {
+    -fx-background-color: rgba(255, 255, 255, 0.70);
+    -fx-border-color: rgba(232, 215, 184, 0.65);
+}
+
 .bidder-rate-row-featured {
-    -fx-padding: 7px 8px;
     -fx-background-color: #eef5ff;
-    -fx-background-radius: 10px;
     -fx-border-color: #f3d99b;
-    -fx-border-radius: 10px;
-    -fx-border-width: 1px;
 }
 
 .bidder-rate-name {
@@ -340,23 +341,119 @@
     -fx-text-fill: #b97813;
 }
 
+/* =========================
+   Available Auctions
+   ========================= */
+
+/*
+ * Background is attached directly to the whole Available Auctions VBox.
+ * The image stretches to the full card so left, right, and bottom edges stay tight.
+ */
+.bidder-auctions-card {
+    -fx-padding: 18px;
+
+    -fx-background-image: url("../images/bidder_mainLobby/auction_available_background.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 24px;
+
+    -fx-border-color: #e8d7b8;
+    -fx-border-radius: 24px;
+    -fx-border-width: 1px;
+
+    -fx-effect: dropshadow(gaussian, rgba(13, 38, 70, 0.12), 24, 0.16, 0, 8);
+}
+
+/*
+ * Title area remains readable over the background.
+ */
+.bidder-auctions-title-bar {
+    -fx-padding: 0 0 2px 0;
+    -fx-background-color: rgba(255, 255, 255, 0.38);
+    -fx-background-radius: 14px;
+}
+
+/*
+ * Transparent content area above the VBox background.
+ */
+.bidder-auction-content-stack {
+    -fx-alignment: center;
+    -fx-padding: 0;
+
+    -fx-background-color: transparent;
+    -fx-background-radius: 22px;
+
+    -fx-min-height: 520px;
+    -fx-pref-height: 520px;
+
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+}
+
+/*
+ * White veil over the background.
+ * Raise opacity by changing #FFFFFF55 -> #FFFFFF66 or #FFFFFF77.
+ */
+.bidder-auction-glass-overlay {
+    -fx-background-color: #FFFFFF55;
+    -fx-background-radius: 22px;
+}
+
+/*
+ * ScrollPane must stay transparent so the background remains visible.
+ */
 .bidder-auction-scroll {
     -fx-background-color: transparent;
     -fx-background: transparent;
     -fx-padding: 0;
+    -fx-border-color: transparent;
 }
 
-.bidder-auction-scroll > .viewport {
+.bidder-auction-scroll > .viewport,
+.bidder-auction-scroll .viewport {
     -fx-background-color: transparent;
 }
 
+.bidder-auction-scroll .corner {
+    -fx-background-color: transparent;
+}
+
+/*
+ * Runtime auction container.
+ * Do not hide this, otherwise Join Room / View Details will break.
+ */
 .bidder-auction-grid {
-    -fx-padding: 16px 18px 18px 18px;
+    -fx-padding: 18px;
     -fx-alignment: top-left;
     -fx-background-color: transparent;
-    -fx-min-height: 508px;
+    -fx-min-height: 520px;
 }
 
+/*
+ * Runtime-generated auction cards.
+ * This only styles cards; it does not remove functionality.
+ */
+.bidder-auction-grid > * {
+    -fx-background-color: rgba(255, 255, 255, 0.84);
+    -fx-background-radius: 14px;
+
+    -fx-border-color: #e8d7b8;
+    -fx-border-radius: 14px;
+    -fx-border-width: 1px;
+
+    -fx-effect: dropshadow(gaussian, rgba(13, 38, 70, 0.12), 14, 0.16, 0, 4);
+}
+
+.bidder-auction-grid .button {
+    -fx-background-radius: 8px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+/* Optional empty-state classes, harmless if unused */
 .bidder-empty-state {
     -fx-padding: 46px 52px;
     -fx-background-color: #f8fbff;
@@ -376,6 +473,10 @@
     -fx-font-size: 13px;
     -fx-text-fill: #5f6e84;
 }
+
+/* =========================
+   Bidder Notes
+   ========================= */
 
 .bidder-note-row {
     -fx-padding: 9px 10px;
@@ -397,6 +498,10 @@
     -fx-line-spacing: 2px;
     -fx-text-fill: #3f4f65;
 }
+
+/* =========================
+   Chat button in bidder screen
+   ========================= */
 
 .bidder-root .chatbot-open-button {
     -fx-background-color: linear-gradient(to bottom right, #3f78b5, #2f66a4);
