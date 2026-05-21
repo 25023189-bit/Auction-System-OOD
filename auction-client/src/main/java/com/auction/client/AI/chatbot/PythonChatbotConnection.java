@@ -61,6 +61,10 @@ public final class PythonChatbotConnection {
         return answer.orElse(ChatbotFallback.MESSAGE);
     }
 
+    public String sendQuery(String query) {
+        return ask(query);
+    }
+
     private Optional<String> askBot(String question) throws InterruptedException {
         try {
             validateBotFiles();
