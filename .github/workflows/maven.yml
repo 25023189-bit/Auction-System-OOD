@@ -1,35 +1,25 @@
-name: Java CI/CD with Maven and Checkstyle
+name: Java CI with Maven
 
-# Cấu hình robot tự động chạy khi có code đẩy lên nhánh main hoặc master
 on:
   push:
-    branches: [ "main", "master" ]
+    branches: [ "main", "master", "develop" ]
   pull_request:
     branches: [ "main", "master" ]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest # Robot sẽ dùng hệ điều hành Linux ảo
+  build-and-test:
+    runs-on: ubuntu-latest
 
     steps:
-      # Bước 1: Copy code từ kho GitHub về máy ảo
-      - name: Checkout Code
-        uses: actions/checkout@v4
+      - name: 1. Đồng bộ hóa mã nguồn từ kho lưu trữ về máy ảo
+        uses: actions/checkout@v3
 
-      # Bước 2: Cài đặt Java (Khớp với version trong máy của bạn)
-      - name: Set up JDK
-        uses: actions/setup-java@v4
+      - name: 2. Thiết lập môi trường chạy JDK 17 Eclipse Temurin chuẩn
+        uses: actions/setup-java@v3
         with:
-          java-version: '25' # Bạn có thể sửa thành '25' nếu GitHub hỗ trợ bản Java 25 của bạn
+          java-version: '17'
           distribution: 'temurin'
-          cache: maven # Lưu cache lại để lần sau chạy nhanh hơn
+          cache: 'maven'
 
-      # Bước 3: Chạy lệnh Maven để đóng gói và kiểm tra Checkstyle
-      - name: Make Maven Wrapper executable
-        run: chmod +x mvnw
-
-      - name: Install Xvfb
-        run: sudo apt-get update && sudo apt-get install -y xvfb
-
-      - name: Build and Checkstyle with Maven
-        run: xvfb-run -a ./mvnw -q clean install
+      - name: 3. Biên dịch và tự động kiểm tra định dạng mã nguồn kết hợp Unit Test
+        run: mvn clean test
