@@ -48,6 +48,7 @@ public class ChatbotController {
         // Cấu hình tương tác giao diện và thiết lập ẩn panel ban đầu
         configureInteraction();
         setChatbotVisible(false);
+        bindButtonActions();
         addBotMessage("Xin chào, tôi có thể giải thích và hướng dẫn bạn sử dụng hệ thống đấu giá.");
 
         // Bổ sung sự kiện lắng nghe phím Enter trực tiếp trên ô nhập TextField
@@ -104,6 +105,18 @@ public class ChatbotController {
 
     // === CÁC HÀM LÝ THUYẾT XỬ LÝ LOGIC NGHIỆP VỤ NỀN ===
 
+    private void bindButtonActions() {
+        if (btnOpenChatbot != null) {
+            btnOpenChatbot.setOnAction(this::showChatbot);
+        }
+        if (btnCloseChatbot != null) {
+            btnCloseChatbot.setOnAction(this::hideChatbot);
+        }
+        if (btnSendChatbot != null) {
+            btnSendChatbot.setOnAction(this::handleSendChatbotMessage);
+        }
+    }
+
     /**
      * Cấu hình thuộc tính chuột và tương tác cho các Node lồng nhau
      * Nhằm tránh việc Popup Chatbot ẩn chiếm dụng / chặn sự kiện bấm chuột của màn hình bên dưới.
@@ -146,6 +159,17 @@ public class ChatbotController {
             chatbotPanel.setDisable(!visible);
             chatbotPanel.setMouseTransparent(!visible);
         }
+        if (btnOpenChatbot != null) {
+            btnOpenChatbot.setVisible(!visible);
+            btnOpenChatbot.setManaged(!visible);
+            btnOpenChatbot.setDisable(visible);
+            btnOpenChatbot.setMouseTransparent(visible);
+        }
+        if (visible && chatbotPanel != null) {
+            chatbotPanel.toFront();
+        } else if (btnOpenChatbot != null) {
+            btnOpenChatbot.toFront();
+        }
     }
 
     /**
@@ -170,7 +194,7 @@ public class ChatbotController {
             @Override
             protected String call() throws Exception {
                 // Tác vụ I/O nặng này sẽ được điều hướng thực thi ở Worker Thread độc lập
-                return chatbotConnection.sendQuery(userMessage);
+                return chatbotConnection.ask(userMessage);
             }
         };
 

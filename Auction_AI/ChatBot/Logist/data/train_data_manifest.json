@@ -1,0 +1,156 @@
+{
+  "processed_files": [
+    {
+      "file_name": "train_data__ANTI_SNIPING.csv",
+      "file_path": "data/generated/train_data__ANTI_SNIPING.csv",
+      "processed_at": "2026-05-21T09:35:24",
+      "status": "success",
+      "checksum": "569666adf779d2da1d6b121a26e28c4263a0096811e377fb69e1f251ffbd030e",
+      "sample_count": 194
+    },
+    {
+      "file_name": "train_data__CAP_NHAT_GIA_REALTIME.csv",
+      "file_path": "data/generated/train_data__CAP_NHAT_GIA_REALTIME.csv",
+      "processed_at": "2026-05-21T09:35:24",
+      "status": "success",
+      "checksum": "38bb41b96ccadd3b0a78624834e733ccbcdc1dbebf63d437b1e4f2e0232b76dc",
+      "sample_count": 189
+    },
+    {
+      "file_name": "train_data__CHAT_TRONG_PHONG_DAU_GIA.csv",
+      "file_path": "data/generated/train_data__CHAT_TRONG_PHONG_DAU_GIA.csv",
+      "processed_at": "2026-05-21T09:35:24",
+      "status": "success",
+      "checksum": "9b243238986c7d1f4118bc69b723224c2faba3506d0a5c38cb31668610c59a4b",
+      "sample_count": 191
+    },
+    {
+      "file_name": "train_data__CHATBOT_HO_TRO_NGUOI_DUNG.csv",
+      "file_path": "data/generated/train_data__CHATBOT_HO_TRO_NGUOI_DUNG.csv",
+      "processed_at": "2026-05-21T09:35:24",
+      "status": "success",
+      "checksum": "16d0d3661747b86cbc366fc9c9f3f7c7beb0eb7b7e4eff1343bd4ec788232f7e",
+      "sample_count": 195
+    },
+    {
+      "file_name": "train_data__CHU_DE_NGUY_HIEM.csv",
+      "file_path": "data/generated/train_data__CHU_DE_NGUY_HIEM.csv",
+      "processed_at": "2026-05-21T09:35:24",
+      "status": "success",
+      "checksum": "d04ab66fc1d49e785577a9875e9b0fc06ac68b74bda9a092f000013ccd5f659c",
+      "sample_count": 73
+    },
+    {
+      "file_name": "train_data__DANG_NHAP_HE_THONG.csv",
+      "file_path": "data/generated/train_data__DANG_NHAP_HE_THONG.csv",
+      "processed_at": "2026-05-21T09:35:24",
+      "status": "success",
+      "checksum": "0a31c0430ccab8dfb9e379909c16062ec6159e55822940608c84b2d6e31e2dd6",
+      "sample_count": 194
+    },
+    {
+      "file_name": "train_data__DAT_GIA_TRONG_PHIEN_DAU_GIA.csv",
+      "file_path": "data/generated/train_data__DAT_GIA_TRONG_PHIEN_DAU_GIA.csv",
+      "processed_at": "2026-05-21T09:35:24",
+      "status": "success",
+      "checksum": "de31cc9a0981d2aa65658de8160be135eb97eaba1d3a429d5716c2bf6d05e453",
+      "sample_count": 193
+    },
+    {
+      "file_name": "train_data__KHONG_RO.csv",
+      "file_path": "data/generated/train_data__KHONG_RO.csv",
+      "processed_at": "2026-05-21T09:35:24",
+      "status": "success",
+      "checksum": "65a9c064b1a91f6aafa19ab679a6975265696e2d375c21c8eeaf698fe081097a",
+      "sample_count": 183
+    },
+    {
+      "file_name": "train_data__NGOAI_LE.csv",
+      "file_path": "data/generated/train_data__NGOAI_LE.csv",
+      "processed_at": "2026-05-21T09:35:24",
+      "status": "success",
+      "checksum": "3e71b0b078c1cb8961a87338ab3be5f0b2ca39d9419c5fb00d609cb829e82812",
+      "sample_count": 111
+    },
+    {
+      "file_name": "train_data__PHAN_QUYEN_NGUOI_DUNG.csv",
+      "file_path": "data/generated/train_data__PHAN_QUYEN_NGUOI_DUNG.csv",
+      "processed_at": "2026-05-21T09:35:24",
+      "status": "success",
+      "checksum": "a1b1b223f110f75e0e6627c20d13880cde5aed7c254426070f9d73a7e9b8fa92",
+      "sample_count": 177
+    },
+    {
+      "file_name": "train_data__QUAN_LY_SO_DU_TAI_KHOAN.csv",
+      "file_path": "data/generated/train_data__QUAN_LY_SO_DU_TAI_KHOAN.csv",
+      "processed_at": "2026-05-21T09:35:24",
+      "status": "success",
+      "checksum": "4c160008a11c6b0bc7c245cede7acaf91f4181a59217e389e847d1ca65cde03b",
+      "sample_count": 194
+    },
+    {
+      "file_name": "train_data__QUEN_MAT_KHAU_VA_DAT_LAI_MAT_KHAU.csv",
+      "file_path": "data/generated/train_data__QUEN_MAT_KHAU_VA_DAT_LAI_MAT_KHAU.csv",
+      "processed_at": "2026-05-21T09:35:24",
+      "status": "success",
+      "checksum": "d1935d8f4da507140c955f4f0300dab9d3dfc10e7b806471ee7c5de6dc6ebaab",
+      "sample_count": 189
+    },
+    {
+      "file_name": "train_data__ROI_PHONG_DAU_GIA.csv",
+      "file_path": "data/generated/train_data__ROI_PHONG_DAU_GIA.csv",
+      "processed_at": "2026-05-21T09:35:24",
+      "status": "success",
+      "checksum": "243468d7bc798e90609e75f15560b9fcb1f95a3cd0570bfc67bbf45487a92d55",
+      "sample_count": 191
+    },
+    {
+      "file_name": "train_data__SELLER_TAO_YEU_CAU_PHIEN_DAU_GIA.csv",
+      "file_path": "data/generated/train_data__SELLER_TAO_YEU_CAU_PHIEN_DAU_GIA.csv",
+      "processed_at": "2026-05-21T09:35:24",
+      "status": "success",
+      "checksum": "a8d331eb52a0f266a4c4ef3a326f88132bac06c8d418e0b6435fe1f8da68ebcf",
+      "sample_count": 186
+    },
+    {
+      "file_name": "train_data__THAM_GIA_PHONG_DAU_GIA.csv",
+      "file_path": "data/generated/train_data__THAM_GIA_PHONG_DAU_GIA.csv",
+      "processed_at": "2026-05-21T09:35:24",
+      "status": "success",
+      "checksum": "0b84c8695885893e1b91079b20dce1420d957e03eb07ff5a1933908b868ef1b0",
+      "sample_count": 196
+    },
+    {
+      "file_name": "train_data__TU_DONG_CHOT_PHIEN_DAU_GIA.csv",
+      "file_path": "data/generated/train_data__TU_DONG_CHOT_PHIEN_DAU_GIA.csv",
+      "processed_at": "2026-05-21T09:35:24",
+      "status": "success",
+      "checksum": "2f29f9ad9953162aa39025da9574d57cb5b01dc5cfcf43ca7324c5818ff722b0",
+      "sample_count": 190
+    },
+    {
+      "file_name": "train_data__XEM_DANH_SACH_PHIEN_DAU_GIA.csv",
+      "file_path": "data/generated/train_data__XEM_DANH_SACH_PHIEN_DAU_GIA.csv",
+      "processed_at": "2026-05-21T09:35:24",
+      "status": "success",
+      "checksum": "af7e42dfdf7805927808392193265c3c700c46594b8ec6568c52098b1018aea8",
+      "sample_count": 189
+    },
+    {
+      "file_name": "train_data__XEM_THOI_GIAN_CON_LAI_CUA_PHIEN.csv",
+      "file_path": "data/generated/train_data__XEM_THOI_GIAN_CON_LAI_CUA_PHIEN.csv",
+      "processed_at": "2026-05-21T09:35:24",
+      "status": "success",
+      "checksum": "a7e5225c36ef1a2b430218e5904d026a121ab67c98369099043b5eecc62f53d6",
+      "sample_count": 193
+    },
+    {
+      "file_name": "train_data__XU_LY_TIEN_KHI_PHIEN_KET_THUC.csv",
+      "file_path": "data/generated/train_data__XU_LY_TIEN_KHI_PHIEN_KET_THUC.csv",
+      "processed_at": "2026-05-21T09:35:24",
+      "status": "success",
+      "checksum": "b04338b44be49f726c99969ceadc61039cb72d53b95663bb76469308a83dccfc",
+      "sample_count": 189
+    }
+  ]
+}

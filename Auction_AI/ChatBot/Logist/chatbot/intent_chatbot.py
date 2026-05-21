@@ -12,6 +12,13 @@ DEFAULT_THRESHOLD = 0.25
 MAX_SELECTED_LABELS = 1
 UNCLEAR_LABEL = "KHÔNG RÕ"
 OUT_OF_SCOPE_LABEL = "NGOÀI LỀ"
+DANGEROUS_TOPIC_LABEL = "CHỦ ĐỀ NGUY HIỂM"
+DIRECT_LOGIST_ANSWER_LABELS = {OUT_OF_SCOPE_LABEL, DANGEROUS_TOPIC_LABEL}
+SPECIAL_FALLBACK_LABELS = {
+    DANGEROUS_TOPIC_LABEL,
+    OUT_OF_SCOPE_LABEL,
+    UNCLEAR_LABEL,
+}
 
 
 @dataclass(frozen=True)
@@ -28,10 +35,18 @@ def has_out_of_scope_label(labels: list[str]) -> bool:
     return any(normalize_label(label) == OUT_OF_SCOPE_LABEL for label in labels)
 
 
+def has_dangerous_topic_label(labels: list[str]) -> bool:
+    return any(normalize_label(label) == DANGEROUS_TOPIC_LABEL for label in labels)
+
+
+def has_direct_logist_answer_label(labels: list[str]) -> bool:
+    return any(normalize_label(label) in DIRECT_LOGIST_ANSWER_LABELS for label in labels)
+
+
 def _fallback_label(scores: dict[str, float], ranked: list[tuple[str, float]]) -> str:
     special_labels = [
         label for label in scores
-        if normalize_label(label) in {OUT_OF_SCOPE_LABEL, UNCLEAR_LABEL}
+        if normalize_label(label) in SPECIAL_FALLBACK_LABELS
     ]
     if special_labels:
         return max(special_labels, key=lambda label: scores[label])
@@ -130,6 +145,14 @@ def build_rule_based_answer(
         return (
             "Mình chưa xác định được chủ đề phù hợp. Bạn có thể hỏi về đăng ký, đăng nhập, "
             "tìm phiên đấu giá, tham gia phòng, đặt giá, số dư, thời gian còn lại hoặc anti-sniping."
+        )
+
+    if has_dangerous_topic_label(labels):
+        return (
+            "Mình không thể hỗ trợ nội dung có thể gây hại, vi phạm pháp luật hoặc làm tổn thương "
+            "bản thân hay người khác. Nếu bạn hoặc ai đó đang gặp nguy hiểm ngay lúc này, hãy liên hệ "
+            "người thân đáng tin cậy hoặc dịch vụ khẩn cấp tại địa phương. Bạn vẫn có thể hỏi mình "
+            "về các thao tác trong hệ thống đấu giá."
         )
 
     if has_out_of_scope_label(labels):

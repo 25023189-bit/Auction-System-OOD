@@ -105,6 +105,10 @@
       "content": "Đây là nhãn dành cho câu hỏi không liên quan đến hệ thống đấu giá, ví dụ thời tiết, địa điểm ngoài đời, sức khỏe, học tập, giải trí, lập trình chung hoặc câu hỏi cá nhân. Chatbot không trả lời chi tiết nội dung ngoài lề, chỉ thông báo chưa có thông tin phù hợp và gợi ý người dùng hỏi về thao tác trong hệ thống đấu giá."
     },
     {
+      "title": "Chủ đề nguy hiểm",
+      "content": "Đây là nhãn dành cho câu hỏi có nguy cơ gây hại, vi phạm pháp luật hoặc làm tổn thương bản thân hay người khác, ví dụ bạo lực, tự hại, vũ khí, chất cấm, đánh cắp tài khoản, lừa đảo hoặc hướng dẫn né tránh phát hiện. Chatbot không hướng dẫn thực hiện nội dung nguy hiểm, chỉ phản hồi an toàn và chuyển hướng người dùng sang trợ giúp phù hợp hoặc thao tác hợp lệ trong hệ thống đấu giá."
+    },
+    {
       "title": "AI hỗ trợ auto approve",
       "content": "Thư mục Auction_AI có mô hình hỗ trợ dự đoán khả năng tự động duyệt phiên đấu giá dựa trên dữ liệu huấn luyện. Chức năng này phục vụ hỗ trợ quyết định hoặc thử nghiệm AI, không thay thế hoàn toàn quyền duyệt của admin."
     }

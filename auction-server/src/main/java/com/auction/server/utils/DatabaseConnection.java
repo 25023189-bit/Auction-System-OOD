@@ -76,7 +76,6 @@ public final class DatabaseConnection {
         }
 
         try {
-            // ĐÃ GỠ BỎ DÒNG password = "12345" GÂY LỖI Ở ĐÂY
             return DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
             throw new SQLException(buildHelpfulConnectionError(url, user, driver, e), e);

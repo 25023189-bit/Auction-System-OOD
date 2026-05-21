@@ -1,190 +1,190 @@
-text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,AI HỖ TRỢ AUTO APPROVE,Không Rõ
-Giá hiện tại trong phòng có tự cập nhật khi có người bid không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn thấy giá mới thay đổi ngay trên màn hình,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Màn hình đấu giá có cập nhật realtime sau mỗi lượt đặt giá không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Vì sao người khác vừa trả giá mà tôi chưa thấy giá mới,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá cao nhất hiện tại có được đẩy live cho tất cả bidder không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần biết ai đang giữ mức giá cao nhất ngay lúc này,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-App có tự đổi người dẫn giá khi bid mới thành công không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá trong room bị đứng không nhảy realtime,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi thấy giá hiện tại chậm hơn người khác vài giây,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Cập nhật giá realtime trong phiên hoạt động thế nào,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Khi có bid hợp lệ thì server gửi giá mới về client ra sao,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá mới có cần tôi bấm tải lại mới hiện không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Màn hình không refresh giá sau khi có người đặt bid,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn theo dõi giá đang tăng trực tiếp,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá hiện tại trên app có phải là giá mới nhất không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Ai đang đứng đầu phiên này và giá bao nhiêu,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Làm sao biết giá cao nhất vừa được thay đổi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Client có nhận thông tin người giữ giá cao nhất theo thời gian thực không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Realtime price update bị delay là do đâu,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá trong phòng đấu giá không đồng bộ giữa các máy,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi thấy bạn tôi có giá mới còn màn hình tôi vẫn giá cũ,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có cơ chế tự cập nhật giá khi bid thành công không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá hiện tại có nhảy ngay khi bidder khác đặt giá không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Mức giá cao nhất mới nhất đang là bao nhiêu,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn xem thay đổi giá live trong phiên,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-App có push sự kiện giá mới về phòng đấu giá không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá hiện tại cứ đứng im dù phiên đang có người trả,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Người giữ giá cao nhất không đổi trên màn hình của tôi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Cập nhật giá trong room có cần reload trang không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Màn hình đấu giá hiển thị giá cũ quá lâu,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần biết hệ thống cập nhật giá gần realtime hay theo chu kỳ,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá mới vừa phát sinh có hiển thị cho seller không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Bid mới thành công thì giá hiện tại chuyển sang số tiền mới chứ,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi không thấy tên người đang dẫn giá cập nhật,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có thể xem giá cao nhất thay đổi từng lượt không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá live trên phòng đấu giá đang bị lệch,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Thông tin giá cao nhất có được đồng bộ cho mọi người trong phòng không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết giá vừa tăng lên bao nhiêu ngay khi có bid,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Ứng dụng có nhận realtime event cập nhật giá không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tại sao bảng giá hiện tại không thay đổi sau lượt đặt mới,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá đang hiển thị có được lấy từ server mới nhất không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Màn hình của tôi chưa cập nhật người thắng tạm thời,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Realtime giá hoạt động trong phòng đấu giá như thế nào,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn xem giá mới nhất mà không phải thoát vào lại phòng,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Khi người khác nâng giá, app có đổi giá ngay không",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá cao nhất bị treo ở mức cũ là lỗi gì,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Cập nhật giá tức thời có áp dụng cho tất cả client không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi thấy giá mới bị nhảy chậm hơn tin nhắn trong phòng,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá hiện tại có tự đồng bộ khi mạng ổn định lại không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có thông tin nào cho biết giá đã được cập nhật thành công không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần theo dõi người đang dẫn giá theo realtime,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Mức giá hiện tại trong phiên có phải cập nhật sau mỗi bid không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tại sao giá cao nhất trong phòng không đúng với lượt bid cuối,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-App có lưu trạng thái giá mới rồi phát lại cho người trong phòng không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá realtime có bị trễ khi nhiều người đặt cùng lúc không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn kiểm tra giá hiện tại đã cập nhật trên màn hình chưa,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá đang đứng ở 2 triệu nhưng người khác nói đã lên 2 triệu rưỡi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Lượt bid mới có làm đổi giá hiện tại ngay lập tức không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Cập nhật giá live bị mất sự kiện thì xử lý sao,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi thấy người giữ giá cao nhất chưa đổi sau khi bid mới,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá mới có hiện đồng thời ở mọi client trong room không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần xem giá phiên cập nhật liên tục,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Màn hình giá có tự nhảy khi server phát sự kiện không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá realtime có phụ thuộc vào việc đang ở trong phòng không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu mở app lâu thì giá có tự cập nhật tiếp không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết hệ thống cập nhật giá theo giây hay theo sự kiện,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá hiện tại trong phiên không cập nhật cho tôi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có phải chỉ người trong phòng mới thấy giá realtime không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá cao nhất hiện tại và người giữ giá hiển thị ở đâu,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần xem giá mới nhất trước khi quyết định đặt bid,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Màn hình vừa hiện bid thành công nhưng giá chưa đổi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá realtime có reset khi tôi rời rồi vào lại phòng không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Ứng dụng báo có bid mới nhưng giá vẫn là số cũ,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn kiểm tra phiên này đang có giá live không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá hiện tại có tự chuyển khi bid của người khác được chấp nhận không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tại sao giá ở lobby và trong phòng không giống nhau,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá mới nhất của phiên này đang là bao nhiêu vậy,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Người dẫn giá hiện tại có cập nhật ngay khi đổi không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn màn hình tự cập nhật giá thay vì phải bấm refresh,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Cập nhật realtime có hiển thị cả giá và username đang dẫn không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá bị lag sau mỗi lượt bid,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá không realtime,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Màn hình chưa nhảy giá,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Ai đang giữ giá cao nhất,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá mới nhất là bao nhiêu,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá live đang đứng im,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Không thấy update giá,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Realtime price lỗi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá không đổi sau bid,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Cho xem giá hiện tại live,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Mức giá đang dẫn là bao nhiêu,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá hiện tại bị sai,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá trên phòng không tự đổi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Update giá chậm quá,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Ai đang lead giá vậy,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá vừa tăng chưa,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá cao nhất không refresh,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá mới chưa hiện,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-App không cập nhật price,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Theo dõi giá live giúp tôi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-gia realtime co tu nhay khong,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-man hinh khong cap nhat gia moi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-ai dang giu gia cao nhat vay,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-gia hien tai moi nhat la bao nhieu,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-bid moi roi sao gia chua doi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-realtime price bi lag,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-gia live trong phong dung im,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-cap nhat gia tu server cham qua,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-khong thay nguoi dan gia moi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-gia cao nhat hien gio la may,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-co can reload de xem gia moi khong,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-gia phong toi lech voi may khac,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-price update khong realtime,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-client chua nhan gia moi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-gia moi co day ve tat ca bidder khong,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-update current price bi loi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-gia hien tai ko dong bo,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-phong dau gia khong nhay gia,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-gia moi nhat chua hien tren app,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-server co push gia moi khong,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-người dẫn giá ko cập nhật,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-giá realtime bị chậm vài s,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-app chưa hiện giá cao nhât,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-giá live lag quá ad ơi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-sao giá đang đấu không đổi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-vừa có bid mà màn tôi vẫn giá cũ,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-giá mới cập nhât chưa vậy,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-mức giá top hiện giờ là nhiêu,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-tên bidder dẫn giá không đổi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-giá trên màn hình bị đơ,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-update gia realtime sao chậm,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-đồng bộ giá hiện tại cho tôi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-co ai bid moi khong sao gia van cu,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-mình muốn thấy giá nhảy live,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-giá hiện tại không match với bid cuối,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-room này có live price không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-app có tự nhận giá mới không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-cập nhật giá tức thời bị lỗi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-giá đấu đang chạy chưa refresh,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-màn hình không nhận current price mới,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi vừa đặt giá thành công mà giá hiện tại chưa cập nhật,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Sau khi bidder khác bid, giá mới có tự hiện để tôi đặt tiếp không",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn xem giá realtime trước khi nhập mức bid tiếp theo,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Bid 5 triệu đã được nhận nhưng màn hình vẫn chưa đổi giá,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá mới sau lượt đặt của tôi có phát cho mọi người trong phòng không,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-dat bid xong gia hien tai khong nhay,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi vào phòng để xem giá realtime của phiên đang chạy,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Join room rồi mà không nhận cập nhật giá mới,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có phải vào phòng mới thấy người giữ giá cao nhất realtime không,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi bị văng khỏi phòng nên không thấy giá live cập nhật,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Vào lại room có đồng bộ ngay giá hiện tại mới nhất không,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-vao phong roi gia van khong cap nhat realtime,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Danh sách phiên có cập nhật giá hiện tại theo realtime không,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn xem ở lobby giá nào đang tăng live,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"List phòng đang hiện giá cũ, vào phòng thì giá mới hơn",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Mở chi tiết sản phẩm có thấy giá hiện tại realtime không,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Trang chi tiết món hàng chưa cập nhật giá cao nhất mới,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn xem mô tả sản phẩm và giá live đang dẫn,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Lịch sử bid có tự thêm lượt mới khi giá realtime đổi không,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá hiện tại đã tăng nhưng lịch sử đặt giá chưa có dòng mới,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn xem giá mới và lịch sử ai vừa đặt,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Chat trong phòng báo có người bid nhưng giá trên màn hình chưa đổi,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi vừa chat hỏi giá vì realtime price không cập nhật,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tin nhắn trong room đến ngay nhưng giá live lại chậm,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Khi giá mới cập nhật, hệ thống có thông báo trạng thái cho người trong phòng không",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
-Thông báo bid thành công hiện rồi nhưng giá hiện tại chưa refresh,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
-Có notification nào khi người giữ giá cao nhất thay đổi không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
-Giá realtime tăng thì số dư đủ điều kiện của tôi có cần kiểm tra lại không,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá mới cao hơn số dư của tôi thì app có cập nhật cảnh báo không,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Balance của tôi còn đủ sau khi giá live tăng không,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Timer còn ít giây mà giá realtime vừa nhảy,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn xem giá live cùng thời gian còn lại của phiên,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Countdown đang chạy nhưng giá hiện tại không cập nhật,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Bid sát giờ làm giá cập nhật và có gia hạn anti-sniping không,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá live tăng ở giây cuối thì thời gian phiên có kéo dài không,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
-Anti-sniping kích hoạt rồi giá mới có phát realtime cho phòng không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá mới cập nhật sau khi hệ thống tự gia hạn ở cuối phiên,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Khi hết giờ chốt phiên, giá cao nhất realtime có thành giá thắng không",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Giá cuối cùng hiển thị live trước lúc tự chốt phiên có đúng không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Phiên vừa chốt nhưng màn hình vẫn hiển thị giá realtime cũ,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Seller đóng phiên thì giá realtime trong phòng dừng cập nhật à,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
-Phiên bị đóng nhưng app vẫn báo giá live thay đổi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
-"Sau khi vào phòng, tôi muốn thấy giá realtime rồi bid luôn",0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Tôi vào room, xem giá cao nhất và kiểm tra số dư trước khi đặt",0,0,0,0,1,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá realtime ở lobby khác trong chi tiết sản phẩm,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Chatbot giải thích giúp vì sao giá realtime không nhảy,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Kết nối chatbot có nói được lỗi client không nhận giá mới không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Người giữ giá cao nhất đổi thì thông báo và lịch sử bid có cập nhật cùng lúc không,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
-"Vào phòng xong thấy giá live, timer và chat đều cập nhật không",0,0,0,0,0,0,0,1,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+Giá hiện tại trong phòng có tự cập nhật khi có người bid không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn thấy giá mới thay đổi ngay trên màn hình,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Màn hình đấu giá có cập nhật realtime sau mỗi lượt đặt giá không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Vì sao người khác vừa trả giá mà tôi chưa thấy giá mới,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá cao nhất hiện tại có được đẩy live cho tất cả bidder không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi cần biết ai đang giữ mức giá cao nhất ngay lúc này,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+App có tự đổi người dẫn giá khi bid mới thành công không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá trong room bị đứng không nhảy realtime,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi thấy giá hiện tại chậm hơn người khác vài giây,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Cập nhật giá realtime trong phiên hoạt động thế nào,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Khi có bid hợp lệ thì server gửi giá mới về client ra sao,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá mới có cần tôi bấm tải lại mới hiện không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Màn hình không refresh giá sau khi có người đặt bid,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn theo dõi giá đang tăng trực tiếp,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá hiện tại trên app có phải là giá mới nhất không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Ai đang đứng đầu phiên này và giá bao nhiêu,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Làm sao biết giá cao nhất vừa được thay đổi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Client có nhận thông tin người giữ giá cao nhất theo thời gian thực không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Realtime price update bị delay là do đâu,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá trong phòng đấu giá không đồng bộ giữa các máy,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi thấy bạn tôi có giá mới còn màn hình tôi vẫn giá cũ,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Có cơ chế tự cập nhật giá khi bid thành công không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá hiện tại có nhảy ngay khi bidder khác đặt giá không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mức giá cao nhất mới nhất đang là bao nhiêu,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn xem thay đổi giá live trong phiên,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+App có push sự kiện giá mới về phòng đấu giá không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá hiện tại cứ đứng im dù phiên đang có người trả,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Người giữ giá cao nhất không đổi trên màn hình của tôi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Cập nhật giá trong room có cần reload trang không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Màn hình đấu giá hiển thị giá cũ quá lâu,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi cần biết hệ thống cập nhật giá gần realtime hay theo chu kỳ,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá mới vừa phát sinh có hiển thị cho seller không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Bid mới thành công thì giá hiện tại chuyển sang số tiền mới chứ,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi không thấy tên người đang dẫn giá cập nhật,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Có thể xem giá cao nhất thay đổi từng lượt không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá live trên phòng đấu giá đang bị lệch,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Thông tin giá cao nhất có được đồng bộ cho mọi người trong phòng không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn biết giá vừa tăng lên bao nhiêu ngay khi có bid,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Ứng dụng có nhận realtime event cập nhật giá không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tại sao bảng giá hiện tại không thay đổi sau lượt đặt mới,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá đang hiển thị có được lấy từ server mới nhất không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Màn hình của tôi chưa cập nhật người thắng tạm thời,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Realtime giá hoạt động trong phòng đấu giá như thế nào,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn xem giá mới nhất mà không phải thoát vào lại phòng,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Khi người khác nâng giá, app có đổi giá ngay không",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá cao nhất bị treo ở mức cũ là lỗi gì,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Cập nhật giá tức thời có áp dụng cho tất cả client không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi thấy giá mới bị nhảy chậm hơn tin nhắn trong phòng,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá hiện tại có tự đồng bộ khi mạng ổn định lại không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Có thông tin nào cho biết giá đã được cập nhật thành công không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi cần theo dõi người đang dẫn giá theo realtime,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mức giá hiện tại trong phiên có phải cập nhật sau mỗi bid không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tại sao giá cao nhất trong phòng không đúng với lượt bid cuối,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+App có lưu trạng thái giá mới rồi phát lại cho người trong phòng không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá realtime có bị trễ khi nhiều người đặt cùng lúc không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn kiểm tra giá hiện tại đã cập nhật trên màn hình chưa,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá đang đứng ở 2 triệu nhưng người khác nói đã lên 2 triệu rưỡi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Lượt bid mới có làm đổi giá hiện tại ngay lập tức không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Cập nhật giá live bị mất sự kiện thì xử lý sao,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi thấy người giữ giá cao nhất chưa đổi sau khi bid mới,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá mới có hiện đồng thời ở mọi client trong room không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi cần xem giá phiên cập nhật liên tục,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Màn hình giá có tự nhảy khi server phát sự kiện không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá realtime có phụ thuộc vào việc đang ở trong phòng không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Nếu mở app lâu thì giá có tự cập nhật tiếp không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn biết hệ thống cập nhật giá theo giây hay theo sự kiện,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá hiện tại trong phiên không cập nhật cho tôi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Có phải chỉ người trong phòng mới thấy giá realtime không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá cao nhất hiện tại và người giữ giá hiển thị ở đâu,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi cần xem giá mới nhất trước khi quyết định đặt bid,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Màn hình vừa hiện bid thành công nhưng giá chưa đổi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá realtime có reset khi tôi rời rồi vào lại phòng không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Ứng dụng báo có bid mới nhưng giá vẫn là số cũ,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn kiểm tra phiên này đang có giá live không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá hiện tại có tự chuyển khi bid của người khác được chấp nhận không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tại sao giá ở lobby và trong phòng không giống nhau,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá mới nhất của phiên này đang là bao nhiêu vậy,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Người dẫn giá hiện tại có cập nhật ngay khi đổi không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn màn hình tự cập nhật giá thay vì phải bấm refresh,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Cập nhật realtime có hiển thị cả giá và username đang dẫn không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá bị lag sau mỗi lượt bid,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá không realtime,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Màn hình chưa nhảy giá,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Ai đang giữ giá cao nhất,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá mới nhất là bao nhiêu,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá live đang đứng im,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Không thấy update giá,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Realtime price lỗi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá không đổi sau bid,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Cho xem giá hiện tại live,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mức giá đang dẫn là bao nhiêu,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá hiện tại bị sai,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá trên phòng không tự đổi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Update giá chậm quá,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Ai đang lead giá vậy,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá vừa tăng chưa,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá cao nhất không refresh,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá mới chưa hiện,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+App không cập nhật price,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Theo dõi giá live giúp tôi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+gia realtime co tu nhay khong,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+man hinh khong cap nhat gia moi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+ai dang giu gia cao nhat vay,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+gia hien tai moi nhat la bao nhieu,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+bid moi roi sao gia chua doi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+realtime price bi lag,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+gia live trong phong dung im,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+cap nhat gia tu server cham qua,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+khong thay nguoi dan gia moi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+gia cao nhat hien gio la may,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+co can reload de xem gia moi khong,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+gia phong toi lech voi may khac,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+price update khong realtime,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+client chua nhan gia moi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+gia moi co day ve tat ca bidder khong,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+update current price bi loi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+gia hien tai ko dong bo,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+phong dau gia khong nhay gia,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+gia moi nhat chua hien tren app,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+server co push gia moi khong,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+người dẫn giá ko cập nhật,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+giá realtime bị chậm vài s,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+app chưa hiện giá cao nhât,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+giá live lag quá ad ơi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+sao giá đang đấu không đổi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+vừa có bid mà màn tôi vẫn giá cũ,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+giá mới cập nhât chưa vậy,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mức giá top hiện giờ là nhiêu,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tên bidder dẫn giá không đổi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+giá trên màn hình bị đơ,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+update gia realtime sao chậm,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+đồng bộ giá hiện tại cho tôi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+co ai bid moi khong sao gia van cu,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình muốn thấy giá nhảy live,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+giá hiện tại không match với bid cuối,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+room này có live price không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+app có tự nhận giá mới không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+cập nhật giá tức thời bị lỗi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+giá đấu đang chạy chưa refresh,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+màn hình không nhận current price mới,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi vừa đặt giá thành công mà giá hiện tại chưa cập nhật,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Sau khi bidder khác bid, giá mới có tự hiện để tôi đặt tiếp không",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn xem giá realtime trước khi nhập mức bid tiếp theo,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Bid 5 triệu đã được nhận nhưng màn hình vẫn chưa đổi giá,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá mới sau lượt đặt của tôi có phát cho mọi người trong phòng không,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+dat bid xong gia hien tai khong nhay,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi vào phòng để xem giá realtime của phiên đang chạy,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Join room rồi mà không nhận cập nhật giá mới,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Có phải vào phòng mới thấy người giữ giá cao nhất realtime không,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi bị văng khỏi phòng nên không thấy giá live cập nhật,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Vào lại room có đồng bộ ngay giá hiện tại mới nhất không,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+vao phong roi gia van khong cap nhat realtime,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Danh sách phiên có cập nhật giá hiện tại theo realtime không,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn xem ở lobby giá nào đang tăng live,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"List phòng đang hiện giá cũ, vào phòng thì giá mới hơn",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mở chi tiết sản phẩm có thấy giá hiện tại realtime không,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Trang chi tiết món hàng chưa cập nhật giá cao nhất mới,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn xem mô tả sản phẩm và giá live đang dẫn,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Lịch sử bid có tự thêm lượt mới khi giá realtime đổi không,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá hiện tại đã tăng nhưng lịch sử đặt giá chưa có dòng mới,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn xem giá mới và lịch sử ai vừa đặt,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Chat trong phòng báo có người bid nhưng giá trên màn hình chưa đổi,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi vừa chat hỏi giá vì realtime price không cập nhật,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tin nhắn trong room đến ngay nhưng giá live lại chậm,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Khi giá mới cập nhật, hệ thống có thông báo trạng thái cho người trong phòng không",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+Thông báo bid thành công hiện rồi nhưng giá hiện tại chưa refresh,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+Có notification nào khi người giữ giá cao nhất thay đổi không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+Giá realtime tăng thì số dư đủ điều kiện của tôi có cần kiểm tra lại không,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá mới cao hơn số dư của tôi thì app có cập nhật cảnh báo không,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Balance của tôi còn đủ sau khi giá live tăng không,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Timer còn ít giây mà giá realtime vừa nhảy,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn xem giá live cùng thời gian còn lại của phiên,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Countdown đang chạy nhưng giá hiện tại không cập nhật,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Bid sát giờ làm giá cập nhật và có gia hạn anti-sniping không,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá live tăng ở giây cuối thì thời gian phiên có kéo dài không,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Anti-sniping kích hoạt rồi giá mới có phát realtime cho phòng không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá mới cập nhật sau khi hệ thống tự gia hạn ở cuối phiên,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Khi hết giờ chốt phiên, giá cao nhất realtime có thành giá thắng không",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+Giá cuối cùng hiển thị live trước lúc tự chốt phiên có đúng không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+Phiên vừa chốt nhưng màn hình vẫn hiển thị giá realtime cũ,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+Seller đóng phiên thì giá realtime trong phòng dừng cập nhật à,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Phiên bị đóng nhưng app vẫn báo giá live thay đổi,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Sau khi vào phòng, tôi muốn thấy giá realtime rồi bid luôn",0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Tôi vào room, xem giá cao nhất và kiểm tra số dư trước khi đặt",0,0,0,0,1,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá realtime ở lobby khác trong chi tiết sản phẩm,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Chatbot giải thích giúp vì sao giá realtime không nhảy,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+Kết nối chatbot có nói được lỗi client không nhận giá mới không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+Người giữ giá cao nhất đổi thì thông báo và lịch sử bid có cập nhật cùng lúc không,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Vào phòng xong thấy giá live, timer và chat đều cập nhật không",0,0,0,0,0,0,0,1,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

@@ -7,7 +7,7 @@ from ChatBot.Logist.chatbot.intent_chatbot import (
     build_rule_based_answer,
     classify_message,
     documents_by_label,
-    has_out_of_scope_label,
+    has_direct_logist_answer_label,
     load_chatbot_model,
     load_labels,
 )
@@ -161,7 +161,7 @@ def _call_llm(question, llm_client=None):
     documents = documents_by_label()
     prediction = classify_message(question, model=model, labels=labels)
 
-    if has_out_of_scope_label(prediction.labels):
+    if has_direct_logist_answer_label(prediction.labels):
         answer = build_rule_based_answer(question, prediction.labels, documents)
         information = build_information_payload(
             question,
