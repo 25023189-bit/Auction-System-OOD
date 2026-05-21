@@ -1,3 +1,5 @@
 {
-  "answer": "Xin chào! Tôi vui vẻ hỗ trợ cho người dùng trong hệ thống đấu giá trực tuyến. Cảm ơn đã hỏi \"Đấu giá\".\n\nTheo thông tin được cung cấp, tôi có thể thấy rằng bạn đang quan tâm đến chức năng đấu giá trong hệ thống. Tuy nhiên, để trả lời chính xác hơn, có lẽ bạn cần hướng dẫn thao tác cụ thể trong hệ thống đấu giá. Tôi có thể giúp bạn với những vấn đề như đăng ký, đăng nhập, quên mật khẩu, nạp tiền, đặt giá, thanh toán hoặc xem lịch sử đấu giá.\n\nHãy cho tôi biết nhu cầu hỗ trợ của bạn là gì?"
+  "status": "error",
+  "message": "'LogisticRegression' object has no attribute 'multi_class'",
+  "timestamp": "2026-05-21T12:38:40"
 }
