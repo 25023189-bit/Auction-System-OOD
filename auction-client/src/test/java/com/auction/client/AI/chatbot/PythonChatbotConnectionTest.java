@@ -10,6 +10,7 @@ import org.mockito.Mockito;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -102,7 +103,21 @@ class PythonChatbotConnectionTest {
     }
 
     @Test
-    @DisplayName("Test process Python timeout phải trả fallback")
+    @DisplayName("Test technical Python model error in message field returns fallback")
+    void testAsk_PythonTechnicalMessageReturnsFallback() throws Exception {
+        String outputJson = "{\"status\":\"error\",\"message\":\"'LogisticRegression' object has no attribute 'multi_class'\"}";
+
+        try (MockedStatic<Files> mockedFiles = mockChatbotFiles(outputJson, true);
+             MockedConstruction<ProcessBuilder> ignored = mockSuccessfulPythonProcess()) {
+
+            String response = PythonChatbotConnection.getInstance().ask("Test model error");
+
+            assertEquals(ChatbotFallback.MESSAGE, response);
+        }
+    }
+
+    @Test
+    @DisplayName("Test process Python timeout returns fallback")
     void testAsk_ProcessTimeoutReturnsFallback() throws Exception {
         try (MockedStatic<Files> mockedFiles = mockChatbotFiles("{\"answer\":\"Không được đọc\"}", true);
              MockedConstruction<ProcessBuilder> ignored = mockPythonProcess(false, 0)) {
@@ -135,6 +150,7 @@ class PythonChatbotConnectionTest {
                      ProcessBuilder.class,
                      withSettings().defaultAnswer(Answers.RETURNS_SELF),
                      (mock, context) -> {
+                         when(mock.environment()).thenReturn(new HashMap<>());
                          int attempt = attempts.incrementAndGet();
                          if (attempt == 1) {
                              when(mock.start()).thenThrow(new IOException("python command missing"));
@@ -163,6 +179,7 @@ class PythonChatbotConnectionTest {
                      ProcessBuilder.class,
                      withSettings().defaultAnswer(Answers.RETURNS_SELF),
                      (mock, context) -> {
+                         when(mock.environment()).thenReturn(new HashMap<>());
                          attempts.incrementAndGet();
                          when(mock.start()).thenThrow(new IOException("command missing"));
                      })) {
@@ -219,6 +236,7 @@ class PythonChatbotConnectionTest {
                 withSettings().defaultAnswer(Answers.RETURNS_SELF),
                 (mock, context) -> {
                     Process mockProcess = mock(Process.class);
+                    when(mock.environment()).thenReturn(new HashMap<>());
                     when(mockProcess.waitFor(anyLong(), any(TimeUnit.class))).thenReturn(completed);
                     when(mockProcess.exitValue()).thenReturn(exitCode);
                     when(mockProcess.destroyForcibly()).thenReturn(mockProcess);
