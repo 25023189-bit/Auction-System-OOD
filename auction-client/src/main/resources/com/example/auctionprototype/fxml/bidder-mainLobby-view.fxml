@@ -149,23 +149,15 @@
                                 </image>
                             </ImageView>
                         </HBox>
-                        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" styleClass="bidder-auction-scroll" VBox.vgrow="ALWAYS">
-                            <content>
-                                <FlowPane fx:id="paneSelectAuction" hgap="16.0" styleClass="bidder-auction-grid" vgap="16.0">
-                                    <children>
-                                        <VBox alignment="CENTER" spacing="12.0" styleClass="bidder-empty-state">
-                                            <ImageView fitHeight="170.0" fitWidth="230.0" pickOnBounds="true" preserveRatio="true">
-                                                <image>
-                                                    <Image url="@../images/bidder_mainLobby/auction_empty_state_illustration.png" />
-                                                </image>
-                                            </ImageView>
-                                            <Label styleClass="bidder-empty-title" text="No active auctions available" />
-                                            <Label maxWidth="390.0" styleClass="bidder-empty-subtitle" text="There are currently no auctions open for bidding. Please check back later." textAlignment="CENTER" wrapText="true" />
-                                        </VBox>
-                                    </children>
-                                </FlowPane>
-                            </content>
-                        </ScrollPane>
+                        <StackPane styleClass="bidder-auction-content-stack" VBox.vgrow="ALWAYS">
+                            <Region mouseTransparent="true" styleClass="bidder-auction-background-image" />
+                            <Region mouseTransparent="true" styleClass="bidder-auction-glass-overlay" />
+                            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" styleClass="bidder-auction-scroll">
+                                <content>
+                                    <FlowPane fx:id="paneSelectAuction" alignment="TOP_LEFT" hgap="16.0" styleClass="bidder-auction-grid" vgap="16.0" />
+                                </content>
+                            </ScrollPane>
+                        </StackPane>
                     </VBox>
 
                     <StackPane prefWidth="260.0" styleClass="bidder-notes-card">
