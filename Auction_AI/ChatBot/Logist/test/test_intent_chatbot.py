@@ -11,6 +11,7 @@ from ChatBot.Logist.chatbot.intent_chatbot import classify_message, predict_mess
 
 LABELS = ["ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ", "ĐĂNG NHẬP HỆ THỐNG"]
 LABELS_WITH_OUT_OF_SCOPE = [*LABELS, "NGOÀI LỀ"]
+LABELS_WITH_DANGEROUS_TOPIC = [*LABELS, "CHỦ ĐỀ NGUY HIỂM", "NGOÀI LỀ"]
 
 
 class FakeModel:
@@ -66,11 +67,24 @@ def test_out_of_scope_answer_redirects_to_auction_support():
     assert "thời tiết" not in answer.lower()
 
 
+def test_dangerous_topic_answer_uses_safety_redirect():
+    answer = predict_message(
+        "Tôi muốn làm hại người khác",
+        model=FakeModel([0.08, 0.06, 0.74, 0.12]),
+        labels=LABELS_WITH_DANGEROUS_TOPIC,
+    )
+
+    assert "không thể hỗ trợ" in answer.lower()
+    assert "gây hại" in answer.lower()
+    assert "hệ thống đấu giá" in answer.lower()
+
+
 def main() -> None:
     test_selects_highest_probability_label()
     test_rule_based_answer_uses_selected_label()
     test_low_confidence_prediction_uses_out_of_scope_label()
     test_out_of_scope_answer_redirects_to_auction_support()
+    test_dangerous_topic_answer_uses_safety_redirect()
     print("Logistic chatbot tests passed.")
 
 

@@ -15,6 +15,7 @@ QUESTION = "Tôi muốn đặt giá trong phiên đấu giá"
 LABEL = "ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ"
 OTHER_LABEL = "XEM DANH SÁCH PHIÊN ĐẤU GIÁ"
 OUT_OF_SCOPE_LABEL = "NGOÀI LỀ"
+DANGEROUS_TOPIC_LABEL = "CHỦ ĐỀ NGUY HIỂM"
 
 
 @dataclass
@@ -182,6 +183,32 @@ def test_call_llm_skips_llm_for_out_of_scope_prediction():
     ]
 
 
+def test_call_llm_skips_llm_for_dangerous_topic_prediction():
+    calls = []
+
+    def fail_if_called(*args, **kwargs):
+        raise AssertionError("Dangerous topics must be answered by Logist fallback.")
+
+    with patched(middleware, "load_chatbot_model", lambda: "model"), \
+        patched(middleware, "load_labels", lambda: [LABEL, DANGEROUS_TOPIC_LABEL]), \
+        patched(middleware, "documents_by_label", lambda: {}), \
+        patched(middleware, "classify_message", lambda question, model=None, labels=None: calls.append(("classify", question, model, labels)) or Prediction([DANGEROUS_TOPIC_LABEL], {LABEL: 0.09, DANGEROUS_TOPIC_LABEL: 0.82})), \
+        patched(middleware, "generate_llm_answer", fail_if_called):
+
+        result, information = middleware._call_llm("Tôi muốn làm hại người khác", llm_client="client")
+
+    assert "không thể hỗ trợ" in result["answer"].lower()
+    assert information["answer_source"] == "Logist"
+    assert information["llm_used_for_answer"] is False
+    assert information["logist_used_for_answer"] is True
+    assert information["selected_labels"] == [DANGEROUS_TOPIC_LABEL]
+    assert information["selected_scores"] == {DANGEROUS_TOPIC_LABEL: 0.82}
+    assert information["remaining_scores"] == {LABEL: 0.09}
+    assert calls == [
+        ("classify", "Tôi muốn làm hại người khác", "model", [LABEL, DANGEROUS_TOPIC_LABEL]),
+    ]
+
+
 def test_build_information_payload_splits_selected_and_remaining_scores():
     payload = middleware.build_information_payload(
         QUESTION,
@@ -204,6 +231,7 @@ def main():
     test_handle_question_invalid_question_skips_logist_forwarding()
     test_call_llm_uses_logist_prediction_before_generating_answer()
     test_call_llm_skips_llm_for_out_of_scope_prediction()
+    test_call_llm_skips_llm_for_dangerous_topic_prediction()
     test_build_information_payload_splits_selected_and_remaining_scores()
     print("Connect middleware logic tests passed.")
 

@@ -1,195 +1,195 @@
-text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,AI HỖ TRỢ AUTO APPROVE,Không Rõ
-Tôi muốn kiểm tra số dư tài khoản đang còn bao nhiêu,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số dư hiện tại của tôi là bao nhiêu trong app đấu giá,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Cho tôi xem balance của tài khoản bidder,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản tôi còn đủ tiền để đấu giá không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Vì sao app báo số dư không đủ dù tôi vừa vào lại,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số dư tài khoản nằm ở màn hình nào,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần biết tiền trong ví đấu giá còn lại bao nhiêu,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Hệ thống đang ghi nhận số dư của tôi thế nào,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Kiểm tra giúp số dư khả dụng trước khi tôi đặt giá,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Tôi thấy balance hiển thị khác lần trước, kiểm tra được không",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số tiền còn lại trong tài khoản của tôi có cập nhật chưa,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Vì sao số dư chưa đổi sau khi phiên kết thúc,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết tài khoản có bị trừ tiền không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Còn bao nhiêu tiền có thể dùng để bid,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số dư khả dụng khác gì với tổng số tiền trong tài khoản,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản báo âm số dư là lỗi gì,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu balance không đủ thì hệ thống xử lý sao,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có cách nào xem số dư trước khi vào phiên không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số dư của tôi có bị giữ lại khi tham gia đấu giá không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn kiểm tra phần tiền đang bị giữ trong tài khoản,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Sau khi thoát app số dư có tự cập nhật lại không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tiền trong tài khoản đấu giá đang hiển thị sai,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số dư khả dụng của tôi thấp hơn số dư tổng là vì sao,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Kiểm tra tài khoản còn đủ mức tối thiểu không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần xem số dư trước khi chọn phòng,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-balance của mình ở đâu vậy,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-tài khoản còn tiền không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-xem tiền trong acc,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-so du hien tai cua toi bao nhieu,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-check vi dau gia giup minh,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-tk con bao nhieu tien,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-balance kha dung la gi,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-so du bi tru vi dau,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-tien trong tai khoan chua update,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-app bao not enough balance la sao,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-tai khoan minh du tien dau gia chua,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-muon biet vi con may dong,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-cho xem tien con lai,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-so du co bi dong bang khi dau gia khong,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-check tien trong tk voi,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số dư hiển thị 0 nhưng tôi nghĩ tài khoản vẫn còn tiền,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Tôi vừa quay lại lobby, số dư có cần refresh không",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số tiền dùng để tham gia phiên được tính như thế nào,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản có mức số dư tối thiểu nào không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết điều kiện số dư để được đấu giá,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Sao số dư bị giảm sau lượt đấu trước,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Hệ thống tính số dư của người dùng ra sao,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Cập nhật balance thủ công được không hay server tự cập nhật,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn đối chiếu số dư trước và sau phiên,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số dư tài khoản của bidder được quản lý ở đâu,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu số dư thấp hơn giá khởi điểm thì có cảnh báo không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi không thấy mục ví tài khoản trong giao diện,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có thể kiểm tra số dư mà không mở phòng không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Balance vẫn cũ sau khi tôi thắng phiên trước,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần xác nhận tiền còn lại để tránh đặt giá quá mức,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Phần số dư hiển thị trên header có đúng không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số dư tài khoản có được đồng bộ với server không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Hệ thống lấy số dư từ database hay từ cache,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Vì sao mỗi lần load lại thì số dư thay đổi,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Muốn xem số tiền khả dụng ngay bây giờ,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản báo không đủ điều kiện vì thiếu số dư,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số dư tối thiểu để tham gia đấu giá là bao nhiêu,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết tiền đã bị khóa cho phiên nào,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Balance bị pending thì có đặt giá tiếp được không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số dư tài khoản có tự hoàn lại khi không thắng không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi chưa tham gia phiên nào mà số dư giảm,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"App hiển thị số dư với dấu âm, cần giải thích",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số tiền trong ví đấu giá có dùng cho tất cả phiên không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần kiểm tra tiền khả dụng của user hiện tại,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Lấy số dư mới nhất từ server giúp tôi,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số dư của tôi chưa đồng bộ sau khi tải lại màn hình,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Kiểm tra vì sao balance tự nhiên về 0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản đấu giá của tôi còn khả năng thanh toán không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số dư có bị trừ ngay khi đưa ra giá không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết khi nào hệ thống cập nhật số dư,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản còn đủ tiền đặt cọc cho phiên không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Cho tôi kiểm tra số dư trước khi quyết định bid,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Mức balance yêu cầu của phiên lấy từ đâu,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số dư đang bị giữ thì có hiển thị riêng không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản bị thiếu tiền thì cần làm gì trong hệ thống,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-tiền mình trong app đâu rồi,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-so du tk bi loi ah,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-balance hien sai roi,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-vi dau gia con nhieu tien ko,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-tai khoan bao thieu tien la sao,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-tui muon check so du truoc,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-tien kha dung con bn,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-acc dau gia bi am tien,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-so du ko cap nhat,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-check bal giup,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có phải tiền chỉ bị trừ khi phiên kết thúc không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi không rõ số dư nào được dùng để xét điều kiện,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số dư tài khoản có liên quan đến quyền tham gia không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản còn 500k có đủ để vào phiên không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu số dư thấp hơn bước giá thì hệ thống có chặn không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi thấy thông báo thiếu số dư nhưng không biết thiếu bao nhiêu,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Màn hình số dư có hiển thị tiền đang giữ không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số dư của tôi có bị reset khi đổi thiết bị không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Vì sao ví đấu giá không hiện sau khi reload,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Muốn kiểm tra số dư bằng chatbot được không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số tiền trong tài khoản được làm tròn thế nào,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản có ghi nhận số dư theo VND không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số dư có cập nhật realtime khi có thay đổi không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Tôi cần xem lại số dư mới nhất, không phải dữ liệu cũ",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Hệ thống có lưu lịch sử thay đổi số dư không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Balance trong account panel nghĩa là gì,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản của tôi vừa đủ giá hiện tại không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có cảnh báo nào khi số dư sắp hết không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số dư bị treo sau phiên trước xử lý thế nào,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần biết tiền khả dụng trước khi trả giá cao hơn,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-sao tk minh het tien vay,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-balance sao lai giam,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-tien bi tru khi nao,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-so du kha dung o dau,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-vi sao app bao balance required,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-so du toi thieu coi o dau,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-tk dau gia con du dieu kien ko,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-tien dang giu trong phien nao,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-app co hien so du moi nhat ko,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-so tien trong vi bi dong bang,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn kiểm tra số dư cho tài khoản đang sử dụng,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số dư này dùng chung cho mọi phòng đấu giá phải không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Khi server cập nhật số dư thì client có tự nhận không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có cần refresh để thấy số dư mới không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần biết số dư trước khi tiếp tục theo dõi đấu giá,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tại sao số dư tổng khác số dư có thể sử dụng,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản bị báo thiếu balance dù số tiền hiển thị đủ,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Kiểm tra phần ví bị khóa sau lần đấu giá gần nhất,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số dư có bị ảnh hưởng khi phiên bị hủy không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tiền trong tài khoản có được bảo lưu sau khi không thắng không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có nơi nào xem số dư theo từng phiên không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Hệ thống có chặn thao tác khi số dư quá thấp không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Muốn xem balance summary của tài khoản,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số dư hiện ở góc trên có phải số dư khả dụng không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần xác minh tài khoản còn đủ tiền trước phiên tối nay,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-tien con trong tk dau gia bao nhiu,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-so du cua minh bi sai mat roi,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-balance ko refresh sau khi load,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-coi so tien kha dung duoc khong,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-tk minh co bi tru tien o dau vay,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Tôi mới đăng ký tài khoản, cho hỏi số dư ban đầu được tạo như thế nào",1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Khi tạo account đấu giá mới thì balance mặc định có sẵn không,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Đăng ký xong tôi cần xem số dư ở đâu để biết có tham gia được không,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản mới tạo có ví riêng và số dư tối thiểu không,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu vừa tạo user bidder thì hệ thống khởi tạo số dư ra sao,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi đăng nhập vào app rồi muốn kiểm tra số dư còn lại,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Login thành công nhưng balance không hiện, kiểm tra giúp",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Sau khi vào tài khoản, tôi cần xem tiền khả dụng để đấu giá",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-dn vao acc roi check so du o dau,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản đăng nhập được nhưng báo thiếu số dư khi sử dụng,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi quên mật khẩu nên không vào xem số dư tài khoản được,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Reset pass xong số dư trong ví đấu giá có giữ nguyên không,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-lay lai mat khau de kiem tra balance con bao nhieu,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Quên password tài khoản bidder, tôi sợ không kiểm tra được tiền còn lại",0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Bidder và seller có quản lý số dư tài khoản khác nhau không,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Admin có xem hoặc điều chỉnh số dư của người dùng được không,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Quyền bidder cần số dư tối thiểu còn seller thì sao,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Cho tôi xem danh sách phiên kèm điều kiện số dư cần có,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Ở lobby có hiện phiên nào tôi đủ balance để tham gia không,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn xem các phiên đang mở và biết số dư tối thiểu từng phiên,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Lobby có thể hiển thị phòng nào đang yêu cầu nhiều tiền không,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Mở chi tiết sản phẩm để xem giá hiện tại có vượt số dư của tôi không,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Trong trang chi tiết phiên, tôi muốn biết balance có đủ cho sản phẩm đó không",0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Xem thông tin sản phẩm và so sánh giá hiện tại với số tiền trong tài khoản,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Chi tiết phiên có hiển thị yêu cầu số dư tối thiểu không,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn tham gia phòng nhưng hệ thống báo số dư không đủ,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Trước khi vào room đấu giá, kiểm tra giúp tài khoản còn đủ tiền không",0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Vì sao tôi không vào được phòng dù số dư hiển thị vẫn còn,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-join room bi chan vi balance thap la sao,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản còn ít tiền thì có được tham gia phòng đấu giá không,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Hệ thống xét số dư thế nào khi tôi bấm tham gia phiên,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần biết còn bao nhiêu tiền để vào phòng đồng hồ,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu đủ số dư tối thiểu thì tôi có thể vào phòng ngay không,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi đặt giá không được vì app báo thiếu số dư,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Khi bid cao hơn balance thì hệ thống xử lý thế nào,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Trước khi trả giá, tôi muốn biết số tiền khả dụng còn đủ không",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-dat gia bi fail do so du ko du,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Số dư có bị trừ ngay khi tôi đặt giá trong phiên không,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Khi giá realtime tăng lên, hệ thống có cảnh báo balance không đủ không",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Giá mới cập nhật làm số dư của tôi không còn đủ, app sẽ báo gì",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Realtime price thay đổi thì điều kiện số dư của tôi có cập nhật theo không,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn xem lịch sử đặt giá và số dư còn lại sau các lượt bid,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Lịch sử bid có cho biết lúc nào tài khoản bị giữ tiền không,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-xem lai lich su dat gia de doi chieu balance bi tru,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Phiên còn ít thời gian, tôi cần kiểm tra số dư trước khi vào",0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Trước khi hết giờ đấu giá, cho tôi biết tài khoản còn đủ balance không",0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Khi phiên kết thúc thành công thì số dư người thắng bị trừ thế nào,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
-"Sau khi chốt phiên, tiền trong tài khoản của tôi có tự cập nhật không",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
-Nếu tôi không thắng phiên thì số dư bị giữ có được trả lại không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
-"Kết thúc đấu giá rồi mà balance chưa đổi, xử lý tiền ra sao",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
-"Phiên vừa hoàn tất, kiểm tra giúp số dư sau khi hệ thống trừ tiền",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
-"Sau khi phiên thành công, người thắng bị trừ tiền và người khác có được hoàn số dư không",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
-Tôi muốn nhận thông báo khi số dư không đủ để tiếp tục phiên,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
-"Khi trạng thái phiên đổi sang kết thúc, có thông báo cập nhật balance không",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+Tôi muốn kiểm tra số dư tài khoản đang còn bao nhiêu,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Số dư hiện tại của tôi là bao nhiêu trong app đấu giá,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Cho tôi xem balance của tài khoản bidder,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tài khoản tôi còn đủ tiền để đấu giá không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Vì sao app báo số dư không đủ dù tôi vừa vào lại,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Số dư tài khoản nằm ở màn hình nào,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi cần biết tiền trong ví đấu giá còn lại bao nhiêu,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Hệ thống đang ghi nhận số dư của tôi thế nào,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Kiểm tra giúp số dư khả dụng trước khi tôi đặt giá,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Tôi thấy balance hiển thị khác lần trước, kiểm tra được không",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Số tiền còn lại trong tài khoản của tôi có cập nhật chưa,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Vì sao số dư chưa đổi sau khi phiên kết thúc,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn biết tài khoản có bị trừ tiền không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Còn bao nhiêu tiền có thể dùng để bid,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Số dư khả dụng khác gì với tổng số tiền trong tài khoản,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tài khoản báo âm số dư là lỗi gì,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Nếu balance không đủ thì hệ thống xử lý sao,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Có cách nào xem số dư trước khi vào phiên không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Số dư của tôi có bị giữ lại khi tham gia đấu giá không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn kiểm tra phần tiền đang bị giữ trong tài khoản,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Sau khi thoát app số dư có tự cập nhật lại không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tiền trong tài khoản đấu giá đang hiển thị sai,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Số dư khả dụng của tôi thấp hơn số dư tổng là vì sao,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Kiểm tra tài khoản còn đủ mức tối thiểu không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi cần xem số dư trước khi chọn phòng,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+balance của mình ở đâu vậy,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tài khoản còn tiền không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+xem tiền trong acc,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+so du hien tai cua toi bao nhieu,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+check vi dau gia giup minh,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tk con bao nhieu tien,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+balance kha dung la gi,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+so du bi tru vi dau,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tien trong tai khoan chua update,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+app bao not enough balance la sao,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tai khoan minh du tien dau gia chua,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+muon biet vi con may dong,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+cho xem tien con lai,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+so du co bi dong bang khi dau gia khong,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+check tien trong tk voi,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Số dư hiển thị 0 nhưng tôi nghĩ tài khoản vẫn còn tiền,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Tôi vừa quay lại lobby, số dư có cần refresh không",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Số tiền dùng để tham gia phiên được tính như thế nào,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tài khoản có mức số dư tối thiểu nào không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn biết điều kiện số dư để được đấu giá,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Sao số dư bị giảm sau lượt đấu trước,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Hệ thống tính số dư của người dùng ra sao,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Cập nhật balance thủ công được không hay server tự cập nhật,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn đối chiếu số dư trước và sau phiên,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Số dư tài khoản của bidder được quản lý ở đâu,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Nếu số dư thấp hơn giá khởi điểm thì có cảnh báo không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi không thấy mục ví tài khoản trong giao diện,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Có thể kiểm tra số dư mà không mở phòng không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Balance vẫn cũ sau khi tôi thắng phiên trước,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi cần xác nhận tiền còn lại để tránh đặt giá quá mức,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Phần số dư hiển thị trên header có đúng không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Số dư tài khoản có được đồng bộ với server không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Hệ thống lấy số dư từ database hay từ cache,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Vì sao mỗi lần load lại thì số dư thay đổi,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Muốn xem số tiền khả dụng ngay bây giờ,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tài khoản báo không đủ điều kiện vì thiếu số dư,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Số dư tối thiểu để tham gia đấu giá là bao nhiêu,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn biết tiền đã bị khóa cho phiên nào,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Balance bị pending thì có đặt giá tiếp được không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Số dư tài khoản có tự hoàn lại khi không thắng không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi chưa tham gia phiên nào mà số dư giảm,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"App hiển thị số dư với dấu âm, cần giải thích",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Số tiền trong ví đấu giá có dùng cho tất cả phiên không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi cần kiểm tra tiền khả dụng của user hiện tại,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Lấy số dư mới nhất từ server giúp tôi,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Số dư của tôi chưa đồng bộ sau khi tải lại màn hình,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Kiểm tra vì sao balance tự nhiên về 0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tài khoản đấu giá của tôi còn khả năng thanh toán không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Số dư có bị trừ ngay khi đưa ra giá không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn biết khi nào hệ thống cập nhật số dư,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tài khoản còn đủ tiền đặt cọc cho phiên không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Cho tôi kiểm tra số dư trước khi quyết định bid,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mức balance yêu cầu của phiên lấy từ đâu,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Số dư đang bị giữ thì có hiển thị riêng không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tài khoản bị thiếu tiền thì cần làm gì trong hệ thống,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tiền mình trong app đâu rồi,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+so du tk bi loi ah,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+balance hien sai roi,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+vi dau gia con nhieu tien ko,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tai khoan bao thieu tien la sao,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tui muon check so du truoc,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tien kha dung con bn,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+acc dau gia bi am tien,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+so du ko cap nhat,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+check bal giup,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Có phải tiền chỉ bị trừ khi phiên kết thúc không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi không rõ số dư nào được dùng để xét điều kiện,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Số dư tài khoản có liên quan đến quyền tham gia không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tài khoản còn 500k có đủ để vào phiên không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Nếu số dư thấp hơn bước giá thì hệ thống có chặn không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi thấy thông báo thiếu số dư nhưng không biết thiếu bao nhiêu,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Màn hình số dư có hiển thị tiền đang giữ không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Số dư của tôi có bị reset khi đổi thiết bị không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Vì sao ví đấu giá không hiện sau khi reload,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Muốn kiểm tra số dư bằng chatbot được không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Số tiền trong tài khoản được làm tròn thế nào,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tài khoản có ghi nhận số dư theo VND không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Số dư có cập nhật realtime khi có thay đổi không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Tôi cần xem lại số dư mới nhất, không phải dữ liệu cũ",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Hệ thống có lưu lịch sử thay đổi số dư không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Balance trong account panel nghĩa là gì,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tài khoản của tôi vừa đủ giá hiện tại không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Có cảnh báo nào khi số dư sắp hết không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Số dư bị treo sau phiên trước xử lý thế nào,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi cần biết tiền khả dụng trước khi trả giá cao hơn,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+sao tk minh het tien vay,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+balance sao lai giam,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tien bi tru khi nao,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+so du kha dung o dau,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+vi sao app bao balance required,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+so du toi thieu coi o dau,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tk dau gia con du dieu kien ko,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tien dang giu trong phien nao,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+app co hien so du moi nhat ko,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+so tien trong vi bi dong bang,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn kiểm tra số dư cho tài khoản đang sử dụng,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Số dư này dùng chung cho mọi phòng đấu giá phải không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Khi server cập nhật số dư thì client có tự nhận không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Có cần refresh để thấy số dư mới không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi cần biết số dư trước khi tiếp tục theo dõi đấu giá,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tại sao số dư tổng khác số dư có thể sử dụng,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tài khoản bị báo thiếu balance dù số tiền hiển thị đủ,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Kiểm tra phần ví bị khóa sau lần đấu giá gần nhất,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Số dư có bị ảnh hưởng khi phiên bị hủy không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tiền trong tài khoản có được bảo lưu sau khi không thắng không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Có nơi nào xem số dư theo từng phiên không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Hệ thống có chặn thao tác khi số dư quá thấp không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Muốn xem balance summary của tài khoản,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Số dư hiện ở góc trên có phải số dư khả dụng không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi cần xác minh tài khoản còn đủ tiền trước phiên tối nay,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tien con trong tk dau gia bao nhiu,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+so du cua minh bi sai mat roi,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+balance ko refresh sau khi load,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+coi so tien kha dung duoc khong,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tk minh co bi tru tien o dau vay,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Tôi mới đăng ký tài khoản, cho hỏi số dư ban đầu được tạo như thế nào",1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Khi tạo account đấu giá mới thì balance mặc định có sẵn không,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Đăng ký xong tôi cần xem số dư ở đâu để biết có tham gia được không,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tài khoản mới tạo có ví riêng và số dư tối thiểu không,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Nếu vừa tạo user bidder thì hệ thống khởi tạo số dư ra sao,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi đăng nhập vào app rồi muốn kiểm tra số dư còn lại,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Login thành công nhưng balance không hiện, kiểm tra giúp",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Sau khi vào tài khoản, tôi cần xem tiền khả dụng để đấu giá",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+dn vao acc roi check so du o dau,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tài khoản đăng nhập được nhưng báo thiếu số dư khi sử dụng,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi quên mật khẩu nên không vào xem số dư tài khoản được,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Reset pass xong số dư trong ví đấu giá có giữ nguyên không,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+lay lai mat khau de kiem tra balance con bao nhieu,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Quên password tài khoản bidder, tôi sợ không kiểm tra được tiền còn lại",0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Bidder và seller có quản lý số dư tài khoản khác nhau không,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Admin có xem hoặc điều chỉnh số dư của người dùng được không,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Quyền bidder cần số dư tối thiểu còn seller thì sao,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Cho tôi xem danh sách phiên kèm điều kiện số dư cần có,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Ở lobby có hiện phiên nào tôi đủ balance để tham gia không,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn xem các phiên đang mở và biết số dư tối thiểu từng phiên,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Lobby có thể hiển thị phòng nào đang yêu cầu nhiều tiền không,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mở chi tiết sản phẩm để xem giá hiện tại có vượt số dư của tôi không,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Trong trang chi tiết phiên, tôi muốn biết balance có đủ cho sản phẩm đó không",0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Xem thông tin sản phẩm và so sánh giá hiện tại với số tiền trong tài khoản,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Chi tiết phiên có hiển thị yêu cầu số dư tối thiểu không,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn tham gia phòng nhưng hệ thống báo số dư không đủ,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Trước khi vào room đấu giá, kiểm tra giúp tài khoản còn đủ tiền không",0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Vì sao tôi không vào được phòng dù số dư hiển thị vẫn còn,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+join room bi chan vi balance thap la sao,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tài khoản còn ít tiền thì có được tham gia phòng đấu giá không,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Hệ thống xét số dư thế nào khi tôi bấm tham gia phiên,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi cần biết còn bao nhiêu tiền để vào phòng đồng hồ,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Nếu đủ số dư tối thiểu thì tôi có thể vào phòng ngay không,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi đặt giá không được vì app báo thiếu số dư,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Khi bid cao hơn balance thì hệ thống xử lý thế nào,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Trước khi trả giá, tôi muốn biết số tiền khả dụng còn đủ không",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+dat gia bi fail do so du ko du,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Số dư có bị trừ ngay khi tôi đặt giá trong phiên không,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Khi giá realtime tăng lên, hệ thống có cảnh báo balance không đủ không",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá mới cập nhật làm số dư của tôi không còn đủ, app sẽ báo gì",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Realtime price thay đổi thì điều kiện số dư của tôi có cập nhật theo không,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn xem lịch sử đặt giá và số dư còn lại sau các lượt bid,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Lịch sử bid có cho biết lúc nào tài khoản bị giữ tiền không,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+xem lai lich su dat gia de doi chieu balance bi tru,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn ít thời gian, tôi cần kiểm tra số dư trước khi vào",0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Trước khi hết giờ đấu giá, cho tôi biết tài khoản còn đủ balance không",0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Khi phiên kết thúc thành công thì số dư người thắng bị trừ thế nào,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Sau khi chốt phiên, tiền trong tài khoản của tôi có tự cập nhật không",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+Nếu tôi không thắng phiên thì số dư bị giữ có được trả lại không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Kết thúc đấu giá rồi mà balance chưa đổi, xử lý tiền ra sao",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Phiên vừa hoàn tất, kiểm tra giúp số dư sau khi hệ thống trừ tiền",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Sau khi phiên thành công, người thắng bị trừ tiền và người khác có được hoàn số dư không",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn nhận thông báo khi số dư không đủ để tiếp tục phiên,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Khi trạng thái phiên đổi sang kết thúc, có thông báo cập nhật balance không",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
