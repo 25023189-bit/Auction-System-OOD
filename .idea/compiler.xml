@@ -6,9 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="AuctionPrototype" />
         <module name="auction-system" />
-        <module name="AuctionSystem" />
+        <module name="auction-client" />
+        <module name="auction-server" />
+        <module name="AuctionPrototype" />
+        <module name="auction-common" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

@@ -1,108 +1,59 @@
-﻿@startuml SystemOverview
-title Auction System - Clean Architecture Overview
+@startuml SystemOverview
+title Auction System - Presentation Overview
 
-top to bottom direction
+left to right direction
 skinparam linetype ortho
 skinparam shadowing false
-skinparam classAttributeIconSize 0
 skinparam packageStyle rectangle
+skinparam componentStyle rectangle
 skinparam nodesep 70
 skinparam ranksep 85
 hide members
 
-package "External Layer" as External {
-  interface Runnable
-  class Application
-  database "MySQL Database" as MySQL
+actor "User" as User
+
+package "Client Application\n(JavaFX + MVC)" as Client {
+  [FXML Views] as Views
+  [Controllers] as Controllers
+  [Presenters / Renderers] as Presenters
+  [Client Service] as ClientService
+  [Client Socket] as ClientSocket
+  [Response Router] as ClientRouter
 }
 
-package "Client Layer" as Client {
-  class Launcher
-  class AuctionController
-  class AdminController
-  class SellerController
-  class AuctionService <<client facade>>
-  class AuctionMessageRouter
+package "Common Layer\n(Shared Contract)" as Common {
+  [Message DTO] as Message
+  [Domain Models] as Models
+  [Role Policy] as RolePolicy
 }
 
-package "Server Core" as Core {
-  class Main
-  class AuctionServer
-  class ClientHandler
-  class ClientActionRouter
-  interface ClientActionHandler
-  class AuthActionHandler
-  class RoomActionHandler
-  class SellerActionHandler
-  class AdminActionHandler
+package "Server Application\n(Socket + Business Logic)" as Server {
+  [AuctionServer] as AuctionServer
+  [ClientHandler] as ClientHandler
+  [Action Router] as ActionRouter
+  [Action Handlers] as ActionHandlers
+  [Business Services] as Services
 }
 
-package "Service Layer" as Services {
-  class AuthService
-  class AuctionRoomService
-  class PendingAuctionApprovalService
-  class ProductDetailService
-  class AuctionStateManager
-}
+database "MySQL Database" as Database
 
-package "DAO Layer" as DAO {
-  class UserDAO
-  class AuctionDAO
-  class BidDAO
-  class TransactionDAO
-  class ItemDAO
-}
+User --> Views : uses
+Views --> Controllers : events
+Controllers --> Presenters : update UI
+Controllers --> ClientService : request actions
+ClientService --> ClientSocket : send Message
+ClientSocket --> ClientRouter : receive Message
+ClientRouter --> Controllers : dispatch response
 
-package "Model / DTO Layer" as ModelDTO {
-  class Message <<dto>>
-  class User
-  class AuctionRoom
-  class PendingAuctionRequest
-  class BidTransaction
-  class Item
-}
+ClientSocket <--> ClientHandler : socket protocol
+ClientHandler --> ActionRouter : route action
+ActionRouter --> ActionHandlers : choose handler
+ActionHandlers --> Services : execute use case
+Services --> Database : read / write
 
-Application <|-- Main
-Runnable <|.. ClientHandler
-
-Launcher ..> AuctionService : uses
-AuctionController ..> AuctionService : sends commands
-AuctionService ..> Message : creates
-AuctionService ..> ClientHandler : socket protocol
-
-AuctionServer o-- ClientHandler : clients
-ClientHandler ..> ClientActionRouter : route
-ClientActionRouter o-- ClientActionHandler : handlers
-ClientActionHandler <|.. AuthActionHandler
-ClientActionHandler <|.. RoomActionHandler
-ClientActionHandler <|.. SellerActionHandler
-ClientActionHandler <|.. AdminActionHandler
-
-AuthActionHandler ..> AuthService
-RoomActionHandler ..> AuctionRoomService
-SellerActionHandler ..> PendingAuctionApprovalService
-AdminActionHandler ..> PendingAuctionApprovalService
-RoomActionHandler ..> ProductDetailService
-AuctionRoomService ..> AuctionStateManager
-
-AuthService ..> UserDAO
-AuctionRoomService ..> AuctionDAO
-AuctionRoomService ..> BidDAO
-ProductDetailService ..> AuctionDAO
-ProductDetailService ..> TransactionDAO
-PendingAuctionApprovalService ..> PendingAuctionRequest
-
-UserDAO ..> User
-AuctionDAO ..> AuctionRoom
-AuctionDAO ..> Item
-BidDAO ..> BidTransaction
-TransactionDAO ..> BidTransaction
-DAO ..> MySQL
-
-Client ..> ModelDTO : exchanges DTOs
-Core ..> Message : reads/writes protocol
-Services ..> ModelDTO : validates state
-DAO ..> ModelDTO : persists
+Client ..> Common : uses DTO/model
+Server ..> Common : uses DTO/model
+Services ..> Models : business state
+ClientService ..> Message : creates request
+ClientRouter ..> Message : routes response
 @enduml
-
-

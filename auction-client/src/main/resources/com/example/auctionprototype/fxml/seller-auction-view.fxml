@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="main-container" stylesheets="@../css/seller-auction-view.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.AuctionController">
+    <children>
+        <BorderPane fx:id="paneAuctionRoom" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <top>
+                <HBox alignment="CENTER_LEFT" prefHeight="75.0" style="-fx-padding: 0 25;" styleClass="header-transparent">
+                    <children>
+                        <VBox alignment="CENTER_LEFT">
+                            <children>
+                                <Label style="-fx-font-size: 11px; -fx-font-weight: bold;" text="MANAGEMENT SYSTEM" textFill="#bdc3c7" />
+                                <Label text="AUCTION CONTROL ROOM (SELLER)" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+
+                        <Region HBox.hgrow="ALWAYS" />
+
+                        <HBox alignment="CENTER" spacing="8" style="-fx-border-color: #e74c3c;" styleClass="header-info-box">
+                            <children>
+                                <Label style="-fx-font-size: 18px;" text="⏱" textFill="WHITE" />
+                                <Label fx:id="lblTimer" text="--:--:--" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                            <HBox.margin>
+                                <Insets right="15.0" />
+                            </HBox.margin>
+                        </HBox>
+
+                        <HBox alignment="CENTER" spacing="15.0">
+                            <children>
+                                <HBox alignment="CENTER" spacing="8" style="-fx-border-color: #3498db;" styleClass="header-info-box">
+                                    <children>
+                                        <Label style="-fx-font-size: 16px;" text="👥" textFill="WHITE" />
+                                        <Label fx:id="lblParticipantCount" text="Participants: 0" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="14.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </HBox>
+
+                                <HBox alignment="CENTER" spacing="15">
+                                    <children>
+                                        <VBox alignment="CENTER_RIGHT">
+                                            <children>
+                                                <Label fx:id="lblUsername" style="-fx-font-weight: bold; -fx-font-size: 14px;" text="Seller: Adam" textFill="WHITE" />
+                                                <Label style="-fx-font-size: 10px;" text="Online" textFill="#2ecc71" />
+                                            </children>
+                                        </VBox>
+                                        <Button mnemonicParsing="false" onAction="#handleBackToSelection" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-cursor: hand;" text="EXIT AUCTION" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </HBox>
+                    </children>
+                </HBox>
+            </top>
+
+            <center>
+                <HBox spacing="25.0" style="-fx-padding: 15 25 20 25; -fx-background-color: transparent;">
+                    <children>
+
+                        <VBox prefWidth="400.0" spacing="15.0" styleClass="info-card">
+                            <children>
+                                <Label text="Product Information" textFill="#2c3e50">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Separator prefWidth="200.0" />
+
+                                <ImageView fx:id="imgProduct" fitHeight="250.0" fitWidth="360.0" pickOnBounds="true" preserveRatio="true" />
+
+                                <Label fx:id="lblProductName" text="Product Name: 4K TV" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="16.0" />
+                                    </font>
+                                </Label>
+
+                                <Label fx:id="lblDescription" text="Description: Ultra HD screen, immersive sound..." textFill="#7f8c8d" wrapText="true" />
+
+                                <Region VBox.vgrow="ALWAYS" />
+
+                                <VBox spacing="10.0">
+                                    <children>
+                                        <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-background-color: #fdf2e9; -fx-padding: 15; -fx-background-radius: 10;">
+                                            <children>
+                                                <Label fx:id="lblCurrentPrice" text="0 $" textFill="#e67e22">
+                                                    <font>
+                                                        <Font name="System Bold" size="26.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </HBox>
+                                        <Button fx:id="btnCloseAuction" minWidth="120.0" onAction="#handleCloseAuction" prefHeight="40.0" prefWidth="360.0" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 8;" text="END AUCTION" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+
+                        <VBox spacing="15.0" styleClass="chat-container" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="Auction History &amp; Chat" textFill="#2c3e50">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+
+                                <LineChart fx:id="priceChart" animated="false" prefHeight="250.0" VBox.vgrow="NEVER">
+                                    <xAxis>
+                                        <CategoryAxis fx:id="xAxis" label="Thời gian" />
+                                    </xAxis>
+                                    <yAxis>
+                                        <NumberAxis fx:id="yAxis" label="Mức giá ($)" />
+                                    </yAxis>
+                                </LineChart>
+
+                                <TextArea fx:id="txtChatLog" editable="false" wrapText="true" VBox.vgrow="ALWAYS" />
+
+                                <HBox spacing="10.0">
+                                    <children>
+                                        <TextField fx:id="txtChatInput" prefHeight="45.0" promptText="Type a message..." HBox.hgrow="ALWAYS" />
+                                        <Button minWidth="120.0" onAction="#handleSendChat" prefHeight="45.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 8;" text="SEND CHAT" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </center>
+
+        </BorderPane>
+    </children>
+</AnchorPane>

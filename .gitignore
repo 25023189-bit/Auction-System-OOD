@@ -74,6 +74,7 @@ build/
 .DS_Store
 # Bỏ qua file cấu hình database của từng cá nhân
 src/main/resources/db.properties
+auction-server/src/main/resources/db.properties
 
 # Local patched StarUML runtime used only to open generated UML without the
 # showErrorBox startup bug in the installed trial build.

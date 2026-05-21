@@ -1,0 +1,108 @@
+{
+  "documents": [
+    {
+      "title": "Đăng ký tài khoản",
+      "content": "Người dùng có thể tạo tài khoản mới để tham gia hệ thống đấu giá. Khi đăng ký, hệ thống kiểm tra dữ liệu nhập, kiểm tra username trùng, mã hóa mật khẩu và lưu tài khoản vào database."
+    },
+    {
+      "title": "Đăng nhập hệ thống",
+      "content": "Người dùng đăng nhập bằng username hoặc thông tin định danh hợp lệ cùng mật khẩu. Sau khi đăng nhập thành công, hệ thống xác định vai trò của tài khoản là bidder, seller hoặc admin để mở giao diện phù hợp."
+    },
+    {
+      "title": "Quên mật khẩu và đặt lại mật khẩu",
+      "content": "Người dùng có thể yêu cầu đặt lại mật khẩu khi quên mật khẩu. Hệ thống gửi OTP qua email, xác thực OTP và cho phép cập nhật mật khẩu mới nếu dữ liệu hợp lệ."
+    },
+    {
+      "title": "Phân quyền người dùng",
+      "content": "Hệ thống chia người dùng thành ba vai trò chính: bidder, seller và admin. Bidder tham gia và đặt giá, seller tạo phiên đấu giá, admin quản lý người dùng và kiểm duyệt phiên đấu giá."
+    },
+    {
+      "title": "Quản lý số dư tài khoản",
+      "content": "Mỗi người dùng có số dư tài khoản dùng trong quá trình đấu giá. Bidder cần có số dư đủ điều kiện để tham gia phòng và số dư sẽ được cập nhật khi phiên đấu giá kết thúc thành công."
+    },
+    {
+      "title": "Xem danh sách phiên đấu giá",
+      "content": "Người dùng có thể xem danh sách các phiên đấu giá đang hoạt động ở lobby. Danh sách phòng được lấy từ server và cập nhật lại khi có thay đổi về phiên đấu giá."
+    },
+    {
+      "title": "Xem chi tiết sản phẩm đấu giá",
+      "content": "Người dùng có thể xem thông tin chi tiết của sản phẩm trong phiên đấu giá, bao gồm tên sản phẩm, mô tả, giá hiện tại, thông tin phiên và lịch sử đặt giá liên quan."
+    },
+    {
+      "title": "Tham gia phòng đấu giá",
+      "content": "Người dùng có thể tham gia một phòng đấu giá nếu phiên còn hợp lệ và đáp ứng điều kiện của hệ thống. Bidder phải có số dư tối thiểu theo yêu cầu của phiên, còn seller của phiên có thể vào phòng trước khi phiên bắt đầu."
+    },
+    {
+      "title": "Rời phòng đấu giá",
+      "content": "Người dùng có thể rời phòng đấu giá đang tham gia. Khi rời phòng, client xóa trạng thái phòng hiện tại và người dùng có thể quay lại lobby hoặc chọn phiên khác."
+    },
+    {
+      "title": "Đặt giá trong phiên đấu giá",
+      "content": "Bidder có thể đặt giá trong phòng đấu giá khi phiên đang diễn ra. Giá đặt phải hợp lệ theo giá hiện tại, bước giá và các điều kiện nghiệp vụ của phiên."
+    },
+    {
+      "title": "Cập nhật giá realtime",
+      "content": "Khi có người đặt giá thành công, hệ thống cập nhật giá hiện tại và người giữ giá cao nhất cho các client trong phòng. Người dùng nhìn thấy thay đổi giá gần như theo thời gian thực."
+    },
+    {
+      "title": "Xem lịch sử đặt giá",
+      "content": "Người dùng có thể xem lịch sử các lượt đặt giá của một phiên đấu giá. Lịch sử gồm thông tin người đặt, số tiền đặt và thời điểm đặt giá."
+    },
+    {
+      "title": "Chat trong phòng đấu giá",
+      "content": "Người dùng trong phòng đấu giá có thể gửi tin nhắn chat. Tin nhắn được server phát lại cho những người đang ở cùng phòng để hỗ trợ trao đổi trong phiên."
+    },
+    {
+      "title": "Xem thời gian còn lại của phiên",
+      "content": "Trong phòng đấu giá, người dùng có thể theo dõi thời gian còn lại của phiên thông qua bộ đếm thời gian. Thời gian này có thể thay đổi nếu phiên được gia hạn do cơ chế anti-sniping."
+    },
+    {
+      "title": "Anti-sniping",
+      "content": "Anti-sniping là cơ chế chống đặt giá vào giây cuối. Khi có bid hợp lệ ở giai đoạn cuối của phiên, hệ thống có thể gia hạn thời gian để các bidder khác có cơ hội phản hồi."
+    },
+    {
+      "title": "Khóa người tham gia mới ở cuối phiên",
+      "content": "Trong khoảng thời gian cuối của phiên, hệ thống có thể khóa người mới tham gia phòng. Điều này giúp phiên đấu giá ổn định hơn khi bước vào giai đoạn chốt giá."
+    },
+    {
+      "title": "Tự động chốt phiên đấu giá",
+      "content": "Khi hết thời gian, hệ thống tự động chốt phiên đấu giá. Nếu có người thắng, phiên chuyển sang trạng thái bán thành công; nếu không có bid hợp lệ, phiên kết thúc không bán được."
+    },
+    {
+      "title": "Xử lý tiền khi phiên kết thúc",
+      "content": "Khi phiên kết thúc và có người thắng, hệ thống trừ tiền bidder thắng và cộng tiền cho seller. Nếu phiên bị seller đóng, admin hủy hoặc không có người mua, hệ thống không thực hiện chuyển tiền bán hàng."
+    },
+    {
+      "title": "Tự động đưa người dùng về lobby",
+      "content": "Khi phiên đấu giá kết thúc hoặc bị đóng, hệ thống thông báo cho người dùng trong phòng và đưa họ trở lại lobby. Phiên đã kết thúc cũng được gỡ khỏi danh sách phiên đang hoạt động."
+    },
+    {
+      "title": "Seller tạo yêu cầu phiên đấu giá",
+      "content": "Seller có thể tạo yêu cầu mở phiên đấu giá bằng cách nhập thông tin sản phẩm, giá khởi điểm, bước giá, số tiền tối thiểu để tham gia, thời gian bắt đầu, thời lượng và thời gian gia hạn."
+    },
+    {
+      "title": "Kiểm tra dữ liệu tạo phiên đấu giá",
+      "content": "Khi seller tạo phiên, hệ thống kiểm tra dữ liệu đầu vào trước khi gửi duyệt. Số tiền tối thiểu để tham gia phải lớn hơn 10 phần trăm giá khởi điểm và nhỏ hơn 75 phần trăm giá khởi điểm."
+    },
+    {
+      "title": "Yêu cầu duyệt phiên đấu giá",
+      "content": "Phiên đấu giá do seller tạo không được mở trực tiếp ngay mà được đưa vào danh sách chờ duyệt. Admin có thể xem danh sách này để quyết định phê duyệt hoặc từ chối."
+    },
+    {
+      "title": "Seller đóng phiên đấu giá",
+      "content": "Seller có thể chủ động đóng phiên đấu giá của mình trong trường hợp phù hợp. Khi seller đóng phiên, hệ thống không thực hiện chuyển tiền bán hàng."
+    },
+    {
+      "title": "Thông báo trạng thái phiên",
+      "content": "Hệ thống gửi thông báo về các thay đổi quan trọng của phiên như tham gia phòng thành công, đặt giá thành công, cập nhật giá, cập nhật số dư và phiên đã đóng."
+    },
+    {
+      "title": "Chatbot hỗ trợ người dùng",
+      "content": "Hệ thống có chatbot hỗ trợ giải đáp nhanh cho người dùng trong ứng dụng. Chatbot có thể xử lý các câu hỏi về chào hỏi, xác nhận, khen, liên hệ admin, số dư, tìm phiên, đặt giá, tạo phiên, thời gian còn lại và anti-sniping."
+    },
+    {
+      "title": "AI hỗ trợ auto approve",
+      "content": "Thư mục Auction_AI có mô hình hỗ trợ dự đoán khả năng tự động duyệt phiên đấu giá dựa trên dữ liệu huấn luyện. Chức năng này phục vụ hỗ trợ quyết định hoặc thử nghiệm AI, không thay thế hoàn toàn quyền duyệt của admin."
+    }
+  ]
+}

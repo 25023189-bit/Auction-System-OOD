@@ -147,6 +147,12 @@ def build_model_row(data: dict, sample_number: int) -> pd.DataFrame:
 
 def save_results(records: list[dict], output_path: Path):
     output_path.parent.mkdir(exist_ok=True)
+    if output_path.name == "output_ap.json":
+        decision = bool(records and int(records[0].get("auto_approve", 0)) == 1)
+        with output_path.open("w", encoding="utf-8") as file:
+            file.write("true" if decision else "false")
+        return
+
     if output_path.suffix.lower() == ".json":
         with output_path.open("w", encoding="utf-8") as file:
             json.dump(records, file, ensure_ascii=False, indent=2)
