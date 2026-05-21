@@ -48,7 +48,6 @@ public class AuctionRoomService {
 
     // 1. Thêm lại Constructor rỗng này để ClientHandler và AuctionServer chạy bình thường
     public AuctionRoomService() {
-        // Bên trên Hân đã gán sẵn = new AuctionDAO()... rồi nên ở đây để trống là được
     }
 
     // 2. Cái Constructor 3 tham số lúc nãy Hân vừa thêm (giữ nguyên nhé)

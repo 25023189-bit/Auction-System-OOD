@@ -1,3 +1,5 @@
 {
-  "answer": "Xin chào! Tôi thấy bạn đang có nhu cầu tham gia phiên đấu giá. Để tạo yêu cầu mở phiên đấu giá, vui lòng nhập thông tin sản phẩm, giá khởi điểm, bước giá, số tiền tối thiểu để tham gia, thời gian bắt đầu, thời lượng và thời gian gia hạn vào hệ thống.\n\nHãy bấm nút \"Tạo Yêu Cầu\" để tiếp tục."
+  "status": "error",
+  "message": "'LogisticRegression' object has no attribute 'multi_class'",
+  "timestamp": "2026-05-21T19:29:02"
 }

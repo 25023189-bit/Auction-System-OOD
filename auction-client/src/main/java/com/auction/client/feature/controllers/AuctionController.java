@@ -590,6 +590,7 @@ public class AuctionController implements Initializable, ServerMessageListener {
             }
         });
     }
+
     // ==========================================================
     // AUTO BID ACTIONS
     // ==========================================================
@@ -602,9 +603,6 @@ public class AuctionController implements Initializable, ServerMessageListener {
             paneAutoBid.setManaged(!isCurrentlyVisible);
         }
     }
-    // ==========================================================
-    // AUTO BID ACTIONS
-    // ==========================================================
     @FXML
     private void handleSetAutoBid() {
         try {
@@ -620,7 +618,25 @@ public class AuctionController implements Initializable, ServerMessageListener {
             double maxBid = Double.parseDouble(maxBidStr);
             double step = Double.parseDouble(stepStr);
 
-            // Tạm thời In log ra màn hình chat để Hân thấy UI hoạt động
+            // 2. LOGIC CHẶN BƯỚC GIÁ AUTO BID
+            if (sessionStore != null && sessionStore.getCurrentRoom() != null) {
+                double minRoomIncrement = sessionStore.getCurrentRoom().getBidStep();
+
+                if (step <= minRoomIncrement) {
+                    // Cảnh báo ra màn hình Chat
+                    if (txtChatLog != null) {
+                        txtChatLog.appendText(String.format("Hệ thống: Lỗi! Bước giá Auto (%.0f$) phải LỚN HƠN bước giá tối thiểu của phòng (%.0f$)!\n", step, minRoomIncrement));
+                    }
+                    // Bật thêm Alert cho người dùng chú ý
+                    if (alertService != null) {
+                        alertService.warning("Bước giá không hợp lệ",
+                                "Bước giá tự động phải LỚN HƠN bước giá tối thiểu của phòng (" + minRoomIncrement + "$)!");
+                    }
+                    return; // Dừng lại ngay, không cho gửi lệnh lên Server
+                }
+            }
+
+            // 3. Nếu hợp lệ -> Thông báo thành công và Đóng gói gửi đi
             if (txtChatLog != null) {
                 txtChatLog.appendText(String.format("Hệ thống: Đã thiết lập Auto-Bid! Max: %.0f$, Bước: %.0f$\n", maxBid, step));
             }
@@ -634,14 +650,10 @@ public class AuctionController implements Initializable, ServerMessageListener {
                 btnToggleAutoBid.setText("AUTO BID: ON");
             }
 
-            // TẠO VÀ GỬI GÓI TIN LÊN SERVER TẠI ĐÂY
+            // Gửi gói tin lên Server
             if (sessionStore != null && sessionStore.getCurrentRoomId() != null) {
                 String roomId = sessionStore.getCurrentRoomId();
-
-                // Đóng gói DTO
                 com.auction.common.dto.AutoBidRequest request = new com.auction.common.dto.AutoBidRequest(roomId, maxBid, step);
-
-                // Bọc vào Message và gửi đi (Gắn Action là "SET_AUTO_BID")
                 com.auction.common.dto.Message msg = new com.auction.common.dto.Message("SET_AUTO_BID", request);
 
                 if (clientConnection != null) {

@@ -63,22 +63,14 @@ public class RoomActionHandler extends AbstractClientActionHandler {
         try {
             com.auction.common.dto.AutoBidRequest request = (com.auction.common.dto.AutoBidRequest) message.getData();
 
-            // 1. Tra cứu Username thật
-            UserDAO userDAO = new UserDAO();
-            User user = userDAO.getUserById(context.getUserId());
-            String realUsername = (user != null && user.getUsername() != null)
-                    ? user.getUsername()
-                    : context.getUserId();
+            // 1. CHỈ CẦN TRUYỀN ID THẬT CỦA USER VÀO ĐÂY (Bỏ vụ tra cứu Username đi cho gọn)
+            autoBidManager.registerAutoBid(request.getRoomId(), context.getUserId(), request.getMaxBid(), request.getIncrement());
 
-            // 2. Đăng ký Robot vào hệ thống
-            autoBidManager.registerAutoBid(request.getRoomId(), realUsername, request.getMaxBid(), request.getIncrement());
-            LOGGER.info("User {} ({}) set Auto-Bid: Max {}, Step {}", context.getUserId(), realUsername, request.getMaxBid(), request.getIncrement());
+            LOGGER.info("User {} set Auto-Bid: Max {}, Step {}", context.getUserId(), request.getMaxBid(), request.getIncrement());
 
-            // 3. BÓP CÒ LẬP TỨC: Lấy trực tiếp phòng live 100% trong RAM ra để đọ giá
+            // 2. Kích hoạt Robot ngay lập tức
             AuctionRoom room = context.getRoomService().getLiveRoom(request.getRoomId());
-
             if (room != null) {
-                // Cho robot lao vào chiến đấu ngay mà không cần đợi ai bid thủ công nữa!
                 autoBidManager.runAutoBiddingEngine(room, context);
             }
 

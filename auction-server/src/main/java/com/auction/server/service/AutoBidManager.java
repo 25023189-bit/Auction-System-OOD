@@ -64,56 +64,58 @@ public class AutoBidManager {
 
         if (queue == null || queue.isEmpty()) return;
 
-        boolean processNext;
+        boolean priceChanged;
+
+        // Vòng lặp chiến đấu: Chạy liên tục cho đến khi không còn Robot nào muốn/đủ tiền nâng giá nữa
         do {
-            processNext = false;
+            priceChanged = false;
 
-            // 1. Nhấc người có MaxBid cao nhất ra khỏi hàng đợi
-            AutoBidAgent topAgent = queue.poll();
-            if (topAgent == null) break;
+            // Lấy giá và người thắng HIỆN TẠI (Đã được cập nhật sau mỗi cú đấm)
+            double currentPrice = room.getCurrentPrice();
+            String currentWinner = room.getHighestBidder();
 
-            // 2. Kiểm tra xem người này có đang là người giữ giá không
-            if (topAgent.getUserId().equals(room.getHighestBidder())) {
+            // Chuyển Queue thành mảng để duyệt
+            AutoBidAgent[] activeAgents = queue.toArray(new AutoBidAgent[0]);
 
-                // Nếu ĐANG THẮNG -> Tạm tránh sang 1 bên để xem người thứ 2 có muốn bật lại không
-                AutoBidAgent secondAgent = queue.poll(); // Nhấc người thứ 2 ra
+            // Thêm một "cuốn sổ" UserDAO để Robot tự đi tra cứu tên thật
+            com.auction.server.dao.UserDAO userDAO = new com.auction.server.dao.UserDAO();
 
-                if (secondAgent != null) {
-                    double nextPrice = room.getCurrentPrice() + secondAgent.getIncrement();
+            for (AutoBidAgent agent : activeAgents) {
 
-                    // Nếu người thứ 2 đủ tiền -> Phản công!
-                    if (nextPrice <= secondAgent.getMaxBid()) {
-                        room.setCurrentPrice(nextPrice);
-                        room.setHighestBidder(secondAgent.getUserId());
+                // --- BẮT ĐẦU ĐOẠN SỬA ---
+                // Robot tự lấy ID của mình tra vào DB để biết Username hiển thị là gì
+                com.auction.common.model.User agentUser = userDAO.getUserById(agent.getUserId());
+                String agentUsername = (agentUser != null && agentUser.getUsername() != null)
+                        ? agentUser.getUsername()
+                        : agent.getUserId();
 
-                        context.broadcastToRoom(roomId, new com.auction.common.dto.Message("BID_SUCCESS", room));
+                // 1. QUY TẮC SỐ 1: Không tự đè giá của chính mình (So sánh Username chuẩn xác!)
+                if (agentUsername.equals(currentWinner)) {
+                    continue;
+                }
+                // --- KẾT THÚC ĐOẠN SỬA ---
 
-                        processNext = true;       // Tiếp tục vòng lặp
-                        queue.add(secondAgent);   // Trả người thứ 2 vào hàng đợi
+                // 2. Tính giá dự kiến
+                double nextPrice = currentPrice + agent.getIncrement();
+
+                // 3. QUY TẮC SỐ 2: Kiểm tra giới hạn Max Bid
+                if (nextPrice <= agent.getMaxBid()) {
+
+                    // Lúc này agent.getUserId() là ID THẬT -> Đưa cho DB nó mới chịu ghi nhận!
+                    com.auction.common.dto.Message bidResult = context.getRoomService().placeNewBid(roomId, agent.getUserId(), nextPrice);
+
+                    if ("BID_SUCCESS".equals(bidResult.getAction()) || "BID_SUCCESS_EXTENDED".equals(bidResult.getAction())) {
+                        room = (AuctionRoom) bidResult.getData();
+                        priceChanged = true;
+
+                        context.broadcastToRoom(roomId, bidResult);
+                        String updatePayload = roomId + "|" + nextPrice;
+                        context.broadcastAll(new com.auction.common.dto.Message("UPDATE_PRICE", "SERVER", updatePayload));
+
+                        break; // Đấm thành công, chốt giá vòng này!
                     }
-                    // Nếu người thứ 2 không đủ tiền -> Bị loại luôn (không add lại vào queue)
                 }
-
-                // Dù người thứ 2 có đánh hay không, vẫn phải giữ người top 1 lại trong hàng đợi
-                queue.add(topAgent);
-
-            } else {
-
-                // Nếu người top 1 KHÔNG PHẢI người đang thắng -> Được phép đấm luôn!
-                double nextPrice = room.getCurrentPrice() + topAgent.getIncrement();
-
-                if (nextPrice <= topAgent.getMaxBid()) {
-                    room.setCurrentPrice(nextPrice);
-                    room.setHighestBidder(topAgent.getUserId());
-
-                    context.broadcastToRoom(roomId, new com.auction.common.dto.Message("BID_SUCCESS", room));
-
-                    processNext = true;     // Tiếp tục vòng lặp
-                    queue.add(topAgent);    // Đánh xong trả về hàng đợi để chờ đánh tiếp
-                }
-                // Nếu top 1 mà còn hết tiền -> Bị loại!
             }
-
-        } while (processNext);
+        } while (priceChanged);
     }
 }
