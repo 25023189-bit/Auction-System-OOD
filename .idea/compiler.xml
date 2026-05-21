@@ -9,7 +9,6 @@
         <module name="auction-system" />
         <module name="auction-client" />
         <module name="auction-server" />
-        <module name="AuctionPrototype" />
         <module name="auction-common" />
       </profile>
     </annotationProcessing>

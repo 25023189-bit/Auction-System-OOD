@@ -28,3 +28,61 @@
     -fx-padding: 20px;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);
 }
+/* ==========================================================================
+   STYLE CHO BIỂU ĐỒ XU HƯỚNG GIÁ (PRICE TREND CHART)
+   ========================================================================== */
+
+/* Khung nền tổng thể của biểu đồ */
+.price-trend-chart {
+    -fx-background-color: transparent;
+    -fx-legend-visible: false; /* Ẩn chú thích màu sắc không cần thiết */
+}
+
+/* Tùy chỉnh chữ và nhãn của hai trục tọa độ */
+.price-trend-chart .axis {
+    -fx-axis-label-fill: #cbd5e1; /* Màu chữ tiêu đề trục */
+    -fx-tick-label-fill: #94a3b8; /* Màu chữ các mốc giá trị */
+}
+
+/* Đường trục chính (X-axis và Y-axis lines) */
+.price-trend-chart .axis-line {
+    -fx-stroke: rgba(255, 255, 255, 0.15);
+}
+
+/* Làm ẩn nền sọc xen kẽ mặc định */
+.price-trend-chart .chart-alternative-row-background {
+    -fx-fill: transparent;
+}
+
+/* Tùy chỉnh các đường lưới (Grid lines) mảnh mờ phía sau */
+.price-trend-chart .chart-vertical-grid-lines,
+.price-trend-chart .chart-horizontal-grid-lines {
+    -fx-stroke: rgba(255, 255, 255, 0.05);
+}
+
+/* 1. ĐƯỜNG DẪN BIỂU ĐỒ (Màu cam thương hiệu Seller sắc nét) */
+.price-trend-chart .chart-series-line {
+    -fx-stroke: #e67e22;
+    -fx-stroke-width: 2.5px;
+}
+
+/* 2. VÙNG ĐỔ BÓNG (Hiệu ứng Gradient đổ mờ từ trên xuống đáy) */
+.price-trend-chart .chart-area-symbol {
+    -fx-background-color: linear-gradient(to bottom, rgba(230, 126, 34, 0.35), rgba(230, 126, 34, 0.0));
+}
+
+/* 3. CÁC NÚT ĐIỂM (Symbols tại các nút mốc thời gian) */
+.price-trend-chart .chart-line-symbol {
+    -fx-background-color: #e67e22, #ffffff;
+    -fx-background-insets: 0, 2;
+    -fx-background-radius: 50%; /* Bo tròn hoàn hảo */
+    -fx-padding: 4.5px; /* Kích thước nút nhỏ gọn, tinh tế */
+}
+
+/* Hiệu ứng tương tác mượt mà khi di chuột vào điểm nút */
+.price-trend-chart .chart-line-symbol:hover {
+    -fx-background-color: #ff9f43, #ffffff;
+    -fx-scale-x: 1.3;
+    -fx-scale-y: 1.3;
+    -fx-cursor: hand;
+}
