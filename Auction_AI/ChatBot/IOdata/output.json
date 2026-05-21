@@ -1,5 +1,6 @@
 {
-  "status": "error",
-  "message": "'LogisticRegression' object has no attribute 'multi_class'",
-  "timestamp": "2026-05-21T19:29:02"
+  "status": "fallback",
+  "answer_source": "Logist",
+  "answer": "Về Quản lý số dư tài khoản: Mỗi người dùng có số dư tài khoản dùng trong quá trình đấu giá. Bidder cần có số dư đủ điều kiện để tham gia phòng và số dư sẽ được cập nhật khi phiên đấu giá kết thúc thành công.",
+  "timestamp": "2026-05-21T23:34:20"
 }
