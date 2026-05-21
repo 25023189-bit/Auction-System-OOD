@@ -1,24 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.AuctionController">
     <children>
-        <BorderPane fx:id="paneMainLobby" AnchorPane.topAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" style="-fx-background-color: #f4f7f6;">
+        <BorderPane fx:id="paneMainLobby" style="-fx-background-color: #f4f7f6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <top>
                 <HBox alignment="CENTER_LEFT" spacing="12" style="-fx-background-color: #2C3E50; -fx-padding: 10 18 10 18;">
-                    <Label text="Bidder Lobby" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: white;" />
+                    <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: white;" text="Bidder Lobby" />
                     <Region HBox.hgrow="ALWAYS" />
-                    <Label fx:id="lblBalance" text="Balance: 0 $" style="-fx-text-fill: #F1C40F; -fx-font-weight: bold;" />
+                    <Label fx:id="lblBalance" style="-fx-text-fill: #F1C40F; -fx-font-weight: bold;" text="Balance: 0 $" />
                     <Label fx:id="lblUsername" text="Welcome!" textFill="WHITE" />
-                    <Button text="Logout" onAction="#handleLogout" style="-fx-background-color: #E74C3C; -fx-text-fill: white;" />
+                    <Button onAction="#handleLogout" style="-fx-background-color: #E74C3C; -fx-text-fill: white;" text="Logout" />
                 </HBox>
             </top>
             <center>
                 <HBox spacing="16" style="-fx-padding: 16;">
-                    <VBox spacing="10" prefWidth="285" style="-fx-background-color: white; -fx-padding: 14;">
-                        <Label text="Exchange Rates" style="-fx-font-weight: bold;" />
-                        <Label text="Base: 1 USD" style="-fx-text-fill: #7f8c8d; -fx-font-size: 12px;" />
+                    <VBox prefHeight="644.0" prefWidth="179.0" spacing="10" style="-fx-background-color: white; -fx-padding: 14;">
+                        <Label style="-fx-font-weight: bold;" text="Exchange Rates" />
+                        <Label style="-fx-text-fill: #7f8c8d; -fx-font-size: 12px;" text="Base: 1 USD" />
                         <Separator />
                         <VBox fx:id="vboxCurrencyRates" spacing="8">
                             <Label text="United States (USD): 1.00" />
@@ -35,19 +44,19 @@
                             <Label text="Vietnam (VND): 26,336.30" />
                         </VBox>
                     </VBox>
-                    <VBox spacing="12" HBox.hgrow="ALWAYS" style="-fx-background-color: white; -fx-padding: 14;">
+                    <VBox spacing="12" style="-fx-background-color: white; -fx-padding: 14;" HBox.hgrow="ALWAYS">
                         <HBox alignment="CENTER_LEFT">
-                            <Label text="Available Auctions" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+                            <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Available Auctions" />
                             <Region HBox.hgrow="ALWAYS" />
                         </HBox>
                         <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
                             <content>
-                                <FlowPane fx:id="paneSelectAuction" hgap="14" vgap="14" style="-fx-padding: 4;" />
+                                <FlowPane fx:id="paneSelectAuction" hgap="14" style="-fx-padding: 4;" vgap="14" />
                             </content>
                         </ScrollPane>
                     </VBox>
-                    <VBox spacing="10" prefWidth="220" style="-fx-background-color: white; -fx-padding: 14;">
-                        <Label text="Bidder Notes" style="-fx-font-weight: bold;" />
+                    <VBox prefWidth="220" spacing="10" style="-fx-background-color: white; -fx-padding: 14;">
+                        <Label style="-fx-font-weight: bold;" text="Bidder Notes" />
                         <Separator />
                         <VBox fx:id="vboxNews" spacing="10">
                             <Label text="Join an approved auction to place bids." wrapText="true" />
@@ -57,6 +66,6 @@
                 </HBox>
             </center>
         </BorderPane>
-        <fx:include fx:id="chatbot" source="chatbot-view.fxml" AnchorPane.rightAnchor="18.0" AnchorPane.bottomAnchor="18.0" />
+        <fx:include fx:id="chatbot" source="chatbot-view.fxml" AnchorPane.bottomAnchor="18.0" AnchorPane.rightAnchor="18.0" />
     </children>
 </AnchorPane>
