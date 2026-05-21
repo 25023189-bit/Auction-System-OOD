@@ -34,6 +34,7 @@ import com.auction.common.role.RolePolicy;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.chart.AreaChart;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
@@ -91,7 +92,7 @@ public class AuctionController implements Initializable, ServerMessageListener {
     // ==========================================================
     // BIỂU ĐỒ GIÁ REAL-TIME (LINE CHART)
     // ==========================================================
-    @FXML private LineChart<String, Number> priceChart;
+    @FXML private AreaChart<String, Number> priceChart;
     private XYChart.Series<String, Number> priceSeries;
     private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
