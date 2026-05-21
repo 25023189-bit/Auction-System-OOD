@@ -17,6 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.chart.AreaChart?>
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="main-container" stylesheets="@../css/seller-auction-view.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.AuctionController">
     <children>
         <BorderPane fx:id="paneAuctionRoom" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -133,14 +134,14 @@
                                     </font>
                                 </Label>
 
-                                <LineChart fx:id="priceChart" animated="false" prefHeight="250.0" VBox.vgrow="NEVER">
+                                <AreaChart fx:id="priceChart" animated="false" prefHeight="250.0" VBox.vgrow="NEVER" styleClass="price-trend-chart">
                                     <xAxis>
                                         <CategoryAxis fx:id="xAxis" label="Thời gian" />
                                     </xAxis>
                                     <yAxis>
                                         <NumberAxis fx:id="yAxis" label="Mức giá ($)" />
                                     </yAxis>
-                                </LineChart>
+                                </AreaChart>
 
                                 <TextArea fx:id="txtChatLog" editable="false" wrapText="true" VBox.vgrow="ALWAYS" />
 

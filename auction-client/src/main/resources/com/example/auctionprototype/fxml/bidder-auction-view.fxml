@@ -16,6 +16,7 @@
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.AreaChart?>
 <BorderPane fx:id="paneAuctionRoom" prefHeight="720.0" prefWidth="1280.0" styleClass="main-container" stylesheets="@../css/bidder-auction-view.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.AuctionController">
     <center>
         <AnchorPane style="-fx-background-color: transparent;">
@@ -39,12 +40,12 @@
                                     <children>
                                         <HBox alignment="CENTER" spacing="8" style="-fx-border-color: #3498db;" styleClass="header-info-box">
                                             <children>
-                                                <Label style="-fx-font-size: 18px;" text="⏱" textFill="WHITE" />
-                                                <Label fx:id="lblTimer" text="--:--:--" textFill="WHITE">
-                                                    <font>
-                                                        <Font name="System Bold" size="20.0" />
-                                                    </font>
-                                                </Label>
+                                            <Label style="-fx-font-size: 18px;" text="⏱" textFill="WHITE" />
+                                            <Label fx:id="lblTimer" text="--:--:--" textFill="WHITE">
+                                                <font>
+                                                    <Font name="System Bold" size="20.0" />
+                                                </font>
+                                            </Label>
                                             </children>
                                         </HBox>
                                         <HBox alignment="CENTER" spacing="8" style="-fx-border-color: #3498db;" styleClass="header-info-box">
@@ -99,14 +100,14 @@
                                 <VBox spacing="15.0" styleClass="chat-container" HBox.hgrow="ALWAYS">
                                     <children>
                                         <Label text="Bid History &amp; Chat" textFill="#2c3e50"><font><Font name="System Bold" size="18.0" /></font></Label>
-                                        <LineChart fx:id="priceChart" animated="false" prefHeight="250.0" VBox.vgrow="NEVER">
+                                        <AreaChart fx:id="priceChart" animated="false" prefHeight="250.0" VBox.vgrow="NEVER" styleClass="price-trend-chart">
                                             <xAxis>
                                                 <CategoryAxis fx:id="xAxis" label="Thời gian" />
                                             </xAxis>
                                             <yAxis>
                                                 <NumberAxis fx:id="yAxis" label="Mức giá ($)" />
                                             </yAxis>
-                                        </LineChart>
+                                        </AreaChart>
                                         <TextArea fx:id="txtChatLog" editable="false" VBox.vgrow="ALWAYS" wrapText="true" />
 
                                         <VBox spacing="10.0">

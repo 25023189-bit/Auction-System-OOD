@@ -7,7 +7,8 @@ DATA_DIR = LOGIST_DIR / "data"
 MODEL_DIR = LOGIST_DIR / "models"
 LLM_DIR = CHATBOT_DIR / "LLM"
 
-TRAIN_DATA_PATH = DATA_DIR / "train_data.csv"
+GENERATED_DATA_DIR = DATA_DIR / "generated"
+TRAIN_DATA_MANIFEST_PATH = DATA_DIR / "train_data_manifest.json"
 KNOWLEDGE_PATH = LLM_DIR / "knowledge" / "label_constraints.json"
 
 MODEL_PATH = MODEL_DIR / "chatbot_intent_model.joblib"
