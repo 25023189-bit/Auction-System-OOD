@@ -1,24 +1,5 @@
 {
   "status": "error",
-  "timestamp": "2026-05-21T12:38:40",
-  "question": "anti-snipping là gì",
-  "error_type": "AttributeError",
-  "message": "'LogisticRegression' object has no attribute 'multi_class'",
-  "traceback": [
-    "Traceback (most recent call last):\n",
-    "  File \"G:\\Bai tap lon\\Auction_AI\\ChatBot\\Connect\\middleware.py\", line 30, in handle_question\n    result, information = _call_llm(normalized_question, llm_client=llm_client)\n                          ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
-    "  File \"G:\\Bai tap lon\\Auction_AI\\ChatBot\\Connect\\middleware.py\", line 162, in _call_llm\n    prediction = classify_message(question, model=model, labels=labels)\n",
-    "  File \"G:\\Bai tap lon\\Auction_AI\\ChatBot\\Logist\\chatbot\\intent_chatbot.py\", line 114, in classify_message\n    scores = predict_scores(model, labels, cleaned_message)\n",
-    "  File \"G:\\Bai tap lon\\Auction_AI\\ChatBot\\Logist\\chatbot\\intent_chatbot.py\", line 77, in predict_scores\n    probabilities = model.predict_proba([message])[0]\n                    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^\n",
-    "  File \"C:\\Users\\Lenovo\\anaconda3\\Lib\\site-packages\\sklearn\\pipeline.py\", line 905, in predict_proba\n    return self.steps[-1][1].predict_proba(Xt, **params)\n           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\n",
-    "  File \"C:\\Users\\Lenovo\\anaconda3\\Lib\\site-packages\\sklearn\\multiclass.py\", line 548, in predict_proba\n    Y = np.array([e.predict_proba(X)[:, 1] for e in self.estimators_]).T\n                  ~~~~~~~~~~~~~~~^^^\n",
-    "  File \"C:\\Users\\Lenovo\\anaconda3\\Lib\\site-packages\\sklearn\\linear_model\\_logistic.py\", line 1457, in predict_proba\n    ovr = self.multi_class in [\"ovr\", \"warn\"] or (\n          ^^^^^^^^^^^^^^^^\n",
-    "AttributeError: 'LogisticRegression' object has no attribute 'multi_class'\n"
-  ],
-  "logist": {
-    "status": "failed",
-    "error_type": "AttributeError",
-    "message": "'LogisticRegression' object has no attribute 'multi_class'",
-    "original_error_type": "AttributeError"
-  }
+  "source": "java-client",
+  "message": "Python chatbot process failed. See G:\\Bai tap lon\\Auction_AI\\ChatBot\\status\\chatbot_process.log"
 }

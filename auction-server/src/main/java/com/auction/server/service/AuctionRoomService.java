@@ -45,6 +45,19 @@ public class AuctionRoomService {
     private IAuctionDAO auctionDAO = new AuctionDAO();
     private IUserDAO userDAO = new UserDAO();
     private IBidDAO bidDAO = new BidDAO();
+
+    // 1. Thêm lại Constructor rỗng này để ClientHandler và AuctionServer chạy bình thường
+    public AuctionRoomService() {
+        // Bên trên Hân đã gán sẵn = new AuctionDAO()... rồi nên ở đây để trống là được
+    }
+
+    // 2. Cái Constructor 3 tham số lúc nãy Hân vừa thêm (giữ nguyên nhé)
+    public AuctionRoomService(IAuctionDAO auctionDAO, IUserDAO userDAO, IBidDAO bidDAO) {
+        this.auctionDAO = auctionDAO;
+        this.userDAO = userDAO;
+        this.bidDAO = bidDAO;
+    }
+
     public Message joinRoom(String roomId, String userId) {
         AuctionRoom room = auctionDAO.getAuctionById(roomId);
 
@@ -168,6 +181,27 @@ public class AuctionRoomService {
                     room
             );
         }
+    }
+
+    // ==========================================================
+    // HÀM HỖ TRỢ CHO AUTO-BIDDING (Lấy phòng Live thực tế)
+    // ==========================================================
+    public AuctionRoom getLiveRoom(String roomId) {
+        // 1. Lấy thông tin phòng gốc từ Database
+        AuctionRoom room = auctionDAO.getAuctionById(roomId);
+        if (room == null) {
+            return null; // Phòng không tồn tại
+        }
+
+        // 2. Lấy các thông số đang chạy Live (thời gian gia hạn, user list...) trên RAM
+        AuctionRuntimeState state = AuctionStateManager.getState(roomId);
+
+        // 3. Đồng bộ dữ liệu Live đè lên phòng gốc để có thông tin mới nhất
+        synchronized (state) {
+            syncRuntimeInfoToRoom(room, state);
+        }
+
+        return room; // Trả về cái phòng đã được update hoàn chỉnh cho Robot
     }
 
     public boolean finalizeExpiredAuctionIfNeeded(String roomId) {
