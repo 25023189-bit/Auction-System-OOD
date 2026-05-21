@@ -1,6 +1,6 @@
 /* Ảnh nền bao phủ toàn màn hình */
 .main-container {
-    -fx-background-image: url("../images/background-admin.jpg");
+    -fx-background-image: url("../images/backgroundseller.png");
     -fx-background-size: cover;
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
