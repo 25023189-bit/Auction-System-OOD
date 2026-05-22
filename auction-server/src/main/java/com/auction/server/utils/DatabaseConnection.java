@@ -9,22 +9,7 @@ import java.util.Properties;
 
 /**
  * Factory tạo JDBC connection cho database MySQL của hệ thống đấu giá.
- *
- * Vai trò:
- * - Đọc cấu hình kết nối database từ environment, system property hoặc resource properties.
- * - Load JDBC driver và tạo Connection mới cho các DAO.
- *
- * Luồng chính:
- * 1. DAO gọi getConnection(), lớp này load cấu hình và chọn giá trị ưu tiên đầu tiên không rỗng.
- * 2. Validate url/user/driver, load driver rồi gọi DriverManager.getConnection().
- *
- * Business rules:
- * - Environment variable/system property được ưu tiên hơn db.properties để thuận tiện deploy.
- * - Thiếu cấu hình bắt buộc phải ném SQLException có thông tin chẩn đoán rõ ràng.
- *
- * Ghi chú kỹ thuật:
- * - Thread-safe: stateless, chỉ dùng method static và biến local.
- * - Dependency: DriverManager, Properties, ClassLoader resource db.properties/db.properties.example.
+ * ĐÃ SỬA ĐỔI: Gán cứng (Hardcode) trực tiếp thông tin lên Cloud Aiven để bỏ qua lỗi môi trường.
  */
 public final class DatabaseConnection {
 
@@ -34,9 +19,19 @@ public final class DatabaseConnection {
     }
 
     public static Connection getConnection() throws SQLException {
+        // =========================================================================
+        // CÁCH 1: GÁN CỨNG THÔNG TIN CLOUD (HARDCODE)
+        // Bỏ qua toàn bộ việc đọc file properties hay biến môi trường đang bị lỗi
+        // =========================================================================
+
+        String url = "jdbc:mysql://mysql-2d6c9860-vnu-66a9.j.aivencloud.com:13022/auction_system_v2?sslMode=REQUIRED";
+        String user = "avnadmin";
+        String password = "AVNS_cVgX4Q0XNC3iArZBnaY";
+        String driver = DEFAULT_DRIVER;
+
+        /* ---------- ĐOẠN CODE CŨ ĐÃ ĐƯỢC COMMENT LẠI ----------
         Properties props = loadDatabaseProperties();
 
-        // Cho phép override cấu hình khi deploy mà không cần sửa file resource.
         String url = firstNonBlank(
                 System.getenv("AUCTION_DB_URL"),
                 System.getProperty("auction.db.url"),
@@ -49,7 +44,6 @@ public final class DatabaseConnection {
                 props.getProperty("db.user")
         );
 
-        // Đã trả lại thứ tự ưu tiên chuẩn (Môi trường -> System -> File properties)
         String password = firstNonBlank(
                 System.getenv("AUCTION_DB_PASSWORD"),
                 System.getProperty("auction.db.password"),
@@ -62,6 +56,7 @@ public final class DatabaseConnection {
                 props.getProperty("db.driver"),
                 DEFAULT_DRIVER
         );
+        ------------------------------------------------------ */
 
         validateRequired(url, "db.url");
         validateRequired(user, "db.user");
@@ -76,14 +71,15 @@ public final class DatabaseConnection {
         }
 
         try {
-            password = "12345";
             return DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
             throw new SQLException(buildHelpfulConnectionError(url, user, driver, e), e);
         }
     }
 
-    // Đọc db.properties thật, nếu không có thì dùng db.properties.example để hỗ trợ môi trường mẫu.
+    // Các hàm phụ trợ bên dưới vẫn giữ nguyên để không bị lỗi cú pháp,
+    // mặc dù hiện tại hàm getConnection() tạm thời không gọi đến chúng nữa.
+
     private static Properties loadDatabaseProperties() throws SQLException {
         Properties props = new Properties();
         URL resource = findDatabasePropertiesResource();
@@ -102,7 +98,6 @@ public final class DatabaseConnection {
         }
     }
 
-    // Tìm file cấu hình database trên classpath.
     private static URL findDatabasePropertiesResource() {
         ClassLoader classLoader = DatabaseConnection.class.getClassLoader();
         URL resource = classLoader.getResource("db.properties");
@@ -115,7 +110,6 @@ public final class DatabaseConnection {
         }
     }
 
-    // Lấy giá trị đầu tiên không null/không rỗng trong danh sách ưu tiên.
     private static String firstNonBlank(String... values) {
         if (values == null) {
             return null;
@@ -128,7 +122,6 @@ public final class DatabaseConnection {
         return null;
     }
 
-    // Tạo lỗi có ngữ cảnh để dễ chẩn đoán sai cấu hình DB.
     private static String buildHelpfulConnectionError(String url, String user, String driver, SQLException cause) {
         String databaseName = extractDatabaseName(url);
         StringBuilder message = new StringBuilder("Database connection failed. Check that MySQL is running, ");
