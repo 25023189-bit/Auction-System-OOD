@@ -4,8 +4,13 @@ import com.auction.client.service.AuctionService;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import com.auction.common.model.AuctionRoom;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javafx.stage.Modality;
 
 /**
  * Controller cho popup xem chi tiết sản phẩm từ lobby.
@@ -86,7 +91,28 @@ public class ProductViewController {
             this.auctionService.requestProductDetails(roomId);
         }
     }
+    public void openProductDetailPopUp(String roomId) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/auction/client/feature/views/product-view.fxml"));
+        Parent root = loader.load();
 
+        // 1. Tạo một Stage (cửa sổ) hoàn toàn tách biệt cho Pop-up
+        Stage popupStage = new Stage();
+
+        // 2. LỆNH QUAN TRỌNG: Chỉ ẩn thanh điều hướng của riêng Pop-up này
+        popupStage.initStyle(StageStyle.UNDECORATED);
+
+        // 3. Khóa không cho bấm ra màn hình chính phía sau khi chưa tắt Pop-up (rất chuyên nghiệp)
+        popupStage.initModality(Modality.APPLICATION_MODAL);
+
+        // 4. Gắn dữ liệu và truyền service vào Controller như code hệ thống của bạn
+        ProductViewController controller = loader.getController();
+        controller.setAuctionService(this.auctionService);
+        controller.setRoomId(roomId);
+
+        // 5. Hiển thị cửa sổ popup lên
+        popupStage.setScene(new Scene(root));
+        popupStage.show();
+    }
     public void closeWindow(ActionEvent actionEvent) {
         // Lấy nút (Button) vừa được bấm, từ đó dò ra cửa sổ (Stage) chứa nó và đóng lại
         javafx.scene.Node source = (javafx.scene.Node) actionEvent.getSource();

@@ -5,22 +5,21 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.shape.Circle?>
 
-<VBox alignment="TOP_CENTER" prefWidth="780.0" prefHeight="420.0" spacing="0.0" styleClass="product-detail-card" stylesheets="@../css/seller-auction-view.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.ProductViewController">
+<VBox alignment="TOP_CENTER" prefHeight="420.0" prefWidth="780.0" spacing="0.0" styleClass="product-detail-card" stylesheets="@../css/product-view.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.ProductViewController">
     <children>
         <HBox alignment="CENTER_LEFT" styleClass="card-header-bar">
             <padding>
                 <Insets bottom="12.0" left="20.0" right="20.0" top="12.0" />
             </padding>
             <children>
-                <Label fx:id="lblProductName" text="Product Detail Information" styleClass="card-main-title" />
+                <Label fx:id="lblProductName" styleClass="card-main-title" text="Product Detail Information" />
                 <Region HBox.hgrow="ALWAYS" />
-                <Button text="✕" styleClass="card-close-btn" />
+                <Button onAction="#closeWindow" styleClass="card-close-btn" text="X" />
             </children>
         </HBox>
 
@@ -39,21 +38,21 @@
                     </children>
                 </VBox>
 
-                <VBox spacing="15.0" HBox.hgrow="ALWAYS" styleClass="specs-container">
+                <VBox spacing="15.0" styleClass="specs-container" HBox.hgrow="ALWAYS">
                     <children>
-                        <HBox spacing="15.0" alignment="CENTER_LEFT" styleClass="live-stats-row">
+                        <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="live-stats-row">
                             <children>
                                 <VBox styleClass="stat-box">
-                                    <Label text="Current Price" styleClass="stat-label" />
-                                    <Label fx:id="lblStartingPrice" text="16.00$" styleClass="stat-value-price" />
+                                    <Label styleClass="stat-label" text="Current Price" />
+                                    <Label fx:id="lblStartingPrice" styleClass="stat-value-price" text="16.00$" />
                                 </VBox>
                                 <VBox styleClass="stat-box">
-                                    <Label text="Number of Bids" styleClass="stat-label" />
-                                    <Label text="20" styleClass="stat-value" />
+                                    <Label styleClass="stat-label" text="Number of Bids" />
+                                    <Label styleClass="stat-value" text="20" />
                                 </VBox>
                                 <VBox styleClass="stat-box">
-                                    <Label text="Time Remaining" styleClass="stat-label" />
-                                    <Label text="3h 15m" styleClass="stat-value-time" />
+                                    <Label styleClass="stat-label" text="Time Remaining" />
+                                    <Label styleClass="stat-value-time" text="3h 15m" />
                                 </VBox>
                             </children>
                         </HBox>
@@ -62,22 +61,15 @@
                             <children>
                                 <HBox alignment="CENTER_LEFT" spacing="10.0">
                                     <Circle radius="4.0" styleClass="neon-bullet" />
-                                    <Label text="Model: Chronos Elite" styleClass="info-text-highlight" />
+                                    <Label fx:id="lblDescription" styleClass="info-text-highlight" text="Model: Chronos Elite" />
                                 </HBox>
-                                <HBox alignment="CENTER_LEFT" spacing="10.0">
-                                    <Circle radius="4.0" styleClass="neon-bullet" />
-                                    <Label text="Key Features: Heart Rate, GPS, Water Resistant" styleClass="info-text-highlight" />
-                                </HBox>
+                                <HBox alignment="CENTER_LEFT" spacing="10.0" />
                             </children>
                         </VBox>
 
-                        <Label fx:id="lblDescription" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation." wrapText="true" styleClass="product-description-text" VBox.vgrow="ALWAYS" />
-
                         <HBox alignment="CENTER_LEFT" styleClass="action-footer-row">
                             <children>
-                                <Button text="View Bids" styleClass="link-view-bids" />
                                 <Region HBox.hgrow="ALWAYS" />
-                                <Button text="PLACE YOUR BID" styleClass="btn-neon-action" />
                             </children>
                         </HBox>
                     </children>
