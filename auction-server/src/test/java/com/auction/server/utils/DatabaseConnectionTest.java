@@ -69,7 +69,7 @@ class DatabaseConnectionTest {
 
         assertTrue(actualMessage.contains("Database connection failed"),
                 "Tin nhắn lỗi phải chứa thông báo cơ bản");
-        assertTrue(actualMessage.contains("auction_system_v2"),
+        assertTrue(actualMessage.contains("defaultdb"),
                 "Tin nhắn lỗi phải bóc tách được tên database từ URL Aiven");
         assertTrue(actualMessage.contains(fakeErrorMessage),
                 "Tin nhắn lỗi phải bao gồm cả nguyên nhân gốc từ MySQL");
