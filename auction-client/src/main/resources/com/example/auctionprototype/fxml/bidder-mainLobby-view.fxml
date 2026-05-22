@@ -211,8 +211,8 @@
                         <!-- Title area -->
                         <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="bidder-auctions-title-bar">
                             <VBox alignment="CENTER_LEFT" spacing="2.0">
-                                <Label styleClass="bidder-section-title" text="Available Auctions" />
-                                <Pane prefHeight="3.0" prefWidth="124.0" styleClass="bidder-gold-line" />
+                                <Label styleClass="bidder-section-title" text="      Available Auctions" />
+                                <Pane prefHeight="2.0" prefWidth="490.0" styleClass="bidder-gold-line" />
                             </VBox>
 
                             <Region HBox.hgrow="ALWAYS" />
@@ -284,6 +284,6 @@
             </center>
         </BorderPane>
 
-        <fx:include fx:id="chatbot" source="chatbot-view.fxml" AnchorPane.bottomAnchor="18.0" AnchorPane.rightAnchor="18.0" />
+        <fx:include fx:id="chatbot" scaleY="1.2" source="chatbot-view.fxml" translateX="-20.0" translateY="-50.0" AnchorPane.bottomAnchor="18.0" AnchorPane.rightAnchor="18.0" />
     </children>
 </AnchorPane>
