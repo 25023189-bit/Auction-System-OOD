@@ -5,7 +5,7 @@
 /* 1. NỀN TOÀN MÀN HÌNH SELLER */
 .bidder-root {
     -fx-font-family: "Segoe UI", "Arial", sans-serif;
-    -fx-background-image: url("../images/background_bidder_mainLobby_taskboard.png");
+    -fx-background-image: url("../images/bidder_mainLobby/background_bidder_mainLobby_taskboard.png");
 
         /* 3. Thiết lập thuộc tính hiển thị ảnh nền */
         -fx-background-repeat: no-repeat;  /* Không lặp lại ảnh */

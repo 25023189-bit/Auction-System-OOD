@@ -17,14 +17,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="bidder-root" stylesheets="@../css/seller-lobby.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.AuctionController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="bidder-root" stylesheets="@../css/seller-lobby.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.app.root.AuctionController">
 
     <children>
         <BorderPane fx:id="paneMainLobby" styleClass="bidder-shell" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 
             <top>
                 <VBox maxWidth="1.7976931348623157E308" styleClass="top-nav-taskboard">
-                    <HBox alignment="CENTER_LEFT" prefHeight="112.0" prefWidth="1280.0" spacing="18.0" styleClass="bidder-header">
+                    <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="1280.0" spacing="18.0" styleClass="bidder-header">
                         <ImageView fitHeight="70.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../images/bidder_mainLobby/auction_empty_gavel_emblem.png" />
@@ -43,7 +43,7 @@
 
                         <Region prefHeight="70.0" prefWidth="294.0" HBox.hgrow="ALWAYS" />
 
-                        <HBox alignment="CENTER" prefHeight="70.0" prefWidth="285.0" spacing="9.0" styleClass="bidder-wallet-card">
+                        <HBox alignment="CENTER" prefHeight="70.0" prefWidth="304.0" spacing="9.0" styleClass="bidder-wallet-card">
                             <ImageView fitHeight="45.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
                                     <Image url="@../images/bidder_mainLobby/icon_wallet.png" />
@@ -70,7 +70,7 @@
             </top>
 
             <center>
-                <HBox prefHeight="655.0" prefWidth="1280.0" spacing="22.0" styleClass="bidder-main-content">
+                <HBox prefHeight="737.0" prefWidth="1341.0" spacing="22.0" styleClass="bidder-main-content">
 
                     <!-- Left: Exchange Rates -->
                     <VBox maxWidth="290.0" minWidth="271.0" prefHeight="621.0" prefWidth="271.0" spacing="14.0" styleClass="bidder-exchange-card">
@@ -208,7 +208,7 @@
                     </VBox>
 
                     <!-- Center: Available Auctions -->
-                    <VBox prefHeight="633.0" prefWidth="666.0" spacing="14.0" styleClass="bidder-auctions-card" HBox.hgrow="ALWAYS">
+                    <VBox prefHeight="535.0" prefWidth="674.0" spacing="14.0" styleClass="bidder-auctions-card" HBox.hgrow="ALWAYS">
 
                         <!-- Title area -->
                         <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="bidder-auctions-title-bar">
@@ -247,7 +247,7 @@
                             <!-- Runtime auction cards: keep visible and clickable -->
                             <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" styleClass="bidder-auction-scroll" vbarPolicy="AS_NEEDED">
                                 <content>
-                                    <FlowPane fx:id="paneSelectAuction" alignment="TOP_LEFT" hgap="16.0" styleClass="bidder-auction-grid" vgap="16.0" />
+                                    <FlowPane fx:id="paneSelectAuction" alignment="TOP_LEFT" hgap="16.0" prefHeight="486.0" prefWidth="626.0" styleClass="bidder-auction-grid" vgap="16.0" />
                                 </content>
                             </ScrollPane>
                         </StackPane>
@@ -256,7 +256,7 @@
                     <!-- Right: Bidder Notes -->
                     <StackPane maxWidth="280.0" minWidth="249.0" prefHeight="621.0" prefWidth="249.0" styleClass="bidder-notes-card">
 
-                        <VBox prefHeight="583.0" prefWidth="230.0" spacing="14.0">
+                        <VBox prefHeight="616.0" prefWidth="204.0" spacing="14.0">
                             <HBox alignment="CENTER_LEFT" spacing="10.0">
                                 <ImageView fitHeight="47.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
@@ -292,6 +292,6 @@
             </center>
         </BorderPane>
 
-        <fx:include fx:id="chatbot" source="chatbot-view.fxml" AnchorPane.bottomAnchor="18.0" AnchorPane.rightAnchor="18.0" />
+        <fx:include rotate="0.8" scaleX="1.25" scaleY="1.25" source="icon-chatbot-view.fxml" translateX="-30.0" translateY="-25.0" AnchorPane.bottomAnchor="18.0" AnchorPane.rightAnchor="18.0" />
     </children>
 </AnchorPane>
