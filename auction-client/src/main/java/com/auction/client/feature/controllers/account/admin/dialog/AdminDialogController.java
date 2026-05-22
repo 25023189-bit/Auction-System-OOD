@@ -6,6 +6,18 @@ import javafx.scene.control.ButtonType;
 import java.util.Optional;
 
 public class AdminDialogController {
+    public void showWarning(String title, String content) {
+        show(Alert.AlertType.WARNING, title, content);
+    }
+
+    public void showError(String title, String content) {
+        show(Alert.AlertType.ERROR, title, content);
+    }
+
+    public void showInfo(String title, String content) {
+        show(Alert.AlertType.INFORMATION, title, content);
+    }
+
     public void show(Alert.AlertType type, String title, String content) {
         Alert alert = new Alert(type);
         alert.setTitle(title);

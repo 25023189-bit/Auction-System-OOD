@@ -1,5 +1,6 @@
 package com.auction.client.feature.lobby;
 
+import com.auction.client.feature.controllers.assistant.product.popup.ProductPopupLauncher;
 import com.auction.client.feature.viewmodel.LobbyRoomDisplayModel;
 import com.auction.client.service.AuctionService;
 import javafx.geometry.Pos;
@@ -79,31 +80,15 @@ public class DefaultAuctionCardFactory {
 
         btnDetails.setOnAction(event -> {
             try {
-                // Tải file giao diện FXML cho popup chi tiết.
-                javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(getClass().getResource("/com/example/auctionprototype/fxml/product-view.fxml"));
-                javafx.scene.Parent root = loader.load();
-
-                // Truyền roomId để ProductViewController yêu cầu server trả dữ liệu sản phẩm.
-                com.auction.client.feature.controllers.assistant.product.ProductViewController controller = loader.getController();
-                controller.setAuctionService(this.auctionService);
-                controller.setRoomId(model.getRoomId());
-
-                // Mở popup chi tiết ở Stage riêng.
-                javafx.stage.Stage stage = new javafx.stage.Stage();
-                stage.setTitle("Chi tiết sản phẩm: " + model.getItemName());
-                stage.setScene(new javafx.scene.Scene(root));
-
-                // Khóa cửa sổ chính khi popup đang mở để tránh thao tác lệch ngữ cảnh.
-                stage.initModality(javafx.stage.Modality.APPLICATION_MODAL);
-                stage.show();
+                new ProductPopupLauncher(this.auctionService).open(model.getRoomId());
             } catch (Exception e) {
                 LOGGER.error("Failed to open product detail window.", e);
             }
         });
-
         // Gắn đầy đủ thông tin và các nút thao tác vào card.
         card.getChildren().addAll(lblName, lblId, lblPrice, btnJoin, btnDetails);
 
         return card;
     }
 }
+

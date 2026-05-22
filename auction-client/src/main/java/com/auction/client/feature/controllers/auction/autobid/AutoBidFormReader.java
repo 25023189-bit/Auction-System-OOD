@@ -11,15 +11,23 @@ public class AutoBidFormReader {
         this.txtAutoBidStep = txtAutoBidStep;
     }
 
-    public double readMaxBid() {
-        return Double.parseDouble(clean(txtMaxBid));
+    public AutoBidFormData read() {
+        return new AutoBidFormData(clean(txtMaxBid), clean(txtAutoBidStep));
     }
 
-    public double readStep() {
-        return Double.parseDouble(clean(txtAutoBidStep));
+    public void clear() {
+        if (txtMaxBid != null) {
+            txtMaxBid.clear();
+        }
+        if (txtAutoBidStep != null) {
+            txtAutoBidStep.clear();
+        }
     }
 
     private String clean(TextField field) {
         return field == null || field.getText() == null ? "" : field.getText().replaceAll("[^\\d.]", "");
+    }
+
+    public record AutoBidFormData(String maxBidText, String stepText) {
     }
 }

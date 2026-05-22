@@ -22,6 +22,10 @@ public class AdminActionSender {
         send("ADMIN_GET_PENDING_AUCTIONS", "");
     }
 
+    public void loadBidHistory(String roomId) {
+        auctionService.getBidHistory(roomId);
+    }
+
     public void deleteUser(String userId) {
         send("ADMIN_DELETE_USER", userId);
     }
@@ -30,11 +34,11 @@ public class AdminActionSender {
         send("ADMIN_DELETE_AUCTION", roomId);
     }
 
-    public void approveAuction(String requestId) {
+    public void approvePendingAuction(String requestId) {
         send("ADMIN_APPROVE_AUCTION", requestId);
     }
 
-    public void rejectAuction(String requestId) {
+    public void rejectPendingAuction(String requestId) {
         send("ADMIN_REJECT_AUCTION", requestId);
     }
 

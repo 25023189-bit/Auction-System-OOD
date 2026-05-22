@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -10,74 +11,107 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@../css/login-view.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.app.root.AuctionController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.app.root.AuctionController">
     <children>
-        <StackPane styleClass="my-background" stylesheets="@../css/login-view.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <StackPane style="-fx-background-color: radial-gradient(center 50% 50%, radius 80%, #ffffff, #f0e6d2);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <VBox fx:id="paneRegister" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 10);" visible="false">
+
+                <VBox fx:id="paneRegister" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" spacing="20.0" style="-fx-background-color: #fdfbf7; -fx-background-radius: 10; -fx-border-color: #cfa860; -fx-border-radius: 10; -fx-border-width: 2; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 20, 0, 0, 10);" visible="false">
                     <children>
-                        <Label text="Create Account" textFill="#2c3e50"><font><Font name="System Bold" size="24.0" /></font></Label>
+                        <Label text="Create Account" textFill="#8b6c42">
+                            <font><Font name="Georgia Bold" size="24.0" /></font>
+                        </Label>
 
-                        <TextField fx:id="txtRegCustomerId" promptText="Customer ID (e.g. BD512345)" />
-                        <TextField fx:id="txtRegUsername" promptText="Username" />
+                        <TextField fx:id="txtRegCustomerId" prefHeight="40.0" promptText="Customer ID (e.g. BD512345)" style="-fx-background-color: #fdfaf3; -fx-border-color: #dcb879; -fx-border-radius: 5;" />
+                        <TextField fx:id="txtRegUsername" prefHeight="40.0" promptText="Username" style="-fx-background-color: #fdfaf3; -fx-border-color: #dcb879; -fx-border-radius: 5;" />
+                        <TextField fx:id="txtRegFullName" prefHeight="40.0" promptText="Your Full Name" style="-fx-background-color: #fdfaf3; -fx-border-color: #dcb879; -fx-border-radius: 5;" />
+                        <PasswordField fx:id="txtRegPassword" prefHeight="40.0" promptText="Password" style="-fx-background-color: #fdfaf3; -fx-border-color: #dcb879; -fx-border-radius: 5;" />
+                        <PasswordField fx:id="txtRegConfirm" prefHeight="40.0" promptText="Confirm password" style="-fx-background-color: #fdfaf3; -fx-border-color: #dcb879; -fx-border-radius: 5;" />
 
-                        <TextField fx:id="txtRegFullName" promptText="Your Full Name" />
+                        <ComboBox fx:id="cbRegRole" prefHeight="40.0" prefWidth="400.0" promptText="Choose role..." style="-fx-background-color: #fdfaf3; -fx-border-color: #dcb879; -fx-border-radius: 5;" />
 
-                        <PasswordField fx:id="txtRegPassword" promptText="Password" />
-                        <PasswordField fx:id="txtRegConfirm" promptText="Confirm password" />
-
-                        <ComboBox fx:id="cbRegRole" prefWidth="400.0" promptText="Choose role..." />
-
-                        <Label fx:id="lblRegOrganization" managed="false" text="Organization" visible="false" />
-                        <TextField fx:id="txtRegOrganization" managed="false" promptText="Enter organization name (seller only)" visible="false" />
+                        <Label fx:id="lblRegOrganization" managed="false" text="Organization" textFill="#5a4629" visible="false" />
+                        <TextField fx:id="txtRegOrganization" managed="false" prefHeight="40.0" promptText="Enter organization name (seller only)" style="-fx-background-color: #fdfaf3; -fx-border-color: #dcb879; -fx-border-radius: 5;" visible="false" />
 
                         <Label fx:id="lblRegStatus" textFill="RED" />
 
-                        <Button onAction="#handleSubmitRegister" prefWidth="200.0" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold;" text="Create Account" />
-                        <Button onAction="#showLoginScreen" style="-fx-background-color: transparent; -fx-text-fill: #3498db;" text="Back to Login" />
-                    </children>
-                    <padding><Insets bottom="30.0" left="30.0" right="30.0" top="30.0" /></padding>
-                </VBox>
-
-                <VBox fx:id="paneForgotPassword" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 10);" visible="false">
-                    <children>
-                        <Label text="Reset Password" textFill="#2c3e50"><font><Font name="System Bold" size="24.0" /></font></Label>
-                        <TextField fx:id="txtForgotUsername" promptText="Username" />
-                        <PasswordField fx:id="txtForgotNewPassword" promptText="New password" />
-                        <PasswordField fx:id="txtForgotConfirm" promptText="Confirm new password" />
-                        <Label fx:id="lblForgotStatus" textFill="RED" />
-                        <Button onAction="#handleSubmitForgotPassword" prefWidth="200.0" style="-fx-background-color: #e67e22; -fx-text-fill: white; -fx-font-weight: bold;" text="Change Password" />
-                        <Button onAction="#showLoginScreen" style="-fx-background-color: transparent; -fx-text-fill: #3498db;" text="Back to Login" />
-                    </children>
-                    <padding><Insets bottom="30.0" left="30.0" right="30.0" top="30.0" /></padding>
-                </VBox>
-
-                <VBox fx:id="paneLogin" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="368.0" prefWidth="504.0" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 10);" styleClass="login-card">
-                    <children>
-                        <HBox alignment="CENTER" spacing="10.0" styleClass="login-card">
-                            <children>
-                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                                    <image><Image url="@../images/auction.png" /></image>
-                                </ImageView>
-                                <Label text="System Login" textFill="#2c3e50"><font><Font name="System Bold" size="24.0" /></font></Label>
-                            </children>
-                        </HBox>
-                        <TextField fx:id="txtUsername" prefHeight="40.0" prefWidth="300.0" promptText="Username" />
-                        <PasswordField fx:id="txtPassword" prefHeight="40.0" promptText="Password" />
-                        <Label fx:id="lblStatus" textFill="RED" />
-                        <Button onAction="#handleLogin" prefWidth="200.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" styleClass="login-button" text="Login" />
-                        <HBox alignment="CENTER" spacing="120.0">
-                            <children>
-                                <Button onAction="#showRegisterScreen" styleClass="link-button" text="Create an account" />
-                                <Button onAction="#showForgotPasswordScreen" styleClass="link-button" text="Forgot password?" />
-                            </children>
-                        </HBox>
+                        <Button onAction="#handleSubmitRegister" prefHeight="45.0" prefWidth="400.0" style="-fx-background-color: linear-gradient(to bottom, #deb869, #a37a2c); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 5; -fx-cursor: hand;" text="CREATE ACCOUNT" />
+                        <Button onAction="#showLoginScreen" style="-fx-background-color: transparent; -fx-text-fill: #8b6c42; -fx-cursor: hand;" text="Back to Login" />
                     </children>
                     <padding><Insets bottom="40.0" left="40.0" right="40.0" top="40.0" /></padding>
+                </VBox>
+
+                <VBox fx:id="paneForgotPassword" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" spacing="20.0" style="-fx-background-color: #fdfbf7; -fx-background-radius: 10; -fx-border-color: #cfa860; -fx-border-radius: 10; -fx-border-width: 2; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 20, 0, 0, 10);" visible="false">
+                    <children>
+                        <Label text="Reset Password" textFill="#8b6c42">
+                            <font><Font name="Georgia Bold" size="24.0" /></font>
+                        </Label>
+                        <TextField fx:id="txtForgotUsername" prefHeight="40.0" prefWidth="350.0" promptText="Username" style="-fx-background-color: #fdfaf3; -fx-border-color: #dcb879; -fx-border-radius: 5;" />
+                        <PasswordField fx:id="txtForgotNewPassword" prefHeight="40.0" promptText="New password" style="-fx-background-color: #fdfaf3; -fx-border-color: #dcb879; -fx-border-radius: 5;" />
+                        <PasswordField fx:id="txtForgotConfirm" prefHeight="40.0" promptText="Confirm new password" style="-fx-background-color: #fdfaf3; -fx-border-color: #dcb879; -fx-border-radius: 5;" />
+                        <Label fx:id="lblForgotStatus" textFill="RED" />
+                        <Button onAction="#handleSubmitForgotPassword" prefHeight="45.0" prefWidth="350.0" style="-fx-background-color: linear-gradient(to bottom, #deb869, #a37a2c); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 5; -fx-cursor: hand;" text="CHANGE PASSWORD" />
+                        <Button onAction="#showLoginScreen" style="-fx-background-color: transparent; -fx-text-fill: #8b6c42; -fx-cursor: hand;" text="Back to Login" />
+                    </children>
+                    <padding><Insets bottom="40.0" left="40.0" right="40.0" top="40.0" /></padding>
+                </VBox>
+
+                <VBox fx:id="paneLogin" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="480.0" spacing="20.0" style="-fx-background-color: #fdfbf7; -fx-background-radius: 8; -fx-border-color: #d4af37; -fx-border-radius: 8; -fx-border-width: 2; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 25, 0, 0, 10);">
+                    <children>
+                        <VBox alignment="CENTER" spacing="5.0">
+                            <children>
+                                <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                    <image><Image url="@../images/auction.png" /></image>
+                                </ImageView>
+                                <Label text="Secure Portal Sign-In" textFill="#8b6508">
+                                    <font><Font name="Georgia" size="26.0" /></font>
+                                </Label>
+                            </children>
+                            <VBox.margin><Insets bottom="10.0" /></VBox.margin>
+                        </VBox>
+
+                        <TextField fx:id="txtUsername" prefHeight="45.0" promptText="Username / Email Address" style="-fx-background-color: #fcf9f2; -fx-border-color: #dcb879; -fx-border-radius: 5; -fx-background-radius: 5; -fx-prompt-text-fill: #a99a86; -fx-text-fill: #333333;">
+                            <font><Font size="14.0" /></font>
+                        </TextField>
+
+                        <PasswordField fx:id="txtPassword" prefHeight="45.0" promptText="Password" style="-fx-background-color: #fcf9f2; -fx-border-color: #dcb879; -fx-border-radius: 5; -fx-background-radius: 5; -fx-prompt-text-fill: #a99a86; -fx-text-fill: #333333;">
+                            <font><Font size="14.0" /></font>
+                        </PasswordField>
+
+                        <HBox alignment="CENTER_LEFT">
+                            <children>
+                                <CheckBox text="Remember Me" textFill="#6e5c41">
+                                    <font><Font size="13.0" /></font>
+                                </CheckBox>
+                                <Region HBox.hgrow="ALWAYS" />
+                                <Button onAction="#showForgotPasswordScreen" style="-fx-background-color: transparent; -fx-text-fill: #8b6508; -fx-cursor: hand; -fx-padding: 0;" text="Forgot Password?" underline="false">
+                                    <font><Font size="13.0" /></font>
+                                </Button>
+                            </children>
+                        </HBox>
+
+                        <Label fx:id="lblStatus" textFill="#e74c3c" />
+
+                        <Button onAction="#handleLogin" prefHeight="50.0" prefWidth="400.0" style="-fx-background-color: linear-gradient(to bottom, #d4af37, #9b7126); -fx-text-fill: white; -fx-font-family: 'System'; -fx-font-weight: bold; -fx-font-size: 16px; -fx-background-radius: 5; -fx-cursor: hand; -fx-effect: dropshadow(two-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 2);" text="ACCESS ACCOUNT" />
+
+                        <HBox alignment="CENTER" spacing="5.0">
+                            <children>
+                                <Label text="New here?" textFill="#6e5c41">
+                                    <font><Font size="14.0" /></font>
+                                </Label>
+                                <Button onAction="#showRegisterScreen" style="-fx-background-color: transparent; -fx-text-fill: #8b6508; -fx-cursor: hand; -fx-padding: 0;" text="Create a new account." underline="true">
+                                    <font><Font size="14.0" /></font>
+                                </Button>
+                            </children>
+                            <VBox.margin><Insets top="10.0" /></VBox.margin>
+                        </HBox>
+                    </children>
+                    <padding><Insets bottom="45.0" left="40.0" right="40.0" top="30.0" /></padding>
                 </VBox>
             </children>
         </StackPane>

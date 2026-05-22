@@ -19,4 +19,12 @@ public class ProductDetailBinder {
         if (lblDescription != null) lblDescription.setText(viewModel.description());
         if (lblStartingPrice != null) lblStartingPrice.setText(viewModel.startingPrice());
     }
+
+    public void showLoading() {
+        bind(new ProductDetailViewModel("Product Detail Information", "Loading data from server...", ""));
+    }
+
+    public void showNotFound() {
+        bind(new ProductDetailViewModel("Product Detail Information", "Product information not found!", ""));
+    }
 }

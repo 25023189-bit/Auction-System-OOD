@@ -1,17 +1,15 @@
 package com.auction.client.feature.controllers.auction.seller.form;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public record SellerAuctionFormData(
         String itemName,
         String itemDescription,
-        String startingPrice,
-        String minimumJoinAmount,
-        String bidStep,
-        LocalDate startDate,
-        String startHour,
-        String startMinute,
-        String duration,
-        String extensionSeconds
+        double startingPrice,
+        double minimumJoinAmount,
+        double bidStep,
+        LocalDateTime startTime,
+        int durationMinutes,
+        int extensionSeconds
 ) {
 }

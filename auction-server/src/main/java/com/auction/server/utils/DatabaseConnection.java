@@ -24,7 +24,7 @@ public final class DatabaseConnection {
         // Bỏ qua toàn bộ việc đọc file properties hay biến môi trường đang bị lỗi
         // =========================================================================
 
-        String url = "jdbc:mysql://mysql-2d6c9860-vnu-66a9.j.aivencloud.com:13022/auction_system_v2?sslMode=REQUIRED";
+        String url = "jdbc:mysql://mysql-2d6c9860-vnu-66a9.j.aivencloud.com:13022/defaultdb?sslMode=REQUIRED";
         String user = "avnadmin";
         String password = "AVNS_cVgX4Q0XNC3iArZBnaY";
         String driver = DEFAULT_DRIVER;

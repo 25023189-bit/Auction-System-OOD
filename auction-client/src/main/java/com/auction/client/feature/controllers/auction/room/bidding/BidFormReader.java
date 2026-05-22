@@ -12,4 +12,10 @@ public class BidFormReader {
     public String readAmount() {
         return txtBidAmount == null || txtBidAmount.getText() == null ? "" : txtBidAmount.getText();
     }
+
+    public void clear() {
+        if (txtBidAmount != null) {
+            txtBidAmount.clear();
+        }
+    }
 }
