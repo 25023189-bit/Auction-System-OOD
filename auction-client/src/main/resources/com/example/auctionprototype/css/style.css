@@ -180,12 +180,28 @@
 }
 
 /* Header */
+.top-nav-taskboard {
+    -fx-background-color: #f7fbff;
+    -fx-background-image: url("../images/bidder_mainLobby/background_bidder_mainLobby_taskboard.png");
+    -fx-background-size: 280px 224px;
+    -fx-background-position: center top;
+    -fx-background-repeat: repeat;
+}
+
 .bidder-header {
     -fx-padding: 18px 26px 16px 26px;
-    -fx-background-color: linear-gradient(to right, #ffffff, #eef5ff);
-    -fx-border-color: transparent transparent #ead7ad transparent;
-    -fx-border-width: 0 0 1px 0;
+    -fx-background-color: linear-gradient(to right, rgba(255, 255, 255, 0.91), rgba(238, 245, 255, 0.84));
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
     -fx-effect: dropshadow(gaussian, rgba(13, 38, 70, 0.09), 18, 0.16, 0, 5);
+}
+
+.nav-border-divider {
+    -fx-background-color: transparent;
+    -fx-background-image: url("../images/bidder_mainLobby/border_background.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
 }
 
 .bidder-logo {
@@ -224,6 +240,20 @@
     -fx-font-weight: bold;
     -fx-text-fill: #0d2646;
     -fx-padding: 0 4px 0 2px;
+}
+
+.welcome-user-chip {
+    -fx-padding: 8px 13px;
+    -fx-background-color: rgba(255, 252, 246, 0.86);
+    -fx-background-radius: 24px;
+    -fx-border-color: rgba(232, 215, 184, 0.92);
+    -fx-border-radius: 24px;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(13, 38, 70, 0.10), 12, 0.14, 0, 3);
+}
+
+.user-icon {
+    -fx-effect: dropshadow(gaussian, rgba(211, 142, 29, 0.18), 8, 0.18, 0, 2);
 }
 
 .bidder-logout-button {
