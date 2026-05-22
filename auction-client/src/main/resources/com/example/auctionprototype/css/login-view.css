@@ -1,0 +1,36 @@
+@import "style.css";
+
+/* Login background */
+.my-background {
+    -fx-background-image: url("../images/login-card.png");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+}
+
+/* Header */
+.header-label {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-alignment: center;
+}
+
+/* Login button */
+.login-button {
+    -fx-background-color: linear-gradient(to right, #4a90e2, #007aff);
+    -fx-background-radius: 25px;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 122, 255, 0.30), 10, 0, 0, 5);
+}
+
+.login-button:hover {
+    -fx-background-color: linear-gradient(to right, #357abd, #005bb5);
+}
+
+.login-button:pressed {
+    -fx-background-color: #005bb5;
+    -fx-translate-y: 2px;
+}

@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="bidder-root" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.AuctionController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="bidder-root" stylesheets="@../css/bidder-mainLobby-view.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.app.root.AuctionController">
 
     <children>
         <BorderPane fx:id="paneMainLobby" styleClass="bidder-shell" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -29,10 +29,10 @@
                             </image>
                         </ImageView>
 
-                        <VBox alignment="CENTER_LEFT" spacing="3.0">
-                            <Label prefHeight="43.0" prefWidth="165.0" styleClass="bidder-title" text="Bidder Lobby" />
+                        <VBox alignment="CENTER_LEFT" prefHeight="78.0" prefWidth="215.0" spacing="3.0">
+                            <Label prefHeight="46.0" prefWidth="161.0" scaleX="1.2" scaleY="1.1" styleClass="bidder-title" text="Bidder Lobby" />
 
-                            <ImageView fitHeight="74.0" fitWidth="159.0" pickOnBounds="true" preserveRatio="true" styleClass="bidder-header-divider">
+                            <ImageView fitHeight="37.0" fitWidth="156.0" pickOnBounds="true" preserveRatio="true" scaleX="1.2" styleClass="bidder-header-divider">
                                 <image>
                                     <Image url="@../images/bidder_mainLobby/ornament_divider.png" />
                                 </image>
@@ -57,9 +57,9 @@
                                 </image>
                             </ImageView>
                             <Label fx:id="lblUsername" maxWidth="155.0" prefHeight="46.0" prefWidth="155.0" styleClass="bidder-welcome-text" text="Welcome!" textAlignment="CENTER" textFill="#69592c">
-                        <font>
-                           <Font size="25.0" />
-                        </font></Label>
+                                <font>
+                                    <Font size="25.0" />
+                                </font></Label>
                         </HBox>
 
                         <Button mnemonicParsing="false" onAction="#handleLogout" prefHeight="64.0" prefWidth="142.0" styleClass="bidder-logout-button" text="Log out" />
@@ -231,9 +231,17 @@
                             <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mouseTransparent="true" styleClass="bidder-auction-glass-overlay" />
 
                             <!-- Runtime auction cards: keep visible and clickable -->
-                            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" styleClass="bidder-auction-scroll" vbarPolicy="AS_NEEDED">
+                            <ScrollPane fitToHeight="false" fitToWidth="true" hbarPolicy="NEVER" pannable="true" styleClass="bidder-auction-scroll" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
                                 <content>
-                                    <FlowPane fx:id="paneSelectAuction" alignment="TOP_LEFT" hgap="16.0" styleClass="bidder-auction-grid" vgap="16.0" />
+                                    <!--
+                                        Auction card container.
+                                        Keep fx:id as FlowPane to avoid breaking AuctionController.
+                                        prefWrapLength is tuned for 3 cards per row; when more cards are added,
+                                        FlowPane wraps them to the next row and ScrollPane handles vertical scrolling.
+                                    -->
+                                    <StackPane alignment="TOP_CENTER" styleClass="bidder-auction-grid-host">
+                                        <FlowPane fx:id="paneSelectAuction" alignment="TOP_LEFT" columnHalignment="LEFT" hgap="16.0" maxWidth="668.0" prefWidth="668.0" prefWrapLength="668.0" rowValignment="TOP" styleClass="bidder-auction-grid" vgap="16.0" />
+                                    </StackPane>
                                 </content>
                             </ScrollPane>
                         </StackPane>
@@ -284,6 +292,6 @@
             </center>
         </BorderPane>
 
-        <fx:include fx:id="chatbot" scaleY="1.2" source="chatbot-view.fxml" translateX="-20.0" translateY="-50.0" AnchorPane.bottomAnchor="18.0" AnchorPane.rightAnchor="18.0" />
+        <fx:include rotate="0.8" scaleX="1.25" scaleY="1.25" source="icon-chatbot-view.fxml" translateX="-30.0" translateY="-25.0" AnchorPane.bottomAnchor="18.0" AnchorPane.rightAnchor="18.0" />
     </children>
 </AnchorPane>

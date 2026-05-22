@@ -1,6 +1,6 @@
 package com.auction.client.app.launcher;
 
-import com.auction.client.feature.controllers.AdminController;
+import com.auction.client.feature.controllers.account.admin.AdminController;
 import com.auction.client.session.SessionStore;
 import com.auction.client.service.AuctionService;
 import javafx.fxml.FXMLLoader;

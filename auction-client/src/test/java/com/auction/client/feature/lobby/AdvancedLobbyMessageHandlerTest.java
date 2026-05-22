@@ -1,6 +1,6 @@
 package com.auction.client.feature.lobby;
 
-import com.auction.client.feature.controllers.viewmodel.LobbyRoomDisplayModel;
+import com.auction.client.feature.viewmodel.LobbyRoomDisplayModel;
 import com.auction.client.shared.mapper.DisplayMapper;
 import com.auction.common.dto.Message;
 import com.auction.common.model.AuctionRoom;

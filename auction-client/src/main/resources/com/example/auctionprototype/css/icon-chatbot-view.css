@@ -1,0 +1,22 @@
+@import "style.css";
+
+.chatbot-open-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-text-fill: transparent;
+    -fx-font-weight: bold;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(23, 105, 224, 0.30), 14, 0.18, 0, 5);
+}
+
+.chatbot-open-button:hover {
+    -fx-background-color: transparent;
+    -fx-effect: dropshadow(gaussian, rgba(23, 105, 224, 0.46), 22, 0.22, 0, 7);
+}
+
+.chatbot-open-button:pressed {
+    -fx-background-color: transparent;
+}

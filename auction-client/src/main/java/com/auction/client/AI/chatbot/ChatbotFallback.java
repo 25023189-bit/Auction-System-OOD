@@ -8,7 +8,7 @@ package com.auction.client.AI.chatbot;
  * - Tránh để UI chatbot hiển thị lỗi kỹ thuật thô cho người dùng.
  *
  * Luồng chính:
- * 1. PythonChatbotConnection hoặc ChatbotController phát hiện lỗi/response rỗng.
+ * 1. PythonChatbotConnection hoặc ChatBotController phát hiện lỗi/response rỗng.
  * 2. Caller dùng MESSAGE làm phản hồi bot trên giao diện.
  *
  * Business rules:

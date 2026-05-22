@@ -1,6 +1,6 @@
 package com.auction.client.app.launcher;
 
-import com.auction.client.feature.controllers.SellerController;
+import com.auction.client.feature.controllers.auction.seller.SellerController;
 import com.auction.client.service.AuctionService;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

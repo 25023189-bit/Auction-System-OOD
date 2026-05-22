@@ -1,7 +1,7 @@
 package com.auction.client.core.navigation;
 
-import com.auction.client.feature.controllers.AdminController;
-import com.auction.client.feature.controllers.SellerController;
+import com.auction.client.feature.controllers.account.admin.AdminController;
+import com.auction.client.feature.controllers.auction.seller.SellerController;
 import com.auction.client.session.SessionStore;
 import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.User;
@@ -41,6 +41,7 @@ public class FxSceneNavigator implements SceneNavigator {
     private final WindowStateHandler windowStateHandler;
     private final SessionStore sessionStore;
     private final AuctionService auctionService;
+    private Stage mainStage;
 
     public FxSceneNavigator(Object controllerRef,
                             WindowStateHandler windowStateHandler,
@@ -62,6 +63,7 @@ public class FxSceneNavigator implements SceneNavigator {
 
             Stage stage = resolveStage();
             if (stage != null) {
+                rememberMainStage(stage);
                 stage.setScene(new Scene(root));
                 windowStateHandler.apply(stage, "Auction System");
             }
@@ -83,6 +85,7 @@ public class FxSceneNavigator implements SceneNavigator {
 
             stage = resolveStage();
             if (stage != null) {
+                rememberMainStage(stage);
                 stage.setScene(new Scene(root));
                 windowStateHandler.apply(stage, resolveLobbyTitle());
             }
@@ -107,6 +110,7 @@ public class FxSceneNavigator implements SceneNavigator {
 
             stage = resolveStage();
             if (stage != null) {
+                rememberMainStage(stage);
                 stage.setScene(new Scene(root));
                 windowStateHandler.apply(stage, resolveAuctionRoomTitle());
             }
@@ -160,10 +164,35 @@ public class FxSceneNavigator implements SceneNavigator {
 
     // Tìm Stage đang hiển thị để thay Scene hiện tại.
     private Stage resolveStage() {
-        return (Stage) Window.getWindows().stream()
+        if (mainStage != null && mainStage.isShowing()) {
+            return mainStage;
+        }
+
+        Stage stage = Window.getWindows().stream()
                 .filter(Window::isShowing)
+                .filter(Stage.class::isInstance)
+                .map(Stage.class::cast)
+                .filter(this::isMainApplicationStage)
                 .findFirst()
                 .orElse(null);
+        rememberMainStage(stage);
+        return stage;
+    }
+
+    private void rememberMainStage(Stage stage) {
+        if (stage != null && isMainApplicationStage(stage)) {
+            mainStage = stage;
+        }
+    }
+
+    private boolean isMainApplicationStage(Stage stage) {
+        if (stage == null) return false;
+        String title = stage.getTitle();
+        return title == null
+                || title.isBlank()
+                || "Auction System".equals(title)
+                || title.endsWith("Lobby - Auction System")
+                || title.startsWith("Auction Room");
     }
 
     // Factory giúp tái sử dụng controller chính hoặc tạo controller phụ khi cần.
