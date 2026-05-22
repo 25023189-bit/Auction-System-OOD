@@ -1,6 +1,6 @@
 {
   "status": "fallback",
   "answer_source": "Logist",
-  "answer": "Về Quản lý số dư tài khoản: Mỗi người dùng có số dư tài khoản dùng trong quá trình đấu giá. Bidder cần có số dư đủ điều kiện để tham gia phòng và số dư sẽ được cập nhật khi phiên đấu giá kết thúc thành công.",
-  "timestamp": "2026-05-21T23:34:20"
+  "answer": "Về Đăng nhập hệ thống: Người dùng đăng nhập bằng username hoặc thông tin định danh hợp lệ cùng mật khẩu. Sau khi đăng nhập thành công, hệ thống xác định vai trò của tài khoản là bidder, seller hoặc admin để mở giao diện phù hợp.",
+  "timestamp": "2026-05-22T14:54:24"
 }
