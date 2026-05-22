@@ -13,6 +13,7 @@ import com.auction.client.service.AuctionService;
 import com.auction.client.session.SessionStore;
 import com.auction.client.shared.support.FxThreadExecutor;
 import com.auction.common.dto.Message;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.AreaChart;
@@ -71,6 +72,7 @@ public class AuctionController implements Initializable, ServerMessageListener {
     private SessionStore sessionStore;
     private FxThreadExecutor fxThreadExecutor;
     private SceneNavigator sceneNavigator;
+    private AuctionControllerDependencies dependencies;
 
     private AuthViewCoordinator authViewCoordinator;
     private LobbyViewCoordinator lobbyViewCoordinator;
@@ -82,7 +84,9 @@ public class AuctionController implements Initializable, ServerMessageListener {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         LOGGER.debug("Initializing AuctionController.");
-        AuctionControllerDependencies dependencies = new AuctionControllerBootstrap().bootstrap(this, this);
+        if (dependencies == null) {
+            dependencies = new AuctionControllerBootstrap().bootstrap(this, this);
+        }
         auctionService = dependencies.auctionService();
         sessionStore = dependencies.sessionStore();
         fxThreadExecutor = dependencies.fxThreadExecutor();
@@ -125,6 +129,7 @@ public class AuctionController implements Initializable, ServerMessageListener {
             sessionLifecycleController.setAuctionTimer(auctionRoomViewCoordinator.auctionTimerService());
         }
 
+        clientResponseCoordinator = null;
         ensureClientResponseCoordinatorReady();
         LOGGER.debug("AuctionController initialized.");
     }
@@ -215,8 +220,20 @@ public class AuctionController implements Initializable, ServerMessageListener {
     }
 
     public void updateConnectionStatus(String status) {
-        if (lblStatus != null) {
+        if (lblStatus == null) {
+            return;
+        }
+
+        Runnable update = () -> {
             lblStatus.setText("Status: " + status);
+        };
+
+        if (Platform.isFxApplicationThread() || lblStatus.getScene() == null) {
+            update.run();
+        } else if (fxThreadExecutor != null) {
+            fxThreadExecutor.execute(update);
+        } else {
+            Platform.runLater(update);
         }
     }
 
