@@ -80,3 +80,5 @@ auction-server/src/main/resources/db.properties
 # showErrorBox startup bug in the installed trial build.
 tools/StarUML-patched/
 tools/StarUML-user-data/
+
+auction-server/src/main/resources/db.properties

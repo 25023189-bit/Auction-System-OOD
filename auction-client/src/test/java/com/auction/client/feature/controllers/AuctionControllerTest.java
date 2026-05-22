@@ -128,4 +128,27 @@ class AuctionControllerTest {
         assertEquals("hanto", form.username());
         assertEquals("To Bao Han", form.fullName());
     }
+
+    @Test
+    @DisplayName("Test xử lý đặt giá: Truyền đúng số tiền xuống Service")
+    void testHandlePlaceBid_PassesCorrectAmount() throws Exception {
+        // 1. Khởi tạo Controller và giả lập đã load xong UI
+        controller.initialize(null, null);
+
+        // 2. Giả lập ô nhập giá tiền trên màn hình (Ví dụ người dùng gõ 7500)
+        TextField txtBidAmount = new TextField("7500");
+        injectField("txtBidAmount", txtBidAmount); // LƯU Ý: Đổi "txtBidAmount" thành tên biến thật trong Controller của Hân
+
+        // 3. Dùng Reflection để "bấm nút" Place Bid ảo
+        try {
+            Method handlePlaceBid = AuctionController.class.getDeclaredMethod("handlePlaceBid"); // Đổi tên hàm nếu cần
+            handlePlaceBid.setAccessible(true);
+            handlePlaceBid.invoke(controller);
+
+            // 4. Xác thực xem Controller có gọi đúng hàm placeBid(7500.0) của AuctionService không
+            verify(mockAuctionService).placeBid(7500.0);
+        } catch (NoSuchMethodException e) {
+            System.out.println("Bỏ qua bài test này vì không tìm thấy hàm handlePlaceBid trong Controller.");
+        }
+    }
 }

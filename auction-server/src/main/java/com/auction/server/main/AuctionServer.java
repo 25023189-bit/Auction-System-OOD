@@ -2,8 +2,7 @@ package com.auction.server.main;
 
 import com.auction.common.dto.Message;
 import com.auction.common.model.AuctionRoom;
-import com.auction.server.ClientHandler;
-import com.auction.server.dao.AuctionDAO;
+import com.auction.server.handler.ClientHandler;
 import com.auction.server.service.AuctionRoomService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
