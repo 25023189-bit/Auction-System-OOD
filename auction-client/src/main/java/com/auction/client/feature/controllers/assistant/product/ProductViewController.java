@@ -24,12 +24,14 @@ public class ProductViewController {
     }
 
     public void setAuctionService(AuctionService auctionService) {
+        ensureDetailBinderReady();
         this.auctionService = auctionService;
         responseController = new ProductDetailsResponseController(auctionService, detailMapper, detailBinder);
         responseController.listenAndBind();
     }
 
     public void setRoomId(String roomId) {
+        ensureDetailBinderReady();
         detailBinder.showLoading();
         if (auctionService != null) {
             auctionService.requestProductDetails(roomId);
@@ -44,5 +46,11 @@ public class ProductViewController {
         javafx.scene.Node source = (javafx.scene.Node) actionEvent.getSource();
         javafx.stage.Stage stage = (javafx.stage.Stage) source.getScene().getWindow();
         stage.close();
+    }
+
+    private void ensureDetailBinderReady() {
+        if (detailBinder == null) {
+            detailBinder = new ProductDetailBinder(lblProductName, lblDescription, lblStartingPrice);
+        }
     }
 }

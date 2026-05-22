@@ -1,6 +1,6 @@
 package com.auction.client.network.messaging;
 
-import com.auction.client.feature.controllers.AdminController;
+import com.auction.client.feature.controllers.account.admin.AdminController;
 import com.auction.client.session.SessionStore;
 import com.auction.common.dto.Message;
 import com.auction.common.model.AuctionRoom;

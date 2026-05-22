@@ -1,5 +1,6 @@
 package com.auction.client.feature.controllers;
 
+import com.auction.client.feature.controllers.auction.seller.SellerController;
 import com.auction.client.service.AuctionService;
 import javafx.application.Platform;
 import javafx.scene.Scene;

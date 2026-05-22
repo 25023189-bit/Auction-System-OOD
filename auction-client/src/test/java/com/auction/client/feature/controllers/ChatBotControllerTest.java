@@ -1,6 +1,8 @@
 package com.auction.client.feature.controllers;
 
 import com.auction.client.AI.chatbot.PythonChatbotConnection;
+import com.auction.client.feature.controllers.assistant.chatbot.ChatBotController;
+import com.auction.client.feature.controllers.assistant.chatbot.request.ChatbotRequestRunner;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +20,7 @@ import java.net.URL;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Consumer;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -42,7 +45,7 @@ class ChatBotControllerTest {
     @BeforeEach
     void setUp() throws Exception {
         chatbotConnection = mock(PythonChatbotConnection.class);
-        controller = new ChatBotController(chatbotConnection);
+        controller = new ChatBotController();
         chatMessages = new VBox();
         chatScrollPane = new ScrollPane(chatMessages);
         txtChatbotInput = new TextField();
@@ -68,6 +71,13 @@ class ChatBotControllerTest {
         when(chatbotConnection.ask("Xin chào Bot")).thenReturn("Phản hồi giả lập");
 
         runOnFxAndWait(controller::initialize);
+        injectField(controller, "requestRunner", new ChatbotRequestRunner() {
+            @Override
+            public void askAsync(String message, Consumer<String> onSuccess, Consumer<Throwable> onFailed) {
+                chatbotConnection.ask(message);
+                onSuccess.accept("Pháº£n há»“i giáº£ láº­p");
+            }
+        });
         int initialMessagesSize = chatMessages.getChildren().size();
 
         runOnFxAndWait(() -> {
