@@ -48,6 +48,11 @@ public class AuctionFlowFallbackHandler implements MessageHandler {
 
     @Override
     public boolean supports(String action) {
+        // GIÁP BẢO VỆ: Chặn đứng null ngay từ cửa
+        if (action == null) {
+            return false;
+        }
+
         // Nhóm action này bao gồm tạo phòng, lỗi vào phòng, lỗi bid và thông báo đóng phiên.
         return switch (action) {
             case "CREATE_AUCTION_SUCCESS",

@@ -1,7 +1,6 @@
-package com.auction.server;
+package com.auction.server.handler;
 
 import com.auction.common.dto.Message;
-import com.auction.server.handler.*;
 import com.auction.server.main.AuctionServer;
 import com.auction.server.network.dispatcher.ActionDispatcher;
 import com.auction.server.network.dispatcher.ActionRouteResult;
