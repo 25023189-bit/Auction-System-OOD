@@ -1,4 +1,6 @@
 import json
+import subprocess
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -78,10 +80,45 @@ def documents_by_label(path: Path = KNOWLEDGE_PATH) -> dict[str, dict[str, str]]
 
 def load_chatbot_model(model_path: Path = MODEL_PATH):
     if not model_path.exists():
-        raise FileNotFoundError(
-            f"Chua co model tai {model_path}. Hay chay: python Auction_AI\\ChatBot\\Logist\\training\\train_model.py"
-        )
-    return load(model_path)
+        train_chatbot_model()
+    try:
+        model = load(model_path)
+    except Exception:
+        train_chatbot_model()
+        model = load(model_path)
+    return make_model_runtime_compatible(model)
+
+
+def train_chatbot_model() -> None:
+    script_path = Path(__file__).resolve().parents[1] / "training" / "train_model.py"
+    subprocess.run(
+        [sys.executable, str(script_path)],
+        cwd=str(script_path.parents[3]),
+        check=True,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
+
+
+def make_model_runtime_compatible(model: Any) -> Any:
+    for estimator in iter_estimators(model):
+        if estimator.__class__.__name__ == "LogisticRegression" and not hasattr(estimator, "multi_class"):
+            estimator.multi_class = "auto"
+    return model
+
+
+def iter_estimators(model: Any):
+    yield model
+
+    for _, step in getattr(model, "steps", []) or []:
+        yield from iter_estimators(step)
+
+    estimator = getattr(model, "estimator", None)
+    if estimator is not None:
+        yield from iter_estimators(estimator)
+
+    for estimator in getattr(model, "estimators_", []) or []:
+        yield from iter_estimators(estimator)
 
 
 def load_labels(labels_path: Path = LABELS_PATH) -> list[str]:
@@ -124,9 +161,17 @@ def classify_message(
     if not cleaned_message:
         return IntentPrediction([], {})
 
+    loaded_default_model = model is None
     model = model or load_chatbot_model()
     labels = labels or load_labels()
-    scores = predict_scores(model, labels, cleaned_message)
+    try:
+        scores = predict_scores(model, labels, cleaned_message)
+    except AttributeError:
+        if not loaded_default_model:
+            raise
+        train_chatbot_model()
+        model = load_chatbot_model()
+        scores = predict_scores(model, labels, cleaned_message)
     selected_labels = select_labels(scores, message=cleaned_message, threshold=threshold)
     return IntentPrediction(selected_labels, scores)
 

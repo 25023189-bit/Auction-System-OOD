@@ -90,6 +90,14 @@ public class AuctionController implements Initializable, ServerMessageListener {
     @FXML private ChatbotController chatbotController;
 
     // ==========================================================
+    // AUTO BID FIELDS
+    // ==========================================================
+    @FXML private Button btnToggleAutoBid;
+    @FXML private VBox paneAutoBid;
+    @FXML private TextField txtMaxBid;
+    @FXML private TextField txtAutoBidStep;
+
+    // ==========================================================
     // BIỂU ĐỒ GIÁ REAL-TIME (LINE CHART)
     // ==========================================================
     @FXML private AreaChart<String, Number> priceChart;
@@ -581,5 +589,96 @@ public class AuctionController implements Initializable, ServerMessageListener {
                 priceSeries.getData().remove(0);
             }
         });
+    }
+    // ==========================================================
+    // AUTO BID ACTIONS
+    // ==========================================================
+    @FXML
+    private void toggleAutoBidPanel() {
+        if (paneAutoBid != null) {
+            // Đảo ngược trạng thái ẩn/hiện của Form
+            boolean isCurrentlyVisible = paneAutoBid.isVisible();
+            paneAutoBid.setVisible(!isCurrentlyVisible);
+            paneAutoBid.setManaged(!isCurrentlyVisible);
+        }
+    }
+    // ==========================================================
+    // AUTO BID ACTIONS
+    // ==========================================================
+    @FXML
+    private void handleSetAutoBid() {
+        try {
+            // 1. Lấy và kiểm tra dữ liệu đầu vào
+            String maxBidStr = txtMaxBid.getText().replaceAll("[^\\d.]", "");
+            String stepStr = txtAutoBidStep.getText().replaceAll("[^\\d.]", "");
+
+            if (maxBidStr.isEmpty() || stepStr.isEmpty()) {
+                if (txtChatLog != null) txtChatLog.appendText("Hệ thống: Vui lòng nhập đủ Max Bid và Bước giá!\n");
+                return;
+            }
+
+            double maxBid = Double.parseDouble(maxBidStr);
+            double step = Double.parseDouble(stepStr);
+
+            // Tạm thời In log ra màn hình chat để Hân thấy UI hoạt động
+            if (txtChatLog != null) {
+                txtChatLog.appendText(String.format("Hệ thống: Đã thiết lập Auto-Bid! Max: %.0f$, Bước: %.0f$\n", maxBid, step));
+            }
+
+            // Đóng Panel lại cho gọn
+            toggleAutoBidPanel();
+
+            // Đổi màu nút để báo hiệu Auto Bid đang bật
+            if (btnToggleAutoBid != null) {
+                btnToggleAutoBid.setStyle("-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;");
+                btnToggleAutoBid.setText("AUTO BID: ON");
+            }
+
+            // TẠO VÀ GỬI GÓI TIN LÊN SERVER TẠI ĐÂY
+            if (sessionStore != null && sessionStore.getCurrentRoomId() != null) {
+                String roomId = sessionStore.getCurrentRoomId();
+
+                // Đóng gói DTO
+                com.auction.common.dto.AutoBidRequest request = new com.auction.common.dto.AutoBidRequest(roomId, maxBid, step);
+
+                // Bọc vào Message và gửi đi (Gắn Action là "SET_AUTO_BID")
+                com.auction.common.dto.Message msg = new com.auction.common.dto.Message("SET_AUTO_BID", request);
+
+                if (clientConnection != null) {
+                    clientConnection.sendMessage(msg);
+                }
+            }
+
+        } catch (Exception e) {
+            if (txtChatLog != null) txtChatLog.appendText("Hệ thống: Lỗi nhập liệu, vui lòng nhập số hợp lệ!\n");
+        }
+    }
+
+    @FXML
+    private void handleCancelAutoBid() {
+        // Tắt Form và Reset lại giao diện nút bấm
+        toggleAutoBidPanel();
+        if (btnToggleAutoBid != null) {
+            btnToggleAutoBid.setStyle("-fx-background-color: #f1c40f; -fx-text-fill: #2c3e50; -fx-font-weight: bold; -fx-background-radius: 8;");
+            btnToggleAutoBid.setText("AUTO BID ⚙");
+        }
+        if (txtMaxBid != null) txtMaxBid.clear();
+        if (txtAutoBidStep != null) txtAutoBidStep.clear();
+
+        if (txtChatLog != null) txtChatLog.appendText("Hệ thống: Đã hủy Auto-Bid!\n");
+
+        if (txtChatLog != null) txtChatLog.appendText("Hệ thống: Đã hủy Auto-Bid!\n");
+
+        // GỬI LỆNH HỦY LÊN SERVER
+        if (sessionStore != null && sessionStore.getCurrentRoomId() != null) {
+            String roomId = sessionStore.getCurrentRoomId();
+
+            // Lệnh hủy không cần payload phức tạp, chỉ cần đẩy RoomId lên là đủ
+            com.auction.common.dto.Message msg = new com.auction.common.dto.Message("CANCEL_AUTO_BID", roomId);
+
+            if (clientConnection != null) {
+                clientConnection.sendMessage(msg);
+            }
+        }
     }
 }

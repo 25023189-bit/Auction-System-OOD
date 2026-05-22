@@ -70,6 +70,16 @@ db.driver=com.mysql.cj.jdbc.Driver
 
 ## 3.5. Chạy chương trình
 
+### Cài đặt Python ChatBot
+
+ChatBot Python cần dùng đúng các version dependency đã pin để tránh lỗi model `LogisticRegression` khác version giữa các máy:
+
+```powershell
+python -m pip install -r Auction_AI\ChatBot\requirements.txt
+```
+
+Nếu file model bị cũ hoặc không tương thích, ChatBot sẽ tự train lại từ dữ liệu trong `Auction_AI\ChatBot\Logist\data\generated` khi khởi động.
+
 ### Chạy server
 
 Mở lớp:
