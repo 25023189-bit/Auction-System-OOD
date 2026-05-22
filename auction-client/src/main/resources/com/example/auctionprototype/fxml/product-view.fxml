@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 
-<VBox alignment="TOP_CENTER" prefHeight="420.0" prefWidth="780.0" spacing="0.0" styleClass="product-detail-card" stylesheets="@../css/product-view.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.ProductViewController">
+<VBox alignment="TOP_CENTER" prefHeight="420.0" prefWidth="780.0" spacing="0.0" styleClass="product-detail-card" stylesheets="@../css/product-view.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.ProductViewController">
     <children>
         <HBox alignment="CENTER_LEFT" styleClass="card-header-bar">
             <padding>
@@ -19,7 +19,7 @@
             <children>
                 <Label fx:id="lblProductName" styleClass="card-main-title" text="Product Detail Information" />
                 <Region HBox.hgrow="ALWAYS" />
-                <Button styleClass="card-close-btn" text="✕" />
+                <Button onAction="#closeWindow" styleClass="card-close-btn" text="X" />
             </children>
         </HBox>
 
@@ -61,14 +61,11 @@
                             <children>
                                 <HBox alignment="CENTER_LEFT" spacing="10.0">
                                     <Circle radius="4.0" styleClass="neon-bullet" />
+                                    <Label fx:id="lblDescription" styleClass="info-text-highlight" text="Model: Chronos Elite" />
                                 </HBox>
-                                <HBox alignment="CENTER_LEFT" spacing="10.0">
-                                    <Circle radius="4.0" styleClass="neon-bullet" />
-                                </HBox>
+                                <HBox alignment="CENTER_LEFT" spacing="10.0" />
                             </children>
                         </VBox>
-
-                        <Label fx:id="lblDescription" styleClass="product-description-text" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation." wrapText="true" VBox.vgrow="ALWAYS" />
 
                         <HBox alignment="CENTER_LEFT" styleClass="action-footer-row">
                             <children>

@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
+
 /**
  * Entry point JavaFX mở giao diện client từ module hiện tại.
  *

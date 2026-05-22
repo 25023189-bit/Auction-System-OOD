@@ -1,141 +1,158 @@
 /* ==========================================================================
-   STYLE THE THÔNG TIN CHI TIẾT SẢN PHẨM PHONG CÁCH SCI-FI GLASSMORPHISM
+   STYLE PREMIUM LIGHT ROYAL - HỆ NỀN KEM SỮA DỊU MẮT (CREAM & GOLDEN)
    ========================================================================== */
 
-/* Thẻ bọc lớn bên ngoài */
+/* Thẻ bọc lớn ngoài cùng: Hạ độ sáng, chuyển sang màu kem sữa ấm áp và quý phái */
 .product-detail-card {
-    -fx-background-color: rgba(20, 26, 36, 0.75); /* Nền tối mờ xuyên thấu */
-    -fx-background-radius: 18px;
-    -fx-border-color: rgba(0, 242, 254, 0.25); /* Viền hiệu ứng Cyan phát sáng nhẹ */
-    -fx-border-radius: 18px;
-    -fx-border-width: 1.5px;
-    /* Tạo độ sâu bóng đổ mềm mại phủ lên hình nền phía sau */
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 20, 0, 0, 12);
+    -fx-background-color: linear-gradient(to bottom right, #fbf9f3, #f5f0e1);
+    -fx-background-radius: 20px;
+    /* Đường viền kim loại vàng hoàng gia mỏng nhẹ */
+    -fx-border-color: linear-gradient(to right, #dfc17b, #b39652);
+    -fx-border-radius: 20px;
+    -fx-border-width: 1.2px;
+    /* Đổ bóng ấm sắc vàng nâu giúp card chìm vào không gian mượt mà */
+    -fx-effect: dropshadow(three-pass-box, rgba(147, 122, 62, 0.1), 30, 0, 0, 8);
 }
 
-/* Thanh tiêu đề phía trên */
+/* Thanh tiêu đề phía trên: Màu kem đậm hơn một chút để tạo khối tách biệt */
 .card-header-bar {
-    -fx-border-color: rgba(255, 255, 255, 0.08);
-    -fx-border-width: 0 0 1 0; /* Chỉ kẻ đường line mảnh phía dưới */
+    -fx-background-color: rgba(147, 122, 62, 0.03);
+    -fx-border-color: rgba(189, 161, 88, 0.25);
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 14px 22px;
 }
 
+/* Tên tiêu đề chính: Chữ màu vàng đồng cổ điển, Font chữ hoàng gia quý phái */
 .card-main-title {
-    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-family: "Georgia", "Times New Roman", serif;
     -fx-font-weight: bold;
-    -fx-font-size: 22px;
-    -fx-text-fill: linear-gradient(to right, #00f2fe, #4facfe); /* Chữ chuyển màu xanh ngọc */
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 242, 254, 0.3), 8, 0, 0, 0);
+    -fx-font-size: 24px;
+    -fx-text-fill: #665027; /* Màu nâu đồng sẫm giảm chói */
+    -fx-letter-spacing: 0.5px;
 }
 
+/* Nút tắt X tối giản */
 .card-close-btn {
     -fx-background-color: transparent;
-    -fx-text-fill: #94a3b8;
+    -fx-text-fill: #8a94a0;
     -fx-font-size: 16px;
+    -fx-font-weight: bold;
     -fx-cursor: hand;
 }
 .card-close-btn:hover {
-    -fx-text-fill: #ff4757;
+    -fx-text-fill: #665027;
+    -fx-scale-x: 1.15;
+    -fx-scale-y: 1.15;
 }
 
-/* Khung bọc ảnh sản phẩm */
+/* Khung bọc ảnh sản phẩm: Nền xanh da trời nhạt phủ sương (Frosted Light Blue) để tương phản êm dịu với nền kem */
 .image-container-wrapper {
-    -fx-background-color: rgba(0, 0, 0, 0.3);
-    -fx-background-radius: 14px;
-    -fx-padding: 10px;
-    -fx-border-color: rgba(255, 255, 255, 0.05);
-    -fx-border-radius: 14px;
+    -fx-background-color: linear-gradient(to bottom right, rgba(165, 207, 238, 0.25), rgba(255, 255, 255, 0.4));
+    -fx-background-radius: 16px;
+    -fx-padding: 14px;
+    -fx-border-color: rgba(165, 207, 238, 0.5);
+    -fx-border-radius: 16px;
 }
 
 .product-image-view {
-    -fx-background-radius: 10px;
+    -fx-background-radius: 12px;
 }
 
-/* Khối hộp thông số (Stats box) */
+/* Khối hàng ngang chứa 3 thông số Live */
 .live-stats-row {
-    -fx-background-color: rgba(255, 255, 255, 0.03);
-    -fx-padding: 8px 12px;
-    -fx-background-radius: 10px;
-    -fx-border-color: rgba(255, 255, 255, 0.05);
-    -fx-border-radius: 10px;
+    -fx-background-color: transparent;
+    -fx-padding: 10px 0px;
 }
 
+/* Từng ô thông số riêng biệt: Khối hộp trắng kem đục nhẹ nhung mịn, giảm độ tương phản gắt gao */
 .stat-box {
-    -fx-padding: 0 15 0 0;
+    -fx-background-color: rgba(255, 255, 255, 0.85);
+    -fx-padding: 12px 20px;
+    -fx-background-radius: 12px;
+    -fx-border-color: rgba(230, 225, 210, 0.8);
+    -fx-border-radius: 12px;
+    -fx-effect: dropshadow(three-pass-box, rgba(147, 122, 62, 0.04), 8, 0, 0, 2);
 }
 
+/* Nhãn tiêu đề nhỏ thông số */
 .stat-label {
-    -fx-text-fill: #94a3b8;
+    -fx-text-fill: #616e7f;
+    -fx-font-family: "Segoe UI", sans-serif;
     -fx-font-size: 11px;
-    -fx-text-transform: uppercase;
+    -fx-font-weight: 600;
 }
 
-.stat-value {
-    -fx-text-fill: #ffffff;
+/* Giá trị Số lượt đặt & Thời gian: Tone màu xám ấm nhã nhặn */
+.stat-value, .stat-value-time {
+    -fx-text-fill: #434c5e;
     -fx-font-weight: bold;
     -fx-font-size: 18px;
+    -fx-font-family: "Georgia", serif;
 }
 
+/* Riêng mục Giá Hiện Tại: Sắc vàng nâu mật ong hoàng gia đậm nét tinh xảo */
 .stat-value-price {
-    -fx-text-fill: #00f2fe; /* Màu xanh neon rực rỡ */
+    -fx-text-fill: #8f6a2d;
     -fx-font-weight: bold;
     -fx-font-size: 20px;
+    -fx-font-family: "Georgia", serif;
 }
 
-.stat-value-time {
-    -fx-text-fill: #ff9f43; /* Màu cam cảnh báo thời gian */
-    -fx-font-weight: bold;
-    -fx-font-size: 18px;
-}
-
-/* Chấm tròn list và text đính kèm */
+/* Chấm tròn list thông số: Khuyên tai mạ viền Gold tinh tế */
 .neon-bullet {
-    -fx-fill: #00f2fe;
-    -fx-effect: dropshadow(three-pass-box, #00f2fe, 10, 0, 0, 0);
+    -fx-fill: transparent;
+    -fx-stroke: linear-gradient(to bottom right, #dfc17b, #b39652);
+    -fx-stroke-width: 1.5px;
 }
 
+/* Chữ đặc tính sản phẩm: Màu xám than sẫm êm dịu */
 .info-text-highlight {
-    -fx-text-fill: #e2e8f0;
-    -fx-font-size: 13px;
+    -fx-text-fill: #2e3542;
+    -fx-font-size: 13.5px;
+    -fx-font-weight: 500;
 }
 
-/* Mô tả sản phẩm */
+/* Đoạn văn bản mô tả chi tiết: Màu chữ xám nâu nhạt, khoảng cách dòng thoáng rộng, đọc không bị mỏi mắt */
 .product-description-text {
-    -fx-text-fill: #94a3b8;
+    -fx-text-fill: #4c5464;
     -fx-font-size: 13px;
-    -fx-line-spacing: 4px;
+    -fx-line-spacing: 5px;
 }
 
-/* Hàng tương tác nút bấm phía dưới */
+/* Đường dẫn View Bids ẩn chứa nét cổ điển */
 .link-view-bids {
     -fx-background-color: transparent;
-    -fx-text-fill: #00f2fe;
+    -fx-text-fill: #8f6a2d;
     -fx-underline: true;
     -fx-cursor: hand;
-    -fx-padding: 0;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
 }
 .link-view-bids:hover {
-    -fx-text-fill: #4facfe;
+    -fx-text-fill: #2b6cb0;
 }
 
-/* NÚT BẤM PLACE BID PHÁT QUANG CHUẨN KĨ THUẬT CÔNG NGHỆ */
+/* NÚT BẤM ĐẶT GIÁ: Màu xanh da trời satin mịn đổ bóng nhẹ như những viên đá quý sapphire nhạt trên nền kem */
 .btn-neon-action {
-    -fx-background-color: linear-gradient(to right, rgba(0, 242, 254, 0.15), rgba(79, 172, 254, 0.15));
-    -fx-text-fill: #00f2fe;
-    -fx-border-color: #00f2fe;
+    -fx-background-color: linear-gradient(to right, #bfe3f7, #a4d4f2);
+    -fx-text-fill: #434c5e;
+    -fx-border-color: linear-gradient(to right, #dfc17b, #b39652);
     -fx-border-radius: 20px;
     -fx-background-radius: 20px;
     -fx-font-weight: bold;
     -fx-font-size: 13px;
-    -fx-padding: 10px 25px;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-padding: 11px 35px;
     -fx-cursor: hand;
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 242, 254, 0.2), 8, 0, 0, 0);
-    -fx-transition: all 0.3s ease;
+    -fx-letter-spacing: 0.5px;
+    -fx-effect: dropshadow(three-pass-box, rgba(164, 212, 242, 0.4), 10, 0, 0, 4);
 }
 
 .btn-neon-action:hover {
-    -fx-background-color: linear-gradient(to right, #00f2fe, #4facfe);
-    -fx-text-fill: #0c0f16; /* Chữ chuyển tối khi hover */
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 242, 254, 0.6), 15, 0, 0, 0);
-    -fx-scale-x: 1.03;
-    -fx-scale-y: 1.03;
+    /* Khi rê chuột qua: Nút bừng sáng đổi sang sắc vàng kem sữa hoàng gia, chữ đổi sang nâu trầm */
+    -fx-background-color: linear-gradient(to right, #fcf6e8, #f5e6cc);
+    -fx-text-fill: #665027;
+    -fx-effect: dropshadow(three-pass-box, rgba(179, 150, 82, 0.35), 15, 0, 0, 2);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
 }
