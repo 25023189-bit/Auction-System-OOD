@@ -276,4 +276,77 @@ public class AuctionController implements Initializable, ServerMessageListener {
     private com.auction.client.feature.room.AuctionRoomPresenter auctionRoomPresenter() {
         return auctionRoomViewCoordinator != null ? auctionRoomViewCoordinator.auctionRoomPresenter() : null;
     }
+
+    public void prepareForFxmlReload() {
+        // Auth view nodes
+        paneLogin = null;
+        paneRegister = null;
+        paneForgotPassword = null;
+
+        // Main screen roots
+        paneAuctionRoom = null;
+        paneMainLobby = null;
+
+        // Auth fields
+        txtUsername = null;
+        txtPassword = null;
+        txtRegCustomerId = null;
+        txtRegUsername = null;
+        txtRegFullName = null;
+        txtRegPassword = null;
+        txtRegConfirm = null;
+        txtRegOrganization = null;
+        txtForgotUsername = null;
+        txtForgotNewPassword = null;
+        txtForgotConfirm = null;
+        cbRegRole = null;
+        lblStatus = null;
+        lblRegStatus = null;
+        lblForgotStatus = null;
+        lblRegOrganization = null;
+
+        // Lobby fields
+        lblUsername = null;
+        lblBalance = null;
+        lblUsernameDisplay = null;
+        lblCountdownTimer = null;
+        btnCreateAuction = null;
+        paneSelectAuction = null;
+
+        // Auction room fields
+        lblAuctionItemName = null;
+        lblProductName = null;
+        lblCurrentPrice = null;
+        lblParticipantCount = null;
+        lblTimer = null;
+        lblTimeLeft = null;
+        lblDescription = null;
+        txtChatLog = null;
+        txtItemDescriptionDisplay = null;
+        txtBidAmount = null;
+        txtChatInput = null;
+        btnCloseAuction = null;
+        btnPlaceBid = null;
+        imgProduct = null;
+        priceChart = null;
+
+        // Autobid fields
+        btnToggleAutoBid = null;
+        paneAutoBid = null;
+        txtMaxBid = null;
+        txtAutoBidStep = null;
+
+        // Optional dashboard/news fields
+        vboxCurrencyRates = null;
+        vboxNews = null;
+
+        // Reset view-specific coordinators only.
+        // Không reset auctionService/sessionStore/dependencies/clientConnection.
+        authViewCoordinator = null;
+        lobbyViewCoordinator = null;
+        auctionRoomViewCoordinator = null;
+        dashboardLauncherController = null;
+        sessionLifecycleController = null;
+        clientResponseCoordinator = null;
+    }
 }

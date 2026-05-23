@@ -18,10 +18,6 @@
             <groupId>com.auction</groupId>
             <artifactId>auction-common</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.auction</groupId>
-            <artifactId>auction-client</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>com.mysql</groupId>

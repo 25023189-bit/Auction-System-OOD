@@ -165,7 +165,10 @@ public class AuctionRoomViewCoordinator {
 
         AuctionRoom room = sessionStore.getCurrentRoom();
         auctionRoomStateBinder.bind(room);
-        auctionTimerService.start(room.getStartTime(), room.getEndTime());
+        auctionTimerService.start(
+                room.getStartTime(),
+                room.getScheduledEndTime() != null ? room.getScheduledEndTime() : room.getEndTime()
+        );
         closeAuctionController.updateButtonVisibility();
 
         if (priceChartController == null) {

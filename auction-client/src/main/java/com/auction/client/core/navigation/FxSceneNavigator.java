@@ -1,6 +1,7 @@
 package com.auction.client.core.navigation;
 
 import com.auction.client.feature.controllers.account.admin.AdminController;
+import com.auction.client.feature.controllers.app.root.AuctionController;
 import com.auction.client.feature.controllers.auction.seller.SellerController;
 import com.auction.client.session.SessionStore;
 import com.auction.common.model.AuctionRoom;
@@ -198,6 +199,9 @@ public class FxSceneNavigator implements SceneNavigator {
     // Factory giúp tái sử dụng controller chính hoặc tạo controller phụ khi cần.
     private Object createController(Class<?> controllerClass) {
         if (controllerClass.isInstance(controllerRef)) {
+            if (controllerRef instanceof AuctionController auctionController) {
+                auctionController.prepareForFxmlReload();
+            }
             return controllerRef;
         }
 

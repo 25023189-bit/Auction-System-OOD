@@ -1,5 +1,8 @@
 package com.auction.client.AI.chatbot;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -15,24 +18,35 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public final class PythonChatbotConnection {
+    private static final Logger LOGGER = LoggerFactory.getLogger(PythonChatbotConnection.class);
+
     private static final PythonChatbotConnection INSTANCE = new PythonChatbotConnection();
-    private static final Duration PROCESS_TIMEOUT = Duration.ofSeconds(90);
+    private static final String DEFAULT_CHATBOT_DIR = "Auction_AI/ChatBot";
+    private static final long DEFAULT_TIMEOUT_SECONDS = 10L;
+    private static final int MAX_LOG_CHARS = 1_000;
     private static final String CHATBOT_DIR_PROPERTY = "auction.chatbot.dir";
     private static final String CHATBOT_DIR_ENV = "AUCTION_CHATBOT_DIR";
     private static final String PYTHON_COMMAND_PROPERTY = "auction.chatbot.python";
-    private static final String PYTHON_COMMAND_ENV = "AUCTION_CHATBOT_PYTHON";
+    private static final String PYTHON_COMMAND_ENV = "AUCTION_PYTHON_COMMAND";
+    private static final String TIMEOUT_SECONDS_PROPERTY = "auction.chatbot.timeoutSeconds";
+    private static final String TIMEOUT_SECONDS_ENV = "AUCTION_CHATBOT_TIMEOUT_SECONDS";
 
     private final BotSpec chatbot;
-    private final String configuredPythonCommand;
+    private final String pythonCommand;
+    private final Duration processTimeout;
 
     private PythonChatbotConnection() {
         this.chatbot = new BotSpec(
                 resolveChatbotDirectory(),
+                Path.of("IOdata").resolve("input.json"),
                 Path.of("IOdata").resolve("output.json"),
                 Path.of("status").resolve("infomation.json"),
                 "answer"
         );
-        this.configuredPythonCommand = resolvePythonCommand();
+        this.pythonCommand = resolvePythonCommand();
+        this.processTimeout = resolveTimeout();
+        logConfiguration();
+        validatePaths();
     }
 
     public static PythonChatbotConnection getInstance() {
@@ -68,6 +82,9 @@ public final class PythonChatbotConnection {
     private Optional<String> askBot(String question) throws InterruptedException {
         try {
             validateBotFiles();
+            if (!validatePaths()) {
+                LOGGER.warn("ChatBot path diagnostics found issues. Continuing with existing chatbot fallback behavior.");
+            }
             Files.deleteIfExists(chatbot.outputPath());
             Files.deleteIfExists(chatbot.errorInfoPath());
 
@@ -94,6 +111,7 @@ public final class PythonChatbotConnection {
 
             return answer;
         } catch (IOException | RuntimeException ex) {
+            LOGGER.warn("ChatBot request failed. Returning fallback answer. reason={}", ex.getMessage(), ex);
             writeClientErrorInfo(ex.getMessage());
             return Optional.empty();
         }
@@ -101,6 +119,7 @@ public final class PythonChatbotConnection {
 
     private void validateBotFiles() throws IOException {
         if (!Files.isRegularFile(chatbot.appPath())) {
+            LOGGER.warn("ChatBot script path is missing or is not a file: {}", chatbot.appPath());
             throw new IOException("Missing Python chatbot entrypoint: " + chatbot.appPath());
         }
         Files.createDirectories(chatbot.outputPath().getParent());
@@ -119,34 +138,71 @@ public final class PythonChatbotConnection {
 
     private List<String[]> pythonCommands() {
         List<String[]> commands = new ArrayList<>();
-        if (configuredPythonCommand != null && !configuredPythonCommand.isBlank()) {
-            commands.add(new String[]{configuredPythonCommand.trim()});
+        if (pythonCommand != null && !pythonCommand.isBlank()) {
+            commands.add(new String[]{pythonCommand.trim()});
         }
-        commands.add(new String[]{"python"});
+        addIfMissing(commands, new String[]{"python"});
         commands.add(new String[]{"python3"});
         commands.add(new String[]{"py", "-3"});
         return commands;
     }
 
+    private void addIfMissing(List<String[]> commands, String[] command) {
+        for (String[] existing : commands) {
+            if (String.join(" ", existing).equals(String.join(" ", command))) {
+                return;
+            }
+        }
+        commands.add(command);
+    }
+
     private static String resolvePythonCommand() {
         String configured = System.getProperty(PYTHON_COMMAND_PROPERTY);
-        if (configured == null || configured.isBlank()) {
-            configured = System.getenv(PYTHON_COMMAND_ENV);
+        if (configured != null && !configured.isBlank()) {
+            LOGGER.info("ChatBot Python command resolved from system property {}: {}", PYTHON_COMMAND_PROPERTY, configured);
+            return configured;
         }
-        return configured;
+
+        configured = System.getenv(PYTHON_COMMAND_ENV);
+        if (configured != null && !configured.isBlank()) {
+            LOGGER.info("ChatBot Python command resolved from environment variable {}: {}", PYTHON_COMMAND_ENV, configured);
+            return configured;
+        }
+
+        LOGGER.info("ChatBot Python command using default: python");
+        return "python";
     }
 
     private RunStatus runPythonCommand(String question, String... commandPrefix) throws InterruptedException {
         Process process;
+        String[] command = buildCommand(question, commandPrefix);
+        List<String> safeCommand = sanitizedCommand(command);
         try {
-            process = startPythonProcess(question, commandPrefix);
+            process = startPythonProcess(command, safeCommand);
         } catch (IOException ex) {
+            LOGGER.warn(
+                    "ChatBot Python process failed to start. command={}, workingDir={}, scriptPath={}, reason={}",
+                    safeCommand,
+                    chatbot.appDirectory(),
+                    chatbot.appPath(),
+                    ex.getMessage()
+            );
             return RunStatus.START_FAILED;
         }
 
+        long startNanos = System.nanoTime();
         try {
-            if (!process.waitFor(PROCESS_TIMEOUT.toSeconds(), TimeUnit.SECONDS)) {
+            if (!process.waitFor(processTimeout.toSeconds(), TimeUnit.SECONDS)) {
                 process.destroyForcibly();
+                long elapsedMillis = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startNanos);
+                LOGGER.warn(
+                        "ChatBot Python process timed out. timeoutSeconds={}, elapsedMs={}, command={}, workingDir={}, scriptPath={}",
+                        processTimeout.toSeconds(),
+                        elapsedMillis,
+                        safeCommand,
+                        chatbot.appDirectory(),
+                        chatbot.appPath()
+                );
                 return RunStatus.FAILED;
             }
         } catch (InterruptedException ex) {
@@ -154,15 +210,47 @@ public final class PythonChatbotConnection {
             throw ex;
         }
 
-        return process.exitValue() == 0 ? RunStatus.SUCCESS : RunStatus.FAILED;
+        long elapsedMillis = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startNanos);
+        int exitCode = process.exitValue();
+        boolean outputFileExists = Files.exists(chatbot.outputPath());
+        LOGGER.info(
+                "ChatBot Python process finished. exitCode={}, elapsedMs={}, outputFileExists={}",
+                exitCode,
+                elapsedMillis,
+                outputFileExists
+        );
+        if (exitCode != 0) {
+            LOGGER.warn(
+                    "ChatBot Python process failed. exitCode={}, stdoutOrStderr={}, workingDir={}, command={}, scriptPath={}",
+                    exitCode,
+                    readProcessLogForDiagnostics(),
+                    chatbot.appDirectory(),
+                    safeCommand,
+                    chatbot.appPath()
+            );
+        }
+
+        return exitCode == 0 ? RunStatus.SUCCESS : RunStatus.FAILED;
     }
 
-    private Process startPythonProcess(String question, String... commandPrefix) throws IOException {
+    private String[] buildCommand(String question, String... commandPrefix) {
         String[] command = new String[commandPrefix.length + 3];
         System.arraycopy(commandPrefix, 0, command, 0, commandPrefix.length);
         command[commandPrefix.length] = chatbot.appPath().getFileName().toString();
         command[commandPrefix.length + 1] = "--question";
         command[commandPrefix.length + 2] = question;
+        return command;
+    }
+
+    private Process startPythonProcess(String[] command, List<String> safeCommand) throws IOException {
+        LOGGER.info(
+                "Starting ChatBot Python process. command={}, workingDir={}",
+                safeCommand,
+                chatbot.appDirectory()
+        );
+        LOGGER.info("ChatBot process script path: {}", chatbot.appPath());
+        LOGGER.info("ChatBot process input path: {}", chatbot.inputPath());
+        LOGGER.info("ChatBot process output path: {}", chatbot.outputPath());
 
         ProcessBuilder processBuilder = new ProcessBuilder(command)
                 .directory(chatbot.appDirectory().toFile())
@@ -171,6 +259,18 @@ public final class PythonChatbotConnection {
         processBuilder.environment().put("PYTHONUTF8", "1");
         processBuilder.environment().put("PYTHONIOENCODING", "utf-8");
         return processBuilder.start();
+    }
+
+    private List<String> sanitizedCommand(String[] command) {
+        List<String> safe = new ArrayList<>();
+        for (int i = 0; i < command.length; i++) {
+            if (i > 0 && "--question".equals(command[i - 1])) {
+                safe.add("<redacted-question>");
+            } else {
+                safe.add(command[i]);
+            }
+        }
+        return safe;
     }
 
     private Optional<String> readJsonStringField(Path path, String field) throws IOException {
@@ -208,29 +308,145 @@ public final class PythonChatbotConnection {
                 || normalized.contains("traceback");
     }
 
-    private Path resolveChatbotDirectory() {
+    private static Path resolveChatbotDirectory() {
         String configured = System.getProperty(CHATBOT_DIR_PROPERTY);
-        if (configured == null || configured.isBlank()) {
-            configured = System.getenv(CHATBOT_DIR_ENV);
-        }
         if (configured != null && !configured.isBlank()) {
-            return Path.of(configured).toAbsolutePath().normalize();
+            Path resolved = Path.of(configured).toAbsolutePath().normalize();
+            LOGGER.info("ChatBot AI directory resolved from system property {}: {}", CHATBOT_DIR_PROPERTY, resolved);
+            return resolved;
         }
 
-        Path projectRoot = locateProjectRoot();
-        return projectRoot.resolve("Auction_AI").resolve("ChatBot");
-    }
+        configured = System.getenv(CHATBOT_DIR_ENV);
+        if (configured != null && !configured.isBlank()) {
+            Path resolved = Path.of(configured).toAbsolutePath().normalize();
+            LOGGER.info("ChatBot AI directory resolved from environment variable {}: {}", CHATBOT_DIR_ENV, resolved);
+            return resolved;
+        }
 
-    private Path locateProjectRoot() {
         Path current = Path.of(System.getProperty("user.dir")).toAbsolutePath().normalize();
+        LOGGER.info("ChatBot AI directory not configured. Searching for {} from working directory {}", DEFAULT_CHATBOT_DIR, current);
         while (current != null) {
-            Path chatbotEntrypoint = current.resolve("Auction_AI").resolve("ChatBot").resolve("Main").resolve("app.py");
-            if (Files.isRegularFile(chatbotEntrypoint)) {
-                return current;
+            Path candidate = current.resolve(DEFAULT_CHATBOT_DIR).normalize();
+            LOGGER.debug("ChatBot AI directory candidate: {}", candidate);
+            if (Files.isRegularFile(candidate.resolve("Main").resolve("app.py"))) {
+                LOGGER.info("ChatBot AI directory found by parent search: {}", candidate);
+                return candidate;
             }
             current = current.getParent();
         }
-        return Path.of("").toAbsolutePath().normalize();
+
+        Path fallback = Path.of(DEFAULT_CHATBOT_DIR).toAbsolutePath().normalize();
+        LOGGER.warn("ChatBot AI directory was not found by parent search. Falling back to relative default: {}", fallback);
+        return fallback;
+    }
+
+    private static Duration resolveTimeout() {
+        String configured = System.getProperty(TIMEOUT_SECONDS_PROPERTY);
+        if (configured != null && !configured.isBlank()) {
+            return parseTimeout(configured, "system property " + TIMEOUT_SECONDS_PROPERTY);
+        }
+
+        configured = System.getenv(TIMEOUT_SECONDS_ENV);
+        if (configured != null && !configured.isBlank()) {
+            return parseTimeout(configured, "environment variable " + TIMEOUT_SECONDS_ENV);
+        }
+
+        LOGGER.info("ChatBot timeout using default: {} seconds", DEFAULT_TIMEOUT_SECONDS);
+        return Duration.ofSeconds(DEFAULT_TIMEOUT_SECONDS);
+    }
+
+    private static Duration parseTimeout(String value, String source) {
+        try {
+            long seconds = Long.parseLong(value);
+            LOGGER.info("ChatBot timeout resolved from {}: {} seconds", source, seconds);
+            return Duration.ofSeconds(seconds);
+        } catch (NumberFormatException e) {
+            LOGGER.warn(
+                    "Invalid ChatBot timeout '{}' from {}. Falling back to {} seconds.",
+                    value,
+                    source,
+                    DEFAULT_TIMEOUT_SECONDS
+            );
+            return Duration.ofSeconds(DEFAULT_TIMEOUT_SECONDS);
+        }
+    }
+
+    private void logConfiguration() {
+        LOGGER.info("ChatBot AI directory resolved: {}", chatbot.directory());
+        LOGGER.info("ChatBot Python command resolved: {}", pythonCommand);
+        LOGGER.info("ChatBot timeout: {} seconds", processTimeout.toSeconds());
+        LOGGER.info("ChatBot input file: {}", chatbot.inputPath());
+        LOGGER.info("ChatBot output file: {}", chatbot.outputPath());
+        LOGGER.info("ChatBot script file: {}", chatbot.appPath());
+        LOGGER.info("ChatBot working directory: {}", chatbot.appDirectory());
+        LOGGER.info("ChatBot AI directory exists: {}", Files.isDirectory(chatbot.directory()));
+        LOGGER.info("ChatBot input parent directory writable: {}", isWritableDirectory(chatbot.inputPath().getParent()));
+        LOGGER.info("ChatBot output parent directory writable: {}", isWritableDirectory(chatbot.outputPath().getParent()));
+    }
+
+    private boolean validatePaths() {
+        boolean valid = true;
+        valid &= validateDirectory("ChatBot AI directory", chatbot.directory());
+        valid &= validateDirectory("ChatBot working directory", chatbot.appDirectory());
+        valid &= validateParentWritable("ChatBot input parent directory", chatbot.inputPath());
+        valid &= validateParentWritable("ChatBot output parent directory", chatbot.outputPath());
+
+        if (!Files.isRegularFile(chatbot.appPath())) {
+            LOGGER.warn("ChatBot script path is missing or is not a file: {}", chatbot.appPath());
+            valid = false;
+        }
+
+        LOGGER.info("ChatBot input file exists: {}", Files.exists(chatbot.inputPath()));
+        LOGGER.info("ChatBot output file exists: {}", Files.exists(chatbot.outputPath()));
+        return valid;
+    }
+
+    private boolean validateDirectory(String label, Path path) {
+        if (!Files.exists(path)) {
+            LOGGER.warn("{} does not exist: {}", label, path);
+            return false;
+        }
+        if (!Files.isDirectory(path)) {
+            LOGGER.warn("{} is not a directory: {}", label, path);
+            return false;
+        }
+        return true;
+    }
+
+    private boolean validateParentWritable(String label, Path filePath) {
+        Path parent = filePath.getParent();
+        if (parent == null) {
+            LOGGER.warn("{} cannot be checked because file path has no parent: {}", label, filePath);
+            return false;
+        }
+        if (!Files.exists(parent)) {
+            LOGGER.warn("{} does not exist: {}", label, parent);
+            return false;
+        }
+        if (!Files.isDirectory(parent)) {
+            LOGGER.warn("{} is not a directory: {}", label, parent);
+            return false;
+        }
+        if (!Files.isWritable(parent)) {
+            LOGGER.warn("{} is not writable: {}", label, parent);
+            return false;
+        }
+        return true;
+    }
+
+    private static boolean isWritableDirectory(Path path) {
+        return path != null && Files.isDirectory(path) && Files.isWritable(path);
+    }
+
+    private String readProcessLogForDiagnostics() {
+        try {
+            if (!Files.isRegularFile(chatbot.processLogPath())) {
+                return "";
+            }
+            return abbreviate(Files.readString(chatbot.processLogPath(), StandardCharsets.UTF_8).trim());
+        } catch (IOException ex) {
+            return "Unable to read process log: " + ex.getMessage();
+        }
     }
 
     private void writeClientErrorInfo(String message) {
@@ -247,9 +463,16 @@ public final class PythonChatbotConnection {
                     }
                     """.formatted(escapeJson(safeMessage));
             Files.writeString(chatbot.errorInfoPath(), payload, StandardCharsets.UTF_8);
-        } catch (IOException ignored) {
-            // The UI already returns a fallback answer; diagnostics are best-effort only.
+        } catch (IOException ex) {
+            LOGGER.warn("Unable to write ChatBot client error info: {}", chatbot.errorInfoPath(), ex);
         }
+    }
+
+    private String abbreviate(String value) {
+        if (value == null || value.length() <= MAX_LOG_CHARS) {
+            return value;
+        }
+        return value.substring(0, MAX_LOG_CHARS) + "... [truncated]";
     }
 
     private String escapeJson(String value) {
@@ -296,6 +519,7 @@ public final class PythonChatbotConnection {
 
     private record BotSpec(
             Path directory,
+            Path relativeInputPath,
             Path relativeOutputPath,
             Path relativeInformationPath,
             String outputField
@@ -306,6 +530,10 @@ public final class PythonChatbotConnection {
 
         private Path appDirectory() {
             return directory.resolve("Main");
+        }
+
+        private Path inputPath() {
+            return directory.resolve(relativeInputPath);
         }
 
         private Path outputPath() {

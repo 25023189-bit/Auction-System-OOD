@@ -1,4 +1,5 @@
 import json
+import logging
 import traceback
 from datetime import datetime
 from pathlib import Path
@@ -13,7 +14,10 @@ from ChatBot.Logist.chatbot.intent_chatbot import (
 )
 from ChatBot.LLM.model.response_generator import generate_llm_answer
 
+from .diagnostics import get_logger, log_path_diagnostics, setup_logging
 from .paths import ERROR_INFO_PATH, INFORMATION_PATH, INPUT_PATH, OUTPUT_PATH
+
+LOGGER = get_logger()
 
 
 def handle_question(
@@ -25,12 +29,16 @@ def handle_question(
     llm_client=None,
 ):
     try:
+        setup_logging()
+        log_path_diagnostics()
         normalized_question = _normalize_question(question)
+        LOGGER.info("ChatBot handle_question started. question_length=%s input_path=%s output_path=%s", len(normalized_question), input_path, output_path)
         write_input_file(input_path, normalized_question)
         result, information = _call_llm(normalized_question, llm_client=llm_client)
         write_output_file(output_path, result)
         write_information_file(information_path, information)
         clear_error_info(error_info_path)
+        LOGGER.info("ChatBot handle_question completed successfully. answer_keys=%s", sorted(result.keys()))
         return result
     except Exception as exc:
         return handle_error(
@@ -50,6 +58,9 @@ def run_from_file(
     llm_client=None,
 ):
     try:
+        setup_logging()
+        log_path_diagnostics()
+        LOGGER.info("ChatBot run_from_file started. input_path=%s output_path=%s", input_path, output_path)
         question = read_input_file(input_path)
         return handle_question(
             question,
@@ -71,6 +82,7 @@ def run_from_file(
 
 def read_input_file(path=INPUT_PATH):
     input_path = Path(path)
+    LOGGER.info("Reading ChatBot input file: %s exists=%s", input_path, input_path.exists())
     payload = json.loads(input_path.read_text(encoding="utf-8"))
     if not isinstance(payload, dict):
         raise ValueError("File input.json phải là JSON object.")
@@ -86,6 +98,7 @@ def write_input_file(path, question):
         json.dumps({"question": question}, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
+    LOGGER.info("Wrote ChatBot input file: %s question_length=%s", input_path, len(question))
 
 
 def write_output_file(path, payload):
@@ -95,6 +108,7 @@ def write_output_file(path, payload):
         json.dumps(payload, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
+    LOGGER.info("Wrote ChatBot output file: %s keys=%s", output_path, sorted(payload.keys()) if isinstance(payload, dict) else type(payload).__name__)
 
 
 def write_information_file(path, payload):
@@ -104,12 +118,14 @@ def write_information_file(path, payload):
         json.dumps(payload, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
+    LOGGER.info("Wrote ChatBot information file: %s status=%s", information_path, payload.get("status") if isinstance(payload, dict) else None)
 
 
 def clear_error_info(path=ERROR_INFO_PATH):
     error_info_path = Path(path)
     if error_info_path.exists():
         error_info_path.unlink()
+        LOGGER.info("Cleared ChatBot error info file: %s", error_info_path)
 
 
 def handle_error(
@@ -119,6 +135,7 @@ def handle_error(
     error_info_path=ERROR_INFO_PATH,
     information_path=INFORMATION_PATH,
 ):
+    LOGGER.exception("ChatBot flow failed. Falling back when possible. error_type=%s", type(exc).__name__)
     normalized_question = question.strip() if isinstance(question, str) else ""
     logist_context = (
         forward_error_to_logist(normalized_question, exc)
@@ -156,10 +173,12 @@ def handle_error(
 
 
 def _call_llm(question, llm_client=None):
+    LOGGER.info("ChatBot classification started. question_length=%s", len(question))
     model = load_chatbot_model()
     labels = load_labels()
     documents = documents_by_label()
     prediction = classify_message(question, model=model, labels=labels)
+    LOGGER.info("ChatBot classification completed. labels=%s top_scores=%s", prediction.labels, prediction.scores)
 
     if has_direct_logist_answer_label(prediction.labels):
         answer = build_rule_based_answer(question, prediction.labels, documents)
@@ -170,8 +189,10 @@ def _call_llm(question, llm_client=None):
             answer_source="Logist",
             status="success",
         )
+        LOGGER.info("ChatBot answered directly by Logist. labels=%s answer_length=%s", prediction.labels, len(answer))
         return {"answer": answer}, information
 
+    LOGGER.info("ChatBot invoking LLM. labels=%s", prediction.labels)
     answer = generate_llm_answer(
         question,
         prediction.labels,
@@ -185,11 +206,12 @@ def _call_llm(question, llm_client=None):
         answer_source="LLM",
         status="success",
     )
+    LOGGER.info("ChatBot LLM answer generated successfully. answer_length=%s", len(answer))
     return {"answer": answer}, information
-
 
 def forward_error_to_logist(question, exc):
     try:
+        LOGGER.info("Forwarding ChatBot error to Logist fallback. original_error=%s", type(exc).__name__)
         model = load_chatbot_model()
         labels = load_labels()
         documents = documents_by_label()
@@ -202,6 +224,7 @@ def forward_error_to_logist(question, exc):
             "scores": prediction.scores,
         }
     except Exception as logist_exc:
+        LOGGER.exception("ChatBot Logist fallback failed. original_error=%s fallback_error=%s", type(exc).__name__, type(logist_exc).__name__)
         return {
             "status": "failed",
             "error_type": type(logist_exc).__name__,
@@ -289,6 +312,7 @@ def write_error_info_file(path, exc, question, logist_context):
         json.dumps(payload, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
+    LOGGER.warning("Wrote ChatBot error info file: %s error_type=%s logist_status=%s", error_info_path, type(exc).__name__, logist_context.get("status"))
 
 
 def _normalize_question(question):

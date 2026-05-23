@@ -1,4 +1,4 @@
-package com.auction.client.AI.autoApprove;
+package com.auction.server.AI.autoApprove;
 
 public class AutoApproveProcessResult {
     private final boolean timedOut;

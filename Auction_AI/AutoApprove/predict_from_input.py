@@ -1,17 +1,23 @@
 import argparse
 import json
+import logging
 import math
+import time
 from pathlib import Path
 
 import joblib
 import pandas as pd
 
+from diagnostics import DEFAULT_DEBUG_OUTPUT_PATH, DEFAULT_INPUT_PATH as BRIDGE_INPUT_PATH, DEFAULT_MODEL_PATH, DEFAULT_OUTPUT_PATH as BRIDGE_OUTPUT_PATH, get_logger, log_path_diagnostics, setup_logging
+
 
 BASE_DIR = Path(__file__).resolve().parent
 DEFAULT_INPUT_PATH = BASE_DIR / "test_samples.json"
 DEFAULT_OUTPUT_PATH = BASE_DIR / "prediction_results.json"
-MODEL_PATH = BASE_DIR / "auction_model.pkl"
+MODEL_PATH = DEFAULT_MODEL_PATH
 DECISION_THRESHOLD = 0.75
+
+LOGGER = get_logger()
 
 
 POSITIVE_KEYWORDS = [
@@ -75,6 +81,7 @@ def required(data: dict, key: str, row_number: int):
 
 
 def load_samples(input_path: Path) -> pd.DataFrame:
+    LOGGER.info("AutoApprove loading samples. input_path=%s exists=%s", input_path, input_path.exists())
     suffix = input_path.suffix.lower()
     if suffix == ".json":
         with input_path.open("r", encoding="utf-8-sig") as file:
@@ -90,6 +97,7 @@ def load_samples(input_path: Path) -> pd.DataFrame:
         raise ValueError("Input file must be .json or .csv")
 
     validate_input_fields(samples)
+    LOGGER.info("AutoApprove loaded samples. rows=%s columns=%s", len(samples), list(samples.columns))
     return samples
 
 
@@ -146,24 +154,35 @@ def build_model_row(data: dict, sample_number: int) -> pd.DataFrame:
 
 
 def save_results(records: list[dict], output_path: Path):
-    output_path.parent.mkdir(exist_ok=True)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     if output_path.name == "output_ap.json":
         decision = bool(records and int(records[0].get("auto_approve", 0)) == 1)
         with output_path.open("w", encoding="utf-8") as file:
             file.write("true" if decision else "false")
+        # Keep a rich diagnostic output without breaking the Java boolean protocol.
+        with DEFAULT_DEBUG_OUTPUT_PATH.open("w", encoding="utf-8") as debug_file:
+            json.dump(records, debug_file, ensure_ascii=False, indent=2)
+        LOGGER.info("AutoApprove wrote boolean bridge output: %s decision=%s", output_path, decision)
+        LOGGER.info("AutoApprove wrote rich debug output: %s", DEFAULT_DEBUG_OUTPUT_PATH)
         return
 
     if output_path.suffix.lower() == ".json":
         with output_path.open("w", encoding="utf-8") as file:
             json.dump(records, file, ensure_ascii=False, indent=2)
+        LOGGER.info("AutoApprove wrote JSON output: %s records=%s", output_path, len(records))
     elif output_path.suffix.lower() == ".csv":
         pd.DataFrame(records).to_csv(output_path, index=False, encoding="utf-8-sig")
+        LOGGER.info("AutoApprove wrote CSV output: %s records=%s", output_path, len(records))
     else:
         raise ValueError("Output file must be .json or .csv")
 
 
 def predict_samples(input_path: Path, output_path: Path) -> list[dict]:
+    setup_logging()
+    log_path_diagnostics(input_path=input_path, output_path=output_path, model_path=MODEL_PATH)
+    start_time = time.perf_counter()
     samples = load_samples(input_path)
+    LOGGER.info("AutoApprove loading model. model_path=%s exists=%s", MODEL_PATH, MODEL_PATH.exists())
     model = joblib.load(MODEL_PATH)
     results = []
 
@@ -173,6 +192,7 @@ def predict_samples(input_path: Path, output_path: Path) -> list[dict]:
         probability = float(model.predict_proba(model_row)[0][1])
         decision = int(probability >= DECISION_THRESHOLD)
 
+        LOGGER.info("AutoApprove predicted sample=%s title_length=%s probability=%.6f decision=%s", sample_number, len(str(data.get("title", ""))), probability, decision)
         results.append(
             {
                 "title": data.get("title", ""),
@@ -185,6 +205,8 @@ def predict_samples(input_path: Path, output_path: Path) -> list[dict]:
         )
 
     save_results(results, output_path)
+    elapsed_ms = round((time.perf_counter() - start_time) * 1000, 2)
+    LOGGER.info("AutoApprove prediction completed. records=%s elapsed_ms=%s output_exists=%s", len(results), elapsed_ms, output_path.exists())
     return results
 
 
@@ -207,7 +229,13 @@ def main():
     input_path = args.input if args.input.is_absolute() else BASE_DIR / args.input
     output_path = args.output if args.output.is_absolute() else BASE_DIR / args.output
 
-    results = predict_samples(input_path, output_path)
+    setup_logging()
+    LOGGER.info("AutoApprove CLI started. input=%s output=%s", input_path, output_path)
+    try:
+        results = predict_samples(input_path, output_path)
+    except Exception:
+        LOGGER.exception("AutoApprove CLI failed. input=%s output=%s", input_path, output_path)
+        raise
     print(json.dumps(results, ensure_ascii=False, indent=2))
     print(f"\nSaved prediction results to: {output_path}")
 

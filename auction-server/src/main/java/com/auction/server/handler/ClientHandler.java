@@ -1,6 +1,8 @@
 package com.auction.server.handler;
 
 import com.auction.common.dto.Message;
+import com.auction.server.AI.autoApprove.AiAutoApproveDecider;
+import com.auction.server.AI.autoApprove.AuctionAiAutoApproveConnector;
 import com.auction.server.main.AuctionServer;
 import com.auction.server.network.dispatcher.ActionDispatcher;
 import com.auction.server.network.dispatcher.ActionRouteResult;
@@ -13,6 +15,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.List;
+
 
 /**
  * Đại diện cho một kết nối socket đang hoạt động giữa client và server.
@@ -46,6 +49,11 @@ public class ClientHandler implements Runnable {
     private ObjectOutputStream out;
     private volatile boolean alive = true;
 
+    private static final PendingAuctionRoomFactory PENDING_ROOM_FACTORY = new PendingAuctionRoomFactory();
+
+    private static final SellerActionHandler.AutoApproveDecider AUTO_APPROVE_DECIDER =
+            new AiAutoApproveDecider(new AuctionAiAutoApproveConnector());
+
     public ClientHandler(Socket socket) {
         this.socket = socket;
         this.actionContext = new ClientActionContext(
@@ -60,8 +68,8 @@ public class ClientHandler implements Runnable {
         this.actionRouter = new ClientActionRouter(List.of(
                 new AuthActionHandler(),
                 new RoomActionHandler(),
-                new SellerActionHandler(),
-                new AdminActionHandler(new PendingAuctionRoomFactory()),
+                new SellerActionHandler(AUTO_APPROVE_DECIDER, PENDING_ROOM_FACTORY),
+                new AdminActionHandler(PENDING_ROOM_FACTORY),
                 new ProductDetailHandler()
         ));
 

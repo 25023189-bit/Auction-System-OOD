@@ -1,4 +1,5 @@
 import json
+import logging
 import subprocess
 import sys
 from dataclasses import dataclass
@@ -7,7 +8,7 @@ from typing import Any
 
 from joblib import load
 
-from .paths import KNOWLEDGE_PATH, LABELS_PATH, MODEL_PATH
+from .paths import CHATBOT_DIR, KNOWLEDGE_PATH, LABELS_PATH, MODEL_PATH
 
 
 DEFAULT_THRESHOLD = 0.25
@@ -16,6 +17,23 @@ UNCLEAR_LABEL = "KHÔNG RÕ"
 OUT_OF_SCOPE_LABEL = "NGOÀI LỀ"
 DANGEROUS_TOPIC_LABEL = "CHỦ ĐỀ NGUY HIỂM"
 DIRECT_LOGIST_ANSWER_LABELS = {OUT_OF_SCOPE_LABEL, DANGEROUS_TOPIC_LABEL}
+LOG_PATH = CHATBOT_DIR / "status" / "chatbot_process.log"
+LOGGER_NAME = "auction_ai.chatbot.logist"
+
+
+def _logger() -> logging.Logger:
+    logger = logging.getLogger(LOGGER_NAME)
+    if logger.handlers:
+        return logger
+    logger.setLevel(logging.INFO)
+    logger.propagate = False
+    LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
+    handler = logging.FileHandler(LOG_PATH, encoding="utf-8")
+    handler.setFormatter(logging.Formatter("%(asctime)s [%(levelname)s] %(name)s - %(message)s"))
+    logger.addHandler(handler)
+    return logger
+
+
 SPECIAL_FALLBACK_LABELS = {
     DANGEROUS_TOPIC_LABEL,
     OUT_OF_SCOPE_LABEL,
@@ -79,25 +97,58 @@ def documents_by_label(path: Path = KNOWLEDGE_PATH) -> dict[str, dict[str, str]]
 
 
 def load_chatbot_model(model_path: Path = MODEL_PATH):
+    logger = _logger()
+    logger.info("Loading ChatBot Logist model. model_path=%s exists=%s", model_path, model_path.exists())
     if not model_path.exists():
+        logger.warning("ChatBot Logist model is missing. Training model now. model_path=%s", model_path)
         train_chatbot_model()
     try:
         model = load(model_path)
     except Exception:
+        logger.exception("Failed to load ChatBot Logist model. Retraining once. model_path=%s", model_path)
         train_chatbot_model()
         model = load(model_path)
     return make_model_runtime_compatible(model)
 
 
 def train_chatbot_model() -> None:
+    logger = _logger()
     script_path = Path(__file__).resolve().parents[1] / "training" / "train_model.py"
-    subprocess.run(
-        [sys.executable, str(script_path)],
-        cwd=str(script_path.parents[3]),
-        check=True,
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.DEVNULL,
+    cwd = script_path.parents[3]
+    command = [sys.executable, str(script_path)]
+    logger.info("Training ChatBot Logist model. command=%s cwd=%s script_exists=%s", command, cwd, script_path.exists())
+    completed = subprocess.run(
+        command,
+        cwd=str(cwd),
+        check=False,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
     )
+    if completed.returncode != 0:
+        logger.error(
+            "ChatBot Logist training failed. returncode=%s stdout=%s stderr=%s",
+            completed.returncode,
+            _truncate(completed.stdout),
+            _truncate(completed.stderr),
+        )
+        completed.check_returncode()
+    logger.info(
+        "ChatBot Logist training completed. returncode=%s stdout=%s stderr=%s",
+        completed.returncode,
+        _truncate(completed.stdout),
+        _truncate(completed.stderr),
+    )
+
+
+def _truncate(value: str | None, limit: int = 2000) -> str:
+    if not value:
+        return ""
+    value = value.strip()
+    if len(value) <= limit:
+        return value
+    return value[:limit] + "... [truncated]"
 
 
 def make_model_runtime_compatible(model: Any) -> Any:
@@ -122,6 +173,7 @@ def iter_estimators(model: Any):
 
 
 def load_labels(labels_path: Path = LABELS_PATH) -> list[str]:
+    _logger().info("Loading ChatBot labels. labels_path=%s exists=%s", labels_path, labels_path.exists())
     return json.loads(labels_path.read_text(encoding="utf-8"))
 
 
@@ -173,6 +225,7 @@ def classify_message(
         model = load_chatbot_model()
         scores = predict_scores(model, labels, cleaned_message)
     selected_labels = select_labels(scores, message=cleaned_message, threshold=threshold)
+    _logger().info("Classified ChatBot message. message_length=%s selected_labels=%s", len(cleaned_message), selected_labels)
     return IntentPrediction(selected_labels, scores)
 
 

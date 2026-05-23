@@ -1,3 +1,6 @@
 {
-  "answer": "Mình chưa có thông tin phù hợp để trả lời nội dung đó. Bạn cần hỗ trợ thao tác nào trong hệ thống đấu giá như đăng ký, đăng nhập, xem phiên, đặt giá hoặc quản lý số dư?"
+  "status": "fallback",
+  "answer_source": "Logist",
+  "answer": "Về Tham gia phòng đấu giá: Người dùng có thể tham gia một phòng đấu giá nếu phiên còn hợp lệ và đáp ứng điều kiện của hệ thống. Bidder phải có số dư tối thiểu theo yêu cầu của phiên, còn seller của phiên có thể vào phòng trước khi phiên bắt đầu.",
+  "timestamp": "2026-05-23T02:44:16"
 }
