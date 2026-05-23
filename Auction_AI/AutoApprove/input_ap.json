@@ -3,26 +3,26 @@
   "source": "auction-system",
   "samples": [
     {
-      "title": "Tivt",
+      "title": "Iphone",
       "category": "",
-      "organization": "Samsung",
-      "description": "jowewfwfe",
+      "organization": "Olympus",
+      "description": "sư",
       "seller_rating": 5.0,
       "seller_completed_rating": 0.0,
       "seller_cancel_rate": 0.0,
-      "minimum_join_amount": 4000.0,
-      "minimum_join_ratio": 0.3333333333333333,
-      "bid_step": 500.0,
-      "bid_step_ratio": 0.041666666666666664,
-      "start_price": 12000.0,
-      "start_price_log": 9.392661928770137,
-      "duration_minutes": 50.0,
-      "extension_seconds": 23.0,
-      "start_hour": 14.0,
-      "day_of_week": 2.0,
-      "is_weekend": 0.0,
-      "title_length": 4.0,
-      "desc_length": 9.0
+      "minimum_join_amount": 6000.0,
+      "minimum_join_ratio": 0.46153846153846156,
+      "bid_step": 60.0,
+      "bid_step_ratio": 0.004615384615384616,
+      "start_price": 13000.0,
+      "start_price_log": 9.472704636443673,
+      "duration_minutes": 120.0,
+      "extension_seconds": 120.0,
+      "start_hour": 19.0,
+      "day_of_week": 5.0,
+      "is_weekend": 1.0,
+      "title_length": 6.0,
+      "desc_length": 2.0
     }
   ]
 }

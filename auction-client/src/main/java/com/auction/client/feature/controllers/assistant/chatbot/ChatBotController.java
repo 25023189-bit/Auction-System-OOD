@@ -15,7 +15,7 @@ import javafx.scene.layout.VBox;
 
 public class ChatBotController {
 
-    private static final String WAITING_MESSAGE = "Dang xu ly cau hoi...";
+    private static final String WAITING_MESSAGE = "Think about the answer...";
 
     @FXML private VBox chatbotPanel;
     @FXML private VBox chatMessages;

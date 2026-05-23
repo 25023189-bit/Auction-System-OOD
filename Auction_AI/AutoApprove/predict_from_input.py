@@ -12,7 +12,7 @@ from diagnostics import DEFAULT_DEBUG_OUTPUT_PATH, DEFAULT_INPUT_PATH as BRIDGE_
 
 
 BASE_DIR = Path(__file__).resolve().parent
-DEFAULT_INPUT_PATH = BASE_DIR / "test_samples.json"
+DEFAULT_INPUT_PATH = BASE_DIR / "input_ap.json"
 DEFAULT_OUTPUT_PATH = BASE_DIR / "prediction_results.json"
 MODEL_PATH = DEFAULT_MODEL_PATH
 DECISION_THRESHOLD = 0.75
@@ -244,7 +244,6 @@ def predict_samples(input_path: Path, output_path: Path) -> list[dict]:
         results.append(
             {
                 "title": data.get("title", ""),
-                "category": data.get("category", ""),
                 "decision": "APPROVE" if decision == 1 else "REJECT",
                 "auto_approve": decision,
                 "approve_probability": probability,

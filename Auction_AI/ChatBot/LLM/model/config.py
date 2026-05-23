@@ -14,4 +14,4 @@ def _int_config(name, default):
 
 OLLAMA_URL = _config("OLLAMA_URL", "http://localhost:11434/api/generate")
 OLLAMA_MODEL = _config("OLLAMA_MODEL", "llama3")
-REQUEST_TIMEOUT_SECONDS = _int_config("REQUEST_TIMEOUT_SECONDS", 60)
+REQUEST_TIMEOUT_SECONDS = _int_config("REQUEST_TIMEOUT_SECONDS", 30)
