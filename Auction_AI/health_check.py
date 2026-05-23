@@ -14,6 +14,7 @@ import subprocess
 import sys
 import tempfile
 from pathlib import Path
+import os
 
 AUCTION_AI_DIR = Path(__file__).resolve().parent
 if str(AUCTION_AI_DIR) not in sys.path:
@@ -49,10 +50,15 @@ def check_autoapprove() -> list[tuple[str, bool, str]]:
         ("AutoApprove model", (auto_dir / "auction_model.pkl").is_file(), str(auto_dir / "auction_model.pkl")),
         ("AutoApprove bridge input", (auto_dir / "input_ap.json").exists(), str(auto_dir / "input_ap.json")),
         ("AutoApprove bridge output", (auto_dir / "output_ap.json").exists(), str(auto_dir / "output_ap.json")),
+        ("AutoApprove test samples", (auto_dir / "test_samples.json").exists(), str(auto_dir / "test_samples.json")),
     ]
 
     if not all(ok for _, ok, _ in checks[:3]):
         return checks
+
+    env = os.environ.copy()
+    env["PYTHONIOENCODING"] = "utf-8"
+    env["PYTHONUTF8"] = "1"
 
     with tempfile.TemporaryDirectory() as tmp:
         output_path = Path(tmp) / "prediction_results.json"
@@ -64,21 +70,47 @@ def check_autoapprove() -> list[tuple[str, bool, str]]:
             "--output",
             str(output_path),
         ]
-        completed = subprocess.run(
-            command,
-            cwd=str(auto_dir),
-            capture_output=True,
-            text=True,
-            encoding="utf-8",
-            errors="replace",
-        )
-        checks.append(
-            (
-                "AutoApprove smoke prediction",
-                completed.returncode == 0 and output_path.exists(),
-                f"returncode={completed.returncode} output_exists={output_path.exists()} stderr={_truncate(completed.stderr)}",
+
+        try:
+            completed = subprocess.run(
+                command,
+                cwd=str(auto_dir),
+                capture_output=True,
+                text=True,
+                encoding="utf-8",
+                errors="replace",
+                timeout=45,
+                env=env,
             )
-        )
+
+            ok = completed.returncode == 0 and output_path.exists()
+
+            checks.append(
+                (
+                    "AutoApprove smoke prediction",
+                    ok,
+                    (
+                        f"returncode={completed.returncode} "
+                        f"output_exists={output_path.exists()} "
+                        f"stdout={_truncate(completed.stdout)} "
+                        f"stderr={_truncate(completed.stderr)}"
+                    ),
+                )
+            )
+
+        except subprocess.TimeoutExpired as exc:
+            checks.append(
+                (
+                    "AutoApprove smoke prediction",
+                    False,
+                    (
+                        f"timeout after {exc.timeout}s "
+                        f"stdout={_truncate(exc.stdout or '')} "
+                        f"stderr={_truncate(exc.stderr or '')}"
+                    ),
+                )
+            )
+
     return checks
 
 
