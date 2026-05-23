@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 
-<VBox alignment="TOP_CENTER" prefHeight="420.0" prefWidth="780.0" spacing="0.0" styleClass="product-detail-card" stylesheets="@../css/product-view.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.ProductViewController">
+<VBox alignment="TOP_CENTER" prefHeight="420.0" prefWidth="780.0" spacing="0.0" styleClass="product-detail-card" stylesheets="@../css/product-view.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.assistant.product.ProductViewController">
     <children>
         <HBox alignment="CENTER_LEFT" styleClass="card-header-bar">
             <padding>

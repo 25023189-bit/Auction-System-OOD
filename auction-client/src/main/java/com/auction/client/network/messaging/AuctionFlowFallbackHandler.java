@@ -8,6 +8,10 @@ import com.auction.common.dto.Message;
 import com.auction.client.service.AuctionService;
 import javafx.scene.control.Alert;
 
+import com.auction.common.model.AuctionRoom;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Fallback handler cho các action luồng đấu giá dùng chung nhiều màn hình.
  *
@@ -34,6 +38,8 @@ public class AuctionFlowFallbackHandler implements MessageHandler {
     private final LobbyUserInfoBinder lobbyUserInfoBinder;
     private final AuctionRoomPresenter auctionRoomPresenter;
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(AuctionFlowFallbackHandler.class);
+
     public AuctionFlowFallbackHandler(AuctionService auctionService,
                                       SessionStore sessionStore,
                                       SceneNavigator sceneNavigator,
@@ -55,7 +61,8 @@ public class AuctionFlowFallbackHandler implements MessageHandler {
 
         // Nhóm action này bao gồm tạo phòng, lỗi vào phòng, lỗi bid và thông báo đóng phiên.
         return switch (action) {
-            case "CREATE_AUCTION_SUCCESS",
+            case "ROOM_JOINED",
+                 "CREATE_AUCTION_SUCCESS",
                  "CREATE_AUCTION_PENDING",
                  "CREATE_AUCTION_FAIL",
                  "UPDATE_ROOMS",
@@ -136,6 +143,20 @@ public class AuctionFlowFallbackHandler implements MessageHandler {
                     auctionService.getRooms();
                 }
             }
+
+            case "ROOM_JOINED" -> handleRoomJoined(msg);
         }
+    }
+
+    private void handleRoomJoined(Message msg) {
+        if (!(msg.getData() instanceof AuctionRoom room)) {
+            LOGGER.warn("ROOM_JOINED data is not AuctionRoom: {}", msg.getData());
+            return;
+        }
+
+        sessionStore.setCurrentRoom(room);
+        sessionStore.setCurrentRoomId(room.getRoomId());
+
+        sceneNavigator.showAuctionRoom(room);
     }
 }

@@ -52,8 +52,7 @@ public class AuctionRoomMessageHandler implements MessageHandler {
     public boolean supports(String action) {
         // Chỉ nhận các action làm thay đổi trạng thái phòng, giá hoặc chat.
         return switch (action) {
-            case "ROOM_JOINED",
-                 "ROOM_STATE_UPDATED",
+            case "ROOM_STATE_UPDATED",
                  "BID_SUCCESS",
                  "BID_SUCCESS_EXTENDED",
                  "CHAT_MSG",
@@ -65,30 +64,10 @@ public class AuctionRoomMessageHandler implements MessageHandler {
     @Override
     public void handle(Message message) {
         switch (message.getAction()) {
-            case "ROOM_JOINED" -> handleRoomJoined(message);
             case "ROOM_STATE_UPDATED" -> handleRoomStateUpdated(message);
             case "BID_SUCCESS", "BID_SUCCESS_EXTENDED" -> handleBidSuccess(message);
             case "CHAT_MSG" -> presenter.appendChat("[" + message.username + "]: " + message.data);
             case "UPDATE_PRICE" -> handleUpdatePrice(message);
-        }
-    }
-
-    // Khi join thành công, lưu phòng vào session rồi điều hướng sang màn hình phòng đấu giá.
-    private void handleRoomJoined(Message message) {
-        if (!(message.getData() instanceof AuctionRoom room)) return;
-
-        sessionStore.setCurrentRoom(room);
-        sessionStore.setCurrentRoomId(room.getRoomId());
-
-        sceneNavigator.showAuctionRoom(room);
-        binder.bind(room);
-
-        if (room.getStartTime() != null) {
-            // scheduledEndTime phản ánh thời điểm kết thúc sau khi có gia hạn.
-            auctionTimer.start(
-                    room.getStartTime(),
-                    room.getScheduledEndTime() != null ? room.getScheduledEndTime() : room.getEndTime()
-            );
         }
     }
 

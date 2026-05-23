@@ -73,6 +73,8 @@ public class Message implements Serializable {
         this.data = data;
     }
 
+    public Message() {}
+
     // --- GETTERS ---
     public String getAction() {
         return action;
@@ -92,5 +94,21 @@ public class Message implements Serializable {
 
     public Object getData() {
         return data;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
     }
 }

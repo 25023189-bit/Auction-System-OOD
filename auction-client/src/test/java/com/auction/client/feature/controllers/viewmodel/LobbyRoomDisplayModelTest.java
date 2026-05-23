@@ -1,5 +1,6 @@
 package com.auction.client.feature.controllers.viewmodel;
 
+import com.auction.client.feature.viewmodel.LobbyRoomDisplayModel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

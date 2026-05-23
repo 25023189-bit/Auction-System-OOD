@@ -1,5 +1,6 @@
 package com.auction.client.feature.controllers;
 
+import com.auction.client.feature.controllers.account.admin.AdminController;
 import com.auction.client.service.AuctionService;
 import com.auction.client.network.socket.ClientConnection;
 import com.auction.common.dto.Message;

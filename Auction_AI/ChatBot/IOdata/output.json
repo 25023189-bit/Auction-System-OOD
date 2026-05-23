@@ -1,6 +1,3 @@
 {
-  "status": "fallback",
-  "answer_source": "Logist",
-  "answer": "Về Đăng nhập hệ thống: Người dùng đăng nhập bằng username hoặc thông tin định danh hợp lệ cùng mật khẩu. Sau khi đăng nhập thành công, hệ thống xác định vai trò của tài khoản là bidder, seller hoặc admin để mở giao diện phù hợp.",
-  "timestamp": "2026-05-22T14:54:24"
+  "answer": "Bạn có thể tham gia một phòng đấu giá nếu phiên còn hợp lệ và đáp ứng điều kiện của hệ thống. Bidder phải có số dư tối thiểu theo yêu cầu của phiên, còn seller của phiên có thể vào phòng trước khi phiên bắt đầu. Xin vui lòng cung cấp thông tin về phiên đấu giá bạn muốn tham gia để tôi giúp đỡ bạn thêm."
 }

@@ -1,6 +1,6 @@
 package com.auction.client.feature.lobby;
 
-import com.auction.client.feature.controllers.viewmodel.LobbyRoomDisplayModel;
+import com.auction.client.feature.viewmodel.LobbyRoomDisplayModel;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
@@ -47,8 +47,17 @@ public class LobbyRoomListRenderer {
         for (LobbyRoomDisplayModel model : models) {
             VBox card = cardFactory.createDefault(model);
             card.setUserData(model.getRoomId());
+            applyBidderLobbyCardLayout(card);
             paneSelectAuction.getChildren().add(card);
         }
+    }
+
+    private void applyBidderLobbyCardLayout(VBox card) {
+        if (!paneSelectAuction.getStyleClass().contains("bidder-auction-grid")) return;
+
+        card.setMinSize(200, 232);
+        card.setPrefSize(200, 232);
+        card.setMaxSize(200, 232);
     }
 
     // Tìm đúng card bằng roomId được lưu trong userData và cập nhật label giá.

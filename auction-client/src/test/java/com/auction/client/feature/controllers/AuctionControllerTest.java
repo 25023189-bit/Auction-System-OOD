@@ -1,84 +1,63 @@
 package com.auction.client.feature.controllers;
 
-import com.auction.client.feature.auth.AuthActionFacade;
-import com.auction.client.feature.auth.RegisterForm;
+import com.auction.client.feature.controllers.app.root.AuctionController;
 import com.auction.client.service.AuctionService;
-import com.auction.client.network.socket.ClientConnection;
 import com.auction.client.session.SessionStore;
+import com.auction.client.shared.support.DefaultFxThreadExecutor;
 import com.auction.common.dto.Message;
 import javafx.application.Platform;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.ArgumentCaptor;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.doAnswer;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 class AuctionControllerTest {
 
     private AuctionController controller;
     private AuctionService mockAuctionService;
-    private ClientConnection mockClientConnection;
-    private SessionStore mockSessionStore;
 
     @BeforeAll
     static void initJavaFX() {
         try {
             Platform.startup(() -> {});
-        } catch (IllegalStateException e) {}
+        } catch (IllegalStateException ignored) {
+        }
     }
 
     @BeforeEach
     void setUp() throws Exception {
         controller = new AuctionController();
         mockAuctionService = mock(AuctionService.class);
-        mockClientConnection = mock(ClientConnection.class);
-        mockSessionStore = mock(SessionStore.class);
-
-        // BÀI TỦ HACK LUỒNG: Tiêm trạng thái kết nối ảo trước để chặn hàm mở Socket thật
-        injectField("isNetworkConnected", true);
-        injectField("clientConnection", mockClientConnection);
         injectField("auctionService", mockAuctionService);
-        injectField("sessionStore", mockSessionStore);
-
-        // Khởi tạo các linh kiện đồ họa tối thiểu để tránh lỗi giao diện
-        injectField("cbRegRole", new ComboBox<String>());
-        injectField("lblStatus", new Label());
-    }
-
-    private void injectField(String name, Object value) throws Exception {
-        Field field = AuctionController.class.getDeclaredField(name);
-        field.setAccessible(true);
-        field.set(controller, value);
+        injectField("sessionStore", mock(SessionStore.class));
+        injectField("fxThreadExecutor", new DefaultFxThreadExecutor());
     }
 
     @Test
-    @DisplayName("Test khởi tạo các thành phần hạt nhân (Core Abstractions) của Client")
-    void testInitialize_CoreSetup() {
-        // Chạy hàm khởi tạo phân phối tổng của FXML
-        controller.initialize(null, null);
+    @DisplayName("Connection status updates status label")
+    void updateConnectionStatus_UpdatesLabel() throws Exception {
+        Label status = new Label();
+        injectField("lblStatus", status);
 
-        // Xác thực ComboBox phân quyền đăng ký đã được nạp đủ lựa chọn chưa
-        assertNotNull(controller);
+        controller.updateConnectionStatus("Connected");
+
+        assertEquals("Status: Connected", status.getText());
     }
 
     @Test
-    @DisplayName("Test định tuyến tin nhắn phản hồi chi tiết sản phẩm thành công")
-    void testOnServerResponse_ProductDetails() throws Exception {
-        controller.initialize(null, null);
-
-        // Giả lập Server bắn gói tin chi tiết sản phẩm về máy Client
+    @DisplayName("Product details response delegates to response coordinator")
+    void onServerResponse_ProductDetails() throws Exception {
         Message responseMsg = new Message("PRODUCT_DETAILS_SUCCESS", "SERVER", "MockProductData");
         CountDownLatch callbackLatch = new CountDownLatch(1);
         doAnswer(invocation -> {
@@ -88,67 +67,13 @@ class AuctionControllerTest {
 
         controller.onServerResponse(responseMsg);
 
-        // Xác thực luồng sự kiện callback chi tiết sản phẩm đã được kích hoạt
         assertTrue(callbackLatch.await(1, TimeUnit.SECONDS));
         verify(mockAuctionService).fireProductDetailsReceived("MockProductData");
     }
 
-    @Test
-    @DisplayName("Register form keeps username and full name in the correct order")
-    void testHandleSubmitRegister_MapsUsernameBeforeFullName() throws Exception {
-        AuthActionFacade mockAuthActionFacade = mock(AuthActionFacade.class);
-        injectField("authActionFacade", mockAuthActionFacade);
-
-        TextField txtRegCustomerId = new TextField("BD50001");
-        TextField txtRegUsername = new TextField("hanto");
-        TextField txtRegFullName = new TextField("To Bao Han");
-        PasswordField txtRegPassword = new PasswordField();
-        txtRegPassword.setText("StrongPass123!");
-        PasswordField txtRegConfirm = new PasswordField();
-        txtRegConfirm.setText("StrongPass123!");
-        ComboBox<String> cbRegRole = new ComboBox<>();
-        cbRegRole.setValue("BIDDER");
-
-        injectField("txtRegCustomerId", txtRegCustomerId);
-        injectField("txtRegUsername", txtRegUsername);
-        injectField("txtRegFullName", txtRegFullName);
-        injectField("txtRegPassword", txtRegPassword);
-        injectField("txtRegConfirm", txtRegConfirm);
-        injectField("cbRegRole", cbRegRole);
-        injectField("txtRegOrganization", new TextField());
-
-        Method submitRegister = AuctionController.class.getDeclaredMethod("handleSubmitRegister");
-        submitRegister.setAccessible(true);
-        submitRegister.invoke(controller);
-
-        ArgumentCaptor<RegisterForm> captor = ArgumentCaptor.forClass(RegisterForm.class);
-        verify(mockAuthActionFacade).register(captor.capture());
-
-        RegisterForm form = captor.getValue();
-        assertEquals("hanto", form.username());
-        assertEquals("To Bao Han", form.fullName());
-    }
-
-    @Test
-    @DisplayName("Test xử lý đặt giá: Truyền đúng số tiền xuống Service")
-    void testHandlePlaceBid_PassesCorrectAmount() throws Exception {
-        // 1. Khởi tạo Controller và giả lập đã load xong UI
-        controller.initialize(null, null);
-
-        // 2. Giả lập ô nhập giá tiền trên màn hình (Ví dụ người dùng gõ 7500)
-        TextField txtBidAmount = new TextField("7500");
-        injectField("txtBidAmount", txtBidAmount); // LƯU Ý: Đổi "txtBidAmount" thành tên biến thật trong Controller của Hân
-
-        // 3. Dùng Reflection để "bấm nút" Place Bid ảo
-        try {
-            Method handlePlaceBid = AuctionController.class.getDeclaredMethod("handlePlaceBid"); // Đổi tên hàm nếu cần
-            handlePlaceBid.setAccessible(true);
-            handlePlaceBid.invoke(controller);
-
-            // 4. Xác thực xem Controller có gọi đúng hàm placeBid(7500.0) của AuctionService không
-            verify(mockAuctionService).placeBid(7500.0);
-        } catch (NoSuchMethodException e) {
-            System.out.println("Bỏ qua bài test này vì không tìm thấy hàm handlePlaceBid trong Controller.");
-        }
+    private void injectField(String name, Object value) throws Exception {
+        Field field = AuctionController.class.getDeclaredField(name);
+        field.setAccessible(true);
+        field.set(controller, value);
     }
 }

@@ -1,0 +1,402 @@
+[
+  {
+    "title": "Máy khoan pin Bosch bộ phụ kiện gia đình",
+    "category": "Công cụ, Dụng cụ cầm tay & Tự làm",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.9070283892819012,
+    "approve_probability_percent": 90.7
+  },
+  {
+    "title": "Máy in Canon đa chức năng cho văn phòng nhỏ",
+    "category": "Kỹ thuật, Gia công kim loại & Công nghiệp",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.8782983055407036,
+    "approve_probability_percent": 87.83
+  },
+  {
+    "title": "Tủ đông Sanaky dung tích lớn cho cửa hàng",
+    "category": "Thiết bị phục vụ ăn uống",
+    "decision": "REJECT",
+    "auto_approve": 0,
+    "approve_probability": 0.5789968714798396,
+    "approve_probability_percent": 57.9
+  },
+  {
+    "title": "Bộ bàn ghế gỗ tự nhiên phong cách hiện đại",
+    "category": "Nhà cửa & Vườn",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.8856995177439165,
+    "approve_probability_percent": 88.57
+  },
+  {
+    "title": "Máy pha cà phê Nuova Simonelli cho quán nhỏ",
+    "category": "Thiết bị phục vụ ăn uống",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.8159483198349934,
+    "approve_probability_percent": 81.59
+  },
+  {
+    "title": "Máy chạy bộ điện phòng gym gia đình",
+    "category": "Thiết bị phòng tập thể dục, giải trí và làm đẹp chuyên nghiệp",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.7840811260248034,
+    "approve_probability_percent": 78.41
+  },
+  {
+    "title": "Máy cưa bàn mini cho xưởng gỗ nhỏ",
+    "category": "Thiết bị chế biến gỗ",
+    "decision": "REJECT",
+    "auto_approve": 0,
+    "approve_probability": 0.6453652946837483,
+    "approve_probability_percent": 64.54
+  },
+  {
+    "title": "Máy hàn điện tử Jasic cho xưởng cơ khí nhỏ",
+    "category": "Kỹ thuật, Gia công kim loại & Công nghiệp",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.7877551245515054,
+    "approve_probability_percent": 78.78
+  },
+  {
+    "title": "Máy bơm nước Panasonic cho sân vườn",
+    "category": "Nhà cửa & Vườn",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.8646506049148167,
+    "approve_probability_percent": 86.47
+  },
+  {
+    "title": "Bộ đèn studio LED cho quay chụp chuyên nghiệp",
+    "category": "Thiết bị phòng tập thể dục, giải trí và làm đẹp chuyên nghiệp",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.9707896057586879,
+    "approve_probability_percent": 97.08
+  },
+  {
+    "title": "Xe máy Yamaha Sirius giấy tờ đầy đủ",
+    "category": "Ô tô, xe máy và các phương tiện khác",
+    "decision": "REJECT",
+    "auto_approve": 0,
+    "approve_probability": 0.5274852014283706,
+    "approve_probability_percent": 52.75
+  },
+  {
+    "title": "Máy xay sinh tố công nghiệp cho quán đồ uống",
+    "category": "Thiết bị phục vụ ăn uống",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.8765259700927415,
+    "approve_probability_percent": 87.65
+  },
+  {
+    "title": "Máy cắt cỏ Honda cho sân vườn rộng",
+    "category": "Nhà cửa & Vườn",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.7766294517018336,
+    "approve_probability_percent": 77.66
+  },
+  {
+    "title": "Bộ dụng cụ sửa chữa ô tô cơ bản",
+    "category": "Công cụ, Dụng cụ cầm tay & Tự làm",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.9269100812863089,
+    "approve_probability_percent": 92.69
+  },
+  {
+    "title": "Máy ép trái cây công nghiệp cho quầy nước",
+    "category": "Thiết bị phục vụ ăn uống",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.9173014002337443,
+    "approve_probability_percent": 91.73
+  },
+  {
+    "title": "Máy hút bụi công nghiệp cho văn phòng lớn",
+    "category": "Công cụ, Dụng cụ cầm tay & Tự làm",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.7693776813011062,
+    "approve_probability_percent": 76.94
+  },
+  {
+    "title": "Ghế massage toàn thân cho gia đình",
+    "category": "Thiết bị phòng tập thể dục, giải trí và làm đẹp chuyên nghiệp",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.9125782256052944,
+    "approve_probability_percent": 91.26
+  },
+  {
+    "title": "Máy lọc không khí Xiaomi cho phòng lớn",
+    "category": "Nhà cửa & Vườn",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.9096826987982906,
+    "approve_probability_percent": 90.97
+  },
+  {
+    "title": "Máy nén khí mini cho gara gia đình",
+    "category": "Kỹ thuật, Gia công kim loại & Công nghiệp",
+    "decision": "REJECT",
+    "auto_approve": 0,
+    "approve_probability": 0.6762396511844694,
+    "approve_probability_percent": 67.62
+  },
+  {
+    "title": "Máy chà sàn mini cho cửa hàng và văn phòng",
+    "category": "Công cụ, Dụng cụ cầm tay & Tự làm",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.8486094616906079,
+    "approve_probability_percent": 84.86
+  },
+  {
+    "title": "Máy đo huyết áp điện tử Omron cho phòng chăm sóc",
+    "category": "Thiết bị y tế",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.95957501706335,
+    "approve_probability_percent": 95.96
+  },
+  {
+    "title": "Cân điện tử y tế Tanita cho phòng khám nhỏ",
+    "category": "Thiết bị y tế",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.8604057484456681,
+    "approve_probability_percent": 86.04
+  },
+  {
+    "title": "Bộ máy hơ gel chuyên nghiệp cho tiệm nail",
+    "category": "Thiết bị phòng tập thể dục, giải trí và làm đẹp chuyên nghiệp",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.933389979644094,
+    "approve_probability_percent": 93.34
+  },
+  {
+    "title": "Máy bào gỗ mini cho thợ mộc cá nhân",
+    "category": "Thiết bị chế biến gỗ",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.7808947870830512,
+    "approve_probability_percent": 78.09
+  },
+  {
+    "title": "Máy mài góc Makita cho công việc cơ khí nhẹ",
+    "category": "Công cụ, Dụng cụ cầm tay & Tự làm",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.9620963654275588,
+    "approve_probability_percent": 96.21
+  },
+  {
+    "title": "Máy hút mùi bếp công nghiệp inox",
+    "category": "Thiết bị phục vụ ăn uống",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.8085275114673713,
+    "approve_probability_percent": 80.85
+  },
+  {
+    "title": "Bộ sofa phòng khách màu trung tính",
+    "category": "Nhà cửa & Vườn",
+    "decision": "REJECT",
+    "auto_approve": 0,
+    "approve_probability": 0.6540175906729888,
+    "approve_probability_percent": 65.4
+  },
+  {
+    "title": "Máy cắt gạch Bosch cho đội thi công nhỏ",
+    "category": "Xây dựng, Nhà máy & Máy móc",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.7683135471672188,
+    "approve_probability_percent": 76.83
+  },
+  {
+    "title": "Máy trộn bột công nghiệp dung tích nhỏ",
+    "category": "Thiết bị phục vụ ăn uống",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.8363109639467963,
+    "approve_probability_percent": 83.63
+  },
+  {
+    "title": "Máy may công nghiệp Juki cho xưởng nhỏ",
+    "category": "Kỹ thuật, Gia công kim loại & Công nghiệp",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.9416799792071262,
+    "approve_probability_percent": 94.17
+  },
+  {
+    "title": "Máy cắt decal Graphtec cho studio quảng cáo",
+    "category": "Kỹ thuật, Gia công kim loại & Công nghiệp",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.790881590922734,
+    "approve_probability_percent": 79.09
+  },
+  {
+    "title": "Bộ tạ tay cao su cho phòng tập cá nhân",
+    "category": "Thiết bị phòng tập thể dục, giải trí và làm đẹp chuyên nghiệp",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.7687910563521854,
+    "approve_probability_percent": 76.88
+  },
+  {
+    "title": "Máy cưa lọng Bosch cho thợ DIY",
+    "category": "Công cụ, Dụng cụ cầm tay & Tự làm",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.8910007372082799,
+    "approve_probability_percent": 89.1
+  },
+  {
+    "title": "Máy làm đá viên mini cho quán nước",
+    "category": "Thiết bị phục vụ ăn uống",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.873831682681407,
+    "approve_probability_percent": 87.38
+  },
+  {
+    "title": "Bộ máy sấy tóc salon chuyên nghiệp",
+    "category": "Thiết bị phòng tập thể dục, giải trí và làm đẹp chuyên nghiệp",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.9407089022220649,
+    "approve_probability_percent": 94.07
+  },
+  {
+    "title": "Máy đo đường huyết cá nhân bộ đầy đủ",
+    "category": "Thiết bị y tế",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.974576899048439,
+    "approve_probability_percent": 97.46
+  },
+  {
+    "title": "Máy phun sơn cầm tay cho sửa nhà",
+    "category": "Công cụ, Dụng cụ cầm tay & Tự làm",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.8382256597278941,
+    "approve_probability_percent": 83.82
+  },
+  {
+    "title": "Tủ hấp bánh bao inox cho quán ăn sáng",
+    "category": "Thiết bị phục vụ ăn uống",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.8012406376034835,
+    "approve_probability_percent": 80.12
+  },
+  {
+    "title": "Máy khoan bàn mini cho xưởng kỹ thuật",
+    "category": "Kỹ thuật, Gia công kim loại & Công nghiệp",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.8267172759473038,
+    "approve_probability_percent": 82.67
+  },
+  {
+    "title": "Bộ camera an ninh cho cửa hàng nhỏ",
+    "category": "Nhà cửa & Vườn",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.980538906150476,
+    "approve_probability_percent": 98.05
+  },
+  {
+    "title": "Máy ép plastic A3 cho văn phòng",
+    "category": "Công cụ, Dụng cụ cầm tay & Tự làm",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.8353830408608769,
+    "approve_probability_percent": 83.54
+  },
+  {
+    "title": "Bộ loa hội trường công suất vừa",
+    "category": "Thiết bị phòng tập thể dục, giải trí và làm đẹp chuyên nghiệp",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.7600222093248873,
+    "approve_probability_percent": 76.0
+  },
+  {
+    "title": "Máy đục bê tông Makita cho đội sửa chữa",
+    "category": "Xây dựng, Nhà máy & Máy móc",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.8757463231981572,
+    "approve_probability_percent": 87.57
+  },
+  {
+    "title": "Máy đo khoảng cách laser Bosch cho thi công",
+    "category": "Công cụ, Dụng cụ cầm tay & Tự làm",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.9723072151446692,
+    "approve_probability_percent": 97.23
+  },
+  {
+    "title": "Máy rửa xe áp lực cao cho gia đình",
+    "category": "Nhà cửa & Vườn",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.8451721657765909,
+    "approve_probability_percent": 84.52
+  },
+  {
+    "title": "Máy thái thịt bán tự động cho quán ăn",
+    "category": "Thiết bị phục vụ ăn uống",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.942914512480557,
+    "approve_probability_percent": 94.29
+  },
+  {
+    "title": "Máy cân bằng lốp xe cho garage nhỏ",
+    "category": "Ô tô, xe máy và các phương tiện khác",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.8601882046348668,
+    "approve_probability_percent": 86.02
+  },
+  {
+    "title": "Máy hút ẩm công nghiệp cho kho nhỏ",
+    "category": "Nhà cửa & Vườn",
+    "decision": "REJECT",
+    "auto_approve": 0,
+    "approve_probability": 0.7386514224647726,
+    "approve_probability_percent": 73.87
+  },
+  {
+    "title": "Bộ thiết bị livestream bán hàng nhỏ gọn",
+    "category": "Thiết bị phòng tập thể dục, giải trí và làm đẹp chuyên nghiệp",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.9001352951642138,
+    "approve_probability_percent": 90.01
+  },
+  {
+    "title": "Máy cắt nhôm mini cho xưởng cửa nhỏ",
+    "category": "Xây dựng, Nhà máy & Máy móc",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.8582834980339791,
+    "approve_probability_percent": 85.83
+  }
+]
