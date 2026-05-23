@@ -4,6 +4,7 @@ import com.auction.client.network.socket.ClientConnection;
 import com.auction.client.session.SessionStore;
 import com.auction.common.dto.AutoBidRequest;
 import com.auction.common.dto.Message;
+import com.auction.common.model.AuctionRoom;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -29,7 +30,7 @@ public class AutoBidController {
     ) {
         this.paneAutoBid = paneAutoBid;
         this.txtChatLog = txtChatLog;
-        this.sessionStore = sessionStore;
+        this.sessionStore = sessionStore; // <-- Vũ khí bí mật là đây
         this.clientConnection = clientConnection;
         this.formReader = new AutoBidFormReader(txtMaxBid, txtAutoBidStep);
         this.validator = new AutoBidValidator();
@@ -47,7 +48,17 @@ public class AutoBidController {
     }
 
     public void handleSetAutoBid() {
-        AutoBidValidator.AutoBidValidationResult result = validator.validate(formReader.read());
+        // 1. TỰ ĐỘNG THÒ TAY VÀO KHO LẤY DỮ LIỆU PHÒNG MỚI NHẤT
+        AuctionRoom latestRoom = sessionStore != null ? sessionStore.getCurrentRoom() : null;
+
+        if (latestRoom == null) {
+            appendFeedback("He thong: Loi! Chua cap nhat duoc thong tin phong dau gia.\n");
+            return;
+        }
+
+        // 2. Đưa phòng mới nhất cho Validator kiểm tra luật
+        AutoBidValidator.AutoBidValidationResult result = validator.validate(formReader.read(), latestRoom);
+
         if (!result.valid()) {
             appendFeedback(result.message());
             return;
@@ -61,7 +72,8 @@ public class AutoBidController {
         togglePanel();
         buttonStateController.markOn();
 
-        String roomId = currentRoomId();
+        // 3. Gửi lệnh lên Server
+        String roomId = latestRoom.getRoomId();
         if (roomId != null && clientConnection != null) {
             clientConnection.sendMessage(new Message("SET_AUTO_BID", new AutoBidRequest(roomId, result.maxBid(), result.step())));
         }

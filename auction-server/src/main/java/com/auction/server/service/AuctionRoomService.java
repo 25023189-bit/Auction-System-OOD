@@ -125,6 +125,13 @@ public class AuctionRoomService {
             return fail("BID_FAIL", "Auction room not found or the auction has ended.");
         }
 
+        // --- CHỐT CHẶN BẢO MẬT KÉP ---
+        // Đảm bảo tổng số tiền gửi lên (amount) phải >= giá hiện tại + bước giá phòng
+        double minimumRequiredPrice = room.getCurrentPrice() + room.getBidStep();
+        if (amount < minimumRequiredPrice) {
+            return fail("BID_FAIL", "Invalid bid: The amount does not meet the minimum step price requirement.");
+        }
+
         LocalDateTime now = LocalDateTime.now();
         // Server validate lại thời gian/trạng thái dù client đã chặn UI.
         Message preCheck = validateBidByStatus(room, now);
@@ -172,13 +179,24 @@ public class AuctionRoomService {
                 }
             }
 
+            // ... (Phần trên giữ nguyên) ...
+
             syncRuntimeInfoToRoom(room, state);
 
-            return new Message(
+            // 1. Gói thông báo thành công lại
+            Message successMessage = new Message(
                     extended ? "BID_SUCCESS_EXTENDED" : "BID_SUCCESS",
                     user.getUsername(),
                     room
             );
+
+            // 2. PHÁT LOA CHO TOÀN SERVER (Tất cả Client, bao gồm cả máy của Hân sẽ nhận được giá mới)
+            com.auction.server.main.AuctionServer.broadcast(successMessage);
+
+            // 3. --- BẮT ĐẦU SỬA: ĐÁNH LỪA HANDLER ---
+            // Trả về một Message vô nghĩa để Handler gửi về Client bị lờ đi, tránh hiện 2 lần trên màn hình
+            return new Message("IGNORE_ECHO", "SERVER", null);
+            // --- KẾT THÚC SỬA ---
         }
     }
 
