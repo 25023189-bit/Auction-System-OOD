@@ -1,10 +1,10 @@
 {
-  "status": "error",
-  "timestamp": "2026-05-23T02:44:16",
+  "status": "success",
+  "timestamp": "2026-05-23T10:51:29",
   "question": "Tôi muốn tham gia phòng đấu giá",
   "prediction_model": "Logist",
-  "answer_source": "ERROR",
-  "llm_used_for_answer": false,
+  "answer_source": "LLM",
+  "llm_used_for_answer": true,
   "logist_used_for_answer": false,
   "selected_labels": [
     "THAM GIA PHÒNG ĐẤU GIÁ"
@@ -72,11 +72,5 @@
     "CHỦ ĐỀ NGUY HIỂM": 0.039357,
     "AI HỖ TRỢ AUTO APPROVE": 0.006889,
     "Không Rõ": 0.009556
-  },
-  "fallback_answer_source": "Logist",
-  "fallback_answer": "Về Tham gia phòng đấu giá: Người dùng có thể tham gia một phòng đấu giá nếu phiên còn hợp lệ và đáp ứng điều kiện của hệ thống. Bidder phải có số dư tối thiểu theo yêu cầu của phiên, còn seller của phiên có thể vào phòng trước khi phiên bắt đầu.",
-  "error": {
-    "type": "RuntimeError",
-    "message": "Không gọi được Ollama. Hãy kiểm tra server và model."
   }
 }

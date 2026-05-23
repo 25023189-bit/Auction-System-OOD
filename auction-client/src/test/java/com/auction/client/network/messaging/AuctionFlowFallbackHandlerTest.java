@@ -6,6 +6,7 @@ import com.auction.client.feature.room.AuctionRoomPresenter;
 import com.auction.client.service.AuctionService;
 import com.auction.client.session.SessionStore;
 import com.auction.common.dto.Message;
+import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.User;
 import javafx.scene.control.Alert;
 import org.junit.jupiter.api.BeforeAll;
@@ -195,5 +196,24 @@ class AuctionFlowFallbackHandlerTest {
             assertEquals(0, mockedAlerts.constructed().size());
             verify(mockSceneNavigator, never()).showLobby();
         }
+    }
+
+    @Test
+    void testSupports_RoomJoined() {
+        assertTrue(handler.supports("ROOM_JOINED"));
+    }
+
+    @Test
+    void testHandle_RoomJoined_ShouldStoreRoomAndNavigateToAuctionRoom() {
+        AuctionRoom room = new AuctionRoom();
+        room.setRoomId("ROOM_001");
+
+        Message message = new Message("ROOM_JOINED", room);
+
+        handler.handle(message);
+
+        verify(mockSessionStore).setCurrentRoom(room);
+        verify(mockSessionStore).setCurrentRoomId("ROOM_001");
+        verify(mockSceneNavigator).showAuctionRoom(room);
     }
 }

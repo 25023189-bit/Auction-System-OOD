@@ -34,27 +34,28 @@ class AuctionRoomMessageHandlerTest {
     @Test
     @DisplayName("Test bộ lọc supports() nhận đúng các sự kiện phòng đấu giá")
     void testSupports() {
-        assertTrue(handler.supports("ROOM_JOINED"));
+        assertFalse(handler.supports("ROOM_JOINED"));
+
+        assertTrue(handler.supports("ROOM_STATE_UPDATED"));
         assertTrue(handler.supports("BID_SUCCESS"));
+        assertTrue(handler.supports("BID_SUCCESS_EXTENDED"));
+        assertTrue(handler.supports("CHAT_MSG"));
         assertTrue(handler.supports("UPDATE_PRICE"));
-        assertFalse(handler.supports("LOGIN_SUCCESS")); // Sự kiện lạ sẽ bị từ chối
+
+        assertFalse(handler.supports("UNKNOWN_ACTION"));
     }
 
     @Test
-    @DisplayName("Test xử lý ROOM_JOINED: Lưu session và bật Timer")
-    void testHandle_RoomJoined() {
+    void testHandle_RoomJoined_DoesNothingBecauseHandledByFlowFallback() {
         AuctionRoom room = new AuctionRoom();
-        room.setRoomId("AU999");
-        room.setStartTime(LocalDateTime.now());
-        Message msg = new Message("ROOM_JOINED", "SERVER", room);
+        room.setRoomId("ROOM_001");
 
-        handler.handle(msg);
+        Message message = new Message("ROOM_JOINED", room);
 
-        verify(mockSession).setCurrentRoom(room);
-        verify(mockSession).setCurrentRoomId("AU999");
-        verify(mockNavigator).showAuctionRoom(room);
-        verify(mockBinder).bind(room);
-        verify(mockTimer).start(any(), any());
+        handler.handle(message);
+
+        verify(mockSession, never()).setCurrentRoom(any(AuctionRoom.class));
+        verify(mockSession, never()).setCurrentRoomId(anyString());
     }
 
     @Test

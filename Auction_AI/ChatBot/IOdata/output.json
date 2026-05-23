@@ -1,6 +1,3 @@
 {
-  "status": "fallback",
-  "answer_source": "Logist",
-  "answer": "Về Tham gia phòng đấu giá: Người dùng có thể tham gia một phòng đấu giá nếu phiên còn hợp lệ và đáp ứng điều kiện của hệ thống. Bidder phải có số dư tối thiểu theo yêu cầu của phiên, còn seller của phiên có thể vào phòng trước khi phiên bắt đầu.",
-  "timestamp": "2026-05-23T02:44:16"
+  "answer": "Tham gia phòng đấu giá là một chức năng trong hệ thống của chúng tôi. Để tham gia, bạn cần đảm bảo phiên đấu giá đang hợp lệ và đáp ứng điều kiện của hệ thống. Bạn cũng phải có số dư tối thiểu theo yêu cầu của phiên.\n\nHãy kiểm tra lại phiên đấu giá xem nó còn hợp lệ không và bạn có thể đáp ứng điều kiện của hệ thống. Sau đó, hãy vào phòng đấu giá và bắt đầu tham gia. Chúc may!"
 }
