@@ -3,26 +3,26 @@
   "source": "auction-system",
   "samples": [
     {
-      "title": "son",
+      "title": "uuu",
       "category": "",
-      "organization": "hello",
-      "description": "hello",
+      "organization": "D",
+      "description": "áddasasd",
       "seller_rating": 5.0,
       "seller_completed_rating": 0.0,
       "seller_cancel_rate": 1.0,
-      "minimum_join_amount": 500.0,
-      "minimum_join_ratio": 0.5,
-      "bid_step": 50.0,
-      "bid_step_ratio": 0.05,
+      "minimum_join_amount": 100.0,
+      "minimum_join_ratio": 0.1,
+      "bid_step": 100.0,
+      "bid_step_ratio": 0.1,
       "start_price": 1000.0,
       "start_price_log": 6.907755278982137,
-      "duration_minutes": 100.0,
+      "duration_minutes": 50.0,
       "extension_seconds": 60.0,
       "start_hour": 22.0,
-      "day_of_week": 5.0,
+      "day_of_week": 6.0,
       "is_weekend": 1.0,
       "title_length": 3.0,
-      "desc_length": 5.0
+      "desc_length": 8.0
     }
   ]
 }
