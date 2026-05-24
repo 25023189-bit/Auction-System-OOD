@@ -4,15 +4,17 @@ import com.auction.common.dto.Message;
 import com.auction.common.model.AuctionRoom;
 import com.auction.server.handler.ClientActionContext;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.any;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.anyDouble;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 class AutoBidManagerTest {
@@ -28,80 +30,82 @@ class AutoBidManagerTest {
         mockContext = Mockito.mock(ClientActionContext.class);
         mockRoomService = Mockito.mock(AuctionRoomService.class);
 
-        // Chuẩn bị dữ liệu phòng đấu giá ban đầu
         testRoom = new AuctionRoom();
         testRoom.setRoomId("ROOM_101");
         testRoom.setCurrentPrice(1000.0);
-        testRoom.setHighestBidder("nguoi_ban_dau");
+        testRoom.setBidStep(100.0);
+        testRoom.setHighestBidder("USER_B");
 
-        // 1. Dạy Mockito: Khi hệ thống cần RoomService, hãy đưa bản Mock ra
         when(mockContext.getRoomService()).thenReturn(mockRoomService);
-
-        // 2. TUYỆT KỸ THEN_ANSWER: Giả lập Database cập nhật giá tiền theo thời gian thực
         when(mockRoomService.placeNewBid(anyString(), anyString(), anyDouble()))
                 .thenAnswer(invocation -> {
-                    // Lấy các tham số mà Robot truyền vào
                     String userId = invocation.getArgument(1);
                     double amount = invocation.getArgument(2);
-
-                    // Cập nhật trực tiếp vào testRoom để giả lập việc Database đã ghi nhận
                     testRoom.setCurrentPrice(amount);
                     testRoom.setHighestBidder(userId);
-
-                    // Trả về Message thành công y hệt như Server thật
                     return new Message("BID_SUCCESS", "SERVER", testRoom);
                 });
     }
 
     @Test
-    @DisplayName("Kiểm tra đăng ký và hủy Robot thành công")
-    void testRegisterAndCancelAutoBid() {
-        autoBidManager.registerAutoBid("ROOM_101", "to_han", 5000, 100);
+    void registerAutoBidStoresAgentByUserId() {
+        autoBidManager.registerAutoBid("ROOM_101", "USER_A", 2000, 100);
 
-        autoBidManager.runAutoBiddingEngine(testRoom, mockContext);
-        assertEquals("to_han", testRoom.getHighestBidder(), "Robot phải nhảy vào chiếm giá");
-
-        autoBidManager.cancelAutoBid("ROOM_101", "to_han");
-
-        // Giả lập có người khác vào mua
-        testRoom.setCurrentPrice(2000.0);
-        testRoom.setHighestBidder("nguoi_khac");
-
-        autoBidManager.runAutoBiddingEngine(testRoom, mockContext);
-        assertEquals(2000.0, testRoom.getCurrentPrice(), "Giá phải giữ nguyên vì Robot đã bị hủy");
+        assertTrue(autoBidManager.hasAutoBid("ROOM_101", "USER_A"));
+        assertFalse(autoBidManager.hasAutoBid("ROOM_101", "username_a"));
     }
 
     @Test
-    @DisplayName("Robot đơn độc tự nâng giá khi bị hụt")
-    void testSingleAgentBidsSuccessfully() {
-        autoBidManager.registerAutoBid("ROOM_101", "to_han", 5000.0, 100.0);
-        autoBidManager.runAutoBiddingEngine(testRoom, mockContext);
+    void cancelAutoBidUsesUserId() {
+        autoBidManager.registerAutoBid("ROOM_101", "USER_A", 2000, 100);
 
-        // Giá gốc 1000 + Bước nhảy 100
+        assertFalse(autoBidManager.cancelAutoBid("ROOM_101", "username_a"));
+        assertTrue(autoBidManager.hasAutoBid("ROOM_101", "USER_A"));
+        assertTrue(autoBidManager.cancelAutoBid("ROOM_101", "USER_A"));
+        assertFalse(autoBidManager.hasAutoBid("ROOM_101", "USER_A"));
+    }
+
+    @Test
+    void triggerDoesNotBidForCurrentHighestBidder() {
+        testRoom.setHighestBidder("USER_A");
+        autoBidManager.registerAutoBid("ROOM_101", "USER_A", 2000, 100);
+
+        autoBidManager.triggerAutoBids("ROOM_101", testRoom, mockContext);
+
+        assertEquals(1000.0, testRoom.getCurrentPrice());
+        verify(mockRoomService, never()).placeNewBid(anyString(), anyString(), anyDouble());
+    }
+
+    @Test
+    void triggerBidsWhenAgentIsNotHighestBidder() {
+        autoBidManager.registerAutoBid("ROOM_101", "USER_A", 1500, 100);
+
+        autoBidManager.triggerAutoBids("ROOM_101", testRoom, mockContext);
+
         assertEquals(1100.0, testRoom.getCurrentPrice());
-        assertEquals("to_han", testRoom.getHighestBidder());
-
-        // Kiểm tra xem hệ thống có gọi lệnh gửi tin nhắn mạng (broadcast) không
-        Mockito.verify(mockContext, Mockito.atLeastOnce()).broadcastToRoom(eq("ROOM_101"), any());
+        assertEquals("USER_A", testRoom.getHighestBidder());
+        verify(mockRoomService).placeNewBid(eq("ROOM_101"), eq("USER_A"), eq(1100.0));
     }
 
     @Test
-    @DisplayName("Hai Robot đọ giá nhau đến khi chạm trần")
-    void testTwoAgentsBiddingWar() {
-        // han cài max 2000, bước 100. hancute cài max 1500, bước 200
-        autoBidManager.registerAutoBid("ROOM_101", "han", 2000.0, 100.0);
-        autoBidManager.registerAutoBid("ROOM_101", "hancute", 1500.0, 200.0);
+    void triggerDoesNotExceedMaxBid() {
+        autoBidManager.registerAutoBid("ROOM_101", "USER_A", 1100, 200);
 
-        autoBidManager.runAutoBiddingEngine(testRoom, mockContext);
+        autoBidManager.triggerAutoBids("ROOM_101", testRoom, mockContext);
 
-        // Cuộc chiến diễn ra như sau:
-        // 1. han nhảy vào: 1000 + 100 = 1100
-        // 2. hancute nhảy vào: 1100 + 200 = 1300
-        // 3. han bật lại: 1300 + 100 = 1400
-        // 4. hancute muốn bật lại (1400 + 200 = 1600) -> NHƯNG vượt Max Bid (1500) -> Bỏ cuộc
-        // KẾT QUẢ: han thắng ở mức 1400.
+        assertEquals(1000.0, testRoom.getCurrentPrice());
+        assertEquals("USER_B", testRoom.getHighestBidder());
+        verify(mockRoomService, never()).placeNewBid(anyString(), anyString(), anyDouble());
+    }
 
-        assertEquals(1400.0, testRoom.getCurrentPrice(), "Giá cuối cùng phải chốt ở mức 1400");
-        assertEquals("han", testRoom.getHighestBidder(), "Người chiến thắng phải là han");
+    @Test
+    void twoAgentsBidDeterministicallyUntilStable() {
+        autoBidManager.registerAutoBid("ROOM_101", "USER_A", 2000.0, 100.0);
+        autoBidManager.registerAutoBid("ROOM_101", "USER_C", 1500.0, 200.0);
+
+        autoBidManager.triggerAutoBids("ROOM_101", testRoom, mockContext);
+
+        assertEquals(1400.0, testRoom.getCurrentPrice());
+        assertEquals("USER_A", testRoom.getHighestBidder());
     }
 }

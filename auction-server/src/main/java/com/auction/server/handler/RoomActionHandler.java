@@ -1,5 +1,6 @@
 package com.auction.server.handler;
 
+import com.auction.common.dto.AutoBidRequest;
 import com.auction.common.dto.Message;
 import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.BidTransaction;
@@ -61,42 +62,82 @@ public class RoomActionHandler extends AbstractClientActionHandler {
     // ==========================================================
     private void handleSetAutoBid(Message message, ClientActionContext context) {
         try {
-            com.auction.common.dto.AutoBidRequest request = (com.auction.common.dto.AutoBidRequest) message.getData();
-
-            // 1. CHỈ CẦN TRUYỀN ID THẬT CỦA USER VÀO ĐÂY (Bỏ vụ tra cứu Username đi cho gọn)
-            autoBidManager.registerAutoBid(request.getRoomId(), context.getUserId(), request.getMaxBid(), request.getIncrement());
-
-            LOGGER.info("User {} set Auto-Bid: Max {}, Step {}", context.getUserId(), request.getMaxBid(), request.getIncrement());
-
-            // 2. Kích hoạt Robot ngay lập tức
-            AuctionRoom room = context.getRoomService().getLiveRoom(request.getRoomId());
-            if (room != null) {
-                autoBidManager.triggerAutoBids(request.getRoomId(), room, context);
+            if (!(message.getData() instanceof AutoBidRequest request)) {
+                context.send(new Message("AUTO_BID_SET_FAILED", "SERVER", "Invalid auto-bid request."));
+                return;
             }
+
+            String roomId = request.getRoomId();
+            String userId = context.getUserId();
+            AuctionRoom room = context.getRoomService().getLiveRoom(roomId);
+            Message validationError = validateAutoBidRequest(request, room, context);
+            if (validationError != null) {
+                context.send(validationError);
+                return;
+            }
+
+            autoBidManager.registerAutoBid(roomId, userId, request.getMaxBid(), request.getIncrement());
+
+            LOGGER.info("User {} set Auto-Bid in room {}: max {}, step {}", userId, roomId, request.getMaxBid(), request.getIncrement());
+
+            if (room.getHighestBidder() == null || !room.getHighestBidder().equals(userId)) {
+                autoBidManager.triggerAutoBids(roomId, room, context);
+            }
+
+            context.send(new Message("AUTO_BID_SET_SUCCESS", "SERVER", "Auto-Bid has been enabled."));
 
         } catch (Exception e) {
             LOGGER.error("Set Auto-Bid processing error.", e);
+            context.send(new Message("AUTO_BID_SET_FAILED", "SERVER", "Unable to set Auto-Bid."));
         }
     }
 
     private void handleCancelAutoBid(Message message, ClientActionContext context) {
         try {
-            String roomId = message.getData().toString();
+            String roomId = message.getData() != null ? message.getData().toString().trim() : "";
+            if (roomId.isBlank()) {
+                context.send(new Message("AUTO_BID_CANCEL_FAILED", "SERVER", "Missing room ID."));
+                return;
+            }
 
-            // 1. Phải tra cứu lại đúng cái tên hiển thị (Username) đã dùng để đăng ký ban nãy
-            UserDAO userDAO = new UserDAO();
-            User user = userDAO.getUserById(context.getUserId());
-            String realUsername = (user != null && user.getUsername() != null)
-                    ? user.getUsername()
-                    : context.getUserId();
+            boolean canceled = autoBidManager.cancelAutoBid(roomId, context.getUserId());
 
-            // 2. Đưa đúng tên thật vào để tìm và gỡ Robot khỏi hàng đợi
-            autoBidManager.cancelAutoBid(roomId, realUsername);
-
-            LOGGER.info("User {} ({}) canceled Auto-Bid in room {}", context.getUserId(), realUsername, roomId);
+            if (canceled) {
+                LOGGER.info("User {} canceled Auto-Bid in room {}", context.getUserId(), roomId);
+                context.send(new Message("AUTO_BID_CANCEL_SUCCESS", "SERVER", "Auto-Bid has been canceled."));
+            } else {
+                context.send(new Message("AUTO_BID_CANCEL_FAILED", "SERVER", "No active Auto-Bid configuration found."));
+            }
         } catch (Exception e) {
             LOGGER.error("Cancel Auto-Bid processing error.", e);
+            context.send(new Message("AUTO_BID_CANCEL_FAILED", "SERVER", "Unable to cancel Auto-Bid."));
         }
+    }
+
+    private Message validateAutoBidRequest(AutoBidRequest request, AuctionRoom room, ClientActionContext context) {
+        if (request.getRoomId() == null || request.getRoomId().isBlank()) {
+            return new Message("AUTO_BID_SET_FAILED", "SERVER", "Missing room ID.");
+        }
+        if (context.getUserId() == null || context.getUserId().isBlank()) {
+            return new Message("AUTO_BID_SET_FAILED", "SERVER", "User is not authenticated.");
+        }
+        if (room == null) {
+            return new Message("AUTO_BID_SET_FAILED", "SERVER", "Auction room not found.");
+        }
+        if (!request.getRoomId().equals(context.getCurrentRoomId())) {
+            return new Message("AUTO_BID_SET_FAILED", "SERVER", "You are not in this auction room.");
+        }
+        String status = room.getStatus() == null ? "" : room.getStatus().trim();
+        if (!"RUNNING".equalsIgnoreCase(status) && !"OPEN".equalsIgnoreCase(status)) {
+            return new Message("AUTO_BID_SET_FAILED", "SERVER", "Auction is not running.");
+        }
+        if (request.getMaxBid() <= room.getCurrentPrice()) {
+            return new Message("AUTO_BID_SET_FAILED", "SERVER", "Max bid must be greater than current price.");
+        }
+        if (request.getIncrement() < room.getBidStep()) {
+            return new Message("AUTO_BID_SET_FAILED", "SERVER", "Auto-Bid step is below the room bid step.");
+        }
+        return null;
     }
     // ==========================================================
     // CÁC HÀM CŨ

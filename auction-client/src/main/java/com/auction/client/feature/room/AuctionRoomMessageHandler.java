@@ -1,6 +1,7 @@
 package com.auction.client.feature.room;
 
 import com.auction.client.core.navigation.SceneNavigator;
+import com.auction.client.feature.controllers.auction.autobid.AutoBidController;
 import com.auction.client.network.messaging.MessageHandler;
 import com.auction.client.session.SessionStore;
 import com.auction.common.dto.Message;
@@ -35,6 +36,7 @@ public class AuctionRoomMessageHandler implements MessageHandler {
     private final AuctionRoomStateBinder binder;
     private final AuctionRoomPresenter presenter;
     private final AuctionTimer auctionTimer;
+    private final AutoBidController autoBidController;
 
     public AuctionRoomMessageHandler(SessionStore sessionStore,
                                      SceneNavigator sceneNavigator,
@@ -46,6 +48,21 @@ public class AuctionRoomMessageHandler implements MessageHandler {
         this.binder = binder;
         this.presenter = presenter;
         this.auctionTimer = auctionTimer;
+        this.autoBidController = null;
+    }
+
+    public AuctionRoomMessageHandler(SessionStore sessionStore,
+                                     SceneNavigator sceneNavigator,
+                                     AuctionRoomStateBinder binder,
+                                     AuctionRoomPresenter presenter,
+                                     AuctionTimer auctionTimer,
+                                     AutoBidController autoBidController) {
+        this.sessionStore = sessionStore;
+        this.sceneNavigator = sceneNavigator;
+        this.binder = binder;
+        this.presenter = presenter;
+        this.auctionTimer = auctionTimer;
+        this.autoBidController = autoBidController;
     }
 
     @Override
@@ -55,6 +72,10 @@ public class AuctionRoomMessageHandler implements MessageHandler {
             case "ROOM_STATE_UPDATED",
                  "BID_SUCCESS",
                  "BID_SUCCESS_EXTENDED",
+                 "AUTO_BID_SET_SUCCESS",
+                 "AUTO_BID_SET_FAILED",
+                 "AUTO_BID_CANCEL_SUCCESS",
+                 "AUTO_BID_CANCEL_FAILED",
                  "CHAT_MSG",
                  "UPDATE_PRICE" -> true;
             default -> false;
@@ -66,8 +87,36 @@ public class AuctionRoomMessageHandler implements MessageHandler {
         switch (message.getAction()) {
             case "ROOM_STATE_UPDATED" -> handleRoomStateUpdated(message);
             case "BID_SUCCESS", "BID_SUCCESS_EXTENDED" -> handleBidSuccess(message);
+            case "AUTO_BID_SET_SUCCESS" -> handleAutoBidSetSuccess();
+            case "AUTO_BID_SET_FAILED" -> handleAutoBidSetFailed(message);
+            case "AUTO_BID_CANCEL_SUCCESS" -> handleAutoBidCancelSuccess();
+            case "AUTO_BID_CANCEL_FAILED" -> handleAutoBidCancelFailed(message);
             case "CHAT_MSG" -> presenter.appendChat("[" + message.username + "]: " + message.data);
             case "UPDATE_PRICE" -> handleUpdatePrice(message);
+        }
+    }
+
+    private void handleAutoBidSetSuccess() {
+        if (autoBidController != null) {
+            autoBidController.handleSetSuccess();
+        }
+    }
+
+    private void handleAutoBidSetFailed(Message message) {
+        if (autoBidController != null) {
+            autoBidController.handleSetFailed(String.valueOf(message.getData()));
+        }
+    }
+
+    private void handleAutoBidCancelSuccess() {
+        if (autoBidController != null) {
+            autoBidController.handleCancelSuccess();
+        }
+    }
+
+    private void handleAutoBidCancelFailed(Message message) {
+        if (autoBidController != null) {
+            autoBidController.handleCancelFailed(String.valueOf(message.getData()));
         }
     }
 

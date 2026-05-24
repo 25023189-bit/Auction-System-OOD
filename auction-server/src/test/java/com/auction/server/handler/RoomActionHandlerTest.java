@@ -1,6 +1,8 @@
 package com.auction.server.handler;
 
+import com.auction.common.dto.AutoBidRequest;
 import com.auction.common.dto.Message;
+import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.User;
 import com.auction.server.dao.AuctionDAO;
 import com.auction.server.dao.TransactionDAO;
@@ -172,5 +174,45 @@ class RoomActionHandlerTest {
 
         handler.handle(message, mockContext);
         verify(mockContext).send(argThat(msg -> "PRODUCT_DETAILS_SUCCESS".equals(msg.getAction())));
+    }
+
+    @Test
+    @DisplayName("SET_AUTO_BID thanh cong dung userId va khong trigger khi user dang thang")
+    void testHandleSetAutoBid_SuccessWhenAlreadyHighestBidder() {
+        AuctionRoom room = new AuctionRoom();
+        room.setRoomId("AUTO_ROOM_SET");
+        room.setStatus("RUNNING");
+        room.setCurrentPrice(1000.0);
+        room.setBidStep(100.0);
+        room.setHighestBidder("USER_HAN");
+
+        when(mockContext.getCurrentRoomId()).thenReturn("AUTO_ROOM_SET");
+        when(mockRoomService.getLiveRoom("AUTO_ROOM_SET")).thenReturn(room);
+
+        handler.handle(new Message("SET_AUTO_BID", new AutoBidRequest("AUTO_ROOM_SET", 2000.0, 100.0)), mockContext);
+
+        verify(mockContext).send(argThat(msg -> "AUTO_BID_SET_SUCCESS".equals(msg.getAction())));
+        verify(mockRoomService, never()).placeNewBid(anyString(), anyString(), anyDouble());
+    }
+
+    @Test
+    @DisplayName("CANCEL_AUTO_BID tra success/fail ro rang")
+    void testHandleCancelAutoBid_SuccessAndFailure() {
+        AuctionRoom room = new AuctionRoom();
+        room.setRoomId("AUTO_ROOM_CANCEL");
+        room.setStatus("RUNNING");
+        room.setCurrentPrice(1000.0);
+        room.setBidStep(100.0);
+        room.setHighestBidder("USER_HAN");
+
+        when(mockContext.getCurrentRoomId()).thenReturn("AUTO_ROOM_CANCEL");
+        when(mockRoomService.getLiveRoom("AUTO_ROOM_CANCEL")).thenReturn(room);
+
+        handler.handle(new Message("SET_AUTO_BID", new AutoBidRequest("AUTO_ROOM_CANCEL", 2000.0, 100.0)), mockContext);
+        handler.handle(new Message("CANCEL_AUTO_BID", "AUTO_ROOM_CANCEL"), mockContext);
+        handler.handle(new Message("CANCEL_AUTO_BID", "AUTO_ROOM_CANCEL"), mockContext);
+
+        verify(mockContext).send(argThat(msg -> "AUTO_BID_CANCEL_SUCCESS".equals(msg.getAction())));
+        verify(mockContext).send(argThat(msg -> "AUTO_BID_CANCEL_FAILED".equals(msg.getAction())));
     }
 }

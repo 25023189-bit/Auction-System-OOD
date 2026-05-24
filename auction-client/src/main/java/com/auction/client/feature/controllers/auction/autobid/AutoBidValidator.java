@@ -3,6 +3,7 @@ package com.auction.client.feature.controllers.auction.autobid;
 import com.auction.common.model.AuctionRoom; // Nhớ import model này nhé
 
 public class AutoBidValidator {
+    private static final String VALID_NUMBER_PATTERN = "^[0-9]+(\\.[0-9]+)?$";
 
     // Đã thêm tham số AuctionRoom room để lấy giá hiện tại và bước giá quy định
     public AutoBidValidationResult validate(AutoBidFormReader.AutoBidFormData formData, AuctionRoom room) {
@@ -11,6 +12,10 @@ public class AutoBidValidator {
         }
 
         try {
+            if (!formData.maxBidText().matches(VALID_NUMBER_PATTERN) || !formData.stepText().matches(VALID_NUMBER_PATTERN)) {
+                return AutoBidValidationResult.invalid("He thong: Dinh dang so khong hop le.\n");
+            }
+
             double maxBid = Double.parseDouble(formData.maxBidText());
             double step = Double.parseDouble(formData.stepText());
 

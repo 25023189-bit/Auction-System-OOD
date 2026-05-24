@@ -25,7 +25,7 @@ public class AutoBidFormReader {
     }
 
     private String clean(TextField field) {
-        return field == null || field.getText() == null ? "" : field.getText().replaceAll("[^\\d.]", "");
+        return field == null || field.getText() == null ? "" : field.getText().trim();
     }
 
     public record AutoBidFormData(String maxBidText, String stepText) {

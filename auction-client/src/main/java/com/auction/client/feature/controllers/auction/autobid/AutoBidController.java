@@ -18,6 +18,7 @@ public class AutoBidController {
     private final AutoBidFormReader formReader;
     private final AutoBidValidator validator;
     private final AutoBidButtonStateController buttonStateController;
+    private boolean autoBidActive;
 
     public AutoBidController(
             VBox paneAutoBid,
@@ -47,6 +48,14 @@ public class AutoBidController {
         paneAutoBid.setManaged(shouldShow);
     }
 
+    public void hidePanel() {
+        if (paneAutoBid == null) {
+            return;
+        }
+        paneAutoBid.setVisible(false);
+        paneAutoBid.setManaged(false);
+    }
+
     public void handleSetAutoBid() {
         // 1. TỰ ĐỘNG THÒ TAY VÀO KHO LẤY DỮ LIỆU PHÒNG MỚI NHẤT
         AuctionRoom latestRoom = sessionStore != null ? sessionStore.getCurrentRoom() : null;
@@ -65,12 +74,11 @@ public class AutoBidController {
         }
 
         appendFeedback(String.format(
-                "He thong: Da thiet lap Auto-Bid! Max: %.0f$, Buoc: %.0f$\n",
+                "He thong: Dang thiet lap Auto-Bid... Max: %.0f$, Buoc: %.0f$\n",
                 result.maxBid(),
                 result.step()
         ));
-        togglePanel();
-        buttonStateController.markOn();
+        buttonStateController.markPending();
 
         // 3. Gửi lệnh lên Server
         String roomId = latestRoom.getRoomId();
@@ -80,15 +88,47 @@ public class AutoBidController {
     }
 
     public void handleCancelAutoBid() {
-        togglePanel();
-        buttonStateController.markOff();
-        formReader.clear();
-        appendFeedback("He thong: Da huy Auto-Bid!\n");
+        buttonStateController.markPending();
+        appendFeedback("He thong: Dang huy Auto-Bid...\n");
 
         String roomId = currentRoomId();
         if (roomId != null && clientConnection != null) {
             clientConnection.sendMessage(new Message("CANCEL_AUTO_BID", roomId));
         }
+    }
+
+    public void handleSetSuccess() {
+        autoBidActive = true;
+        buttonStateController.markOn();
+        hidePanel();
+        appendFeedback("He thong: Da thiet lap Auto-Bid!\n");
+    }
+
+    public void handleSetFailed(String errorMessage) {
+        autoBidActive = false;
+        buttonStateController.markOff();
+        appendFeedback("He thong: Khong the thiet lap Auto-Bid. " + safeMessage(errorMessage) + "\n");
+    }
+
+    public void handleCancelSuccess() {
+        autoBidActive = false;
+        buttonStateController.markOff();
+        formReader.clear();
+        hidePanel();
+        appendFeedback("He thong: Da huy Auto-Bid!\n");
+    }
+
+    public void handleCancelFailed(String errorMessage) {
+        if (autoBidActive) {
+            buttonStateController.markOn();
+        } else {
+            buttonStateController.markOff();
+        }
+        appendFeedback("He thong: Khong the huy Auto-Bid. " + safeMessage(errorMessage) + "\n");
+    }
+
+    boolean isAutoBidActive() {
+        return autoBidActive;
     }
 
     private String currentRoomId() {
@@ -99,5 +139,9 @@ public class AutoBidController {
         if (txtChatLog != null && message != null) {
             txtChatLog.appendText(message);
         }
+    }
+
+    private String safeMessage(String message) {
+        return message == null ? "" : message;
     }
 }

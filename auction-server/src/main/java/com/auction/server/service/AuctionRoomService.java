@@ -171,7 +171,7 @@ public class AuctionRoomService {
             }
 
             room.setCurrentPrice(amount);
-            room.setHighestBidder(user.getUsername());
+            room.setHighestBidder(userId);
 
             boolean extended = false;
             // Bid trong 30 giây cuối được gia hạn thêm theo cấu hình của phòng.

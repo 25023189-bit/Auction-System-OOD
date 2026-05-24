@@ -94,6 +94,7 @@ class AuctionRoomServiceTest {
 
         assertEquals("BID_SUCCESS", result.getAction());
         assertEquals("hancute", result.getId()); // Gắn tên người đặt giá
+        assertEquals("U1", mockRoom.getHighestBidder());
         assertEquals(5000.0, mockRoom.getCurrentPrice());
     }
 

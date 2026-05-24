@@ -2,10 +2,10 @@ package com.auction.server.service;
 
 import com.auction.common.dto.Message;
 import com.auction.common.model.AuctionRoom;
-import com.auction.common.model.User;
-import com.auction.server.dao.UserDAO;
 import com.auction.server.handler.ClientActionContext;
 
+import java.util.Comparator;
+import java.util.List;
 import java.util.PriorityQueue;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -47,7 +47,7 @@ public class AutoBidManager {
         queue.add(newAgent);
     }
 
-    public synchronized void cancelAutoBid(String roomId, String userId) {
+    public synchronized boolean cancelAutoBid(String roomId, String userId) {
         ConcurrentHashMap<String, AutoBidAgent> agents = roomAgents.get(roomId);
         PriorityQueue<AutoBidAgent> queue = roomQueues.get(roomId);
 
@@ -55,8 +55,15 @@ public class AutoBidManager {
             AutoBidAgent agent = agents.remove(userId);
             if (agent != null) {
                 queue.remove(agent);
+                return true;
             }
         }
+        return false;
+    }
+
+    public synchronized boolean hasAutoBid(String roomId, String userId) {
+        ConcurrentHashMap<String, AutoBidAgent> agents = roomAgents.get(roomId);
+        return agents != null && agents.containsKey(userId);
     }
 
     // ====================================================================
@@ -69,6 +76,8 @@ public class AutoBidManager {
         }
 
         boolean priceChanged;
+        int guard = 0;
+        int maxIterations = Math.max(queue.size() * 100, 100);
 
         do {
             priceChanged = false;
@@ -77,7 +86,10 @@ public class AutoBidManager {
             // LẤY TRỰC TIẾP ID NGƯỜI CHIẾN THẮNG (Không thèm lấy tên nữa)
             String currentWinnerId = room.getHighestBidder();
 
-            AutoBidAgent[] activeAgents = queue.toArray(new AutoBidAgent[0]);
+            List<AutoBidAgent> activeAgents = queue.stream()
+                    .sorted(Comparator.comparingDouble(AutoBidAgent::getMaxBid).reversed()
+                            .thenComparing(AutoBidAgent::getUserId))
+                    .toList();
 
             for (AutoBidAgent agent : activeAgents) {
 
@@ -105,7 +117,7 @@ public class AutoBidManager {
 
                     com.auction.common.dto.Message bidResult = context.getRoomService().placeNewBid(roomId, agent.getUserId(), nextPrice);
 
-                    if ("BID_SUCCESS".equals(bidResult.getAction()) || "BID_SUCCESS_EXTENDED".equals(bidResult.getAction())) {
+                    if (bidResult != null && ("BID_SUCCESS".equals(bidResult.getAction()) || "BID_SUCCESS_EXTENDED".equals(bidResult.getAction()))) {
 
                         // Cập nhật lại toàn bộ căn phòng bằng data mới nhất
                         room = (AuctionRoom) bidResult.getData();
@@ -118,6 +130,7 @@ public class AutoBidManager {
                     }
                 }
             }
-        } while (priceChanged);
+            guard++;
+        } while (priceChanged && guard < maxIterations);
     }
 }

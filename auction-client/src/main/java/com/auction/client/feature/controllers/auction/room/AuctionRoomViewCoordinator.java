@@ -86,15 +86,6 @@ public class AuctionRoomViewCoordinator {
         );
         auctionTimerService = new DefaultAuctionTimerService(auctionRoomPresenter);
         auctionRoomStateBinder = new AuctionRoomStateBinder(auctionRoomPresenter, sessionStore, rolePolicy);
-        auctionRoomMessageHandler = new AuctionRoomMessageHandler(
-                sessionStore, sceneNavigator, auctionRoomStateBinder, auctionRoomPresenter, auctionTimerService
-        );
-        BidActionHandler bidActionHandler = new BidActionHandler(auctionService, sessionStore, auctionRoomPresenter);
-        ChatActionHandler chatActionHandler = new ChatActionHandler(auctionService);
-        AuctionCloseHandler auctionCloseHandler = new AuctionCloseHandler(auctionService);
-        bidController = new BidController(bidActionHandler, txtBidAmount);
-        roomChatController = new RoomChatController(chatActionHandler, txtChatInput);
-        closeAuctionController = new CloseAuctionController(auctionCloseHandler, sessionStore, btnCloseAuction);
         autoBidController = new AutoBidController(
                 paneAutoBid,
                 txtMaxBid,
@@ -104,6 +95,15 @@ public class AuctionRoomViewCoordinator {
                 sessionStore,
                 clientConnection
         );
+        auctionRoomMessageHandler = new AuctionRoomMessageHandler(
+                sessionStore, sceneNavigator, auctionRoomStateBinder, auctionRoomPresenter, auctionTimerService, autoBidController
+        );
+        BidActionHandler bidActionHandler = new BidActionHandler(auctionService, sessionStore, auctionRoomPresenter);
+        ChatActionHandler chatActionHandler = new ChatActionHandler(auctionService);
+        AuctionCloseHandler auctionCloseHandler = new AuctionCloseHandler(auctionService);
+        bidController = new BidController(bidActionHandler, txtBidAmount);
+        roomChatController = new RoomChatController(chatActionHandler, txtChatInput);
+        closeAuctionController = new CloseAuctionController(auctionCloseHandler, sessionStore, btnCloseAuction);
         roomTransitionHandler = new RoomTransitionHandler(
                 auctionService, sessionStore, sceneNavigator, auctionTimerService, lobbyUserInfoBinder
         );
