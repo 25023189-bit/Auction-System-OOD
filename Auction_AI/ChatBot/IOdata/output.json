@@ -1,3 +1,6 @@
 {
-  "answer": "Xin chào! Tôi rất hân hạnh được giúp đỡ bạn trong việc đăng ký tài khoản trên hệ thống đấu giá trực tuyến. \n\nTheo topics, người dùng có thể tạo tài khoản mới để tham gia hệ thống đấu giá. Khi đăng ký, hệ thống kiểm tra dữ liệu nhập, kiểm tra username trùng, mã hóa mật khẩu và lưu tài khoản vào database.\n\nĐể đăng ký, bạn vui lòng điền thông tin cần thiết bao gồm tên tài khoản, mật khẩu, email và các thông tin khác được yêu cầu. Sau khi hoàn tất, hệ thống sẽ gửi mail xác nhận đến địa chỉ email của bạn.\n\nHy vọng giải đáp giúp đỡ. Xin chào!"
+  "status": "fallback",
+  "answer_source": "Logist",
+  "answer": "Mình chưa có thông tin phù hợp để trả lời nội dung đó. Bạn cần hỗ trợ thao tác nào trong hệ thống đấu giá như đăng ký, đăng nhập, xem phiên, đặt giá hoặc quản lý số dư?",
+  "timestamp": "2026-05-24T22:26:48"
 }

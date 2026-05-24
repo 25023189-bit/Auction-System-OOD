@@ -71,7 +71,7 @@ public class RoomActionHandler extends AbstractClientActionHandler {
             // 2. Kích hoạt Robot ngay lập tức
             AuctionRoom room = context.getRoomService().getLiveRoom(request.getRoomId());
             if (room != null) {
-                autoBidManager.runAutoBiddingEngine(room, context);
+                autoBidManager.triggerAutoBids(request.getRoomId(), room, context);
             }
 
         } catch (Exception e) {
@@ -122,7 +122,7 @@ public class RoomActionHandler extends AbstractClientActionHandler {
 
                 if (bidResult.getData() instanceof AuctionRoom) {
                     AuctionRoom updatedRoom = (AuctionRoom) bidResult.getData();
-                    autoBidManager.runAutoBiddingEngine(updatedRoom, context);
+                    autoBidManager.triggerAutoBids(updatedRoom.getRoomId(), updatedRoom, context);
                 }
             } else {
                 context.send(bidResult);

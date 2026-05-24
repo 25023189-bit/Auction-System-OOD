@@ -31,7 +31,7 @@ import org.slf4j.LoggerFactory;
 public class ClientConnection {
     private static final Logger LOGGER = LoggerFactory.getLogger(ClientConnection.class);
 
-    private final String host = "localhost";
+    private final String host = "100.120.197.41";
     private final int port = 8080;
 
     private Socket socket;
