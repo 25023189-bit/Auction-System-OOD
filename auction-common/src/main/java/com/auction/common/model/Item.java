@@ -11,6 +11,7 @@ public class Item implements Serializable {
     private String name;
     private String description;
     private double startingPrice;
+    private String base64Image;
 
     public Item() {
     }
@@ -54,4 +55,6 @@ public class Item implements Serializable {
     public double getStartingPrice() {
         return startingPrice;
     }
+
+    public String getBase64Image() { return base64Image; }
 }

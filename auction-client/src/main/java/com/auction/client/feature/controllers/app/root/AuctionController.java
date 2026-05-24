@@ -79,6 +79,7 @@ public class AuctionController implements Initializable, ServerMessageListener {
     private SessionLifecycleController sessionLifecycleController;
     private ClientResponseCoordinator clientResponseCoordinator;
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         LOGGER.debug("Initializing AuctionController.");

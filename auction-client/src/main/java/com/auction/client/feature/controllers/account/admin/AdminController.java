@@ -33,6 +33,8 @@ public class AdminController {
     @FXML private TableColumn<BidTransaction, Double> colBidAmount;
     @FXML private TableColumn<BidTransaction, String> colBidTime;
 
+    @FXML private javafx.scene.image.ImageView imgPendingPreview;
+
     @FXML private TableView<PendingAuctionRequest> tablePendingAuctions;
     @FXML private TableColumn<PendingAuctionRequest, String> colPendingRequestId, colPendingSellerId,
             colPendingSellerOrganization, colPendingItemName, colPendingItemDesc;
@@ -67,6 +69,17 @@ public class AdminController {
         tableAuctions.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null && actionSender != null) {
                 actionSender.loadBidHistory(newSelection.getRoomId());
+            }
+        });
+        tablePendingAuctions.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
+            // Khi Admin bấm vào 1 dòng, ta lấy cái base64Image của dòng đó ra giải mã
+            if (newVal != null && newVal.getBase64Image() != null) {
+                // Gọi bùa giải mã từ class ImageUtils vừa tạo
+                javafx.scene.image.Image img = com.auction.client.shared.utils.ImageUtils.decodeBase64ToImage(newVal.getBase64Image());
+                if (imgPendingPreview != null) imgPendingPreview.setImage(img);
+            } else {
+                // Nếu phòng đó không có ảnh thì xóa trắng ImageView
+                if (imgPendingPreview != null) imgPendingPreview.setImage(null);
             }
         });
     }

@@ -14,25 +14,6 @@ import org.slf4j.LoggerFactory;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-/**
- * Handler xử lý yêu cầu seller tạo phiên đấu giá mới.
- *
- * Vai trò:
- * - Parse form tạo phiên từ client và xác thực seller hiện tại.
- * - Validate điều kiện tạo phiên rồi đưa request vào hàng chờ admin duyệt.
- *
- * Luồng chính:
- * 1. Nhận CREATE_AUCTION, tách payload item/giá/thời gian/extension và đọc seller từ DB.
- * 2. Chạy AuctionCreationValidator, tạo PendingAuctionRequest và broadcast danh sách pending cho admin.
- *
- * Business rules:
- * - Chỉ user role SELLER mới được tạo yêu cầu đấu giá.
- * - Phiên mới chưa ghi DB ngay; phải chờ admin approve trước khi trở thành auction thật.
- *
- * Ghi chú kỹ thuật:
- * - Không thread-safe theo instance; pending request dùng service với ConcurrentHashMap.
- * - Dependency: AbstractClientActionHandler, UserDAO, AuctionDAO, AuctionCreationValidator, PendingAuctionApprovalService.
- */
 public class SellerActionHandler extends AbstractClientActionHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(SellerActionHandler.class);
 
@@ -64,13 +45,14 @@ public class SellerActionHandler extends AbstractClientActionHandler {
 
     private void handleCreateAuction(Message message, ClientActionContext context) {
         try {
-            // Client gửi thông tin form theo format item|desc|price|minJoin|bidStep|start|duration|extension.
+            // Client gửi thông tin form theo format item|desc|price|minJoin|bidStep|start|duration|extension|base64Image.
             String[] parts = message.getData() != null
                     ? message.getData().toString().split("\\|", -1)
                     : new String[0];
 
-            if (parts.length < 8) {
-                context.send(new Message("CREATE_AUCTION_FAIL", "SERVER", "Invalid auction creation data!"));
+            // 1. SỬA CHỖ NÀY: Nâng từ 8 lên 9 để đòi thêm ảnh
+            if (parts.length < 9) {
+                context.send(new Message("CREATE_AUCTION_FAIL", "SERVER", "Invalid auction creation data (Missing Image)!"));
                 return;
             }
 
@@ -83,9 +65,11 @@ public class SellerActionHandler extends AbstractClientActionHandler {
             int durationMinutes = Integer.parseInt(parts[6].trim());
             int extensionSeconds = Integer.parseInt(parts[7].trim());
 
+            // 2. SỬA CHỖ NÀY: Hứng bức ảnh (đoạn mã Base64) từ vị trí số 8
+            String base64Image = parts[8].trim();
+
             String sellerId = message.getId() != null ? message.getId().trim().toUpperCase() : "";
             UserDAO userDAO = new UserDAO();
-            // Server luôn kiểm tra lại sellerId và role, không tin hoàn toàn dữ liệu client.
             User seller = userDAO.getUserById(sellerId);
             if (seller == null) {
                 context.send(new Message("CREATE_AUCTION_FAIL", "SERVER", "Seller account not found!"));
@@ -98,7 +82,6 @@ public class SellerActionHandler extends AbstractClientActionHandler {
             }
 
             AuctionDAO auctionDAO = new AuctionDAO();
-            // Thống kê seller là một phần điều kiện đánh giá yêu cầu tạo phiên.
             AuctionDAO.SellerAuctionStats sellerStats = auctionDAO.getSellerAuctionStats(sellerId);
             seller.setSuccessfulAuctionRate(sellerStats.getSuccessfulAuctionRate());
             seller.setAdminCancellationRate(sellerStats.getAdminCancellationRate());
@@ -123,7 +106,7 @@ public class SellerActionHandler extends AbstractClientActionHandler {
                 return;
             }
 
-            // Request chờ duyệt giữ đủ dữ liệu để admin approve mà không cần hỏi lại seller.
+            // 3. SỬA CHỖ NÀY: Truyền thêm base64Image vào cuối cùng của hàm khởi tạo
             PendingAuctionRequest request = new PendingAuctionRequest(
                     generateId("PA", 6),
                     auctionDAO.generateNextAuctionId(),
@@ -140,7 +123,8 @@ public class SellerActionHandler extends AbstractClientActionHandler {
                     extensionSeconds,
                     seller.getSellerReputation(),
                     seller.getSuccessfulAuctionRate(),
-                    seller.getAdminCancellationRate()
+                    seller.getAdminCancellationRate(),
+                    base64Image // <--- Gắn ảnh vào Request chờ duyệt
             );
 
             if (autoApproveDecider.shouldApprove(request)
@@ -148,7 +132,6 @@ public class SellerActionHandler extends AbstractClientActionHandler {
                 return;
             }
 
-            // Lưu request vào bộ nhớ server và báo client biết đang chờ admin.
             context.getPendingAuctionApprovalService().submit(request);
             context.send(new Message(
                     "CREATE_AUCTION_PENDING",
@@ -167,32 +150,22 @@ public class SellerActionHandler extends AbstractClientActionHandler {
             AuctionDAO auctionDAO,
             ClientActionContext context
     ) {
+        // Giữ nguyên đoạn này
         try {
             AuctionRoom room = pendingAuctionRoomFactory.createRoom(request);
             Item item = pendingAuctionRoomFactory.createItem(request);
 
             if (!auctionDAO.createAuctionWithItem(room, item, request.getSellerId())) {
-                LOGGER.warn(
-                        "Auto approve returned true, but database persistence failed for request {}.",
-                        request.getRequestId()
-                );
+                LOGGER.warn("Auto approve returned true, but database persistence failed for request {}.", request.getRequestId());
                 return false;
             }
 
-            context.send(new Message(
-                    "CREATE_AUCTION_SUCCESS",
-                    request.getRoomId(),
-                    "Auction auto-approved by AI."
-            ));
+            context.send(new Message("CREATE_AUCTION_SUCCESS", request.getRoomId(), "Auction auto-approved by AI."));
             broadcastRoomList(context);
             broadcastPendingAuctionList(context);
             return true;
         } catch (Exception e) {
-            LOGGER.warn(
-                    "Auto approve returned true, but approval handling failed for request {}.",
-                    request.getRequestId(),
-                    e
-            );
+            LOGGER.warn("Auto approve returned true, but approval handling failed for request {}.", request.getRequestId(), e);
             return false;
         }
     }

@@ -25,9 +25,13 @@ public class PendingAuctionRequest implements Serializable {
     private double successfulAuctionRate;
     private double adminCancellationRate;
 
+    // --- THÊM BIẾN CHỨA ẢNH ---
+    private String base64Image;
+
     public PendingAuctionRequest() {
     }
 
+    // --- CẬP NHẬT CONSTRUCTOR THÊM BASE64IMAGE ---
     public PendingAuctionRequest(String requestId,
                                  String roomId,
                                  String itemId,
@@ -43,7 +47,8 @@ public class PendingAuctionRequest implements Serializable {
                                  int extensionSeconds,
                                  double sellerReputation,
                                  double successfulAuctionRate,
-                                 double adminCancellationRate) {
+                                 double adminCancellationRate,
+                                 String base64Image) { // <-- Nhận ảnh ở đây
         this.requestId = requestId;
         this.roomId = roomId;
         this.itemId = itemId;
@@ -60,6 +65,7 @@ public class PendingAuctionRequest implements Serializable {
         this.sellerReputation = sellerReputation;
         this.successfulAuctionRate = successfulAuctionRate;
         this.adminCancellationRate = adminCancellationRate;
+        this.base64Image = base64Image; // <-- Lưu ảnh vào biến
     }
 
     public String getRequestId() {
@@ -188,5 +194,14 @@ public class PendingAuctionRequest implements Serializable {
 
     public void setAdminCancellationRate(double adminCancellationRate) {
         this.adminCancellationRate = adminCancellationRate;
+    }
+
+    // --- GETTER & SETTER CHO ẢNH ---
+    public String getBase64Image() {
+        return base64Image;
+    }
+
+    public void setBase64Image(String base64Image) {
+        this.base64Image = base64Image;
     }
 }

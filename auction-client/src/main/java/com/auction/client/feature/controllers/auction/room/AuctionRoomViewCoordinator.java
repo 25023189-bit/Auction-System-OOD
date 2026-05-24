@@ -43,6 +43,7 @@ public class AuctionRoomViewCoordinator {
     private final AutoBidController autoBidController;
     private final AuctionRoomUserController auctionRoomUserController;
     private PriceChartController priceChartController;
+    private final ImageView imgProduct;
 
     public AuctionRoomViewCoordinator(
             Label lblAuctionItemName,
@@ -72,6 +73,9 @@ public class AuctionRoomViewCoordinator {
             ClientConnection clientConnection,
             LobbyUserInfoBinder lobbyUserInfoBinder
     ) {
+        // Lưu đối tượng ImageView từ tham số truyền vào
+        this.imgProduct = imgProduct;
+
         Label itemNameLabel = lblAuctionItemName != null ? lblAuctionItemName : lblProductName;
         Label timerLabel = lblTimer != null ? lblTimer : lblTimeLeft;
         auctionRoomPresenter = new AuctionRoomPresenter(
@@ -164,6 +168,13 @@ public class AuctionRoomViewCoordinator {
         }
 
         AuctionRoom room = sessionStore.getCurrentRoom();
+
+        // 🌟 ĐÃ THÊM: Xử lý giải mã và hiển thị hình ảnh sản phẩm
+        if (imgProduct != null && room.getBase64Image() != null) {
+            javafx.scene.image.Image img = com.auction.client.shared.utils.ImageUtils.decodeBase64ToImage(room.getBase64Image());
+            imgProduct.setImage(img);
+        }
+
         auctionRoomStateBinder.bind(room);
         auctionTimerService.start(
                 room.getStartTime(),

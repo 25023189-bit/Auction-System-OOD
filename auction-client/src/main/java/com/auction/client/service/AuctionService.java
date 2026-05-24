@@ -90,11 +90,12 @@ public class AuctionService {
 
     public void createAuction(String itemName, String itemDesc, double startingPrice,
                               double minimumJoinAmount, double bidStep,
-                              LocalDateTime startTime, int duration, int extensionSeconds) {
+                              LocalDateTime startTime, int duration, int extensionSeconds,
+                              String base64Image) {
         // SellerActionHandler sẽ parse lại chuỗi này và validate ở server.
         String data = itemName + "|" + itemDesc + "|" + startingPrice + "|" +
                 minimumJoinAmount + "|" + bidStep + "|" +
-                startTime + "|" + duration + "|" + extensionSeconds;
+                startTime + "|" + duration + "|" + extensionSeconds + base64Image;
         clientConnection.sendMessage(new Message("CREATE_AUCTION", this.currentUser, data));
     }
 
