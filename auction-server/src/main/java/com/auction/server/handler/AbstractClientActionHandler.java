@@ -48,6 +48,7 @@ public abstract class AbstractClientActionHandler implements ClientActionHandler
             // Sau khi tạo/xóa/duyệt phòng, mọi lobby cần nhận danh sách phòng mới nhất.
             AuctionDAO auctionDAO = new AuctionDAO();
             List<AuctionRoom> rooms = auctionDAO.getAllActiveAuctions();
+            AuctionImageRegistry.applyAll(rooms);
             context.broadcastAll(new Message("ROOM_LIST", "SERVER", rooms));
         } catch (Exception e) {
             LOGGER.error("Failed to broadcast room list.", e);

@@ -128,6 +128,7 @@ public class AdminActionHandler extends AbstractClientActionHandler {
                 return;
             }
 
+            AuctionImageRegistry.put(request.getRoomId(), request.getBase64Image());
             context.send(new Message(
                     "ADMIN_ACTION_SUCCESS",
                     "AUCTION_APPROVED",
@@ -174,6 +175,7 @@ public class AdminActionHandler extends AbstractClientActionHandler {
             if (auctionDAO.forceDeleteAuction(targetRoomId)) {
                 // Khi admin hủy phiên, runtime state và client trong phòng đều phải được cập nhật.
                 AuctionStateManager.removeState(targetRoomId);
+                AuctionImageRegistry.remove(targetRoomId);
                 context.send(new Message(
                         "ADMIN_ACTION_SUCCESS",
                         "AUCTION_DELETED",

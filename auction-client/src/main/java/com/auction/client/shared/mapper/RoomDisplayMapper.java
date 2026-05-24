@@ -38,7 +38,8 @@ public class RoomDisplayMapper implements DisplayMapper<List<AuctionRoom>, List<
             result.add(new LobbyRoomDisplayModel(
                     room.getRoomId(),
                     displayName,
-                    room.getCurrentPrice()
+                    room.getCurrentPrice(),
+                    room.getBase64Image()
             ));
         }
         return result;

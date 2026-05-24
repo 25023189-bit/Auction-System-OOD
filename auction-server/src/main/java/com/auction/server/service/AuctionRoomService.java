@@ -11,6 +11,7 @@ import com.auction.server.dao.IBidDAO;
 import com.auction.server.dao.IBidDAO.BidResult;
 import com.auction.server.dao.IUserDAO;
 import com.auction.server.dao.UserDAO;
+import com.auction.server.handler.AuctionImageRegistry;
 import com.auction.server.main.AuctionServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -63,6 +64,7 @@ public class AuctionRoomService {
         if (room == null) {
             return fail("ROOM_FAIL", "Room not found or the auction has ended.");
         }
+        AuctionImageRegistry.apply(room);
 
         User user = userDAO.getUserById(userId);
         if (user == null) {
@@ -76,6 +78,7 @@ public class AuctionRoomService {
             return preCheck;
         }
 
+        AuctionImageRegistry.apply(room);
         AuctionRuntimeState state = AuctionStateManager.getState(roomId);
 
         synchronized (state) {
@@ -120,6 +123,7 @@ public class AuctionRoomService {
         }
 
         AuctionRoom room = auctionDAO.getAuctionById(roomId);
+        AuctionImageRegistry.apply(room);
 
         if (room == null) {
             return fail("BID_FAIL", "Auction room not found or the auction has ended.");
@@ -317,6 +321,7 @@ public class AuctionRoomService {
         }
 
         AuctionStateManager.removeState(roomId);
+        AuctionImageRegistry.remove(roomId);
         broadcastBalancesAfterTimeout(result);
         AuctionServer.notifyRoomClosed(roomId);
         broadcastRoomList();
@@ -343,7 +348,9 @@ public class AuctionRoomService {
     }
 
     private void broadcastRoomList() {
-        AuctionServer.broadcast(new Message("ROOM_LIST", "SERVER", auctionDAO.getAllActiveAuctions()));
+        var rooms = auctionDAO.getAllActiveAuctions();
+        AuctionImageRegistry.applyAll(rooms);
+        AuctionServer.broadcast(new Message("ROOM_LIST", "SERVER", rooms));
     }
 
     // Rule 30 giây cuối: khóa người mới vào phòng nhưng người đã join vẫn được bid.

@@ -238,6 +238,7 @@ public class RoomActionHandler extends AbstractClientActionHandler {
             }
 
             AuctionStateManager.removeState(roomId);
+            AuctionImageRegistry.remove(roomId);
             context.send(new Message("CLOSE_AUCTION_SUCCESS", "SERVER", roomId));
             context.notifyRoomClosed(roomId);
             broadcastRoomList(context);

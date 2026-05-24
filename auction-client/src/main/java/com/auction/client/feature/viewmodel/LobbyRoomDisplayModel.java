@@ -24,11 +24,17 @@ public class LobbyRoomDisplayModel {
     private final String itemName;
     private final double currentPrice;
     private final String displayPrice;
+    private final String base64Image;
 
     public LobbyRoomDisplayModel(String roomId, String itemName, double currentPrice) {
+        this(roomId, itemName, currentPrice, "");
+    }
+
+    public LobbyRoomDisplayModel(String roomId, String itemName, double currentPrice, String base64Image) {
         this.roomId = roomId;
         this.itemName = itemName;
         this.currentPrice = currentPrice;
+        this.base64Image = base64Image;
         // Format sẵn để renderer không phải biết cách trình bày tiền.
         this.displayPrice = String.format("%,.0f $", currentPrice);
     }
@@ -47,5 +53,9 @@ public class LobbyRoomDisplayModel {
 
     public String getDisplayPrice() {
         return displayPrice;
+    }
+
+    public String getBase64Image() {
+        return base64Image;
     }
 }

@@ -9,19 +9,21 @@ public class ProductDetailMapper {
             return new ProductDetailViewModel(
                     product.getTitle(),
                     product.getDescription(),
-                    String.format("%,.0f $", product.getStartPrice())
+                    String.format("%,.0f $", product.getStartPrice()),
+                    product.getBase64Image()
             );
         }
         if (data instanceof AuctionRoom room) {
             return new ProductDetailViewModel(
                     room.getItemName(),
                     room.getItemDescription(),
-                    String.format("%,.0f $", room.getStartingPrice())
+                    String.format("%,.0f $", room.getStartingPrice()),
+                    room.getBase64Image()
             );
         }
         if (data instanceof String message) {
-            return new ProductDetailViewModel("Product Detail Information", message, "");
+            return new ProductDetailViewModel("Product Detail Information", message, "", "");
         }
-        return new ProductDetailViewModel("Product Detail Information", "Product information not found!", "");
+        return new ProductDetailViewModel("Product Detail Information", "Product information not found!", "", "");
     }
 }

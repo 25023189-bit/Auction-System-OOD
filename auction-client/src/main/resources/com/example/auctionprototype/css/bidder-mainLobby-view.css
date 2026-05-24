@@ -271,7 +271,11 @@
 }
 
 .bidder-auction-grid .auction-room-card {
-    -fx-spacing: 9px;
+    -fx-spacing: 7px;
+}
+
+.bidder-auction-grid .auction-room-image {
+    -fx-background-radius: 10px;
 }
 
 .bidder-auction-grid .auction-room-title {

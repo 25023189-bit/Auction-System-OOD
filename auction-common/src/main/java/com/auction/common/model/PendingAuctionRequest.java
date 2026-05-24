@@ -47,6 +47,27 @@ public class PendingAuctionRequest implements Serializable {
                                  int extensionSeconds,
                                  double sellerReputation,
                                  double successfulAuctionRate,
+                                 double adminCancellationRate) {
+        this(requestId, roomId, itemId, sellerId, sellerOrganization, itemName, itemDesc,
+                startingPrice, minimumJoinAmount, bidStep, startTime, durationMinutes, extensionSeconds,
+                sellerReputation, successfulAuctionRate, adminCancellationRate, "");
+    }
+
+    public PendingAuctionRequest(String requestId,
+                                 String roomId,
+                                 String itemId,
+                                 String sellerId,
+                                 String sellerOrganization,
+                                 String itemName,
+                                 String itemDesc,
+                                 double startingPrice,
+                                 double minimumJoinAmount,
+                                 double bidStep,
+                                 LocalDateTime startTime,
+                                 int durationMinutes,
+                                 int extensionSeconds,
+                                 double sellerReputation,
+                                 double successfulAuctionRate,
                                  double adminCancellationRate,
                                  String base64Image) { // <-- Nhận ảnh ở đây
         this.requestId = requestId;

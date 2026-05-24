@@ -3,9 +3,11 @@ package com.auction.client.feature.lobby;
 import com.auction.client.feature.controllers.assistant.product.popup.ProductPopupLauncher;
 import com.auction.client.feature.viewmodel.LobbyRoomDisplayModel;
 import com.auction.client.service.AuctionService;
+import com.auction.client.shared.utils.ImageUtils;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,11 +45,18 @@ public class DefaultAuctionCardFactory {
 
     private VBox baseCard(LobbyRoomDisplayModel model) {
         VBox card = new VBox(10);
-        card.setPrefSize(200, 210); // Chiều cao đủ cho thông tin phòng và hai nút thao tác.
+        card.setPrefSize(200, 248);
         card.setAlignment(Pos.CENTER);
         card.getStyleClass().add("auction-room-card");
 
         card.setStyle("-fx-background-color: white; -fx-padding: 20; -fx-border-color: #cccccc; -fx-border-radius: 5; -fx-background-radius: 5;");
+
+        ImageView imgProduct = new ImageView();
+        imgProduct.getStyleClass().add("auction-room-image");
+        imgProduct.setFitWidth(160);
+        imgProduct.setFitHeight(82);
+        imgProduct.setPickOnBounds(true);
+        ImageUtils.applyBase64OrPlaceholder(imgProduct, model.getBase64Image());
 
         Label lblName = new Label(model.getItemName());
         lblName.getStyleClass().add("auction-room-title");
@@ -86,7 +95,7 @@ public class DefaultAuctionCardFactory {
             }
         });
         // Gắn đầy đủ thông tin và các nút thao tác vào card.
-        card.getChildren().addAll(lblName, lblId, lblPrice, btnJoin, btnDetails);
+        card.getChildren().addAll(imgProduct, lblName, lblId, lblPrice, btnJoin, btnDetails);
 
         return card;
     }

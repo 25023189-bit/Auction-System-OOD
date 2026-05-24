@@ -26,6 +26,7 @@ public class ProductDetailHandler implements ClientActionHandler {
             // --- KẾT THÚC ĐOẠN GIẢ LẬP ---
 
             if (room != null) {
+                AuctionImageRegistry.apply(room);
                 // Tìm thấy -> Trả về Client với action PRODUCT_DETAILS_SUCCESS
                 context.send(new Message("PRODUCT_DETAILS_SUCCESS", "SERVER", room));
             } else {

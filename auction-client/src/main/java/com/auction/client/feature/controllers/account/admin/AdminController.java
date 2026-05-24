@@ -4,6 +4,7 @@ import com.auction.client.feature.controllers.account.admin.action.AdminActionSe
 import com.auction.client.feature.controllers.account.admin.dialog.AdminDialogController;
 import com.auction.client.feature.controllers.account.admin.table.AdminTableBinder;
 import com.auction.client.service.AuctionService;
+import com.auction.client.shared.utils.ImageUtils;
 import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.BidTransaction;
 import com.auction.common.model.PendingAuctionRequest;
@@ -75,11 +76,10 @@ public class AdminController {
             // Khi Admin bấm vào 1 dòng, ta lấy cái base64Image của dòng đó ra giải mã
             if (newVal != null && newVal.getBase64Image() != null) {
                 // Gọi bùa giải mã từ class ImageUtils vừa tạo
-                javafx.scene.image.Image img = com.auction.client.shared.utils.ImageUtils.decodeBase64ToImage(newVal.getBase64Image());
-                if (imgPendingPreview != null) imgPendingPreview.setImage(img);
+                ImageUtils.applyBase64OrPlaceholder(imgPendingPreview, newVal.getBase64Image());
             } else {
                 // Nếu phòng đó không có ảnh thì xóa trắng ImageView
-                if (imgPendingPreview != null) imgPendingPreview.setImage(null);
+                ImageUtils.applyBase64OrPlaceholder(imgPendingPreview, null);
             }
         });
     }

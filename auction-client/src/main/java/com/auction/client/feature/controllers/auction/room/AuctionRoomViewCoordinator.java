@@ -21,6 +21,7 @@ import com.auction.client.network.messaging.MessageHandler;
 import com.auction.client.network.socket.ClientConnection;
 import com.auction.client.service.AuctionService;
 import com.auction.client.session.SessionStore;
+import com.auction.client.shared.utils.ImageUtils;
 import com.auction.common.model.AuctionRoom;
 import com.auction.common.role.RolePolicy;
 import javafx.scene.chart.AreaChart;
@@ -170,10 +171,7 @@ public class AuctionRoomViewCoordinator {
         AuctionRoom room = sessionStore.getCurrentRoom();
 
         // 🌟 ĐÃ THÊM: Xử lý giải mã và hiển thị hình ảnh sản phẩm
-        if (imgProduct != null && room.getBase64Image() != null) {
-            javafx.scene.image.Image img = com.auction.client.shared.utils.ImageUtils.decodeBase64ToImage(room.getBase64Image());
-            imgProduct.setImage(img);
-        }
+        ImageUtils.applyBase64OrPlaceholder(imgProduct, room.getBase64Image());
 
         auctionRoomStateBinder.bind(room);
         auctionTimerService.start(

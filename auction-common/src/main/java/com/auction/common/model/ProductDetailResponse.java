@@ -19,6 +19,7 @@ public class ProductDetailResponse implements Serializable {
     private double startPrice;
     private double currentPrice;
     private long timeLeftMillis;
+    private String base64Image;
 
     // Lịch sử đặt giá
     private List<BidHistoryDTO> bidHistory;
@@ -77,6 +78,14 @@ public class ProductDetailResponse implements Serializable {
 
     public void setTimeLeftMillis(long timeLeftMillis) {
         this.timeLeftMillis = timeLeftMillis;
+    }
+
+    public String getBase64Image() {
+        return base64Image;
+    }
+
+    public void setBase64Image(String base64Image) {
+        this.base64Image = base64Image;
     }
 
     public List<BidHistoryDTO> getBidHistory() {

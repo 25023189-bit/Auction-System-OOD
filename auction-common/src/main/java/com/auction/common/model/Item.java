@@ -23,6 +23,11 @@ public class Item implements Serializable {
         this.startingPrice = startingPrice;
     }
 
+    public Item(String id, String name, String description, double startingPrice, String base64Image) {
+        this(id, name, description, startingPrice);
+        this.base64Image = base64Image;
+    }
+
     // --- BỔ SUNG ĐỂ FIX LỖI Ở FILE ART.JAVA ---
 
     // Fix lỗi Art.java gọi getName() ở dòng 14
@@ -57,4 +62,6 @@ public class Item implements Serializable {
     }
 
     public String getBase64Image() { return base64Image; }
+
+    public void setBase64Image(String base64Image) { this.base64Image = base64Image; }
 }

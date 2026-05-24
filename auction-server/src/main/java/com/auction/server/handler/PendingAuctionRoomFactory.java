@@ -47,6 +47,7 @@ public class PendingAuctionRoomFactory {
         room.setSellerReputation(request.getSellerReputation());
         room.setSellerSuccessfulAuctionRate(request.getSuccessfulAuctionRate());
         room.setSellerAdminCancellationRate(request.getAdminCancellationRate());
+        room.setBase64Image(request.getBase64Image());
         room.setStatus(request.getStartTime().isAfter(LocalDateTime.now()) ? "OPEN" : "RUNNING");
         return room;
     }
@@ -57,7 +58,8 @@ public class PendingAuctionRoomFactory {
                 request.getItemId(),
                 request.getItemName(),
                 request.getItemDesc(),
-                request.getStartingPrice()
+                request.getStartingPrice(),
+                request.getBase64Image()
         );
     }
 }

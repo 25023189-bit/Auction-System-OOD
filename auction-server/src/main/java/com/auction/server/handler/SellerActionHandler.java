@@ -13,9 +13,12 @@ import org.slf4j.LoggerFactory;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SellerActionHandler extends AbstractClientActionHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(SellerActionHandler.class);
+    private static final Pattern EXTENSION_AND_IMAGE_PATTERN = Pattern.compile("^(\\d+)(.*)$");
 
     @FunctionalInterface
     public interface AutoApproveDecider {
@@ -50,12 +53,13 @@ public class SellerActionHandler extends AbstractClientActionHandler {
                     ? message.getData().toString().split("\\|", -1)
                     : new String[0];
 
-            // 1. SỬA CHỖ NÀY: Nâng từ 8 lên 9 để đòi thêm ảnh
-            if (parts.length < 9) {
-                context.send(new Message("CREATE_AUCTION_FAIL", "SERVER", "Invalid auction creation data (Missing Image)!"));
+            // Image is optional so old clients can still create auctions.
+            if (parts.length < 8) {
+                context.send(new Message("CREATE_AUCTION_FAIL", "SERVER", "Invalid auction creation data!"));
                 return;
             }
 
+            ParsedAuctionPayload payload = parsePayload(parts);
             String itemName = parts[0].trim();
             String itemDesc = parts[1].trim();
             double startingPrice = Double.parseDouble(parts[2].trim());
@@ -63,10 +67,10 @@ public class SellerActionHandler extends AbstractClientActionHandler {
             double bidStep = Double.parseDouble(parts[4].trim());
             LocalDateTime startTime = LocalDateTime.parse(parts[5].trim());
             int durationMinutes = Integer.parseInt(parts[6].trim());
-            int extensionSeconds = Integer.parseInt(parts[7].trim());
+            int extensionSeconds = payload.extensionSeconds();
 
-            // 2. SỬA CHỖ NÀY: Hứng bức ảnh (đoạn mã Base64) từ vị trí số 8
-            String base64Image = parts[8].trim();
+            // New clients send image as field 8; the parser also tolerates the current missing-delimiter payload.
+            String base64Image = payload.base64Image();
 
             String sellerId = message.getId() != null ? message.getId().trim().toUpperCase() : "";
             UserDAO userDAO = new UserDAO();
@@ -145,6 +149,22 @@ public class SellerActionHandler extends AbstractClientActionHandler {
         }
     }
 
+    private ParsedAuctionPayload parsePayload(String[] parts) {
+        if (parts.length >= 9) {
+            return new ParsedAuctionPayload(Integer.parseInt(parts[7].trim()), parts[8].trim());
+        }
+
+        String extensionAndMaybeImage = parts[7].trim();
+        Matcher matcher = EXTENSION_AND_IMAGE_PATTERN.matcher(extensionAndMaybeImage);
+        if (!matcher.matches()) {
+            throw new NumberFormatException("Invalid extension seconds: " + extensionAndMaybeImage);
+        }
+        return new ParsedAuctionPayload(
+                Integer.parseInt(matcher.group(1)),
+                matcher.group(2).trim()
+        );
+    }
+
     private boolean approveAutomatically(
             PendingAuctionRequest request,
             AuctionDAO auctionDAO,
@@ -160,6 +180,7 @@ public class SellerActionHandler extends AbstractClientActionHandler {
                 return false;
             }
 
+            AuctionImageRegistry.put(request.getRoomId(), request.getBase64Image());
             context.send(new Message("CREATE_AUCTION_SUCCESS", request.getRoomId(), "Auction auto-approved by AI."));
             broadcastRoomList(context);
             broadcastPendingAuctionList(context);
@@ -168,5 +189,8 @@ public class SellerActionHandler extends AbstractClientActionHandler {
             LOGGER.warn("Auto approve returned true, but approval handling failed for request {}.", request.getRequestId(), e);
             return false;
         }
+    }
+
+    private record ParsedAuctionPayload(int extensionSeconds, String base64Image) {
     }
 }

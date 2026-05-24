@@ -55,9 +55,9 @@ public class LobbyRoomListRenderer {
     private void applyBidderLobbyCardLayout(VBox card) {
         if (!paneSelectAuction.getStyleClass().contains("bidder-auction-grid")) return;
 
-        card.setMinSize(200, 232);
-        card.setPrefSize(200, 232);
-        card.setMaxSize(200, 232);
+        card.setMinSize(200, 286);
+        card.setPrefSize(200, 286);
+        card.setMaxSize(200, 286);
     }
 
     // Tìm đúng card bằng roomId được lưu trong userData và cập nhật label giá.

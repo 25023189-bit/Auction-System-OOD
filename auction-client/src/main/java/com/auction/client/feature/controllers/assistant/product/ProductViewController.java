@@ -7,11 +7,13 @@ import com.auction.client.service.AuctionService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 
 public class ProductViewController {
     @FXML private Label lblProductName;
     @FXML private Label lblDescription;
     @FXML private Label lblStartingPrice;
+    @FXML private ImageView imgItem;
 
     private AuctionService auctionService;
     private ProductDetailBinder detailBinder;
@@ -20,7 +22,7 @@ public class ProductViewController {
 
     @FXML
     public void initialize() {
-        detailBinder = new ProductDetailBinder(lblProductName, lblDescription, lblStartingPrice);
+        detailBinder = new ProductDetailBinder(lblProductName, lblDescription, lblStartingPrice, imgItem);
     }
 
     public void setAuctionService(AuctionService auctionService) {
@@ -50,7 +52,7 @@ public class ProductViewController {
 
     private void ensureDetailBinderReady() {
         if (detailBinder == null) {
-            detailBinder = new ProductDetailBinder(lblProductName, lblDescription, lblStartingPrice);
+            detailBinder = new ProductDetailBinder(lblProductName, lblDescription, lblStartingPrice, imgItem);
         }
     }
 }

@@ -7,6 +7,7 @@ import com.auction.client.feature.controllers.auction.seller.form.SellerAuctionF
 import com.auction.client.feature.controllers.auction.seller.validation.SellerAuctionValidationResult;
 import com.auction.client.feature.controllers.auction.seller.validation.SellerAuctionValidator;
 import com.auction.client.service.AuctionService;
+import com.auction.client.shared.utils.ImageUtils;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -131,17 +132,30 @@ public class SellerController {
         }
 
         SellerAuctionFormData data = readResult.data();
-        auctionService.createAuction(
-                data.itemName(),
-                data.itemDescription(),
-                data.startingPrice(),
-                data.minimumJoinAmount(),
-                data.bidStep(),
-                data.startTime(),
-                data.durationMinutes(),
-                data.extensionSeconds(),
-                base64Image
-        );
+        if (base64Image == null || base64Image.isBlank()) {
+            auctionService.createAuction(
+                    data.itemName(),
+                    data.itemDescription(),
+                    data.startingPrice(),
+                    data.minimumJoinAmount(),
+                    data.bidStep(),
+                    data.startTime(),
+                    data.durationMinutes(),
+                    data.extensionSeconds()
+            );
+        } else {
+            auctionService.createAuction(
+                    data.itemName(),
+                    data.itemDescription(),
+                    data.startingPrice(),
+                    data.minimumJoinAmount(),
+                    data.bidStep(),
+                    data.startTime(),
+                    data.durationMinutes(),
+                    data.extensionSeconds(),
+                    base64Image
+            );
+        }
 
         closeWindow();
     }
@@ -178,7 +192,7 @@ public class SellerController {
             try {
                 // Hiển thị ảnh lên khung ImageView cho đẹp
                 Image image = new Image(selectedFile.toURI().toString());
-                imgProductPreview.setImage(image);
+                ImageUtils.applyImageOrPlaceholder(imgProductPreview, image);
 
                 // CỰC KỲ QUAN TRỌNG: Băm nhỏ bức ảnh thành chuỗi Base64
                 byte[] fileContent = Files.readAllBytes(selectedFile.toPath());

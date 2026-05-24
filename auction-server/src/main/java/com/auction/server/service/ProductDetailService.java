@@ -6,6 +6,7 @@ import com.auction.common.model.BidTransaction;
 import com.auction.common.model.ProductDetailResponse;
 import com.auction.server.dao.AuctionDAO;
 import com.auction.server.dao.TransactionDAO;
+import com.auction.server.handler.AuctionImageRegistry;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -46,6 +47,7 @@ public class ProductDetailService {
         AuctionRoom room = auctionDAO.getAuctionById(roomId);
 
         if (room == null) return null;
+        AuctionImageRegistry.apply(room);
 
         ProductDetailResponse detail = new ProductDetailResponse();
 
@@ -54,6 +56,7 @@ public class ProductDetailService {
         detail.setStartPrice(room.getCurrentPrice());
         detail.setCurrentPrice(room.getCurrentPrice());
         detail.setTimeLeftMillis(calculateRemainingTime(room.getEndTime()));
+        detail.setBase64Image(room.getBase64Image());
 
         // Chuyển lịch sử bid từ model DB sang DTO hiển thị cho client.
         List<BidTransaction> dbTransactions = transactionDAO.getHistoryByRoom(roomId);

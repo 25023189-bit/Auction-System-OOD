@@ -83,7 +83,7 @@
                                     <children>
                                         <Label text="Product Information" textFill="#2c3e50"><font><Font name="System Bold" size="18.0" /></font></Label>
                                         <Separator prefWidth="200.0" />
-                                        <ImageView fitHeight="250.0" fitWidth="360.0" pickOnBounds="true" preserveRatio="true" />
+                                        <ImageView fx:id="imgProduct" fitHeight="250.0" fitWidth="360.0" pickOnBounds="true" preserveRatio="true" />
                                         <Label fx:id="lblAuctionItemName" text="Product Name: 4K TV" wrapText="true">
                                             <font><Font name="System Bold" size="16.0" /></font>
                                         </Label>
