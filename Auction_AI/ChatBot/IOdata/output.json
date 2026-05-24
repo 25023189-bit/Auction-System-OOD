@@ -1,3 +1,6 @@
 {
-  "answer": "Xin chào! Tôi giúp bạn trong hệ thống đấu giá trực tuyến. Bạn có thể đấu giá các loại sản phẩm, dịch vụ hoặc tài nguyên được hệ thống cung cấp. Vui lòng tham khảo danh sách chức năng của hệ thống để biết thêm chi tiết về các cách thức đấu giá khác nhau.\n\nNếu bạn chưa chắc chắn về cách thức đấu giá nào phù hợp với nhu cầu của mình, tôi có thể hướng dẫn bạn qua các bước thao tác trong hệ thống để giúp bạn tìm ra phương pháp đấu giá phù hợp."
+  "status": "fallback",
+  "answer_source": "Logist",
+  "answer": "Mình chưa có thông tin phù hợp để trả lời nội dung đó. Bạn cần hỗ trợ thao tác nào trong hệ thống đấu giá như đăng ký, đăng nhập, xem phiên, đặt giá hoặc quản lý số dư?",
+  "timestamp": "2026-05-24T22:26:48"
 }

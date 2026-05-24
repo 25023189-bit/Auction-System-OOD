@@ -59,46 +59,40 @@ public class AutoBidManager {
         }
     }
 
-    public synchronized void runAutoBiddingEngine(AuctionRoom room, ClientActionContext context) {
-        String roomId = room.getRoomId();
+    // ====================================================================
+    // ĐÂY LÀ HÀM XỬ LÝ AUTO-BID ĐÃ ĐƯỢC BỌC LẠI CẨN THẬN
+    // ====================================================================
+    public synchronized void triggerAutoBids(String roomId, AuctionRoom room, ClientActionContext context) {
         PriorityQueue<AutoBidAgent> queue = roomQueues.get(roomId);
-
-        if (queue == null || queue.isEmpty()) return;
+        if (queue == null || queue.isEmpty()) {
+            return;
+        }
 
         boolean priceChanged;
 
         do {
             priceChanged = false;
-
             double currentPrice = room.getCurrentPrice();
-            String currentWinner = room.getHighestBidder();
+
+            // LẤY TRỰC TIẾP ID NGƯỜI CHIẾN THẮNG (Không thèm lấy tên nữa)
+            String currentWinnerId = room.getHighestBidder();
 
             AutoBidAgent[] activeAgents = queue.toArray(new AutoBidAgent[0]);
-            UserDAO userDAO = new UserDAO();
 
             for (AutoBidAgent agent : activeAgents) {
 
-                User agentUser = userDAO.getUserById(agent.getUserId());
-                String agentUsername = (agentUser != null && agentUser.getUsername() != null)
-                        ? agentUser.getUsername()
-                        : agent.getUserId();
-
                 // =========================================================
-                // BẢO MẬT 1: CHỐNG TỰ ĐÈ GIÁ BẢN THÂN
-                // Cắt khoảng trắng (trim) và bỏ qua chữ Hoa/Thường để so sánh chuẩn 100%
+                // BẢO MẬT 1: CHỐNG TỰ ĐÈ GIÁ BẢN THÂN (PHIÊN BẢN CHUẨN XÁC 100%)
+                // So sánh thẳng ID, khỏi lo lệch tên!
                 // =========================================================
-                String safeWinner = currentWinner != null ? currentWinner.trim() : "";
-                String safeAgent = agentUsername != null ? agentUsername.trim() : "";
-
-                if (safeAgent.equalsIgnoreCase(safeWinner)) {
-                    continue; // Đang Top 1 rồi, ngưng đấm!
+                if (currentWinnerId != null && currentWinnerId.equals(agent.getUserId())) {
+                    continue; // ID trùng nhau -> Đang Top 1 rồi -> Nằm im!
                 }
 
                 // =========================================================
                 // BẢO MẬT 2: KIỂM TRA BƯỚC GIÁ TỐI THIỂU
                 // =========================================================
-                double roomMinStep = room.getBidStep();
-                if (agent.getIncrement() < roomMinStep) {
+                if (agent.getIncrement() < room.getBidStep()) {
                     continue;
                 }
 
@@ -112,12 +106,15 @@ public class AutoBidManager {
                     com.auction.common.dto.Message bidResult = context.getRoomService().placeNewBid(roomId, agent.getUserId(), nextPrice);
 
                     if ("BID_SUCCESS".equals(bidResult.getAction()) || "BID_SUCCESS_EXTENDED".equals(bidResult.getAction())) {
+
+                        // Cập nhật lại toàn bộ căn phòng bằng data mới nhất
                         room = (AuctionRoom) bidResult.getData();
                         priceChanged = true;
+
                         context.broadcastToRoom(roomId, bidResult);
                         context.broadcastAll(new Message("UPDATE_PRICE", "SERVER", roomId + "|" + nextPrice));
 
-                        break; // Đấm thành công, chốt giá và quay lại vòng lặp!
+                        break; // Đấm thành công, chốt giá, thoát vòng lặp for để quay lại do-while
                     }
                 }
             }
