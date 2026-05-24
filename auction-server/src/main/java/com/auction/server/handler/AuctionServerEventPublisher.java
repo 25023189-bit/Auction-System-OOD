@@ -39,6 +39,11 @@ public class AuctionServerEventPublisher implements ServerEventPublisher {
     }
 
     @Override
+    public void notifyRoomClosed(String roomId, Object payload) {
+        AuctionServer.notifyRoomClosed(roomId, payload);
+    }
+
+    @Override
     public void notifyDeletedUser(String userId) {
         AuctionServer.notifyDeletedUser(userId);
     }

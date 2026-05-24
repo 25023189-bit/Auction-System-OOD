@@ -130,7 +130,7 @@ public class AuctionRoomMessageHandler implements MessageHandler {
         sessionStore.setCurrentRoom(room);
         binder.bind(room);
 
-        presenter.showCurrentPrice(room.getCurrentPrice(), room.getHighestBidder());
+        presenter.showCurrentPrice(room.getCurrentPrice(), null);
 
         if (room.getStartTime() != null) {
             auctionTimer.start(
@@ -152,7 +152,7 @@ public class AuctionRoomMessageHandler implements MessageHandler {
 
         sessionStore.setCurrentRoom(room);
         binder.bind(room);
-        presenter.showCurrentPrice(room.getCurrentPrice(), room.getHighestBidder());
+        presenter.showCurrentPrice(room.getCurrentPrice(), resolveBidderDisplayName(message));
 
         if ("BID_SUCCESS_EXTENDED".equals(message.getAction())) {
             presenter.appendChat("Auction extended because a bid was placed in the final 30 seconds.");
@@ -191,5 +191,12 @@ public class AuctionRoomMessageHandler implements MessageHandler {
         } catch (Exception e) {
             LOGGER.error("Failed to handle UPDATE_PRICE.", e);
         }
+    }
+
+    private String resolveBidderDisplayName(Message message) {
+        String displayName = message != null ? message.getId() : null;
+        return displayName == null || displayName.isBlank() || "SERVER".equalsIgnoreCase(displayName)
+                ? null
+                : displayName;
     }
 }

@@ -2,6 +2,8 @@ package com.auction.client.core.navigation;
 
 import com.auction.client.feature.controllers.app.root.AuctionController;
 import com.auction.client.feature.controllers.app.navigation.DashboardLauncherController;
+import com.auction.client.feature.controllers.auction.notify.EndAuctionNotificationViewModel;
+import com.auction.client.feature.controllers.auction.notify.NotifyEndAuctionController;
 import com.auction.client.session.SessionStore;
 import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.User;
@@ -125,6 +127,34 @@ public class FxSceneNavigator implements SceneNavigator {
     }
 
     @Override
+    public void showEndAuctionNotification(EndAuctionNotificationViewModel notificationData) {
+        try {
+            Stage stage = resolveStage();
+            windowStateHandler.capture(stage);
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/notify-end-auction-view.fxml"));
+            Parent root = loader.load();
+
+            NotifyEndAuctionController controller = loader.getController();
+            controller.setNotificationData(notificationData);
+            controller.setActionHandlers(
+                    this::showLobby,
+                    this::openSellerDashboard,
+                    this::showLobby
+            );
+
+            stage = resolveStage();
+            if (stage != null) {
+                rememberMainStage(stage);
+                stage.setScene(new Scene(root));
+                windowStateHandler.apply(stage, "Auction Ended - Auction System");
+            }
+        } catch (Exception e) {
+            LOGGER.error("Failed to show auction end notification.", e);
+        }
+    }
+
+    @Override
     public void openAdminDashboard() {
         new DashboardLauncherController(auctionService, sessionStore).openAdminDashboard();
     }
@@ -158,6 +188,7 @@ public class FxSceneNavigator implements SceneNavigator {
         return title == null
                 || title.isBlank()
                 || "Auction System".equals(title)
+                || "Auction Ended - Auction System".equals(title)
                 || title.endsWith("Lobby - Auction System")
                 || title.startsWith("Auction Room");
     }

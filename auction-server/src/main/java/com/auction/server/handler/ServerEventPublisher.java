@@ -28,5 +28,7 @@ public interface ServerEventPublisher {
 
     void notifyRoomClosed(String roomId);
 
+    void notifyRoomClosed(String roomId, Object payload);
+
     void notifyDeletedUser(String userId);
 }

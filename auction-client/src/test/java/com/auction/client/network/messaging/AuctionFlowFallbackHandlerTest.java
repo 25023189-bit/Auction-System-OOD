@@ -176,9 +176,11 @@ class AuctionFlowFallbackHandlerTest {
             Message msg = new Message("AUCTION_CLOSED_NOTIFY", "SERVER", "ROOM_999");
             handler.handle(msg);
 
-            assertEquals(1, mockedAlerts.constructed().size(), "Phải bật Alert cảnh báo");
+            assertEquals(0, mockedAlerts.constructed().size(), "Khong dung Alert vi da co man hinh notify rieng");
             verify(mockSessionStore).setCurrentRoom(null);
-            verify(mockSceneNavigator).showLobby();
+            verify(mockSessionStore).setCurrentRoomId(null);
+            verify(mockSceneNavigator).showEndAuctionNotification(any());
+            verify(mockAuctionService).getRooms();
         }
     }
 

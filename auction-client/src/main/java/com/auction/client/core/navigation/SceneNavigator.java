@@ -1,5 +1,6 @@
 package com.auction.client.core.navigation;
 
+import com.auction.client.feature.controllers.auction.notify.EndAuctionNotificationViewModel;
 import com.auction.common.model.AuctionRoom;
 
 /**
@@ -27,6 +28,8 @@ public interface SceneNavigator {
     void showLobby();
 
     void showAuctionRoom(AuctionRoom room);
+
+    void showEndAuctionNotification(EndAuctionNotificationViewModel notificationData);
 
     void openSellerDashboard();
 

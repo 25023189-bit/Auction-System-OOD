@@ -1,5 +1,6 @@
 package com.auction.server.handler;
 
+import com.auction.common.dto.AuctionEndNotificationPayload;
 import com.auction.common.dto.Message;
 import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.Item;
@@ -171,6 +172,7 @@ public class AdminActionHandler extends AbstractClientActionHandler {
         try {
             String targetRoomId = message.getData() != null ? message.getData().toString() : "";
             AuctionDAO auctionDAO = new AuctionDAO();
+            AuctionRoom room = auctionDAO.getAuctionById(targetRoomId);
 
             if (auctionDAO.forceDeleteAuction(targetRoomId)) {
                 // Khi admin hủy phiên, runtime state và client trong phòng đều phải được cập nhật.
@@ -181,7 +183,7 @@ public class AdminActionHandler extends AbstractClientActionHandler {
                         "AUCTION_DELETED",
                         "Force-canceled auction: " + targetRoomId
                 ));
-                context.notifyRoomClosed(targetRoomId);
+                context.notifyRoomClosed(targetRoomId, buildEndNotificationPayload(room));
                 broadcastRoomList(context);
             } else {
                 context.send(new Message("ADMIN_ACTION_FAIL", "SERVER", "Unable to cancel this auction!"));
@@ -190,6 +192,28 @@ public class AdminActionHandler extends AbstractClientActionHandler {
             LOGGER.error("Auction cancellation error.", e);
             context.send(new Message("ADMIN_ACTION_FAIL", "SERVER", "Auction cancellation error!"));
         }
+    }
+
+    private AuctionEndNotificationPayload buildEndNotificationPayload(AuctionRoom room) {
+        AuctionEndNotificationPayload payload = new AuctionEndNotificationPayload();
+        payload.setAuctionId(room != null ? room.getRoomId() : null);
+        payload.setItemName(room != null ? room.getItemName() : null);
+        payload.setFinalPrice(room != null ? room.getCurrentPrice() : 0.0);
+        payload.setSellerId(room != null ? room.getSellerName() : null);
+        payload.setSellerUsername(resolveUsername(payload.getSellerId()));
+        payload.setEndReason("ADMIN_CLOSED");
+        payload.setFinalStatus("ADMIN_CLOSED");
+        payload.setHasWinner(false);
+        payload.setTransactionApplied(false);
+        return payload;
+    }
+
+    private String resolveUsername(String userId) {
+        if (userId == null || userId.isBlank()) {
+            return null;
+        }
+        User user = new UserDAO().getUserById(userId);
+        return user != null ? user.getUsername() : null;
     }
 
     private void handleAdminDeleteUser(Message message, ClientActionContext context) {

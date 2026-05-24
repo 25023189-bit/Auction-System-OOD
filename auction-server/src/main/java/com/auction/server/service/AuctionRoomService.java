@@ -1,5 +1,6 @@
 package com.auction.server.service;
 
+import com.auction.common.dto.AuctionEndNotificationPayload;
 import com.auction.common.dto.Message;
 import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.User;
@@ -307,6 +308,7 @@ public class AuctionRoomService {
 
     // Kết thúc phiên: cập nhật DB, dọn runtime state, báo client và refresh lobby.
     private CloseAuctionResult finalizeAuction(String roomId) {
+        AuctionRoom room = auctionDAO.getAuctionById(roomId);
         CloseAuctionResult result = auctionDAO.closeAuctionByTime(roomId);
 
         if (result == null || !result.isSuccess()) {
@@ -323,7 +325,7 @@ public class AuctionRoomService {
         AuctionStateManager.removeState(roomId);
         AuctionImageRegistry.remove(roomId);
         broadcastBalancesAfterTimeout(result);
-        AuctionServer.notifyRoomClosed(roomId);
+        AuctionServer.notifyRoomClosed(roomId, buildEndNotificationPayload(room, result, "TIME_EXPIRED"));
         broadcastRoomList();
 
         return result;
@@ -385,5 +387,35 @@ public class AuctionRoomService {
 
     private Message fail(String action, String content) {
         return new Message(action, "SERVER", content);
+    }
+
+    private AuctionEndNotificationPayload buildEndNotificationPayload(
+            AuctionRoom room,
+            CloseAuctionResult result,
+            String endReason
+    ) {
+        AuctionEndNotificationPayload payload = new AuctionEndNotificationPayload();
+        payload.setAuctionId(room != null ? room.getRoomId() : null);
+        payload.setItemName(room != null ? room.getItemName() : null);
+        payload.setEndReason(endReason);
+        payload.setFinalStatus(result != null ? result.getFinalStatus() : null);
+        payload.setHasWinner(result != null && result.getWinnerId() != null);
+        payload.setTransactionApplied(result != null && "SOLD".equalsIgnoreCase(result.getFinalStatus()));
+        payload.setFinalPrice(result != null ? result.getFinalPrice() : room != null ? room.getCurrentPrice() : 0.0);
+        payload.setWinnerId(result != null ? result.getWinnerId() : null);
+        payload.setSellerId(result != null && result.getSellerId() != null
+                ? result.getSellerId()
+                : room != null ? room.getSellerName() : null);
+        payload.setWinnerUsername(resolveUsername(payload.getWinnerId()));
+        payload.setSellerUsername(resolveUsername(payload.getSellerId()));
+        return payload;
+    }
+
+    private String resolveUsername(String userId) {
+        if (userId == null || userId.isBlank()) {
+            return null;
+        }
+        User user = userDAO.getUserById(userId);
+        return user != null ? user.getUsername() : null;
     }
 }

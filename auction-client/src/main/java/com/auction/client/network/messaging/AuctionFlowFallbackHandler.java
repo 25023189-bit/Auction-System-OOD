@@ -1,9 +1,12 @@
 package com.auction.client.network.messaging;
 
 import com.auction.client.core.navigation.SceneNavigator;
+import com.auction.client.feature.controllers.auction.notify.EndAuctionNotificationMapper;
+import com.auction.client.feature.controllers.auction.notify.EndAuctionNotificationViewModel;
 import com.auction.client.feature.lobby.LobbyUserInfoBinder;
 import com.auction.client.feature.room.AuctionRoomPresenter;
 import com.auction.client.session.SessionStore;
+import com.auction.common.dto.AuctionEndNotificationPayload;
 import com.auction.common.dto.Message;
 import com.auction.client.service.AuctionService;
 import javafx.scene.control.Alert;
@@ -37,6 +40,7 @@ public class AuctionFlowFallbackHandler implements MessageHandler {
     private final SceneNavigator sceneNavigator;
     private final LobbyUserInfoBinder lobbyUserInfoBinder;
     private final AuctionRoomPresenter auctionRoomPresenter;
+    private final EndAuctionNotificationMapper endAuctionNotificationMapper = new EndAuctionNotificationMapper();
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AuctionFlowFallbackHandler.class);
 
@@ -118,9 +122,9 @@ public class AuctionFlowFallbackHandler implements MessageHandler {
                 }
             }
             case "CLOSE_AUCTION_SUCCESS" -> {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION, "The auction was closed by the seller.");
-                alert.setHeaderText("Auction Closed");
-                alert.showAndWait();
+                if (auctionRoomPresenter != null) {
+                    auctionRoomPresenter.appendChat("Auction closed by seller.");
+                }
             }
             case "CLOSE_AUCTION_FAIL" -> {
                 Alert alert = new Alert(Alert.AlertType.ERROR, String.valueOf(msg.getData()));
@@ -129,14 +133,16 @@ public class AuctionFlowFallbackHandler implements MessageHandler {
             }
             case "AUCTION_CLOSED_NOTIFY" -> {
                 String currentRoomId = sessionStore.getCurrentRoomId();
-                if (currentRoomId != null && currentRoomId.equals(String.valueOf(msg.getData()))) {
+                if (currentRoomId != null && currentRoomId.equals(resolveClosedRoomId(msg))) {
                     // Chỉ user đang ở đúng phòng bị đóng mới bị đưa về lobby.
-                    Alert alert = new Alert(Alert.AlertType.WARNING, "The auction has ended. You will be returned to the main lobby.");
-                    alert.setHeaderText("Auction Ended");
-                    alert.showAndWait();
+                    EndAuctionNotificationViewModel notificationData = endAuctionNotificationMapper.map(
+                            msg,
+                            sessionStore.getCurrentUser(),
+                            sessionStore.getCurrentRoom()
+                    );
                     sessionStore.setCurrentRoom(null);
                     sessionStore.setCurrentRoomId(null);
-                    sceneNavigator.showLobby();
+                    sceneNavigator.showEndAuctionNotification(notificationData);
                     if (lobbyUserInfoBinder != null) {
                         lobbyUserInfoBinder.bind(sessionStore.getCurrentUser());
                     }
@@ -158,5 +164,13 @@ public class AuctionFlowFallbackHandler implements MessageHandler {
         sessionStore.setCurrentRoomId(room.getRoomId());
 
         sceneNavigator.showAuctionRoom(room);
+    }
+
+    private String resolveClosedRoomId(Message msg) {
+        Object data = msg != null ? msg.getData() : null;
+        if (data instanceof AuctionEndNotificationPayload payload) {
+            return payload.getAuctionId();
+        }
+        return data != null ? data.toString() : null;
     }
 }

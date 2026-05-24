@@ -156,7 +156,7 @@ class AdminActionHandlerTest {
 
         // Kiểm tra xem runtime state trong bộ nhớ và client trong phòng có bị dọn dẹp không
         mockStateManagerStatic.verify(() -> AuctionStateManager.removeState("AU112345"), times(1));
-        verify(mockContext).notifyRoomClosed("AU112345");
+        verify(mockContext).notifyRoomClosed(eq("AU112345"), any(com.auction.common.dto.AuctionEndNotificationPayload.class));
     }
 
     @Test

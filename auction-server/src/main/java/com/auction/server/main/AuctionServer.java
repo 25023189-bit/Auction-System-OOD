@@ -113,7 +113,11 @@ public class AuctionServer {
     }
 
     public static void notifyRoomClosed(String roomId) {
-        Message message = new Message("AUCTION_CLOSED_NOTIFY", "SERVER", roomId);
+        notifyRoomClosed(roomId, roomId);
+    }
+
+    public static void notifyRoomClosed(String roomId, Object payload) {
+        Message message = new Message("AUCTION_CLOSED_NOTIFY", "SERVER", payload != null ? payload : roomId);
         // Thông báo cho client trong phòng và xóa trạng thái room của họ.
         for (ClientHandler client : clients) {
             if (client == null || !client.isAlive()) {

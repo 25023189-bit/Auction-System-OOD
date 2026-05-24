@@ -468,6 +468,7 @@ public class AuctionDAO implements IAuctionDAO {
         room.setItemId(String.valueOf(rs.getInt("product_id")));
         room.setSellerName(rs.getString("seller_id"));
         room.setStatus(rs.getString("status"));
+        room.setSellerName(rs.getString("seller_id"));
         room.setItemName(rs.getString("product_name"));
         room.setItemDescription(rs.getString("description"));
         room.setStartingPrice(rs.getDouble("starting_price"));

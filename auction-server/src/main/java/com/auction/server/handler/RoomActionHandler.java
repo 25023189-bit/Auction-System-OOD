@@ -1,6 +1,7 @@
 package com.auction.server.handler;
 
 import com.auction.common.dto.AutoBidRequest;
+import com.auction.common.dto.AuctionEndNotificationPayload;
 import com.auction.common.dto.Message;
 import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.BidTransaction;
@@ -272,6 +273,7 @@ public class RoomActionHandler extends AbstractClientActionHandler {
             }
 
             AuctionDAO auctionDAO = new AuctionDAO();
+            AuctionRoom room = auctionDAO.getAuctionById(roomId);
             boolean closed = auctionDAO.closeAuctionBySeller(roomId, context.getUserId());
             if (!closed) {
                 context.send(new Message("CLOSE_AUCTION_FAIL", "SERVER", "Unable to close this auction!"));
@@ -281,11 +283,38 @@ public class RoomActionHandler extends AbstractClientActionHandler {
             AuctionStateManager.removeState(roomId);
             AuctionImageRegistry.remove(roomId);
             context.send(new Message("CLOSE_AUCTION_SUCCESS", "SERVER", roomId));
-            context.notifyRoomClosed(roomId);
+            context.notifyRoomClosed(roomId, buildEndNotificationPayload(room, "SELLER_CLOSED", false));
             broadcastRoomList(context);
         } catch (Exception e) {
             LOGGER.error("Unable to close auction.", e);
             context.send(new Message("CLOSE_AUCTION_FAIL", "SERVER", "Unable to close auction!"));
         }
+    }
+
+    private AuctionEndNotificationPayload buildEndNotificationPayload(
+            AuctionRoom room,
+            String endReason,
+            boolean transactionApplied
+    ) {
+        AuctionEndNotificationPayload payload = new AuctionEndNotificationPayload();
+        payload.setAuctionId(room != null ? room.getRoomId() : null);
+        payload.setItemName(room != null ? room.getItemName() : null);
+        payload.setFinalPrice(room != null ? room.getCurrentPrice() : 0.0);
+        payload.setSellerId(room != null ? room.getSellerName() : null);
+        payload.setSellerUsername(resolveUsername(payload.getSellerId()));
+        payload.setEndReason(endReason);
+        payload.setFinalStatus(endReason);
+        payload.setHasWinner(false);
+        payload.setTransactionApplied(transactionApplied);
+        return payload;
+    }
+
+    private String resolveUsername(String userId) {
+        if (userId == null || userId.isBlank()) {
+            return null;
+        }
+        UserDAO userDAO = new UserDAO();
+        User user = userDAO.getUserById(userId);
+        return user != null ? user.getUsername() : null;
     }
 }

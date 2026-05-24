@@ -109,6 +109,10 @@ public class ClientActionContext {
         eventPublisher.notifyRoomClosed(roomId);
     }
 
+    public void notifyRoomClosed(String roomId, Object payload) {
+        eventPublisher.notifyRoomClosed(roomId, payload);
+    }
+
     public void notifyDeletedUser(String userId) {
         eventPublisher.notifyDeletedUser(userId);
     }
