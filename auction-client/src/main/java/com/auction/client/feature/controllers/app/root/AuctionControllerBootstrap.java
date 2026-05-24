@@ -15,7 +15,6 @@ import com.auction.client.shared.support.DefaultStageLocator;
 import com.auction.client.shared.support.FxAlertService;
 import com.auction.client.shared.support.FxThreadExecutor;
 import com.auction.client.shared.support.StageLocator;
-import com.auction.client.shared.support.UiResetService;
 import com.auction.common.role.DefaultRolePolicy;
 import com.auction.common.role.RolePolicy;
 
@@ -42,7 +41,6 @@ public class AuctionControllerBootstrap {
                 sceneNavigator,
                 alertService,
                 stageLocator,
-                null,
                 fxThreadExecutor
         );
     }

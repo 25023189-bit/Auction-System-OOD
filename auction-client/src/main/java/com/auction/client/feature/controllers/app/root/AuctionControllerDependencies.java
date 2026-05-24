@@ -8,7 +8,6 @@ import com.auction.client.session.SessionStore;
 import com.auction.client.shared.support.AlertService;
 import com.auction.client.shared.support.FxThreadExecutor;
 import com.auction.client.shared.support.StageLocator;
-import com.auction.client.shared.support.UiResetService;
 import com.auction.common.role.RolePolicy;
 
 public record AuctionControllerDependencies(
@@ -20,7 +19,6 @@ public record AuctionControllerDependencies(
         SceneNavigator sceneNavigator,
         AlertService alertService,
         StageLocator stageLocator,
-        UiResetService uiResetService,
         FxThreadExecutor fxThreadExecutor
 ) {
 }

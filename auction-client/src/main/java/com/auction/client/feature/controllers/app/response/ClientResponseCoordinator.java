@@ -13,6 +13,7 @@ import com.auction.client.network.messaging.AuctionMessageRouter;
 import com.auction.client.network.messaging.BalanceFallbackHandler;
 import com.auction.client.network.messaging.FallbackMessageHandler;
 import com.auction.client.network.messaging.MessageHandler;
+import com.auction.client.network.messaging.ProductResponseHandler;
 import com.auction.client.service.AuctionService;
 import com.auction.client.session.SessionStore;
 import com.auction.client.shared.support.FxThreadExecutor;
@@ -58,16 +59,7 @@ public class ClientResponseCoordinator {
             return;
         }
 
-        fxThreadExecutor.execute(() -> {
-            if ("PRODUCT_DETAILS_SUCCESS".equals(message.getAction())) {
-                if (auctionService != null) {
-                    auctionService.fireProductDetailsReceived(message.getData());
-                }
-                return;
-            }
-
-            dispatch(message);
-        });
+        fxThreadExecutor.execute(() -> dispatch(message));
     }
 
     private void dispatch(Message message) {
@@ -95,6 +87,7 @@ public class ClientResponseCoordinator {
         if (auctionRoomMessageHandler != null) {
             primaryHandlers.add(auctionRoomMessageHandler);
         }
+        primaryHandlers.add(new ProductResponseHandler(auctionService));
 
         List<MessageHandler> fallbackHandlers = new ArrayList<>();
         fallbackHandlers.add(new AuctionFlowFallbackHandler(

@@ -1,5 +1,6 @@
 package com.auction.server.service;
 
+import com.auction.common.dto.Message;
 import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.User;
 import com.auction.server.dao.UserDAO;
@@ -113,10 +114,8 @@ public class AutoBidManager {
                     if ("BID_SUCCESS".equals(bidResult.getAction()) || "BID_SUCCESS_EXTENDED".equals(bidResult.getAction())) {
                         room = (AuctionRoom) bidResult.getData();
                         priceChanged = true;
-
-                        // TÔI ĐÃ XÓA 2 LỆNH BROADCAST Ở ĐÂY!
-                        // Vì hàm placeNewBid đã tự động phát loa cho toàn Server rồi.
-                        // Xóa ở đây sẽ trị dứt điểm căn bệnh "Gửi tin nhắn 2 lần".
+                        context.broadcastToRoom(roomId, bidResult);
+                        context.broadcastAll(new Message("UPDATE_PRICE", "SERVER", roomId + "|" + nextPrice));
 
                         break; // Đấm thành công, chốt giá và quay lại vòng lặp!
                     }

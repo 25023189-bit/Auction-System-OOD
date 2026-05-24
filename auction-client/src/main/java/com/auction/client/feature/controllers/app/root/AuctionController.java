@@ -2,7 +2,6 @@ package com.auction.client.feature.controllers.app.root;
 
 import com.auction.client.feature.controllers.account.auth.AuthViewCoordinator;
 import com.auction.client.core.navigation.SceneNavigator;
-import com.auction.client.feature.controllers.app.navigation.DashboardLauncherController;
 import com.auction.client.feature.controllers.app.navigation.SessionLifecycleController;
 import com.auction.client.feature.controllers.app.response.ClientResponseCoordinator;
 import com.auction.client.feature.controllers.auction.lobby.LobbyViewCoordinator;
@@ -37,36 +36,36 @@ import java.util.ResourceBundle;
 public class AuctionController implements Initializable, ServerMessageListener {
     private static final Logger LOGGER = LoggerFactory.getLogger(AuctionController.class);
 
-    @FXML private VBox paneLogin, paneRegister, paneForgotPassword;
-    @FXML private Pane paneAuctionRoom;
-    @FXML private BorderPane paneMainLobby;
+    @FXML VBox paneLogin, paneRegister, paneForgotPassword;
+    @FXML Pane paneAuctionRoom;
+    @FXML BorderPane paneMainLobby;
 
-    @FXML private TextField txtUsername, txtRegCustomerId, txtRegUsername, txtForgotUsername, txtRegOrganization, txtRegFullName;
-    @FXML private PasswordField txtPassword, txtRegPassword, txtRegConfirm, txtForgotNewPassword, txtForgotConfirm;
-    @FXML private Label lblStatus, lblRegStatus, lblForgotStatus;
-    @FXML private ComboBox<String> cbRegRole;
-    @FXML private Label lblRegOrganization;
+    @FXML TextField txtUsername, txtRegCustomerId, txtRegUsername, txtForgotUsername, txtRegOrganization, txtRegFullName;
+    @FXML PasswordField txtPassword, txtRegPassword, txtRegConfirm, txtForgotNewPassword, txtForgotConfirm;
+    @FXML Label lblStatus, lblRegStatus, lblForgotStatus;
+    @FXML ComboBox<String> cbRegRole;
+    @FXML Label lblRegOrganization;
 
-    @FXML private Label lblUsername, lblBalance, lblUsernameDisplay;
-    @FXML private Label lblCountdownTimer;
-    @FXML private Button btnCloseAuction, btnCreateAuction;
-    @FXML private FlowPane paneSelectAuction;
+    @FXML Label lblUsername, lblBalance, lblUsernameDisplay;
+    @FXML Label lblCountdownTimer;
+    @FXML Button btnCloseAuction, btnCreateAuction;
+    @FXML FlowPane paneSelectAuction;
 
-    @FXML private Label lblAuctionItemName, lblCurrentPrice, lblParticipantCount, lblTimer;
-    @FXML private Label lblProductName, lblDescription, lblTimeLeft;
-    @FXML private TextArea txtChatLog;
-    @FXML private TextField txtBidAmount, txtChatInput;
-    @FXML private VBox vboxCurrencyRates, vboxNews;
-    @FXML private Button btnPlaceBid;
-    @FXML private TextArea txtItemDescriptionDisplay;
-    @FXML private ImageView imgProduct;
+    @FXML Label lblAuctionItemName, lblCurrentPrice, lblParticipantCount, lblTimer;
+    @FXML Label lblProductName, lblDescription, lblTimeLeft;
+    @FXML TextArea txtChatLog;
+    @FXML TextField txtBidAmount, txtChatInput;
+    @FXML VBox vboxCurrencyRates, vboxNews;
+    @FXML Button btnPlaceBid;
+    @FXML TextArea txtItemDescriptionDisplay;
+    @FXML ImageView imgProduct;
 
-    @FXML private Button btnToggleAutoBid;
-    @FXML private VBox paneAutoBid;
-    @FXML private TextField txtMaxBid;
-    @FXML private TextField txtAutoBidStep;
+    @FXML Button btnToggleAutoBid;
+    @FXML VBox paneAutoBid;
+    @FXML TextField txtMaxBid;
+    @FXML TextField txtAutoBidStep;
 
-    @FXML private AreaChart<String, Number> priceChart;
+    @FXML AreaChart<String, Number> priceChart;
 
     private AuctionService auctionService;
     private SessionStore sessionStore;
@@ -77,7 +76,6 @@ public class AuctionController implements Initializable, ServerMessageListener {
     private AuthViewCoordinator authViewCoordinator;
     private LobbyViewCoordinator lobbyViewCoordinator;
     private AuctionRoomViewCoordinator auctionRoomViewCoordinator;
-    private DashboardLauncherController dashboardLauncherController;
     private SessionLifecycleController sessionLifecycleController;
     private ClientResponseCoordinator clientResponseCoordinator;
 
@@ -112,9 +110,8 @@ public class AuctionController implements Initializable, ServerMessageListener {
             );
         }
 
-        dashboardLauncherController = new DashboardLauncherController(auctionService, sessionStore);
         sessionLifecycleController = new SessionLifecycleController(
-                sessionStore, auctionService, sceneNavigator, dependencies.uiResetService()
+                sessionStore, auctionService, sceneNavigator, AuctionControllerViewServices.createUiResetService(this)
         );
 
         if (paneAuctionRoom != null) {
@@ -196,7 +193,7 @@ public class AuctionController implements Initializable, ServerMessageListener {
 
     @FXML
     private void openSellerDashboard() {
-        dashboardLauncherController.openSellerDashboard();
+        sceneNavigator.openSellerDashboard();
     }
 
     @FXML
@@ -278,75 +275,12 @@ public class AuctionController implements Initializable, ServerMessageListener {
     }
 
     public void prepareForFxmlReload() {
-        // Auth view nodes
-        paneLogin = null;
-        paneRegister = null;
-        paneForgotPassword = null;
-
-        // Main screen roots
-        paneAuctionRoom = null;
-        paneMainLobby = null;
-
-        // Auth fields
-        txtUsername = null;
-        txtPassword = null;
-        txtRegCustomerId = null;
-        txtRegUsername = null;
-        txtRegFullName = null;
-        txtRegPassword = null;
-        txtRegConfirm = null;
-        txtRegOrganization = null;
-        txtForgotUsername = null;
-        txtForgotNewPassword = null;
-        txtForgotConfirm = null;
-        cbRegRole = null;
-        lblStatus = null;
-        lblRegStatus = null;
-        lblForgotStatus = null;
-        lblRegOrganization = null;
-
-        // Lobby fields
-        lblUsername = null;
-        lblBalance = null;
-        lblUsernameDisplay = null;
-        lblCountdownTimer = null;
-        btnCreateAuction = null;
-        paneSelectAuction = null;
-
-        // Auction room fields
-        lblAuctionItemName = null;
-        lblProductName = null;
-        lblCurrentPrice = null;
-        lblParticipantCount = null;
-        lblTimer = null;
-        lblTimeLeft = null;
-        lblDescription = null;
-        txtChatLog = null;
-        txtItemDescriptionDisplay = null;
-        txtBidAmount = null;
-        txtChatInput = null;
-        btnCloseAuction = null;
-        btnPlaceBid = null;
-        imgProduct = null;
-        priceChart = null;
-
-        // Autobid fields
-        btnToggleAutoBid = null;
-        paneAutoBid = null;
-        txtMaxBid = null;
-        txtAutoBidStep = null;
-
-        // Optional dashboard/news fields
-        vboxCurrencyRates = null;
-        vboxNews = null;
-
-        // Reset view-specific coordinators only.
-        // Không reset auctionService/sessionStore/dependencies/clientConnection.
+        AuctionControllerFxmlReferences.clear(this);
         authViewCoordinator = null;
         lobbyViewCoordinator = null;
         auctionRoomViewCoordinator = null;
-        dashboardLauncherController = null;
         sessionLifecycleController = null;
         clientResponseCoordinator = null;
     }
 }
+

@@ -12,10 +12,6 @@ public class ProductDetailsResponseController {
     private final ProductDetailMapper detailMapper;
     private final ProductDetailBinder detailBinder;
 
-    public ProductDetailsResponseController(AuctionService auctionService) {
-        this(auctionService, null, null);
-    }
-
     public ProductDetailsResponseController(
             AuctionService auctionService,
             ProductDetailMapper detailMapper,

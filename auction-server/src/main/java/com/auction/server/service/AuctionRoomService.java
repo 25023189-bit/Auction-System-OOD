@@ -190,13 +190,8 @@ public class AuctionRoomService {
                     room
             );
 
-            // 2. PHÁT LOA CHO TOÀN SERVER (Tất cả Client, bao gồm cả máy của Hân sẽ nhận được giá mới)
-            com.auction.server.main.AuctionServer.broadcast(successMessage);
-
-            // 3. --- BẮT ĐẦU SỬA: ĐÁNH LỪA HANDLER ---
-            // Trả về một Message vô nghĩa để Handler gửi về Client bị lờ đi, tránh hiện 2 lần trên màn hình
-            return new Message("IGNORE_ECHO", "SERVER", null);
-            // --- KẾT THÚC SỬA ---
+            // Caller is responsible for publishing the successful bid event.
+            return successMessage;
         }
     }
 

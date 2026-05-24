@@ -1,8 +1,7 @@
 package com.auction.client.core.navigation;
 
-import com.auction.client.feature.controllers.account.admin.AdminController;
 import com.auction.client.feature.controllers.app.root.AuctionController;
-import com.auction.client.feature.controllers.auction.seller.SellerController;
+import com.auction.client.feature.controllers.app.navigation.DashboardLauncherController;
 import com.auction.client.session.SessionStore;
 import com.auction.common.model.AuctionRoom;
 import com.auction.common.model.User;
@@ -122,45 +121,12 @@ public class FxSceneNavigator implements SceneNavigator {
 
     @Override
     public void openSellerDashboard() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/fxml/seller-view.fxml"));
-            Parent root = loader.load();
-
-            SellerController sellerController = loader.getController();
-            sellerController.setAuctionService(auctionService);
-
-            // Dashboard tạo phiên mở Stage riêng để seller không mất lobby chính.
-            Stage stage = new Stage();
-            stage.setTitle("Create Auction");
-            stage.setScene(new Scene(root));
-            stage.setFullScreen(false);
-            stage.setMaximized(true);
-            stage.show();
-        } catch (Exception e) {
-            LOGGER.error("Failed to open seller dashboard.", e);
-        }
+        new DashboardLauncherController(auctionService, sessionStore).openSellerDashboard();
     }
 
     @Override
     public void openAdminDashboard() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/fxml/admin-view.fxml"));
-            Parent root = loader.load();
-
-            AdminController adminController = loader.getController();
-            adminController.setAuctionService(auctionService);
-            // Lưu controller admin để AdminFallbackHandler có thể cập nhật bảng khi server phản hồi.
-            sessionStore.setAdminController(adminController);
-
-            Stage stage = new Stage();
-            stage.setTitle("Admin Dashboard");
-            stage.setScene(new Scene(root));
-            stage.setFullScreen(false);
-            stage.setMaximized(true);
-            stage.show();
-        } catch (Exception e) {
-            LOGGER.error("Failed to open admin dashboard.", e);
-        }
+        new DashboardLauncherController(auctionService, sessionStore).openAdminDashboard();
     }
 
     // Tìm Stage đang hiển thị để thay Scene hiện tại.
