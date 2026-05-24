@@ -1,79 +1,360 @@
-/* Nền chính là bức ảnh bạn gửi */
+/* =========================================================
+   PREMIUM CREATE AUCTION VIEW
+   Giữ nguyên chức năng, fx:id và onAction.
+   Ảnh dùng trong thư mục:
+   ../images/creat_auction/creat-view-<ten-anh>.png
+   ========================================================= */
+
+.root {
+    -fx-font-family: "Segoe UI", "Inter", "System";
+    -fx-text-fill: #0b1f3f;
+}
+
+/* =========================
+   BACKGROUND
+   ========================= */
+
 .main-container {
-    -fx-background-image: url("../images/seller-view.jpg"); /* Đảm bảo tên file ảnh khớp 100% */
+    -fx-background-color: linear-gradient(
+        to bottom right,
+        #ffffff,
+        #f8fbff 42%,
+        #fff8e8 82%,
+        #ffffff
+    );
+    -fx-background-image: url("../images/creat_auction/creat-view-background-waves.png");
     -fx-background-size: cover;
-    -fx-background-position: center;
+    -fx-background-position: center center;
     -fx-background-repeat: no-repeat;
 }
 
-/* Kiểu chữ màu cam đồng nhất */
+.seller-page {
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+}
+
+/* =========================
+   TOP BAR
+   ========================= */
+
+.seller-topbar {
+    -fx-padding: 0 0 2 0;
+}
+
+.seller-title {
+    -fx-text-fill: #071f4f;
+    -fx-font-family: "Georgia";
+    -fx-font-size: 31px;
+    -fx-font-weight: 800;
+}
+
+.seller-subtitle {
+    -fx-text-fill: #b77912;
+    -fx-font-size: 14px;
+    -fx-font-weight: 700;
+}
+
+.reputation-card {
+    -fx-background-color: rgba(255, 255, 255, 0.88);
+    -fx-background-radius: 18px;
+    -fx-border-radius: 18px;
+    -fx-border-color: rgba(218, 165, 32, 0.30);
+    -fx-border-width: 1px;
+    -fx-padding: 8 18 8 14;
+    -fx-effect: dropshadow(gaussian, rgba(8, 38, 92, 0.13), 18, 0.16, 0, 6);
+}
+
+.reputation-label {
+    -fx-text-fill: #071f4f;
+    -fx-font-size: 15px;
+    -fx-font-weight: 800;
+}
+
+/* =========================
+   MAIN FORM CARD
+   ========================= */
+
+.auction-form-card {
+    -fx-background-color: rgba(255, 255, 255, 0.92);
+    -fx-background-radius: 28px;
+    -fx-border-radius: 28px;
+    -fx-border-color: rgba(218, 165, 32, 0.30);
+    -fx-border-width: 1.2px;
+    -fx-effect: dropshadow(gaussian, rgba(8, 38, 92, 0.16), 34, 0.20, 0, 12);
+}
+
+.form-title-zone {
+    -fx-padding: -6 0 0 0;
+}
+
+.form-title {
+    -fx-text-fill: #071f4f;
+    -fx-font-family: "Georgia";
+    -fx-font-size: 30px;
+    -fx-font-weight: 800;
+}
+
+.form-subtitle {
+    -fx-text-fill: #68758a;
+    -fx-font-size: 14px;
+    -fx-font-weight: 500;
+}
+
+.gold-divider {
+    -fx-text-fill: rgba(198, 140, 32, 0.86);
+    -fx-font-size: 12px;
+    -fx-font-weight: 800;
+}
+
+/* =========================
+   FORM LAYOUT
+   ========================= */
+
+.form-row {
+    -fx-alignment: CENTER_LEFT;
+}
+
+.field-group {
+    -fx-min-width: 0;
+}
+
+.field-icon {
+    -fx-min-width: 34px;
+    -fx-min-height: 34px;
+    -fx-alignment: center;
+    -fx-background-color: rgba(231, 241, 255, 0.95);
+    -fx-background-radius: 999px;
+    -fx-text-fill: #1557d1;
+    -fx-font-size: 15px;
+    -fx-font-weight: 900;
+}
+
+.field-label {
+    -fx-text-fill: #10213d;
+    -fx-font-family: "Georgia";
+    -fx-font-size: 15px;
+    -fx-font-weight: 800;
+}
+
+.required-dot {
+    -fx-text-fill: #d9a441;
+    -fx-font-size: 22px;
+    -fx-font-weight: 900;
+}
+
+.soft-separator {
+    -fx-background-color: linear-gradient(
+        to right,
+        transparent,
+        rgba(15, 31, 61, 0.10),
+        rgba(217, 164, 65, 0.28),
+        rgba(15, 31, 61, 0.10),
+        transparent
+    );
+    -fx-pref-height: 1px;
+    -fx-max-height: 1px;
+}
+
+/* =========================
+   INPUTS
+   ========================= */
+
+.premium-input {
+    -fx-background-color: rgba(255, 255, 255, 0.96);
+    -fx-control-inner-background: rgba(255, 255, 255, 0.96);
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
+    -fx-border-color: rgba(125, 137, 154, 0.28);
+    -fx-border-width: 1px;
+    -fx-padding: 0 14 0 14;
+    -fx-text-fill: #10213d;
+    -fx-text-inner-color: #10213d;
+    -fx-font-size: 14px;
+    -fx-prompt-text-fill: #9aa5b5;
+    -fx-effect: dropshadow(gaussian, rgba(8, 38, 92, 0.06), 10, 0.12, 0, 3);
+}
+
+.premium-input:hover {
+    -fx-border-color: rgba(217, 164, 65, 0.55);
+}
+
+.premium-input:focused {
+    -fx-border-color: #1557d1;
+    -fx-border-width: 1.35px;
+    -fx-effect: dropshadow(gaussian, rgba(21, 87, 209, 0.18), 16, 0.18, 0, 4);
+}
+
+.text-area.premium-input {
+    -fx-padding: 8 12 8 12;
+}
+
+.text-area.premium-input .content {
+    -fx-background-color: rgba(255, 255, 255, 0.96);
+    -fx-background-radius: 12px;
+}
+
+.time-input {
+    -fx-background-color: rgba(255, 255, 255, 0.96);
+    -fx-control-inner-background: rgba(255, 255, 255, 0.96);
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
+    -fx-border-color: rgba(125, 137, 154, 0.28);
+    -fx-border-width: 1px;
+    -fx-padding: 0 8 0 8;
+    -fx-text-fill: #10213d;
+    -fx-text-inner-color: #10213d;
+    -fx-font-size: 14px;
+    -fx-prompt-text-fill: #9aa5b5;
+    -fx-alignment: CENTER;
+    -fx-effect: dropshadow(gaussian, rgba(8, 38, 92, 0.06), 10, 0.12, 0, 3);
+}
+
+.time-input:hover {
+    -fx-border-color: rgba(217, 164, 65, 0.55);
+}
+
+.time-input:focused {
+    -fx-border-color: #1557d1;
+    -fx-border-width: 1.35px;
+    -fx-effect: dropshadow(gaussian, rgba(21, 87, 209, 0.18), 16, 0.18, 0, 4);
+}
+
+.time-colon {
+    -fx-text-fill: #68758a;
+    -fx-font-size: 18px;
+    -fx-font-weight: 800;
+}
+
+/* =========================
+   DATE PICKER
+   ========================= */
+
+.premium-date-picker {
+    -fx-background-color: rgba(255, 255, 255, 0.96);
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
+    -fx-border-color: rgba(125, 137, 154, 0.28);
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(8, 38, 92, 0.06), 10, 0.12, 0, 3);
+}
+
+.premium-date-picker:hover {
+    -fx-border-color: rgba(217, 164, 65, 0.55);
+}
+
+.premium-date-picker:focused {
+    -fx-border-color: #1557d1;
+}
+
+.premium-date-picker .text-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: #10213d;
+    -fx-prompt-text-fill: #9aa5b5;
+    -fx-font-size: 14px;
+}
+
+.premium-date-picker .arrow-button {
+    -fx-background-color: rgba(248, 250, 252, 0.96);
+    -fx-background-radius: 0 12 12 0;
+    -fx-border-color: rgba(125, 137, 154, 0.16);
+    -fx-border-width: 0 0 0 1;
+}
+
+.premium-date-picker .arrow-button:hover {
+    -fx-background-color: rgba(255, 248, 230, 0.95);
+}
+
+.premium-date-picker .arrow {
+    -fx-background-color: #b77912;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.form-footer {
+    -fx-padding: 4 0 0 0;
+}
+
+.info-banner {
+    -fx-background-color: linear-gradient(to right, rgba(239, 246, 255, 0.95), rgba(255, 255, 255, 0.82));
+    -fx-background-radius: 13px;
+    -fx-border-radius: 13px;
+    -fx-border-color: rgba(21, 87, 209, 0.18);
+    -fx-border-width: 1px;
+    -fx-padding: 9 14 9 12;
+}
+
+.info-text {
+    -fx-text-fill: #1557d1;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+}
+
+.status-label {
+    -fx-text-fill: #dc2626;
+    -fx-font-size: 13px;
+    -fx-font-weight: 800;
+}
+
+/* =========================
+   CREATE BUTTON
+   ========================= */
+
+.btn-create-orange {
+    -fx-background-color: linear-gradient(to bottom right, #f4d27a, #c88a17);
+    -fx-background-radius: 17px;
+    -fx-border-radius: 17px;
+    -fx-border-color: rgba(255, 255, 255, 0.62);
+    -fx-border-width: 1px;
+    -fx-text-fill: #ffffff;
+    -fx-font-family: "Georgia";
+    -fx-font-size: 19px;
+    -fx-font-weight: 900;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(184, 124, 23, 0.36), 20, 0.28, 0, 7);
+}
+
+.btn-create-orange:hover {
+    -fx-background-color: linear-gradient(to bottom right, #ffe29a, #d39a24);
+    -fx-effect: dropshadow(gaussian, rgba(184, 124, 23, 0.46), 24, 0.32, 0, 9);
+    -fx-translate-y: -1px;
+}
+
+.btn-create-orange:pressed {
+    -fx-translate-y: 1px;
+    -fx-opacity: 0.90;
+}
+
+/* =========================
+   BACKWARD COMPATIBILITY
+   Giữ lại tên class cũ nếu controller/FXML khác còn dùng.
+   ========================= */
+
 .orange-text-bold {
-    -fx-text-fill: #e67e22;
+    -fx-text-fill: #071f4f;
     -fx-font-weight: bold;
 }
 
 .orange-text-small {
-    -fx-text-fill: #e67e22;
+    -fx-text-fill: #b77912;
     -fx-font-weight: bold;
     -fx-font-size: 13px;
 }
 
-.reputation-label {
-    -fx-text-fill: #e67e22;
-    -fx-font-weight: bold;
-    -fx-font-style: italic;
-    -fx-font-size: 15px;
-}
-
-/* Khung card mờ để nhìn rõ nội dung trên nền ảnh */
 .glass-card {
-    -fx-background-color: rgba(0, 0, 0, 0.5); /* Nền đen mờ 50% */
-    -fx-background-radius: 10;
-    -fx-border-color: rgba(230, 126, 34, 0.3); /* Viền cam mờ */
-    -fx-border-radius: 10;
+    -fx-background-color: rgba(255, 255, 255, 0.92);
+    -fx-background-radius: 18px;
+    -fx-border-color: rgba(218, 165, 32, 0.28);
+    -fx-border-radius: 18px;
     -fx-padding: 15;
 }
 
 .glass-input {
-    /* Đổi màu nền bên trong TextArea và TextField */
-    -fx-control-inner-background: white !important;
-
-    /* ĐÃ FIX: Đổi màu chữ thành đen để hiện rõ trên nền trắng */
-    -fx-text-fill: black !important;
-    -fx-text-inner-color: black !important;
-
-    -fx-border-color: #e67e22;
-    -fx-border-radius: 5;
-    -fx-background-radius: 5;
-    -fx-prompt-text-fill: #95a5a6;
-}
-
-/* Xóa cái viền trắng mặc định khi di chuột vào TextArea */
-.glass-input .content {
-    -fx-background-color: transparent !important;
-}
-/* Nút bấm màu cam đồng nhất */
-.btn-create-orange {
-    -fx-background-color: #e67e22;
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-background-radius: 25;
-    -fx-cursor: hand;
-}
-
-.btn-create-orange:hover {
-    -fx-background-color: #d35400; /* Cam đậm hơn khi di chuột */
-    -fx-scale-x: 1.05;
-    -fx-scale-y: 1.05;
-}
-
-/* Chỉnh màu cho DatePicker */
-.date-picker .text-field {
-    -fx-background-color: white !important; /* Cho nền trắng để dễ nhìn */
-    -fx-text-fill: black !important;        /* Chữ đen rõ mồn một */
-}
-
-.date-picker .button {
-    -fx-background-color: #e67e22;
-    -fx-text-fill: white;
+    -fx-control-inner-background: white;
+    -fx-text-fill: #10213d;
+    -fx-text-inner-color: #10213d;
+    -fx-border-color: rgba(125, 137, 154, 0.28);
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-prompt-text-fill: #9aa5b5;
 }
