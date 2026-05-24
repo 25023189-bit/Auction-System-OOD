@@ -1,60 +1,284 @@
+.root {
+    -fx-font-family: "Segoe UI", "Inter", "System";
+    -fx-text-fill: #172033;
+}
+
+/* =========================
+   BACKGROUND
+   Giữ nguyên ảnh nền cũ
+   ========================= */
+
 .main-container {
-    -fx-background-image: url("../images/admin-background.jpg");
+    -fx-background-image: url("../images/admin-background.png");
     -fx-background-size: cover;
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
 }
-/* 1. Xóa nền của toàn bộ TabPane và khu vực chứa nội dung */
-.admin-tab-pane,
-.admin-tab-pane .tab-header-area,
-.admin-tab-pane .tab-content-area {
-    -fx-background-color: transparent !important;
+
+/* =========================
+   HEADER
+   ========================= */
+
+.admin-header {
+    -fx-background-color: rgba(7, 18, 36, 0.82);
+    -fx-border-color: rgba(255, 255, 255, 0.14);
+    -fx-border-width: 0 0 1 0;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.28), 18, 0.18, 0, 6);
 }
 
-/* 2. Xóa nền trắng mặc định của các thẻ Tab khi chưa chọn */
+.admin-title {
+    -fx-text-fill: #f8fafc;
+    -fx-font-size: 26px;
+    -fx-font-weight: 800;
+    -fx-letter-spacing: 1.4px;
+}
+
+.admin-subtitle {
+    -fx-text-fill: rgba(226, 232, 240, 0.78);
+    -fx-font-size: 13px;
+    -fx-padding: 4 0 0 1;
+}
+
+/* =========================
+   MAIN SHELL
+   ========================= */
+
+.dashboard-shell {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+}
+
+.content-card {
+    -fx-background-color: rgba(248, 250, 252, 0.94);
+    -fx-background-radius: 22px;
+    -fx-border-radius: 22px;
+    -fx-border-color: rgba(255, 255, 255, 0.72);
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(7, 18, 36, 0.25), 28, 0.22, 0, 10);
+}
+
+.section-title {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 17px;
+    -fx-font-weight: 800;
+    -fx-padding: 0 14 0 0;
+}
+
+.toolbar {
+    -fx-background-color: rgba(255, 255, 255, 0.62);
+    -fx-background-radius: 16px;
+    -fx-border-radius: 16px;
+    -fx-border-color: rgba(15, 23, 42, 0.08);
+    -fx-padding: 12px;
+}
+
+/* =========================
+   TAB PANE
+   ========================= */
+
+.admin-tab-pane {
+    -fx-background-color: transparent;
+    -fx-tab-min-height: 44px;
+}
+
+.admin-tab-pane .tab-header-area {
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 14 0;
+}
+
 .admin-tab-pane .tab-header-background {
     -fx-background-color: transparent;
 }
 
-/* 3. Trang trí lại các nút chuyển Tab (User Management, Auction...) */
+.admin-tab-pane .headers-region {
+    -fx-background-color: rgba(7, 18, 36, 0.56);
+    -fx-background-radius: 18px;
+    -fx-padding: 6px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.16), 16, 0.12, 0, 5);
+}
+
 .admin-tab-pane .tab {
-    -fx-background-color: rgba(0, 0, 0, 0.4); /* Đen mờ xuyên thấu */
-    -fx-background-radius: 10 10 0 0;
-    -fx-padding: 10 20;
+    -fx-background-color: transparent;
+    -fx-background-radius: 14px;
+    -fx-padding: 10 20 10 20;
+    -fx-cursor: hand;
 }
 
-/* 4. Hiệu ứng khi Tab được chọn */
-.admin-tab-pane .tab:selected {
-    -fx-background-color: #3498db; /* Màu xanh sáng để phân biệt */
-    -fx-background-insets: 0;
-}
-
-/* 5. Đảm bảo chữ trên Tab luôn màu trắng cho dễ đọc */
-.admin-tab-pane .tab .tab-label {
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
+.admin-tab-pane .tab:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.12);
 }
 
 .admin-tab-pane .tab:selected {
-    -fx-background-color: #3498db; /* Màu xanh khi được chọn (giống màu header) */
-    -fx-border-color: #3498db;
+    -fx-background-color: linear-gradient(to right, #d4af37, #f5d77b);
+    -fx-background-radius: 14px;
+    -fx-effect: dropshadow(gaussian, rgba(212, 175, 55, 0.35), 16, 0.22, 0, 4);
 }
 
-/* 3. Trang trí chữ trên các phím */
 .admin-tab-pane .tab .tab-label {
+    -fx-text-fill: rgba(248, 250, 252, 0.88);
+    -fx-font-size: 14px;
+    -fx-font-weight: 700;
+}
+
+.admin-tab-pane .tab:selected .tab-label {
+    -fx-text-fill: #111827;
+}
+
+.admin-tab-pane .tab-content-area {
+    -fx-background-color: transparent;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.button {
+    -fx-background-radius: 13px;
+    -fx-border-radius: 13px;
+    -fx-padding: 10 18 10 18;
+    -fx-font-size: 13px;
+    -fx-font-weight: 800;
+    -fx-cursor: hand;
     -fx-text-fill: white;
-    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.18), 10, 0.18, 0, 3);
+}
+
+.button:hover {
+    -fx-translate-y: -1px;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.24), 14, 0.22, 0, 5);
+}
+
+.button:pressed {
+    -fx-translate-y: 0px;
+    -fx-opacity: 0.88;
+}
+
+.primary-button {
+    -fx-background-color: linear-gradient(to right, #1e3a8a, #2563eb);
+}
+
+.primary-button:hover {
+    -fx-background-color: linear-gradient(to right, #1d4ed8, #3b82f6);
+}
+
+.success-button {
+    -fx-background-color: linear-gradient(to right, #047857, #10b981);
+}
+
+.success-button:hover {
+    -fx-background-color: linear-gradient(to right, #059669, #34d399);
+}
+
+.danger-button {
+    -fx-background-color: linear-gradient(to right, #991b1b, #dc2626);
+}
+
+.danger-button:hover {
+    -fx-background-color: linear-gradient(to right, #b91c1c, #ef4444);
+}
+
+/* =========================
+   TABLE VIEW
+   ========================= */
+
+.table-view,
+.premium-table {
+    -fx-background-color: rgba(255, 255, 255, 0.92);
+    -fx-background-radius: 18px;
+    -fx-border-radius: 18px;
+    -fx-border-color: rgba(15, 23, 42, 0.08);
+    -fx-border-width: 1px;
+    -fx-padding: 0;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.10), 18, 0.16, 0, 6);
+}
+
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to right, #0f172a, #1e293b);
+    -fx-background-radius: 18 18 0 0;
+    -fx-padding: 7 0 7 0;
+}
+
+.table-view .column-header,
+.table-view .filler {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #f8fafc;
+    -fx-font-size: 13px;
+    -fx-font-weight: 800;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 0 0 0 8;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent rgba(15, 23, 42, 0.06) transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-cell-size: 42px;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: rgba(248, 250, 252, 0.78);
+}
+
+.table-view .table-row-cell:even {
+    -fx-background-color: rgba(255, 255, 255, 0.86);
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: rgba(219, 234, 254, 0.86);
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: linear-gradient(to right, rgba(212, 175, 55, 0.34), rgba(245, 215, 123, 0.24));
+    -fx-text-background-color: #0f172a;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: #1f2937;
+    -fx-font-size: 13px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 0 10 0 10;
+    -fx-border-color: transparent;
+}
+
+.table-view .placeholder .label {
+    -fx-text-fill: #64748b;
     -fx-font-size: 14px;
 }
 
-/* 4. Hiệu ứng khi di chuột qua các phím */
-.admin-tab-pane .tab:hover {
-    -fx-background-color: rgba(52, 152, 219, 0.5); /* Xanh mờ khi di chuột */
+/* =========================
+   SCROLLBAR
+   ========================= */
+
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+    -fx-background-color: transparent;
 }
 
-/* 5. Tùy chỉnh TableView bên trong để hòa hợp với nền (tùy chọn) */
-.table-view {
-    -fx-background-color: rgba(255, 255, 255, 0.8); /* Trắng đục để dễ đọc dữ liệu */
-    -fx-background-radius: 10;
-    -fx-padding: 5;
+.scroll-bar .track {
+    -fx-background-color: rgba(15, 23, 42, 0.06);
+    -fx-background-radius: 999px;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: rgba(15, 23, 42, 0.30);
+    -fx-background-radius: 999px;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: rgba(15, 23, 42, 0.46);
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-shape: "";
+    -fx-padding: 0;
 }

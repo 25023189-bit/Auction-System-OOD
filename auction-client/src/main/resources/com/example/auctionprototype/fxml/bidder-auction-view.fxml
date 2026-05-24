@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="paneAuctionRoom" prefHeight="720.0" prefWidth="1280.0" styleClass="main-container" stylesheets="@../css/bidder-auction-view.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.app.root.AuctionController">
+<BorderPane fx:id="paneAuctionRoom" prefHeight="720.0" prefWidth="1280.0" styleClass="main-container" stylesheets="@../css/bidder-auction-view.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.app.root.AuctionController">
     <center>
         <AnchorPane style="-fx-background-color: transparent;">
             <children>
@@ -108,22 +108,19 @@
                                                 <NumberAxis fx:id="yAxis" label="Mức giá ($)" />
                                             </yAxis>
                                         </AreaChart>
-                                        <TextArea fx:id="txtChatLog" editable="false" wrapText="true" VBox.vgrow="ALWAYS" />
+                                        <TextArea fx:id="txtChatLog" editable="false" prefHeight="169.0" prefWidth="803.0" wrapText="true" VBox.vgrow="ALWAYS" />
 
                                         <VBox spacing="10.0">
                                             <children>
                                                 <HBox spacing="10.0">
                                                     <children>
-                                                        <TextField fx:id="txtBidAmount" prefHeight="40.0" promptText="Enter your bid amount..." HBox.hgrow="ALWAYS" />
-                                                        <Button fx:id="btnPlaceBid" minWidth="120.0" onAction="#handleBid" prefHeight="40.0" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" text="PLACE BID" />
+                                                        <TextField fx:id="txtBidAmount" prefHeight="41.0" prefWidth="634.0" promptText="Enter your bid amount..." HBox.hgrow="ALWAYS" />
+                                                        <Button fx:id="btnPlaceBid" minWidth="120.0" onAction="#handleBid" prefHeight="37.0" prefWidth="120.0" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" text="PLACE BID" />
+                                                        <Button fx:id="btnToggleAutoBid" minWidth="150.0" onAction="#toggleAutoBidPanel" prefHeight="39.0" prefWidth="150.0" style="-fx-background-color: #f1c40f; -fx-text-fill: #2c3e50; -fx-font-weight: bold; -fx-background-radius: 8; -fx-cursor: hand;" text="AUTO BID ⚙" />
                                                     </children>
                                                 </HBox>
 
-                                                <HBox alignment="CENTER_RIGHT">
-                                                    <children>
-                                                        <Button fx:id="btnToggleAutoBid" minWidth="150.0" onAction="#toggleAutoBidPanel" prefHeight="35.0" style="-fx-background-color: #f1c40f; -fx-text-fill: #2c3e50; -fx-font-weight: bold; -fx-background-radius: 8; -fx-cursor: hand;" text="AUTO BID ⚙" />
-                                                    </children>
-                                                </HBox>
+                                                <HBox alignment="CENTER_RIGHT" />
 
                                                 <VBox fx:id="paneAutoBid" managed="false" spacing="10.0" style="-fx-background-color: #ecf0f1; -fx-padding: 15; -fx-background-radius: 8; -fx-border-color: #bdc3c7; -fx-border-radius: 8;" visible="false">
                                                     <children>
