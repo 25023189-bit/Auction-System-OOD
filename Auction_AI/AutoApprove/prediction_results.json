@@ -1,9 +1,9 @@
 [
   {
-    "title": "Iphone",
-    "decision": "REJECT",
-    "auto_approve": 0,
-    "approve_probability": 2.237726395397033e-09,
-    "approve_probability_percent": 0.0
+    "title": "Machine01",
+    "decision": "APPROVE",
+    "auto_approve": 1,
+    "approve_probability": 0.9996698147929548,
+    "approve_probability_percent": 99.97
   }
 ]
