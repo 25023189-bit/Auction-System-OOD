@@ -1,0 +1,401 @@
+﻿text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+"Sao cái này không chạy trong app, sau đó nhờ chatbot giải thích thêm, trước khi nút tham gia phòng đang mờ, kèm chuyện mã phòng AUC-1024.",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Admin ơi, sao cái này không chạy trong app, nhưng mình đang muốn join room mình đang thao tác?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay ko chay trong app, kem chuyen dat 500k neu hop le vi m chua ro luong",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này khong chạy trong app, rồi đang ở màn login đang cần xử lý liền",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không chạy trong app, đồng thời số tiền còn lại phải rõ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Ê cho hỏi, sao cái này không chạy trong app, trước khi giá realtime đang chưa đổi, sau đó đặt 500k nếu hợp lệ; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này không chạy ở màn hiện tại, sau đó bot hướng dẫn bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Help với, sao cái này không chạy ở màn hiện tại, kèm chuyện nút tham gia phòng đang mờ pls?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay ko chay o man hien tai, dong thoi muon vuot nguoi dang dan de khoi lam sai",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này khong chạy ở màn hiện tại, đồng thời nếu cần vào lại hệ thống mình hơi rén",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không chạy ở màn hiện tại, rồi mình cần kiểm tra số dư, sau đó trước đó tài khoản báo sai mật khẩu đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Này ad, sao cái này không chạy ở màn hiện tại, rồi cần xem giá cao nhất hiện tại, rồi mã phòng A17; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này không chạy lúc mình thao tác, rồi trợ lý ảo trả lời ngắn gọn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Mình mới dùng app, sao cái này không chạy lúc mình thao tác, đồng thời vào room hiện tại giúp mình vì mình chưa rõ luồng?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay ko chay luc m thao tac, sau do nang them 100k dc ko dang can xu ly lien",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này khong chạy lúc mình thao tác, sau đó mình vừa login xong, nhưng balance đang hiển thị lạ nhé",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không chạy lúc mình thao tác, đồng thời xem tiền còn đủ không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Admin ơi, sao cái này không chạy lúc mình thao tác, rồi refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này không chạy nên mình chưa dám bấm, đồng thời chatbot nói dễ hiểu giúp mình.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Alo ad, sao cái này không chạy nên mình chưa dám bấm, đồng thời cần nhập mã phòng trước để khỏi làm sai?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay ko chay nen m chua dam bam, roi m dinh dat gia them, nhung refresh gia live giup m m hoi ren",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không chạy nên mình chưa dám bấm, rồi sau khi đăg nhập thành công được không",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không chạy nên mình chưa dám bấm, nhưng balance đang hiển thị lạ, nhưng mã phòng SALA-05 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Help với, sao cái này không chạy nên mình chưa dám bấm, rồi giá mới bị delay; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này không chạy và mình không biết hỏi mục nào, đồng thời bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Mình đang bị vướng, sao cái này không chạy và mình không biết hỏi mục nào, rồi để mình vào phòng đấu giá, nhưng trợ lý ảo trả lời ngắn gọn đang cần xử lý liền?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"sao cai nay ko chay va m ko biet hoi muc nao, dong thoi chuan bi bid muc moi nhe",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không chạy và mình không biết hỏi mục nào, trước khi trước đó tài khoàn báo sai mật khẩu mình đang thao tác",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không chạy và mình không biết hỏi mục nào, trước khi đừng trừ tiền sai đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình mới dùng app, sao cái này không chạy và mình không biết hỏi mục nào, đồng thời đang theo dõi giá hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này không hiện gì trong app, nhưng nhờ chatbot giải thích thêm, rồi nút tham gia phòng đang mờ.",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Cứu mình với, sao cái này không hiện gì trong app, sau đó mình đang muốn join room mình hơi rén?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay ko hien gi trong app, roi dat 500k neu hop le dc ko",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này khong hiện gì trong app, kèm chuyện đang ở màn login, nhưng mã phòng ROOM-88 pls",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không hiện gì trong app, trước khi số tiền còn lại phải rõ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Alo ad, sao cái này không hiện gì trong app, đồng thời giá realtime đang chưa đổi, nhưng đặt 500k nếu hợp lệ; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này không hiện gì ở màn hiện tại, nhưng bot hướng dẫn bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Ê cho hỏi, sao cái này không hiện gì ở màn hiện tại, rồi nút tham gia phòng đang mờ nhé?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay ko hien gi o man hien tai, truoc khi muon vuot nguoi dang dan m dang thao tac",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này khong hiện gì ở màn hiện tại, trước khi nếu cần vào lại hệ thống vì mình chưa rõ luồng",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không hiện gì ở màn hiện tại, kèm chuyện mình cần kiểm tra số dư, kèm chuyện trước đó tài khoản báo sai mật khẩu đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình đang bị vướng, sao cái này không hiện gì ở màn hiện tại, kèm chuyện cần xem giá cao nhất hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này không hiện gì lúc mình thao tác, kèm chuyện trợ lý ảo trả lời ngắn gọn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Này ad, sao cái này không hiện gì lúc mình thao tác, trước khi vào room hiện tại giúp mình được không?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay ko hien gi luc m thao tac, nhung nang them 100k dc ko, dong thoi ma room bid-09 pls",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này khong hiện gì lúc mình thao tác, nhưng mình vừa login xong, trước khi balance đang hiển thị lạ để khỏi làm sai",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không hiện gì lúc mình thao tác, trước khi xem tiền còn đủ không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Cứu mình với, sao cái này không hiện gì lúc mình thao tác, kèm chuyện refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này không hiện gì nên mình chưa dám bấm, trước khi chatbot nói dễ hiểu giúp mình.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Admin ơi, sao cái này không hiện gì nên mình chưa dám bấm, trước khi cần nhập mã phòng trước mình đang thao tác?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay ko hien gi nen m chua dam bam, kem chuyen m dinh dat gia them, roi refresh gia live giup m vi m chua ro luong",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không hiện gì nên mình chưa dám bấm, kèm chuyện sau khi đăg nhập thành công đang cần xử lý liền",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không hiện gì nên mình chưa dám bấm, sau đó balance đang hiển thị lạ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Ê cho hỏi, sao cái này không hiện gì nên mình chưa dám bấm, kèm chuyện giá mới bị delay; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này không hiện gì và mình không biết hỏi mục nào, trước khi bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Help với, sao cái này không hiện gì và mình không biết hỏi mục nào, kèm chuyện để mình vào phòng đấu giá, rồi trợ lý ảo trả lời ngắn gọn, trước khi mã phòng GOLD-21 pls?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"sao cai nay ko hien gi va m ko biet hoi muc nao, truoc khi chuan bi bid muc moi de khoi lam sai",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không hiện gì và mình không biết hỏi mục nào, đồng thời trước đó tài khoàn báo sai mật khẩu mình hơi rén",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không hiện gì và mình không biết hỏi mục nào, đồng thời đừng trừ tiền sai đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Này ad, sao cái này không hiện gì và mình không biết hỏi mục nào, trước khi đang theo dõi giá hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này đơ luôn trong app, nhưng nhờ chatbot giải thích thêm, rồi nút tham gia phòng đang mờ.",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Mình mới dùng app, sao cái này đơ luôn trong app, sau đó mình đang muốn join room vì mình chưa rõ luồng?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay do luon trong app, roi dat 500k neu hop le dang can xu ly lien",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này đơ luôn trong app, kèm chuyện đang ở màn login nhé",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này đơ luôn trong app, trước khi số tiền còn lại phải rõ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Admin ơi, sao cái này đơ luôn trong app, đồng thời giá realtime đang chưa đổi, nhưng đặt 500k nếu hợp lệ; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này đơ luôn ở màn hiện tại, nhưng bot hướng dẫn bước tiếp theo, sau đó mã phòng PHIEN-2026.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Alo ad, sao cái này đơ luôn ở màn hiện tại, rồi nút tham gia phòng đang mờ để khỏi làm sai?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay do luon o man hien tai, truoc khi muon vuot nguoi dang dan m hoi ren",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này đơ luôn ở màn hiện tại, trước khi nếu cần vào lại hệ thống được khong",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này đơ luôn ở màn hiện tại, kèm chuyện mình cần kiểm tra số dư, kèm chuyện trước đó tài khoản báo sai mật khẩu đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Help với, sao cái này đơ luôn ở màn hiện tại, kèm chuyện cần xem giá cao nhất hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này đơ luôn lúc mình thao tác, kèm chuyện trợ lý ảo trả lời ngắn gọn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Mình đang bị vướng, sao cái này đơ luôn lúc mình thao tác, trước khi vào room hiện tại giúp mình đang cần xử lý liền?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay do luon luc m thao tac, nhung nang them 100k dc ko nhe",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này đơ luôn lúc mình thao tác, nhưng mình vừa login xong, trước khi balane đang hiển thị lạ mình đang thao tác",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này đơ luôn lúc mình thao tác, trước khi xem tiền còn đủ không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình mới dùng app, sao cái này đơ luôn lúc mình thao tác, kèm chuyện refresh giá live giúp mình, rồi mã phòng P-774; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này đơ luôn nên mình chưa dám bấm, trước khi chatbot nói dễ hiểu giúp mình.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Cứu mình với, sao cái này đơ luôn nên mình chưa dám bấm, trước khi cần nhập mã phòng trước mình hơi rén?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay do luon nen m chua dam bam, kem chuyen m dinh dat gia them, roi refresh gia live giup m dc ko",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này đơ luôn nên mình chưa dám bấm, kèm chuyện sau khi đăg nhập thành công pls",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này đơ luôn nên mình chưa dám bấm, sau đó balance đang hiển thị lạ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Alo ad, sao cái này đơ luôn nên mình chưa dám bấm, kèm chuyện giá mới bị delay; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này đơ luôn và mình không biết hỏi mục nào, trước khi bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Ê cho hỏi, sao cái này đơ luôn và mình không biết hỏi mục nào, kèm chuyện để mình vào phòng đấu giá, rồi trợ lý ảo trả lời ngắn gọn nhé?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"sao cai nay do luon va m ko biet hoi muc nao, truoc khi chuan bi bid muc moi m dang thao tac",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này đơ luôn và mình không biết hỏi mục nào, đồng thời trước đó tài khoàn báo sai mật khẩu vì mình chưa rõ luồng",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này đơ luôn và mình không biết hỏi mục nào, đồng thời đừng trừ tiền sai, rồi mã phòng AUC-1024 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình đang bị vướng, sao cái này đơ luôn và mình không biết hỏi mục nào, trước khi đang theo dõi giá hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này lạ quá trong app, đồng thời nhờ chatbot giải thích thêm, kèm chuyện nút tham gia phòng đang mờ.",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Này ad, sao cái này lạ quá trong app, trước khi mình đang muốn join room được không?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay la qua trong app, sau do dat 500k neu hop le pls",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này lạ quá trong app, nhưng đang ở màn login để khỏi làm sai",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này lạ quá trong app, kèm chuyện số tiền còn lại phải rõ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Cứu mình với, sao cái này lạ quá trong app, rồi giá realtime đang chưa đổi, đồng thời đặt 500k nếu hợp lệ; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này lạ quá ở màn hiện tại, đồng thời bot hướng dẫn bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Admin ơi, sao cái này lạ quá ở màn hiện tại, sau đó nút tham gia phòng đang mờ mình đang thao tác?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay la qua o man hien tai, kem chuyen muon vuot nguoi dang dan vi m chua ro luong",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này lạ quá ở màn hiện tại, kèm chuyện nếu cần vào lại hệ thống, trước khi mã phòg A17 đang cần xử lý liền",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này lạ quá ở màn hiện tại, nhưng mình cần kiểm tra số dư, kèm chuyện trước đó tài khoản báo sai mật khẩu đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Ê cho hỏi, sao cái này lạ quá ở màn hiện tại, nhưng cần xem giá cao nhất hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này lạ quá lúc mình thao tác, nhưng trợ lý ảo trả lời ngắn gọn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Help với, sao cái này lạ quá lúc mình thao tác, kèm chuyện vào room hiện tại giúp mình pls?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay la qua luc m thao tac, dong thoi nang them 100k dc ko de khoi lam sai",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này lạ quá lúc mình thao tác, đồng thời mình vừa login xong, đồng thời balane đang hiển thị lạ mình hơi rén",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này lạ quá lúc mình thao tác, kèm chuyện xem tiền còn đủ không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Này ad, sao cái này lạ quá lúc mình thao tác, nhưng refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này lạ quá nên mình chưa dám bấm, kèm chuyện chatbot nói dễ hiểu giúp mình.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Mình mới dùng app, sao cái này lạ quá nên mình chưa dám bấm, kèm chuyện cần nhập mã phòng trước vì mình chưa rõ luồng?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay la qua nen m chua dam bam, nhung m dinh dat gia them, roi refresh gia live giup m, truoc khi ma room sala-05 dang can xu ly lien",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này lạ quá nên mình chưa dám bấm, nhưng sau khi đăg nhập thành công nhé",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này lạ quá nên mình chưa dám bấm, trước khi balance đang hiển thị lạ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Admin ơi, sao cái này lạ quá nên mình chưa dám bấm, nhưng giá mới bị delay; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này lạ quá và mình không biết hỏi mục nào, kèm chuyện bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Alo ad, sao cái này lạ quá và mình không biết hỏi mục nào, nhưng để mình vào phòng đấu giá, rồi trợ lý ảo trả lời ngắn gọn để khỏi làm sai?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"sao cai nay la qua va m ko biet hoi muc nao, kem chuyen chuan bi bid muc moi m hoi ren",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này lạ quá và mình không biết hỏi mục nào, rồi trước đó tài khoàn báo sai mật khẩu được không",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này lạ quá và mình không biết hỏi mục nào, rồi đừng trừ tiền sai đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Help với, sao cái này lạ quá và mình không biết hỏi mục nào, kèm chuyện đang theo dõi giá hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này khó hiểu trong app, kèm chuyện nhờ chatbot giải thích thêm, rồi nút tham gia phòng đang mờ.",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Mình đang bị vướng, sao cái này khó hiểu trong app, rồi mình đang muốn join room, trước khi mã phòng ROOM-88 đang cần xử lý liền?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay kho hieu trong app, dong thoi dat 500k neu hop le nhe",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này khó hiểu trong app, trước khi đang ở màn login mình đang thao tác",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này khó hiểu trong app, sau đó số tiền còn lại phải rõ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình mới dùng app, sao cái này khó hiểu trong app, nhưng giá realtime đang chưa đổi, sau đó đặt 500k nếu hợp lệ; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này khó hiểu ở màn hiện tại, kèm chuyện bot hướng dẫn bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Cứu mình với, sao cái này khó hiểu ở màn hiện tại, đồng thời nút tham gia phòng đang mờ mình hơi rén?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay kho hieu o man hien tai, sau do muon vuot nguoi dang dan dc ko",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này khó hiểu ở màn hiện tại, sau đó nếu cần vào lại hệ thống pls",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này khó hiểu ở màn hiện tại, trước khi mình cần kiểm tra số dư, kèm chuyện trước đó tài khoản báo sai mật khẩu đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Alo ad, sao cái này khó hiểu ở màn hiện tại, trước khi cần xem giá cao nhất hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này khó hiểu lúc mình thao tác, trước khi trợ lý ảo trả lời ngắn gọn, đồng thời mã phòng BID-09.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Ê cho hỏi, sao cái này khó hiểu lúc mình thao tác, sau đó vào room hiện tại giúp mình nhé?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay kho hieu luc m thao tac, kem chuyen nang them 100k dc ko m dang thao tac",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này khó hiểu lúc mình thao tác, kèm chuyện mình vừa login xong, trước khi balane đang hiển thị lạ vì mình chưa rõ luồng",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này khó hiểu lúc mình thao tác, sau đó xem tiền còn đủ không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình đang bị vướng, sao cái này khó hiểu lúc mình thao tác, trước khi refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này khó hiểu nên mình chưa dám bấm, sau đó chatbot nói dễ hiểu giúp mình.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Này ad, sao cái này khó hiểu nên mình chưa dám bấm, sau đó cần nhập mã phòng trước được không?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay kho hieu nen m chua dam bam, truoc khi m dinh dat gia them, roi refresh gia live giup m pls",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này khó hiểu nên mình chưa dám bấm, trước khi sau khi đăg nhập thành công để khỏi làm sai",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này khó hiểu nên mình chưa dám bấm, rồi balance đang hiển thị lạ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Cứu mình với, sao cái này khó hiểu nên mình chưa dám bấm, trước khi giá mới bị delay, nhưng mã phòng GOLD-21; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này khó hiểu và mình không biết hỏi mục nào, sau đó bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Admin ơi, sao cái này khó hiểu và mình không biết hỏi mục nào, trước khi để mình vào phòng đấu giá, rồi trợ lý ảo trả lời ngắn gọn mình đang thao tác?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"sao cai nay kho hieu va m ko biet hoi muc nao, sau do chuan bi bid muc moi vi m chua ro luong",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này khó hiểu và mình không biết hỏi mục nào, nhưng trước đó tài khoàn báo sai mật khẩu đang cần xử lý liền",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này khó hiểu và mình không biết hỏi mục nào, nhưng đừng trừ tiền sai đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Ê cho hỏi, sao cái này khó hiểu và mình không biết hỏi mục nào, sau đó đang theo dõi giá hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này không biết xử lý trong app, sau đó nhờ chatbot giải thích thêm, trước khi nút tham gia phòng đang mờ.",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Help với, sao cái này không biết xử lý trong app, nhưng mình đang muốn join room pls?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay ko biet xu ly trong app, kem chuyen dat 500k neu hop le de khoi lam sai",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này khong biết xử lý trong app, rồi đang ở màn login mình hơi rén",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không biết xử lý trong app, đồng thời số tiền còn lại phải rõ, nhưng mã phòng PHIEN-2026 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Này ad, sao cái này không biết xử lý trong app, trước khi giá realtime đang chưa đổi, sau đó đặt 500k nếu hợp lệ; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này không biết xử lý ở màn hiện tại, sau đó bot hướng dẫn bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Mình mới dùng app, sao cái này không biết xử lý ở màn hiện tại, kèm chuyện nút tham gia phòng đang mờ vì mình chưa rõ luồng?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay ko biet xu ly o man hien tai, dong thoi muon vuot nguoi dang dan dang can xu ly lien",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này khong biết xử lý ở màn hiện tại, đồng thời nếu cần vào lại hệ thống nhé",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không biết xử lý ở màn hiện tại, rồi mình cần kiểm tra số dư, sau đó trước đó tài khoản báo sai mật khẩu đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Admin ơi, sao cái này không biết xử lý ở màn hiện tại, rồi cần xem giá cao nhất hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này không biết xử lý lúc mình thao tác, rồi trợ lý ảo trả lời ngắn gọn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Alo ad, sao cái này không biết xử lý lúc mình thao tác, đồng thời vào room hiện tại giúp mình để khỏi làm sai?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay ko biet xu ly luc m thao tac, sau do nang them 100k dc ko m hoi ren",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này khong biết xử lý lúc mình thao tác, sau đó mình vừa login xong, nhưng balance đang hiển thị lạ, rồi mã phòng P-774 được không",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không biết xử lý lúc mình thao tác, đồng thời xem tiền còn đủ không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Help với, sao cái này không biết xử lý lúc mình thao tác, rồi refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này không biết xử lý nên mình chưa dám bấm, đồng thời chatbot nói dễ hiểu giúp mình.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Mình đang bị vướng, sao cái này không biết xử lý nên mình chưa dám bấm, đồng thời cần nhập mã phòng trước đang cần xử lý liền?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay ko biet xu ly nen m chua dam bam, roi m dinh dat gia them, nhung refresh gia live giup m nhe",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không biết xử lý nên mình chưa dám bấm, rồi sau khi đăg nhập thành công mình đang thao tác",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không biết xử lý nên mình chưa dám bấm, nhưng balance đang hiển thị lạ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình mới dùng app, sao cái này không biết xử lý nên mình chưa dám bấm, rồi giá mới bị delay; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này không biết xử lý và mình không biết hỏi mục nào, đồng thời bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Cứu mình với, sao cái này không biết xử lý và mình không biết hỏi mục nào, rồi để mình vào phòng đấu giá, nhưng trợ lý ảo trả lời ngắn gọn mình hơi rén?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"sao cai nay ko biet xu ly va m ko biet hoi muc nao, dong thoi chuan bi bid muc moi, roi ma room auc-1024 dc ko",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không biết xử lý và mình không biết hỏi mục nào, trước khi trước đó tài khoàn báo sai mật khẩu pls",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không biết xử lý và mình không biết hỏi mục nào, trước khi đừng trừ tiền sai đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Alo ad, sao cái này không biết xử lý và mình không biết hỏi mục nào, đồng thời đang theo dõi giá hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này báo gì đó trong app, trước khi nhờ chatbot giải thích thêm, rồi nút tham gia phòng đang mờ.",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Ê cho hỏi, sao cái này báo gì đó trong app, đồng thời mình đang muốn join room nhé?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay bao gi do trong app, nhung dat 500k neu hop le m dang thao tac",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này báo gì đó trong app, sau đó đang ở màn login vì mình chưa rõ luồng",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này báo gì đó trong app, rồi số tiền còn lại phải rõ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình đang bị vướng, sao cái này báo gì đó trong app, kèm chuyện giá realtime đang chưa đổi, sau đó đặt 500k nếu hợp lệ; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này báo gì đó ở màn hiện tại, trước khi bot hướng dẫn bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Này ad, sao cái này báo gì đó ở màn hiện tại, nhưng nút tham gia phòng đang mờ, trước khi mã phòng A17 được không?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay bao gi do o man hien tai, roi muon vuot nguoi dang dan pls",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này báo gì đó ở màn hiện tại, rồi nếu cần vào lại hệ thống để khỏi làm sai",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này báo gì đó ở màn hiện tại, sau đó mình cần kiểm tra số dư, đồng thời trước đó tài khoản báo sai mật khẩu đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Cứu mình với, sao cái này báo gì đó ở màn hiện tại, sau đó cần xem giá cao nhất hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này báo gì đó lúc mình thao tác, sau đó trợ lý ảo trả lời ngắn gọn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Admin ơi, sao cái này báo gì đó lúc mình thao tác, rồi vào room hiện tại giúp mình mình đang thao tác?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay bao gi do luc m thao tac, truoc khi nang them 100k dc ko vi m chua ro luong",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này báo gì đó lúc mình thao tác, trước khi mình vừa login xong, trước khi balane đang hiển thị lạ đang cần xử lý liền",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này báo gì đó lúc mình thao tác, rồi xem tiền còn đủ không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Ê cho hỏi, sao cái này báo gì đó lúc mình thao tác, sau đó refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này báo gì đó nên mình chưa dám bấm, rồi chatbot nói dễ hiểu giúp mình, trước khi mã phòng SALA-05.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Help với, sao cái này báo gì đó nên mình chưa dám bấm, rồi cần nhập mã phòng trước pls?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay bao gi do nen m chua dam bam, sau do m dinh dat gia them, truoc khi refresh gia live giup m de khoi lam sai",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này báo gì đó nên mình chưa dám bấm, sau đó sau khi đăg nhập thành công mình hơi rén",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này báo gì đó nên mình chưa dám bấm, đồng thời balance đang hiển thị lạ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Này ad, sao cái này báo gì đó nên mình chưa dám bấm, sau đó giá mới bị delay; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này báo gì đó và mình không biết hỏi mục nào, rồi bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Mình mới dùng app, sao cái này báo gì đó và mình không biết hỏi mục nào, sau đó để mình vào phòng đấu giá, trước khi trợ lý ảo trả lời ngắn gọn vì mình chưa rõ luồng?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"sao cai nay bao gi do va m ko biet hoi muc nao, roi chuan bi bid muc moi dang can xu ly lien",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này báo gì đó và mình không biết hỏi mục nào, kèm chuyện trước đó tài khoàn báo sai mật khẩu nhé",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này báo gì đó và mình không biết hỏi mục nào, kèm chuyện đừng trừ tiền sai đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Admin ơi, sao cái này báo gì đó và mình không biết hỏi mục nào, rồi đang theo dõi giá hiện tại, trước khi mã phòng ROOM-88; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này mất tiêu trong app, kèm chuyện nhờ chatbot giải thích thêm, rồi nút tham gia phòng đang mờ.",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Alo ad, sao cái này mất tiêu trong app, rồi mình đang muốn join room để khỏi làm sai?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay mat tieu trong app, dong thoi dat 500k neu hop le m hoi ren",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này mất tiêu trong app, trước khi đang ở màn login được khong",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này mất tiêu trong app, sau đó số tiền còn lại phải rõ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Help với, sao cái này mất tiêu trong app, nhưng giá realtime đang chưa đổi, sau đó đặt 500k nếu hợp lệ; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này mất tiêu ở màn hiện tại, kèm chuyện bot hướng dẫn bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Mình đang bị vướng, sao cái này mất tiêu ở màn hiện tại, đồng thời nút tham gia phòng đang mờ đang cần xử lý liền?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay mat tieu o man hien tai, sau do muon vuot nguoi dang dan nhe",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này mất tiêu ở màn hiện tại, sau đó nếu cần vào lại hệ thống mình đang thao tác",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này mất tiêu ở màn hiện tại, trước khi mình cần kiểm tra số dư, kèm chuyện trước đó tài khoản báo sai mật khẩu, đồng thời mã phòng BID-09 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình mới dùng app, sao cái này mất tiêu ở màn hiện tại, trước khi cần xem giá cao nhất hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này mất tiêu lúc mình thao tác, trước khi trợ lý ảo trả lời ngắn gọn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Cứu mình với, sao cái này mất tiêu lúc mình thao tác, sau đó vào room hiện tại giúp mình mình hơi rén?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay mat tieu luc m thao tac, kem chuyen nang them 100k dc ko dc ko",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này mất tiêu lúc mình thao tác, kèm chuyện mình vừa login xong, trước khi balane đang hiển thị lạ pls",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này mất tiêu lúc mình thao tác, sau đó xem tiền còn đủ không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Alo ad, sao cái này mất tiêu lúc mình thao tác, trước khi refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này mất tiêu nên mình chưa dám bấm, sau đó chatbot nói dễ hiểu giúp mình.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Ê cho hỏi, sao cái này mất tiêu nên mình chưa dám bấm, sau đó cần nhập mã phòng trước nhé?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay mat tieu nen m chua dam bam, truoc khi m dinh dat gia them, roi refresh gia live giup m m dang thao tac",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này mất tiêu nên mình chưa dám bấm, trước khi sau khi đăg nhập thành công, nhưng mã phòng GOLD-21 vì mình chưa rõ luồng",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này mất tiêu nên mình chưa dám bấm, rồi balance đang hiển thị lạ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình đang bị vướng, sao cái này mất tiêu nên mình chưa dám bấm, trước khi giá mới bị delay; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này mất tiêu và mình không biết hỏi mục nào, sau đó bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Này ad, sao cái này mất tiêu và mình không biết hỏi mục nào, trước khi để mình vào phòng đấu giá, rồi trợ lý ảo trả lời ngắn gọn được không?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"sao cai nay mat tieu va m ko biet hoi muc nao, sau do chuan bi bid muc moi pls",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này mất tiêu và mình không biết hỏi mục nào, nhưng trước đó tài khoàn báo sai mật khẩu để khỏi làm sai",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này mất tiêu và mình không biết hỏi mục nào, nhưng đừng trừ tiền sai đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Cứu mình với, sao cái này mất tiêu và mình không biết hỏi mục nào, sau đó đang theo dõi giá hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này không thấy đâu trong app, kèm chuyện nhờ chatbot giải thích thêm, rồi nút tham gia phòng đang mờ.",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Admin ơi, sao cái này không thấy đâu trong app, rồi mình đang muốn join room mình đang thao tác?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay ko thay dau trong app, dong thoi dat 500k neu hop le, nhung ma room phien-2026 vi m chua ro luong",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này khong thấy đâu trong app, trước khi đang ở màn login đang cần xử lý liền",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không thấy đâu trong app, sau đó số tiền còn lại phải rõ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Ê cho hỏi, sao cái này không thấy đâu trong app, nhưng giá realtime đang chưa đổi, sau đó đặt 500k nếu hợp lệ; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này không thấy đâu ở màn hiện tại, kèm chuyện bot hướng dẫn bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Help với, sao cái này không thấy đâu ở màn hiện tại, đồng thời nút tham gia phòng đang mờ pls?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay ko thay dau o man hien tai, sau do muon vuot nguoi dang dan de khoi lam sai",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này khong thấy đâu ở màn hiện tại, sau đó nếu cần vào lại hệ thống mình hơi rén",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không thấy đâu ở màn hiện tại, trước khi mình cần kiểm tra số dư, kèm chuyện trước đó tài khoản báo sai mật khẩu đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Này ad, sao cái này không thấy đâu ở màn hiện tại, trước khi cần xem giá cao nhất hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này không thấy đâu lúc mình thao tác, trước khi trợ lý ảo trả lời ngắn gọn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Mình mới dùng app, sao cái này không thấy đâu lúc mình thao tác, sau đó vào room hiện tại giúp mình, trước khi mã phòng P-774 vì mình chưa rõ luồng?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay ko thay dau luc m thao tac, kem chuyen nang them 100k dc ko dang can xu ly lien",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này khong thấy đâu lúc mình thao tác, kèm chuyện mình vừa login xong, trước khi balance đang hiển thị lạ nhé",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không thấy đâu lúc mình thao tác, sau đó xem tiền còn đủ không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Admin ơi, sao cái này không thấy đâu lúc mình thao tác, trước khi refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này không thấy đâu nên mình chưa dám bấm, sau đó chatbot nói dễ hiểu giúp mình.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Alo ad, sao cái này không thấy đâu nên mình chưa dám bấm, sau đó cần nhập mã phòng trước để khỏi làm sai?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay ko thay dau nen m chua dam bam, truoc khi m dinh dat gia them, roi refresh gia live giup m m hoi ren",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không thấy đâu nên mình chưa dám bấm, trước khi sau khi đăg nhập thành công được không",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không thấy đâu nên mình chưa dám bấm, rồi balance đang hiển thị lạ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Help với, sao cái này không thấy đâu nên mình chưa dám bấm, trước khi giá mới bị delay; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này không thấy đâu và mình không biết hỏi mục nào, sau đó bot phân tích lỗi đang gặp, đồng thời mã phòng AUC-1024.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Mình đang bị vướng, sao cái này không thấy đâu và mình không biết hỏi mục nào, trước khi để mình vào phòng đấu giá, rồi trợ lý ảo trả lời ngắn gọn đang cần xử lý liền?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"sao cai nay ko thay dau va m ko biet hoi muc nao, sau do chuan bi bid muc moi nhe",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không thấy đâu và mình không biết hỏi mục nào, nhưng trước đó tài khoàn báo sai mật khẩu mình đang thao tác",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không thấy đâu và mình không biết hỏi mục nào, nhưng đừng trừ tiền sai đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình mới dùng app, sao cái này không thấy đâu và mình không biết hỏi mục nào, sau đó đang theo dõi giá hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này không đúng như mình nghĩ trong app, đồng thời nhờ chatbot giải thích thêm, kèm chuyện nút tham gia phòng đang mờ.",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Cứu mình với, sao cái này không đúng như mình nghĩ trong app, trước khi mình đang muốn join room mình hơi rén?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay ko dung nhu m nghi trong app, sau do dat 500k neu hop le dc ko",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này khong đúng như mình nghĩ trong app, nhưng đang ở màn login pls",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không đúng như mình nghĩ trong app, kèm chuyện số tiền còn lại phải rõ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Alo ad, sao cái này không đúng như mình nghĩ trong app, rồi giá realtime đang chưa đổi, đồng thời đặt 500k nếu hợp lệ, đồng thời mã phòng A17; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này không đúng như mình nghĩ ở màn hiện tại, đồng thời bot hướng dẫn bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Ê cho hỏi, sao cái này không đúng như mình nghĩ ở màn hiện tại, sau đó nút tham gia phòng đang mờ nhé?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay ko dung nhu m nghi o man hien tai, kem chuyen muon vuot nguoi dang dan m dang thao tac",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này khong đúng như mình nghĩ ở màn hiện tại, kèm chuyện nếu cần vào lại hệ thống vì mình chưa rõ luồng",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không đúng như mình nghĩ ở màn hiện tại, nhưng mình cần kiểm tra số dư, kèm chuyện trước đó tài khoản báo sai mật khẩu đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình đang bị vướng, sao cái này không đúng như mình nghĩ ở màn hiện tại, nhưng cần xem giá cao nhất hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này không đúng như mình nghĩ lúc mình thao tác, nhưng trợ lý ảo trả lời ngắn gọn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Này ad, sao cái này không đúng như mình nghĩ lúc mình thao tác, kèm chuyện vào room hiện tại giúp mình được không?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay ko dung nhu m nghi luc m thao tac, dong thoi nang them 100k dc ko pls",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này khong đúng như mình nghĩ lúc mình thao tác, đồng thời mình vừa login xong, đồng thời balance đang hiển thị lạ để khỏi làm sai",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không đúng như mình nghĩ lúc mình thao tác, kèm chuyện xem tiền còn đủ không, nhưng mã phòng SALA-05 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Cứu mình với, sao cái này không đúng như mình nghĩ lúc mình thao tác, nhưng refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này không đúng như mình nghĩ nên mình chưa dám bấm, kèm chuyện chatbot nói dễ hiểu giúp mình.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Admin ơi, sao cái này không đúng như mình nghĩ nên mình chưa dám bấm, kèm chuyện cần nhập mã phòng trước mình đang thao tác?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cai nay ko dung nhu m nghi nen m chua dam bam, nhung m dinh dat gia them, roi refresh gia live giup m vi m chua ro luong",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không đúng như mình nghĩ nên mình chưa dám bấm, nhưng sau khi đăg nhập thành công đang cần xử lý liền",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không đúng như mình nghĩ nên mình chưa dám bấm, trước khi balance đang hiển thị lạ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Ê cho hỏi, sao cái này không đúng như mình nghĩ nên mình chưa dám bấm, nhưng giá mới bị delay; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Sao cái này không đúng như mình nghĩ và mình không biết hỏi mục nào, kèm chuyện bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Help với, sao cái này không đúng như mình nghĩ và mình không biết hỏi mục nào, nhưng để mình vào phòng đấu giá, rồi trợ lý ảo trả lời ngắn gọn pls?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"sao cai nay ko dung nhu m nghi va m ko biet hoi muc nao, kem chuyen chuan bi bid muc moi de khoi lam sai",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không đúng như mình nghĩ và mình không biết hỏi mục nào, rồi trước đó tài khoàn báo sai mật khẩu, trước khi mã phòng ROOM-88 mình hơi rén",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"sao cái này không đúng như mình nghĩ và mình không biết hỏi mục nào, rồi đừng trừ tiền sai đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Này ad, sao cái này không đúng như mình nghĩ và mình không biết hỏi mục nào, kèm chuyện đang theo dõi giá hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Nó bị không chạy trong app, sau đó nhờ chatbot giải thích thêm, trước khi nút tham gia phòng đang mờ.",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Mình mới dùng app, nó bị không chạy trong app, nhưng mình đang muốn join room vì mình chưa rõ luồng?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"no bi ko chay trong app, kem chuyen dat 500k neu hop le dang can xu ly lien",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"nó bị khong chạy trong app, rồi đang ở màn login nhé",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"nó bị không chạy trong app, đồng thời số tiền còn lại phải rõ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Admin ơi, nó bị không chạy trong app, trước khi giá realtime đang chưa đổi, sau đó đặt 500k nếu hợp lệ; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Nó bị không chạy ở màn hiện tại, sau đó bot hướng dẫn bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Alo ad, nó bị không chạy ở màn hiện tại, kèm chuyện nút tham gia phòng đang mờ để khỏi làm sai?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"no bi ko chay o man hien tai, dong thoi muon vuot nguoi dang dan, truoc khi ma room bid-09 m hoi ren",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"nó bị khong chạy ở màn hiện tại, đồng thời nếu cần vào lại hệ thống được không",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"nó bị không chạy ở màn hiện tại, rồi mình cần kiểm tra số dư, sau đó trước đó tài khoản báo sai mật khẩu đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Help với, nó bị không chạy ở màn hiện tại, rồi cần xem giá cao nhất hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Nó bị không chạy lúc mình thao tác, rồi trợ lý ảo trả lời ngắn gọn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Mình đang bị vướng, nó bị không chạy lúc mình thao tác, đồng thời vào room hiện tại giúp mình đang cần xử lý liền?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"no bi ko chay luc m thao tac, sau do nang them 100k dc ko nhe",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"nó bị khong chạy lúc mình thao tác, sau đó mình vừa login xong, nhưng balance đang hiển thị lạ mình đang thao tác",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"nó bị không chạy lúc mình thao tác, đồng thời xem tiền còn đủ không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình mới dùng app, nó bị không chạy lúc mình thao tác, rồi refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Nó bị không chạy nên mình chưa dám bấm, đồng thời chatbot nói dễ hiểu giúp mình.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Cứu mình với, nó bị không chạy nên mình chưa dám bấm, đồng thời cần nhập mã phòng trước, sau đó mã phòng GOLD-21 mình hơi rén?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"no bi ko chay nen m chua dam bam, roi m dinh dat gia them, nhung refresh gia live giup m dc ko",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"nó bị không chạy nên mình chưa dám bấm, rồi sau khi đăg nhập thành công pls",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"nó bị không chạy nên mình chưa dám bấm, nhưng balance đang hiển thị lạ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Alo ad, nó bị không chạy nên mình chưa dám bấm, rồi giá mới bị delay; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Nó bị không chạy và mình không biết hỏi mục nào, đồng thời bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Ê cho hỏi, nó bị không chạy và mình không biết hỏi mục nào, rồi để mình vào phòng đấu giá, nhưng trợ lý ảo trả lời ngắn gọn nhé?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"no bi ko chay va m ko biet hoi muc nao, dong thoi chuan bi bid muc moi m dang thao tac",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"nó bị không chạy và mình không biết hỏi mục nào, trước khi trước đó tài khoàn báo sai mật khẩu vì mình chưa rõ luồng",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"nó bị không chạy và mình không biết hỏi mục nào, trước khi đừng trừ tiền sai đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình đang bị vướng, nó bị không chạy và mình không biết hỏi mục nào, đồng thời đang theo dõi giá hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Nó bị không hiện gì trong app, rồi mã phòng PHIEN-2026.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Này ad, nó bị không hiện gì trong app được không?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+no bi ko hien gi trong app pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+nó bị khong hiện gì trong app để khỏi làm sai,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"nó bị không hiện gì trong app đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Cứu mình với, nó bị không hiện gì trong app; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Nó bị không hiện gì ở màn hiện tại.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Admin ơi, nó bị không hiện gì ở màn hiện tại mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+no bi ko hien gi o man hien tai vi m chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+nó bị khong hiện gì ở màn hiện tại đang cần xử lý liền,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"nó bị không hiện gì ở màn hiện tại đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Ê cho hỏi, nó bị không hiện gì ở màn hiện tại, rồi mã phòng P-774; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Nó bị không hiện gì lúc mình thao tác.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Help với, nó bị không hiện gì lúc mình thao tác pls?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+no bi ko hien gi luc m thao tac de khoi lam sai,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+nó bị khong hiện gì lúc mình thao tác mình hơi rén,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"nó bị không hiện gì lúc mình thao tác đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Này ad, nó bị không hiện gì lúc mình thao tác; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Nó bị không hiện gì nên mình chưa dám bấm.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình mới dùng app, nó bị không hiện gì nên mình chưa dám bấm vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+no bi ko hien gi nen m chua dam bam dang can xu ly lien,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+nó bị khong hiện gì nên mình chưa dám bấm nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"nó bị không hiện gì nên mình chưa dám bấm, trước khi mã phòng AUC-1024 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Admin ơi, nó bị không hiện gì nên mình chưa dám bấm; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Nó bị không hiện gì và mình không biết hỏi mục nào.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Alo ad, nó bị không hiện gì và mình không biết hỏi mục nào để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+no bi ko hien gi va m ko biet hoi muc nao m hoi ren,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+nó bị khong hiện gì và mình không biết hỏi mục nào được không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"nó bị không hiện gì và mình không biết hỏi mục nào đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Help với, nó bị không hiện gì và mình không biết hỏi mục nào; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Nó bị đơ luôn trong app.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình đang bị vướng, nó bị đơ luôn trong app đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+no bi do luon trong app nhe,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"nó bị đơ luôn trong app, sau đó mã phòg A17 mình đang thao tác",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"nó bị đơ luôn trong app đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình mới dùng app, nó bị đơ luôn trong app; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Nó bị đơ luôn ở màn hiện tại.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Cứu mình với, nó bị đơ luôn ở màn hiện tại mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+no bi do luon o man hien tai dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+nó bị đơ luôn ở màn hiện tại pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"nó bị đơ luôn ở màn hiện tại đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Alo ad, nó bị đơ luôn ở màn hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Nó bị đơ luôn lúc mình thao tác.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Ê cho hỏi, nó bị đơ luôn lúc mình thao tác nhé?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"no bi do luon luc m thao tac, sau do ma room sala-05 m dang thao tac",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+nó bị đơ luôn lúc mình thao tác vì mình chưa rõ luồng,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"nó bị đơ luôn lúc mình thao tác đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình đang bị vướng, nó bị đơ luôn lúc mình thao tác; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Nó bị đơ luôn nên mình chưa dám bấm.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Này ad, nó bị đơ luôn nên mình chưa dám bấm được không?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+no bi do luon nen m chua dam bam pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+nó bị đơ luôn nên mình chưa dám bấm để khỏi làm sai,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"nó bị đơ luôn nên mình chưa dám bấm đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Cứu mình với, nó bị đơ luôn nên mình chưa dám bấm; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Nó bị đơ luôn và mình không biết hỏi mục nào.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Admin ơi, nó bị đơ luôn và mình không biết hỏi mục nào, rồi mã phòng ROOM-88 mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+no bi do luon va m ko biet hoi muc nao vi m chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+nó bị đơ luôn và mình khong biết hỏi mục nào đang cần xử lý liền,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"nó bị đơ luôn và mình không biết hỏi mục nào đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Ê cho hỏi, nó bị đơ luôn và mình không biết hỏi mục nào; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Nó bị lạ quá trong app.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Help với, nó bị lạ quá trong app pls?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+no bi la qua trong app de khoi lam sai,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+nó bị lạ quá trong app mình hơi rén,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"nó bị lạ quá trong app đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Này ad, nó bị lạ quá trong app; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Nó bị lạ quá ở màn hiện tại, rồi mã phòng BID-09.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình mới dùng app, nó bị lạ quá ở màn hiện tại vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+no bi la qua o man hien tai dang can xu ly lien,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+nó bị lạ quá ở màn hiện tại nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1

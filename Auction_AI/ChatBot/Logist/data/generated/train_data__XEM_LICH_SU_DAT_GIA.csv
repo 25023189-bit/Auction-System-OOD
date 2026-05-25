@@ -1,0 +1,201 @@
+﻿text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+Tôi muốn xem lịch sử đặt giá của phiên này trước khi tôi đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, tôi muốn xem lịch sử đặt giá của phiên này và so với giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+toi muon xem lich su dat gia cua phien nay de check so du con du theo gia cuoi ko vi minh chua ro luong,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi muốn xem lịch sử đặt giá của phien này, khi tôi đang ở trong phòng đấu giá nhé",0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi muốn xem lịch sử đặt giá của phiên này, sau khi phiên đã tự động chốt đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tôi muốn xem lịch sử đặt giá của phiên này rồi xem xử lý tiền khi phiên kết thúc; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+Ai đã bid trước đó trong phòng này kèm thông báo trạng thái thắng thua.,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Help với, ai đã bid trước đó trong phòng này để chat trong phòng hỏi lại mọi người để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+ai da bid truoc do trong room nay voi phan chi tiet sp dang dg dc ko,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+ai đã bid trước đó trong phòng này và thời gian từng lần bid còn lại bao lâu pls,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"ai đã bid trước đó trong phòng này, xem có lượt nào làm anti-sniping gia hạn không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, ai đã bid trước đó trong phòng này, sau khi bị đưa về lobby vẫn cần xem lại; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+Lịch sử giá tăng theo từng lần ở đâu trước khi tôi đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, lịch sử giá tăng theo từng lần ở đâu và so với giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+lich su gia tang theo tung lan o dau de check so du con du theo gia cuoi ko vi minh chua ro luong,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"lịch sử giá tăng theo từng lần ở đâu, khi tôi đang ở trong phòng đấu gía nhé",0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"lịch sử giá tăng theo từng lần ở đâu, sau khi phiên đã tự động chốt đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, lịch sử giá tăng theo từng lần ở đâu rồi xem xử lý tiền khi phiên kết thúc; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+Xem lại người đặt giá cao nhất trước tôi kèm thông báo trạng thái thắng thua.,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Help với, xem lại người đặt giá cao nhất trước tôi để chat trong phòng hỏi lại mọi người để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+xem lai nguoi dat gia cao nhat truoc toi voi phan chi tiet sp dang dg dc ko,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+xem lại ngừoi đặt giá cao nhất trước tôi và thời gian từng lần bid còn lại bao lâu pls,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"xem lại người đặt giá cao nhất trước tôi, xem có lượt nào làm anti-sniping gia hạn không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, xem lại người đặt giá cao nhất trước tôi, sau khi bị đưa về lobby vẫn cần xem lại; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+Cho tôi xem danh sách các lần bid trước khi tôi đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, cho tôi xem danh sách các lần bid và so với giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+cho toi xem danh sach cac lan bid de check so du con du theo gia cuoi ko vi minh chua ro luong,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"cho tôi xem danh sách các lần bid, khi tôi đang ở trong phòng đấu gía nhé",0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"cho tôi xem danh sách các lần bid, sau khi phiên đã tự động chốt đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, cho tôi xem danh sách các lần bid rồi xem xử lý tiền khi phiên kết thúc; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+Phiên này có bao nhiêu lượt đặt giá rồi kèm thông báo trạng thái thắng thua.,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Help với, phiên này có bao nhiêu lượt đặt giá rồi để chat trong phòng hỏi lại mọi người để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+phien nay co bn luot dat gia roi voi phan chi tiet sp dang dg dc ko,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+phien này có bao nhiêu lượt đặt giá rồi và thời gian từng lần bid còn lại bao lâu pls,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên này có bao nhiêu lượt đặt giá rồi, xem có lượt nào làm anti-sniping gia hạn không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, phiên này có bao nhiêu lượt đặt giá rồi, sau khi bị đưa về lobby vẫn cần xem lại; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+Tôi muốn biết lần bid gần nhất là của ai trước khi tôi đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, tôi muốn biết lần bid gần nhất là của ai và so với giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+toi muon biet lan bid gan nhat la cua ai de check so du con du theo gia cuoi ko vi minh chua ro luong,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi muốn biết lần bid gần nhất là của ai, khi tôi đang ở trong phòng đấu gía nhé",0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi muốn biết lần bid gần nhất là của ai, sau khi phiên đã tự động chốt đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tôi muốn biết lần bid gần nhất là của ai rồi xem xử lý tiền khi phiên kết thúc; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+History đặt giá có hiện thời gian không kèm thông báo trạng thái thắng thua.,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Help với, history đặt giá có hiện thời gian không để chat trong phòng hỏi lại mọi người để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+history dat gia co hien thoi gian ko voi phan chi tiet sp dang dg dc ko,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+history đặt giá có hiện thời gian khong và thời gian từng lần bid còn lại bao lâu pls,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"history đặt giá có hiện thời gian không, xem có lượt nào làm anti-sniping gia hạn không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, history đặt giá có hiện thời gian không, sau khi bị đưa về lobby vẫn cần xem lại; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+Xem log bid của sản phẩm này giúp tôi trước khi tôi đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, xem log bid của sản phẩm này giúp tôi và so với giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+xem log bid cua sp nay giup toi de check so du con du theo gia cuoi ko vi minh chua ro luong,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"xem log bid của sản phẩm này giúp tôi, khi tôi đang ở trong phòng đấu gía nhé",0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"xem log bid của sản phẩm này giúp tôi, sau khi phiên đã tự động chốt đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, xem log bid của sản phẩm này giúp tôi rồi xem xử lý tiền khi phiên kết thúc; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+Có cách nào xem ai đã nâng giá không kèm thông báo trạng thái thắng thua.,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Help với, có cách nào xem ai đã nâng giá không để chat trong phòng hỏi lại mọi người để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+co cach nao xem ai da nang gia ko voi phan chi tiet sp dang dg dc ko,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+có cách nào xem ai đã nâng giá khong và thời gian từng lần bid còn lại bao lâu pls,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"có cách nào xem ai đã nâng giá không, xem có lượt nào làm anti-sniping gia hạn không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, có cách nào xem ai đã nâng giá không, sau khi bị đưa về lobby vẫn cần xem lại; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+Lịch sử đấu giá hiển thị ở tab nào trước khi tôi đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, lịch sử đấu giá hiển thị ở tab nào và so với giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+lich su dg hien thi o tab nao de check so du con du theo gia cuoi ko vi minh chua ro luong,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"lịch sử đấu gía hiển thị ở tab nào, khi tôi đang ở trong phòng đấu giá nhé",0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"lịch sử đấu giá hiển thị ở tab nào, sau khi phiên đã tự động chốt đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, lịch sử đấu giá hiển thị ở tab nào rồi xem xử lý tiền khi phiên kết thúc; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn kiểm tra giá trước khi đặt thêm kèm thông báo trạng thái thắng thua.,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Help với, tôi muốn kiểm tra giá trước khi đặt thêm để chat trong phòng hỏi lại mọi người để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+toi muon check gia truoc khi dat them voi phan chi tiet sp dang dg dc ko,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tôi muốn kiểm chra giá trước khi đặt thêm và thời gian từng lần bid còn lại bao lâu pls,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi muốn kiểm tra giá trước khi đặt thêm, xem có lượt nào làm anti-sniping gia hạn không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, tôi muốn kiểm tra giá trước khi đặt thêm, sau khi bị đưa về lobby vẫn cần xem lại; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+Cho xem timeline các lần trả giá trước khi tôi đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, cho xem timeline các lần trả giá và so với giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+cho xem timeline cac lan tra gia de check so du con du theo gia cuoi ko vi minh chua ro luong,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"cho xem timeline các lần trả giá, khi tôi đang ở trong phòng đấu gía nhé",0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"cho xem timeline các lần trả giá, sau khi phiên đã tự động chốt đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, cho xem timeline các lần trả giá rồi xem xử lý tiền khi phiên kết thúc; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn biết có ai vừa bid vượt mình không kèm thông báo trạng thái thắng thua.,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Help với, tôi muốn biết có ai vừa bid vượt mình không để chat trong phòng hỏi lại mọi người để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+toi muon biet co ai vua bid vuot minh ko voi phan chi tiet sp dang dg dc ko,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tôi muốn biết có ai vừa bid vượt mình khong và thời gian từng lần bid còn lại bao lâu pls,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi muốn biết có ai vừa bid vượt mình không, xem có lượt nào làm anti-sniping gia hạn không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, tôi muốn biết có ai vừa bid vượt mình không, sau khi bị đưa về lobby vẫn cần xem lại; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+Lịch sử đặt giá có lưu sau khi kết thúc không trước khi tôi đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, lịch sử đặt giá có lưu sau khi kết thúc không và so với giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+lich su dat gia co luu sau khi ket thuc ko de check so du con du theo gia cuoi ko vi minh chua ro luong,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"lịch sử đặt giá có lưu sau khi kết thúc không, khi tôi đang ở trong phòng đấu gía nhé",0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"lịch sử đặt giá có lưu sau khi kết thúc không, sau khi phiên đã tự động chốt đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, lịch sử đặt giá có lưu sau khi kết thúc không rồi xem xử lý tiền khi phiên kết thúc; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+Xem lại các mức giá từ đầu phiên kèm thông báo trạng thái thắng thua.,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Help với, xem lại các mức giá từ đầu phiên để chat trong phòng hỏi lại mọi người để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+xem lai cac muc gia tu dau phien voi phan chi tiet sp dang dg dc ko,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+xem lại các mức giá từ đầu phien và thời gian từng lần bid còn lại bao lâu pls,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"xem lại các mức giá từ đầu phiên, xem có lượt nào làm anti-sniping gia hạn không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, xem lại các mức giá từ đầu phiên, sau khi bị đưa về lobby vẫn cần xem lại; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+Giá hiện tại tăng từ bid nào vậy trước khi tôi đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, giá hiện tại tăng từ bid nào vậy và so với giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+gia hien tai tang tu bid nao vay de check so du con du theo gia cuoi ko vi minh chua ro luong,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại tăng từ bid nào vậy, khi tôi đang ở trong phòng đấu gía nhé",0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại tăng từ bid nào vậy, sau khi phiên đã tự động chốt đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, giá hiện tại tăng từ bid nào vậy rồi xem xử lý tiền khi phiên kết thúc; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+Có thể xem lịch sử bid realtime không kèm thông báo trạng thái thắng thua.,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Help với, có thể xem lịch sử bid realtime không để chat trong phòng hỏi lại mọi người để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+co the xem lich su bid realtime ko voi phan chi tiet sp dang dg dc ko,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+có thể xem lịch sử bid realtime khong và thời gian từng lần bid còn lại bao lâu pls,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"có thể xem lịch sử bid realtime không, xem có lượt nào làm anti-sniping gia hạn không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, có thể xem lịch sử bid realtime không, sau khi bị đưa về lobby vẫn cần xem lại; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+Tôi muốn biết mình đã đặt mấy lần trước khi tôi đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, tôi muốn biết mình đã đặt mấy lần và so với giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+toi muon biet minh da dat may lan de check so du con du theo gia cuoi ko vi minh chua ro luong,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi muốn biết mình đã đặt mấy lần, khi tôi đang ở trong phòng đấu gía nhé",0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi muốn biết mình đã đặt mấy lần, sau khi phiên đã tự động chốt đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tôi muốn biết mình đã đặt mấy lần rồi xem xử lý tiền khi phiên kết thúc; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+Lịch sử bid có phân biệt người thắng tạm thời không kèm thông báo trạng thái thắng thua.,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Help với, lịch sử bid có phân biệt người thắng tạm thời không để chat trong phòng hỏi lại mọi người để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+lich su bid co phan biet nguoi thang tam thoi ko voi phan chi tiet sp dang dg dc ko,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+lịch sử bid có phân biệt người thắng tạm thời khong và thời gian từng lần bid còn lại bao lâu pls,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"lịch sử bid có phân biệt người thắng tạm thời không, xem có lượt nào làm anti-sniping gia hạn không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, lịch sử bid có phân biệt người thắng tạm thời không, sau khi bị đưa về lobby vẫn cần xem lại; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+App có lưu record đặt giá không trước khi tôi đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, app có lưu record đặt giá không và so với giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+app co luu record dat gia ko de check so du con du theo gia cuoi ko vi minh chua ro luong,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"app có lưu record đặt giá không, khi tôi đang ở trong phòng đấu gía nhé",0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"app có lưu record đặt giá không, sau khi phiên đã tự động chốt đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, app có lưu record đặt giá không rồi xem xử lý tiền khi phiên kết thúc; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+Cho tôi xem lượt đặt giá cuối cùng kèm thông báo trạng thái thắng thua.,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Help với, cho tôi xem lượt đặt giá cuối cùng để chat trong phòng hỏi lại mọi người để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+cho toi xem luot dat gia cuoi cung voi phan chi tiet sp dang dg dc ko,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+cho tôi xem lượt đặt giá cuối cùng và thời gian từng lần bid còn lại bao lâu pls,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"cho tôi xem lượt đặt giá cuối cùng, xem có lượt nào làm anti-sniping gia hạn không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, cho tôi xem lượt đặt giá cuối cùng, sau khi bị đưa về lobby vẫn cần xem lại; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+Phiên này có ai spam bid không trước khi tôi đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, phiên này có ai spam bid không và so với giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+phien nay co ai spam bid ko de check so du con du theo gia cuoi ko vi minh chua ro luong,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien này có ai spam bid không, khi tôi đang ở trong phòng đấu giá nhé",0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên này có ai spam bid không, sau khi phiên đã tự động chốt đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, phiên này có ai spam bid không rồi xem xử lý tiền khi phiên kết thúc; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+Xem lịch sử trả giá của iPhone này ở đâu kèm thông báo trạng thái thắng thua.,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Help với, xem lịch sử trả giá của iPhone này ở đâu để chat trong phòng hỏi lại mọi người để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+xem lich su tra gia cua iphone nay o dau voi phan chi tiet sp dang dg dc ko,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+xem lịc sử trả giá của iPhone này ở đâu và thời gian từng lần bid còn lại bao lâu pls,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"xem lịch sử trả giá của iPhone này ở đâu, xem có lượt nào làm anti-sniping gia hạn không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, xem lịch sử trả giá của iPhone này ở đâu, sau khi bị đưa về lobby vẫn cần xem lại; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+Tôi muốn đối chiếu bid của mình với người khác trước khi tôi đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, tôi muốn đối chiếu bid của mình với người khác và so với giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+toi muon doi chieu bid cua minh voi nguoi khac de check so du con du theo gia cuoi ko vi minh chua ro luong,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi muốn đối chiếu bid của mình với người khác, khi tôi đang ở trong phòng đấu gía nhé",0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi muốn đối chiếu bid của mình với người khác, sau khi phiên đã tự động chốt đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tôi muốn đối chiếu bid của mình với người khác rồi xem xử lý tiền khi phiên kết thúc; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+Lịch sử giá có bị mất khi về lobby không kèm thông báo trạng thái thắng thua.,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Help với, lịch sử giá có bị mất khi về lobby không để chat trong phòng hỏi lại mọi người để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+lich su gia co bi mat khi ve lobby ko voi phan chi tiet sp dang dg dc ko,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+lịch sử giá có bị mất khi về lobby khong và thời gian từng lần bid còn lại bao lâu pls,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"lịch sử giá có bị mất khi về lobby không, xem có lượt nào làm anti-sniping gia hạn không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, lịch sử giá có bị mất khi về lobby không, sau khi bị đưa về lobby vẫn cần xem lại; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+Có xem được bid sau khi seller đóng phiên không trước khi tôi đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, có xem được bid sau khi seller đóng phiên không và so với giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+co xem dc bid sau khi seller dong phien ko de check so du con du theo gia cuoi ko vi minh chua ro luong,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"có xem được bid sau khi seller đóng phien không, khi tôi đang ở trong phòng đấu giá nhé",0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"có xem được bid sau khi seller đóng phiên không, sau khi phiên đã tự động chốt đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, có xem được bid sau khi seller đóng phiên không rồi xem xử lý tiền khi phiên kết thúc; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+Tôi cần kiểm tra danh sách người đã đấu giá kèm thông báo trạng thái thắng thua.,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Help với, tôi cần kiểm tra danh sách người đã đấu giá để chat trong phòng hỏi lại mọi người để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+toi can check danh sach nguoi da dg voi phan chi tiet sp dang dg dc ko,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tôi cần kiểm tra danh sách người đã đấu gía pls,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi cần kiểm tra danh sách người đã đấu giá, trong phiên hiện tại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, tôi cần kiểm tra danh sách người đã đấu giá, cho sản phẩm này; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"History bid có hiện số tiền mỗi lượt không, sau vài lượt bid.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, history bid có hiện số tiền mỗi lượt không, ở màn phòng đấu giá mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+history bid co hien so tien moi luot ko vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"history bid có hiện số tiền mỗi lượt không, trong phien hiện tại nhé",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"history bid có hiện số tiền mỗi lượt không, cho sản phẩm này đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, history bid có hiện số tiền mỗi lượt không, sau vài lượt bid; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cho tôi xem giá cao nhất trước lúc chốt, ở màn phòng đấu giá.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, cho tôi xem giá cao nhất trước lúc chốt để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"cho toi xem gia cao nhat truoc luc chot, trong phien hien tai dc ko",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"cho tôi xem giá cao nhất trước lúc chốt, cho sản phầm này pls",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"cho tôi xem giá cao nhất trước lúc chốt, sau vài lượt bid đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, cho tôi xem giá cao nhất trước lúc chốt, ở màn phòng đấu giá; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn biết lượt bid nào kích hoạt anti-sniping.,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, tôi muốn biết lượt bid nào kích hoạt anti-sniping, trong phiên hiện tại mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"toi muon biet luot bid nao kich hoat anti-sniping, cho sp nay vi minh chua ro luong",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi muốn biết lượt bid nào kích hoạt anti-sniping, sau vài lượt bid nhé",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi muốn biết lượt bid nào kích hoạt anti-sniping, ở màn phòng đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tôi muốn biết lượt bid nào kích hoạt anti-sniping; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Xem lại lịch sử giá để biết vì sao mình thua, trong phiên hiện tại.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, xem lại lịch sử giá để biết vì sao mình thua, cho sản phẩm này để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"xem lai lich su gia de biet vi sao minh thua, sau vai luot bid dc ko",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"xem lại lịch sử giá để biết vì sao mình thua, ở màn phòng đấu gía pls",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"xem lại lịch sử giá để biết vì sao mình thua đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, xem lại lịch sử giá để biết vì sao mình thua, trong phiên hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Lịch sử đặt giá trong room đang không hiện, cho sản phẩm này.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, lịch sử đặt giá trong room đang không hiện, sau vài lượt bid mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"lich su dat gia trong room dang ko hien, o man room dg vi minh chua ro luong",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+lịch sử đặt giá trong room đang khong hiện nhé,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"lịch sử đặt giá trong room đang không hiện, trong phiên hiện tại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, lịch sử đặt giá trong room đang không hiện, cho sản phẩm này; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cho mình check các lần nâng giá của phiên này, sau vài lượt bid.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, cho mình check các lần nâng giá của phiên này, ở màn phòng đấu giá để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

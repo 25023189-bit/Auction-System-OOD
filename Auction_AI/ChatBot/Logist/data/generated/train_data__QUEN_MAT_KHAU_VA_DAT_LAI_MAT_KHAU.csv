@@ -1,0 +1,201 @@
+﻿text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+"Mình quên mật khẩu tài khoản này thì làm sao, kèm chuyện mình vừa login xong, sau đó đừng hiện nhầm chức năng seller, trước khi bot phân tích lỗi đang gặp, kèm chuyện mã phòng AUC-1024.",0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Admin ơi, mình quên mật khẩu tài khoản này thì làm sao, kèm chuyện kiểm tra quyền user trước mình đang thao tác?",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m quen mk tk nay thi lam sao, truoc khi tro ly ao tra loi ngan gon vi m chua ro luong",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình quên mật khẩu tài khoàn này thì làm sao, đồng thời câu này hơi mơ hồ đang cần xử lý liền",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"mình quên mật khẩu tài khoản này thì làm sao, nhưng nếu cần vào lại hệ thống đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình quên mật khẩu tài khoản này thì làm sao, kèm chuyện role của mình đang bị lẫn, rồi trợ lý ảo trả lời ngắn gọn; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình quên mật khẩu tài khoản này trước khi login, trước khi bot hướng dẫn bước tiếp theo.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, mình quên mật khẩu tài khoản này trước khi login, rồi cần bot hỏi lại cho chắc pls?",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m quen mk tk nay truoc khi login, truoc khi dang o man login de khoi lam sai",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khẩu tài khoàn này trước khi login, kèm chuyện cần đúng quyền bidder mình hơi rén",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khẩu tài khoản này trước khi login, kèm chuyện nhờ chatbot giải thích thêm, trước khi cần bot hỏi lại cho chắc đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Này ad, mình quên mật khẩu tài khoản này trước khi login, rồi chưa rõ đang hỏi chức năng nào, rồi mã phòng A17; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình quên mật khẩu tài khoản này vì cần vào đấu giá, nhưng trước đó tài khoản báo sai mật khẩu.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình quên mật khẩu tài khoản này vì cần vào đấu giá, rồi vì tài khoản này không phải admin vì mình chưa rõ luồng?",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m quen mk tk nay vi can vao dg, sau do bot phan tich loi dang gap dang can xu ly lien",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình quên mật khẩu tài khoản này vì cần vào đấu gía, rồi mình nói hơi thiếu ngữ cảnh, sau đó trước đó tài khoản báo sai mật khẩu nhé",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"mình quên mật khẩu tài khoản này vì cần vào đấu giá, đồng thời sau khi đăng nhập thành công đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình quên mật khẩu tài khoản này vì cần vào đấu giá, trước khi đừng hiện nhầm chức năng seller, rồi bot phân tích lỗi đang gặp; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình quên mật khẩu tài khoản này mà chưa nhận mã, sau đó chatbot nói dễ hiểu giúp mình.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Alo ad, mình quên mật khẩu tài khoản này mà chưa nhận mã, đồng thời không đủ dữ kiện để xử lý thẳng để khỏi làm sai?",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m quen mk tk nay ma chua nhan ma, dong thoi m vua login xong, nhung dung hien nham chuc nang seller m hoi ren",0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khẩu tài khoàn này mà chưa nhận mã, đồng thời kiểm tra quyền user trước được không",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khẩu tài khoản này mà chưa nhận mã, nhưng trợ lý ảo trả lời ngắn gọn, nhưng mã phòng SALA-05 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, mình quên mật khẩu tài khoản này mà chưa nhận mã, sau đó câu này hơi mơ hồ; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình quên mật khẩu tài khoản này để vào lại hệ thống, trước khi nếu cần vào lại hệ thống.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình quên mật khẩu tài khoản này để vào lại hệ thống, sau đó role của mình đang bị lẫn, trước khi trợ lý ảo trả lời ngắn gọn đang cần xử lý liền?",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"m quen mk tk nay de vao lai he thong, nhung bot huong dan buoc tiep theo nhe",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình quên mật khẩu tài khoàn này để vào lại hệ thống, trước khi cần bot hỏi lại cho chắc mình đang thao tác",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"mình quên mật khẩu tài khoản này để vào lại hệ thống, nhưng đang ở màn login đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình quên mật khẩu tài khoản này để vào lại hệ thống, đồng thời cần đúng quyền bidder; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình quên mật khẩu account bidder thì làm sao, rồi nhờ chatbot giải thích thêm, rồi cần bot hỏi lại cho chắc.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Cứu mình với, mình quên mật khẩu account bidder thì làm sao, kèm chuyện chưa rõ đang hỏi chức năng nào mình hơi rén?",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m quen mk account bidder thi lam sao, nhung truoc do tk bao sai mk dc ko",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khẩu account bidder thì làm sao, rồi vì tài khoàn này không phải admin, trước khi mã phòng ROOM-88 pls",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khẩu account bidder thì làm sao, sau đó bot phân tích lỗi đang gặp đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Alo ad, mình quên mật khẩu account bidder thì làm sao, rồi mình nói hơi thiếu ngữ cảnh, sau đó trước đó tài khoản báo sai mật khẩu; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình quên mật khẩu account bidder trước khi login, sau đó sau khi đăng nhập thành công.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình quên mật khẩu account bidder trước khi login, nhưng đừng hiện nhầm chức năng seller nhé?",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m quen mk account bidder truoc khi login, roi bot noi de hieu giup m m dang thao tac",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình quên mật khâu account bidder trước khi login, nhưng không đủ dữ kiện để xử lý thẳng vì mình chưa rõ luồng",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"mình quên mật khẩu account bidder trước khi login, nhưng mình vừa login xong, sau đó đừng hiện nhầm chức năng seller đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình quên mật khẩu account bidder trước khi login, nhưng kiểm tra quyền user trước; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình quên mật khẩu account bidder vì cần vào đấu giá, rồi trợ lý ảo trả lời ngắn gọn.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, mình quên mật khẩu account bidder vì cần vào đấu giá, kèm chuyện câu này hơi mơ hồ được không?",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m quen mk account bidder vi can vao dg, truoc khi neu can vao lai he thong, dong thoi ma room bid-09 pls",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khẩu account bidder vì cần vào đấu gía, sau đó role của mình đang bị lẫn, trước khi trợ lý ảo trả lời ngắn gọn để khỏi làm sai",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình quên mật khẩu account bidder vì cần vào đấu giá, nhưng bot hướng dẫn bước tiếp theo đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Cứu mình với, mình quên mật khẩu account bidder vì cần vào đấu giá, trước khi cần bot hỏi lại cho chắc; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình quên mật khẩu account bidder mà chưa nhận mã, sau đó đang ở màn login.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình quên mật khẩu account bidder mà chưa nhận mã, trước khi cần đúng quyền bidder mình đang thao tác?",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m quen mk account bidder ma chua nhan ma, truoc khi nho bot giai thich them, truoc khi can bot hoi lai cho chac vi m chua ro luong",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"mình quên mật khâu account bidder mà chưa nhận mã, đồng thời chưa rõ đang hỏi chức năng nào, rồi chatbot nói dễ hiểu giúp mình đang cần xử lý liền",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"mình quên mật khẩu account bidder mà chưa nhận mã, rồi trước đó tài khoản báo sai mật khẩu đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình quên mật khẩu account bidder mà chưa nhận mã, trước khi vì tài khoản này không phải admin; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình quên mật khẩu account bidder để vào lại hệ thống, đồng thời bot phân tích lỗi đang gặp.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, mình quên mật khẩu account bidder để vào lại hệ thống, nhưng mình nói hơi thiếu ngữ cảnh, kèm chuyện trước đó tài khoản báo sai mật khẩu, nhưng mã phòng GOLD-21 pls?",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m quen mk account bidder de vao lai he thong, kem chuyen sau khi login thanh cong de khoi lam sai",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khâu account bidder để vào lại hệ thống, rồi đừng hiện nhầm chức năng seller mình hơi rén",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khẩu account bidder để vào lại hệ thống, trước khi chatbot nói dễ hiểu giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, mình quên mật khẩu account bidder để vào lại hệ thống, rồi không đủ dữ kiện để xử lý thẳng; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình quên mật khẩu username của mình thì làm sao, đồng thời mình vừa login xong, nhưng đừng hiện nhầm chức năng seller.",0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình quên mật khẩu username của mình thì làm sao, đồng thời kiểm tra quyền user trước vì mình chưa rõ luồng?",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m quen mk username cua m thi lam sao, nhung tro ly ao tra loi ngan gon dang can xu ly lien",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình quên mật khâu username của mình thì làm sao, sau đó câu này hơi mơ hồ nhé",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"mình quên mật khẩu username của mình thì làm sao, rồi nếu cần vào lại hệ thống đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình quên mật khẩu username của mình thì làm sao, đồng thời role của mình đang bị lẫn, kèm chuyện trợ lý ảo trả lời ngắn gọn; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình quên mật khẩu username của mình trước khi login, nhưng bot hướng dẫn bước tiếp theo, sau đó mã phòng PHIEN-2026.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Alo ad, mình quên mật khẩu username của mình trước khi login, trước khi cần bot hỏi lại cho chắc để khỏi làm sai?",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m quen mk username cua m truoc khi login, nhung dang o man login, dong thoi nho bot giai thich them m hoi ren",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình quên mật khâu username của mình trước khi login, đồng thời cần đúng quyền bidder được không",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khẩu username của mình trước khi login, đồng thời nhờ chatbot giải thích thêm, đồng thời cần bot hỏi lại cho chắc đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Help với, mình quên mật khẩu username của mình trước khi login, trước khi chưa rõ đang hỏi chức năng nào; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình quên mật khẩu username của mình vì cần vào đấu giá, rồi trước đó tài khoản báo sai mật khẩu.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình quên mật khẩu username của mình vì cần vào đấu giá, trước khi vì tài khoản này không phải admin đang cần xử lý liền?",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m quen mk username cua m vi can vao dg, kem chuyen bot phan tich loi dang gap nhe",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình quên mật khẩu username của mình vì cần vào đấu gía, trước khi mình nói hơi thiếu ngữ cảnh, kèm chuyện trước đó tài khoản báo sai mật khẩu mình đang thao tác",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"mình quên mật khẩu username của mình vì cần vào đấu giá, sau đó sau khi đăng nhập thành công đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình quên mật khẩu username của mình vì cần vào đấu giá, nhưng đừng hiện nhầm chức năng seller, rồi mã phòng P-774; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình quên mật khẩu username của mình mà chưa nhận mã, kèm chuyện chatbot nói dễ hiểu giúp mình.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Cứu mình với, mình quên mật khẩu username của mình mà chưa nhận mã, sau đó không đủ dữ kiện để xử lý thẳng mình hơi rén?",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m quen mk username cua m ma chua nhan ma, sau do m vua login xong, kem chuyen dung hien nham chuc nang seller dc ko",0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khâu username của mình mà chưa nhận mã, sau đó kiểm tra quyền user trước pls",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khẩu username của mình mà chưa nhận mã, rồi trợ lý ảo trả lời ngắn gọn đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Alo ad, mình quên mật khẩu username của mình mà chưa nhận mã, kèm chuyện câu này hơi mơ hồ; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình quên mật khẩu username của mình để vào lại hệ thống, nhưng nếu cần vào lại hệ thống.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình quên mật khẩu username của mình để vào lại hệ thống, kèm chuyện role của mình đang bị lẫn, rồi trợ lý ảo trả lời ngắn gọn nhé?",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"m quen mk username cua m de vao lai he thong, roi bot huong dan buoc tiep theo m dang thao tac",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình quên mật khâu username của mình để vào lại hệ thống, nhưng cần bot hỏi lại cho chắc vì mình chưa rõ luồng",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"mình quên mật khẩu username của mình để vào lại hệ thống, rồi đang ở màn login, sau đó mã phòng AUC-1024 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình quên mật khẩu username của mình để vào lại hệ thống, sau đó cần đúng quyền bidder; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình quên mật khẩu tài khoản seller thì làm sao, nhưng nhờ chatbot giải thích thêm, trước khi cần bot hỏi lại cho chắc.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Này ad, mình quên mật khẩu tài khoản seller thì làm sao, sau đó chưa rõ đang hỏi chức năng nào được không?",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m quen mk tk seller thi lam sao, truoc khi truoc do tk bao sai mk pls",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khẩu tài khoàn seller thì làm sao, nhưng vì tài khoản này không phải admin để khỏi làm sai",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khẩu tài khoản seller thì làm sao, đồng thời bot phân tích lỗi đang gặp đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Cứu mình với, mình quên mật khẩu tài khoản seller thì làm sao, nhưng mình nói hơi thiếu ngữ cảnh, kèm chuyện trước đó tài khoản báo sai mật khẩu; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình quên mật khẩu tài khoản seller trước khi login, đồng thời sau khi đăng nhập thành công.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình quên mật khẩu tài khoản seller trước khi login, trước khi đừng hiện nhầm chức năng seller mình đang thao tác?",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m quen mk tk seller truoc khi login, nhung bot noi de hieu giup m vi m chua ro luong",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình quên mật khẩu tài khoàn seller trước khi login, trước khi không đủ dữ kiện để xử lý thẳng, trước khi mã phòng A17 đang cần xử lý liền",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"mình quên mật khẩu tài khoản seller trước khi login, trước khi mình vừa login xong, sau đó đừng hiện nhầm chức năng seller đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình quên mật khẩu tài khoản seller trước khi login, trước khi kiểm tra quyền user trước; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình quên mật khẩu tài khoản seller vì cần vào đấu giá, nhưng trợ lý ảo trả lời ngắn gọn.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, mình quên mật khẩu tài khoản seller vì cần vào đấu giá, sau đó câu này hơi mơ hồ pls?",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m quen mk tk seller vi can vao dg, roi neu can vao lai he thong de khoi lam sai",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khẩu tài khoản seller vì cần vào đấu gía, đồng thời role của mình đang bị lẫn, kèm chuyện trợ lý ảo trả lời ngắn gọn mình hơi rén",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình quên mật khẩu tài khoản seller vì cần vào đấu giá, trước khi bot hướng dẫn bước tiếp theo đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, mình quên mật khẩu tài khoản seller vì cần vào đấu giá, rồi cần bot hỏi lại cho chắc; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình quên mật khẩu tài khoản seller mà chưa nhận mã, đồng thời đang ở màn login.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình quên mật khẩu tài khoản seller mà chưa nhận mã, rồi cần đúng quyền bidder vì mình chưa rõ luồng?",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m quen mk tk seller ma chua nhan ma, roi nho bot giai thich them, roi can bot hoi lai cho chac, truoc khi ma room sala-05 dang can xu ly lien",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"mình quên mật khẩu tài khoàn seller mà chưa nhận mã, kèm chuyện chưa rõ đang hỏi chức năng nào nhé",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"mình quên mật khẩu tài khoản seller mà chưa nhận mã, nhưng trước đó tài khoản báo sai mật khẩu đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình quên mật khẩu tài khoản seller mà chưa nhận mã, rồi vì tài khoản này không phải admin; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình quên mật khẩu tài khoản seller để vào lại hệ thống, kèm chuyện bot phân tích lỗi đang gặp.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Alo ad, mình quên mật khẩu tài khoản seller để vào lại hệ thống, trước khi mình nói hơi thiếu ngữ cảnh, kèm chuyện trước đó tài khoản báo sai mật khẩu để khỏi làm sai?",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m quen mk tk seller de vao lai he thong, sau do sau khi login thanh cong m hoi ren",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khẩu tài khoàn seller để vào lại hệ thống, nhưng đừng hiện nhầm chức năng seller được không",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khẩu tài khoản seller để vào lại hệ thống, rồi chatbot nói dễ hiểu giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, mình quên mật khẩu tài khoản seller để vào lại hệ thống, nhưng không đủ dữ kiện để xử lý thẳng, nhưng bot hướng dẫn bước tiếp theo; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Mình quên mật khẩu màn hình đăng nhập thì làm sao, nhưng mình vừa login xong, sau đó đừng hiện nhầm chức năng seller.",0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình quên mật khẩu màn hình đăng nhập thì làm sao, nhưng kiểm tra quyền user trước, nhưng mã phòng ROOM-88 đang cần xử lý liền?",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m quen mk man hinh login thi lam sao, kem chuyen tro ly ao tra loi ngan gon nhe",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình quên mật khẩu màn hình đăg nhập thì làm sao, rồi câu này hơi mơ hồ mình đang thao tác",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"mình quên mật khẩu màn hình đăng nhập thì làm sao, đồng thời nếu cần vào lại hệ thống đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình quên mật khẩu màn hình đăng nhập thì làm sao, nhưng role của mình đang bị lẫn, rồi trợ lý ảo trả lời ngắn gọn; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình quên mật khẩu màn hình đăng nhập trước khi login, kèm chuyện bot hướng dẫn bước tiếp theo.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Cứu mình với, mình quên mật khẩu màn hình đăng nhập trước khi login, sau đó cần bot hỏi lại cho chắc mình hơi rén?",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m quen mk man hinh login truoc khi login, kem chuyen dang o man login dc ko",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khẩu màn hình đăg nhập trước khi login, nhưng cần đúng quyền bidder pls",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khẩu màn hình đăng nhập trước khi login, nhưng nhờ chatbot giải thích thêm, trước khi cần bot hỏi lại cho chắc đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Alo ad, mình quên mật khẩu màn hình đăng nhập trước khi login, sau đó chưa rõ đang hỏi chức năng nào; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình quên mật khẩu màn hình đăng nhập vì cần vào đấu giá, đồng thời trước đó tài khoản báo sai mật khẩu, trước khi mã phòng BID-09.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình quên mật khẩu màn hình đăng nhập vì cần vào đấu giá, sau đó vì tài khoản này không phải admin nhé?",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m quen mk man hinh login vi can vao dg, truoc khi bot phan tich loi dang gap m dang thao tac",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình quên mật khẩu màn hình đăg nhập vì cần vào đấu giá, sau đó mình nói hơi thiếu ngữ cảnh, đồng thời trước đó tài khoản báo sai mật khẩu vì mình chưa rõ luồng",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"mình quên mật khẩu màn hình đăng nhập vì cần vào đấu giá, rồi sau khi đăng nhập thành công, sau đó chatbot nói dễ hiểu giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình đang bị vướng, mình quên mật khẩu màn hình đăng nhập vì cần vào đấu giá, kèm chuyện đừng hiện nhầm chức năng seller; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình quên mật khẩu màn hình đăng nhập mà chưa nhận mã, trước khi chatbot nói dễ hiểu giúp mình.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, mình quên mật khẩu màn hình đăng nhập mà chưa nhận mã, rồi không đủ dữ kiện để xử lý thẳng được không?",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m quen mk man hinh login ma chua nhan ma, roi m vua login xong, dong thoi dung hien nham chuc nang seller pls",0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khẩu màn hình đăg nhập mà chưa nhận mã, rồi kiểm tra quyền user trước để khỏi làm sai",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khẩu màn hình đăng nhập mà chưa nhận mã, đồng thời trợ lý ảo trả lời ngắn gọn đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Cứu mình với, mình quên mật khẩu màn hình đăng nhập mà chưa nhận mã, trước khi câu này hơi mơ hồ, nhưng mã phòng GOLD-21; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình quên mật khẩu màn hình đăng nhập để vào lại hệ thống, kèm chuyện nếu cần vào lại hệ thống.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình quên mật khẩu màn hình đăng nhập để vào lại hệ thống, trước khi role của mình đang bị lẫn, rồi trợ lý ảo trả lời ngắn gọn mình đang thao tác?",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"m quen mk man hinh login de vao lai he thong, dong thoi bot huong dan buoc tiep theo vi m chua ro luong",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình quên mật khẩu màn hình đăg nhập để vào lại hệ thống, kèm chuyện cần bot hỏi lại cho chắc đang cần xử lý liền",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"mình quên mật khẩu màn hình đăng nhập để vào lại hệ thống, đồng thời đang ở màn login đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình quên mật khẩu màn hình đăng nhập để vào lại hệ thống, rồi cần đúng quyền bidder; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình quên mật khẩu email đã đăng ký thì làm sao, nhưng nhờ chatbot giải thích thêm, trước khi cần bot hỏi lại cho chắc.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Help với, mình quên mật khẩu email đã đăng ký thì làm sao, sau đó chưa rõ đang hỏi chức năng nào pls?",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m quen mk email da dk thi lam sao, truoc khi truoc do tk bao sai mk de khoi lam sai",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khẩu email đã đăg ký thì làm sao, nhưng vì tài khoản này không phải admin, đồng thời nhờ chatbot giải thích thêm mình hơi rén",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình quên mật khẩu email đã đăng ký thì làm sao, đồng thời bot phân tích lỗi đang gặp, nhưng mã phòng PHIEN-2026 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, mình quên mật khẩu email đã đăng ký thì làm sao, nhưng mình nói hơi thiếu ngữ cảnh, kèm chuyện trước đó tài khoản báo sai mật khẩu; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình quên mật khẩu email đã đăng ký trước khi login, đồng thời sau khi đăng nhập thành công.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình quên mật khẩu email đã đăng ký trước khi login, trước khi đừng hiện nhầm chức năng seller vì mình chưa rõ luồng?",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m quen mk email da dk truoc khi login, nhung bot noi de hieu giup m dang can xu ly lien",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình quên mật khẩu email đã đăg ký trước khi login, trước khi không đủ dữ kiện để xử lý thẳng nhé",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"mình quên mật khẩu email đã đăng ký trước khi login, trước khi mình vừa login xong, sau đó đừng hiện nhầm chức năng seller đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình quên mật khẩu email đã đăng ký trước khi login, trước khi kiểm tra quyền user trước; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình quên mật khẩu email đã đăng ký vì cần vào đấu giá, nhưng trợ lý ảo trả lời ngắn gọn.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Alo ad, mình quên mật khẩu email đã đăng ký vì cần vào đấu giá, sau đó câu này hơi mơ hồ để khỏi làm sai?",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m quen mk email da dk vi can vao dg, roi neu can vao lai he thong m hoi ren",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khẩu email đã đăg ký vì cần vào đấu giá, nhưng mã phòng P-774 được không",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khẩu email đã đăng ký vì cần vào đấu giá đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình quên mật khẩu email đã đăng ký vì cần vào đấu giá; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình quên mật khẩu email đã đăng ký mà chưa nhận mã.,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình quên mật khẩu email đã đăng ký mà chưa nhận mã đang cần xử lý liền?",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+m quen mk email da dk ma chua nhan ma nhe,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình quên mật khẩu email đã đăg ký mà chưa nhận mã mình đang thao tác,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khẩu email đã đăng ký mà chưa nhận mã đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình quên mật khẩu email đã đăng ký mà chưa nhận mã; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình quên mật khẩu email đã đăng ký để vào lại hệ thống.,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình quên mật khẩu email đã đăng ký để vào lại hệ thống mình hơi rén?",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m quen mk email da dk de vao lai he thong, roi ma room auc-1024 dc ko",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình quên mật khẩu email đã đăg ký để vào lại hệ thống pls,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khẩu email đã đăng ký để vào lại hệ thống đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình quên mật khẩu email đã đăng ký để vào lại hệ thống; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình quên mật khẩu số điện thoại cũ thì làm sao.,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình quên mật khẩu số điện thoại cũ thì làm sao nhé?",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+m quen mk so dien thoai cu thi lam sao m dang thao tac,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình quên mật khâu số điện thoại cũ thì làm sao vì mình chưa rõ luồng,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khẩu số điện thoại cũ thì làm sao đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình quên mật khẩu số điện thoại cũ thì làm sao; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình quên mật khẩu số điện thoại cũ trước khi login.,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình quên mật khẩu số điện thoại cũ trước khi login, kèm chuyện mã phòng A17 được không?",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+m quen mk so dien thoai cu truoc khi login pls,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình quên mật khâu số điện thoại cũ trước khi login để khỏi làm sai,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khẩu số điện thoại cũ trước khi login đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình quên mật khẩu số điện thoại cũ trước khi login; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình quên mật khẩu số điện thoại cũ vì cần vào đấu giá.,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình quên mật khẩu số điện thoại cũ vì cần vào đấu giá mình đang thao tác?",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+m quen mk so dien thoai cu vi can vao dg vi m chua ro luong,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình quên mật khẩu số điện thoại cũ vì cần vào đấu gía đang cần xử lý liền,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình quên mật khẩu số điện thoại cũ vì cần vào đấu giá đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình quên mật khẩu số điện thoại cũ vì cần vào đấu giá; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình quên mật khẩu số điện thoại cũ mà chưa nhận mã, đồng thời mã phòng SALA-05.",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình quên mật khẩu số điện thoại cũ mà chưa nhận mã pls?",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

@@ -31,7 +31,7 @@ Project mô phỏng một hệ thống đấu giá với các chức năng chín
 
 ## 3.1. Yêu cầu
 
-- JDK 17 trở lên để chạy runtime JavaFX hiện tại
+- JDK 25 để biên dịch và chạy JavaFX 25
 - MySQL 8 trở lên
 - IntelliJ IDEA hoặc IDE tương đương
 
@@ -40,7 +40,7 @@ Project mô phỏng một hệ thống đấu giá với các chức năng chín
 Chạy câu lệnh sau trong MySQL:
 
 ```sql
-CREATE DATABASE auction_system;
+CREATE DATABASE auction_system_v2;
 ```
 
 ## 3.3. Import database
@@ -56,19 +56,29 @@ src/main/resources/database/init_db.sql
 Tạo file:
 
 ```text
-src/main/resources/database.properties
+src/main/resources/db.properties
 ```
 
 Ví dụ:
 
 ```properties
-db.url=jdbc:mysql://localhost:3306/auction_system
+db.url=jdbc:mysql://localhost:3306/auction_system_v2
 db.user=root
 db.password=
 db.driver=com.mysql.cj.jdbc.Driver
 ```
 
 ## 3.5. Chạy chương trình
+
+### Cài đặt Python ChatBot
+
+ChatBot Python cần dùng đúng các version dependency đã pin để tránh lỗi model `LogisticRegression` khác version giữa các máy:
+
+```powershell
+python -m pip install -r Auction_AI\ChatBot\requirements.txt
+```
+
+Nếu file model bị cũ hoặc không tương thích, ChatBot sẽ tự train lại từ dữ liệu trong `Auction_AI\ChatBot\Logist\data\generated` khi khởi động.
 
 ### Chạy server
 
@@ -226,50 +236,60 @@ AuctionSystem/
 ├── .github/
 ├── .idea/
 ├── .mvn/
-├── Auction-System-OOD/
 ├── Auction_AI/
+├── tools/
 ├── src/
 │   └── main/
-│       ├── java/
-│       │   └── com/
-│       │       └── auction/
-│       │           ├── client/
-│       │           │   ├── app/
-│       │           │   │   └── launcher/
-│       │           │   ├── core/
-│       │           │   │   ├── mvvm/
-│       │           │   │   ├── navigation/
-│       │           │   │   └── ui/
-│       │           │   ├── feature/
-│       │           │   │   ├── auth/
-│       │           │   │   ├── controllers/
-│       │           │   │   ├── lobby/
-│       │           │   │   ├── room/
-│       │           │   │   └── viewmodel/
-│       │           │   ├── network/
-│       │           │   │   ├── dispatcher/
-│       │           │   │   ├── messaging/
-│       │           │   │   ├── protocol/
-│       │           │   │   └── socket/
-│       │           │   ├── session/
-│       │           │   └── shared/
-│       │           │       ├── mapper/
-│       │           │       └── support/
-│       │           ├── common/
-│       │           │   ├── dto/
-│       │           │   ├── model/
-│       │           │   └── role/
-│       │           └── server/
-│       │               ├── dao/
-│       │               ├── main/
-│       │               ├── service/
-│       │               └── utils/
+│       ├── java/com/auction/
+│       │   ├── client/
+│       │   │   ├── app/
+│       │   │   │   └── launcher/
+│       │   │   ├── chatbot/
+│       │   │   ├── core/
+│       │   │   │   ├── mvvm/
+│       │   │   │   ├── navigation/
+│       │   │   │   └── ui/
+│       │   │   ├── feature/
+│       │   │   │   ├── auth/
+│       │   │   │   ├── controllers/
+│       │   │   │   ├── lobby/
+│       │   │   │   ├── room/
+│       │   │   │   └── viewmodel/
+│       │   │   ├── network/
+│       │   │   │   ├── dispatcher/
+│       │   │   │   ├── messaging/
+│       │   │   │   ├── protocol/
+│       │   │   │   └── socket/
+│       │   │   ├── service/
+│       │   │   ├── session/
+│       │   │   └── shared/
+│       │   │       ├── mapper/
+│       │   │       └── support/
+│       │   ├── common/
+│       │   │   ├── dto/
+│       │   │   ├── model/
+│       │   │   └── role/
+│       │   └── server/
+│       │       ├── config/
+│       │       ├── dao/
+│       │       ├── handler/
+│       │       ├── main/
+│       │       ├── service/
+│       │       └── utils/
 │       └── resources/
-│           ├── com/
-│           │   └── example/
-│           │       └── auctionprototype/
+│           ├── application.properties
+│           ├── db.properties
+│           ├── db.properties.example
+│           ├── logback.xml
 │           ├── database/
-│           └── Image/
+│           │   └── init_db.sql
+│           └── com/example/auctionprototype/
+│               ├── css/
+│               ├── fxml/
+│               └── images/
+├── *.puml, *.mdj
+├── pom.xml
+├── mvnw, mvnw.cmd
 └── target/
 ```
 
@@ -280,31 +300,36 @@ AuctionSystem/
 - `.github/`: Chứa cấu hình GitHub như workflow hoặc thiết lập phục vụ quản lý mã nguồn.
 - `.idea/`: Chứa cấu hình dự án của IntelliJ IDEA.
 - `.mvn/`: Chứa Maven Wrapper để chạy project mà không cần cài Maven riêng.
-- `Auction-System-OOD/`: Chứa tài liệu hoặc phần thiết kế hướng đối tượng của hệ thống.
-- `Auction_AI/`: Chứa tài liệu hoặc phần mở rộng liên quan đến AI nếu có sử dụng.
+- `Auction_AI/`: Chứa phần AI/chatbot Python dùng để hỗ trợ trả lời trong giao diện client.
+- `tools/`: Chứa công cụ phụ trợ cục bộ, hiện có bộ StarUML phục vụ mở/chỉnh sửa sơ đồ.
+- `*.puml`, `*.mdj`: Chứa sơ đồ PlantUML và StarUML của hệ thống.
+- `pom.xml`: Cấu hình Maven, dependency, plugin và thông tin build project.
+- `mvnw`, `mvnw.cmd`: Maven Wrapper để chạy Maven thống nhất trên các máy.
 - `src/`: Thư mục chính chứa mã nguồn và tài nguyên của ứng dụng.
 - `src/main/`: Chứa mã nguồn chính dùng khi chạy chương trình.
 - `src/main/java/`: Chứa toàn bộ source code Java.
 - `src/main/java/com/auction/`: Namespace gốc của dự án.
 
 - `client/`: Chứa toàn bộ phần xử lý phía client.
-- `client/app/`: Chứa điểm khởi chạy và phần khởi tạo ứng dụng client.
-- `client/app/launcher/`: Chứa các lớp chuyên mở các màn hình giao diện.
-- `client/core/`: Chứa hạ tầng lõi của client.
-- `client/core/mvvm/`: Hỗ trợ tổ chức mã theo mô hình MVVM.
-- `client/core/navigation/`: Quản lý điều hướng giữa các màn hình.
-- `client/core/ui/`: Chứa thành phần giao diện dùng chung.
+- `client/app/`: Chứa entry point JavaFX của client như `Main` và `Launcher`.
+- `client/app/launcher/`: Mở các cửa sổ phụ như Seller Dashboard và Admin Dashboard.
+- `client/chatbot/`: Controller chatbot, fallback message và cầu nối sang Python chatbot.
+- `client/core/`: Chứa các abstraction lõi của client.
+- `client/core/mvvm/`: Thư mục giữ chỗ cho tổ chức MVVM nếu mở rộng thêm.
+- `client/core/navigation/`: Điều hướng giữa login, lobby, phòng đấu giá và dashboard.
+- `client/core/ui/`: Interface chung cho presenter và binder UI.
 - `client/feature/`: Chứa các chức năng nghiệp vụ phía client.
-- `client/feature/auth/`: Xử lý đăng ký, đăng nhập, kiểm tra form xác thực.
+- `client/feature/auth/`: Xử lý form đăng nhập, đăng ký, quên mật khẩu, validator và response xác thực.
 - `client/feature/controllers/`: Chứa controller JavaFX để liên kết FXML với logic xử lý.
-- `client/feature/lobby/`: Xử lý logic sảnh chờ và danh sách phiên đấu giá.
-- `client/feature/room/`: Xử lý logic trong phòng đấu giá như vào phòng, đặt giá, đóng phiên.
-- `client/feature/viewmodel/`: Chứa ViewModel trung gian giữa UI và logic nghiệp vụ.
+- `client/feature/lobby/`: Render danh sách phòng, card đấu giá và thông tin user ở lobby.
+- `client/feature/room/`: Xử lý UI phòng đấu giá như join, bid, chat, timer và đóng phiên.
+- `client/feature/viewmodel/`: Chứa model hiển thị cho auth và lobby.
 - `client/network/`: Chứa toàn bộ logic giao tiếp mạng giữa client và server.
-- `client/network/dispatcher/`: Điều phối và phân loại message từ server.
-- `client/network/messaging/`: Hỗ trợ xử lý dữ liệu thông điệp.
-- `client/network/protocol/`: Định nghĩa action, format message và giao thức trao đổi.
-- `client/network/socket/`: Quản lý kết nối socket và luồng gửi nhận dữ liệu.
+- `client/network/dispatcher/`: Thư mục giữ chỗ cho tầng dispatch nếu tách thêm luồng mạng.
+- `client/network/messaging/`: Router và fallback handler xử lý `Message` server trả về.
+- `client/network/protocol/`: Thư mục giữ chỗ cho hằng số action/protocol nếu chuẩn hóa thêm.
+- `client/network/socket/`: Quản lý socket client, gửi request và lắng nghe response server.
+- `client/service/`: API phía client đóng gói các request gửi lên server.
 - `client/session/`: Lưu trạng thái người dùng hiện tại trên client.
 - `client/shared/`: Chứa các lớp dùng chung phía client.
 - `client/shared/mapper/`: Chuyển đổi dữ liệu giữa DTO, model và dữ liệu hiển thị.
@@ -316,15 +341,23 @@ AuctionSystem/
 - `common/role/`: Chứa enum hoặc lớp quản lý vai trò người dùng.
 
 - `server/`: Chứa toàn bộ phần xử lý phía server.
+- `server/ClientHandler.java`: Xử lý một kết nối socket client, đọc message và gửi response.
+- `server/config/`: Đọc cấu hình ứng dụng như email, SMTP và rate limit.
 - `server/dao/`: Chứa lớp truy xuất dữ liệu tới database.
+- `server/handler/`: Router và handler xử lý từng nhóm action từ client như auth, room, seller, admin.
 - `server/main/`: Chứa lớp khởi động server.
-- `server/service/`: Chứa logic nghiệp vụ chính như tạo phiên, kiểm tra điều kiện, xử lý đấu giá và chốt phiên.
+- `server/service/`: Chứa logic nghiệp vụ chính như xác thực, tạo phiên, đấu giá, chốt phiên, email và reset mật khẩu.
 - `server/utils/`: Chứa các lớp tiện ích hỗ trợ phía server.
 
 - `src/main/resources/`: Chứa tài nguyên không phải mã Java.
-- `resources/com/example/auctionprototype/`: Chứa file FXML, CSS và tài nguyên giao diện JavaFX.
+- `resources/application.properties`: Cấu hình chung của ứng dụng.
+- `resources/db.properties`: Cấu hình kết nối database đang dùng khi chạy.
+- `resources/db.properties.example`: File mẫu cho cấu hình database.
+- `resources/logback.xml`: Cấu hình logging.
+- `resources/com/example/auctionprototype/css/`: Chứa CSS cho các màn hình JavaFX.
+- `resources/com/example/auctionprototype/fxml/`: Chứa FXML của login, lobby, phòng đấu giá, admin, seller và product view.
+- `resources/com/example/auctionprototype/images/`: Chứa hình ảnh phục vụ giao diện JavaFX.
 - `resources/database/`: Chứa file SQL khởi tạo database.
-- `resources/Image/`: Chứa hình ảnh phục vụ giao diện.
 - `target/`: Chứa các file sinh ra sau khi build bằng Maven.
 
 ---
@@ -857,8 +890,8 @@ int PORT = 5000; // thay đổi port ở đây
 ## 11.6. Database configuration
 
 ```properties
-# Trong src/main/resources/database.properties
-db.url=jdbc:mysql://localhost:3306/auction_system
+# Trong src/main/resources/db.properties
+db.url=jdbc:mysql://localhost:3306/auction_system_v2
 db.user=root
 db.password=
 db.driver=com.mysql.cj.jdbc.Driver
@@ -872,7 +905,7 @@ db.driver=com.mysql.cj.jdbc.Driver
 
 - MySQL chưa chạy
 - Sai tài khoản hoặc mật khẩu database
-- Chưa tạo file `database.properties`
+- Chưa tạo file `db.properties`
 
 ## 12.2. Không đăng nhập được
 
@@ -923,6 +956,7 @@ db.driver=com.mysql.cj.jdbc.Driver
 - https://www.dealdash.com/
 
 # 15. Phân công công việc:
+
 - Nguyễn Hữu Hùng:
   + Đăng nhập, Đăng ký
   + AI

@@ -1,0 +1,201 @@
+﻿text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+"Mình muốn xem số dư đặt giá 500k trước khi bid, nhưng mình định đặt giá thêm, rồi nếu hủy thì rollback số dư, nhưng bot phân tích lỗi đang gặp, kèm chuyện mã phòng AUC-1024, trước khi mức tiền 50k.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0
+"Admin ơi, mình muốn xem số dư đặt giá 500k trước khi bid, rồi người thắng bị trừ và seller được cộng mình đang thao tác?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance dat gia 500k truoc khi bid, roi refresh gia live giup m vi m chua ro luong",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư đăt giá 500k trước khi bid, nhưng đang ở màn login đang cần xử lý liền",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư đặt giá 500k trước khi bid, sau đó nâng thêm 100k được không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn xem số dư đặt giá 500k trước khi bid, trước khi tiền sau phiên phải xử lý đúng, rồi refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem số dư đặt giá 500k có bị trừ chưa, trước khi cần xem giá cao nhất hiện tại.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn xem số dư đặt giá 500k có bị trừ chưa, trước khi trước đó tài khoản báo sai mật khẩu, nhưng mức tiền 5 triệu pls?",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance dat gia 500k co bi tru chua, sau do muon vuot nguoi dang dan de khoi lam sai",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư đặt giá 500k có bị trừ chưa, sau đó kiểm tra luồng thanh toán cuối phien mình hơi rén",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư đặt giá 500k có bị trừ chưa, đồng thời giá realtime đang chưa đổi, rồi trước đó tài khoản báo sai mật khẩu đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn xem số dư đặt giá 500k có bị trừ chưa, kèm chuyện sau khi đăng nhập thành công, trước khi mã phòng A17; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem số dư đặt giá 500k có bị cộng sai không, rồi đặt 500k nếu hợp lệ.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn xem số dư đặt giá 500k có bị cộng sai không, nhưng đừng cộng trừ khi seller đóng sớm vì mình chưa rõ luồng?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance dat gia 500k co bi cong sai ko, dong thoi dang theo doi gia hien tai, kem chuyen muc tien +300k dang can xu ly lien",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư đặt giá 500k có bị cộng sai khong, rồi mình vừa login xong, đồng thời đặt 500k nếu hợp lệ nhé",0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư đặt giá 500k có bị cộng sai không, đồng thời chuẩn bị bid mức mới đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn xem số dư đặt giá 500k có bị cộng sai không, đồng thời nếu hủy thì rollback số dư, kèm chuyện bot phân tích lỗi đang gặp; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0
+"Mình muốn xem số dư đặt giá 500k đang hiển thị lạ, sau đó giá mới bị delay.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn xem số dư đặt giá 500k đang hiển thị lạ, đồng thời nếu cần vào lại hệ thống để khỏi làm sai?",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance dat gia 500k dang hien thi la, sau do m dinh dat gia them, truoc khi neu huy thi rollback balance m hoi ren",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư đặt giá 500k đang hiển thị lạ, kèm chuyện người thắng bị trừ và seller được cộng, sau đó mức tiền +75k được khong",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư đặt giá 500k đang hiển thị lạ, kèm chuyện refresh giá live giúp mình, nhưng mã phòng SALA-05 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn xem số dư đặt giá 500k đang hiển thị lạ, sau đó đang ở màn login; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem số dư đặt giá 500k sau khi phiên kết thúc, nhưng nâng thêm 100k được không.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn xem số dư đặt giá 500k sau khi phiên kết thúc, đồng thời tiền sau phiên phải xử lý đúng, kèm chuyện refresh giá live giúp mình đang cần xử lý liền?",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance dat gia 500k sau khi phien ket thuc, roi can xem gia cao nhat hien tai nhe",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư đặt giá 500k sau khi phien kết thúc, rồi trước đó tài khoản báo sai mật khẩu mình đang thao tác",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư đặt giá 500k sau khi phiên kết thúc, đồng thời muốn vượt người đang dẫn, đồng thời mức tiền 2.500.000 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn xem số dư đặt giá 500k sau khi phiên kết thúc, đồng thời kiểm tra luồng thanh toán cuối phiên; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem số dư tham gia phiên này trước khi bid, rồi giá realtime đang chưa đổi, sau đó trước đó tài khoản báo sai mật khẩu.",0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn xem số dư tham gia phiên này trước khi bid, nhưng sau khi đăng nhập thành công mình hơi rén?",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance tham gia phien nay truoc khi bid, sau do dat 500k neu hop le dc ko",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư tham gia phien này trước khi bid, đồng thời đừng cộng trừ khi seller đóng sớm, sau đó mã phòng ROOM-88 pls",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư tham gia phiên này trước khi bid, rồi đang theo dõi giá hiện tại, trước khi bot hướng dẫn bước tiếp theo đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Alo ad, mình muốn xem số dư tham gia phiên này trước khi bid, sau đó mình vừa login xong, kèm chuyện đặt 500k nếu hợp lệ, sau đó mức tiền 1tr2; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem số dư tham gia phiên này có bị trừ chưa, đồng thời chuẩn bị bid mức mới.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn xem số dư tham gia phiên này có bị trừ chưa, đồng thời nếu hủy thì rollback số dư nhé?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance tham gia phien nay co bi tru chua, kem chuyen gia moi bi delay m dang thao tac",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư tham gia phien này có bị trừ chưa, sau đó nếu cần vào lại hệ thống vì mình chưa rõ luồng",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư tham gia phiên này có bị trừ chưa, kèm chuyện mình định đặt giá thêm, rồi nếu hủy thì rollback số dư đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn xem số dư tham gia phiên này có bị trừ chưa, đồng thời người thắng bị trừ và seller được cộng; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem số dư tham gia phiên này có bị cộng sai không, đồng thời refresh giá live giúp mình, sau đó mức tiền 250.000.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn xem số dư tham gia phiên này có bị cộng sai không, kèm chuyện đang ở màn login được không?",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance tham gia phien nay co bi cong sai ko, roi nang them 100k dc ko, kem chuyen ma room bid-09 pls",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư tham gia phien này có bị cộng sai không, sau đó tiền sau phiên phải xử lý đúng, trước khi refresh giá live giúp mình để khỏi làm sai",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư tham gia phiên này có bị cộng sai không, trước khi cần xem giá cao nhất hiện tại đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn xem số dư tham gia phiên này có bị cộng sai không, trước khi trước đó tài khoản báo sai mật khẩu; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem số dư tham gia phiên này đang hiển thị lạ, đồng thời muốn vượt người đang dẫn.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn xem số dư tham gia phiên này đang hiển thị lạ, đồng thời kiểm tra luồng thanh toán cuối phiên, nhưng mức tiền 100k mình đang thao tác?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance tham gia phien nay dang hien thi la, kem chuyen gia realtime dang chua doi, kem chuyen truoc do tk bao sai mk vi m chua ro luong",0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư tham gia phiên này đang hiển thị lạ, sau đó sau khi đăg nhập thành công, đồng thời chatbot nói dễ hiểu giúp mình đang cần xử lý liền",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn xem số dư tham gia phiên này đang hiển thị lạ, nhưng đặt 500k nếu hợp lệ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn xem số dư tham gia phiên này đang hiển thị lạ, trước khi đừng cộng trừ khi seller đóng sớm; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem số dư tham gia phiên này sau khi phiên kết thúc, kèm chuyện đang theo dõi giá hiện tại.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn xem số dư tham gia phiên này sau khi phiên kết thúc, nhưng mình vừa login xong, sau đó đặt 500k nếu hợp lệ, rồi mã phòng GOLD-21 pls?",0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance tham gia phien nay sau khi phien ket thuc, kem chuyen chuan bi bid muc moi, truoc khi muc tien 50k de khoi lam sai",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư tham gia phien này sau khi phiên kết thúc, kèm chuyện nếu hủy thì rollback số dư mình hơi rén",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư tham gia phiên này sau khi phiên kết thúc, sau đó giá mới bị delay đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn xem số dư tham gia phiên này sau khi phiên kết thúc, đồng thời nếu cần vào lại hệ thống; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem số dư account bidder trước khi bid, trước khi mình định đặt giá thêm, rồi nếu hủy thì rollback số dư.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn xem số dư account bidder trước khi bid, nhưng người thắng bị trừ và seller được cộng vì mình chưa rõ luồng?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance account bidder truoc khi bid, nhung refresh gia live giup m dang can xu ly lien",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư account bidder trước khi bid, trước khi đang ở màn login, nhưng mức tiền 5 triệu nhé",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư account bidder trước khi bid, đồng thời nâng thêm 100k được không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn xem số dư account bidder trước khi bid, rồi tiền sau phiên phải xử lý đúng, nhưng refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem số dư account bidder có bị trừ chưa, rồi cần xem giá cao nhất hiện tại, đồng thời mã phòng PHIEN-2026.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn xem số dư account bidder có bị trừ chưa, rồi trước đó tài khoản báo sai mật khẩu để khỏi làm sai?",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance account bidder co bi tru chua, dong thoi muon vuot nguoi dang dan, truoc khi nho bot giai thich them m hoi ren",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn xem số dư account bidder có bị trừ chưa, đồng thời kiểm tra luồng thanh toán cuối phien được không",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư account bidder có bị trừ chưa, kèm chuyện giá realtime đang chưa đổi, kèm chuyện trước đó tài khoản báo sai mật khẩu, rồi mức tiền +300k đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn xem số dư account bidder có bị trừ chưa, sau đó sau khi đăng nhập thành công; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem số dư account bidder có bị cộng sai không, nhưng đặt 500k nếu hợp lệ.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn xem số dư account bidder có bị cộng sai không, trước khi đừng cộng trừ khi seller đóng sớm đang cần xử lý liền?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance account bidder co bi cong sai ko, kem chuyen dang theo doi gia hien tai nhe",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư account bidder có bị cộng sai khong, nhưng mình vừa login xong, sau đó đặt 500k nếu hợp lệ mình đang thao tác",0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư account bidder có bị cộng sai không, kèm chuyện chuẩn bị bid mức mới đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn xem số dư account bidder có bị cộng sai không, kèm chuyện nếu hủy thì rollback số dư, rồi mã phòng P-774, đồng thời mức tiền +75k; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem số dư account bidder đang hiển thị lạ, đồng thời giá mới bị delay.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn xem số dư account bidder đang hiển thị lạ, kèm chuyện nếu cần vào lại hệ thống mình hơi rén?",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance account bidder dang hien thi la, dong thoi m dinh dat gia them, kem chuyen neu huy thi rollback balance dc ko",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư account bidder đang hiển thị lạ, sau đó ngừoi thắng bị trừ và seller được cộng pls",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư account bidder đang hiển thị lạ, sau đó refresh giá live giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn xem số dư account bidder đang hiển thị lạ, đồng thời đang ở màn login; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem số dư account bidder sau khi phiên kết thúc, trước khi nâng thêm 100k được không, trước khi mức tiền 2.500.000.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn xem số dư account bidder sau khi phiên kết thúc, kèm chuyện tiền sau phiên phải xử lý đúng, rồi refresh giá live giúp mình, nhưng bot phân tích lỗi đang gặp nhé?",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0
+"m muon xem balance account bidder sau khi phien ket thuc, nhung can xem gia cao nhat hien tai m dang thao tac",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư account bidder sau khi phien kết thúc, nhưng trước đó tài khoản báo sai mật khẩu vì mình chưa rõ luồng",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư account bidder sau khi phiên kết thúc, kèm chuyện muốn vượt người đang dẫn, kèm chuyện mã phòng AUC-1024 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn xem số dư account bidder sau khi phiên kết thúc, kèm chuyện kiểm tra luồng thanh toán cuối phiên; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem số dư tài khoản của mình trước khi bid, rồi giá realtime đang chưa đổi, sau đó trước đó tài khoản báo sai mật khẩu.",0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn xem số dư tài khoản của mình trước khi bid, nhưng sau khi đăng nhập thành công, sau đó mức tiền 1tr2 được không?",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance tk cua m truoc khi bid, sau do dat 500k neu hop le pls",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư tài khoàn của mình trước khi bid, đồng thời đừng cộng trừ khi seller đóng sớm để khỏi làm sai",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư tài khoản của mình trước khi bid, rồi đang theo dõi giá hiện tại đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn xem số dư tài khoản của mình trước khi bid, sau đó mình vừa login xong, kèm chuyện đặt 500k nếu hợp lệ; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem số dư tài khoản của mình có bị trừ chưa, đồng thời chuẩn bị bid mức mới.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn xem số dư tài khoản của mình có bị trừ chưa, đồng thời nếu hủy thì rollback số dư mình đang thao tác?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance tk cua m co bi tru chua, kem chuyen gia moi bi delay, nhung muc tien 250.000 vi m chua ro luong",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư tài khoàn của mình có bị trừ chưa, sau đó nếu cần vào lại hệ thống, nhưng mã phòng A17 đang cần xử lý liền",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư tài khoản của mình có bị trừ chưa, kèm chuyện mình định đặt giá thêm, rồi nếu hủy thì rollback số dư đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn xem số dư tài khoản của mình có bị trừ chưa, đồng thời người thắng bị trừ và seller được cộng; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem số dư tài khoản của mình có bị cộng sai không, đồng thời refresh giá live giúp mình, kèm chuyện bot phân tích lỗi đang gặp.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, mình muốn xem số dư tài khoản của mình có bị cộng sai không, kèm chuyện đang ở màn login pls?",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance tk cua m co bi cong sai ko, roi nang them 100k dc ko de khoi lam sai",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư tài khoản của mình có bị cộng sai không, sau đó tiền sau phien phải xử lý đúng, trước khi refresh giá live giúp mình, sau đó mức tiền 100k mình hơi rén",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư tài khoản của mình có bị cộng sai không, trước khi cần xem giá cao nhất hiện tại đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn xem số dư tài khoản của mình có bị cộng sai không, trước khi trước đó tài khoản báo sai mật khẩu; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem số dư tài khoản của mình đang hiển thị lạ, đồng thời muốn vượt người đang dẫn.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn xem số dư tài khoản của mình đang hiển thị lạ, đồng thời kiểm tra luồng thanh toán cuối phiên vì mình chưa rõ luồng?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance tk cua m dang hien thi la, kem chuyen gia realtime dang chua doi, kem chuyen truoc do tk bao sai mk, nhung ma room sala-05 dang can xu ly lien",0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư tài khoản của mình đang hiển thị lạ, sau đó sau khi đăg nhập thành công nhé",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư tài khoản của mình đang hiển thị lạ, nhưng đặt 500k nếu hợp lệ, trước khi mức tiền 50k đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn xem số dư tài khoản của mình đang hiển thị lạ, trước khi đừng cộng trừ khi seller đóng sớm; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem số dư tài khoản của mình sau khi phiên kết thúc, kèm chuyện đang theo dõi giá hiện tại.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn xem số dư tài khoản của mình sau khi phiên kết thúc, nhưng mình vừa login xong, sau đó đặt 500k nếu hợp lệ để khỏi làm sai?",0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance tk cua m sau khi phien ket thuc, kem chuyen chuan bi bid muc moi m hoi ren",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư tài khoản của mình sau khi phien kết thúc, kèm chuyện nếu hủy thì rollback số dư được không",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư tài khoản của mình sau khi phiên kết thúc, sau đó giá mới bị delay đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn xem số dư tài khoản của mình sau khi phiên kết thúc, đồng thời nếu cần vào lại hệ thống, sau đó bot hướng dẫn bước tiếp theo, rồi mức tiền 5 triệu; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình muốn xem số dư ví đấu giá trước khi bid, rồi mình định đặt giá thêm, nhưng nếu hủy thì rollback số dư.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn xem số dư ví đấu giá trước khi bid, trước khi người thắng bị trừ và seller được cộng, nhưng mã phòng ROOM-88 đang cần xử lý liền?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance vi dg truoc khi bid, truoc khi refresh gia live giup m nhe",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư ví đấu gía trước khi bid, rồi đang ở màn login mình đang thao tác",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư ví đấu giá trước khi bid, kèm chuyện nâng thêm 100k được không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn xem số dư ví đấu giá trước khi bid, nhưng tiền sau phiên phải xử lý đúng, rồi refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem số dư ví đấu giá có bị trừ chưa, nhưng cần xem giá cao nhất hiện tại, rồi mức tiền +300k.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn xem số dư ví đấu giá có bị trừ chưa, nhưng trước đó tài khoản báo sai mật khẩu mình hơi rén?",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance vi dg co bi tru chua, kem chuyen muon vuot nguoi dang dan dc ko",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư ví đấu giá có bị trừ chưa, kèm chuyện kiểm tra luồng thanh toán cuối phien pls",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư ví đấu giá có bị trừ chưa, sau đó giá realtime đang chưa đổi, đồng thời trước đó tài khoản báo sai mật khẩu đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn xem số dư ví đấu giá có bị trừ chưa, đồng thời sau khi đăng nhập thành công; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem số dư ví đấu giá có bị cộng sai không, trước khi đặt 500k nếu hợp lệ, đồng thời mã phòng BID-09.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn xem số dư ví đấu giá có bị cộng sai không, rồi đừng cộng trừ khi seller đóng sớm, đồng thời mức tiền +75k nhé?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance vi dg co bi cong sai ko, sau do dang theo doi gia hien tai m dang thao tac",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư ví đấu gía có bị cộng sai không, trước khi mình vừa login xong, sau đó đặt 500k nếu hợp lệ vì mình chưa rõ luồng",0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư ví đấu giá có bị cộng sai không, sau đó chuẩn bị bid mức mới, đồng thời chatbot nói dễ hiểu giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình đang bị vướng, mình muốn xem số dư ví đấu giá có bị cộng sai không, sau đó nếu hủy thì rollback số dư; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem số dư ví đấu giá đang hiển thị lạ, kèm chuyện giá mới bị delay.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn xem số dư ví đấu giá đang hiển thị lạ, sau đó nếu cần vào lại hệ thống được không?",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance vi dg dang hien thi la, kem chuyen m dinh dat gia them, roi neu huy thi rollback balance, roi muc tien 2.500.000 pls",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư ví đấu gía đang hiển thị lạ, đồng thời người thắng bị trừ và seller được cộng để khỏi làm sai",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư ví đấu giá đang hiển thị lạ, đồng thời refresh giá live giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn xem số dư ví đấu giá đang hiển thị lạ, kèm chuyện đang ở màn login, nhưng mã phòng GOLD-21; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem số dư ví đấu giá sau khi phiên kết thúc, rồi nâng thêm 100k được không.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn xem số dư ví đấu giá sau khi phiên kết thúc, sau đó tiền sau phiên phải xử lý đúng, trước khi refresh giá live giúp mình mình đang thao tác?",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance vi dg sau khi phien ket thuc, truoc khi can xem gia cao nhat hien tai vi m chua ro luong",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư ví đấu giá sau khi phien kết thúc, trước khi trước đó tài khoản báo sai mật khẩu, sau đó mức tiền 1tr2 đang cần xử lý liền",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư ví đấu giá sau khi phiên kết thúc, sau đó muốn vượt người đang dẫn đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn xem số dư ví đấu giá sau khi phiên kết thúc, sau đó kiểm tra luồng thanh toán cuối phiên; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem số dư màn hình số dư trước khi bid, nhưng giá realtime đang chưa đổi, kèm chuyện trước đó tài khoản báo sai mật khẩu.",0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn xem số dư màn hình số dư trước khi bid, trước khi sau khi đăng nhập thành công pls?",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance man hinh balance truoc khi bid, dong thoi dat 500k neu hop le de khoi lam sai",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư màn hình số dư trước khi bid, kèm chuyện đừng cộng trừ khi seler đóng sớm, đồng thời nhờ chatbot giải thích thêm mình hơi rén",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn xem số dư màn hình số dư trước khi bid, nhưng đang theo dõi giá hiện tại, sau đó mã phòng PHIEN-2026, rồi mức tiền 250.000 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn xem số dư màn hình số dư trước khi bid, đồng thời mình vừa login xong, nhưng đặt 500k nếu hợp lệ; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem số dư màn hình số dư có bị trừ chưa, kèm chuyện chuẩn bị bid mức mới.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn xem số dư màn hình số dư có bị trừ chưa, kèm chuyện nếu hủy thì rollback số dư vì mình chưa rõ luồng?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance man hinh balance co bi tru chua, sau do gia moi bi delay dang can xu ly lien",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư màng hình số dư có bị trừ chưa, đồng thời nếu cần vào lại hệ thống nhé",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư màn hình số dư có bị trừ chưa, sau đó mình định đặt giá thêm, trước khi nếu hủy thì rollback số dư đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn xem số dư màn hình số dư có bị trừ chưa, kèm chuyện người thắng bị trừ và seller được cộng, sau đó mức tiền 100k; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem số dư màn hình số dư có bị cộng sai không, kèm chuyện refresh giá live giúp mình.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn xem số dư màn hình số dư có bị cộng sai không, sau đó đang ở màn login để khỏi làm sai?",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance man hinh balance co bi cong sai ko, nhung nang them 100k dc ko m hoi ren",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư màn hình số dư có bị cộng sai khong, kèm chuyện mã phòng P-774 được không",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư màn hình số dư có bị cộng sai không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn xem số dư màn hình số dư có bị cộng sai không; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem số dư màn hình số dư đang hiển thị lạ, kèm chuyện mức tiền 50k.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn xem số dư màn hình số dư đang hiển thị lạ đang cần xử lý liền?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+m muon xem balance man hinh balance dang hien thi la nhe,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình muốn xem số dư màng hình số dư đang hiển thị lạ mình đang thao tác,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư màn hình số dư đang hiển thị lạ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn xem số dư màn hình số dư đang hiển thị lạ; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn xem số dư màn hình số dư sau khi phiên kết thúc.,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn xem số dư màn hình số dư sau khi phiên kết thúc, đồng thời mức tiền 5 triệu mình hơi rén?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance man hinh balance sau khi phien ket thuc, nhung ma room auc-1024 dc ko",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình muốn xem số dư màn hình số dư sau khi phien kết thúc pls,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư màn hình số dư sau khi phiên kết thúc đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn xem số dư màn hình số dư sau khi phiên kết thúc; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn xem số dư lệnh bid vừa rồi trước khi bid.,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn xem số dư lệnh bid vừa rồi trước khi bid nhé?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem balance lenh bid vua roi truoc khi bid, truoc khi muc tien +300k m dang thao tac",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình muốn xem số dư lệnh bid vừa rồi trước khi bid vì mình chưa rõ luồng,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư lệnh bid vừa rồi trước khi bid đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn xem số dư lệnh bid vừa rồi trước khi bid; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn xem số dư lệnh bid vừa rồi có bị trừ chưa.,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn xem số dư lệnh bid vừa rồi có bị trừ chưa, kèm chuyện mã phòng A17 được không?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+m muon xem balance lenh bid vua roi co bi tru chua pls,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư lệnh bid vừa rồi có bị trừ chưa, trước khi mức tiền +75k để khỏi làm sai",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư lệnh bid vừa rồi có bị trừ chưa đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn xem số dư lệnh bid vừa rồi có bị trừ chưa; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn xem số dư lệnh bid vừa rồi có bị cộng sai không.,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn xem số dư lệnh bid vừa rồi có bị cộng sai không mình đang thao tác?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+m muon xem balance lenh bid vua roi co bi cong sai ko vi m chua ro luong,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình muốn xem số dư lệnh bid vừa rồi có bị cộng sai khong đang cần xử lý liền,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem số dư lệnh bid vừa rồi có bị cộng sai không, kèm chuyện mức tiền 2.500.000 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn xem số dư lệnh bid vừa rồi có bị cộng sai không; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem số dư lệnh bid vừa rồi đang hiển thị lạ, kèm chuyện mã phòng SALA-05.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn xem số dư lệnh bid vừa rồi đang hiển thị lạ pls?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

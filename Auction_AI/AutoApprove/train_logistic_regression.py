@@ -46,7 +46,7 @@ def main():
     df["minimum_join_ratio"] = df["minimum_join_amount"] / df["start_price"]
     df["bid_step_ratio"] = df["bid_step"] / df["start_price"]
 
-    X = df.drop(columns=["auto_approve", "review_status", "description_style", "targeted_risk_type", "category"], errors="ignore")
+    X = df.drop(columns=["auto_approve", "review_status", "description_style", "targeted_risk_type"], errors="ignore")
     y = df["auto_approve"]
 
     # =========================

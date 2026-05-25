@@ -1,0 +1,201 @@
+﻿text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+"Mình muốn đăng nhập tài khoản bidder đang báo sai, trước khi vì mình quên mật khẩu, sau đó đừng hiện nhầm chức năng seller, trước khi bot phân tích lỗi đang gặp, kèm chuyện mã phòng AUC-1024.",0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Admin ơi, mình muốn đăng nhập tài khoản bidder đang báo sai, nhưng kiểm tra quyền user trước mình đang thao tác?",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon login tk bidder dang bao sai, kem chuyen nut tham gia room dang mo vi m chua ro luong",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăg nhập tài khoản bidder đang báo sai, rồi chatbot nói dễ hiểu giúp mình đang cần xử lý liền",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn đăng nhập tài khoản bidder đang báo sai, nhưng để mình lấy lại tài khoản đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn đăng nhập tài khoản bidder đang báo sai, nhưng role của mình đang bị lẫn, rồi nút tham gia phòng đang mờ; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đăng nhập tài khoản bidder trước khi vào lobby, nhưng mình đang muốn join room.",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn đăng nhập tài khoản bidder trước khi vào lobby, trước khi trợ lý ảo trả lời ngắn gọn pls?",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"m muon login tk bidder truoc khi vao lobby, nhung ma dat lai chua ve de khoi lam sai",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăg nhập tài khoản bidder trước khi vào lobby, sau đó cần đúng quyền bidder mình hơi rén",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăng nhập tài khoản bidder trước khi vào lobby, kèm chuyện để mình vào phòng đấu giá, rồi trợ lý ảo trả lời ngắn gọn đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, mình muốn đăng nhập tài khoản bidder trước khi vào lobby, rồi bot hướng dẫn bước tiếp theo, rồi mã phòng A17; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình muốn đăng nhập tài khoản bidder vì mình cần đấu giá, kèm chuyện mật khẩu cũ không nhớ nữa.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn đăng nhập tài khoản bidder vì mình cần đấu giá, sau đó vì tài khoản này không phải admin vì mình chưa rõ luồng?",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon login tk bidder vi m can dg, dong thoi can nhap ma room truoc dang can xu ly lien",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăg nhập tài khoản bidder vì mình cần đấu giá, sau đó nhờ chatbot giải thích thêm, kèm chuyện mật khẩu cũ không nhớ nữa nhé",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn đăng nhập tài khoản bidder vì mình cần đấu giá, kèm chuyện nếu phải reset pass đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn đăng nhập tài khoản bidder vì mình cần đấu giá, kèm chuyện đừng hiện nhầm chức năng seller, rồi bot phân tích lỗi đang gặp; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình muốn đăng nhập tài khoản bidder mà không rõ lỗi gì, trước khi vào room hiện tại giúp mình.",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn đăng nhập tài khoản bidder mà không rõ lỗi gì, kèm chuyện bot phân tích lỗi đang gặp để khỏi làm sai?",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"m muon login tk bidder ma ko ro loi gi, truoc khi vi m quen mk, sau do dung hien nham chuc nang seller m hoi ren",0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăg nhập tài khoản bidder mà không rõ lỗi gì, nhưng kiểm tra quyền user trước được không",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăng nhập tài khoản bidder mà không rõ lỗi gì, kèm chuyện nút tham gia phòng đang mờ, nhưng mã phòng SALA-05 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn đăng nhập tài khoản bidder mà không rõ lỗi gì, rồi chatbot nói dễ hiểu giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình muốn đăng nhập tài khoản bidder sau khi đổi mật khẩu, trước khi để mình lấy lại tài khoản.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn đăng nhập tài khoản bidder sau khi đổi mật khẩu, trước khi role của mình đang bị lẫn, rồi nút tham gia phòng đang mờ đang cần xử lý liền?",0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon login tk bidder sau khi doi mk, kem chuyen m dang muon join room nhe",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăg nhập tài khoản bidder sau khi đổi mật khẩu, sau đó trợ lý ảo trả lời ngắn gọn mình đang thao tác",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn đăng nhập tài khoản bidder sau khi đổi mật khẩu, kèm chuyện mã đặt lại chưa về đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn đăng nhập tài khoản bidder sau khi đổi mật khẩu, rồi cần đúng quyền bidder; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đăng nhập tài khoản seller đang báo sai, nhưng để mình vào phòng đấu giá, rồi trợ lý ảo trả lời ngắn gọn.",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Cứu mình với, mình muốn đăng nhập tài khoản seller đang báo sai, sau đó bot hướng dẫn bước tiếp theo mình hơi rén?",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"m muon login tk seller dang bao sai, nhung mk cu ko nho nua dc ko",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăg nhập tài khoản seller đang báo sai, trước khi vì tài khoản này không phải admin, nhưng mã phòng ROOM-88 pls",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăng nhập tài khoản seller đang báo sai, rồi cần nhập mã phòng trước, trước khi bot hướng dẫn bước tiếp theo đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Alo ad, mình muốn đăng nhập tài khoản seller đang báo sai, trước khi nhờ chatbot giải thích thêm, sau đó mật khẩu cũ không nhớ nữa; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình muốn đăng nhập tài khoản seller trước khi vào lobby, kèm chuyện nếu phải reset pass.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn đăng nhập tài khoản seller trước khi vào lobby, kèm chuyện đừng hiện nhầm chức năng seller nhé?",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon login tk seller truoc khi vao lobby, sau do vao room hien tai giup m m dang thao tac",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăg nhập tài khoản seller trước khi vào lobby, trước khi bot phân tích lỗi đang gặp vì mình chưa rõ luồng",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn đăng nhập tài khoản seller trước khi vào lobby, sau đó vì mình quên mật khẩu, kèm chuyện đừng hiện nhầm chức năng seller đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn đăng nhập tài khoản seller trước khi vào lobby, kèm chuyện kiểm tra quyền user trước; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đăng nhập tài khoản seller vì mình cần đấu giá, trước khi nút tham gia phòng đang mờ.",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn đăng nhập tài khoản seller vì mình cần đấu giá, đồng thời chatbot nói dễ hiểu giúp mình được không?",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"m muon login tk seller vi m can dg, kem chuyen de m lay lai tk, dong thoi ma room bid-09 pls",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăg nhập tài khoản seller vì mình cần đấu giá, kèm chuyện role của mình đang bị lẫn, rồi nút tham gia phòng đang mờ để khỏi làm sai",0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăng nhập tài khoản seller vì mình cần đấu giá, nhưng mình đang muốn join room đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn đăng nhập tài khoản seller vì mình cần đấu giá, trước khi trợ lý ảo trả lời ngắn gọn; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình muốn đăng nhập tài khoản seller mà không rõ lỗi gì, đồng thời mã đặt lại chưa về.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn đăng nhập tài khoản seller mà không rõ lỗi gì, trước khi cần đúng quyền bidder mình đang thao tác?",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon login tk seller ma ko ro loi gi, nhung de m vao room dg, roi tro ly ao tra loi ngan gon vi m chua ro luong",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn đăg nhập tài khoản seller mà không rõ lỗi gì, sau đó bot hướng dẫn bước tiếp theo đang cần xử lý liền",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn đăng nhập tài khoản seller mà không rõ lỗi gì, nhưng mật khẩu cũ không nhớ nữa đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn đăng nhập tài khoản seller mà không rõ lỗi gì, trước khi vì tài khoản này không phải admin; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đăng nhập tài khoản seller sau khi đổi mật khẩu, nhưng cần nhập mã phòng trước.",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn đăng nhập tài khoản seller sau khi đổi mật khẩu, rồi nhờ chatbot giải thích thêm, đồng thời mật khẩu cũ không nhớ nữa, sau đó mã phòng GOLD-21 pls?",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"m muon login tk seller sau khi doi mk, truoc khi neu phai reset pass de khoi lam sai",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăg nhập tài khoản seller sau khi đổi mật khẩu, trước khi đừng hiện nhầm chức năng seller mình hơi rén",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăng nhập tài khoản seller sau khi đổi mật khẩu, rồi vào room hiện tại giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn đăng nhập tài khoản seller sau khi đổi mật khẩu, sau đó bot phân tích lỗi đang gặp; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình muốn đăng nhập username hiện tại đang báo sai, sau đó vì mình quên mật khẩu, kèm chuyện đừng hiện nhầm chức năng seller.",0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn đăng nhập username hiện tại đang báo sai, kèm chuyện kiểm tra quyền user trước vì mình chưa rõ luồng?",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon login username hien tai dang bao sai, truoc khi nut tham gia room dang mo dang can xu ly lien",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăg nhập username hiện tại đang báo sai, đồng thời chatbot nói dễ hiểu giúp mình nhé",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn đăng nhập username hiện tại đang báo sai, kèm chuyện để mình lấy lại tài khoản đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn đăng nhập username hiện tại đang báo sai, kèm chuyện role của mình đang bị lẫn, rồi nút tham gia phòng đang mờ; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đăng nhập username hiện tại trước khi vào lobby, kèm chuyện mình đang muốn join room, sau đó mã phòng PHIEN-2026.",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn đăng nhập username hiện tại trước khi vào lobby, sau đó trợ lý ảo trả lời ngắn gọn để khỏi làm sai?",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"m muon login username hien tai truoc khi vao lobby, kem chuyen ma dat lai chua ve, dong thoi nho bot giai thich them m hoi ren",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn đăg nhập username hiện tại trước khi vào lobby, rồi cần đúng quyền bidder được không",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăng nhập username hiện tại trước khi vào lobby, trước khi để mình vào phòng đấu giá, rồi trợ lý ảo trả lời ngắn gọn đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, mình muốn đăng nhập username hiện tại trước khi vào lobby, đồng thời bot hướng dẫn bước tiếp theo; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình muốn đăng nhập username hiện tại vì mình cần đấu giá, trước khi mật khẩu cũ không nhớ nữa.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn đăng nhập username hiện tại vì mình cần đấu giá, rồi vì tài khoản này không phải admin đang cần xử lý liền?",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon login username hien tai vi m can dg, nhung can nhap ma room truoc nhe",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăg nhập username hiện tại vì mình cần đấu giá, rồi nhờ chatbot giải thích thêm, đồng thời mật khẩu cũ không nhớ nữa mình đang thao tác",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn đăng nhập username hiện tại vì mình cần đấu giá, trước khi nếu phải reset pass đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn đăng nhập username hiện tại vì mình cần đấu giá, trước khi đừng hiện nhầm chức năng seller, rồi mã phòng P-774; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đăng nhập username hiện tại mà không rõ lỗi gì, sau đó vào room hiện tại giúp mình.",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn đăng nhập username hiện tại mà không rõ lỗi gì, trước khi bot phân tích lỗi đang gặp mình hơi rén?",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"m muon login username hien tai ma ko ro loi gi, sau do vi m quen mk, kem chuyen dung hien nham chuc nang seller dc ko",0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăg nhập username hiện tại mà không rõ lỗi gì, kèm chuyện kiểm tra quyền user trước pls",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăng nhập username hiện tại mà không rõ lỗi gì, trước khi nút tham gia phòng đang mờ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn đăng nhập username hiện tại mà không rõ lỗi gì, đồng thời chatbot nói dễ hiểu giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình muốn đăng nhập username hiện tại sau khi đổi mật khẩu, sau đó để mình lấy lại tài khoản.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn đăng nhập username hiện tại sau khi đổi mật khẩu, sau đó role của mình đang bị lẫn, trước khi nút tham gia phòng đang mờ, rồi bot phân tích lỗi đang gặp nhé?",0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"m muon login username hien tai sau khi doi mk, truoc khi m dang muon join room m dang thao tac",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăg nhập username hiện tại sau khi đổi mật khẩu, rồi trợ lý ảo trả lời ngắn gọn vì mình chưa rõ luồng",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn đăng nhập username hiện tại sau khi đổi mật khẩu, trước khi mã đặt lại chưa về, kèm chuyện mã phòng AUC-1024 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn đăng nhập username hiện tại sau khi đổi mật khẩu, đồng thời cần đúng quyền bidder; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đăng nhập mật khẩu đã lưu đang báo sai, đồng thời để mình vào phòng đấu giá, kèm chuyện trợ lý ảo trả lời ngắn gọn.",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, mình muốn đăng nhập mật khẩu đã lưu đang báo sai, trước khi bot hướng dẫn bước tiếp theo được không?",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"m muon login mk da luu dang bao sai, dong thoi mk cu ko nho nua pls",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăg nhập mật khẩu đã lưu đang báo sai, kèm chuyện vì tài khoản này không phải admin để khỏi làm sai",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăng nhập mật khẩu đã lưu đang báo sai, sau đó cần nhập mã phòng trước đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn đăng nhập mật khẩu đã lưu đang báo sai, kèm chuyện nhờ chatbot giải thích thêm, sau đó mật khẩu cũ không nhớ nữa; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình muốn đăng nhập mật khẩu đã lưu trước khi vào lobby, nhưng nếu phải reset pass.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn đăng nhập mật khẩu đã lưu trước khi vào lobby, nhưng đừng hiện nhầm chức năng seller mình đang thao tác?",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon login mk da luu truoc khi vao lobby, truoc khi vao room hien tai giup m vi m chua ro luong",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăg nhập mật khẩu đã lưu trước khi vào lobby, kèm chuyện bot phân tích lỗi đang gặp, trước khi mã phòng A17 đang cần xử lý liền",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn đăng nhập mật khẩu đã lưu trước khi vào lobby, trước khi vì mình quên mật khẩu, sau đó đừng hiện nhầm chức năng seller đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn đăng nhập mật khẩu đã lưu trước khi vào lobby, nhưng kiểm tra quyền user trước; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đăng nhập mật khẩu đã lưu vì mình cần đấu giá, kèm chuyện nút tham gia phòng đang mờ, rồi bot phân tích lỗi đang gặp.",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, mình muốn đăng nhập mật khẩu đã lưu vì mình cần đấu giá, rồi chatbot nói dễ hiểu giúp mình pls?",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"m muon login mk da luu vi m can dg, nhung de m lay lai tk de khoi lam sai",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăg nhập mật khẩu đã lưu vì mình cần đấu giá, nhưng role của mình đang bị lẫn, rồi nút tham gia phòng đang mờ mình hơi rén",0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăng nhập mật khẩu đã lưu vì mình cần đấu giá, đồng thời mình đang muốn join room đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn đăng nhập mật khẩu đã lưu vì mình cần đấu giá, kèm chuyện trợ lý ảo trả lời ngắn gọn; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình muốn đăng nhập mật khẩu đã lưu mà không rõ lỗi gì, rồi mã đặt lại chưa về.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn đăng nhập mật khẩu đã lưu mà không rõ lỗi gì, kèm chuyện cần đúng quyền bidder vì mình chưa rõ luồng?",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon login mk da luu ma ko ro loi gi, dong thoi de m vao room dg, kem chuyen tro ly ao tra loi ngan gon, nhung ma room sala-05 dang can xu ly lien",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn đăg nhập mật khẩu đã lưu mà không rõ lỗi gì, trước khi bot hướng dẫn bước tiếp theo nhé",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn đăng nhập mật khẩu đã lưu mà không rõ lỗi gì, đồng thời mật khẩu cũ không nhớ nữa đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn đăng nhập mật khẩu đã lưu mà không rõ lỗi gì, kèm chuyện vì tài khoản này không phải admin; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đăng nhập mật khẩu đã lưu sau khi đổi mật khẩu, đồng thời cần nhập mã phòng trước.",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn đăng nhập mật khẩu đã lưu sau khi đổi mật khẩu, sau đó nhờ chatbot giải thích thêm, kèm chuyện mật khẩu cũ không nhớ nữa để khỏi làm sai?",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"m muon login mk da luu sau khi doi mk, kem chuyen neu phai reset pass m hoi ren",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăg nhập mật khẩu đã lưu sau khi đổi mật khẩu, kèm chuyện đừng hiện nhầm chức năng seller được không",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăng nhập mật khẩu đã lưu sau khi đổi mật khẩu, sau đó vào room hiện tại giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn đăng nhập mật khẩu đã lưu sau khi đổi mật khẩu, trước khi bot phân tích lỗi đang gặp; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình muốn đăng nhập account của mình đang báo sai, trước khi vì mình quên mật khẩu, sau đó đừng hiện nhầm chức năng seller.",0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn đăng nhập account của mình đang báo sai, nhưng kiểm tra quyền user trước, nhưng mã phòng ROOM-88 đang cần xử lý liền?",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon login account cua m dang bao sai, kem chuyen nut tham gia room dang mo nhe",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăg nhập account của mình đang báo sai, rồi chatbot nói dễ hiểu giúp mình mình đang thao tác",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn đăng nhập account của mình đang báo sai, nhưng để mình lấy lại tài khoản đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn đăng nhập account của mình đang báo sai, nhưng role của mình đang bị lẫn, rồi nút tham gia phòng đang mờ; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đăng nhập account của mình trước khi vào lobby, nhưng mình đang muốn join room.",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn đăng nhập account của mình trước khi vào lobby, trước khi trợ lý ảo trả lời ngắn gọn mình hơi rén?",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"m muon login account cua m truoc khi vao lobby, nhung ma dat lai chua ve dc ko",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăg nhập account của mình trước khi vào lobby, sau đó cần đúng quyền bidder pls",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăng nhập account của mình trước khi vào lobby, kèm chuyện để mình vào phòng đấu giá, rồi trợ lý ảo trả lời ngắn gọn đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Alo ad, mình muốn đăng nhập account của mình trước khi vào lobby, rồi bot hướng dẫn bước tiếp theo; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình muốn đăng nhập account của mình vì mình cần đấu giá, kèm chuyện mật khẩu cũ không nhớ nữa, đồng thời mã phòng BID-09.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn đăng nhập account của mình vì mình cần đấu giá, sau đó vì tài khoản này không phải admin nhé?",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon login account cua m vi m can dg, dong thoi can nhap ma room truoc m dang thao tac",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăg nhập account của mình vì mình cần đấu giá, sau đó nhờ chatbot giải thích thêm, kèm chuyện mật khẩu cũ không nhớ nữa vì mình chưa rõ luồng",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn đăng nhập account của mình vì mình cần đấu giá, kèm chuyện nếu phải reset pass, kèm chuyện chatbot nói dễ hiểu giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình đang bị vướng, mình muốn đăng nhập account của mình vì mình cần đấu giá, kèm chuyện đừng hiện nhầm chức năng seller; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đăng nhập account của mình mà không rõ lỗi gì, trước khi vào room hiện tại giúp mình.",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn đăng nhập account của mình mà không rõ lỗi gì, kèm chuyện bot phân tích lỗi đang gặp được không?",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"m muon login account cua m ma ko ro loi gi, truoc khi vi m quen mk, sau do dung hien nham chuc nang seller pls",0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăg nhập account của mình mà không rõ lỗi gì, nhưng kiểm tra quyền user trước để khỏi làm sai",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăng nhập account của mình mà không rõ lỗi gì, kèm chuyện nút tham gia phòng đang mờ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn đăng nhập account của mình mà không rõ lỗi gì, rồi chatbot nói dễ hiểu giúp mình, trước khi mã phòng GOLD-21; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình muốn đăng nhập account của mình sau khi đổi mật khẩu, trước khi để mình lấy lại tài khoản.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn đăng nhập account của mình sau khi đổi mật khẩu, trước khi role của mình đang bị lẫn, rồi nút tham gia phòng đang mờ mình đang thao tác?",0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon login account cua m sau khi doi mk, kem chuyen m dang muon join room vi m chua ro luong",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăg nhập account của mình sau khi đổi mật khẩu, sau đó trợ lý ảo trả lời ngắn gọn đang cần xử lý liền",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn đăng nhập account của mình sau khi đổi mật khẩu, kèm chuyện mã đặt lại chưa về đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn đăng nhập account của mình sau khi đổi mật khẩu, rồi cần đúng quyền bidder; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đăng nhập máy mới đang báo sai, sau đó để mình vào phòng đấu giá, trước khi trợ lý ảo trả lời ngắn gọn.",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, mình muốn đăng nhập máy mới đang báo sai, nhưng bot hướng dẫn bước tiếp theo pls?",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"m muon login may moi dang bao sai, sau do mk cu ko nho nua de khoi lam sai",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăg nhập máy mới đang báo sai, đồng thời vì tài khoản này không phải admin, trước khi nhờ chatbot giải thích thêm mình hơi rén",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn đăng nhập máy mới đang báo sai, kèm chuyện cần nhập mã phòng trước, sau đó mã phòng PHIEN-2026 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn đăng nhập máy mới đang báo sai, đồng thời nhờ chatbot giải thích thêm, nhưng mật khẩu cũ không nhớ nữa; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình muốn đăng nhập máy mới trước khi vào lobby, rồi nếu phải reset pass.",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn đăng nhập máy mới trước khi vào lobby, rồi đừng hiện nhầm chức năng seller vì mình chưa rõ luồng?",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon login may moi truoc khi vao lobby, nhung vao room hien tai giup m dang can xu ly lien",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăg nhập máy mới trước khi vào lobby, đồng thời bot phân tích lỗi đang gặp nhé",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn đăng nhập máy mới trước khi vào lobby, nhưng vì mình quên mật khẩu, sau đó đừng hiện nhầm chức năng seller đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn đăng nhập máy mới trước khi vào lobby, rồi kiểm tra quyền user trước; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đăng nhập máy mới vì mình cần đấu giá, đồng thời nút tham gia phòng đang mờ.",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn đăng nhập máy mới vì mình cần đấu giá, trước khi chatbot nói dễ hiểu giúp mình để khỏi làm sai?",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"m muon login may moi vi m can dg, roi de m lay lai tk m hoi ren",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăg nhập máy mới vì mình cần đấu giá, đồng thời mã phòng P-774 được không",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăng nhập máy mới vì mình cần đấu giá đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn đăng nhập máy mới vì mình cần đấu giá; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn đăng nhập máy mới mà không rõ lỗi gì.,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn đăng nhập máy mới mà không rõ lỗi gì đang cần xử lý liền?",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+m muon login may moi ma ko ro loi gi nhe,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình muốn đăg nhập máy mới mà không rõ lỗi gì mình đang thao tác,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăng nhập máy mới mà không rõ lỗi gì đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn đăng nhập máy mới mà không rõ lỗi gì; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn đăng nhập máy mới sau khi đổi mật khẩu.,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn đăng nhập máy mới sau khi đổi mật khẩu mình hơi rén?",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon login may moi sau khi doi mk, sau do ma room auc-1024 dc ko",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình muốn đăg nhập máy mới sau khi đổi mật khẩu pls,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăng nhập máy mới sau khi đổi mật khẩu đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn đăng nhập máy mới sau khi đổi mật khẩu; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn đăng nhập trình duyệt khác đang báo sai.,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn đăng nhập trình duyệt khác đang báo sai nhé?",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+m muon login trinh duyet khac dang bao sai m dang thao tac,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình muốn đăg nhập trình duyệt khác đang báo sai vì mình chưa rõ luồng,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăng nhập trình duyệt khác đang báo sai đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn đăng nhập trình duyệt khác đang báo sai; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn đăng nhập trình duyệt khác trước khi vào lobby.,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn đăng nhập trình duyệt khác trước khi vào lobby, nhưng mã phòng A17 được không?",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+m muon login trinh duyet khac truoc khi vao lobby pls,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình muốn đăg nhập trình duyệt khác trước khi vào lobby để khỏi làm sai,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăng nhập trình duyệt khác trước khi vào lobby đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn đăng nhập trình duyệt khác trước khi vào lobby; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn đăng nhập trình duyệt khác vì mình cần đấu giá.,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn đăng nhập trình duyệt khác vì mình cần đấu giá mình đang thao tác?",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+m muon login trinh duyet khac vi m can dg vi m chua ro luong,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình muốn đăg nhập trình duyệt khác vì mình cần đấu giá đang cần xử lý liền,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăng nhập trình duyệt khác vì mình cần đấu giá đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn đăng nhập trình duyệt khác vì mình cần đấu giá; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đăng nhập trình duyệt khác mà không rõ lỗi gì, sau đó mã phòng SALA-05.",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn đăng nhập trình duyệt khác mà không rõ lỗi gì pls?",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

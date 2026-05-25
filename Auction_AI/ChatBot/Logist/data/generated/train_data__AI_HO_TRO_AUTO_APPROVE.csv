@@ -1,0 +1,201 @@
+﻿text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+AI có tự duyệt phiên đấu giá này không rồi gửi tiếp sang admin duyệt tay nếu chưa chắc.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+"Admin ơi, AI có tự duyệt phiên đấu giá này không và check xem dữ liệu tạo phiên có thiếu trường nào không mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+ai co tu duyet phien dg nay ko kem thong bao trang thai cho seller biet ket qua vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0
+AI có tự duyệt phien đấu giá này không trước khi phiên được đưa lên danh sách công khai nhé,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"AI có tự duyệt phiên đấu giá này không, vì tôi vừa tạo yêu cầu phiên mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Ê cho hỏi, AI có tự duyệt phiên đấu giá này không và soi cả phần chi tiết sản phẩm đang bán; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Hệ thống auto approve có nhận phiên của seller không, nếu phát hiện mô tả kiểu gian lận thì gắn cảnh báo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+"Help với, hệ thống auto approve có nhận phiên của seller không rồi báo cho chatbot giải thích ngắn gọn giúp tôi để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+he thong auto approve co nhan phien cua seller ko nhung van phai giu yc duyet phien dung luong dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0
+"hệ thống auto approve có nhận phien của seller không và kiểm tra luôn title, mô tả, giá khởi điểm pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+"hệ thống auto approve có nhận phiên của seller không để seller biết cần sửa gì trước khi gửi lại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,1,0
+"Này ad, hệ thống auto approve có nhận phiên của seller không, vì nội dung có vẻ nhạy cảm nên cần fallback an toàn; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0
+Mô hình tự động duyệt sản phẩm này đã chạy chưa rồi gửi tiếp sang admin duyệt tay nếu chưa chắc.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+"Admin ơi, mô hình tự động duyệt sản phẩm này đã chạy chưa và check xem dữ liệu tạo phiên có thiếu trường nào không mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+mo hinh auto duyet sp nay da chay chua kem thong bao trang thai cho seller biet ket qua vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0
+mô hình tự động duyệt sản phẩm này đã chạy chưa trước khi phien được đưa lên danh sách công khai nhé,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"mô hình tự động duyệt sản phẩm này đã chạy chưa, vì tôi vừa tạo yêu cầu phiên mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Ê cho hỏi, mô hình tự động duyệt sản phẩm này đã chạy chưa và soi cả phần chi tiết sản phẩm đang bán; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Phiên này có được AI duyệt nhanh không, nếu phát hiện mô tả kiểu gian lận thì gắn cảnh báo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+"Help với, phiên này có được AI duyệt nhanh không rồi báo cho chatbot giải thích ngắn gọn giúp tôi để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+phien nay co dc ai duyet nhanh ko nhung van phai giu yc duyet phien dung luong dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0
+"phien này có được AI duyệt nhanh không và kiểm tra luôn title, mô tả, giá khởi điểm pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+"phiên này có được AI duyệt nhanh không để seller biết cần sửa gì trước khi gửi lại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,1,0
+"Này ad, phiên này có được AI duyệt nhanh không, vì nội dung có vẻ nhạy cảm nên cần fallback an toàn; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0
+Tôi muốn biết auto approve đánh giá listing của tôi thế nào rồi gửi tiếp sang admin duyệt tay nếu chưa chắc.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+"Admin ơi, tôi muốn biết auto approve đánh giá listing của tôi thế nào và check xem dữ liệu tạo phiên có thiếu trường nào không mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+toi muon biet auto approve danh gia listing cua toi the nao kem thong bao trang thai cho seller biet ket qua vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0
+tôi muốn biết auto approve đánh giá listing của tôi thế nào trước khi phien được đưa lên danh sách công khai nhé,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"tôi muốn biết auto approve đánh giá listing của tôi thế nào, vì tôi vừa tạo yêu cầu phiên mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Ê cho hỏi, tôi muốn biết auto approve đánh giá listing của tôi thế nào và soi cả phần chi tiết sản phẩm đang bán; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"AI có chặn yêu cầu tạo phiên của tôi không, nếu phát hiện mô tả kiểu gian lận thì gắn cảnh báo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+"Help với, AI có chặn yêu cầu tạo phiên của tôi không rồi báo cho chatbot giải thích ngắn gọn giúp tôi để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+ai co chan yc tao phien cua toi ko nhung van phai giu yc duyet phien dung luong dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0
+"AI có chặn yêu cầu tạo phien của tôi không và kiểm tra luôn title, mô tả, giá khởi điểm pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+"AI có chặn yêu cầu tạo phiên của tôi không để seller biết cần sửa gì trước khi gửi lại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,1,0
+"Này ad, AI có chặn yêu cầu tạo phiên của tôi không, vì nội dung có vẻ nhạy cảm nên cần fallback an toàn; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0
+Nút tự động duyệt đang trả kết quả gì rồi gửi tiếp sang admin duyệt tay nếu chưa chắc.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+"Admin ơi, nút tự động duyệt đang trả kết quả gì và check xem dữ liệu tạo phiên có thiếu trường nào không mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+nut auto duyet dang tra ket qua gi kem thong bao trang thai cho seller biet ket qua vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0
+nút tự động duyệt đang trả kết quả gì trước khi phien được đưa lên danh sách công khai nhé,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"nút tự động duyệt đang trả kết quả gì, vì tôi vừa tạo yêu cầu phiên mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Ê cho hỏi, nút tự động duyệt đang trả kết quả gì và soi cả phần chi tiết sản phẩm đang bán; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Auto approve có đủ tự tin cho phiên này không, nếu phát hiện mô tả kiểu gian lận thì gắn cảnh báo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+"Help với, auto approve có đủ tự tin cho phiên này không rồi báo cho chatbot giải thích ngắn gọn giúp tôi để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+auto approve co du tu tin cho phien nay ko nhung van phai giu yc duyet phien dung luong dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0
+"auto approve có đủ tự tin cho phien này không và kiểm tra luôn title, mô tả, giá khởi điểm pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+"auto approve có đủ tự tin cho phiên này không để seller biết cần sửa gì trước khi gửi lại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,1,0
+"Này ad, auto approve có đủ tự tin cho phiên này không, vì nội dung có vẻ nhạy cảm nên cần fallback an toàn; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0
+Mô hình duyệt tự động báo pass hay fail rồi gửi tiếp sang admin duyệt tay nếu chưa chắc.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+"Admin ơi, mô hình duyệt tự động báo pass hay fail và check xem dữ liệu tạo phiên có thiếu trường nào không mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+mo hinh duyet auto bao pass hay fail kem thong bao trang thai cho seller biet ket qua vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0
+mô hình duyệt tự động báo pass hay fail trước khi phien được đưa lên danh sách công khai nhé,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"mô hình duyệt tự động báo pass hay fail, vì tôi vừa tạo yêu cầu phiên mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Ê cho hỏi, mô hình duyệt tự động báo pass hay fail và soi cả phần chi tiết sản phẩm đang bán; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Tôi muốn xem lý do AI không duyệt sản phẩm, nếu phát hiện mô tả kiểu gian lận thì gắn cảnh báo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+"Help với, tôi muốn xem lý do AI không duyệt sản phẩm rồi báo cho chatbot giải thích ngắn gọn giúp tôi để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+toi muon xem ly do ai ko duyet sp nhung van phai giu yc duyet phien dung luong dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0
+"tôi muốn xem lý do AI không duyẹt sản phẩm và kiểm tra luôn title, mô tả, giá khởi điểm pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+"tôi muốn xem lý do AI không duyệt sản phẩm để seller biết cần sửa gì trước khi gửi lại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,1,0
+"Này ad, tôi muốn xem lý do AI không duyệt sản phẩm, vì nội dung có vẻ nhạy cảm nên cần fallback an toàn; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0
+AI có kiểm tra tiêu đề và mô tả trước khi gửi admin không rồi gửi tiếp sang admin duyệt tay nếu chưa chắc.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+"Admin ơi, AI có kiểm tra tiêu đề và mô tả trước khi gửi admin không và check xem dữ liệu tạo phiên có thiếu trường nào không mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+ai co check tieu de va mo ta truoc khi gui ad ko kem thong bao trang thai cho seller biet ket qua vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0
+AI có kiểm tra tiêu đề và mô tả trước khi gửi admin không trước khi phien được đưa lên danh sách công khai nhé,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"AI có kiểm tra tiêu đề và mô tả trước khi gửi admin không, vì tôi vừa tạo yêu cầu phiên mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Ê cho hỏi, AI có kiểm tra tiêu đề và mô tả trước khi gửi admin không và soi cả phần chi tiết sản phẩm đang bán; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Auto approve đang xét giá khởi điểm của sản phẩm này à, nếu phát hiện mô tả kiểu gian lận thì gắn cảnh báo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+"Help với, auto approve đang xét giá khởi điểm của sản phẩm này à rồi báo cho chatbot giải thích ngắn gọn giúp tôi để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+auto approve dang xet gia khoi diem cua sp nay a nhung van phai giu yc duyet phien dung luong dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0
+"auto approve đang xét giá khởi điểm của sản phầm này à và kiểm tra luôn title, mô tả, giá khởi điểm pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+"auto approve đang xét giá khởi điểm của sản phẩm này à để seller biết cần sửa gì trước khi gửi lại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,1,0
+"Này ad, auto approve đang xét giá khởi điểm của sản phẩm này à, vì nội dung có vẻ nhạy cảm nên cần fallback an toàn; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0
+Tôi cần biết phiên này đi qua AI hay admin duyệt tay rồi gửi tiếp sang admin duyệt tay nếu chưa chắc.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+"Admin ơi, tôi cần biết phiên này đi qua AI hay admin duyệt tay và check xem dữ liệu tạo phiên có thiếu trường nào không mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+toi can biet phien nay di qua ai hay ad duyet tay kem thong bao trang thai cho seller biet ket qua vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0
+tôi cần biết phien này đi qua AI hay admin duyệt tay trước khi phiên được đưa lên danh sách công khai nhé,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"tôi cần biết phiên này đi qua AI hay admin duyệt tay, vì tôi vừa tạo yêu cầu phiên mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Ê cho hỏi, tôi cần biết phiên này đi qua AI hay admin duyệt tay và soi cả phần chi tiết sản phẩm đang bán; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"AI duyệt listing này xong chưa, nếu phát hiện mô tả kiểu gian lận thì gắn cảnh báo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+"Help với, AI duyệt listing này xong chưa rồi báo cho chatbot giải thích ngắn gọn giúp tôi để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+ai duyet listing nay xong chua nhung van phai giu yc duyet phien dung luong dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0
+"AI duyẹt listing này xong chưa và kiểm tra luôn title, mô tả, giá khởi điểm pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+"AI duyệt listing này xong chưa để seller biết cần sửa gì trước khi gửi lại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,1,0
+"Này ad, AI duyệt listing này xong chưa, vì nội dung có vẻ nhạy cảm nên cần fallback an toàn; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0
+Tại sao auto approve vẫn để chờ duyệt rồi gửi tiếp sang admin duyệt tay nếu chưa chắc.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+"Admin ơi, tại sao auto approve vẫn để chờ duyệt và check xem dữ liệu tạo phiên có thiếu trường nào không mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+tai sao auto approve van de cho duyet kem thong bao trang thai cho seller biet ket qua vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0
+tại sao auto approve vẫn để chờ duyệt trước khi phien được đưa lên danh sách công khai nhé,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"tại sao auto approve vẫn để chờ duyệt, vì tôi vừa tạo yêu cầu phiên mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Ê cho hỏi, tại sao auto approve vẫn để chờ duyệt và soi cả phần chi tiết sản phẩm đang bán; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Hệ thống có tự động approve phiên hợp lệ không, nếu phát hiện mô tả kiểu gian lận thì gắn cảnh báo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+"Help với, hệ thống có tự động approve phiên hợp lệ không rồi báo cho chatbot giải thích ngắn gọn giúp tôi để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+he thong co auto approve phien hop le ko nhung van phai giu yc duyet phien dung luong dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0
+"hệ thống có tự động approve phien hợp lệ không và kiểm tra luôn title, mô tả, giá khởi điểm pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+"hệ thống có tự động approve phiên hợp lệ không để seller biết cần sửa gì trước khi gửi lại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,1,0
+"Này ad, hệ thống có tự động approve phiên hợp lệ không, vì nội dung có vẻ nhạy cảm nên cần fallback an toàn; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0
+Tôi muốn bật luồng AI duyệt trước cho phiên mới rồi gửi tiếp sang admin duyệt tay nếu chưa chắc.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+"Admin ơi, tôi muốn bật luồng AI duyệt trước cho phiên mới và check xem dữ liệu tạo phiên có thiếu trường nào không mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+toi muon bat luong ai duyet truoc cho phien moi kem thong bao trang thai cho seller biet ket qua vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0
+tôi muốn bật luồng AI duyệt trước cho phien mới trước khi phiên được đưa lên danh sách công khai nhé,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"tôi muốn bật luồng AI duyệt trước cho phiên mới, vì tôi vừa tạo yêu cầu phiên mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Ê cho hỏi, tôi muốn bật luồng AI duyệt trước cho phiên mới và soi cả phần chi tiết sản phẩm đang bán; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"AI có phát hiện nội dung sản phẩm rủi ro không, nếu phát hiện mô tả kiểu gian lận thì gắn cảnh báo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+"Help với, AI có phát hiện nội dung sản phẩm rủi ro không rồi báo cho chatbot giải thích ngắn gọn giúp tôi để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+ai co phat hien noi dung sp rui ro ko nhung van phai giu yc duyet phien dung luong dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0
+"AI có phát hiện nội dung sản phầm rủi ro không và kiểm tra luôn title, mô tả, giá khởi điểm pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+"AI có phát hiện nội dung sản phẩm rủi ro không để seller biết cần sửa gì trước khi gửi lại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,1,0
+"Này ad, AI có phát hiện nội dung sản phẩm rủi ro không, vì nội dung có vẻ nhạy cảm nên cần fallback an toàn; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0
+Auto approve có hiểu mô tả sản phẩm tiếng Việt không rồi gửi tiếp sang admin duyệt tay nếu chưa chắc.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+"Admin ơi, auto approve có hiểu mô tả sản phẩm tiếng Việt không và check xem dữ liệu tạo phiên có thiếu trường nào không mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+auto approve co hieu mo ta sp tieng viet ko kem thong bao trang thai cho seller biet ket qua vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0
+auto approve có hiểu mô tả sản phẩm tiếng Việt không trước khi phien được đưa lên danh sách công khai nhé,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"auto approve có hiểu mô tả sản phẩm tiếng Việt không, vì tôi vừa tạo yêu cầu phiên mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Ê cho hỏi, auto approve có hiểu mô tả sản phẩm tiếng Việt không và soi cả phần chi tiết sản phẩm đang bán; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Kết quả AI duyệt phiên này nằm ở đâu, nếu phát hiện mô tả kiểu gian lận thì gắn cảnh báo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+"Help với, kết quả AI duyệt phiên này nằm ở đâu rồi báo cho chatbot giải thích ngắn gọn giúp tôi để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+ket qua ai duyet phien nay nam o dau nhung van phai giu yc duyet phien dung luong dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0
+"kết quả AI duyệt phien này nằm ở đâu và kiểm tra luôn title, mô tả, giá khởi điểm pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+"kết quả AI duyệt phiên này nằm ở đâu để seller biết cần sửa gì trước khi gửi lại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,1,0
+"Này ad, kết quả AI duyệt phiên này nằm ở đâu, vì nội dung có vẻ nhạy cảm nên cần fallback an toàn; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0
+AI có chuyển yêu cầu sang admin nếu không chắc không rồi gửi tiếp sang admin duyệt tay nếu chưa chắc.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+"Admin ơi, AI có chuyển yêu cầu sang admin nếu không chắc không và check xem dữ liệu tạo phiên có thiếu trường nào không mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+ai co chuyen yc sang ad neu ko chac ko kem thong bao trang thai cho seller biet ket qua vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0
+AI có chuyển yêu cầu sang admin nếu không chắc không trước khi phien được đưa lên danh sách công khai nhé,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"AI có chuyển yêu cầu sang admin nếu không chắc không, vì tôi vừa tạo yêu cầu phiên mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Ê cho hỏi, AI có chuyển yêu cầu sang admin nếu không chắc không và soi cả phần chi tiết sản phẩm đang bán; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Phiên của tôi bị AI reject vì lý do gì, nếu phát hiện mô tả kiểu gian lận thì gắn cảnh báo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+"Help với, phiên của tôi bị AI reject vì lý do gì rồi báo cho chatbot giải thích ngắn gọn giúp tôi để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+phien cua toi bi ai reject vi ly do gi nhung van phai giu yc duyet phien dung luong dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0
+"phien của tôi bị AI reject vì lý do gì và kiểm tra luôn title, mô tả, giá khởi điểm pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+"phiên của tôi bị AI reject vì lý do gì để seller biết cần sửa gì trước khi gửi lại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,1,0
+"Này ad, phiên của tôi bị AI reject vì lý do gì, vì nội dung có vẻ nhạy cảm nên cần fallback an toàn; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0
+Auto approve có kiểm tra ảnh và thông tin sản phẩm không rồi gửi tiếp sang admin duyệt tay nếu chưa chắc.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+"Admin ơi, auto approve có kiểm tra ảnh và thông tin sản phẩm không và check xem dữ liệu tạo phiên có thiếu trường nào không mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+auto approve co check anh va thong tin sp ko kem thong bao trang thai cho seller biet ket qua vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0
+auto approve có kiểm tra ảnh và thông tin sản phẩm không trước khi phien được đưa lên danh sách công khai nhé,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"auto approve có kiểm tra ảnh và thông tin sản phẩm không, vì tôi vừa tạo yêu cầu phiên mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Ê cho hỏi, auto approve có kiểm tra ảnh và thông tin sản phẩm không và soi cả phần chi tiết sản phẩm đang bán; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"AI có quyết định cho phiên lên danh sách không, nếu phát hiện mô tả kiểu gian lận thì gắn cảnh báo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+"Help với, AI có quyết định cho phiên lên danh sách không rồi báo cho chatbot giải thích ngắn gọn giúp tôi để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+ai co quyet dinh cho phien len danh sach ko nhung van phai giu yc duyet phien dung luong dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0
+"AI có quyết định cho phien lên danh sách không và kiểm tra luôn title, mô tả, giá khởi điểm pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+"AI có quyết định cho phiên lên danh sách không để seller biết cần sửa gì trước khi gửi lại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,1,0
+"Này ad, AI có quyết định cho phiên lên danh sách không, vì nội dung có vẻ nhạy cảm nên cần fallback an toàn; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0
+Mô hình duyệt tự động có đang lỗi không rồi gửi tiếp sang admin duyệt tay nếu chưa chắc.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+"Admin ơi, mô hình duyệt tự động có đang lỗi không và check xem dữ liệu tạo phiên có thiếu trường nào không mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+mo hinh duyet auto co dang loi ko kem thong bao trang thai cho seller biet ket qua vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0
+mô hình duyệt tự động có đang lỗi không trước khi phien được đưa lên danh sách công khai nhé,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"mô hình duyệt tự động có đang lỗi không, vì tôi vừa tạo yêu cầu phiên mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Ê cho hỏi, mô hình duyệt tự động có đang lỗi không và soi cả phần chi tiết sản phẩm đang bán; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Tôi muốn test auto approve với phiên vừa tạo, nếu phát hiện mô tả kiểu gian lận thì gắn cảnh báo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+"Help với, tôi muốn test auto approve với phiên vừa tạo rồi báo cho chatbot giải thích ngắn gọn giúp tôi để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+toi muon test auto approve voi phien vua tao nhung van phai giu yc duyet phien dung luong dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0
+"tôi muốn test auto approve với phien vừa tạo và kiểm tra luôn title, mô tả, giá khởi điểm pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+"tôi muốn test auto approve với phiên vừa tạo để seller biết cần sửa gì trước khi gửi lại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,1,0
+"Này ad, tôi muốn test auto approve với phiên vừa tạo, vì nội dung có vẻ nhạy cảm nên cần fallback an toàn; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0
+AI có đánh dấu phiên cần duyệt thủ công không rồi gửi tiếp sang admin duyệt tay nếu chưa chắc.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+"Admin ơi, AI có đánh dấu phiên cần duyệt thủ công không và check xem dữ liệu tạo phiên có thiếu trường nào không mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+ai co danh dau phien can duyet thu cong ko kem thong bao trang thai cho seller biet ket qua vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0
+AI có đánh dấu phien cần duyệt thủ công không trước khi phiên được đưa lên danh sách công khai nhé,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"AI có đánh dấu phiên cần duyệt thủ công không, vì tôi vừa tạo yêu cầu phiên mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Ê cho hỏi, AI có đánh dấu phiên cần duyệt thủ công không và soi cả phần chi tiết sản phẩm đang bán; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Auto approve trả false thì seller phải sửa gì, nếu phát hiện mô tả kiểu gian lận thì gắn cảnh báo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+"Help với, auto approve trả false thì seller phải sửa gì rồi báo cho chatbot giải thích ngắn gọn giúp tôi để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+auto approve tra false thi seller phai sua gi nhung van phai giu yc duyet phien dung luong dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0
+auto aprove trả false thì seller phải sửa gì pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"auto approve trả false thì seller phải sửa gì, cho phiên vừa tạo đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Này ad, auto approve trả false thì seller phải sửa gì với listing mới; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"AI duyệt phiên này có cần điểm tin cậy không, trong module seller.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Admin ơi, AI duyệt phiên này có cần điểm tin cậy không, ở bước duyệt tự động mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+ai duyet phien nay co can diem tin cay ko vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"AI duyệt phien này có cần điểm tin cậy không, cho phiên vừa tạo nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"AI duyệt phiên này có cần điểm tin cậy không với listing mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Ê cho hỏi, AI duyệt phiên này có cần điểm tin cậy không, trong module seller; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Tôi muốn xem trạng thái duyệt của AI trước admin, ở bước duyệt tự động.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Help với, tôi muốn xem trạng thái duyệt của AI trước admin để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"toi muon xem trang thai duyet cua ai truoc ad, cho phien vua tao dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+tôi muốn xem trạng thái duyẹt của AI trước admin với listing mới pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"tôi muốn xem trạng thái duyệt của AI trước admin, trong module seller đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Này ad, tôi muốn xem trạng thái duyệt của AI trước admin, ở bước duyệt tự động; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+Auto approve có bỏ qua phiên thiếu mô tả không.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Admin ơi, auto approve có bỏ qua phiên thiếu mô tả không, cho phiên vừa tạo mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+auto approve co bo qua phien thieu mo ta ko voi listing moi vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"auto approve có bỏ qua phien thiếu mô tả không, trong module seller nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"auto approve có bỏ qua phiên thiếu mô tả không, ở bước duyệt tự động đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Ê cho hỏi, auto approve có bỏ qua phiên thiếu mô tả không; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"AI có phân biệt sản phẩm hợp lệ và lừa đảo không, cho phiên vừa tạo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Help với, AI có phân biệt sản phẩm hợp lệ và lừa đảo không với listing mới để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"ai co phan biet sp hop le va lua dao ko, trong module seller dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"AI có phân biệt sản phẩm hợp lệ và lừa đảo không, ở bước duyẹt tự động pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"AI có phân biệt sản phẩm hợp lệ và lừa đảo không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Này ad, AI có phân biệt sản phẩm hợp lệ và lừa đảo không, cho phiên vừa tạo; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+Hệ thống tự duyệt listing đang hoạt động chứ với listing mới.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Admin ơi, hệ thống tự duyệt listing đang hoạt động chứ, trong module seller mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"he thong tu duyet listing dang hoat dong chu, o buoc duyet auto vi minh chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+hệ thống tự duyẹt listing đang hoạt động chứ nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"hệ thống tự duyệt listing đang hoạt động chứ, cho phiên vừa tạo đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Ê cho hỏi, hệ thống tự duyệt listing đang hoạt động chứ với listing mới; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"AI có thể duyệt tự động phiên đấu giá này luôn không, trong module seller.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Help với, AI có thể duyệt tự động phiên đấu giá này luôn không, ở bước duyệt tự động để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0

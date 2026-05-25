@@ -1,0 +1,201 @@
+﻿text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+"Mình muốn đặt giá phiên này với mức 500k, kèm chuyện mình cần kiểm tra số dư, rồi refresh giá live giúp mình, nhưng bot phân tích lỗi đang gặp, kèm chuyện mã phòng AUC-1024, trước khi mức tiền 50k.",0,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Admin ơi, mình muốn đặt giá phiên này với mức 500k, kèm chuyện cần xem giá cao nhất hiện tại mình đang thao tác?",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia phien nay voi muc 500k, dong thoi m so het thoi gian vi m chua ro luong",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá phien này với mức 500k, sau đó có người nhảy giá sát giờ đang cần xử lý liền",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá phiên này với mức 500k, sau đó đối chiếu lịch sử đấu giá đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn đặt giá phiên này với mức 500k, kèm chuyện mình cần kiểm tra số dư, đồng thời mình sợ hết thời gian; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,1,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đặt giá phiên này thêm 100k, rồi cần xem giá cao nhất hiện tại.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn đặt giá phiên này thêm 100k, trước khi mình sợ hết thời gian, nhưng mức tiền 5 triệu pls?",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia phien nay them 100k, nhung co nguoi nhay gia sat gio de khoi lam sai",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá phien này thêm 100k, nhưng đối chiếu lịch sử đấu giá mình hơi rén",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá phiên này thêm 100k, rồi mình cần kiểm tra số dư, đồng thời luật chống snipe đang bật đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn đặt giá phiên này thêm 100k, rồi cần xem giá cao nhất hiện tại, rồi mã phòng A17; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đặt giá phiên này trước khi hết giờ, rồi mình sợ hết thời gian.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn đặt giá phiên này trước khi hết giờ, trước khi có người nhảy giá sát giờ vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia phien nay truoc khi het gio, truoc khi doi chieu history dg, roi muc tien +300k dang can xu ly lien",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá phien này trước khi hết giờ, nhưng mình cần kiểm tra số dư, rồi kiểm tra log đặt giá nhé",0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá phiên này trước khi hết giờ, nhưng cần xem giá cao nhất hiện tại đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn đặt giá phiên này trước khi hết giờ, rồi mình sợ hết thời gian, nhưng bot phân tích lỗi đang gặp; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình muốn đặt giá phiên này nếu số dư đủ, sau đó có người nhảy giá sát giờ.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn đặt giá phiên này nếu số dư đủ, sau đó đối chiếu lịch sử đấu giá để khỏi làm sai?",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia phien nay neu balance du, kem chuyen m can check balance m hoi ren",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá phien này nếu số dư đủ, kèm chuyện cần xem giá cao nhất hiện tại, sau đó mức tiền +75k được không",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá phiên này nếu số dư đủ, đồng thời mình sợ hết thời gian, sau đó mã phòng SALA-05 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn đặt giá phiên này nếu số dư đủ, sau đó có người nhảy giá sát giờ; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đặt giá phiên này mà app chưa phản hồi, đồng thời đối chiếu lịch sử đấu giá.",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn đặt giá phiên này mà app chưa phản hồi, sau đó mình cần kiểm tra số dư, trước khi refresh giá live giúp mình đang cần xử lý liền?",0,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia phien nay ma app chua phan hoi, sau do can xem gia cao nhat hien tai nhe",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá phien này mà app chưa phản hồi, kèm chuyện mình sợ hết thời gian mình đang thao tác",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá phiên này mà app chưa phản hồi, đồng thời có người nhảy giá sát giờ, đồng thời mức tiền 2.500.000 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn đặt giá phiên này mà app chưa phản hồi, đồng thời đối chiếu lịch sử đấu giá; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đặt giá sản phẩm đang đấu với mức 500k, sau đó mình cần kiểm tra số dư, sau đó mình sợ hết thời gian.",0,0,0,0,1,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn đặt giá sản phẩm đang đấu với mức 500k, sau đó cần xem giá cao nhất hiện tại mình hơi rén?",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia sp dang dau voi muc 500k, kem chuyen m so het thoi gian dc ko",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá sản phầm đang đấu với mức 500k, đồng thời có người nhảy giá sát giờ, sau đó mã phòng ROOM-88 pls",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá sản phẩm đang đấu với mức 500k, đồng thời đối chiếu lịch sử đấu giá, sau đó bot hướng dẫn bước tiếp theo đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Alo ad, mình muốn đặt giá sản phẩm đang đấu với mức 500k, sau đó mình cần kiểm tra số dư, kèm chuyện luật chống snipe đang bật, sau đó mức tiền 1tr2; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đặt giá sản phẩm đang đấu thêm 100k, nhưng cần xem giá cao nhất hiện tại.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn đặt giá sản phẩm đang đấu thêm 100k, rồi mình sợ hết thời gian nhé?",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia sp dang dau them 100k, truoc khi co nguoi nhay gia sat gio m dang thao tac",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá sản phẩm đang đấu thêm 100k, trước khi đối chiếu lịch sử đấu gía vì mình chưa rõ luồng",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá sản phẩm đang đấu thêm 100k, nhưng mình cần kiểm tra số dư, rồi kiểm tra log đặt giá đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn đặt giá sản phẩm đang đấu thêm 100k, nhưng cần xem giá cao nhất hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đặt giá sản phẩm đang đấu trước khi hết giờ, nhưng mình sợ hết thời gian, nhưng mức tiền 250.000.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn đặt giá sản phẩm đang đấu trước khi hết giờ, rồi có người nhảy giá sát giờ được không?",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia sp dang dau truoc khi het gio, roi doi chieu history dg, kem chuyen ma room bid-09 pls",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá sản phầm đang đấu trước khi hết giờ, trước khi mình cần kiểm tra số dư để khỏi làm sai",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá sản phẩm đang đấu trước khi hết giờ, trước khi cần xem giá cao nhất hiện tại đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn đặt giá sản phẩm đang đấu trước khi hết giờ, nhưng mình sợ hết thời gian; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đặt giá sản phẩm đang đấu nếu số dư đủ, đồng thời có người nhảy giá sát giờ.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn đặt giá sản phẩm đang đấu nếu số dư đủ, đồng thời đối chiếu lịch sử đấu giá, nhưng mức tiền 100k mình đang thao tác?",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia sp dang dau neu balance du, sau do m can check balance, truoc khi refresh gia live giup m vi m chua ro luong",0,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá sản phầm đang đấu nếu số dư đủ, sau đó cần xem giá cao nhất hiện tại, đồng thời chatbot nói dễ hiểu giúp mình đang cần xử lý liền",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn đặt giá sản phẩm đang đấu nếu số dư đủ, kèm chuyện mình sợ hết thời gian đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn đặt giá sản phẩm đang đấu nếu số dư đủ, đồng thời có người nhảy giá sát giờ; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đặt giá sản phẩm đang đấu mà app chưa phản hồi, kèm chuyện đối chiếu lịch sử đấu giá.",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn đặt giá sản phẩm đang đấu mà app chưa phản hồi, đồng thời mình cần kiểm tra số dư, trước khi mình sợ hết thời gian, nhưng mã phòng GOLD-21 pls?",0,0,0,0,1,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia sp dang dau ma app chua phan hoi, dong thoi can xem gia cao nhat hien tai, dong thoi muc tien 50k de khoi lam sai",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá sản phầm đang đấu mà app chưa phản hồi, sau đó mình sợ hết thời gian mình hơi rén",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá sản phẩm đang đấu mà app chưa phản hồi, kèm chuyện có người nhảy giá sát giờ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn đặt giá sản phẩm đang đấu mà app chưa phản hồi, kèm chuyện đối chiếu lịch sử đấu giá; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đặt giá iPhone 15 với mức 500k, kèm chuyện mình cần kiểm tra số dư, sau đó luật chống snipe đang bật.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn đặt giá iPhone 15 với mức 500k, kèm chuyện cần xem giá cao nhất hiện tại vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia iphone 15 voi muc 500k, dong thoi m so het thoi gian dang can xu ly lien",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá iPhone 15 với mức 500k, sau đó có ngừoi nhảy giá sát giờ, rồi mức tiền 5 triệu nhé",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá iPhone 15 với mức 500k, sau đó đối chiếu lịch sử đấu giá đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn đặt giá iPhone 15 với mức 500k, kèm chuyện mình cần kiểm tra số dư, rồi kiểm tra log đặt giá; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đặt giá iPhone 15 thêm 100k, rồi cần xem giá cao nhất hiện tại, đồng thời mã phòng PHIEN-2026.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn đặt giá iPhone 15 thêm 100k, trước khi mình sợ hết thời gian để khỏi làm sai?",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia iphone 15 them 100k, nhung co nguoi nhay gia sat gio, dong thoi nho bot giai thich them m hoi ren",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn đặt giá iPhone 15 thêm 100k, nhưng đối chiếu lịch sử đấu gía được không",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá iPhone 15 thêm 100k, rồi mình cần kiểm tra số dư, nhưng mức tiền +300k đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn đặt giá iPhone 15 thêm 100k, rồi cần xem giá cao nhất hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đặt giá iPhone 15 trước khi hết giờ, rồi mình sợ hết thời gian.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn đặt giá iPhone 15 trước khi hết giờ, trước khi có người nhảy giá sát giờ đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia iphone 15 truoc khi het gio, truoc khi doi chieu history dg nhe",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá iPhone 15 trước khi hết giờ, nhưng mình cần kiểm chra số dư, rồi refresh giá live giúp mình mình đang thao tác",0,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá iPhone 15 trước khi hết giờ, nhưng cần xem giá cao nhất hiện tại đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn đặt giá iPhone 15 trước khi hết giờ, rồi mình sợ hết thời gian, nhưng mã phòng P-774, sau đó mức tiền +75k; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đặt giá iPhone 15 nếu số dư đủ, sau đó có người nhảy giá sát giờ.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn đặt giá iPhone 15 nếu số dư đủ, sau đó đối chiếu lịch sử đấu giá mình hơi rén?",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia iphone 15 neu balance du, kem chuyen m can check balance, dong thoi m so het thoi gian dc ko",0,0,0,0,1,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăt giá iPhone 15 nếu số dư đủ, kèm chuyện cần xem giá cao nhất hiện tại pls",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá iPhone 15 nếu số dư đủ, đồng thời mình sợ hết thời gian đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn đặt giá iPhone 15 nếu số dư đủ, sau đó có người nhảy giá sát giờ; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đặt giá iPhone 15 mà app chưa phản hồi, đồng thời đối chiếu lịch sử đấu giá, đồng thời mức tiền 2.500.000.",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn đặt giá iPhone 15 mà app chưa phản hồi, sau đó mình cần kiểm tra số dư, kèm chuyện luật chống snipe đang bật, rồi bot phân tích lỗi đang gặp nhé?",0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"m muon dat gia iphone 15 ma app chua phan hoi, sau do can xem gia cao nhat hien tai m dang thao tac",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăt giá iPhone 15 mà app chưa phản hồi, kèm chuyện mình sợ hết thời gian vì mình chưa rõ luồng",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá iPhone 15 mà app chưa phản hồi, đồng thời có người nhảy giá sát giờ, rồi mã phòng AUC-1024 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn đặt giá iPhone 15 mà app chưa phản hồi, đồng thời đối chiếu lịch sử đấu giá; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đặt giá room AUC-1024 với mức 500k, đồng thời mình cần kiểm tra số dư, kèm chuyện kiểm tra log đặt giá.",0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn đặt giá room AUC-1024 với mức 500k, đồng thời cần xem giá cao nhất hiện tại, nhưng mức tiền 1tr2 được không?",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia room auc-1024 voi muc 500k, sau do m so het thoi gian pls",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá room AUC-1024 với mức 500k, kèm chuyện có ngừoi nhảy giá sát giờ để khỏi làm sai",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá room AUC-1024 với mức 500k, kèm chuyện đối chiếu lịch sử đấu giá đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn đặt giá room AUC-1024 với mức 500k, đồng thời mình cần kiểm tra số dư; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đặt giá room AUC-1024 thêm 100k, trước khi cần xem giá cao nhất hiện tại.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn đặt giá room AUC-1024 thêm 100k, nhưng mình sợ hết thời gian mình đang thao tác?",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia room auc-1024 them 100k, roi co nguoi nhay gia sat gio, truoc khi muc tien 250.000 vi m chua ro luong",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá room AUC-1024 thêm 100k, rồi đối chiếu lịch sử đấu gía, rồi mã phòng A17 đang cần xử lý liền",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá room AUC-1024 thêm 100k, trước khi mình cần kiểm tra số dư, rồi refresh giá live giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn đặt giá room AUC-1024 thêm 100k, trước khi cần xem giá cao nhất hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đặt giá room AUC-1024 trước khi hết giờ, trước khi mình sợ hết thời gian, rồi bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, mình muốn đặt giá room AUC-1024 trước khi hết giờ, nhưng có người nhảy giá sát giờ pls?",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia room auc-1024 truoc khi het gio, nhung doi chieu history dg de khoi lam sai",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá room AUC-1024 trước khi hết giờ, rồi mình cần kiểm chra số dư, kèm chuyện mình sợ hết thời gian, sau đó mức tiền 100k mình hơi rén",0,0,0,0,1,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá room AUC-1024 trước khi hết giờ, rồi cần xem giá cao nhất hiện tại đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn đặt giá room AUC-1024 trước khi hết giờ, trước khi mình sợ hết thời gian; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đặt giá room AUC-1024 nếu số dư đủ, kèm chuyện có người nhảy giá sát giờ.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn đặt giá room AUC-1024 nếu số dư đủ, kèm chuyện đối chiếu lịch sử đấu giá vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia room auc-1024 neu balance du, dong thoi m can check balance, nhung luat chong snipe dang bat, nhung ma room sala-05 dang can xu ly lien",0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăt giá room AUC-1024 nếu số dư đủ, đồng thời cần xem giá cao nhất hiện tại nhé",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá room AUC-1024 nếu số dư đủ, sau đó mình sợ hết thời gian, nhưng mức tiền 50k đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn đặt giá room AUC-1024 nếu số dư đủ, kèm chuyện có người nhảy giá sát giờ; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đặt giá room AUC-1024 mà app chưa phản hồi, sau đó đối chiếu lịch sử đấu giá.",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn đặt giá room AUC-1024 mà app chưa phản hồi, kèm chuyện mình cần kiểm tra số dư, rồi kiểm tra log đặt giá để khỏi làm sai?",0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia room auc-1024 ma app chua phan hoi, kem chuyen can xem gia cao nhat hien tai m hoi ren",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá room AUC-1024 mà app chưa phản hồi, đồng thời mình sợ hết thời gian được khong",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá room AUC-1024 mà app chưa phản hồi, sau đó có người nhảy giá sát giờ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn đặt giá room AUC-1024 mà app chưa phản hồi, sau đó đối chiếu lịch sử đấu giá, rồi bot hướng dẫn bước tiếp theo, trước khi mức tiền 5 triệu; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình muốn đặt giá đồng hồ cơ với mức 500k, trước khi mình cần kiểm tra số dư.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn đặt giá đồng hồ cơ với mức 500k, trước khi cần xem giá cao nhất hiện tại, nhưng mã phòng ROOM-88 đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia dong ho co voi muc 500k, nhung m so het thoi gian nhe",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá đồng hồ cơ với mức 500k, rồi có ngừoi nhảy giá sát giờ mình đang thao tác",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá đồng hồ cơ với mức 500k, rồi đối chiếu lịch sử đấu giá đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn đặt giá đồng hồ cơ với mức 500k, trước khi mình cần kiểm tra số dư, rồi refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đặt giá đồng hồ cơ thêm 100k, đồng thời cần xem giá cao nhất hiện tại, kèm chuyện mức tiền +300k.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn đặt giá đồng hồ cơ thêm 100k, sau đó mình sợ hết thời gian mình hơi rén?",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia dong ho co them 100k, kem chuyen co nguoi nhay gia sat gio dc ko",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá đồng hồ cơ thêm 100k, kèm chuyện đối chiếu lịch sử đấu gía pls",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá đồng hồ cơ thêm 100k, đồng thời mình cần kiểm tra số dư, trước khi mình sợ hết thời gian đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn đặt giá đồng hồ cơ thêm 100k, đồng thời cần xem giá cao nhất hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đặt giá đồng hồ cơ trước khi hết giờ, đồng thời mình sợ hết thời gian, trước khi mã phòng BID-09.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn đặt giá đồng hồ cơ trước khi hết giờ, sau đó có người nhảy giá sát giờ, kèm chuyện mức tiền +75k nhé?",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia dong ho co truoc khi het gio, sau do doi chieu history dg m dang thao tac",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá đồng hồ cơ trước khi hết giờ, kèm chuyện mình cần kiểm chra số dư, sau đó luật chống snipe đang bật vì mình chưa rõ luồng",0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá đồng hồ cơ trước khi hết giờ, kèm chuyện cần xem giá cao nhất hiện tại, kèm chuyện chatbot nói dễ hiểu giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình đang bị vướng, mình muốn đặt giá đồng hồ cơ trước khi hết giờ, đồng thời mình sợ hết thời gian; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đặt giá đồng hồ cơ nếu số dư đủ, rồi có người nhảy giá sát giờ.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn đặt giá đồng hồ cơ nếu số dư đủ, rồi đối chiếu lịch sử đấu giá được không?",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia dong ho co neu balance du, truoc khi m can check balance, roi check log dat gia, roi muc tien 2.500.000 pls",0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăt giá đồng hồ cơ nếu số dư đủ, trước khi cần xem giá cao nhất hiện tại để khỏi làm sai",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá đồng hồ cơ nếu số dư đủ, nhưng mình sợ hết thời gian đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn đặt giá đồng hồ cơ nếu số dư đủ, rồi có người nhảy giá sát giờ, trước khi mã phòng GOLD-21; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đặt giá đồng hồ cơ mà app chưa phản hồi, nhưng đối chiếu lịch sử đấu giá.",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn đặt giá đồng hồ cơ mà app chưa phản hồi, rồi mình cần kiểm tra số dư mình đang thao tác?",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia dong ho co ma app chua phan hoi, roi can xem gia cao nhat hien tai vi m chua ro luong",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăt giá đồng hồ cơ mà app chưa phản hồi, trước khi mình sợ hết thời gian, sau đó mức tiền 1tr2 đang cần xử lý liền",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá đồng hồ cơ mà app chưa phản hồi, nhưng có người nhảy giá sát giờ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn đặt giá đồng hồ cơ mà app chưa phản hồi, nhưng đối chiếu lịch sử đấu giá; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đặt giá món hàng này với mức 500k, rồi mình cần kiểm tra số dư, nhưng refresh giá live giúp mình.",0,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn đặt giá món hàng này với mức 500k, rồi cần xem giá cao nhất hiện tại pls?",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia mon hang nay voi muc 500k, truoc khi m so het thoi gian de khoi lam sai",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá món hàng này với mức 500k, nhưng có ngừoi nhảy giá sát giờ, đồng thời nhờ chatbot giải thích thêm mình hơi rén",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn đặt giá món hàng này với mức 500k, nhưng đối chiếu lịch sử đấu giá, sau đó mã phòng PHIEN-2026, rồi mức tiền 250.000 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn đặt giá món hàng này với mức 500k, rồi mình cần kiểm tra số dư, kèm chuyện mình sợ hết thời gian; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,1,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đặt giá món hàng này thêm 100k, kèm chuyện cần xem giá cao nhất hiện tại.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn đặt giá món hàng này thêm 100k, đồng thời mình sợ hết thời gian vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia mon hang nay them 100k, sau do co nguoi nhay gia sat gio dang can xu ly lien",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá món hàng này thêm 100k, sau đó đối chiếu lịch sử đấu gía nhé",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá món hàng này thêm 100k, kèm chuyện mình cần kiểm tra số dư, sau đó luật chống snipe đang bật đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn đặt giá món hàng này thêm 100k, kèm chuyện cần xem giá cao nhất hiện tại, sau đó mức tiền 100k; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đặt giá món hàng này trước khi hết giờ, kèm chuyện mình sợ hết thời gian.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn đặt giá món hàng này trước khi hết giờ, đồng thời có người nhảy giá sát giờ để khỏi làm sai?",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia mon hang nay truoc khi het gio, dong thoi doi chieu history dg m hoi ren",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá món hàng này trước khi hết giờ, nhưng mã phòng P-774 được khong",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá món hàng này trước khi hết giờ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn đặt giá món hàng này trước khi hết giờ; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đặt giá món hàng này nếu số dư đủ, đồng thời mức tiền 50k.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn đặt giá món hàng này nếu số dư đủ đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+m muon dat gia mon hang nay neu balance du nhe,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình muốn đăt giá món hàng này nếu số dư đủ mình đang thao tác,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá món hàng này nếu số dư đủ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn đặt giá món hàng này nếu số dư đủ; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn đặt giá món hàng này mà app chưa phản hồi.,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn đặt giá món hàng này mà app chưa phản hồi, đồng thời mức tiền 5 triệu mình hơi rén?",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia mon hang nay ma app chua phan hoi, nhung ma room auc-1024 dc ko",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình muốn đăt giá món hàng này mà app chưa phản hồi pls,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá món hàng này mà app chưa phản hồi đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn đặt giá món hàng này mà app chưa phản hồi; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn đặt giá giá hiện tại với mức 500k.,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn đặt giá giá hiện tại với mức 500k nhé?",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon dat gia gia hien tai voi muc 500k, kem chuyen muc tien +300k m dang thao tac",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình muốn đăt giá giá hiện tại với mức 500k vì mình chưa rõ luồng,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá giá hiện tại với mức 500k đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn đặt giá giá hiện tại với mức 500k; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn đặt giá giá hiện tại thêm 100k.,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn đặt giá giá hiện tại thêm 100k, trước khi mã phòng A17 được không?",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+m muon dat gia gia hien tai them 100k pls,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đăt giá giá hiện tại thêm 100k, sau đó mức tiền +75k để khỏi làm sai",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá giá hiện tại thêm 100k đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn đặt giá giá hiện tại thêm 100k; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn đặt giá giá hiện tại trước khi hết giờ.,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn đặt giá giá hiện tại trước khi hết giờ mình đang thao tác?",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+m muon dat gia gia hien tai truoc khi het gio vi m chua ro luong,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình muốn đăt giá giá hiện tại trước khi hết giờ đang cần xử lý liền,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn đặt giá giá hiện tại trước khi hết giờ, rồi mức tiền 2.500.000 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn đặt giá giá hiện tại trước khi hết giờ; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn đặt giá giá hiện tại nếu số dư đủ, sau đó mã phòng SALA-05.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn đặt giá giá hiện tại nếu số dư đủ pls?",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

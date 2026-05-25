@@ -1,0 +1,201 @@
+﻿text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+"Seller muốn tạo phiên iPhone 15 với giá khởi điểm 1 triệu, nhưng kiểm tra dữ liệu tạo phiên có thiếu không, sau đó yêu cầu duyệt còn pending, trước khi bot phân tích lỗi đang gặp, kèm chuyện mã phòng AUC-1024, trước khi sản phẩm iPhone 15.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0
+"Admin ơi, seller muốn tạo phiên iPhone 15 với giá khởi điểm 1 triệu, rồi admin đã approve chưa mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"seller muon tao phien iphone 15 voi gia khoi diem 1 trieu, dong thoi classifier duyet auto dang chay vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"seller muốn tạo phien iPhone 15 với giá khởi điểm 1 triệu, rồi vì tài khoản này không phải admin đang cần xử lý liền",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muốn tạo phiên iPhone 15 với giá khởi điểm 1 triệu, trước khi xem dữ liệu trước khi gửi duyệt đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"Ê cho hỏi, seller muốn tạo phiên iPhone 15 với giá khởi điểm 1 triệu, sau đó phiên đang chờ admin duyệt, rồi classifier duyệt tự động đang chạy; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0
+"Seller muốn tạo phiên iPhone 15 kèm mô tả rõ ràng, rồi mô hình tự đánh giá phiên này.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Help với, seller muốn tạo phiên iPhone 15 kèm mô tả rõ ràng, nhưng đừng hiện nhầm chức năng seller pls?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muon tao phien iphone 15 kem mo ta ro rang, roi bao loi field con trong de khoi lam sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"seller muốn tạo phien iPhone 15 kèm mô tả rõ ràng, sau đó gửi lên hàng đợi duyệt, rồi sản phẩm laptop gaming mình hơi rén",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"seller muốn tạo phiên iPhone 15 kèm mô tả rõ ràng, trước khi AI auto approve có tham gia duyệt, sau đó đừng hiện nhầm chức năng seller đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Này ad, seller muốn tạo phiên iPhone 15 kèm mô tả rõ ràng, nhưng kiểm tra quyền user trước, trước khi mã phòng A17; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Seller muốn tạo phiên iPhone 15 để admin duyệt, kèm chuyện thông tin sản phẩm nhập chưa hợp lệ.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"Mình mới dùng app, seller muốn tạo phiên iPhone 15 để admin duyệt, rồi xem trạng thái duyệt phiên vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"seller muon tao phien iphone 15 de ad duyet, sau do neu ai ko chac thi day ad dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"seller muốn tạo phien iPhone 15 để admin duyệt, sau đó role của mình đang bị lẫn, đồng thời thông tin sản phẩm nhập chưa hợp lệ nhé",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"seller muốn tạo phiên iPhone 15 để admin duyệt, rồi validate tên mô tả giá ảnh đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"Admin ơi, seller muốn tạo phiên iPhone 15 để admin duyệt, sau đó yêu cầu duyệt còn pending, trước khi bot phân tích lỗi đang gặp; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,1,0,0,0,0
+"Seller muốn tạo phiên iPhone 15 có ảnh sản phẩm, đồng thời kết quả auto approve là gì, sau đó sản phẩm tranh sưu tầm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Alo ad, seller muốn tạo phiên iPhone 15 có ảnh sản phẩm, nhưng cần đúng quyền bidder để khỏi làm sai?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muon tao phien iphone 15 co anh sp, truoc khi check du lieu tao phien co thieu ko, sau do yc duyet con pending m hoi ren",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0
+"seller muốn tạo phien iPhone 15 có ảnh sản phẩm, nhưng admin đã approve chưa được không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"seller muốn tạo phiên iPhone 15 có ảnh sản phẩm, kèm chuyện classifier duyệt tự động đang chạy, nhưng mã phòng SALA-05 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Help với, seller muốn tạo phiên iPhone 15 có ảnh sản phẩm, nhưng vì tài khoản này không phải admin; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Seller muốn tạo phiên iPhone 15 trong hôm nay, trước khi xem dữ liệu trước khi gửi duyệt.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, seller muốn tạo phiên iPhone 15 trong hôm nay, sau đó phiên đang chờ admin duyệt, rồi classifier duyệt tự động đang chạy đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0
+"seller muon tao phien iphone 15 trong hom nay, nhung mo hinh tu danh gia phien nay nhe",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"seller muốn tạo phien iPhone 15 trong hôm nay, trước khi đừng hiện nhầm chức năng seller, kèm chuyện sản phẩm mô hình Gundam mình đang thao tác",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muốn tạo phiên iPhone 15 trong hôm nay, nhưng báo lỗi field còn trống đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"Mình mới dùng app, seller muốn tạo phiên iPhone 15 trong hôm nay, đồng thời gửi lên hàng đợi duyệt; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"Seller muốn tạo phiên đồng hồ cơ với giá khởi điểm 1 triệu, đồng thời AI auto approve có tham gia duyệt, nhưng đừng hiện nhầm chức năng seller.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Cứu mình với, seller muốn tạo phiên đồng hồ cơ với giá khởi điểm 1 triệu, sau đó kiểm tra quyền user trước mình hơi rén?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muon tao phien dong ho co voi gia khoi diem 1 trieu, kem chuyen thong tin sp nhap chua hop le dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"seller muốn tạo phien đồng hồ cơ với giá khởi điểm 1 triệu, rồi xem trạng thái duyệt phiên, trước khi mã phòng ROOM-88 pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"seller muốn tạo phiên đồng hồ cơ với giá khởi điểm 1 triệu, sau đó nếu AI không chắc thì đẩy admin, rồi bot hướng dẫn bước tiếp theo đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,1,0
+"Alo ad, seller muốn tạo phiên đồng hồ cơ với giá khởi điểm 1 triệu, sau đó role của mình đang bị lẫn, đồng thời thông tin sản phẩm nhập chưa hợp lệ; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"Seller muốn tạo phiên đồng hồ cơ kèm mô tả rõ ràng, trước khi validate tên mô tả giá ảnh, sau đó sản phẩm áo khoác vintage.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"Ê cho hỏi, seller muốn tạo phiên đồng hồ cơ kèm mô tả rõ ràng, kèm chuyện yêu cầu duyệt còn pending nhé?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"seller muon tao phien dong ho co kem mo ta ro rang, truoc khi ket qua auto approve la gi m dang thao tac",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"seller muốn tạo phien đồng hồ cơ kèm mô tả rõ ràng, sau đó cần đúng quyền bidder vì mình chưa rõ luồng",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muốn tạo phiên đồng hồ cơ kèm mô tả rõ ràng, đồng thời kiểm tra dữ liệu tạo phiên có thiếu không, nhưng yêu cầu duyệt còn pending đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0
+"Mình đang bị vướng, seller muốn tạo phiên đồng hồ cơ kèm mô tả rõ ràng, sau đó admin đã approve chưa; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"Seller muốn tạo phiên đồng hồ cơ để admin duyệt, kèm chuyện classifier duyệt tự động đang chạy.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Này ad, seller muốn tạo phiên đồng hồ cơ để admin duyệt, nhưng vì tài khoản này không phải admin được không?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muon tao phien dong ho co de ad duyet, roi xem du lieu truoc khi gui duyet, kem chuyen ma room bid-09 pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"seller muốn tạo phien đồng hồ cơ để admin duyệt, đồng thời phiên đang chờ admin duyệt, sau đó classifier duyệt tự động đang chạy, nhưng sản phẩm bàn phím custom để khỏi làm sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0
+"seller muốn tạo phiên đồng hồ cơ để admin duyệt, trước khi mô hình tự đánh giá phiên này đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Cứu mình với, seller muốn tạo phiên đồng hồ cơ để admin duyệt, rồi đừng hiện nhầm chức năng seller; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Seller muốn tạo phiên đồng hồ cơ có ảnh sản phẩm, sau đó báo lỗi field còn trống.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"Admin ơi, seller muốn tạo phiên đồng hồ cơ có ảnh sản phẩm, trước khi gửi lên hàng đợi duyệt mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"seller muon tao phien dong ho co co anh sp, kem chuyen ai auto approve co tham gia duyet, sau do dung hien nham chuc nang seller vi m chua ro luong",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"seller muốn tạo phien đồng hồ cơ có ảnh sản phẩm, đồng thời kiểm tra quyền user trước, rồi chatbot nói dễ hiểu giúp mình đang cần xử lý liền",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0
+"seller muốn tạo phiên đồng hồ cơ có ảnh sản phẩm, sau đó thông tin sản phẩm nhập chưa hợp lệ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"Ê cho hỏi, seller muốn tạo phiên đồng hồ cơ có ảnh sản phẩm, nhưng xem trạng thái duyệt phiên; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"Seller muốn tạo phiên đồng hồ cơ trong hôm nay, sau đó nếu AI không chắc thì đẩy admin, rồi sản phẩm tai nghe Sony.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Help với, seller muốn tạo phiên đồng hồ cơ trong hôm nay, sau đó role của mình đang bị lẫn, đồng thời thông tin sản phẩm nhập chưa hợp lệ, sau đó mã phòng GOLD-21 pls?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"seller muon tao phien dong ho co trong hom nay, roi validate ten mo ta gia anh de khoi lam sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"seller muốn tạo phien đồng hồ cơ trong hôm nay, sau đó yêu cầu duyệt còn pending mình hơi rén",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"seller muốn tạo phiên đồng hồ cơ trong hôm nay, rồi kết quả auto approve là gì đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Này ad, seller muốn tạo phiên đồng hồ cơ trong hôm nay, đồng thời cần đúng quyền bidder; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Seller muốn tạo phiên máy ảnh film với giá khởi điểm 1 triệu, sau đó kiểm tra dữ liệu tạo phiên có thiếu không, kèm chuyện yêu cầu duyệt còn pending.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0
+"Mình mới dùng app, seller muốn tạo phiên máy ảnh film với giá khởi điểm 1 triệu, kèm chuyện admin đã approve chưa vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"seller muon tao phien may anh film voi gia khoi diem 1 trieu, truoc khi classifier duyet auto dang chay dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"seller muốn tạo phien máy ảnh film với giá khởi điểm 1 triệu, kèm chuyện vì tài khoản này không phải admin, đồng thời sản phẩm máy ảnh film nhé",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muốn tạo phiên máy ảnh film với giá khởi điểm 1 triệu, đồng thời xem dữ liệu trước khi gửi duyệt đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"Admin ơi, seller muốn tạo phiên máy ảnh film với giá khởi điểm 1 triệu, nhưng phiên đang chờ admin duyệt, nhưng classifier duyệt tự động đang chạy; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0
+"Seller muốn tạo phiên máy ảnh film kèm mô tả rõ ràng, kèm chuyện mô hình tự đánh giá phiên này, sau đó mã phòng PHIEN-2026.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Alo ad, seller muốn tạo phiên máy ảnh film kèm mô tả rõ ràng, sau đó đừng hiện nhầm chức năng seller để khỏi làm sai?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muon tao phien may anh film kem mo ta ro rang, kem chuyen bao loi field con trong, dong thoi nho bot giai thich them m hoi ren",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0
+"seller muốn tạo phien máy ảnh film kèm mô tả rõ ràng, nhưng gửi lên hàng đợi duyệt được không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"seller muốn tạo phiên máy ảnh film kèm mô tả rõ ràng, đồng thời AI auto approve có tham gia duyệt, nhưng đừng hiện nhầm chức năng seller đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Help với, seller muốn tạo phiên máy ảnh film kèm mô tả rõ ràng, sau đó kiểm tra quyền user trước; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Seller muốn tạo phiên máy ảnh film để admin duyệt, rồi thông tin sản phẩm nhập chưa hợp lệ, đồng thời sản phẩm đồng hồ cơ.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, seller muốn tạo phiên máy ảnh film để admin duyệt, kèm chuyện xem trạng thái duyệt phiên đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"seller muon tao phien may anh film de ad duyet, nhung neu ai ko chac thi day ad nhe",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"seller muốn tạo phien máy ảnh film để admin duyệt, nhưng role của mình đang bị lẫn, kèm chuyện thông tin sản phẩm nhập chưa hợp lệ mình đang thao tác",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"seller muốn tạo phiên máy ảnh film để admin duyệt, kèm chuyện validate tên mô tả giá ảnh đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"Mình mới dùng app, seller muốn tạo phiên máy ảnh film để admin duyệt, nhưng yêu cầu duyệt còn pending, rồi mã phòng P-774; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"Seller muốn tạo phiên máy ảnh film có ảnh sản phẩm, trước khi kết quả auto approve là gì.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Cứu mình với, seller muốn tạo phiên máy ảnh film có ảnh sản phẩm, sau đó cần đúng quyền bidder mình hơi rén?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muon tao phien may anh film co anh sp, dong thoi check du lieu tao phien co thieu ko, nhung yc duyet con pending dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0
+"seller muốn tạo phien máy ảnh film có ảnh sản phẩm, sau đó admin đã approve chưa, kèm chuyện sản phẩm MacBook cũ pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"seller muốn tạo phiên máy ảnh film có ảnh sản phẩm, rồi classifier duyệt tự động đang chạy đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Alo ad, seller muốn tạo phiên máy ảnh film có ảnh sản phẩm, sau đó vì tài khoản này không phải admin; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Seller muốn tạo phiên máy ảnh film trong hôm nay, đồng thời xem dữ liệu trước khi gửi duyệt.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"Ê cho hỏi, seller muốn tạo phiên máy ảnh film trong hôm nay, nhưng phiên đang chờ admin duyệt, nhưng classifier duyệt tự động đang chạy, rồi bot phân tích lỗi đang gặp nhé?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,1,0,0,1,0
+"seller muon tao phien may anh film trong hom nay, sau do mo hinh tu danh gia phien nay m dang thao tac",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"seller muốn tạo phien máy ảnh film trong hôm nay, đồng thời đừng hiện nhầm chức năng seller vì mình chưa rõ luồng",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muốn tạo phiên máy ảnh film trong hôm nay, sau đó báo lỗi field còn trống, đồng thời mã phòng AUC-1024 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, seller muốn tạo phiên máy ảnh film trong hôm nay, trước khi gửi lên hàng đợi duyệt; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"Seller muốn tạo phiên MacBook cũ với giá khởi điểm 1 triệu, đồng thời AI auto approve có tham gia duyệt, nhưng đừng hiện nhầm chức năng seller, trước khi sản phẩm iPhone 15.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Này ad, seller muốn tạo phiên MacBook cũ với giá khởi điểm 1 triệu, sau đó kiểm tra quyền user trước được không?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muon tao phien macbook cu voi gia khoi diem 1 trieu, kem chuyen thong tin sp nhap chua hop le pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"seller muốn tạo phien MacBook cũ với giá khởi điểm 1 triệu, rồi xem trạng thái duyệt phiên để khỏi làm sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"seller muốn tạo phiên MacBook cũ với giá khởi điểm 1 triệu, sau đó nếu AI không chắc thì đẩy admin đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Cứu mình với, seller muốn tạo phiên MacBook cũ với giá khởi điểm 1 triệu, sau đó role của mình đang bị lẫn, đồng thời thông tin sản phẩm nhập chưa hợp lệ; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"Seller muốn tạo phiên MacBook cũ kèm mô tả rõ ràng, trước khi validate tên mô tả giá ảnh.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"Admin ơi, seller muốn tạo phiên MacBook cũ kèm mô tả rõ ràng, kèm chuyện yêu cầu duyệt còn pending mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"seller muon tao phien macbook cu kem mo ta ro rang, truoc khi ket qua auto approve la gi vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"seller muốn tạo phien MacBook cũ kèm mô tả rõ ràng, sau đó cần đúng quyền bidder, nhưng mã phòng A17, nhưng sản phẩm laptop gaming đang cần xử lý liền",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muốn tạo phiên MacBook cũ kèm mô tả rõ ràng, đồng thời kiểm tra dữ liệu tạo phiên có thiếu không, nhưng yêu cầu duyệt còn pending đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0
+"Ê cho hỏi, seller muốn tạo phiên MacBook cũ kèm mô tả rõ ràng, sau đó admin đã approve chưa; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"Seller muốn tạo phiên MacBook cũ để admin duyệt, kèm chuyện classifier duyệt tự động đang chạy, rồi bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,1,0
+"Help với, seller muốn tạo phiên MacBook cũ để admin duyệt, nhưng vì tài khoản này không phải admin pls?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muon tao phien macbook cu de ad duyet, roi xem du lieu truoc khi gui duyet de khoi lam sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"seller muốn tạo phien MacBook cũ để admin duyệt, đồng thời phiên đang chờ admin duyệt, sau đó classifier duyệt tự động đang chạy mình hơi rén",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0
+"seller muốn tạo phiên MacBook cũ để admin duyệt, trước khi mô hình tự đánh giá phiên này đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Này ad, seller muốn tạo phiên MacBook cũ để admin duyệt, rồi đừng hiện nhầm chức năng seller; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Seller muốn tạo phiên MacBook cũ có ảnh sản phẩm, sau đó báo lỗi field còn trống, rồi sản phẩm tranh sưu tầm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"Mình mới dùng app, seller muốn tạo phiên MacBook cũ có ảnh sản phẩm, trước khi gửi lên hàng đợi duyệt vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"seller muon tao phien macbook cu co anh sp, kem chuyen ai auto approve co tham gia duyet, sau do dung hien nham chuc nang seller, roi ma room sala-05 dang can xu ly lien",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"seller muốn tạo phien MacBook cũ có ảnh sản phẩm, đồng thời kiểm tra quyền user trước nhé",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muốn tạo phiên MacBook cũ có ảnh sản phẩm, sau đó thông tin sản phẩm nhập chưa hợp lệ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"Admin ơi, seller muốn tạo phiên MacBook cũ có ảnh sản phẩm, nhưng xem trạng thái duyệt phiên; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"Seller muốn tạo phiên MacBook cũ trong hôm nay, sau đó nếu AI không chắc thì đẩy admin.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Alo ad, seller muốn tạo phiên MacBook cũ trong hôm nay, sau đó role của mình đang bị lẫn, đồng thời thông tin sản phẩm nhập chưa hợp lệ để khỏi làm sai?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"seller muon tao phien macbook cu trong hom nay, roi validate ten mo ta gia anh m hoi ren",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"seller muốn tạo phien MacBook cũ trong hôm nay, sau đó yêu cầu duyệt còn pending, đồng thời sản phẩm mô hình Gundam được không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"seller muốn tạo phiên MacBook cũ trong hôm nay, rồi kết quả auto approve là gì đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Help với, seller muốn tạo phiên MacBook cũ trong hôm nay, đồng thời cần đúng quyền bidder, sau đó bot hướng dẫn bước tiếp theo; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0
+"Seller muốn tạo phiên tranh sưu tầm với giá khởi điểm 1 triệu, rồi kiểm tra dữ liệu tạo phiên có thiếu không, đồng thời yêu cầu duyệt còn pending.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0
+"Mình đang bị vướng, seller muốn tạo phiên tranh sưu tầm với giá khởi điểm 1 triệu, trước khi admin đã approve chưa, nhưng mã phòng ROOM-88 đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"seller muon tao phien tranh suu tam voi gia khoi diem 1 trieu, sau do classifier duyet auto dang chay nhe",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"seller muốn tạo phien tranh sưu tầm với giá khởi điểm 1 triệu, trước khi vì tài khoản này không phải admin mình đang thao tác",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muốn tạo phiên tranh sưu tầm với giá khởi điểm 1 triệu, nhưng xem dữ liệu trước khi gửi duyệt đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"Mình mới dùng app, seller muốn tạo phiên tranh sưu tầm với giá khởi điểm 1 triệu, kèm chuyện phiên đang chờ admin duyệt, nhưng classifier duyệt tự động đang chạy; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0
+"Seller muốn tạo phiên tranh sưu tầm kèm mô tả rõ ràng, trước khi mô hình tự đánh giá phiên này, sau đó sản phẩm áo khoác vintage.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Cứu mình với, seller muốn tạo phiên tranh sưu tầm kèm mô tả rõ ràng, rồi đừng hiện nhầm chức năng seller mình hơi rén?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muon tao phien tranh suu tam kem mo ta ro rang, truoc khi bao loi field con trong dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"seller muốn tạo phien tranh sưu tầm kèm mô tả rõ ràng, kèm chuyện gửi lên hàng đợi duyệt pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"seller muốn tạo phiên tranh sưu tầm kèm mô tả rõ ràng, nhưng AI auto approve có tham gia duyệt, sau đó đừng hiện nhầm chức năng seller đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Alo ad, seller muốn tạo phiên tranh sưu tầm kèm mô tả rõ ràng, rồi kiểm tra quyền user trước; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Seller muốn tạo phiên tranh sưu tầm để admin duyệt, đồng thời thông tin sản phẩm nhập chưa hợp lệ, trước khi mã phòng BID-09.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"Ê cho hỏi, seller muốn tạo phiên tranh sưu tầm để admin duyệt, trước khi xem trạng thái duyệt phiên nhé?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"seller muon tao phien tranh suu tam de ad duyet, kem chuyen neu ai ko chac thi day ad m dang thao tac",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"seller muốn tạo phien tranh sưu tầm để admin duyệt, kèm chuyện role của mình đang bị lẫn, kèm chuyện thông tin sản phẩm nhập chưa hợp lệ, trước khi sản phẩm bàn phím custom vì mình chưa rõ luồng",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"seller muốn tạo phiên tranh sưu tầm để admin duyệt, trước khi validate tên mô tả giá ảnh, kèm chuyện chatbot nói dễ hiểu giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0
+"Mình đang bị vướng, seller muốn tạo phiên tranh sưu tầm để admin duyệt, kèm chuyện yêu cầu duyệt còn pending; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"Seller muốn tạo phiên tranh sưu tầm có ảnh sản phẩm, sau đó kết quả auto approve là gì.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Này ad, seller muốn tạo phiên tranh sưu tầm có ảnh sản phẩm, rồi cần đúng quyền bidder được không?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muon tao phien tranh suu tam co anh sp, nhung check du lieu tao phien co thieu ko, sau do yc duyet con pending pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0
+"seller muốn tạo phien tranh sưu tầm có ảnh sản phẩm, rồi admin đã approve chưa để khỏi làm sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"seller muốn tạo phiên tranh sưu tầm có ảnh sản phẩm, đồng thời classifier duyệt tự động đang chạy đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Cứu mình với, seller muốn tạo phiên tranh sưu tầm có ảnh sản phẩm, rồi vì tài khoản này không phải admin, trước khi mã phòng GOLD-21; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Seller muốn tạo phiên tranh sưu tầm trong hôm nay, nhưng xem dữ liệu trước khi gửi duyệt, nhưng sản phẩm tai nghe Sony.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"Admin ơi, seller muốn tạo phiên tranh sưu tầm trong hôm nay, kèm chuyện phiên đang chờ admin duyệt, nhưng classifier duyệt tự động đang chạy mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0
+"seller muon tao phien tranh suu tam trong hom nay, roi mo hinh tu danh gia phien nay vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"seller muốn tạo phien tranh sưu tầm trong hôm nay, nhưng đừng hiện nhầm chức năng seller đang cần xử lý liền",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muốn tạo phiên tranh sưu tầm trong hôm nay, rồi báo lỗi field còn trống đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"Ê cho hỏi, seller muốn tạo phiên tranh sưu tầm trong hôm nay, sau đó gửi lên hàng đợi duyệt; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"Seller muốn tạo phiên món hàng này với giá khởi điểm 1 triệu, kèm chuyện AI auto approve có tham gia duyệt, sau đó đừng hiện nhầm chức năng seller.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Help với, seller muốn tạo phiên món hàng này với giá khởi điểm 1 triệu, đồng thời kiểm tra quyền user trước pls?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muon tao phien mon hang nay voi gia khoi diem 1 trieu, sau do thong tin sp nhap chua hop le de khoi lam sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"seller muốn tạo phien món hàng này với giá khởi điểm 1 triệu, nhưng xem trạng thái duyệt phiên, đồng thời nhờ chatbot giải thích thêm, trước khi sản phẩm máy ảnh film mình hơi rén",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,1,0,0,0,0
+"seller muốn tạo phiên món hàng này với giá khởi điểm 1 triệu, đồng thời nếu AI không chắc thì đẩy admin, nhưng mã phòng PHIEN-2026 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Này ad, seller muốn tạo phiên món hàng này với giá khởi điểm 1 triệu, đồng thời role của mình đang bị lẫn, rồi thông tin sản phẩm nhập chưa hợp lệ; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"Seller muốn tạo phiên món hàng này kèm mô tả rõ ràng, rồi validate tên mô tả giá ảnh.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"Mình mới dùng app, seller muốn tạo phiên món hàng này kèm mô tả rõ ràng, sau đó yêu cầu duyệt còn pending vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"seller muon tao phien mon hang nay kem mo ta ro rang, roi ket qua auto approve la gi dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"seller muốn tạo phien món hàng này kèm mô tả rõ ràng, đồng thời cần đúng quyền bidder nhé",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muốn tạo phiên món hàng này kèm mô tả rõ ràng, kèm chuyện kiểm tra dữ liệu tạo phiên có thiếu không, sau đó yêu cầu duyệt còn pending đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0
+"Admin ơi, seller muốn tạo phiên món hàng này kèm mô tả rõ ràng, đồng thời admin đã approve chưa; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"Seller muốn tạo phiên món hàng này để admin duyệt, sau đó classifier duyệt tự động đang chạy, kèm chuyện sản phẩm đồng hồ cơ.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+"Alo ad, seller muốn tạo phiên món hàng này để admin duyệt, trước khi vì tài khoản này không phải admin để khỏi làm sai?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muon tao phien mon hang nay de ad duyet, nhung xem du lieu truoc khi gui duyet m hoi ren",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+"seller muốn tạo phien món hàng này để admin duyệt, kèm chuyện mã phòng P-774 được không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muốn tạo phiên món hàng này để admin duyệt đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Help với, seller muốn tạo phiên món hàng này để admin duyệt; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Seller muốn tạo phiên món hàng này có ảnh sản phẩm.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, seller muốn tạo phiên món hàng này có ảnh sản phẩm đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+seller muon tao phien mon hang nay co anh sp nhe,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muốn tạo phien món hàng này có ảnh sản phẩm, kèm chuyện sản phẩm MacBook cũ mình đang thao tác",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muốn tạo phiên món hàng này có ảnh sản phẩm đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, seller muốn tạo phiên món hàng này có ảnh sản phẩm; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Seller muốn tạo phiên món hàng này trong hôm nay.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Cứu mình với, seller muốn tạo phiên món hàng này trong hôm nay mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muon tao phien mon hang nay trong hom nay, sau do ma room auc-1024 dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+seller muốn tạo phien món hàng này trong hôm nay pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muốn tạo phiên món hàng này trong hôm nay đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Alo ad, seller muốn tạo phiên món hàng này trong hôm nay; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Seller muốn tạo phiên sản phẩm mới với giá khởi điểm 1 triệu, rồi sản phẩm iPhone 15.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, seller muốn tạo phiên sản phẩm mới với giá khởi điểm 1 triệu nhé?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+seller muon tao phien sp moi voi gia khoi diem 1 trieu m dang thao tac,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+seller muốn tạo phien sản phẩm mới với giá khởi điểm 1 triệu vì mình chưa rõ luồng,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muốn tạo phiên sản phẩm mới với giá khởi điểm 1 triệu đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, seller muốn tạo phiên sản phẩm mới với giá khởi điểm 1 triệu; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Seller muốn tạo phiên sản phẩm mới kèm mô tả rõ ràng.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Này ad, seller muốn tạo phiên sản phẩm mới kèm mô tả rõ ràng, trước khi mã phòng A17 được không?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+seller muon tao phien sp moi kem mo ta ro rang pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muốn tạo phien sản phẩm mới kèm mô tả rõ ràng, nhưng sản phẩm laptop gaming để khỏi làm sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muốn tạo phiên sản phẩm mới kèm mô tả rõ ràng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Cứu mình với, seller muốn tạo phiên sản phẩm mới kèm mô tả rõ ràng; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Seller muốn tạo phiên sản phẩm mới để admin duyệt.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Admin ơi, seller muốn tạo phiên sản phẩm mới để admin duyệt mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+seller muon tao phien sp moi de ad duyet vi m chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+seller muốn tạo phien sản phẩm mới để admin duyệt đang cần xử lý liền,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"seller muốn tạo phiên sản phẩm mới để admin duyệt đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, seller muốn tạo phiên sản phẩm mới để admin duyệt; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Seller muốn tạo phiên sản phẩm mới có ảnh sản phẩm, rồi mã phòng SALA-05, trước khi sản phẩm tranh sưu tầm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Help với, seller muốn tạo phiên sản phẩm mới có ảnh sản phẩm pls?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0

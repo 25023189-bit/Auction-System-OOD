@@ -1,0 +1,224 @@
+{
+  "summary": {
+    "precision_micro": 0.8962,
+    "recall_micro": 0.975,
+    "f1_micro": 0.9339,
+    "precision_macro": 0.8939,
+    "recall_macro": 0.9785,
+    "f1_macro": 0.9329,
+    "precision_weighted": 0.9007,
+    "recall_weighted": 0.975,
+    "f1_weighted": 0.9351,
+    "precision_samples": 0.9163,
+    "recall_samples": 0.9771,
+    "f1_samples": 0.936,
+    "exact_match_ratio": 0.8011,
+    "hamming_loss": 0.0088
+  },
+  "per_label_report": {
+    "ĐĂNG KÝ TÀI KHOẢN": {
+      "precision": 0.9761904761904762,
+      "recall": 1.0,
+      "f1-score": 0.9879518072289156,
+      "support": 41.0
+    },
+    "ĐĂNG NHẬP HỆ THỐNG": {
+      "precision": 0.8333333333333334,
+      "recall": 1.0,
+      "f1-score": 0.9090909090909091,
+      "support": 100.0
+    },
+    "QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU": {
+      "precision": 0.828125,
+      "recall": 1.0,
+      "f1-score": 0.905982905982906,
+      "support": 53.0
+    },
+    "PHÂN QUYỀN NGƯỜI DÙNG": {
+      "precision": 0.8817204301075269,
+      "recall": 1.0,
+      "f1-score": 0.9371428571428572,
+      "support": 82.0
+    },
+    "QUẢN LÝ SỐ DƯ TÀI KHOẢN": {
+      "precision": 0.9136690647482014,
+      "recall": 1.0,
+      "f1-score": 0.9548872180451128,
+      "support": 127.0
+    },
+    "XEM DANH SÁCH PHIÊN ĐẤU GIÁ": {
+      "precision": 0.8362068965517241,
+      "recall": 0.9238095238095239,
+      "f1-score": 0.8778280542986425,
+      "support": 105.0
+    },
+    "XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ": {
+      "precision": 0.8513513513513513,
+      "recall": 0.9692307692307692,
+      "f1-score": 0.9064748201438849,
+      "support": 130.0
+    },
+    "THAM GIA PHÒNG ĐẤU GIÁ": {
+      "precision": 0.9050279329608939,
+      "recall": 0.9700598802395209,
+      "f1-score": 0.9364161849710982,
+      "support": 167.0
+    },
+    "RỜI PHÒNG ĐẤU GIÁ": {
+      "precision": 0.9285714285714286,
+      "recall": 0.9420289855072463,
+      "f1-score": 0.935251798561151,
+      "support": 69.0
+    },
+    "ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ": {
+      "precision": 0.8438818565400844,
+      "recall": 0.9615384615384616,
+      "f1-score": 0.898876404494382,
+      "support": 208.0
+    },
+    "CẬP NHẬT GIÁ REALTIME": {
+      "precision": 0.9013157894736842,
+      "recall": 0.9856115107913669,
+      "f1-score": 0.9415807560137457,
+      "support": 139.0
+    },
+    "XEM LỊCH SỬ ĐẶT GIÁ": {
+      "precision": 0.926829268292683,
+      "recall": 1.0,
+      "f1-score": 0.9620253164556962,
+      "support": 76.0
+    },
+    "CHAT TRONG PHÒNG ĐẤU GIÁ": {
+      "precision": 0.9714285714285714,
+      "recall": 0.9714285714285714,
+      "f1-score": 0.9714285714285714,
+      "support": 105.0
+    },
+    "XEM THỜI GIAN CÒN LẠI CỦA PHIÊN": {
+      "precision": 0.9259259259259259,
+      "recall": 0.9202453987730062,
+      "f1-score": 0.9230769230769231,
+      "support": 163.0
+    },
+    "ANTI-SNIPING": {
+      "precision": 0.8596491228070176,
+      "recall": 0.9158878504672897,
+      "f1-score": 0.8868778280542986,
+      "support": 107.0
+    },
+    "KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN": {
+      "precision": 0.8974358974358975,
+      "recall": 1.0,
+      "f1-score": 0.9459459459459459,
+      "support": 70.0
+    },
+    "TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ": {
+      "precision": 0.8943661971830986,
+      "recall": 0.9921875,
+      "f1-score": 0.9407407407407408,
+      "support": 128.0
+    },
+    "XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC": {
+      "precision": 0.9629629629629629,
+      "recall": 0.9904761904761905,
+      "f1-score": 0.9765258215962441,
+      "support": 105.0
+    },
+    "TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY": {
+      "precision": 0.8469387755102041,
+      "recall": 1.0,
+      "f1-score": 0.9171270718232044,
+      "support": 83.0
+    },
+    "SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ": {
+      "precision": 0.8888888888888888,
+      "recall": 1.0,
+      "f1-score": 0.9411764705882353,
+      "support": 88.0
+    },
+    "KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ": {
+      "precision": 0.8055555555555556,
+      "recall": 0.9775280898876404,
+      "f1-score": 0.883248730964467,
+      "support": 89.0
+    },
+    "YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ": {
+      "precision": 0.7777777777777778,
+      "recall": 0.9891304347826086,
+      "f1-score": 0.8708133971291866,
+      "support": 92.0
+    },
+    "SELLER ĐÓNG PHIÊN ĐẤU GIÁ": {
+      "precision": 0.7840909090909091,
+      "recall": 0.9857142857142858,
+      "f1-score": 0.8734177215189873,
+      "support": 70.0
+    },
+    "THÔNG BÁO TRẠNG THÁI PHIÊN": {
+      "precision": 0.7464788732394366,
+      "recall": 0.9636363636363636,
+      "f1-score": 0.8412698412698413,
+      "support": 55.0
+    },
+    "CHATBOT HỖ TRỢ NGƯỜI DÙNG": {
+      "precision": 0.9858490566037735,
+      "recall": 0.9720930232558139,
+      "f1-score": 0.9789227166276346,
+      "support": 215.0
+    },
+    "NGOÀI LỀ": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 99.0
+    },
+    "CHỦ ĐỀ NGUY HIỂM": {
+      "precision": 0.963855421686747,
+      "recall": 0.9411764705882353,
+      "f1-score": 0.9523809523809523,
+      "support": 170.0
+    },
+    "AI HỖ TRỢ AUTO APPROVE": {
+      "precision": 0.9292929292929293,
+      "recall": 1.0,
+      "f1-score": 0.9633507853403142,
+      "support": 92.0
+    },
+    "Không Rõ": {
+      "precision": 0.9681528662420382,
+      "recall": 1.0,
+      "f1-score": 0.9838187702265372,
+      "support": 152.0
+    },
+    "AUTOBIDDING": {
+      "precision": 0.9836065573770492,
+      "recall": 0.9836065573770492,
+      "f1-score": 0.9836065573770492,
+      "support": 61.0
+    },
+    "micro avg": {
+      "precision": 0.8961996596710153,
+      "recall": 0.9750077136686208,
+      "f1-score": 0.933944140682725,
+      "support": 3241.0
+    },
+    "macro avg": {
+      "precision": 0.893949303904339,
+      "recall": 0.9785129955834647,
+      "f1-score": 0.9329079292839478,
+      "support": 3241.0
+    },
+    "weighted avg": {
+      "precision": 0.9006539735691597,
+      "recall": 0.9750077136686208,
+      "f1-score": 0.93507553162319,
+      "support": 3241.0
+    },
+    "samples avg": {
+      "precision": 0.9163233274475181,
+      "recall": 0.9771434176966842,
+      "f1-score": 0.9360253930883712,
+      "support": 3241.0
+    }
+  }
+}

@@ -1,0 +1,201 @@
+﻿text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+"Giá hiện tại đang là phiên này đang đứng bao nhiêu, rồi mình định đặt giá thêm, nhưng kiểm tra log đặt giá, rồi bot phân tích lỗi đang gặp, sau đó mã phòng AUC-1024, nhưng mức tiền 50k.",0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Admin ơi, giá hiện tại đang là phiên này đang đứng bao nhiêu, nhưng ai đã đặt trước đó mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la phien nay dang dung bn, sau do m so het thoi gian vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là phien này đang đứng bao nhiêu, đồng thời đừng trừ tiền sai đang cần xử lý liền",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là phiên này đang đứng bao nhiêu, kèm chuyện nâng thêm 100k được không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, giá hiện tại đang là phiên này đang đứng bao nhiêu, trước khi muốn xem lịch sử bid, đồng thời mình sợ hết thời gian; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá hiện tại đang là phiên này có bị delay không, kèm chuyện đồng hồ phiên sắp hết.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, giá hiện tại đang là phiên này có bị delay không, rồi balance đang hiển thị lạ, trước khi mức tiền 5 triệu pls?",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la phien nay co bi delay ko, roi muon vuot nguoi dang dan de khoi lam sai",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là phien này có bị delay không, đồng thời đối chiếu lịch sử đấu giá mình hơi rén",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là phiên này có bị delay không, đồng thời xem countdown còn bao lâu, đồng thời balance đang hiển thị lạ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, giá hiện tại đang là phiên này có bị delay không, kèm chuyện xem tiền còn đủ không, trước khi mã phòng A17; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá hiện tại đang là phiên này vì mình thấy chưa đổi, sau đó đặt 500k nếu hợp lệ.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, giá hiện tại đang là phiên này vì mình thấy chưa đổi, trước khi xem các mức giá cũ vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la phien nay vi m thay chua doi, truoc khi con may giay de thao tac, roi muc tien +300k dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là phien này vì mình thấy chưa đổi, kèm chuyện mình cần kiểm tra số dư, sau đó đặt 500k nếu hợp lệ nhé",0,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là phiên này vì mình thấy chưa đổi, rồi chuẩn bị bid mức mới đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, giá hiện tại đang là phiên này vì mình thấy chưa đổi, rồi kiểm tra log đặt giá, nhưng bot phân tích lỗi đang gặp; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Giá hiện tại đang là phiên này trước khi mình bid, trước khi kiểm tra deadline của phiên.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, giá hiện tại đang là phiên này trước khi mình bid, rồi số tiền còn lại phải rõ để khỏi làm sai?",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la phien nay truoc khi m bid, sau do m dinh dat gia them, truoc khi check log dat gia m hoi ren",0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là phien này trước khi mình bid, đồng thời ai đã đặt trước đó, nhưng mức tiền +75k được không",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là phiên này trước khi mình bid, trước khi mình sợ hết thời gian, nhưng mã phòng SALA-05 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, giá hiện tại đang là phiên này trước khi mình bid, rồi đừng trừ tiền sai; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá hiện tại đang là phiên này để mình theo dõi tiếp, sau đó nâng thêm 100k được không.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, giá hiện tại đang là phiên này để mình theo dõi tiếp, rồi muốn xem lịch sử bid, kèm chuyện mình sợ hết thời gian đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la phien nay de m theo doi tiep, dong thoi dong ho phien sap het nhe",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là phien này để mình theo dõi tiếp, trước khi balance đang hiển thị lạ mình đang thao tác",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là phiên này để mình theo dõi tiếp, trước khi muốn vượt người đang dẫn, trước khi mức tiền 2.500.000 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, giá hiện tại đang là phiên này để mình theo dõi tiếp, sau đó đối chiếu lịch sử đấu giá; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá hiện tại đang là sản phẩm đang đấu đang đứng bao nhiêu, sau đó xem countdown còn bao lâu, nhưng balance đang hiển thị lạ.",0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, giá hiện tại đang là sản phẩm đang đấu đang đứng bao nhiêu, đồng thời xem tiền còn đủ không mình hơi rén?",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la sp dang dau dang dung bn, sau do dat 500k neu hop le dc ko",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là sản phầm đang đấu đang đứng bao nhiêu, trước khi xem các mức giá cũ, nhưng mã phòng ROOM-88 pls",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là sản phẩm đang đấu đang đứng bao nhiêu, trước khi còn mấy giây để thao tác, nhưng bot hướng dẫn bước tiếp theo đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Alo ad, giá hiện tại đang là sản phẩm đang đấu đang đứng bao nhiêu, kèm chuyện mình cần kiểm tra số dư, sau đó đặt 500k nếu hợp lệ, kèm chuyện mức tiền 1tr2; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá hiện tại đang là sản phẩm đang đấu có bị delay không, trước khi chuẩn bị bid mức mới.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, giá hiện tại đang là sản phẩm đang đấu có bị delay không, trước khi kiểm tra log đặt giá nhé?",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la sp dang dau co bi delay ko, sau do check deadline cua phien m dang thao tac",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là sản phầm đang đấu có bị delay không, đồng thời số tiền còn lại phải rõ vì mình chưa rõ luồng",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là sản phẩm đang đấu có bị delay không, rồi mình định đặt giá thêm, nhưng kiểm tra log đặt giá đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, giá hiện tại đang là sản phẩm đang đấu có bị delay không, nhưng ai đã đặt trước đó; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá hiện tại đang là sản phẩm đang đấu vì mình thấy chưa đổi, kèm chuyện mình sợ hết thời gian, nhưng mức tiền 250.000.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, giá hiện tại đang là sản phẩm đang đấu vì mình thấy chưa đổi, sau đó đừng trừ tiền sai được không?",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la sp dang dau vi m thay chua doi, dong thoi nang them 100k dc ko, truoc khi ma room bid-09 pls",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là sản phầm đang đấu vì mình thấy chưa đổi, nhưng muốn xem lịch sử bid, đồng thời mình sợ hết thời gian để khỏi làm sai",0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là sản phẩm đang đấu vì mình thấy chưa đổi, kèm chuyện đồng hồ phiên sắp hết đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, giá hiện tại đang là sản phẩm đang đấu vì mình thấy chưa đổi, rồi balance đang hiển thị lạ; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá hiện tại đang là sản phẩm đang đấu trước khi mình bid, kèm chuyện muốn vượt người đang dẫn.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, giá hiện tại đang là sản phẩm đang đấu trước khi mình bid, trước khi đối chiếu lịch sử đấu giá, sau đó mức tiền 100k mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la sp dang dau truoc khi m bid, truoc khi xem countdown con bao lau, truoc khi balance dang hien thi la vi m chua ro luong",0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là sản phầm đang đấu trước khi mình bid, rồi xem tiền còn đủ không, sau đó chatbot nói dễ hiểu giúp mình đang cần xử lý liền",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"giá hiện tại đang là sản phẩm đang đấu trước khi mình bid, trước khi đặt 500k nếu hợp lệ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, giá hiện tại đang là sản phẩm đang đấu trước khi mình bid, kèm chuyện xem các mức giá cũ; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá hiện tại đang là sản phẩm đang đấu để mình theo dõi tiếp, rồi còn mấy giây để thao tác.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, giá hiện tại đang là sản phẩm đang đấu để mình theo dõi tiếp, sau đó mình cần kiểm tra số dư, kèm chuyện đặt 500k nếu hợp lệ, nhưng mã phòng GOLD-21 pls?",0,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la sp dang dau de m theo doi tiep, nhung chuan bi bid muc moi, truoc khi muc tien 50k de khoi lam sai",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là sản phầm đang đấu để mình theo dõi tiếp, nhưng kiểm tra log đặt giá mình hơi rén",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là sản phẩm đang đấu để mình theo dõi tiếp, kèm chuyện kiểm tra deadline của phiên đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, giá hiện tại đang là sản phẩm đang đấu để mình theo dõi tiếp, sau đó số tiền còn lại phải rõ; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá hiện tại đang là room hiện tại đang đứng bao nhiêu, trước khi mình định đặt giá thêm, rồi kiểm tra log đặt giá.",0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, giá hiện tại đang là room hiện tại đang đứng bao nhiêu, rồi ai đã đặt trước đó vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la room hien tai dang dung bn, kem chuyen m so het thoi gian dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là room hiện tại đang đứng bao nhiêu, sau đó đừng trừ tiền sai, rồi mức tiền 5 triệu nhé",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là room hiện tại đang đứng bao nhiêu, đồng thời nâng thêm 100k được không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, giá hiện tại đang là room hiện tại đang đứng bao nhiêu, nhưng muốn xem lịch sử bid, đồng thời mình sợ hết thời gian; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá hiện tại đang là room hiện tại có bị delay không, đồng thời đồng hồ phiên sắp hết, nhưng mã phòng PHIEN-2026.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, giá hiện tại đang là room hiện tại có bị delay không, trước khi balance đang hiển thị lạ để khỏi làm sai?",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la room hien tai co bi delay ko, truoc khi muon vuot nguoi dang dan, dong thoi nho bot giai thich them m hoi ren",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"giá hiện tại đang là room hiện tại có bị delay không, sau đó đối chiếu lịch sử đấu gía được không",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là room hiện tại có bị delay không, sau đó xem countdown còn bao lâu, nhưng balance đang hiển thị lạ, rồi mức tiền +300k đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, giá hiện tại đang là room hiện tại có bị delay không, đồng thời xem tiền còn đủ không; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá hiện tại đang là room hiện tại vì mình thấy chưa đổi, kèm chuyện đặt 500k nếu hợp lệ.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, giá hiện tại đang là room hiện tại vì mình thấy chưa đổi, nhưng xem các mức giá cũ đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la room hien tai vi m thay chua doi, nhung con may giay de thao tac nhe",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là room hiện tại vì mình thấy chưa đổi, đồng thời mình cần kiểm chra số dư, nhưng đặt 500k nếu hợp lệ mình đang thao tác",0,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là room hiện tại vì mình thấy chưa đổi, trước khi chuẩn bị bid mức mới đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, giá hiện tại đang là room hiện tại vì mình thấy chưa đổi, trước khi kiểm tra log đặt giá, rồi mã phòng P-774, đồng thời mức tiền +75k; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá hiện tại đang là room hiện tại trước khi mình bid, nhưng kiểm tra deadline của phiên.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, giá hiện tại đang là room hiện tại trước khi mình bid, trước khi số tiền còn lại phải rõ mình hơi rén?",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la room hien tai truoc khi m bid, kem chuyen m dinh dat gia them, roi check log dat gia dc ko",0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là room hiện tại trước khi mình bid, sau đó ai đã đặt trước đó pls",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là room hiện tại trước khi mình bid, nhưng mình sợ hết thời gian đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, giá hiện tại đang là room hiện tại trước khi mình bid, trước khi đừng trừ tiền sai; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá hiện tại đang là room hiện tại để mình theo dõi tiếp, kèm chuyện nâng thêm 100k được không, trước khi mức tiền 2.500.000.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, giá hiện tại đang là room hiện tại để mình theo dõi tiếp, trước khi muốn xem lịch sử bid, đồng thời mình sợ hết thời gian, kèm chuyện bot phân tích lỗi đang gặp nhé?",0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"gia hien tai dang la room hien tai de m theo doi tiep, sau do dong ho phien sap het m dang thao tac",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là room hiện tại để mình theo dõi tiếp, nhưng balane đang hiển thị lạ vì mình chưa rõ luồng",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là room hiện tại để mình theo dõi tiếp, nhưng muốn vượt người đang dẫn, kèm chuyện mã phòng AUC-1024 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, giá hiện tại đang là room hiện tại để mình theo dõi tiếp, kèm chuyện đối chiếu lịch sử đấu giá; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá hiện tại đang là món hàng này đang đứng bao nhiêu, rồi xem countdown còn bao lâu, rồi balance đang hiển thị lạ.",0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, giá hiện tại đang là món hàng này đang đứng bao nhiêu, nhưng xem tiền còn đủ không, sau đó mức tiền 1tr2 được không?",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la mon hang nay dang dung bn, roi dat 500k neu hop le pls",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là món hàng này đang đứng bao nhiêu, sau đó xem các mức giá cũ để khỏi làm sai",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là món hàng này đang đứng bao nhiêu, sau đó còn mấy giây để thao tác đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, giá hiện tại đang là món hàng này đang đứng bao nhiêu, trước khi mình cần kiểm tra số dư, sau đó đặt 500k nếu hợp lệ; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá hiện tại đang là món hàng này có bị delay không, sau đó chuẩn bị bid mức mới.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, giá hiện tại đang là món hàng này có bị delay không, sau đó kiểm tra log đặt giá mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la mon hang nay co bi delay ko, roi check deadline cua phien, truoc khi muc tien 250.000 vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là món hàng này có bị delay khong, nhưng số tiền còn lại phải rõ, trước khi mã phòng A17 đang cần xử lý liền",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là món hàng này có bị delay không, đồng thời mình định đặt giá thêm, kèm chuyện kiểm tra log đặt giá đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, giá hiện tại đang là món hàng này có bị delay không, kèm chuyện ai đã đặt trước đó; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá hiện tại đang là món hàng này vì mình thấy chưa đổi, trước khi mình sợ hết thời gian, rồi bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, giá hiện tại đang là món hàng này vì mình thấy chưa đổi, rồi đừng trừ tiền sai pls?",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la mon hang nay vi m thay chua doi, nhung nang them 100k dc ko de khoi lam sai",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là món hàng này vì mình thấy chưa đổi, kèm chuyện muốn xem lịc sử bid, đồng thời mình sợ hết thời gian, nhưng mức tiền 100k mình hơi rén",0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là món hàng này vì mình thấy chưa đổi, trước khi đồng hồ phiên sắp hết đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, giá hiện tại đang là món hàng này vì mình thấy chưa đổi, đồng thời balance đang hiển thị lạ; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá hiện tại đang là món hàng này trước khi mình bid, trước khi muốn vượt người đang dẫn.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, giá hiện tại đang là món hàng này trước khi mình bid, sau đó đối chiếu lịch sử đấu giá vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la mon hang nay truoc khi m bid, sau do xem countdown con bao lau, nhung balance dang hien thi la, nhung ma room sala-05 dang can xu ly lien",0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là món hàng này trước khi mình bid, đồng thời xem tiền còn đủ khong nhé",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là món hàng này trước khi mình bid, sau đó đặt 500k nếu hợp lệ, nhưng mức tiền 50k đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, giá hiện tại đang là món hàng này trước khi mình bid, trước khi xem các mức giá cũ; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá hiện tại đang là món hàng này để mình theo dõi tiếp, đồng thời còn mấy giây để thao tác.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, giá hiện tại đang là món hàng này để mình theo dõi tiếp, rồi mình cần kiểm tra số dư, đồng thời đặt 500k nếu hợp lệ để khỏi làm sai?",0,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la mon hang nay de m theo doi tiep, kem chuyen chuan bi bid muc moi m hoi ren",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là món hàng này để mình theo dõi tiếp, kèm chuyện kiểm tra log đặt giá được khong",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là món hàng này để mình theo dõi tiếp, trước khi kiểm tra deadline của phiên đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, giá hiện tại đang là món hàng này để mình theo dõi tiếp, rồi số tiền còn lại phải rõ, trước khi bot hướng dẫn bước tiếp theo, nhưng mức tiền 5 triệu; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Giá hiện tại đang là đồng hồ cơ đang đứng bao nhiêu, đồng thời mình định đặt giá thêm, kèm chuyện kiểm tra log đặt giá.",0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, giá hiện tại đang là đồng hồ cơ đang đứng bao nhiêu, kèm chuyện ai đã đặt trước đó, nhưng mã phòng ROOM-88 đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la dong ho co dang dung bn, roi m so het thoi gian nhe",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là đồng hồ cơ đang đứng bao nhiêu, nhưng đừng trừ tiền sai mình đang thao tác",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là đồng hồ cơ đang đứng bao nhiêu, trước khi nâng thêm 100k được không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, giá hiện tại đang là đồng hồ cơ đang đứng bao nhiêu, sau đó muốn xem lịch sử bid, sau đó mình sợ hết thời gian; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá hiện tại đang là đồng hồ cơ có bị delay không, trước khi đồng hồ phiên sắp hết, rồi mức tiền +300k.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, giá hiện tại đang là đồng hồ cơ có bị delay không, đồng thời balance đang hiển thị lạ mình hơi rén?",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la dong ho co co bi delay ko, dong thoi muon vuot nguoi dang dan dc ko",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là đồng hồ cơ có bị delay không, nhưng đối chiếu lịch sử đấu gía pls",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là đồng hồ cơ có bị delay không, nhưng xem countdown còn bao lâu, trước khi balance đang hiển thị lạ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, giá hiện tại đang là đồng hồ cơ có bị delay không, trước khi xem tiền còn đủ không; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá hiện tại đang là đồng hồ cơ vì mình thấy chưa đổi, rồi đặt 500k nếu hợp lệ, kèm chuyện mã phòng BID-09.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, giá hiện tại đang là đồng hồ cơ vì mình thấy chưa đổi, sau đó xem các mức giá cũ, kèm chuyện mức tiền +75k nhé?",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la dong ho co vi m thay chua doi, sau do con may giay de thao tac m dang thao tac",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là đồng hồ cơ vì mình thấy chưa đổi, trước khi mình cần kiểm chra số dư, sau đó đặt 500k nếu hợp lệ vì mình chưa rõ luồng",0,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là đồng hồ cơ vì mình thấy chưa đổi, đồng thời chuẩn bị bid mức mới, rồi chatbot nói dễ hiểu giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình đang bị vướng, giá hiện tại đang là đồng hồ cơ vì mình thấy chưa đổi, đồng thời kiểm tra log đặt giá; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá hiện tại đang là đồng hồ cơ trước khi mình bid, sau đó kiểm tra deadline của phiên.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, giá hiện tại đang là đồng hồ cơ trước khi mình bid, đồng thời số tiền còn lại phải rõ được không?",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la dong ho co truoc khi m bid, roi m dinh dat gia them, nhung check log dat gia, truoc khi muc tien 2.500.000 pls",0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là đồng hồ cơ trước khi mình bid, nhưng ai đã đặt trước đó để khỏi làm sai",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là đồng hồ cơ trước khi mình bid, sau đó mình sợ hết thời gian đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, giá hiện tại đang là đồng hồ cơ trước khi mình bid, đồng thời đừng trừ tiền sai, sau đó mã phòng GOLD-21; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá hiện tại đang là đồng hồ cơ để mình theo dõi tiếp, rồi nâng thêm 100k được không.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, giá hiện tại đang là đồng hồ cơ để mình theo dõi tiếp, đồng thời muốn xem lịch sử bid, trước khi mình sợ hết thời gian mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la dong ho co de m theo doi tiep, nhung dong ho phien sap het vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là đồng hồ cơ để mình theo dõi tiếp, sau đó balane đang hiển thị lạ, kèm chuyện mức tiền 1tr2 đang cần xử lý liền",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là đồng hồ cơ để mình theo dõi tiếp, sau đó muốn vượt người đang dẫn đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, giá hiện tại đang là đồng hồ cơ để mình theo dõi tiếp, rồi đối chiếu lịch sử đấu giá; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá hiện tại đang là iPhone 15 đang đứng bao nhiêu, kèm chuyện xem countdown còn bao lâu, trước khi balance đang hiển thị lạ.",0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, giá hiện tại đang là iPhone 15 đang đứng bao nhiêu, sau đó xem tiền còn đủ không pls?",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la iphone 15 dang dung bn, kem chuyen dat 500k neu hop le de khoi lam sai",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là iPhone 15 đang đứng bao nhiêu, nhưng xem các mức giá cũ, đồng thời nhờ chatbot giải thích thêm mình hơi rén",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"giá hiện tại đang là iPhone 15 đang đứng bao nhiêu, nhưng còn mấy giây để thao tác, sau đó mã phòng PHIEN-2026, rồi mức tiền 250.000 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, giá hiện tại đang là iPhone 15 đang đứng bao nhiêu, đồng thời mình cần kiểm tra số dư, nhưng đặt 500k nếu hợp lệ; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá hiện tại đang là iPhone 15 có bị delay không, nhưng chuẩn bị bid mức mới.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, giá hiện tại đang là iPhone 15 có bị delay không, nhưng kiểm tra log đặt giá vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la iphone 15 co bi delay ko, kem chuyen check deadline cua phien dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là iPhone 15 có bị delay khong, sau đó số tiền còn lại phải rõ nhé",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là iPhone 15 có bị delay không, trước khi mình định đặt giá thêm, rồi kiểm tra log đặt giá đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, giá hiện tại đang là iPhone 15 có bị delay không, rồi ai đã đặt trước đó, đồng thời mức tiền 100k; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá hiện tại đang là iPhone 15 vì mình thấy chưa đổi, đồng thời mình sợ hết thời gian.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, giá hiện tại đang là iPhone 15 vì mình thấy chưa đổi, kèm chuyện đừng trừ tiền sai để khỏi làm sai?",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la iphone 15 vi m thay chua doi, sau do nang them 100k dc ko m hoi ren",0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là iPhone 15 vì mình thấy chưa đổi, rồi mã phòng P-774 được khong",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là iPhone 15 vì mình thấy chưa đổi đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, giá hiện tại đang là iPhone 15 vì mình thấy chưa đổi; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá hiện tại đang là iPhone 15 trước khi mình bid, đồng thời mức tiền 50k.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, giá hiện tại đang là iPhone 15 trước khi mình bid đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+gia hien tai dang la iphone 15 truoc khi m bid nhe,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+giá hiện tại đang là iPhone 15 trước khi mình bid mình đang thao tác,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là iPhone 15 trước khi mình bid đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, giá hiện tại đang là iPhone 15 trước khi mình bid; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá hiện tại đang là iPhone 15 để mình theo dõi tiếp.,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, giá hiện tại đang là iPhone 15 để mình theo dõi tiếp, nhưng mức tiền 5 triệu mình hơi rén?",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la iphone 15 de m theo doi tiep, kem chuyen ma room auc-1024 dc ko",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+giá hiện tại đang là iPhone 15 để mình theo dõi tiếp pls,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là iPhone 15 để mình theo dõi tiếp đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, giá hiện tại đang là iPhone 15 để mình theo dõi tiếp; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá hiện tại đang là auction đang mở đang đứng bao nhiêu.,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, giá hiện tại đang là auction đang mở đang đứng bao nhiêu nhé?",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gia hien tai dang la auction dang mo dang dung bn, truoc khi muc tien +300k m dang thao tac",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+giá hiện tại đang là auction đang mở đang đứng bao nhiêu vì mình chưa rõ luồng,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là auction đang mở đang đứng bao nhiêu đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, giá hiện tại đang là auction đang mở đang đứng bao nhiêu; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá hiện tại đang là auction đang mở có bị delay không.,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, giá hiện tại đang là auction đang mở có bị delay không, rồi mã phòng A17 được không?",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+gia hien tai dang la auction dang mo co bi delay ko pls,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là auction đang mở có bị delay khong, đồng thời mức tiền +75k để khỏi làm sai",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là auction đang mở có bị delay không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, giá hiện tại đang là auction đang mở có bị delay không; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Giá hiện tại đang là auction đang mở vì mình thấy chưa đổi.,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, giá hiện tại đang là auction đang mở vì mình thấy chưa đổi mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+gia hien tai dang la auction dang mo vi m thay chua doi vi m chua ro luong,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+giá hiện tại đang là auction đang mở vì mình thấy chưa đổi đang cần xử lý liền,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"giá hiện tại đang là auction đang mở vì mình thấy chưa đổi, trước khi mức tiền 2.500.000 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, giá hiện tại đang là auction đang mở vì mình thấy chưa đổi; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Giá hiện tại đang là auction đang mở trước khi mình bid, sau đó mã phòng SALA-05.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, giá hiện tại đang là auction đang mở trước khi mình bid pls?",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

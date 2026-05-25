@@ -1,0 +1,550 @@
+@import "style.css";
+
+/* =========================================================
+   PREMIUM LOGIN VIEW
+   Palette:
+   - White / Ivory: #ffffff, #fffaf0, #f8fafc
+   - Gold: #c9962d, #d9b35f, #f4d892
+   - Navy / Blue: #08265c, #0b3d91, #1557d1
+   ========================================================= */
+
+.root {
+    -fx-font-family: "Segoe UI", "Inter", "System";
+    -fx-text-fill: #0f1f3d;
+}
+
+/* =========================
+   PAGE BACKGROUND
+   ========================= */
+
+.login-root {
+    -fx-background-color: linear-gradient(
+        to bottom right,
+        #ffffff,
+        #f8fbff 38%,
+        #fff7e7 78%,
+        #ffffff
+    );
+    -fx-background-image: url("../images/login/auction-login-view-background-waves.png");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+}
+
+.login-page-layout {
+    -fx-background-color: transparent;
+}
+
+/* =========================
+   LEFT HERO PANEL
+   ========================= */
+
+.login-hero-panel {
+    -fx-min-width: 640px;
+    -fx-pref-width: 670px;
+    -fx-background-color: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.88),
+        rgba(255, 250, 240, 0.78),
+        rgba(239, 246, 255, 0.62)
+    );
+    -fx-background-image: url("../images/login/auction-login-view-hero-office.png");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+    -fx-border-color: transparent rgba(201, 150, 45, 0.64) transparent transparent;
+    -fx-border-width: 0 4px 0 0;
+    -fx-effect: dropshadow(gaussian, rgba(8, 38, 92, 0.10), 28, 0.16, 8, 0);
+}
+
+.brand-name {
+    -fx-text-fill: #08265c;
+    -fx-font-size: 24px;
+    -fx-font-weight: 800;
+    -fx-letter-spacing: 5px;
+}
+
+.brand-tagline {
+    -fx-text-fill: #c9962d;
+    -fx-font-size: 10px;
+    -fx-font-weight: 800;
+    -fx-letter-spacing: 2px;
+}
+
+.hero-copy {
+    -fx-max-width: 430px;
+
+    /* Thêm lớp nền kính mờ để chữ tách khỏi ảnh */
+    -fx-background-color: rgba(255, 255, 255, 0.72);
+    -fx-background-radius: 26px;
+    -fx-border-radius: 26px;
+    -fx-border-color: rgba(255, 255, 255, 0.62);
+    -fx-border-width: 1px;
+
+    -fx-padding: 26 30 26 30;
+
+    -fx-effect: dropshadow(
+        gaussian,
+        rgba(8, 38, 92, 0.18),
+        28,
+        0.18,
+        0,
+        10
+    );
+}
+
+.hero-title {
+    -fx-text-fill: #061f4f;
+    -fx-font-family: "Georgia";
+    -fx-font-size: 46px;
+    -fx-font-weight: 800;
+    -fx-line-spacing: -3px;
+
+    /* Tăng độ đọc trên nền sáng */
+    -fx-effect: dropshadow(
+        gaussian,
+        rgba(255, 255, 255, 0.88),
+        8,
+        0.35,
+        0,
+        1
+    );
+}
+
+.hero-description {
+    -fx-text-fill: #30435f;
+    -fx-font-size: 15px;
+    -fx-font-weight: 600;
+    -fx-line-spacing: 5px;
+}
+
+.feature-list {
+    -fx-padding: 16 0 0 0;
+}
+
+.feature-item {
+    -fx-background-color: rgba(255, 255, 255, 0.82);
+    -fx-background-radius: 18px;
+    -fx-border-radius: 18px;
+    -fx-border-color: rgba(217, 179, 95, 0.36);
+    -fx-border-width: 1px;
+    -fx-padding: 12 14 12 14;
+
+    -fx-effect: dropshadow(
+        gaussian,
+        rgba(8, 38, 92, 0.10),
+        14,
+        0.12,
+        0,
+        4
+    );
+}
+
+.feature-icon {
+    -fx-min-width: 36px;
+    -fx-min-height: 36px;
+    -fx-alignment: center;
+    -fx-background-color: rgba(255, 248, 230, 0.92);
+    -fx-background-radius: 999px;
+    -fx-border-color: rgba(201, 150, 45, 0.30);
+    -fx-border-radius: 999px;
+    -fx-text-fill: #c9962d;
+    -fx-font-size: 17px;
+    -fx-font-weight: 900;
+}
+
+.feature-title {
+    -fx-text-fill: #061f4f;
+    -fx-font-size: 14px;
+    -fx-font-weight: 900;
+}
+
+.feature-desc {
+    -fx-text-fill: #45566f;
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+}
+
+.hero-footer {
+    -fx-text-fill: rgba(82, 97, 115, 0.90);
+    -fx-font-size: 12px;
+}
+
+/* =========================
+   RIGHT FORM AREA
+   ========================= */
+
+.login-form-zone {
+    -fx-background-color: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.94),
+        rgba(248, 251, 255, 0.94),
+        rgba(255, 251, 242, 0.82)
+    );
+    -fx-background-image: url("../images/login/auction-login-view-right-gold-lines.png");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+}
+
+.auth-card {
+    -fx-background-color: rgba(255, 255, 255, 0.91);
+    -fx-background-radius: 28px;
+    -fx-border-radius: 28px;
+    -fx-border-color: rgba(217, 179, 95, 0.24);
+    -fx-border-width: 1.2px;
+    -fx-effect: dropshadow(gaussian, rgba(8, 38, 92, 0.16), 34, 0.20, 0, 14);
+}
+
+.login-brand-title {
+    -fx-text-fill: #08265c;
+    -fx-font-family: "Georgia";
+    -fx-font-size: 34px;
+    -fx-font-weight: 800;
+    -fx-letter-spacing: 8px;
+}
+
+.login-brand-subtitle {
+    -fx-text-fill: #c9962d;
+    -fx-font-size: 11px;
+    -fx-font-weight: 800;
+    -fx-letter-spacing: 3px;
+}
+
+.gold-divider {
+    -fx-padding: 6 0 4 0;
+}
+
+.gold-divider Region,
+.trust-line Region {
+    -fx-background-color: linear-gradient(to right, transparent, rgba(201, 150, 45, 0.52), transparent);
+    -fx-pref-height: 1px;
+    -fx-max-height: 1px;
+}
+
+.divider-diamond {
+    -fx-text-fill: #c9962d;
+    -fx-font-size: 11px;
+}
+
+.auth-title {
+    -fx-text-fill: #08265c;
+    -fx-font-family: "Georgia";
+    -fx-font-size: 28px;
+    -fx-font-weight: 800;
+}
+
+.auth-subtitle {
+    -fx-text-fill: #7b8797;
+    -fx-font-size: 14px;
+}
+
+.field-label {
+    -fx-text-fill: #13233f;
+    -fx-font-size: 13px;
+    -fx-font-weight: 800;
+}
+
+/* =========================
+   INPUTS
+   ========================= */
+
+.premium-input {
+    -fx-background-color: rgba(255, 255, 255, 0.92);
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
+    -fx-border-color: rgba(125, 137, 154, 0.32);
+    -fx-border-width: 1px;
+    -fx-padding: 0 14 0 14;
+    -fx-text-fill: #10213d;
+    -fx-font-size: 14px;
+    -fx-prompt-text-fill: #9aa5b5;
+    -fx-effect: dropshadow(gaussian, rgba(8, 38, 92, 0.06), 10, 0.12, 0, 3);
+}
+
+.premium-input:hover {
+    -fx-border-color: rgba(201, 150, 45, 0.48);
+}
+
+.premium-input:focused {
+    -fx-border-color: #1557d1;
+    -fx-border-width: 1.4px;
+    -fx-effect: dropshadow(gaussian, rgba(21, 87, 209, 0.20), 16, 0.18, 0, 4);
+}
+
+.premium-combo {
+    -fx-background-color: rgba(255, 255, 255, 0.92);
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
+    -fx-border-color: rgba(125, 137, 154, 0.32);
+    -fx-border-width: 1px;
+    -fx-padding: 0 8 0 8;
+    -fx-prompt-text-fill: #9aa5b5;
+    -fx-effect: dropshadow(gaussian, rgba(8, 38, 92, 0.06), 10, 0.12, 0, 3);
+}
+
+.premium-combo:hover {
+    -fx-border-color: rgba(201, 150, 45, 0.48);
+}
+
+.premium-combo:focused {
+    -fx-border-color: #1557d1;
+}
+
+.premium-combo .list-cell {
+    -fx-text-fill: #10213d;
+    -fx-font-size: 14px;
+}
+
+/* =========================
+   CHECKBOX
+   ========================= */
+
+.remember-checkbox {
+    -fx-text-fill: #26364f;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+}
+
+.remember-checkbox .box {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-border-color: rgba(21, 87, 209, 0.54);
+}
+
+.remember-checkbox:selected .box {
+    -fx-background-color: #0b3d91;
+    -fx-border-color: #0b3d91;
+}
+
+.remember-checkbox:selected .mark {
+    -fx-background-color: white;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.primary-auth-button {
+    -fx-background-color: linear-gradient(to bottom right, #1557d1, #08265c);
+    -fx-background-radius: 13px;
+    -fx-border-radius: 13px;
+    -fx-border-color: rgba(217, 179, 95, 0.62);
+    -fx-border-width: 0.8px;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: 900;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(8, 38, 92, 0.32), 18, 0.26, 0, 6);
+}
+
+.primary-auth-button:hover {
+    -fx-background-color: linear-gradient(to bottom right, #2563eb, #0b3d91);
+    -fx-effect: dropshadow(gaussian, rgba(21, 87, 209, 0.34), 22, 0.30, 0, 8);
+    -fx-translate-y: -1px;
+}
+
+.primary-auth-button:pressed {
+    -fx-translate-y: 1px;
+    -fx-opacity: 0.90;
+}
+
+.text-link-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #1557d1;
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+    -fx-cursor: hand;
+    -fx-padding: 0;
+}
+
+.text-link-button:hover {
+    -fx-text-fill: #0b3d91;
+    -fx-underline: true;
+}
+
+/* =========================
+   STATUS / TRUST TEXT
+   ========================= */
+
+.status-label {
+    -fx-text-fill: #dc2626;
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+}
+
+.trust-line {
+    -fx-padding: 5 0 0 0;
+}
+
+.trust-text {
+    -fx-text-fill: #b3862e;
+    -fx-font-size: 13px;
+    -fx-font-weight: 800;
+}
+
+.muted-text {
+    -fx-text-fill: #667085;
+    -fx-font-size: 13px;
+}
+
+.security-title {
+    -fx-text-fill: #08265c;
+    -fx-font-size: 13px;
+    -fx-font-weight: 800;
+}
+
+.security-subtitle {
+    -fx-text-fill: #7b8797;
+    -fx-font-size: 12px;
+}
+
+/* =========================
+   BACKWARD COMPATIBILITY
+   Nếu code cũ còn gọi class này thì vẫn không vỡ giao diện.
+   ========================= */
+
+.my-background {
+    -fx-background-image: url("../images/login/auction-login-view-background-waves.png");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+}
+
+.header-label {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #08265c;
+    -fx-alignment: center;
+}
+
+.login-button {
+    -fx-background-color: linear-gradient(to bottom right, #1557d1, #08265c);
+    -fx-background-radius: 13px;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+/* Improve readability on bright hero image */
+.hero-copy {
+    -fx-background-color: rgba(255, 255, 255, 0.72);
+    -fx-background-radius: 26px;
+    -fx-border-radius: 26px;
+    -fx-border-color: rgba(255, 255, 255, 0.62);
+    -fx-border-width: 1px;
+    -fx-padding: 26 30 26 30;
+    -fx-effect: dropshadow(gaussian, rgba(8, 38, 92, 0.18), 28, 0.18, 0, 10);
+}
+
+.hero-title {
+    -fx-text-fill: #061f4f;
+    -fx-font-size: 46px;
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.88), 8, 0.35, 0, 1);
+}
+
+/* Fix hero title clipping */
+.hero-copy {
+    -fx-max-width: 470px;
+    -fx-pref-width: 470px;
+    -fx-padding: 26 34 26 34;
+}
+
+.hero-title {
+    -fx-font-size: 42px;
+    -fx-line-spacing: -2px;
+    -fx-wrap-text: true;
+}
+
+.hero-description {
+    -fx-font-size: 14px;
+    -fx-wrap-text: true;
+}
+
+.feature-desc {
+    -fx-wrap-text: true;
+}
+
+/* =========================================================
+   FIX HERO LEFT PANEL
+   - Đưa ô "Elevate Your Auction System" ra giữa panel trái
+   - Giảm lóa mắt trên nền ảnh sáng
+   - Không ảnh hưởng chức năng và form login bên phải
+   ========================================================= */
+
+/* Căn nội dung trong panel trái ra giữa dễ nhìn hơn */
+.login-hero-panel {
+    -fx-alignment: CENTER;
+}
+
+/* Hero card nằm giữa, dễ đọc hơn, ít chói hơn */
+.hero-copy {
+    -fx-pref-width: 500px;
+    -fx-max-width: 500px;
+
+    -fx-background-color: rgba(255, 255, 255, 0.82);
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-border-color: rgba(255, 255, 255, 0.76);
+    -fx-border-width: 1.2px;
+
+    -fx-padding: 30 36 30 36;
+
+    -fx-translate-x: 0px;
+    -fx-translate-y: 0px;
+
+    -fx-effect: dropshadow(
+        gaussian,
+        rgba(8, 38, 92, 0.22),
+        34,
+        0.20,
+        0,
+        12
+    );
+}
+
+/* Tiêu đề không bị cắt chữ */
+.hero-title {
+    -fx-text-fill: #061f4f;
+    -fx-font-size: 42px;
+    -fx-line-spacing: -2px;
+    -fx-wrap-text: true;
+}
+
+/* Mô tả rõ hơn trên nền sáng */
+.hero-description {
+    -fx-text-fill: #263b5a;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-wrap-text: true;
+}
+
+/* Các card nhỏ bên dưới rõ chữ hơn */
+.feature-item {
+    -fx-background-color: rgba(255, 255, 255, 0.88);
+    -fx-background-radius: 18px;
+    -fx-border-radius: 18px;
+    -fx-border-color: rgba(217, 179, 95, 0.34);
+    -fx-border-width: 1px;
+
+    -fx-effect: dropshadow(
+        gaussian,
+        rgba(8, 38, 92, 0.10),
+        14,
+        0.12,
+        0,
+        4
+    );
+}
+
+.feature-title {
+    -fx-text-fill: #061f4f;
+    -fx-font-weight: 900;
+}
+
+.feature-desc {
+    -fx-text-fill: #40536f;
+    -fx-font-weight: 600;
+    -fx-wrap-text: true;
+}

@@ -1,0 +1,35 @@
+/* --- Common --- */
+.root {
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+/* Inputs */
+.text-field,
+.password-field {
+    -fx-background-color: #f9f9f9;
+    -fx-background-radius: 8px;
+    -fx-border-color: #dcdcdc;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
+    -fx-padding: 10px 15px;
+}
+
+.text-field:focused,
+.password-field:focused {
+    -fx-border-color: #3498db;
+    -fx-background-color: white;
+}
+
+/* Link buttons */
+.link-button {
+    -fx-background-color: transparent;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3498db;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+.link-button:hover {
+    -fx-text-fill: #2980b9;
+    -fx-underline: true;
+}

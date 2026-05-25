@@ -1,0 +1,201 @@
+﻿text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+"Mình muốn xem danh sách phiên trong lobby để chọn vào, rồi mình muốn xem chi tiết sản phẩm, nhưng nút tham gia phòng đang mờ, rồi bot phân tích lỗi đang gặp, sau đó mã phòng AUC-1024, nhưng sản phẩm iPhone 15.",0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Admin ơi, mình muốn xem danh sách phiên trong lobby để chọn vào, sau đó mình đang muốn join room mình đang thao tác?",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien trong lobby de chon vao, dong thoi refresh gia live giup m vi m chua ro luong",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phien trong lobby để chọn vào, nhưng kiểm tra deadline của phiên đang cần xử lý liền",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên trong lobby để chọn vào, nhưng xem tình trạng hàng trước khi bid đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn xem danh sách phiên trong lobby để chọn vào, rồi để mình vào phòng đấu giá, nhưng refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,1,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem danh sách phiên trong lobby trước khi đặt giá, trước khi cần xem giá cao nhất hiện tại.",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn xem danh sách phiên trong lobby trước khi đặt giá, nhưng mình sợ hết thời gian pls?",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien trong lobby truoc khi dat gia, dong thoi xem thong tin seller cua mon nay de khoi lam sai",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phien trong lobby trước khi đặt giá, trước khi cần nhập mã phòng trước, nhưng sản phẩm laptop gaming mình hơi rén",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên trong lobby trước khi đặt giá, đồng thời giá realtime đang chưa đổi, trước khi mình sợ hết thời gian đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn xem danh sách phiên trong lobby trước khi đặt giá, nhưng đồng hồ phiên sắp hết, trước khi mã phòng A17; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem danh sách phiên trong lobby nhưng không thấy card, sau đó ảnh sản phẩm chưa rõ.",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn xem danh sách phiên trong lobby nhưng không thấy card, rồi vào room hiện tại giúp mình vì mình chưa rõ luồng?",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien trong lobby nhung ko thay card, sau do dang theo doi gia hien tai dang can xu ly lien",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phien trong lobby nhưng không thấy card, trước khi xem countdown còn bao lâu, rồi ảnh sản phẩm chưa rõ nhé",0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên trong lobby nhưng không thấy card, đồng thời cần đọc mô tả món hàng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn xem danh sách phiên trong lobby nhưng không thấy card, sau đó nút tham gia phòng đang mờ, trước khi bot phân tích lỗi đang gặp; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình muốn xem danh sách phiên trong lobby sau khi đăng nhập, kèm chuyện giá mới bị delay, nhưng sản phẩm tranh sưu tầm.",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn xem danh sách phiên trong lobby sau khi đăng nhập, sau đó còn mấy giây để thao tác để khỏi làm sai?",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien trong lobby sau khi login, roi m muon xem chi tiet sp, nhung nut tham gia room dang mo m hoi ren",0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên trong lobby sau khi đăg nhập, sau đó mình đang muốn join room được không",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên trong lobby sau khi đăng nhập, đồng thời refresh giá live giúp mình, sau đó mã phòng SALA-05 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn xem danh sách phiên trong lobby sau khi đăng nhập, nhưng kiểm tra deadline của phiên; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem danh sách phiên trong lobby kèm giá hiện tại, đồng thời xem tình trạng hàng trước khi bid.",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn xem danh sách phiên trong lobby kèm giá hiện tại, sau đó để mình vào phòng đấu giá, trước khi refresh giá live giúp mình đang cần xử lý liền?",0,0,0,0,0,1,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien trong lobby kem gia hien tai, kem chuyen can xem gia cao nhat hien tai nhe",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phien trong lobby kèm giá hiện tại, đồng thời mình sợ hết thời gian, rồi sản phẩm mô hình Gundam mình đang thao tác",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên trong lobby kèm giá hiện tại, rồi xem thông tin seller của món này đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn xem danh sách phiên trong lobby kèm giá hiện tại, kèm chuyện cần nhập mã phòng trước; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem danh sách phiên đang chạy để chọn vào, sau đó giá realtime đang chưa đổi, sau đó mình sợ hết thời gian.",0,0,0,0,0,1,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn xem danh sách phiên đang chạy để chọn vào, rồi đồng hồ phiên sắp hết mình hơi rén?",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien dang chay de chon vao, sau do anh sp chua ro dc ko",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phien đang chạy để chọn vào, rồi vào room hiện tại giúp mình, trước khi mã phòng ROOM-88 pls",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên đang chạy để chọn vào, sau đó đang theo dõi giá hiện tại, rồi bot hướng dẫn bước tiếp theo đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Alo ad, mình muốn xem danh sách phiên đang chạy để chọn vào, trước khi xem countdown còn bao lâu, rồi ảnh sản phẩm chưa rõ; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem danh sách phiên đang chạy trước khi đặt giá, đồng thời cần đọc mô tả món hàng, nhưng sản phẩm áo khoác vintage.",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn xem danh sách phiên đang chạy trước khi đặt giá, sau đó nút tham gia phòng đang mờ nhé?",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien dang chay truoc khi dat gia, dong thoi gia moi bi delay m dang thao tac",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phien đang chạy trước khi đặt giá, kèm chuyện còn mấy giây để thao tác vì mình chưa rõ luồng",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên đang chạy trước khi đặt giá, trước khi mình muốn xem chi tiết sản phẩm, rồi nút tham gia phòng đang mờ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn xem danh sách phiên đang chạy trước khi đặt giá, kèm chuyện mình đang muốn join room; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem danh sách phiên đang chạy nhưng không thấy card, kèm chuyện refresh giá live giúp mình.",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn xem danh sách phiên đang chạy nhưng không thấy card, trước khi kiểm tra deadline của phiên được không?",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien dang chay nhung ko thay card, truoc khi xem tinh trang hang truoc khi bid, dong thoi ma room bid-09 pls",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phien đang chạy nhưng không thấy card, nhưng để mình vào phòng đấu giá, rồi refresh giá live giúp mình, rồi sản phẩm bàn phím custom để khỏi làm sai",0,0,0,0,0,1,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên đang chạy nhưng không thấy card, rồi cần xem giá cao nhất hiện tại đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn xem danh sách phiên đang chạy nhưng không thấy card, trước khi mình sợ hết thời gian; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem danh sách phiên đang chạy sau khi đăng nhập, sau đó xem thông tin seller của món này.",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn xem danh sách phiên đang chạy sau khi đăng nhập, nhưng cần nhập mã phòng trước mình đang thao tác?",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien dang chay sau khi login, sau do gia realtime dang chua doi, sau do m so het thoi gian vi m chua ro luong",0,0,0,0,0,1,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên đang chạy sau khi đăg nhập, rồi đồng hồ phiên sắp hết, sau đó chatbot nói dễ hiểu giúp mình đang cần xử lý liền",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn xem danh sách phiên đang chạy sau khi đăng nhập, sau đó ảnh sản phẩm chưa rõ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn xem danh sách phiên đang chạy sau khi đăng nhập, rồi vào room hiện tại giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem danh sách phiên đang chạy kèm giá hiện tại, trước khi đang theo dõi giá hiện tại, nhưng sản phẩm tai nghe Sony.",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn xem danh sách phiên đang chạy kèm giá hiện tại, kèm chuyện xem countdown còn bao lâu, rồi ảnh sản phẩm chưa rõ, trước khi mã phòng GOLD-21 pls?",0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien dang chay kem gia hien tai, roi can doc mo ta mon hang de khoi lam sai",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phien đang chạy kèm giá hiện tại, trước khi nút tham gia phòng đang mờ mình hơi rén",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên đang chạy kèm giá hiện tại, rồi giá mới bị delay đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn xem danh sách phiên đang chạy kèm giá hiện tại, nhưng còn mấy giây để thao tác; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem danh sách phiên sắp mở để chọn vào, đồng thời mình muốn xem chi tiết sản phẩm, kèm chuyện nút tham gia phòng đang mờ.",0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn xem danh sách phiên sắp mở để chọn vào, rồi mình đang muốn join room vì mình chưa rõ luồng?",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien sap mo de chon vao, nhung refresh gia live giup m dang can xu ly lien",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phien sắp mở để chọn vào, kèm chuyện kiểm tra deadline của phiên, đồng thời sản phẩm máy ảnh film nhé",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên sắp mở để chọn vào, kèm chuyện xem tình trạng hàng trước khi bid đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn xem danh sách phiên sắp mở để chọn vào, đồng thời để mình vào phòng đấu giá, kèm chuyện refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem danh sách phiên sắp mở trước khi đặt giá, sau đó cần xem giá cao nhất hiện tại, kèm chuyện mã phòng PHIEN-2026.",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn xem danh sách phiên sắp mở trước khi đặt giá, kèm chuyện mình sợ hết thời gian để khỏi làm sai?",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien sap mo truoc khi dat gia, nhung xem thong tin seller cua mon nay, dong thoi nho bot giai thich them m hoi ren",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn xem danh sách phien sắp mở trước khi đặt giá, sau đó cần nhập mã phòng trước được không",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên sắp mở trước khi đặt giá, nhưng giá realtime đang chưa đổi, đồng thời mình sợ hết thời gian đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn xem danh sách phiên sắp mở trước khi đặt giá, kèm chuyện đồng hồ phiên sắp hết; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem danh sách phiên sắp mở nhưng không thấy card, rồi ảnh sản phẩm chưa rõ, đồng thời sản phẩm đồng hồ cơ.",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn xem danh sách phiên sắp mở nhưng không thấy card, đồng thời vào room hiện tại giúp mình đang cần xử lý liền?",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien sap mo nhung ko thay card, roi dang theo doi gia hien tai nhe",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phien sắp mở nhưng không thấy card, sau đó xem countdown còn bao lâu, trước khi ảnh sản phẩm chưa rõ mình đang thao tác",0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên sắp mở nhưng không thấy card, nhưng cần đọc mô tả món hàng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn xem danh sách phiên sắp mở nhưng không thấy card, rồi nút tham gia phòng đang mờ, nhưng mã phòng P-774; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem danh sách phiên sắp mở sau khi đăng nhập, trước khi giá mới bị delay.",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn xem danh sách phiên sắp mở sau khi đăng nhập, rồi còn mấy giây để thao tác mình hơi rén?",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien sap mo sau khi login, dong thoi m muon xem chi tiet sp, kem chuyen nut tham gia room dang mo dc ko",0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên sắp mở sau khi đăg nhập, rồi mình đang muốn join room, đồng thời sản phẩm MacBook cũ pls",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên sắp mở sau khi đăng nhập, nhưng refresh giá live giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn xem danh sách phiên sắp mở sau khi đăng nhập, kèm chuyện kiểm tra deadline của phiên; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem danh sách phiên sắp mở kèm giá hiện tại, nhưng xem tình trạng hàng trước khi bid.",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn xem danh sách phiên sắp mở kèm giá hiện tại, rồi để mình vào phòng đấu giá, nhưng refresh giá live giúp mình, rồi bot phân tích lỗi đang gặp nhé?",0,0,0,0,0,1,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"m muon xem danh sach phien sap mo kem gia hien tai, truoc khi can xem gia cao nhat hien tai m dang thao tac",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phien sắp mở kèm giá hiện tại, nhưng mình sợ hết thời gian vì mình chưa rõ luồng",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên sắp mở kèm giá hiện tại, đồng thời xem thông tin seller của món này, rồi mã phòng AUC-1024 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn xem danh sách phiên sắp mở kèm giá hiện tại, trước khi cần nhập mã phòng trước; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem danh sách phiên có thể tham gia để chọn vào, sau đó giá realtime đang chưa đổi, sau đó mình sợ hết thời gian, nhưng sản phẩm iPhone 15.",0,0,0,0,0,1,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn xem danh sách phiên có thể tham gia để chọn vào, rồi đồng hồ phiên sắp hết được không?",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien co the tham gia de chon vao, sau do anh sp chua ro pls",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phien có thể tham gia để chọn vào, rồi vào room hiện tại giúp mình để khỏi làm sai",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên có thể tham gia để chọn vào, sau đó đang theo dõi giá hiện tại đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn xem danh sách phiên có thể tham gia để chọn vào, trước khi xem countdown còn bao lâu, rồi ảnh sản phẩm chưa rõ; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem danh sách phiên có thể tham gia trước khi đặt giá, đồng thời cần đọc mô tả món hàng.",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn xem danh sách phiên có thể tham gia trước khi đặt giá, sau đó nút tham gia phòng đang mờ mình đang thao tác?",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien co the tham gia truoc khi dat gia, dong thoi gia moi bi delay vi m chua ro luong",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phien có thể tham gia trước khi đặt giá, kèm chuyện còn mấy giây để thao tác, trước khi mã phòng A17, nhưng sản phẩm laptop gaming đang cần xử lý liền",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên có thể tham gia trước khi đặt giá, trước khi mình muốn xem chi tiết sản phẩm, rồi nút tham gia phòng đang mờ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn xem danh sách phiên có thể tham gia trước khi đặt giá, kèm chuyện mình đang muốn join room; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem danh sách phiên có thể tham gia nhưng không thấy card, kèm chuyện refresh giá live giúp mình, rồi bot phân tích lỗi đang gặp.",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, mình muốn xem danh sách phiên có thể tham gia nhưng không thấy card, trước khi kiểm tra deadline của phiên pls?",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien co the tham gia nhung ko thay card, truoc khi xem tinh trang hang truoc khi bid de khoi lam sai",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phien có thể tham gia nhưng không thấy card, nhưng để mình vào phòng đấu giá, rồi refresh giá live giúp mình mình hơi rén",0,0,0,0,0,1,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên có thể tham gia nhưng không thấy card, rồi cần xem giá cao nhất hiện tại đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn xem danh sách phiên có thể tham gia nhưng không thấy card, trước khi mình sợ hết thời gian; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem danh sách phiên có thể tham gia sau khi đăng nhập, sau đó xem thông tin seller của món này, rồi sản phẩm tranh sưu tầm.",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn xem danh sách phiên có thể tham gia sau khi đăng nhập, nhưng cần nhập mã phòng trước vì mình chưa rõ luồng?",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien co the tham gia sau khi login, sau do gia realtime dang chua doi, sau do m so het thoi gian, roi ma room sala-05 dang can xu ly lien",0,0,0,0,0,1,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên có thể tham gia sau khi đăg nhập, rồi đồng hồ phiên sắp hết nhé",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên có thể tham gia sau khi đăng nhập, sau đó ảnh sản phẩm chưa rõ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn xem danh sách phiên có thể tham gia sau khi đăng nhập, rồi vào room hiện tại giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem danh sách phiên có thể tham gia kèm giá hiện tại, trước khi đang theo dõi giá hiện tại.",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn xem danh sách phiên có thể tham gia kèm giá hiện tại, kèm chuyện xem countdown còn bao lâu, rồi ảnh sản phẩm chưa rõ để khỏi làm sai?",0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien co the tham gia kem gia hien tai, roi can doc mo ta mon hang m hoi ren",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phien có thể tham gia kèm giá hiện tại, trước khi nút tham gia phòng đang mờ, kèm chuyện sản phẩm mô hình Gundam được không",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên có thể tham gia kèm giá hiện tại, rồi giá mới bị delay đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn xem danh sách phiên có thể tham gia kèm giá hiện tại, nhưng còn mấy giây để thao tác, nhưng bot hướng dẫn bước tiếp theo; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình muốn xem danh sách phiên của seller này để chọn vào, kèm chuyện mình muốn xem chi tiết sản phẩm, rồi nút tham gia phòng đang mờ.",0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn xem danh sách phiên của seller này để chọn vào, nhưng mình đang muốn join room, nhưng mã phòng ROOM-88 đang cần xử lý liền?",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien cua seller nay de chon vao, truoc khi refresh gia live giup m nhe",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phien của seller này để chọn vào, sau đó kiểm tra deadline của phiên mình đang thao tác",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên của seller này để chọn vào, sau đó xem tình trạng hàng trước khi bid đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn xem danh sách phiên của seller này để chọn vào, kèm chuyện để mình vào phòng đấu giá, rồi refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,1,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem danh sách phiên của seller này trước khi đặt giá, đồng thời cần xem giá cao nhất hiện tại, nhưng sản phẩm áo khoác vintage.",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn xem danh sách phiên của seller này trước khi đặt giá, sau đó mình sợ hết thời gian mình hơi rén?",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien cua seller nay truoc khi dat gia, truoc khi xem thong tin seller cua mon nay dc ko",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phien của seller này trước khi đặt giá, đồng thời cần nhập mã phòng trước pls",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên của seller này trước khi đặt giá, trước khi giá realtime đang chưa đổi, đồng thời mình sợ hết thời gian đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn xem danh sách phiên của seller này trước khi đặt giá, sau đó đồng hồ phiên sắp hết; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem danh sách phiên của seller này nhưng không thấy card, nhưng ảnh sản phẩm chưa rõ, đồng thời mã phòng BID-09.",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn xem danh sách phiên của seller này nhưng không thấy card, kèm chuyện vào room hiện tại giúp mình nhé?",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien cua seller nay nhung ko thay card, nhung dang theo doi gia hien tai m dang thao tac",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phien của seller này nhưng không thấy card, đồng thời xem countdown còn bao lâu, kèm chuyện ảnh sản phẩm chưa rõ, trước khi sản phẩm bàn phím custom vì mình chưa rõ luồng",0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên của seller này nhưng không thấy card, trước khi cần đọc mô tả món hàng, kèm chuyện chatbot nói dễ hiểu giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình đang bị vướng, mình muốn xem danh sách phiên của seller này nhưng không thấy card, nhưng nút tham gia phòng đang mờ; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem danh sách phiên của seller này sau khi đăng nhập, rồi giá mới bị delay.",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn xem danh sách phiên của seller này sau khi đăng nhập, nhưng còn mấy giây để thao tác được không?",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien cua seller nay sau khi login, kem chuyen m muon xem chi tiet sp, roi nut tham gia room dang mo pls",0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên của seller này sau khi đăg nhập, nhưng mình đang muốn join room để khỏi làm sai",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên của seller này sau khi đăng nhập, trước khi refresh giá live giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn xem danh sách phiên của seller này sau khi đăng nhập, sau đó kiểm tra deadline của phiên, rồi mã phòng GOLD-21; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem danh sách phiên của seller này kèm giá hiện tại, trước khi xem tình trạng hàng trước khi bid, nhưng sản phẩm tai nghe Sony.",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn xem danh sách phiên của seller này kèm giá hiện tại, nhưng để mình vào phòng đấu giá, rồi refresh giá live giúp mình mình đang thao tác?",0,0,0,0,0,1,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien cua seller nay kem gia hien tai, roi can xem gia cao nhat hien tai vi m chua ro luong",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phien của seller này kèm giá hiện tại, trước khi mình sợ hết thời gian đang cần xử lý liền",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên của seller này kèm giá hiện tại, kèm chuyện xem thông tin seller của món này đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn xem danh sách phiên của seller này kèm giá hiện tại, rồi cần nhập mã phòng trước; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem danh sách phiên theo giá hiện tại để chọn vào, đồng thời giá realtime đang chưa đổi, trước khi mình sợ hết thời gian.",0,0,0,0,0,1,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn xem danh sách phiên theo giá hiện tại để chọn vào, nhưng đồng hồ phiên sắp hết pls?",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien theo gia hien tai de chon vao, dong thoi anh sp chua ro de khoi lam sai",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phien theo giá hiện tại để chọn vào, nhưng vào room hiện tại giúp mình, đồng thời nhờ chatbot giải thích thêm, trước khi sản phẩm máy ảnh film mình hơi rén",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn xem danh sách phiên theo giá hiện tại để chọn vào, đồng thời đang theo dõi giá hiện tại, nhưng mã phòng PHIEN-2026 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn xem danh sách phiên theo giá hiện tại để chọn vào, rồi xem countdown còn bao lâu, nhưng ảnh sản phẩm chưa rõ; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem danh sách phiên theo giá hiện tại trước khi đặt giá, kèm chuyện cần đọc mô tả món hàng.",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn xem danh sách phiên theo giá hiện tại trước khi đặt giá, đồng thời nút tham gia phòng đang mờ vì mình chưa rõ luồng?",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien theo gia hien tai truoc khi dat gia, kem chuyen gia moi bi delay dang can xu ly lien",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phien theo giá hiện tại trước khi đặt giá, sau đó còn mấy giây để thao tác nhé",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên theo giá hiện tại trước khi đặt giá, rồi mình muốn xem chi tiết sản phẩm, nhưng nút tham gia phòng đang mờ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn xem danh sách phiên theo giá hiện tại trước khi đặt giá, sau đó mình đang muốn join room; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem danh sách phiên theo giá hiện tại nhưng không thấy card, sau đó refresh giá live giúp mình, kèm chuyện sản phẩm đồng hồ cơ.",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn xem danh sách phiên theo giá hiện tại nhưng không thấy card, rồi kiểm tra deadline của phiên để khỏi làm sai?",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien theo gia hien tai nhung ko thay card, roi xem tinh trang hang truoc khi bid m hoi ren",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phien theo giá hiện tại nhưng không thấy card, sau đó mã phòng P-774 được không",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên theo giá hiện tại nhưng không thấy card đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn xem danh sách phiên theo giá hiện tại nhưng không thấy card; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn xem danh sách phiên theo giá hiện tại sau khi đăng nhập.,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn xem danh sách phiên theo giá hiện tại sau khi đăng nhập đang cần xử lý liền?",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+m muon xem danh sach phien theo gia hien tai sau khi login nhe,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên theo giá hiện tại sau khi đăg nhập, rồi sản phẩm MacBook cũ mình đang thao tác",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên theo giá hiện tại sau khi đăng nhập đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn xem danh sách phiên theo giá hiện tại sau khi đăng nhập; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn xem danh sách phiên theo giá hiện tại kèm giá hiện tại.,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn xem danh sách phiên theo giá hiện tại kèm giá hiện tại mình hơi rén?",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon xem danh sach phien theo gia hien tai kem gia hien tai, kem chuyen ma room auc-1024 dc ko",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình muốn xem danh sách phien theo giá hiện tại kèm giá hiện tại pls,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên theo giá hiện tại kèm giá hiện tại đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn xem danh sách phiên theo giá hiện tại kèm giá hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem danh sách phiên có sản phẩm công nghệ để chọn vào, kèm chuyện sản phẩm iPhone 15.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn xem danh sách phiên có sản phẩm công nghệ để chọn vào nhé?",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+m muon xem danh sach phien co sp cong nghe de chon vao m dang thao tac,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình muốn xem danh sách phien có sản phẩm công nghệ để chọn vào vì mình chưa rõ luồng,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên có sản phẩm công nghệ để chọn vào đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn xem danh sách phiên có sản phẩm công nghệ để chọn vào; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn xem danh sách phiên có sản phẩm công nghệ trước khi đặt giá.,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn xem danh sách phiên có sản phẩm công nghệ trước khi đặt giá, kèm chuyện mã phòng A17 được không?",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+m muon xem danh sach phien co sp cong nghe truoc khi dat gia pls,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phien có sản phẩm công nghệ trước khi đặt giá, đồng thời sản phẩm laptop gaming để khỏi làm sai",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên có sản phẩm công nghệ trước khi đặt giá đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn xem danh sách phiên có sản phẩm công nghệ trước khi đặt giá; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn xem danh sách phiên có sản phẩm công nghệ nhưng không thấy card.,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn xem danh sách phiên có sản phẩm công nghệ nhưng không thấy card mình đang thao tác?",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+m muon xem danh sach phien co sp cong nghe nhung ko thay card vi m chua ro luong,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình muốn xem danh sách phien có sản phẩm công nghệ nhưng không thấy card đang cần xử lý liền,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem danh sách phiên có sản phẩm công nghệ nhưng không thấy card đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn xem danh sách phiên có sản phẩm công nghệ nhưng không thấy card; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn xem danh sách phiên có sản phẩm công nghệ sau khi đăng nhập, đồng thời mã phòng SALA-05, sau đó sản phẩm tranh sưu tầm.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn xem danh sách phiên có sản phẩm công nghệ sau khi đăng nhập pls?",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

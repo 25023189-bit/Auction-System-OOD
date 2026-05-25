@@ -1,0 +1,201 @@
+﻿text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+"Phiên còn bao lâu phiên này trước khi bid, sau đó nếu có anti-sniping cuối phiên, kèm chuyện đặt 500k nếu hợp lệ, rồi bot phân tích lỗi đang gặp, sau đó mã phòng AUC-1024, nhưng 30 giây cuối.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Admin ơi, phiên còn bao lâu phiên này trước khi bid, đồng thời chuẩn bị bid mức mới mình đang thao tác?",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau phien nay truoc khi bid, dong thoi refresh gia live giup m vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien còn bao lâu phiên này trước khi bid, sau đó phiên tự kết thúc sau deadline đang cần xử lý liền",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu phiên này trước khi bid, trước khi đồng hồ có tự cộng thêm không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, phiên còn bao lâu phiên này trước khi bid, kèm chuyện mình định đặt giá thêm, rồi refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu phiên này vì mình sợ hết giờ, kèm chuyện cần xem giá cao nhất hiện tại.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, phiên còn bao lâu phiên này vì mình sợ hết giờ, sau đó không cần seller bấm đóng pls?",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau phien nay vi m so het gio, sau do co nguoi nhay gia sat gio, nhung 30 giay cuoi de khoi lam sai",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien còn bao lâu phiên này vì mình sợ hết giờ, sau đó nâng thêm 100k được không mình hơi rén",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu phiên này vì mình sợ hết giờ, rồi giá realtime đang chưa đổi, đồng thời không cần seller bấm đóng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, phiên còn bao lâu phiên này vì mình sợ hết giờ, rồi hệ thống tự xác định người thắng, rồi mã phòng A17; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu phiên này có bị lệch không, kèm chuyện luật chống snipe đang bật.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, phiên còn bao lâu phiên này có bị lệch không, nhưng muốn vượt người đang dẫn vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau phien nay co bi lech ko, truoc khi dang theo doi gia hien tai dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien còn bao lâu phiên này có bị lệch không, nhưng khi countdown về 0 thì tự chốt, sau đó luật chống snipe đang bật nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu phiên này có bị lệch không, rồi bid phút chót có kéo dài giờ không, rồi 30 giây cuối đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, phiên còn bao lâu phiên này có bị lệch không, kèm chuyện đặt 500k nếu hợp lệ, rồi bot phân tích lỗi đang gặp; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Phiên còn bao lâu phiên này đang hiển thị nhỏ quá, sau đó giá mới bị delay.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, phiên còn bao lâu phiên này đang hiển thị nhỏ quá, nhưng auto close phải chạy đúng để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau phien nay dang hien thi nho qua, dong thoi neu co anti-sniping cuoi phien, nhung dat 500k neu hop le m hoi ren",0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien còn bao lâu phiên này đang hiển thị nhỏ quá, kèm chuyện chuẩn bị bid mức mới được không",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu phiên này đang hiển thị nhỏ quá, kèm chuyện refresh giá live giúp mình, nhưng mã phòng SALA-05 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, phiên còn bao lâu phiên này đang hiển thị nhỏ quá, đồng thời phiên tự kết thúc sau deadline; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu phiên này khi có anti-sniping, trước khi đồng hồ có tự cộng thêm không, trước khi 30 giây cuối.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, phiên còn bao lâu phiên này khi có anti-sniping, kèm chuyện mình định đặt giá thêm, rồi refresh giá live giúp mình đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau phien nay khi co anti-sniping, truoc khi can xem gia cao nhat hien tai nhe",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien còn bao lâu phiên này khi có anti-sniping, rồi không cần seller bấm đóng mình đang thao tác",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu phiên này khi có anti-sniping, rồi có người nhảy giá sát giờ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, phiên còn bao lâu phiên này khi có anti-sniping, rồi nâng thêm 100k được không; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu room AUC-1024 trước khi bid, sau đó giá realtime đang chưa đổi, kèm chuyện không cần seller bấm đóng.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, phiên còn bao lâu room AUC-1024 trước khi bid, sau đó hệ thống tự xác định người thắng mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau room auc-1024 truoc khi bid, truoc khi luat chong snipe dang bat, truoc khi 30 giay cuoi dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien còn bao lâu room AUC-1024 trước khi bid, kèm chuyện muốn vượt người đang dẫn, nhưng mã phòng ROOM-88 pls",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu room AUC-1024 trước khi bid, sau đó đang theo dõi giá hiện tại, rồi bot hướng dẫn bước tiếp theo đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Alo ad, phiên còn bao lâu room AUC-1024 trước khi bid, kèm chuyện khi countdown về 0 thì tự chốt, sau đó luật chống snipe đang bật; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu room AUC-1024 vì mình sợ hết giờ, rồi bid phút chót có kéo dài giờ không.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, phiên còn bao lâu room AUC-1024 vì mình sợ hết giờ, kèm chuyện đặt 500k nếu hợp lệ nhé?",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau room auc-1024 vi m so het gio, roi gia moi bi delay m dang thao tac",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien còn bao lâu room AUC-1024 vì mình sợ hết giờ, kèm chuyện auto close phải chạy đúng vì mình chưa rõ luồng",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu room AUC-1024 vì mình sợ hết giờ, nhưng nếu có anti-sniping cuối phiên, sau đó đặt 500k nếu hợp lệ, nhưng 30 giây cuối đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, phiên còn bao lâu room AUC-1024 vì mình sợ hết giờ, trước khi chuẩn bị bid mức mới; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu room AUC-1024 có bị lệch không, nhưng refresh giá live giúp mình.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, phiên còn bao lâu room AUC-1024 có bị lệch không, rồi phiên tự kết thúc sau deadline được không?",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau room auc-1024 co bi lech ko, sau do dong ho co tu cong them ko, sau do ma room bid-09 pls",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien còn bao lâu room AUC-1024 có bị lệch không, trước khi mình định đặt giá thêm, rồi refresh giá live giúp mình để khỏi làm sai",0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu room AUC-1024 có bị lệch không, sau đó cần xem giá cao nhất hiện tại đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, phiên còn bao lâu room AUC-1024 có bị lệch không, đồng thời không cần seller bấm đóng; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu room AUC-1024 đang hiển thị nhỏ quá, rồi có người nhảy giá sát giờ, rồi 30 giây cuối.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, phiên còn bao lâu room AUC-1024 đang hiển thị nhỏ quá, rồi nâng thêm 100k được không mình đang thao tác?",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau room auc-1024 dang hien thi nho qua, dong thoi gia realtime dang chua doi, nhung ko can seller bam dong vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phien còn bao lâu room AUC-1024 đang hiển thị nhỏ quá, đồng thời hệ thống tự xác định người thắng, rồi chatbot nói dễ hiểu giúp mình đang cần xử lý liền",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0
+"phiên còn bao lâu room AUC-1024 đang hiển thị nhỏ quá, rồi luật chống snipe đang bật đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, phiên còn bao lâu room AUC-1024 đang hiển thị nhỏ quá, sau đó muốn vượt người đang dẫn; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu room AUC-1024 khi có anti-sniping, sau đó đang theo dõi giá hiện tại.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, phiên còn bao lâu room AUC-1024 khi có anti-sniping, kèm chuyện khi countdown về 0 thì tự chốt, sau đó luật chống snipe đang bật, rồi mã phòng GOLD-21 pls?",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau room auc-1024 khi co anti-sniping, dong thoi bid phut chot co keo dai gio ko, dong thoi 30 giay cuoi de khoi lam sai",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien còn bao lâu room AUC-1024 khi có anti-sniping, trước khi đặt 500k nếu hợp lệ mình hơi rén",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu room AUC-1024 khi có anti-sniping, đồng thời giá mới bị delay đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, phiên còn bao lâu room AUC-1024 khi có anti-sniping, trước khi auto close phải chạy đúng; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu sản phẩm đang đấu trước khi bid, đồng thời nếu có anti-sniping cuối phiên, nhưng đặt 500k nếu hợp lệ.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, phiên còn bao lâu sản phẩm đang đấu trước khi bid, kèm chuyện chuẩn bị bid mức mới vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau sp dang dau truoc khi bid, kem chuyen refresh gia live giup m dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien còn bao lâu sản phẩm đang đấu trước khi bid, đồng thời phiên tự kết thúc sau deadline nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu sản phẩm đang đấu trước khi bid, rồi đồng hồ có tự cộng thêm không, rồi 30 giây cuối đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, phiên còn bao lâu sản phẩm đang đấu trước khi bid, sau đó mình định đặt giá thêm, trước khi refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu sản phẩm đang đấu vì mình sợ hết giờ, sau đó cần xem giá cao nhất hiện tại, kèm chuyện mã phòng PHIEN-2026.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, phiên còn bao lâu sản phẩm đang đấu vì mình sợ hết giờ, đồng thời không cần seller bấm đóng để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau sp dang dau vi m so het gio, dong thoi co nguoi nhay gia sat gio, truoc khi nho bot giai thich them m hoi ren",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"phien còn bao lâu sản phẩm đang đấu vì mình sợ hết giờ, đồng thời nâng thêm 100k được không được không",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu sản phẩm đang đấu vì mình sợ hết giờ, nhưng giá realtime đang chưa đổi, sau đó không cần seller bấm đóng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, phiên còn bao lâu sản phẩm đang đấu vì mình sợ hết giờ, nhưng hệ thống tự xác định người thắng; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu sản phẩm đang đấu có bị lệch không, sau đó luật chống snipe đang bật, nhưng 30 giây cuối.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, phiên còn bao lâu sản phẩm đang đấu có bị lệch không, trước khi muốn vượt người đang dẫn đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau sp dang dau co bi lech ko, roi dang theo doi gia hien tai nhe",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien còn bao lâu sản phẩm đang đấu có bị lệch không, trước khi khi countdown về 0 thì tự chốt, sau đó luật chống snipe đang bật mình đang thao tác",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu sản phẩm đang đấu có bị lệch không, nhưng bid phút chót có kéo dài giờ không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, phiên còn bao lâu sản phẩm đang đấu có bị lệch không, sau đó đặt 500k nếu hợp lệ, trước khi mã phòng P-774; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu sản phẩm đang đấu đang hiển thị nhỏ quá, đồng thời giá mới bị delay.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, phiên còn bao lâu sản phẩm đang đấu đang hiển thị nhỏ quá, trước khi auto close phải chạy đúng mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau sp dang dau dang hien thi nho qua, kem chuyen neu co anti-sniping cuoi phien, sau do dat 500k neu hop le, nhung 30 giay cuoi dc ko",0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien còn bao lâu sản phẩm đang đấu đang hiển thị nhỏ quá, sau đó chuẩn bị bid mức mới pls",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu sản phẩm đang đấu đang hiển thị nhỏ quá, sau đó refresh giá live giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, phiên còn bao lâu sản phẩm đang đấu đang hiển thị nhỏ quá, kèm chuyện phiên tự kết thúc sau deadline; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu sản phẩm đang đấu khi có anti-sniping, rồi đồng hồ có tự cộng thêm không.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, phiên còn bao lâu sản phẩm đang đấu khi có anti-sniping, sau đó mình định đặt giá thêm, trước khi refresh giá live giúp mình, rồi bot phân tích lỗi đang gặp nhé?",0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"phien con bao lau sp dang dau khi co anti-sniping, roi can xem gia cao nhat hien tai m dang thao tac",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien còn bao lâu sản phẩm đang đấu khi có anti-sniping, nhưng không cần seller bấm đóng vì mình chưa rõ luồng",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu sản phẩm đang đấu khi có anti-sniping, nhưng có người nhảy giá sát giờ, kèm chuyện mã phòng AUC-1024, trước khi 30 giây cuối đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, phiên còn bao lâu sản phẩm đang đấu khi có anti-sniping, nhưng nâng thêm 100k được không; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu đồng hồ cơ trước khi bid, nhưng giá realtime đang chưa đổi, sau đó không cần seller bấm đóng.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, phiên còn bao lâu đồng hồ cơ trước khi bid, nhưng hệ thống tự xác định người thắng được không?",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau dong ho co truoc khi bid, dong thoi luat chong snipe dang bat pls",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien còn bao lâu đồng hồ cơ trước khi bid, rồi muốn vượt người đang dẫn để khỏi làm sai",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu đồng hồ cơ trước khi bid, nhưng đang theo dõi giá hiện tại đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, phiên còn bao lâu đồng hồ cơ trước khi bid, rồi khi countdown về 0 thì tự chốt, đồng thời luật chống snipe đang bật; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu đồng hồ cơ vì mình sợ hết giờ, kèm chuyện bid phút chót có kéo dài giờ không, trước khi 30 giây cuối.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, phiên còn bao lâu đồng hồ cơ vì mình sợ hết giờ, rồi đặt 500k nếu hợp lệ mình đang thao tác?",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau dong ho co vi m so het gio, kem chuyen gia moi bi delay vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien còn bao lâu đồng hồ cơ vì mình sợ hết giờ, rồi auto close phải chạy đúng, rồi mã phòng A17 đang cần xử lý liền",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu đồng hồ cơ vì mình sợ hết giờ, sau đó nếu có anti-sniping cuối phiên, kèm chuyện đặt 500k nếu hợp lệ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, phiên còn bao lâu đồng hồ cơ vì mình sợ hết giờ, đồng thời chuẩn bị bid mức mới; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu đồng hồ cơ có bị lệch không, sau đó refresh giá live giúp mình, trước khi bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, phiên còn bao lâu đồng hồ cơ có bị lệch không, kèm chuyện phiên tự kết thúc sau deadline pls?",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau dong ho co co bi lech ko, nhung dong ho co tu cong them ko, truoc khi 30 giay cuoi de khoi lam sai",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien còn bao lâu đồng hồ cơ có bị lệch không, đồng thời mình định đặt giá thêm, kèm chuyện refresh giá live giúp mình mình hơi rén",0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu đồng hồ cơ có bị lệch không, nhưng cần xem giá cao nhất hiện tại đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, phiên còn bao lâu đồng hồ cơ có bị lệch không, trước khi không cần seller bấm đóng; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu đồng hồ cơ đang hiển thị nhỏ quá, kèm chuyện có người nhảy giá sát giờ.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, phiên còn bao lâu đồng hồ cơ đang hiển thị nhỏ quá, kèm chuyện nâng thêm 100k được không vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau dong ho co dang hien thi nho qua, truoc khi gia realtime dang chua doi, sau do ko can seller bam dong, roi ma room sala-05 dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phien còn bao lâu đồng hồ cơ đang hiển thị nhỏ quá, trước khi hệ thống tự xác định người thắng nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu đồng hồ cơ đang hiển thị nhỏ quá, kèm chuyện luật chống snipe đang bật, trước khi 30 giây cuối đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, phiên còn bao lâu đồng hồ cơ đang hiển thị nhỏ quá, nhưng muốn vượt người đang dẫn; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu đồng hồ cơ khi có anti-sniping, nhưng đang theo dõi giá hiện tại.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, phiên còn bao lâu đồng hồ cơ khi có anti-sniping, rồi khi countdown về 0 thì tự chốt, đồng thời luật chống snipe đang bật để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau dong ho co khi co anti-sniping, truoc khi bid phut chot co keo dai gio ko m hoi ren",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien còn bao lâu đồng hồ cơ khi có anti-sniping, đồng thời đặt 500k nếu hợp lệ được không",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu đồng hồ cơ khi có anti-sniping, trước khi giá mới bị delay đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, phiên còn bao lâu đồng hồ cơ khi có anti-sniping, đồng thời auto close phải chạy đúng, sau đó bot hướng dẫn bước tiếp theo; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0
+"Phiên còn bao lâu iPhone 15 trước khi bid, sau đó nếu có anti-sniping cuối phiên, kèm chuyện đặt 500k nếu hợp lệ, trước khi 30 giây cuối.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, phiên còn bao lâu iPhone 15 trước khi bid, đồng thời chuẩn bị bid mức mới, sau đó mã phòng ROOM-88 đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau iphone 15 truoc khi bid, dong thoi refresh gia live giup m nhe",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien còn bao lâu iPhone 15 trước khi bid, sau đó phiên tự kết thúc sau deadline mình đang thao tác",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu iPhone 15 trước khi bid, trước khi đồng hồ có tự cộng thêm không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, phiên còn bao lâu iPhone 15 trước khi bid, kèm chuyện mình định đặt giá thêm, rồi refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu iPhone 15 vì mình sợ hết giờ, kèm chuyện cần xem giá cao nhất hiện tại.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, phiên còn bao lâu iPhone 15 vì mình sợ hết giờ, sau đó không cần seller bấm đóng mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau iphone 15 vi m so het gio, sau do co nguoi nhay gia sat gio, nhung 30 giay cuoi dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien còn bao lâu iPhone 15 vì mình sợ hết giờ, sau đó nâng thêm 100k được không pls",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu iPhone 15 vì mình sợ hết giờ, rồi giá realtime đang chưa đổi, đồng thời không cần seller bấm đóng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, phiên còn bao lâu iPhone 15 vì mình sợ hết giờ, rồi hệ thống tự xác định người thắng; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu iPhone 15 có bị lệch không, kèm chuyện luật chống snipe đang bật, đồng thời mã phòng BID-09.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, phiên còn bao lâu iPhone 15 có bị lệch không, nhưng muốn vượt người đang dẫn nhé?",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau iphone 15 co bi lech ko, truoc khi dang theo doi gia hien tai m dang thao tac",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien còn bao lâu iPhone 15 có bị lệch không, nhưng khi countdown về 0 thì tự chốt, sau đó luật chống snipe đang bật vì mình chưa rõ luồng",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu iPhone 15 có bị lệch không, rồi bid phút chót có kéo dài giờ không, sau đó chatbot nói dễ hiểu giúp mình, nhưng 30 giây cuối đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình đang bị vướng, phiên còn bao lâu iPhone 15 có bị lệch không, kèm chuyện đặt 500k nếu hợp lệ; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu iPhone 15 đang hiển thị nhỏ quá, sau đó giá mới bị delay.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, phiên còn bao lâu iPhone 15 đang hiển thị nhỏ quá, nhưng auto close phải chạy đúng được không?",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau iphone 15 dang hien thi nho qua, dong thoi neu co anti-sniping cuoi phien, nhung dat 500k neu hop le pls",0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien còn bao lâu iPhone 15 đang hiển thị nhỏ quá, kèm chuyện chuẩn bị bid mức mới để khỏi làm sai",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu iPhone 15 đang hiển thị nhỏ quá, kèm chuyện refresh giá live giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, phiên còn bao lâu iPhone 15 đang hiển thị nhỏ quá, đồng thời phiên tự kết thúc sau deadline, sau đó mã phòng GOLD-21; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu iPhone 15 khi có anti-sniping, trước khi đồng hồ có tự cộng thêm không, trước khi 30 giây cuối.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, phiên còn bao lâu iPhone 15 khi có anti-sniping, kèm chuyện mình định đặt giá thêm, rồi refresh giá live giúp mình mình đang thao tác?",0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau iphone 15 khi co anti-sniping, truoc khi can xem gia cao nhat hien tai vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien còn bao lâu iPhone 15 khi có anti-sniping, rồi không cần seller bấm đóng đang cần xử lý liền",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu iPhone 15 khi có anti-sniping, rồi có người nhảy giá sát giờ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, phiên còn bao lâu iPhone 15 khi có anti-sniping, rồi nâng thêm 100k được không; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu màn hình auction trước khi bid, nhưng giá realtime đang chưa đổi, sau đó không cần seller bấm đóng.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, phiên còn bao lâu màn hình auction trước khi bid, nhưng hệ thống tự xác định người thắng pls?",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau man hinh auction truoc khi bid, dong thoi luat chong snipe dang bat, dong thoi 30 giay cuoi de khoi lam sai",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien còn bao lâu màn hình auction trước khi bid, rồi muốn vượt người đang dẫn, kèm chuyện nhờ chatbot giải thích thêm mình hơi rén",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"phiên còn bao lâu màn hình auction trước khi bid, nhưng đang theo dõi giá hiện tại, sau đó mã phòng PHIEN-2026 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, phiên còn bao lâu màn hình auction trước khi bid, rồi khi countdown về 0 thì tự chốt, đồng thời luật chống snipe đang bật; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu màn hình auction vì mình sợ hết giờ, kèm chuyện bid phút chót có kéo dài giờ không.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, phiên còn bao lâu màn hình auction vì mình sợ hết giờ, rồi đặt 500k nếu hợp lệ vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau man hinh auction vi m so het gio, kem chuyen gia moi bi delay dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien còn bao lâu màn hình auction vì mình sợ hết giờ, rồi auto close phải chạy đúng nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu màn hình auction vì mình sợ hết giờ, sau đó nếu có anti-sniping cuối phiên, kèm chuyện đặt 500k nếu hợp lệ, trước khi 30 giây cuối đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, phiên còn bao lâu màn hình auction vì mình sợ hết giờ, đồng thời chuẩn bị bid mức mới; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu màn hình auction có bị lệch không, sau đó refresh giá live giúp mình.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, phiên còn bao lâu màn hình auction có bị lệch không, kèm chuyện phiên tự kết thúc sau deadline để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau man hinh auction co bi lech ko, nhung dong ho co tu cong them ko m hoi ren",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien còn bao lâu màn hình auction có bị lệch không, sau đó mã phòng P-774 được không",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu màn hình auction có bị lệch không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, phiên còn bao lâu màn hình auction có bị lệch không; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu màn hình auction đang hiển thị nhỏ quá, nhưng 30 giây cuối.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, phiên còn bao lâu màn hình auction đang hiển thị nhỏ quá đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+phien con bao lau man hinh auction dang hien thi nho qua nhe,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+phien còn bao lâu màn hình auction đang hiển thị nhỏ quá mình đang thao tác,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu màn hình auction đang hiển thị nhỏ quá đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, phiên còn bao lâu màn hình auction đang hiển thị nhỏ quá; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Phiên còn bao lâu màn hình auction khi có anti-sniping.,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, phiên còn bao lâu màn hình auction khi có anti-sniping mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phien con bao lau man hinh auction khi co anti-sniping, sau do ma room auc-1024, nhung 30 giay cuoi dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+phien còn bao lâu màn hình auction khi có anti-sniping pls,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu màn hình auction khi có anti-sniping đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, phiên còn bao lâu màn hình auction khi có anti-sniping; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Phiên còn bao lâu cuộc đấu giá live trước khi bid.,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, phiên còn bao lâu cuộc đấu giá live trước khi bid nhé?",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+phien con bao lau cuoc dg live truoc khi bid m dang thao tac,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+phien còn bao lâu cuộc đấu giá live trước khi bid vì mình chưa rõ luồng,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu cuộc đấu giá live trước khi bid, đồng thời 30 giây cuối đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, phiên còn bao lâu cuộc đấu giá live trước khi bid; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Phiên còn bao lâu cuộc đấu giá live vì mình sợ hết giờ.,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, phiên còn bao lâu cuộc đấu giá live vì mình sợ hết giờ, rồi mã phòng A17 được không?",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+phien con bao lau cuoc dg live vi m so het gio pls,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+phien còn bao lâu cuộc đấu giá live vì mình sợ hết giờ để khỏi làm sai,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu cuộc đấu giá live vì mình sợ hết giờ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, phiên còn bao lâu cuộc đấu giá live vì mình sợ hết giờ; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu cuộc đấu giá live có bị lệch không, trước khi 30 giây cuối.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, phiên còn bao lâu cuộc đấu giá live có bị lệch không mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+phien con bao lau cuoc dg live co bi lech ko vi m chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+phien còn bao lâu cuộc đấu giá live có bị lệch không đang cần xử lý liền,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phiên còn bao lâu cuộc đấu giá live có bị lệch không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, phiên còn bao lâu cuộc đấu giá live có bị lệch không; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Phiên còn bao lâu cuộc đấu giá live đang hiển thị nhỏ quá, đồng thời mã phòng SALA-05.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, phiên còn bao lâu cuộc đấu giá live đang hiển thị nhỏ quá pls?",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

@@ -1,0 +1,201 @@
+﻿text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+"Hệ thống có tự chốt phiên phiên này như thế nào, rồi xem countdown còn bao lâu, nhưng nếu hủy thì rollback số dư, rồi bot phân tích lỗi đang gặp, sau đó mã phòng AUC-1024, nhưng 30 giây cuối.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0
+"Admin ơi, hệ thống có tự chốt phiên phiên này như thế nào, đồng thời người thắng bị trừ và seller được cộng mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien phien nay nhu the nao, dong thoi refresh gia live giup m vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phien phiên này như thế nào, rồi có người nhảy giá sát giờ đang cần xử lý liền",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên phiên này như thế nào, trước khi đừng kẹt ở màn phiên cũ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, hệ thống có tự chốt phiên phiên này như thế nào, rồi xem countdown còn bao lâu, nhưng refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên phiên này có cần seller bấm không, đồng thời người thắng bị trừ và seller được cộng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Help với, hệ thống có tự chốt phiên phiên này có cần seller bấm không, đồng thời refresh giá live giúp mình pls?",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien phien nay co can seller bam ko, roi co nguoi nhay gia sat gio, roi 30 giay cuoi de khoi lam sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phien phiên này có cần seller bấm không, trước khi đừng kẹt ở màn phiên cũ mình hơi rén",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên phiên này có cần seller bấm không, rồi xem countdown còn bao lâu, đồng thời luật chống snipe đang bật đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, hệ thống có tự chốt phiên phiên này có cần seller bấm không, đồng thời người thắng bị trừ và seller được cộng, đồng thời mã phòng A17; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên phiên này để mình hiểu kết quả, trước khi refresh giá live giúp mình.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, hệ thống có tự chốt phiên phiên này để mình hiểu kết quả, kèm chuyện có người nhảy giá sát giờ vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien phien nay de m hieu ket qua, dong thoi dung ket o man phien cu dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phien phiên này để mình hiểu kết quả, kèm chuyện xem countdown còn bao lâu, rồi app tự chuyển về danh sách phiên nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên phiên này để mình hiểu kết quả, trước khi người thắng bị trừ và seller được cộng, trước khi 30 giây cuối đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, hệ thống có tự chốt phiên phiên này để mình hiểu kết quả, trước khi refresh giá live giúp mình, rồi bot phân tích lỗi đang gặp; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0
+"Hệ thống có tự chốt phiên phiên này nếu có bid phút chót, kèm chuyện có người nhảy giá sát giờ.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, hệ thống có tự chốt phiên phiên này nếu có bid phút chót, đồng thời đừng kẹt ở màn phiên cũ để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien phien nay neu co bid phut chot, kem chuyen xem countdown con bao lau m hoi ren",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phien phiên này nếu có bid phút chót, trước khi người thắng bị trừ và seller được cộng được không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên phiên này nếu có bid phút chót, trước khi refresh giá live giúp mình, nhưng mã phòng SALA-05 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, hệ thống có tự chốt phiên phiên này nếu có bid phút chót, kèm chuyện có người nhảy giá sát giờ; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên phiên này sau khi hết thời gian, nhưng đừng kẹt ở màn phiên cũ, trước khi 30 giây cuối.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, hệ thống có tự chốt phiên phiên này sau khi hết thời gian, trước khi xem countdown còn bao lâu, rồi nếu hủy thì rollback số dư đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien phien nay sau khi het thoi gian, sau do nguoi thang bi tru va seller dc cong nhe",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phien phiên này sau khi hết thời gian, sau đó refresh giá live giúp mình mình đang thao tác",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên phiên này sau khi hết thời gian, trước khi có người nhảy giá sát giờ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, hệ thống có tự chốt phiên phiên này sau khi hết thời gian, nhưng đừng kẹt ở màn phiên cũ; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên auction đang chạy như thế nào, nhưng xem countdown còn bao lâu, rồi refresh giá live giúp mình.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, hệ thống có tự chốt phiên auction đang chạy như thế nào, kèm chuyện người thắng bị trừ và seller được cộng mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien auction dang chay nhu the nao, kem chuyen refresh gia live giup m, truoc khi 30 giay cuoi dc ko",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phien auction đang chạy như thế nào, nhưng có người nhảy giá sát giờ, nhưng mã phòng ROOM-88 pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên auction đang chạy như thế nào, rồi đừng kẹt ở màn phiên cũ, trước khi bot hướng dẫn bước tiếp theo đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0
+"Alo ad, hệ thống có tự chốt phiên auction đang chạy như thế nào, nhưng xem countdown còn bao lâu, sau đó luật chống snipe đang bật; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên auction đang chạy có cần seller bấm không, kèm chuyện người thắng bị trừ và seller được cộng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, hệ thống có tự chốt phiên auction đang chạy có cần seller bấm không, kèm chuyện refresh giá live giúp mình nhé?",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien auction dang chay co can seller bam ko, nhung co nguoi nhay gia sat gio m dang thao tac",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phien auction đang chạy có cần seller bấm không, rồi đừng kẹt ở màn phiên cũ vì mình chưa rõ luồng",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên auction đang chạy có cần seller bấm không, nhưng xem countdown còn bao lâu, rồi app tự chuyển về danh sách phiên, rồi 30 giây cuối đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, hệ thống có tự chốt phiên auction đang chạy có cần seller bấm không, kèm chuyện người thắng bị trừ và seller được cộng; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên auction đang chạy để mình hiểu kết quả, rồi refresh giá live giúp mình.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, hệ thống có tự chốt phiên auction đang chạy để mình hiểu kết quả, sau đó có người nhảy giá sát giờ được không?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien auction dang chay de m hieu ket qua, kem chuyen dung ket o man phien cu, dong thoi ma room bid-09 pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phien auction đang chạy để mình hiểu kết quả, sau đó xem countdown còn bao lâu để khỏi làm sai",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên auction đang chạy để mình hiểu kết quả, rồi người thắng bị trừ và seller được cộng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, hệ thống có tự chốt phiên auction đang chạy để mình hiểu kết quả, rồi refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên auction đang chạy nếu có bid phút chót, sau đó có người nhảy giá sát giờ, nhưng 30 giây cuối.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, hệ thống có tự chốt phiên auction đang chạy nếu có bid phút chót, kèm chuyện đừng kẹt ở màn phiên cũ mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien auction dang chay neu co bid phut chot, sau do xem countdown con bao lau, truoc khi neu huy thi rollback balance vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phien auction đang chạy nếu có bid phút chót, rồi người thắng bị trừ và seller được cộng, sau đó chatbot nói dễ hiểu giúp mình đang cần xử lý liền",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0
+"hệ thống có tự chốt phiên auction đang chạy nếu có bid phút chót, rồi refresh giá live giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, hệ thống có tự chốt phiên auction đang chạy nếu có bid phút chót, sau đó có người nhảy giá sát giờ; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên auction đang chạy sau khi hết thời gian, trước khi đừng kẹt ở màn phiên cũ.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Help với, hệ thống có tự chốt phiên auction đang chạy sau khi hết thời gian, rồi xem countdown còn bao lâu, nhưng refresh giá live giúp mình, nhưng mã phòng GOLD-21 pls?",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien auction dang chay sau khi het thoi gian, dong thoi nguoi thang bi tru va seller dc cong, dong thoi 30 giay cuoi de khoi lam sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phien auction đang chạy sau khi hết thời gian, đồng thời refresh giá live giúp mình mình hơi rén",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên auction đang chạy sau khi hết thời gian, rồi có người nhảy giá sát giờ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, hệ thống có tự chốt phiên auction đang chạy sau khi hết thời gian, trước khi đừng kẹt ở màn phiên cũ; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên room AUC-1024 như thế nào, trước khi xem countdown còn bao lâu, sau đó luật chống snipe đang bật.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, hệ thống có tự chốt phiên room AUC-1024 như thế nào, sau đó người thắng bị trừ và seller được cộng vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien room auc-1024 nhu the nao, sau do refresh gia live giup m dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phien room AUC-1024 như thế nào, trước khi có người nhảy giá sát giờ nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên room AUC-1024 như thế nào, nhưng đừng kẹt ở màn phiên cũ, trước khi 30 giây cuối đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, hệ thống có tự chốt phiên room AUC-1024 như thế nào, trước khi xem countdown còn bao lâu, rồi app tự chuyển về danh sách phiên; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên room AUC-1024 có cần seller bấm không, sau đó người thắng bị trừ và seller được cộng, kèm chuyện mã phòng PHIEN-2026.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, hệ thống có tự chốt phiên room AUC-1024 có cần seller bấm không, sau đó refresh giá live giúp mình để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien room auc-1024 co can seller bam ko, truoc khi co nguoi nhay gia sat gio, dong thoi nho bot giai thich them m hoi ren",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0
+"hệ thống có tự chốt phien room AUC-1024 có cần seller bấm không, nhưng đừng kẹt ở màn phiên cũ được không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên room AUC-1024 có cần seller bấm không, trước khi xem countdown còn bao lâu đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, hệ thống có tự chốt phiên room AUC-1024 có cần seller bấm không, sau đó người thắng bị trừ và seller được cộng; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên room AUC-1024 để mình hiểu kết quả, nhưng refresh giá live giúp mình, trước khi 30 giây cuối.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, hệ thống có tự chốt phiên room AUC-1024 để mình hiểu kết quả, đồng thời có người nhảy giá sát giờ đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien room auc-1024 de m hieu ket qua, sau do dung ket o man phien cu nhe",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phien room AUC-1024 để mình hiểu kết quả, đồng thời xem countdown còn bao lâu, kèm chuyện nếu hủy thì rollback số dư mình đang thao tác",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên room AUC-1024 để mình hiểu kết quả, nhưng người thắng bị trừ và seller được cộng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, hệ thống có tự chốt phiên room AUC-1024 để mình hiểu kết quả, nhưng refresh giá live giúp mình, rồi mã phòng P-774; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên room AUC-1024 nếu có bid phút chót, đồng thời có người nhảy giá sát giờ.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, hệ thống có tự chốt phiên room AUC-1024 nếu có bid phút chót, sau đó đừng kẹt ở màn phiên cũ mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien room auc-1024 neu co bid phut chot, dong thoi xem countdown con bao lau, kem chuyen refresh gia live giup m, truoc khi 30 giay cuoi dc ko",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phien room AUC-1024 nếu có bid phút chót, nhưng người thắng bị trừ và seller được cộng pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên room AUC-1024 nếu có bid phút chót, nhưng refresh giá live giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, hệ thống có tự chốt phiên room AUC-1024 nếu có bid phút chót, đồng thời có người nhảy giá sát giờ; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên room AUC-1024 sau khi hết thời gian, rồi đừng kẹt ở màn phiên cũ.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, hệ thống có tự chốt phiên room AUC-1024 sau khi hết thời gian, nhưng xem countdown còn bao lâu, sau đó luật chống snipe đang bật, trước khi bot phân tích lỗi đang gặp nhé?",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0
+"he thong co tu chot phien room auc-1024 sau khi het thoi gian, kem chuyen nguoi thang bi tru va seller dc cong m dang thao tac",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phien room AUC-1024 sau khi hết thời gian, kèm chuyện refresh giá live giúp mình vì mình chưa rõ luồng",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên room AUC-1024 sau khi hết thời gian, nhưng có người nhảy giá sát giờ, kèm chuyện mã phòng AUC-1024, trước khi 30 giây cuối đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, hệ thống có tự chốt phiên room AUC-1024 sau khi hết thời gian, rồi đừng kẹt ở màn phiên cũ; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên sản phẩm đang đấu như thế nào, nhưng xem countdown còn bao lâu, rồi app tự chuyển về danh sách phiên.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Này ad, hệ thống có tự chốt phiên sản phẩm đang đấu như thế nào, kèm chuyện người thắng bị trừ và seller được cộng được không?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien sp dang dau nhu the nao, kem chuyen refresh gia live giup m pls",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phien sản phẩm đang đấu như thế nào, nhưng có người nhảy giá sát giờ để khỏi làm sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên sản phẩm đang đấu như thế nào, rồi đừng kẹt ở màn phiên cũ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, hệ thống có tự chốt phiên sản phẩm đang đấu như thế nào, nhưng xem countdown còn bao lâu; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên sản phẩm đang đấu có cần seller bấm không, kèm chuyện người thắng bị trừ và seller được cộng, trước khi 30 giây cuối.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, hệ thống có tự chốt phiên sản phẩm đang đấu có cần seller bấm không, kèm chuyện refresh giá live giúp mình mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien sp dang dau co can seller bam ko, nhung co nguoi nhay gia sat gio vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phien sản phẩm đang đấu có cần seller bấm không, rồi đừng kẹt ở màn phiên cũ, rồi mã phòng A17 đang cần xử lý liền",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên sản phẩm đang đấu có cần seller bấm không, nhưng xem countdown còn bao lâu, rồi nếu hủy thì rollback số dư đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, hệ thống có tự chốt phiên sản phẩm đang đấu có cần seller bấm không, kèm chuyện người thắng bị trừ và seller được cộng; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên sản phẩm đang đấu để mình hiểu kết quả, rồi refresh giá live giúp mình, nhưng bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, hệ thống có tự chốt phiên sản phẩm đang đấu để mình hiểu kết quả, sau đó có người nhảy giá sát giờ pls?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien sp dang dau de m hieu ket qua, kem chuyen dung ket o man phien cu, truoc khi 30 giay cuoi de khoi lam sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phien sản phẩm đang đấu để mình hiểu kết quả, sau đó xem countdown còn bao lâu, trước khi refresh giá live giúp mình mình hơi rén",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên sản phẩm đang đấu để mình hiểu kết quả, rồi người thắng bị trừ và seller được cộng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, hệ thống có tự chốt phiên sản phẩm đang đấu để mình hiểu kết quả, rồi refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên sản phẩm đang đấu nếu có bid phút chót, sau đó có người nhảy giá sát giờ.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, hệ thống có tự chốt phiên sản phẩm đang đấu nếu có bid phút chót, kèm chuyện đừng kẹt ở màn phiên cũ vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien sp dang dau neu co bid phut chot, sau do xem countdown con bao lau, kem chuyen luat chong snipe dang bat, nhung ma room sala-05 dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phien sản phẩm đang đấu nếu có bid phút chót, rồi người thắng bị trừ và seller được cộng nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên sản phẩm đang đấu nếu có bid phút chót, rồi refresh giá live giúp mình, rồi 30 giây cuối đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, hệ thống có tự chốt phiên sản phẩm đang đấu nếu có bid phút chót, sau đó có người nhảy giá sát giờ; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên sản phẩm đang đấu sau khi hết thời gian, trước khi đừng kẹt ở màn phiên cũ.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Alo ad, hệ thống có tự chốt phiên sản phẩm đang đấu sau khi hết thời gian, rồi xem countdown còn bao lâu, nhưng app tự chuyển về danh sách phiên để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien sp dang dau sau khi het thoi gian, dong thoi nguoi thang bi tru va seller dc cong m hoi ren",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phien sản phẩm đang đấu sau khi hết thời gian, đồng thời refresh giá live giúp mình được không",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên sản phẩm đang đấu sau khi hết thời gian, rồi có người nhảy giá sát giờ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, hệ thống có tự chốt phiên sản phẩm đang đấu sau khi hết thời gian, trước khi đừng kẹt ở màn phiên cũ, nhưng bot hướng dẫn bước tiếp theo; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0
+"Hệ thống có tự chốt phiên đồng hồ hết giờ như thế nào, rồi xem countdown còn bao lâu, rồi 30 giây cuối.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, hệ thống có tự chốt phiên đồng hồ hết giờ như thế nào, đồng thời người thắng bị trừ và seller được cộng, sau đó mã phòng ROOM-88 đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien dong ho het gio nhu the nao, dong thoi refresh gia live giup m nhe",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phien đồng hồ hết giờ như thế nào, rồi có người nhảy giá sát giờ mình đang thao tác",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên đồng hồ hết giờ như thế nào, trước khi đừng kẹt ở màn phiên cũ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, hệ thống có tự chốt phiên đồng hồ hết giờ như thế nào, rồi xem countdown còn bao lâu, nhưng nếu hủy thì rollback số dư; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên đồng hồ hết giờ có cần seller bấm không, đồng thời người thắng bị trừ và seller được cộng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, hệ thống có tự chốt phiên đồng hồ hết giờ có cần seller bấm không, đồng thời refresh giá live giúp mình mình hơi rén?",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien dong ho het gio co can seller bam ko, roi co nguoi nhay gia sat gio, roi 30 giay cuoi dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phien đồng hồ hết giờ có cần seller bấm không, trước khi đừng kẹt ở màn phiên cũ pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên đồng hồ hết giờ có cần seller bấm không, rồi xem countdown còn bao lâu, nhưng refresh giá live giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, hệ thống có tự chốt phiên đồng hồ hết giờ có cần seller bấm không, đồng thời người thắng bị trừ và seller được cộng; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên đồng hồ hết giờ để mình hiểu kết quả, trước khi refresh giá live giúp mình, đồng thời mã phòng BID-09.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, hệ thống có tự chốt phiên đồng hồ hết giờ để mình hiểu kết quả, kèm chuyện có người nhảy giá sát giờ nhé?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien dong ho het gio de m hieu ket qua, dong thoi dung ket o man phien cu m dang thao tac",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phien đồng hồ hết giờ để mình hiểu kết quả, kèm chuyện xem countdown còn bao lâu, sau đó luật chống snipe đang bật vì mình chưa rõ luồng",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên đồng hồ hết giờ để mình hiểu kết quả, trước khi người thắng bị trừ và seller được cộng, kèm chuyện chatbot nói dễ hiểu giúp mình, trước khi 30 giây cuối đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0
+"Mình đang bị vướng, hệ thống có tự chốt phiên đồng hồ hết giờ để mình hiểu kết quả, trước khi refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên đồng hồ hết giờ nếu có bid phút chót, kèm chuyện có người nhảy giá sát giờ.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, hệ thống có tự chốt phiên đồng hồ hết giờ nếu có bid phút chót, đồng thời đừng kẹt ở màn phiên cũ được không?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien dong ho het gio neu co bid phut chot, kem chuyen xem countdown con bao lau, roi app tu chuyen ve danh sach phien pls",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phien đồng hồ hết giờ nếu có bid phút chót, trước khi người thắng bị trừ và seller được cộng để khỏi làm sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên đồng hồ hết giờ nếu có bid phút chót, trước khi refresh giá live giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, hệ thống có tự chốt phiên đồng hồ hết giờ nếu có bid phút chót, kèm chuyện có người nhảy giá sát giờ, nhưng mã phòng GOLD-21; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên đồng hồ hết giờ sau khi hết thời gian, nhưng đừng kẹt ở màn phiên cũ, trước khi 30 giây cuối.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, hệ thống có tự chốt phiên đồng hồ hết giờ sau khi hết thời gian, trước khi xem countdown còn bao lâu mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien dong ho het gio sau khi het thoi gian, sau do nguoi thang bi tru va seller dc cong vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phien đồng hồ hết giờ sau khi hết thời gian, sau đó refresh giá live giúp mình đang cần xử lý liền",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên đồng hồ hết giờ sau khi hết thời gian, trước khi có người nhảy giá sát giờ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, hệ thống có tự chốt phiên đồng hồ hết giờ sau khi hết thời gian, nhưng đừng kẹt ở màn phiên cũ; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên giá cuối cùng như thế nào, trước khi xem countdown còn bao lâu, rồi nếu hủy thì rollback số dư.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Help với, hệ thống có tự chốt phiên giá cuối cùng như thế nào, sau đó người thắng bị trừ và seller được cộng pls?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien gia cuoi cung nhu the nao, sau do refresh gia live giup m, nhung 30 giay cuoi de khoi lam sai",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phien giá cuối cùng như thế nào, trước khi có người nhảy giá sát giờ, đồng thời nhờ chatbot giải thích thêm mình hơi rén",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0
+"hệ thống có tự chốt phiên giá cuối cùng như thế nào, nhưng đừng kẹt ở màn phiên cũ, sau đó mã phòng PHIEN-2026 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Này ad, hệ thống có tự chốt phiên giá cuối cùng như thế nào, trước khi xem countdown còn bao lâu, rồi refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên giá cuối cùng có cần seller bấm không, sau đó người thắng bị trừ và seller được cộng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, hệ thống có tự chốt phiên giá cuối cùng có cần seller bấm không, sau đó refresh giá live giúp mình vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien gia cuoi cung co can seller bam ko, truoc khi co nguoi nhay gia sat gio dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phien giá cuối cùng có cần seller bấm không, nhưng đừng kẹt ở màn phiên cũ nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên giá cuối cùng có cần seller bấm không, trước khi xem countdown còn bao lâu, sau đó luật chống snipe đang bật, nhưng 30 giây cuối đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, hệ thống có tự chốt phiên giá cuối cùng có cần seller bấm không, sau đó người thắng bị trừ và seller được cộng; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên giá cuối cùng để mình hiểu kết quả, nhưng refresh giá live giúp mình.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, hệ thống có tự chốt phiên giá cuối cùng để mình hiểu kết quả, đồng thời có người nhảy giá sát giờ để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien gia cuoi cung de m hieu ket qua, sau do dung ket o man phien cu m hoi ren",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phien giá cuối cùng để mình hiểu kết quả, nhưng mã phòng P-774 được không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên giá cuối cùng để mình hiểu kết quả đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, hệ thống có tự chốt phiên giá cuối cùng để mình hiểu kết quả; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên giá cuối cùng nếu có bid phút chót, rồi 30 giây cuối.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, hệ thống có tự chốt phiên giá cuối cùng nếu có bid phút chót đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+he thong co tu chot phien gia cuoi cung neu co bid phut chot nhe,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+hệ thống có tự chốt phien giá cuối cùng nếu có bid phút chót mình đang thao tác,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên giá cuối cùng nếu có bid phút chót đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, hệ thống có tự chốt phiên giá cuối cùng nếu có bid phút chót; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+Hệ thống có tự chốt phiên giá cuối cùng sau khi hết thời gian.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, hệ thống có tự chốt phiên giá cuối cùng sau khi hết thời gian mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu chot phien gia cuoi cung sau khi het thoi gian, roi ma room auc-1024, roi 30 giay cuoi dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+hệ thống có tự chốt phien giá cuối cùng sau khi hết thời gian pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên giá cuối cùng sau khi hết thời gian đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, hệ thống có tự chốt phiên giá cuối cùng sau khi hết thời gian; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+Hệ thống có tự chốt phiên người bid cao nhất như thế nào.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, hệ thống có tự chốt phiên người bid cao nhất như thế nào nhé?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+he thong co tu chot phien nguoi bid cao nhat nhu the nao m dang thao tac,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+hệ thống có tự chốt phien người bid cao nhất như thế nào vì mình chưa rõ luồng,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên người bid cao nhất như thế nào, nhưng 30 giây cuối đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, hệ thống có tự chốt phiên người bid cao nhất như thế nào; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+Hệ thống có tự chốt phiên người bid cao nhất có cần seller bấm không.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, hệ thống có tự chốt phiên người bid cao nhất có cần seller bấm không, nhưng mã phòng A17 được không?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+he thong co tu chot phien nguoi bid cao nhat co can seller bam ko pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+hệ thống có tự chốt phien người bid cao nhất có cần seller bấm không để khỏi làm sai,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên người bid cao nhất có cần seller bấm không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, hệ thống có tự chốt phiên người bid cao nhất có cần seller bấm không; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên người bid cao nhất để mình hiểu kết quả, sau đó 30 giây cuối.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, hệ thống có tự chốt phiên người bid cao nhất để mình hiểu kết quả mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+he thong co tu chot phien nguoi bid cao nhat de m hieu ket qua vi m chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+hệ thống có tự chốt phien người bid cao nhất để mình hiểu kết quả đang cần xử lý liền,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự chốt phiên người bid cao nhất để mình hiểu kết quả đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, hệ thống có tự chốt phiên người bid cao nhất để mình hiểu kết quả; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự chốt phiên người bid cao nhất nếu có bid phút chót, kèm chuyện mã phòng SALA-05.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, hệ thống có tự chốt phiên người bid cao nhất nếu có bid phút chót pls?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0

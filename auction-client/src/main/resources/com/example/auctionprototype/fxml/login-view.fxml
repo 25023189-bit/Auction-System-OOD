@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@../css/login-view.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.app.root.AuctionController">
+
+    <children>
+        <StackPane styleClass="login-root" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+            <children>
+                <HBox spacing="0.0" styleClass="login-page-layout">
+
+                    <!-- LEFT HERO PANEL -->
+                    <VBox styleClass="login-hero-panel" HBox.hgrow="ALWAYS">
+                        <padding>
+                            <Insets bottom="36.0" left="46.0" right="42.0" top="42.0" />
+                        </padding>
+
+                        <children>
+                            <HBox alignment="CENTER_LEFT" spacing="12.0">
+                                <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../images/login/auction-login-view-brand-mark.png" />
+                                    </image>
+                                </ImageView>
+
+                                <VBox spacing="0.0">
+                                    <Label styleClass="brand-name" text="GROUP12" />
+                                    <Label styleClass="brand-tagline" text="ENTERPRISE AUCTION PLATFORM" />
+                                </VBox>
+                            </HBox>
+
+                            <Region VBox.vgrow="ALWAYS" />
+
+                            <VBox spacing="18.0" styleClass="hero-copy">
+                                <Label maxWidth="390.0" styleClass="hero-title" text="Elevate Your&#10;Auction System" wrapText="true" />
+
+                                <Label styleClass="hero-description" text="A secure, professional and intelligent platform for managing auction operations with confidence." wrapText="true" />
+
+                                <VBox spacing="14.0" styleClass="feature-list">
+                                    <HBox alignment="CENTER_LEFT" spacing="14.0" styleClass="feature-item">
+                                        <Label styleClass="feature-icon" text="✓" />
+                                        <VBox spacing="2.0">
+                                            <Label styleClass="feature-title" text="Secure &amp; Reliable" />
+                                            <Label styleClass="feature-desc" text="Role-based access for bidders, sellers and admins." />
+                                        </VBox>
+                                    </HBox>
+
+                                    <HBox alignment="CENTER_LEFT" spacing="14.0" styleClass="feature-item">
+                                        <Label styleClass="feature-icon" text="◆" />
+                                        <VBox spacing="2.0">
+                                            <Label styleClass="feature-title" text="Premium Experience" />
+                                            <Label styleClass="feature-desc" text="Clean visual hierarchy and comfortable long-session usage." />
+                                        </VBox>
+                                    </HBox>
+
+                                    <HBox alignment="CENTER_LEFT" spacing="14.0" styleClass="feature-item">
+                                        <Label styleClass="feature-icon" text="↗" />
+                                        <VBox spacing="2.0">
+                                            <Label styleClass="feature-title" text="Auction Ready" />
+                                            <Label styleClass="feature-desc" text="Designed for account access, bidding flow and system control." />
+                                        </VBox>
+                                    </HBox>
+                                </VBox>
+                            </VBox>
+
+                            <Region VBox.vgrow="ALWAYS" />
+
+                            <Label styleClass="hero-footer" text="© 2026 Auction System. Premium access portal." />
+                        </children>
+                    </VBox>
+
+                    <!-- RIGHT FORM AREA -->
+                    <StackPane prefWidth="610.0" styleClass="login-form-zone">
+
+                        <children>
+
+                            <!-- REGISTER PANEL -->
+                            <VBox fx:id="paneRegister" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="500.0" spacing="14.0" styleClass="auth-card" visible="false">
+
+                                <padding>
+                                    <Insets bottom="30.0" left="42.0" right="42.0" top="30.0" />
+                                </padding>
+
+                                <children>
+                                    <VBox alignment="CENTER" spacing="6.0">
+                                        <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../images/login/auction-login-view-brand-mark.png" />
+                                            </image>
+                                        </ImageView>
+
+                                        <Label styleClass="auth-title" text="Create Account" />
+                                        <Label styleClass="auth-subtitle" text="Register your auction access profile" />
+                                    </VBox>
+
+                                    <TextField fx:id="txtRegCustomerId" prefHeight="44.0" promptText="Customer ID (e.g. BD512345)" styleClass="premium-input" />
+
+                                    <TextField fx:id="txtRegUsername" prefHeight="44.0" promptText="Username" styleClass="premium-input" />
+
+                                    <TextField fx:id="txtRegFullName" prefHeight="44.0" promptText="Your Full Name" styleClass="premium-input" />
+
+                                    <PasswordField fx:id="txtRegPassword" prefHeight="44.0" promptText="Password" styleClass="premium-input" />
+
+                                    <PasswordField fx:id="txtRegConfirm" prefHeight="44.0" promptText="Confirm password" styleClass="premium-input" />
+
+                                    <ComboBox fx:id="cbRegRole" prefHeight="44.0" prefWidth="416.0" promptText="Choose role..." styleClass="premium-combo" />
+
+                                    <Label fx:id="lblRegOrganization" managed="false" styleClass="field-label" text="Organization" visible="false" />
+
+                                    <TextField fx:id="txtRegOrganization" managed="false" prefHeight="44.0" promptText="Enter organization name (seller only)" styleClass="premium-input" visible="false" />
+
+                                    <Label fx:id="lblRegStatus" styleClass="status-label" />
+
+                                    <Button onAction="#handleSubmitRegister" prefHeight="48.0" prefWidth="416.0" styleClass="primary-auth-button" text="CREATE ACCOUNT" />
+
+                                    <Button onAction="#showLoginScreen" styleClass="text-link-button" text="Back to Login" />
+                                </children>
+                            </VBox>
+
+                            <!-- FORGOT PASSWORD PANEL -->
+                            <VBox fx:id="paneForgotPassword" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="470.0" spacing="16.0" styleClass="auth-card" visible="false">
+
+                                <padding>
+                                    <Insets bottom="34.0" left="42.0" right="42.0" top="34.0" />
+                                </padding>
+
+                                <children>
+                                    <VBox alignment="CENTER" spacing="6.0">
+                                        <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../images/login/auction-login-view-brand-mark.png" />
+                                            </image>
+                                        </ImageView>
+
+                                        <Label styleClass="auth-title" text="Reset Password" />
+                                        <Label styleClass="auth-subtitle" text="Recover access to your auction account" />
+                                    </VBox>
+
+                                    <TextField fx:id="txtForgotUsername" prefHeight="44.0" prefWidth="386.0" promptText="Username" styleClass="premium-input" />
+
+                                    <PasswordField fx:id="txtForgotNewPassword" prefHeight="44.0" promptText="New password" styleClass="premium-input" />
+
+                                    <PasswordField fx:id="txtForgotConfirm" prefHeight="44.0" promptText="Confirm new password" styleClass="premium-input" />
+
+                                    <Label fx:id="lblForgotStatus" styleClass="status-label" />
+
+                                    <Button onAction="#handleSubmitForgotPassword" prefHeight="48.0" prefWidth="386.0" styleClass="primary-auth-button" text="CHANGE PASSWORD" />
+
+                                    <Button onAction="#showLoginScreen" styleClass="text-link-button" text="Back to Login" />
+                                </children>
+                            </VBox>
+
+                            <!-- LOGIN PANEL -->
+                            <VBox fx:id="paneLogin" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="470.0" spacing="17.0" styleClass="auth-card">
+
+                                <padding>
+                                    <Insets bottom="34.0" left="42.0" right="42.0" top="34.0" />
+                                </padding>
+
+                                <children>
+                                    <VBox alignment="CENTER" spacing="6.0">
+                                        <ImageView fitHeight="66.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../images/login/auction-login-view-brand-mark.png" />
+                                            </image>
+                                        </ImageView>
+
+                                        <Label styleClass="login-brand-title" text="GROUP12" />
+                                        <Label styleClass="login-brand-subtitle" text="ENTERPRISE SOLUTIONS" />
+
+                                        <HBox alignment="CENTER" spacing="10.0" styleClass="gold-divider">
+                                            <Region prefWidth="84.0" />
+                                            <Label styleClass="divider-diamond" text="◆" />
+                                            <Region prefWidth="84.0" />
+                                        </HBox>
+
+                                        <Label styleClass="auth-title" text="Welcome back" />
+                                        <Label styleClass="auth-subtitle" text="Sign in to continue to your account" />
+                                    </VBox>
+
+                                    <VBox spacing="7.0">
+                                        <Label styleClass="field-label" text="Username / Email Address" />
+                                        <TextField fx:id="txtUsername" prefHeight="46.0" promptText="Enter your username or email" styleClass="premium-input">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </TextField>
+                                    </VBox>
+
+                                    <VBox spacing="7.0">
+                                        <Label styleClass="field-label" text="Password" />
+                                        <PasswordField fx:id="txtPassword" prefHeight="46.0" promptText="Enter your password" styleClass="premium-input">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </PasswordField>
+                                    </VBox>
+
+                                    <HBox alignment="CENTER_LEFT">
+                                        <children>
+                                            <CheckBox styleClass="remember-checkbox" text="Remember me">
+                                                <font>
+                                                    <Font size="13.0" />
+                                                </font>
+                                            </CheckBox>
+
+                                            <Region HBox.hgrow="ALWAYS" />
+
+                                            <Button onAction="#showForgotPasswordScreen" styleClass="text-link-button" text="Forgot password?" />
+                                        </children>
+                                    </HBox>
+
+                                    <Label fx:id="lblStatus" styleClass="status-label" />
+
+                                    <Button onAction="#handleLogin" prefHeight="50.0" prefWidth="386.0" styleClass="primary-auth-button" text="🔒  SIGN IN" />
+
+                                    <HBox alignment="CENTER" spacing="10.0" styleClass="trust-line">
+                                        <Region prefWidth="82.0" />
+                                        <Label styleClass="trust-text" text="Secure. Reliable. Trusted." />
+                                        <Region prefWidth="82.0" />
+                                    </HBox>
+
+                                    <HBox alignment="CENTER" spacing="5.0">
+                                        <children>
+                                            <Label styleClass="muted-text" text="New here?" />
+
+                                            <Button onAction="#showRegisterScreen" styleClass="text-link-button" text="Create a new account" />
+                                        </children>
+                                    </HBox>
+                                </children>
+                            </VBox>
+
+                            <VBox alignment="BOTTOM_CENTER" mouseTransparent="true" StackPane.alignment="BOTTOM_CENTER">
+                                <padding>
+                                    <Insets bottom="28.0" />
+                                </padding>
+                                <children>
+                                    <Label styleClass="security-subtitle" text="Your data is protected with role-based access and secure authentication." />
+                                </children>
+                            </VBox>
+
+                        </children>
+                    </StackPane>
+                </HBox>
+            </children>
+        </StackPane>
+    </children>
+</AnchorPane>

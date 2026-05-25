@@ -1,0 +1,201 @@
+﻿text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+"Sao kết thúc phiên tôi bị đưa về lobby, sau khi phiên được tự động chốt.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, sao kết thúc phiên tôi bị đưa về lobby và xử lý tiền người thắng người bán xong mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+sao ket thuc phien toi bi dua ve lobby kem thong bao trang thai ket thuc phien vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0
+"sao kết thúc phien tôi bị đưa về lobby, vì seller vừa đóng phiên sớm nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+"sao kết thúc phiên tôi bị đưa về lobby, khi tôi bấm rời phòng đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, sao kết thúc phiên tôi bị đưa về lobby rồi cập nhật lại danh sách phiên ở lobby; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Hệ thống tự quay tôi về sảnh sau khi phiên đóng à, sau khi khóa người mới ở cuối phiên.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Help với, hệ thống tự quay tôi về sảnh sau khi phiên đóng à và vẫn cho xem lịch sử đặt giá sau đó để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"he thong tu quay toi ve sanh sau khi phien dong a, khi thoi gian con lai ve 0 dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"hệ thống tự quay tôi về sảnh sau khi phien đóng à, sau khi chat trong phòng bị đóng pls",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"hệ thống tự quay tôi về sảnh sau khi phiên đóng à, nếu có anti-sniping vừa gia hạn rồi chốt đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Này ad, hệ thống tự quay tôi về sảnh sau khi phiên đóng à và chatbot cần giải thích vì sao bị chuyển màn; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0,0
+"Vừa hết giờ là app nhảy về lobby đúng không, sau khi phiên được tự động chốt.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, vừa hết giờ là app nhảy về lobby đúng không và xử lý tiền người thắng người bán xong mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+vua het gio la app nhay ve lobby dung ko kem thong bao trang thai ket thuc phien vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0
+"vừa hết giờ là app nhảy về lobby đúng không, vì seller vừa đóng phien sớm nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+"vừa hết giờ là app nhảy về lobby đúng không, khi tôi bấm rời phòng đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, vừa hết giờ là app nhảy về lobby đúng không rồi cập nhật lại danh sách phiên ở lobby; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Tôi bị đẩy khỏi phòng đấu giá về màn chính, sau khi khóa người mới ở cuối phiên.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Help với, tôi bị đẩy khỏi phòng đấu giá về màn chính và vẫn cho xem lịch sử đặt giá sau đó để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"toi bi day khoi room dg ve man chinh, khi thoi gian con lai ve 0 dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"tôi bị đẩy khỏi phòng đấu gía về màn chính, sau khi chat trong phòng bị đóng pls",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"tôi bị đẩy khỏi phòng đấu giá về màn chính, nếu có anti-sniping vừa gia hạn rồi chốt đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Này ad, tôi bị đẩy khỏi phòng đấu giá về màn chính và chatbot cần giải thích vì sao bị chuyển màn; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0,0
+"Sau khi seller đóng phiên thì có tự về lobby không, sau khi phiên được tự động chốt.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, sau khi seller đóng phiên thì có tự về lobby không và xử lý tiền người thắng người bán xong mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+sau khi seller dong phien thi co tu ve lobby ko kem thong bao trang thai ket thuc phien vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0
+"sau khi seller đóng phien thì có tự về lobby không, vì seller vừa đóng phiên sớm nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+"sau khi seller đóng phiên thì có tự về lobby không, khi tôi bấm rời phòng đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, sau khi seller đóng phiên thì có tự về lobby không rồi cập nhật lại danh sách phiên ở lobby; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Phiên chốt xong user có được chuyển về sảnh không, sau khi khóa người mới ở cuối phiên.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Help với, phiên chốt xong user có được chuyển về sảnh không và vẫn cho xem lịch sử đặt giá sau đó để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"phien chot xong user co dc chuyen ve sanh ko, khi thoi gian con lai ve 0 dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"phien chốt xong user có được chuyển về sảnh không, sau khi chat trong phòng bị đóng pls",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"phiên chốt xong user có được chuyển về sảnh không, nếu có anti-sniping vừa gia hạn rồi chốt đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Này ad, phiên chốt xong user có được chuyển về sảnh không và chatbot cần giải thích vì sao bị chuyển màn; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0,0
+"Đang trong phòng mà app tự về lobby là sao, sau khi phiên được tự động chốt.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, đang trong phòng mà app tự về lobby là sao và xử lý tiền người thắng người bán xong mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+dang trong room ma app tu ve lobby la sao kem thong bao trang thai ket thuc phien vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0
+"đang trong phòng mà app tự về lobby là sao, vì seller vừa đóng phien sớm nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+"đang trong phòng mà app tự về lobby là sao, khi tôi bấm rời phòng đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, đang trong phòng mà app tự về lobby là sao rồi cập nhật lại danh sách phiên ở lobby; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Khi room kết thúc thì bidder sẽ về đâu, sau khi khóa người mới ở cuối phiên.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Help với, khi room kết thúc thì bidder sẽ về đâu và vẫn cho xem lịch sử đặt giá sau đó để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"khi room ket thuc thi bidder se ve dau, khi thoi gian con lai ve 0 dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"khi room kết thúc thì bidder sẽ về đâu, sau khi chat trong phòng bị đóng pls",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"khi room kết thúc thì bidder sẽ về đâu, nếu có anti-sniping vừa gia hạn rồi chốt đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Này ad, khi room kết thúc thì bidder sẽ về đâu và chatbot cần giải thích vì sao bị chuyển màn; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0,0
+"Tự động đưa về lobby có thông báo trước không, sau khi phiên được tự động chốt.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, tự động đưa về lobby có thông báo trước không và xử lý tiền người thắng người bán xong mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+auto dua ve lobby co thong bao truoc ko kem thong bao trang thai ket thuc phien vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0
+"tự động đưa về lobby có thông báo trước không, vì seller vừa đóng phien sớm nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+"tự động đưa về lobby có thông báo trước không, khi tôi bấm rời phòng đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tự động đưa về lobby có thông báo trước không rồi cập nhật lại danh sách phiên ở lobby; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Về lobby rồi có xem lại kết quả phiên được không, sau khi khóa người mới ở cuối phiên.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Help với, về lobby rồi có xem lại kết quả phiên được không và vẫn cho xem lịch sử đặt giá sau đó để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"ve lobby roi co xem lai ket qua phien dc ko, khi thoi gian con lai ve 0 dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"về lobby rồi có xem lại kết quả phien được không, sau khi chat trong phòng bị đóng pls",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"về lobby rồi có xem lại kết quả phiên được không, nếu có anti-sniping vừa gia hạn rồi chốt đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Này ad, về lobby rồi có xem lại kết quả phiên được không và chatbot cần giải thích vì sao bị chuyển màn; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0,0
+"App tự chuyển màn sau khi close auction, sau khi phiên được tự động chốt.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, app tự chuyển màn sau khi close auction và xử lý tiền người thắng người bán xong mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+app tu chuyen man sau khi close auction kem thong bao trang thai ket thuc phien vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0
+"app tự chuyển màn sau khi close auction, vì seller vừa đóng phien sớm nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+"app tự chuyển màn sau khi close auction, khi tôi bấm rời phòng đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, app tự chuyển màn sau khi close auction rồi cập nhật lại danh sách phiên ở lobby; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Tôi muốn biết lý do bị trả về lobby, sau khi khóa người mới ở cuối phiên.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Help với, tôi muốn biết lý do bị trả về lobby và vẫn cho xem lịch sử đặt giá sau đó để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"toi muon biet ly do bi tra ve lobby, khi thoi gian con lai ve 0 dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"tôi muốn biết lý do bị trả về lobby, sau khi chat trong phòng bị đóng pls",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"tôi muốn biết lý do bị trả về lobby, nếu có anti-sniping vừa gia hạn rồi chốt đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Này ad, tôi muốn biết lý do bị trả về lobby và chatbot cần giải thích vì sao bị chuyển màn; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0,0
+"Kết thúc phiên xong có tự rời phòng không, sau khi phiên được tự động chốt.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, kết thúc phiên xong có tự rời phòng không và xử lý tiền người thắng người bán xong mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+ket thuc phien xong co tu roi room ko kem thong bao trang thai ket thuc phien vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0
+"kết thúc phien xong có tự rời phòng không, vì seller vừa đóng phiên sớm nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+"kết thúc phiên xong có tự rời phòng không, khi tôi bấm rời phòng đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, kết thúc phiên xong có tự rời phòng không rồi cập nhật lại danh sách phiên ở lobby; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Vì sao tôi không ở lại room sau khi phiên kết thúc, sau khi khóa người mới ở cuối phiên.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Help với, vì sao tôi không ở lại room sau khi phiên kết thúc và vẫn cho xem lịch sử đặt giá sau đó để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"vi sao toi ko o lai room sau khi phien ket thuc, khi thoi gian con lai ve 0 dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"vì sao tôi không ở lại room sau khi phien kết thúc, sau khi chat trong phòng bị đóng pls",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"vì sao tôi không ở lại room sau khi phiên kết thúc, nếu có anti-sniping vừa gia hạn rồi chốt đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Này ad, vì sao tôi không ở lại room sau khi phiên kết thúc và chatbot cần giải thích vì sao bị chuyển màn; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0,0
+"Tự động điều hướng về lobby chạy lúc nào, sau khi phiên được tự động chốt.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, tự động điều hướng về lobby chạy lúc nào và xử lý tiền người thắng người bán xong mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+auto dieu huong ve lobby chay luc nao kem thong bao trang thai ket thuc phien vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0
+"tự động điều hướng về lobby chạy lúc nào, vì seller vừa đóng phien sớm nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+"tự động điều hướng về lobby chạy lúc nào, khi tôi bấm rời phòng đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tự động điều hướng về lobby chạy lúc nào rồi cập nhật lại danh sách phiên ở lobby; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Người thua phiên có bị đưa về lobby giống người thắng không, sau khi khóa người mới ở cuối phiên.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Help với, người thua phiên có bị đưa về lobby giống người thắng không và vẫn cho xem lịch sử đặt giá sau đó để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"nguoi thua phien co bi dua ve lobby giong nguoi thang ko, khi thoi gian con lai ve 0 dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"người thua phien có bị đưa về lobby giống người thắng không, sau khi chat trong phòng bị đóng pls",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"người thua phiên có bị đưa về lobby giống người thắng không, nếu có anti-sniping vừa gia hạn rồi chốt đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Này ad, người thua phiên có bị đưa về lobby giống người thắng không và chatbot cần giải thích vì sao bị chuyển màn; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0,0
+"Sau khi admin ban phiên thì có về lobby không, sau khi phiên được tự động chốt.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, sau khi admin ban phiên thì có về lobby không và xử lý tiền người thắng người bán xong mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+sau khi ad ban phien thi co ve lobby ko kem thong bao trang thai ket thuc phien vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0
+"sau khi admin ban phien thì có về lobby không, vì seller vừa đóng phiên sớm nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+"sau khi admin ban phiên thì có về lobby không, khi tôi bấm rời phòng đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, sau khi admin ban phiên thì có về lobby không rồi cập nhật lại danh sách phiên ở lobby; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Seller đóng sớm thì bidder bị chuyển về sảnh à, sau khi khóa người mới ở cuối phiên.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Help với, seller đóng sớm thì bidder bị chuyển về sảnh à và vẫn cho xem lịch sử đặt giá sau đó để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"seller dong som thi bidder bi chuyen ve sanh a, khi thoi gian con lai ve 0 dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"seler đóng sớm thì bidder bị chuyển về sảnh à, sau khi chat trong phòng bị đóng pls",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"seller đóng sớm thì bidder bị chuyển về sảnh à, nếu có anti-sniping vừa gia hạn rồi chốt đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Này ad, seller đóng sớm thì bidder bị chuyển về sảnh à và chatbot cần giải thích vì sao bị chuyển màn; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0,0
+"Room đã đóng nên app đá tôi ra lobby phải không, sau khi phiên được tự động chốt.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, room đã đóng nên app đá tôi ra lobby phải không và xử lý tiền người thắng người bán xong mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+room da dong nen app da toi ra lobby phai ko kem thong bao trang thai ket thuc phien vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0
+"room đã đóng nên app đá tôi ra lobby phải không, vì seller vừa đóng phien sớm nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+"room đã đóng nên app đá tôi ra lobby phải không, khi tôi bấm rời phòng đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, room đã đóng nên app đá tôi ra lobby phải không rồi cập nhật lại danh sách phiên ở lobby; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Tôi bị về lobby nhưng chưa thấy kết quả thắng thua, sau khi khóa người mới ở cuối phiên.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Help với, tôi bị về lobby nhưng chưa thấy kết quả thắng thua và vẫn cho xem lịch sử đặt giá sau đó để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"toi bi ve lobby nhung chua thay ket qua thang thua, khi thoi gian con lai ve 0 dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"tôi bị về lobby nhưng chưa thấy kết quả thắng thua, sau khi chat trong phòng bị đóng pls",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"tôi bị về lobby nhưng chưa thấy kết quả thắng thua, nếu có anti-sniping vừa gia hạn rồi chốt đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Này ad, tôi bị về lobby nhưng chưa thấy kết quả thắng thua và chatbot cần giải thích vì sao bị chuyển màn; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0,0
+"Tự động về lobby có làm mất lịch sử chat không, sau khi phiên được tự động chốt.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, tự động về lobby có làm mất lịch sử chat không và xử lý tiền người thắng người bán xong mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+auto ve lobby co lam mat lich su chat ko kem thong bao trang thai ket thuc phien vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0
+"tự động về lobby có làm mất lịch sử chat không, vì seller vừa đóng phien sớm nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+"tự động về lobby có làm mất lịch sử chat không, khi tôi bấm rời phòng đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tự động về lobby có làm mất lịch sử chat không rồi cập nhật lại danh sách phiên ở lobby; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Khi phiên timeout thì hệ thống route user về đâu, sau khi khóa người mới ở cuối phiên.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Help với, khi phiên timeout thì hệ thống route user về đâu và vẫn cho xem lịch sử đặt giá sau đó để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"khi phien timeout thi he thong route user ve dau, khi thoi gian con lai ve 0 dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"khi phien timeout thì hệ thống route user về đâu, sau khi chat trong phòng bị đóng pls",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"khi phiên timeout thì hệ thống route user về đâu, nếu có anti-sniping vừa gia hạn rồi chốt đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Này ad, khi phiên timeout thì hệ thống route user về đâu và chatbot cần giải thích vì sao bị chuyển màn; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0,0
+"Vừa chốt phiên là màn hình tự đổi sang lobby, sau khi phiên được tự động chốt.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, vừa chốt phiên là màn hình tự đổi sang lobby và xử lý tiền người thắng người bán xong mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+vua chot phien la man hinh tu doi sang lobby kem thong bao trang thai ket thuc phien vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0
+"vừa chốt phien là màn hình tự đổi sang lobby, vì seller vừa đóng phiên sớm nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+"vừa chốt phiên là màn hình tự đổi sang lobby, khi tôi bấm rời phòng đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, vừa chốt phiên là màn hình tự đổi sang lobby rồi cập nhật lại danh sách phiên ở lobby; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Tôi không bấm rời phòng mà vẫn bị về lobby, sau khi khóa người mới ở cuối phiên.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Help với, tôi không bấm rời phòng mà vẫn bị về lobby và vẫn cho xem lịch sử đặt giá sau đó để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"toi ko bam roi room ma van bi ve lobby, khi thoi gian con lai ve 0 dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"tôi khong bấm rời phòng mà vẫn bị về lobby, sau khi chat trong phòng bị đóng pls",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"tôi không bấm rời phòng mà vẫn bị về lobby, nếu có anti-sniping vừa gia hạn rồi chốt đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Này ad, tôi không bấm rời phòng mà vẫn bị về lobby và chatbot cần giải thích vì sao bị chuyển màn; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0,0
+"App đưa user về lobby sau settlement đúng không, sau khi phiên được tự động chốt.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, app đưa user về lobby sau settlement đúng không và xử lý tiền người thắng người bán xong mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+app dua user ve lobby sau settlement dung ko kem thong bao trang thai ket thuc phien vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0
+"app đưa user về lobby sau settlement đúng không, vì seller vừa đóng phien sớm nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+"app đưa user về lobby sau settlement đúng không, khi tôi bấm rời phòng đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, app đưa user về lobby sau settlement đúng không rồi cập nhật lại danh sách phiên ở lobby; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Cuối phiên hệ thống có clear phòng rồi về sảnh không, sau khi khóa người mới ở cuối phiên.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Help với, cuối phiên hệ thống có clear phòng rồi về sảnh không và vẫn cho xem lịch sử đặt giá sau đó để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"cuoi phien he thong co clear room roi ve sanh ko, khi thoi gian con lai ve 0 dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"cuối phien hệ thống có clear phòng rồi về sảnh không, sau khi chat trong phòng bị đóng pls",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"cuối phiên hệ thống có clear phòng rồi về sảnh không, nếu có anti-sniping vừa gia hạn rồi chốt đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Này ad, cuối phiên hệ thống có clear phòng rồi về sảnh không và chatbot cần giải thích vì sao bị chuyển màn; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0,0
+"Bidder mới bị chặn rồi quay về lobby à, sau khi phiên được tự động chốt.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, bidder mới bị chặn rồi quay về lobby à và xử lý tiền người thắng người bán xong mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+bidder moi bi chan roi quay ve lobby a kem thong bao trang thai ket thuc phien vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0
+"bidder mới bị chặn rồi quay về lobby à, vì seller vừa đóng phien sớm nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+"bidder mới bị chặn rồi quay về lobby à, khi tôi bấm rời phòng đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, bidder mới bị chặn rồi quay về lobby à rồi cập nhật lại danh sách phiên ở lobby; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Sau khi phiên bị đóng có cần bấm back không, sau khi khóa người mới ở cuối phiên.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Help với, sau khi phiên bị đóng có cần bấm back không và vẫn cho xem lịch sử đặt giá sau đó để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"sau khi phien bi dong co can bam back ko, khi thoi gian con lai ve 0 dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+sau khi phien bị đóng có cần bấm back không pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"sau khi phiên bị đóng có cần bấm back không, sau khi room đóng đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Này ad, sau khi phiên bị đóng có cần bấm back không, ở cuối phiên; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Đưa về lobby tự động có áp dụng cho seller không, trên giao diện bidder.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, đưa về lobby tự động có áp dụng cho seller không, khi phiên không còn running mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+dua ve lobby auto co ap dung cho seller ko vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"đưa về lobby tự động có áp dụng cho seller khong, sau khi room đóng nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"đưa về lobby tự động có áp dụng cho seller không, ở cuối phiên đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, đưa về lobby tự động có áp dụng cho seller không, trên giao diện bidder; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Tôi muốn hiểu flow rời room sau khi kết thúc, khi phiên không còn running.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Help với, tôi muốn hiểu flow rời room sau khi kết thúc để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"toi muon hieu flow roi room sau khi ket thuc, sau khi room dong dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"tôi muốn hiểu flow rời room sau khi kết thúc, ở cuối phien pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"tôi muốn hiểu flow rời room sau khi kết thúc, trên giao diện bidder đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Này ad, tôi muốn hiểu flow rời room sau khi kết thúc, khi phiên không còn running; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+Khi auction closed thì UI tự mở main lobby à.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, khi auction closed thì UI tự mở main lobby à, sau khi room đóng mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"khi auction closed thi ui tu mo main lobby a, o cuoi phien vi minh chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"khi auction closed thì UI tự mở main lobby à, trên giao diện bidder nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"khi auction closed thì UI tự mở main lobby à, khi phiên không còn running đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, khi auction closed thì UI tự mở main lobby à; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Sao chưa đọc thông báo mà đã về lobby, sau khi room đóng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Help với, sao chưa đọc thông báo mà đã về lobby, ở cuối phiên để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"sao chua doc thong bao ma da ve lobby, tren giao dien bidder dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"sao chưa đọc thông báo mà đã về lobby, khi phien không còn running pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"sao chưa đọc thông báo mà đã về lobby đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Này ad, sao chưa đọc thông báo mà đã về lobby, sau khi room đóng; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Kết thúc phiên thì danh sách lobby có refresh không, ở cuối phiên.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, kết thúc phiên thì danh sách lobby có refresh không, trên giao diện bidder mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"ket thuc phien thi danh sach lobby co refresh ko, khi phien ko con running vi minh chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+kết thúc phien thì danh sách lobby có refresh không nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"kết thúc phiên thì danh sách lobby có refresh không, sau khi room đóng đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, kết thúc phiên thì danh sách lobby có refresh không, ở cuối phiên; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Auto redirect về lobby đang hoạt động chưa, trên giao diện bidder.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Help với, auto redirect về lobby đang hoạt động chưa, khi phiên không còn running để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0

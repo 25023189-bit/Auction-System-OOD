@@ -1,0 +1,201 @@
+﻿text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+"Mình muốn rời phòng phiên này mà không mất dữ liệu, kèm chuyện để mình vào phòng đấu giá, rồi app tự chuyển về danh sách phiên, nhưng bot phân tích lỗi đang gặp, kèm chuyện mã phòng AUC-1024.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0
+"Admin ơi, mình muốn rời phòng phiên này mà không mất dữ liệu, đồng thời mình bị đẩy khỏi phòng về màn chính mình đang thao tác?",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"m muon roi room phien nay ma ko mat du lieu, dong thoi o lobby co nhieu card auction vi m chua ro luong",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng phien này mà không mất dữ liệu, trước khi chat hỏi thêm thông tin món hàng đang cần xử lý liền",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng phiên này mà không mất dữ liệu, đồng thời cần nhập mã phòng trước đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn rời phòng phiên này mà không mất dữ liệu, đồng thời sau khi kết thúc thì về lobby, rồi ở lobby có nhiều card auction; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Mình muốn rời phòng phiên này trước khi hết giờ, trước khi xem thêm các phiên khác.",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn rời phòng phiên này trước khi hết giờ, nhưng gửi tin cho mọi người trong phiên pls?",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon roi room phien nay truoc khi het gio, nhung vao room hien tai giup m de khoi lam sai",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng phien này trước khi hết giờ, trước khi đừng kẹt ở màn phiên cũ mình hơi rén",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng phiên này trước khi hết giờ, kèm chuyện mình muốn quay lại danh sách phiên, đồng thời gửi tin cho mọi người trong phiên đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn rời phòng phiên này trước khi hết giờ, đồng thời khung chat phòng chưa hiện, đồng thời mã phòng A17; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn rời phòng phiên này vì không muốn đặt nữa, sau đó nút tham gia phòng đang mờ.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn rời phòng phiên này vì không muốn đặt nữa, rồi room đóng nên quay về lobby vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"m muon roi room phien nay vi ko muon dat nua, kem chuyen danh sach ngoai main lobby chua hien dang can xu ly lien",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng phien này vì không muốn đặt nữa, kèm chuyện mình muốn nhắn trong chat room, rồi nút tham gia phòng đang mờ nhé",0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng phiên này vì không muốn đặt nữa, kèm chuyện mình đang muốn join room đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn rời phòng phiên này vì không muốn đặt nữa, sau đó app tự chuyển về danh sách phiên, trước khi bot phân tích lỗi đang gặp; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0
+"Mình muốn rời phòng phiên này nhưng vẫn giữ tài khoản, nhưng lọc phiên đang mở giúp mình.",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn rời phòng phiên này nhưng vẫn giữ tài khoản, trước khi đừng gửi ra ngoài lobby để khỏi làm sai?",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon roi room phien nay nhung van giu tk, roi de m vao room dg, nhung app tu chuyen ve danh sach phien m hoi ren",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng phien này nhưng vẫn giữ tài khoản, trước khi mình bị đẩy khỏi phòng về màn chính được không",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng phiên này nhưng vẫn giữ tài khoản, trước khi ở lobby có nhiều card auction, nhưng mã phòng SALA-05 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn rời phòng phiên này nhưng vẫn giữ tài khoản, đồng thời chat hỏi thêm thông tin món hàng; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn rời phòng phiên này sau khi xem xong, kèm chuyện cần nhập mã phòng trước.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn rời phòng phiên này sau khi xem xong, kèm chuyện sau khi kết thúc thì về lobby, kèm chuyện ở lobby có nhiều card auction đang cần xử lý liền?",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"m muon roi room phien nay sau khi xem xong, kem chuyen xem them cac phien khac nhe",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng phien này sau khi xem xong, đồng thời gửi tin cho mọi người trong phiên mình đang thao tác",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng phiên này sau khi xem xong, đồng thời vào room hiện tại giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn rời phòng phiên này sau khi xem xong, kèm chuyện đừng kẹt ở màn phiên cũ; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Mình muốn rời phòng room AUC-1024 mà không mất dữ liệu, trước khi mình muốn quay lại danh sách phiên, đồng thời gửi tin cho mọi người trong phiên.",0,0,0,0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn rời phòng room AUC-1024 mà không mất dữ liệu, nhưng khung chat phòng chưa hiện mình hơi rén?",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon roi room room auc-1024 ma ko mat du lieu, nhung nut tham gia room dang mo dc ko",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng room AUC-1024 mà khong mất dữ liệu, kèm chuyện room đóng nên quay về lobby, nhưng mã phòng ROOM-88 pls",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng room AUC-1024 mà không mất dữ liệu, rồi danh sách ngoài main lobby chưa hiện, trước khi bot hướng dẫn bước tiếp theo đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Alo ad, mình muốn rời phòng room AUC-1024 mà không mất dữ liệu, rồi mình muốn nhắn trong chat room, nhưng nút tham gia phòng đang mờ; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn rời phòng room AUC-1024 trước khi hết giờ, kèm chuyện mình đang muốn join room.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn rời phòng room AUC-1024 trước khi hết giờ, sau đó app tự chuyển về danh sách phiên nhé?",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"m muon roi room room auc-1024 truoc khi het gio, roi loc phien dang mo giup m m dang thao tac",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòg room AUC-1024 trước khi hết giờ, nhưng đừng gửi ra ngoài lobby vì mình chưa rõ luồng",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng room AUC-1024 trước khi hết giờ, trước khi để mình vào phòng đấu giá, rồi app tự chuyển về danh sách phiên đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn rời phòng room AUC-1024 trước khi hết giờ, nhưng mình bị đẩy khỏi phòng về màn chính; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Mình muốn rời phòng room AUC-1024 vì không muốn đặt nữa, rồi ở lobby có nhiều card auction.",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn rời phòng room AUC-1024 vì không muốn đặt nữa, kèm chuyện chat hỏi thêm thông tin món hàng được không?",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon roi room room auc-1024 vi ko muon dat nua, roi can nhap ma room truoc, kem chuyen ma room bid-09 pls",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng room AUC-1024 vì khong muốn đặt nữa, rồi sau khi kết thúc thì về lobby, sau đó ở lobby có nhiều card auction để khỏi làm sai",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng room AUC-1024 vì không muốn đặt nữa, rồi xem thêm các phiên khác đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn rời phòng room AUC-1024 vì không muốn đặt nữa, trước khi gửi tin cho mọi người trong phiên; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn rời phòng room AUC-1024 nhưng vẫn giữ tài khoản, rồi vào room hiện tại giúp mình.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn rời phòng room AUC-1024 nhưng vẫn giữ tài khoản, nhưng đừng kẹt ở màn phiên cũ mình đang thao tác?",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"m muon roi room room auc-1024 nhung van giu tk, dong thoi m muon quay lai danh sach phien, truoc khi gui tin cho moi nguoi trong phien vi m chua ro luong",0,0,0,0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng room AUC-1024 nhưng vẫn giữ tài khoàn, sau đó khung chat phòng chưa hiện, đồng thời chatbot nói dễ hiểu giúp mình đang cần xử lý liền",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn rời phòng room AUC-1024 nhưng vẫn giữ tài khoản, sau đó nút tham gia phòng đang mờ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn rời phòng room AUC-1024 nhưng vẫn giữ tài khoản, rồi room đóng nên quay về lobby; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Mình muốn rời phòng room AUC-1024 sau khi xem xong, nhưng danh sách ngoài main lobby chưa hiện.",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn rời phòng room AUC-1024 sau khi xem xong, nhưng mình muốn nhắn trong chat room, rồi nút tham gia phòng đang mờ, trước khi mã phòng GOLD-21 pls?",0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon roi room room auc-1024 sau khi xem xong, nhung m dang muon join room de khoi lam sai",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng room AUC-1024 sau khi xem xong, trước khi app tự chuyển về danh sách phien mình hơi rén",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng room AUC-1024 sau khi xem xong, sau đó lọc phiên đang mở giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn rời phòng room AUC-1024 sau khi xem xong, đồng thời đừng gửi ra ngoài lobby; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn rời phòng cuộc đấu giá đang chạy mà không mất dữ liệu, trước khi để mình vào phòng đấu giá, rồi app tự chuyển về danh sách phiên.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn rời phòng cuộc đấu giá đang chạy mà không mất dữ liệu, nhưng mình bị đẩy khỏi phòng về màn chính vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"m muon roi room cuoc dg dang chay ma ko mat du lieu, nhung o lobby co nhieu card auction dang can xu ly lien",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng cuộc đấu gía đang chạy mà không mất dữ liệu, sau đó chat hỏi thêm thông tin món hàng nhé",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng cuộc đấu giá đang chạy mà không mất dữ liệu, nhưng cần nhập mã phòng trước đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn rời phòng cuộc đấu giá đang chạy mà không mất dữ liệu, nhưng sau khi kết thúc thì về lobby, kèm chuyện ở lobby có nhiều card auction; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Mình muốn rời phòng cuộc đấu giá đang chạy trước khi hết giờ, sau đó xem thêm các phiên khác, kèm chuyện mã phòng PHIEN-2026.",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn rời phòng cuộc đấu giá đang chạy trước khi hết giờ, kèm chuyện gửi tin cho mọi người trong phiên để khỏi làm sai?",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon roi room cuoc dg dang chay truoc khi het gio, kem chuyen vao room hien tai giup m, dong thoi nho bot giai thich them m hoi ren",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn rời phòng cuộc đấu giá đang chạy trước khi hết giờ, sau đó đừng kẹt ở màn phien cũ được không",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng cuộc đấu giá đang chạy trước khi hết giờ, trước khi mình muốn quay lại danh sách phiên, đồng thời gửi tin cho mọi người trong phiên đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn rời phòng cuộc đấu giá đang chạy trước khi hết giờ, nhưng khung chat phòng chưa hiện; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn rời phòng cuộc đấu giá đang chạy vì không muốn đặt nữa, rồi nút tham gia phòng đang mờ.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn rời phòng cuộc đấu giá đang chạy vì không muốn đặt nữa, đồng thời room đóng nên quay về lobby đang cần xử lý liền?",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"m muon roi room cuoc dg dang chay vi ko muon dat nua, truoc khi danh sach ngoai main lobby chua hien nhe",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng cuộc đấu gía đang chạy vì không muốn đặt nữa, trước khi mình muốn nhắn trong chat room, rồi nút tham gia phòng đang mờ mình đang thao tác",0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng cuộc đấu giá đang chạy vì không muốn đặt nữa, trước khi mình đang muốn join room đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn rời phòng cuộc đấu giá đang chạy vì không muốn đặt nữa, rồi app tự chuyển về danh sách phiên, nhưng mã phòng P-774; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Mình muốn rời phòng cuộc đấu giá đang chạy nhưng vẫn giữ tài khoản, kèm chuyện lọc phiên đang mở giúp mình.",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn rời phòng cuộc đấu giá đang chạy nhưng vẫn giữ tài khoản, sau đó đừng gửi ra ngoài lobby mình hơi rén?",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon roi room cuoc dg dang chay nhung van giu tk, dong thoi de m vao room dg, kem chuyen app tu chuyen ve danh sach phien dc ko",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng cuộc đấu gía đang chạy nhưng vẫn giữ tài khoản, sau đó mình bị đẩy khỏi phòng về màn chính pls",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng cuộc đấu giá đang chạy nhưng vẫn giữ tài khoản, sau đó ở lobby có nhiều card auction đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn rời phòng cuộc đấu giá đang chạy nhưng vẫn giữ tài khoản, nhưng chat hỏi thêm thông tin món hàng; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn rời phòng cuộc đấu giá đang chạy sau khi xem xong, trước khi cần nhập mã phòng trước.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn rời phòng cuộc đấu giá đang chạy sau khi xem xong, trước khi sau khi kết thúc thì về lobby, kèm chuyện ở lobby có nhiều card auction, rồi bot phân tích lỗi đang gặp nhé?",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0
+"m muon roi room cuoc dg dang chay sau khi xem xong, truoc khi xem them cac phien khac m dang thao tac",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng cuộc đấu giá đang chạy sau khi xem xong, nhưng gửi tin cho mọi người trong phien vì mình chưa rõ luồng",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng cuộc đấu giá đang chạy sau khi xem xong, nhưng vào room hiện tại giúp mình, kèm chuyện mã phòng AUC-1024 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn rời phòng cuộc đấu giá đang chạy sau khi xem xong, trước khi đừng kẹt ở màn phiên cũ; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Mình muốn rời phòng màn hình live mà không mất dữ liệu, trước khi mình muốn quay lại danh sách phiên, đồng thời gửi tin cho mọi người trong phiên.",0,0,0,0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn rời phòng màn hình live mà không mất dữ liệu, nhưng khung chat phòng chưa hiện được không?",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon roi room man hinh live ma ko mat du lieu, nhung nut tham gia room dang mo pls",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng màn hình live mà khong mất dữ liệu, kèm chuyện room đóng nên quay về lobby để khỏi làm sai",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng màn hình live mà không mất dữ liệu, rồi danh sách ngoài main lobby chưa hiện đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn rời phòng màn hình live mà không mất dữ liệu, rồi mình muốn nhắn trong chat room, nhưng nút tham gia phòng đang mờ; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn rời phòng màn hình live trước khi hết giờ, kèm chuyện mình đang muốn join room.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn rời phòng màn hình live trước khi hết giờ, sau đó app tự chuyển về danh sách phiên mình đang thao tác?",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"m muon roi room man hinh live truoc khi het gio, roi loc phien dang mo giup m vi m chua ro luong",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòg màn hình live trước khi hết giờ, nhưng đừng gửi ra ngoài lobby, trước khi mã phòng A17 đang cần xử lý liền",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng màn hình live trước khi hết giờ, trước khi để mình vào phòng đấu giá, rồi app tự chuyển về danh sách phiên đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn rời phòng màn hình live trước khi hết giờ, nhưng mình bị đẩy khỏi phòng về màn chính; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Mình muốn rời phòng màn hình live vì không muốn đặt nữa, rồi ở lobby có nhiều card auction, nhưng bot phân tích lỗi đang gặp.",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, mình muốn rời phòng màn hình live vì không muốn đặt nữa, kèm chuyện chat hỏi thêm thông tin món hàng pls?",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon roi room man hinh live vi ko muon dat nua, roi can nhap ma room truoc de khoi lam sai",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng màn hình live vì khong muốn đặt nữa, rồi sau khi kết thúc thì về lobby, sau đó ở lobby có nhiều card auction mình hơi rén",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng màn hình live vì không muốn đặt nữa, rồi xem thêm các phiên khác đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn rời phòng màn hình live vì không muốn đặt nữa, trước khi gửi tin cho mọi người trong phiên; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn rời phòng màn hình live nhưng vẫn giữ tài khoản, rồi vào room hiện tại giúp mình.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn rời phòng màn hình live nhưng vẫn giữ tài khoản, nhưng đừng kẹt ở màn phiên cũ vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"m muon roi room man hinh live nhung van giu tk, dong thoi m muon quay lai danh sach phien, truoc khi gui tin cho moi nguoi trong phien, nhung ma room sala-05 dang can xu ly lien",0,0,0,0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng màn hình live nhưng vẫn giữ tài khoàn, sau đó khung chat phòng chưa hiện nhé",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng màn hình live nhưng vẫn giữ tài khoản, sau đó nút tham gia phòng đang mờ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn rời phòng màn hình live nhưng vẫn giữ tài khoản, rồi room đóng nên quay về lobby; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Mình muốn rời phòng màn hình live sau khi xem xong, nhưng danh sách ngoài main lobby chưa hiện.",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn rời phòng màn hình live sau khi xem xong, nhưng mình muốn nhắn trong chat room, rồi nút tham gia phòng đang mờ để khỏi làm sai?",0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon roi room man hinh live sau khi xem xong, nhung m dang muon join room m hoi ren",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng màn hình live sau khi xem xong, trước khi app tự chuyển về danh sách phien được không",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng màn hình live sau khi xem xong, sau đó lọc phiên đang mở giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn rời phòng màn hình live sau khi xem xong, đồng thời đừng gửi ra ngoài lobby, sau đó bot hướng dẫn bước tiếp theo; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình muốn rời phòng phòng hiện tại mà không mất dữ liệu, nhưng để mình vào phòng đấu giá, rồi app tự chuyển về danh sách phiên.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn rời phòng phòng hiện tại mà không mất dữ liệu, rồi mình bị đẩy khỏi phòng về màn chính, trước khi mã phòng ROOM-88 đang cần xử lý liền?",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"m muon roi room room hien tai ma ko mat du lieu, roi o lobby co nhieu card auction nhe",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng phòng hiện tại mà khong mất dữ liệu, kèm chuyện chat hỏi thêm thông tin món hàng mình đang thao tác",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng phòng hiện tại mà không mất dữ liệu, rồi cần nhập mã phòng trước đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn rời phòng phòng hiện tại mà không mất dữ liệu, rồi sau khi kết thúc thì về lobby, sau đó ở lobby có nhiều card auction; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Mình muốn rời phòng phòng hiện tại trước khi hết giờ, kèm chuyện xem thêm các phiên khác.",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn rời phòng phòng hiện tại trước khi hết giờ, đồng thời gửi tin cho mọi người trong phiên mình hơi rén?",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon roi room room hien tai truoc khi het gio, dong thoi vao room hien tai giup m dc ko",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng phòng hiện tại trước khi hết giờ, kèm chuyện đừng kẹt ở màn phien cũ pls",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng phòng hiện tại trước khi hết giờ, nhưng mình muốn quay lại danh sách phiên, đồng thời gửi tin cho mọi người trong phiên đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn rời phòng phòng hiện tại trước khi hết giờ, rồi khung chat phòng chưa hiện; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn rời phòng phòng hiện tại vì không muốn đặt nữa, trước khi nút tham gia phòng đang mờ, đồng thời mã phòng BID-09.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn rời phòng phòng hiện tại vì không muốn đặt nữa, sau đó room đóng nên quay về lobby nhé?",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"m muon roi room room hien tai vi ko muon dat nua, nhung danh sach ngoai main lobby chua hien m dang thao tac",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng phòng hiện tại vì khong muốn đặt nữa, nhưng mình muốn nhắn trong chat room, rồi nút tham gia phòng đang mờ vì mình chưa rõ luồng",0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng phòng hiện tại vì không muốn đặt nữa, nhưng mình đang muốn join room, kèm chuyện chatbot nói dễ hiểu giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình đang bị vướng, mình muốn rời phòng phòng hiện tại vì không muốn đặt nữa, trước khi app tự chuyển về danh sách phiên; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Mình muốn rời phòng phòng hiện tại nhưng vẫn giữ tài khoản, đồng thời lọc phiên đang mở giúp mình.",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn rời phòng phòng hiện tại nhưng vẫn giữ tài khoản, kèm chuyện đừng gửi ra ngoài lobby được không?",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon roi room room hien tai nhung van giu tk, sau do de m vao room dg, truoc khi app tu chuyen ve danh sach phien pls",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng phòng hiện tại nhưng vẫn giữ tài khoàn, kèm chuyện mình bị đẩy khỏi phòng về màn chính để khỏi làm sai",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng phòng hiện tại nhưng vẫn giữ tài khoản, kèm chuyện ở lobby có nhiều card auction đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn rời phòng phòng hiện tại nhưng vẫn giữ tài khoản, rồi chat hỏi thêm thông tin món hàng, trước khi mã phòng GOLD-21; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn rời phòng phòng hiện tại sau khi xem xong, nhưng cần nhập mã phòng trước.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn rời phòng phòng hiện tại sau khi xem xong, nhưng sau khi kết thúc thì về lobby, kèm chuyện ở lobby có nhiều card auction mình đang thao tác?",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"m muon roi room room hien tai sau khi xem xong, nhung xem them cac phien khac vi m chua ro luong",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng phòng hiện tại sau khi xem xong, rồi gửi tin cho mọi người trong phien đang cần xử lý liền",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng phòng hiện tại sau khi xem xong, rồi vào room hiện tại giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn rời phòng phòng hiện tại sau khi xem xong, nhưng đừng kẹt ở màn phiên cũ; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Mình muốn rời phòng auction này mà không mất dữ liệu, nhưng mình muốn quay lại danh sách phiên, đồng thời gửi tin cho mọi người trong phiên.",0,0,0,0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn rời phòng auction này mà không mất dữ liệu, rồi khung chat phòng chưa hiện pls?",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon roi room auction nay ma ko mat du lieu, roi nut tham gia room dang mo de khoi lam sai",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng auction này mà khong mất dữ liệu, đồng thời room đóng nên quay về lobby, trước khi nhờ chatbot giải thích thêm mình hơi rén",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0
+"mình muốn rời phòng auction này mà không mất dữ liệu, trước khi danh sách ngoài main lobby chưa hiện, sau đó mã phòng PHIEN-2026 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn rời phòng auction này mà không mất dữ liệu, trước khi mình muốn nhắn trong chat room, rồi nút tham gia phòng đang mờ; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn rời phòng auction này trước khi hết giờ, đồng thời mình đang muốn join room.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn rời phòng auction này trước khi hết giờ, kèm chuyện app tự chuyển về danh sách phiên vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"m muon roi room auction nay truoc khi het gio, truoc khi loc phien dang mo giup m dang can xu ly lien",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòg auction này trước khi hết giờ, rồi đừng gửi ra ngoài lobby nhé",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng auction này trước khi hết giờ, nhưng để mình vào phòng đấu giá, rồi app tự chuyển về danh sách phiên đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn rời phòng auction này trước khi hết giờ, rồi mình bị đẩy khỏi phòng về màn chính; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+"Mình muốn rời phòng auction này vì không muốn đặt nữa, trước khi ở lobby có nhiều card auction.",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn rời phòng auction này vì không muốn đặt nữa, đồng thời chat hỏi thêm thông tin món hàng để khỏi làm sai?",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon roi room auction nay vi ko muon dat nua, truoc khi can nhap ma room truoc m hoi ren",0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng auction này vì khong muốn đặt nữa, đồng thời mã phòng P-774 được không",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng auction này vì không muốn đặt nữa đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn rời phòng auction này vì không muốn đặt nữa; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn rời phòng auction này nhưng vẫn giữ tài khoản.,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn rời phòng auction này nhưng vẫn giữ tài khoản đang cần xử lý liền?",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+m muon roi room auction nay nhung van giu tk nhe,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình muốn rời phòng auction này nhưng vẫn giữ tài khoàn mình đang thao tác,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng auction này nhưng vẫn giữ tài khoản đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn rời phòng auction này nhưng vẫn giữ tài khoản; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn rời phòng auction này sau khi xem xong.,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn rời phòng auction này sau khi xem xong mình hơi rén?",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon roi room auction nay sau khi xem xong, sau do ma room auc-1024 dc ko",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình muốn rời phòg auction này sau khi xem xong pls,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng auction này sau khi xem xong đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn rời phòng auction này sau khi xem xong; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn rời phòng món hàng này mà không mất dữ liệu.,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn rời phòng món hàng này mà không mất dữ liệu nhé?",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+m muon roi room mon hang nay ma ko mat du lieu m dang thao tac,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình muốn rời phòng món hàng này mà khong mất dữ liệu vì mình chưa rõ luồng,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng món hàng này mà không mất dữ liệu đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn rời phòng món hàng này mà không mất dữ liệu; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn rời phòng món hàng này trước khi hết giờ.,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn rời phòng món hàng này trước khi hết giờ, nhưng mã phòng A17 được không?",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+m muon roi room mon hang nay truoc khi het gio pls,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình muốn rời phòg món hàng này trước khi hết giờ để khỏi làm sai,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng món hàng này trước khi hết giờ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn rời phòng món hàng này trước khi hết giờ; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn rời phòng món hàng này vì không muốn đặt nữa.,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn rời phòng món hàng này vì không muốn đặt nữa mình đang thao tác?",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+m muon roi room mon hang nay vi ko muon dat nua vi m chua ro luong,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình muốn rời phòng món hàng này vì khong muốn đặt nữa đang cần xử lý liền,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn rời phòng món hàng này vì không muốn đặt nữa đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn rời phòng món hàng này vì không muốn đặt nữa; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn rời phòng món hàng này nhưng vẫn giữ tài khoản, rồi mã phòng SALA-05.",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn rời phòng món hàng này nhưng vẫn giữ tài khoản pls?",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

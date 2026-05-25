@@ -1,0 +1,201 @@
+﻿text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+"Mình muốn nhắn trong phòng phiên này có hoạt động không, nhưng để mình vào phòng đấu giá, rồi ảnh sản phẩm chưa rõ, nhưng bot phân tích lỗi đang gặp, kèm chuyện mã phòng AUC-1024.",0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Admin ơi, mình muốn nhắn trong phòng phiên này có hoạt động không, sau đó cần đọc mô tả món hàng mình đang thao tác?",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon nhan trong room phien nay co hoat dong ko, kem chuyen tro ly ao tra loi ngan gon vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn nhắn trong phòng phien này có hoạt động không, rồi câu này hơi mơ hồ đang cần xử lý liền",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"mình muốn nhắn trong phòng phiên này có hoạt động không, rồi cần nhập mã phòng trước đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn nhắn trong phòng phiên này có hoạt động không, nhưng mình muốn xem chi tiết sản phẩm, rồi trợ lý ảo trả lời ngắn gọn; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình muốn nhắn trong phòng phiên này để hỏi thông tin sản phẩm, rồi bot hướng dẫn bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, mình muốn nhắn trong phòng phiên này để hỏi thông tin sản phẩm, nhưng cần bot hỏi lại cho chắc pls?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m muon nhan trong room phien nay de hoi thong tin sp, sau do vao room hien tai giup m de khoi lam sai",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng phien này để hỏi thông tin sản phẩm, sau đó xem tình trạng hàng trước khi bid mình hơi rén",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng phiên này để hỏi thông tin sản phẩm, sau đó nhờ chatbot giải thích thêm, nhưng cần bot hỏi lại cho chắc đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Này ad, mình muốn nhắn trong phòng phiên này để hỏi thông tin sản phẩm, nhưng chưa rõ đang hỏi chức năng nào, trước khi mã phòng A17; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình muốn nhắn trong phòng phiên này trước khi đặt giá, nhưng nút tham gia phòng đang mờ.",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn nhắn trong phòng phiên này trước khi đặt giá, nhưng xem thông tin seller của món này vì mình chưa rõ luồng?",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon nhan trong room phien nay truoc khi dat gia, nhung bot phan tich loi dang gap dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn nhắn trong phòng phien này trước khi đặt giá, kèm chuyện mình nói hơi thiếu ngữ cảnh, rồi nút tham gia phòng đang mờ nhé",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"mình muốn nhắn trong phòng phiên này trước khi đặt giá, rồi mình đang muốn join room đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn nhắn trong phòng phiên này trước khi đặt giá, nhưng ảnh sản phẩm chưa rõ, rồi bot phân tích lỗi đang gặp; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình muốn nhắn trong phòng phiên này mà không làm loạn màn hình, nhưng chatbot nói dễ hiểu giúp mình.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Alo ad, mình muốn nhắn trong phòng phiên này mà không làm loạn màn hình, trước khi không đủ dữ kiện để xử lý thẳng để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m muon nhan trong room phien nay ma ko lam loan man hinh, truoc khi de m vao room dg, roi anh sp chua ro m hoi ren",0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng phien này mà không làm loạn màn hình, đồng thời cần đọc mô tả món hàng được không",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng phiên này mà không làm loạn màn hình, sau đó trợ lý ảo trả lời ngắn gọn, rồi mã phòng SALA-05 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, mình muốn nhắn trong phòng phiên này mà không làm loạn màn hình, nhưng câu này hơi mơ hồ; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình muốn nhắn trong phòng phiên này vì mình chưa gửi được, kèm chuyện cần nhập mã phòng trước.",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn nhắn trong phòng phiên này vì mình chưa gửi được, sau đó mình muốn xem chi tiết sản phẩm, trước khi trợ lý ảo trả lời ngắn gọn đang cần xử lý liền?",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"m muon nhan trong room phien nay vi m chua gui dc, nhung bot huong dan buoc tiep theo nhe",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn nhắn trong phòng phien này vì mình chưa gửi được, trước khi cần bot hỏi lại cho chắc mình đang thao tác",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"mình muốn nhắn trong phòng phiên này vì mình chưa gửi được, đồng thời vào room hiện tại giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn nhắn trong phòng phiên này vì mình chưa gửi được, đồng thời xem tình trạng hàng trước khi bid; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn nhắn trong phòng phòng đấu giá có hoạt động không, nhưng nhờ chatbot giải thích thêm, trước khi cần bot hỏi lại cho chắc.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Cứu mình với, mình muốn nhắn trong phòng phòng đấu giá có hoạt động không, sau đó chưa rõ đang hỏi chức năng nào mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m muon nhan trong room room dg co hoat dong ko, dong thoi nut tham gia room dang mo dc ko",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng phòng đấu gía có hoạt động không, đồng thời xem thông tin seller của món này, sau đó mã phòng ROOM-88 pls",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng phòng đấu giá có hoạt động không, đồng thời bot phân tích lỗi đang gặp đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Alo ad, mình muốn nhắn trong phòng phòng đấu giá có hoạt động không, nhưng mình nói hơi thiếu ngữ cảnh, rồi nút tham gia phòng đang mờ; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình muốn nhắn trong phòng phòng đấu giá để hỏi thông tin sản phẩm, rồi mình đang muốn join room.",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn nhắn trong phòng phòng đấu giá để hỏi thông tin sản phẩm, nhưng ảnh sản phẩm chưa rõ nhé?",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon nhan trong room room dg de hoi thong tin sp, sau do bot noi de hieu giup m m dang thao tac",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn nhắn trong phòng phòng đấu gía để hỏi thông tin sản phẩm, đồng thời không đủ dữ kiện để xử lý thẳng vì mình chưa rõ luồng",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"mình muốn nhắn trong phòng phòng đấu giá để hỏi thông tin sản phẩm, đồng thời để mình vào phòng đấu giá, kèm chuyện ảnh sản phẩm chưa rõ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn nhắn trong phòng phòng đấu giá để hỏi thông tin sản phẩm, trước khi cần đọc mô tả món hàng; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn nhắn trong phòng phòng đấu giá trước khi đặt giá, rồi trợ lý ảo trả lời ngắn gọn.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, mình muốn nhắn trong phòng phòng đấu giá trước khi đặt giá, kèm chuyện câu này hơi mơ hồ được không?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m muon nhan trong room room dg truoc khi dat gia, kem chuyen can nhap ma room truoc, dong thoi ma room bid-09 pls",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng phòng đấu gía trước khi đặt giá, sau đó mình muốn xem chi tiết sản phẩm, trước khi trợ lý ảo trả lời ngắn gọn để khỏi làm sai",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn nhắn trong phòng phòng đấu giá trước khi đặt giá, nhưng bot hướng dẫn bước tiếp theo đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Cứu mình với, mình muốn nhắn trong phòng phòng đấu giá trước khi đặt giá, trước khi cần bot hỏi lại cho chắc; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình muốn nhắn trong phòng phòng đấu giá mà không làm loạn màn hình, trước khi vào room hiện tại giúp mình.",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn nhắn trong phòng phòng đấu giá mà không làm loạn màn hình, trước khi xem tình trạng hàng trước khi bid mình đang thao tác?",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon nhan trong room room dg ma ko lam loan man hinh, truoc khi nho bot giai thich them, truoc khi can bot hoi lai cho chac vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"mình muốn nhắn trong phòng phòng đấu gía mà không làm loạn màn hình, đồng thời chưa rõ đang hỏi chức năng nào, rồi chatbot nói dễ hiểu giúp mình đang cần xử lý liền",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"mình muốn nhắn trong phòng phòng đấu giá mà không làm loạn màn hình, kèm chuyện nút tham gia phòng đang mờ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn nhắn trong phòng phòng đấu giá mà không làm loạn màn hình, kèm chuyện xem thông tin seller của món này; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn nhắn trong phòng phòng đấu giá vì mình chưa gửi được, trước khi bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, mình muốn nhắn trong phòng phòng đấu giá vì mình chưa gửi được, sau đó mình nói hơi thiếu ngữ cảnh, trước khi nút tham gia phòng đang mờ, nhưng mã phòng GOLD-21 pls?",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m muon nhan trong room room dg vi m chua gui dc, nhung m dang muon join room de khoi lam sai",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng phòng đấu gía vì mình chưa gửi được, trước khi ảnh sản phẩm chưa rõ mình hơi rén",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng phòng đấu giá vì mình chưa gửi được, đồng thời chatbot nói dễ hiểu giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, mình muốn nhắn trong phòng phòng đấu giá vì mình chưa gửi được, kèm chuyện không đủ dữ kiện để xử lý thẳng; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình muốn nhắn trong phòng room AUC-1024 có hoạt động không, rồi để mình vào phòng đấu giá, nhưng ảnh sản phẩm chưa rõ.",0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn nhắn trong phòng room AUC-1024 có hoạt động không, kèm chuyện cần đọc mô tả món hàng vì mình chưa rõ luồng?",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon nhan trong room room auc-1024 co hoat dong ko, dong thoi tro ly ao tra loi ngan gon dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn nhắn trong phòng room AUC-1024 có hoạt động khong, trước khi câu này hơi mơ hồ nhé",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"mình muốn nhắn trong phòng room AUC-1024 có hoạt động không, trước khi cần nhập mã phòng trước đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn nhắn trong phòng room AUC-1024 có hoạt động không, rồi mình muốn xem chi tiết sản phẩm, nhưng trợ lý ảo trả lời ngắn gọn; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình muốn nhắn trong phòng room AUC-1024 để hỏi thông tin sản phẩm, trước khi bot hướng dẫn bước tiếp theo, sau đó mã phòng PHIEN-2026.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Alo ad, mình muốn nhắn trong phòng room AUC-1024 để hỏi thông tin sản phẩm, rồi cần bot hỏi lại cho chắc để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m muon nhan trong room room auc-1024 de hoi thong tin sp, kem chuyen vao room hien tai giup m, dong thoi nho bot giai thich them m hoi ren",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn nhắn trong phòng room AUC-1024 để hỏi thông tin sản phầm, kèm chuyện xem tình trạng hàng trước khi bid được không",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng room AUC-1024 để hỏi thông tin sản phẩm, kèm chuyện nhờ chatbot giải thích thêm, trước khi cần bot hỏi lại cho chắc đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Help với, mình muốn nhắn trong phòng room AUC-1024 để hỏi thông tin sản phẩm, rồi chưa rõ đang hỏi chức năng nào; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình muốn nhắn trong phòng room AUC-1024 trước khi đặt giá, rồi nút tham gia phòng đang mờ.",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn nhắn trong phòng room AUC-1024 trước khi đặt giá, rồi xem thông tin seller của món này đang cần xử lý liền?",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon nhan trong room room auc-1024 truoc khi dat gia, roi bot phan tich loi dang gap nhe",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn nhắn trong phòg room AUC-1024 trước khi đặt giá, đồng thời mình nói hơi thiếu ngữ cảnh, kèm chuyện nút tham gia phòng đang mờ mình đang thao tác",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"mình muốn nhắn trong phòng room AUC-1024 trước khi đặt giá, trước khi mình đang muốn join room đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn nhắn trong phòng room AUC-1024 trước khi đặt giá, rồi ảnh sản phẩm chưa rõ, nhưng mã phòng P-774; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn nhắn trong phòng room AUC-1024 mà không làm loạn màn hình, rồi chatbot nói dễ hiểu giúp mình.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Cứu mình với, mình muốn nhắn trong phòng room AUC-1024 mà không làm loạn màn hình, nhưng không đủ dữ kiện để xử lý thẳng mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m muon nhan trong room room auc-1024 ma ko lam loan man hinh, nhung de m vao room dg, roi anh sp chua ro dc ko",0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng room AUC-1024 mà khong làm loạn màn hình, sau đó cần đọc mô tả món hàng pls",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng room AUC-1024 mà không làm loạn màn hình, kèm chuyện trợ lý ảo trả lời ngắn gọn đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Alo ad, mình muốn nhắn trong phòng room AUC-1024 mà không làm loạn màn hình, rồi câu này hơi mơ hồ; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình muốn nhắn trong phòng room AUC-1024 vì mình chưa gửi được, đồng thời cần nhập mã phòng trước.",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn nhắn trong phòng room AUC-1024 vì mình chưa gửi được, kèm chuyện mình muốn xem chi tiết sản phẩm, rồi trợ lý ảo trả lời ngắn gọn nhé?",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"m muon nhan trong room room auc-1024 vi m chua gui dc, roi bot huong dan buoc tiep theo m dang thao tac",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn nhắn trong phòg room AUC-1024 vì mình chưa gửi được, nhưng cần bot hỏi lại cho chắc vì mình chưa rõ luồng",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"mình muốn nhắn trong phòng room AUC-1024 vì mình chưa gửi được, sau đó vào room hiện tại giúp mình, đồng thời mã phòng AUC-1024 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn nhắn trong phòng room AUC-1024 vì mình chưa gửi được, sau đó xem tình trạng hàng trước khi bid; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn nhắn trong phòng màn hình auction có hoạt động không, sau đó nhờ chatbot giải thích thêm, nhưng cần bot hỏi lại cho chắc.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Này ad, mình muốn nhắn trong phòng màn hình auction có hoạt động không, nhưng chưa rõ đang hỏi chức năng nào được không?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m muon nhan trong room man hinh auction co hoat dong ko, truoc khi nut tham gia room dang mo pls",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng màn hình auction có hoạt động khong, trước khi xem thông tin seller của món này để khỏi làm sai",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng màn hình auction có hoạt động không, trước khi bot phân tích lỗi đang gặp đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Cứu mình với, mình muốn nhắn trong phòng màn hình auction có hoạt động không, sau đó mình nói hơi thiếu ngữ cảnh, trước khi nút tham gia phòng đang mờ; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình muốn nhắn trong phòng màn hình auction để hỏi thông tin sản phẩm, kèm chuyện mình đang muốn join room.",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn nhắn trong phòng màn hình auction để hỏi thông tin sản phẩm, sau đó ảnh sản phẩm chưa rõ mình đang thao tác?",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon nhan trong room man hinh auction de hoi thong tin sp, nhung bot noi de hieu giup m vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn nhắn trong phòng màn hình auction để hỏi thông tin sản phầm, trước khi không đủ dữ kiện để xử lý thẳng, trước khi mã phòng A17 đang cần xử lý liền",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"mình muốn nhắn trong phòng màn hình auction để hỏi thông tin sản phẩm, trước khi để mình vào phòng đấu giá, rồi ảnh sản phẩm chưa rõ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn nhắn trong phòng màn hình auction để hỏi thông tin sản phẩm, đồng thời cần đọc mô tả món hàng; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn nhắn trong phòng màn hình auction trước khi đặt giá, kèm chuyện trợ lý ảo trả lời ngắn gọn.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, mình muốn nhắn trong phòng màn hình auction trước khi đặt giá, rồi câu này hơi mơ hồ pls?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m muon nhan trong room man hinh auction truoc khi dat gia, roi can nhap ma room truoc de khoi lam sai",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng màn hình auction trước khi đặt giá, nhưng mình muốn xem chi tiết sản phầm, rồi trợ lý ảo trả lời ngắn gọn mình hơi rén",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn nhắn trong phòng màn hình auction trước khi đặt giá, sau đó bot hướng dẫn bước tiếp theo đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, mình muốn nhắn trong phòng màn hình auction trước khi đặt giá, đồng thời cần bot hỏi lại cho chắc; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình muốn nhắn trong phòng màn hình auction mà không làm loạn màn hình, đồng thời vào room hiện tại giúp mình.",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn nhắn trong phòng màn hình auction mà không làm loạn màn hình, đồng thời xem tình trạng hàng trước khi bid vì mình chưa rõ luồng?",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon nhan trong room man hinh auction ma ko lam loan man hinh, dong thoi nho bot giai thich them, dong thoi can bot hoi lai cho chac, sau do ma room sala-05 dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"mình muốn nhắn trong phòng màn hình auction mà khong làm loạn màn hình, trước khi chưa rõ đang hỏi chức năng nào nhé",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"mình muốn nhắn trong phòng màn hình auction mà không làm loạn màn hình, rồi nút tham gia phòng đang mờ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn nhắn trong phòng màn hình auction mà không làm loạn màn hình, rồi xem thông tin seller của món này; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn nhắn trong phòng màn hình auction vì mình chưa gửi được, đồng thời bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Alo ad, mình muốn nhắn trong phòng màn hình auction vì mình chưa gửi được, nhưng mình nói hơi thiếu ngữ cảnh, rồi nút tham gia phòng đang mờ để khỏi làm sai?",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m muon nhan trong room man hinh auction vi m chua gui dc, sau do m dang muon join room m hoi ren",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng màn hình auction vì mình chưa gửi được, đồng thời ảnh sản phầm chưa rõ được không",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng màn hình auction vì mình chưa gửi được, trước khi chatbot nói dễ hiểu giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, mình muốn nhắn trong phòng màn hình auction vì mình chưa gửi được, rồi không đủ dữ kiện để xử lý thẳng, trước khi bot hướng dẫn bước tiếp theo; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Mình muốn nhắn trong phòng cuộc đấu giá đang chạy có hoạt động không, kèm chuyện để mình vào phòng đấu giá, rồi ảnh sản phẩm chưa rõ.",0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn nhắn trong phòng cuộc đấu giá đang chạy có hoạt động không, rồi cần đọc mô tả món hàng, trước khi mã phòng ROOM-88 đang cần xử lý liền?",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon nhan trong room cuoc dg dang chay co hoat dong ko, truoc khi tro ly ao tra loi ngan gon nhe",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn nhắn trong phòng cuộc đấu gía đang chạy có hoạt động không, đồng thời câu này hơi mơ hồ mình đang thao tác",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"mình muốn nhắn trong phòng cuộc đấu giá đang chạy có hoạt động không, đồng thời cần nhập mã phòng trước đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn nhắn trong phòng cuộc đấu giá đang chạy có hoạt động không, kèm chuyện mình muốn xem chi tiết sản phẩm, rồi trợ lý ảo trả lời ngắn gọn; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình muốn nhắn trong phòng cuộc đấu giá đang chạy để hỏi thông tin sản phẩm, đồng thời bot hướng dẫn bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Cứu mình với, mình muốn nhắn trong phòng cuộc đấu giá đang chạy để hỏi thông tin sản phẩm, kèm chuyện cần bot hỏi lại cho chắc mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m muon nhan trong room cuoc dg dang chay de hoi thong tin sp, roi vao room hien tai giup m dc ko",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng cuộc đấu gía đang chạy để hỏi thông tin sản phẩm, rồi xem tình trạng hàng trước khi bid pls",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng cuộc đấu giá đang chạy để hỏi thông tin sản phẩm, rồi nhờ chatbot giải thích thêm, rồi cần bot hỏi lại cho chắc đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Alo ad, mình muốn nhắn trong phòng cuộc đấu giá đang chạy để hỏi thông tin sản phẩm, kèm chuyện chưa rõ đang hỏi chức năng nào; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình muốn nhắn trong phòng cuộc đấu giá đang chạy trước khi đặt giá, kèm chuyện nút tham gia phòng đang mờ, đồng thời mã phòng BID-09.",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn nhắn trong phòng cuộc đấu giá đang chạy trước khi đặt giá, kèm chuyện xem thông tin seller của món này nhé?",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon nhan trong room cuoc dg dang chay truoc khi dat gia, kem chuyen bot phan tich loi dang gap m dang thao tac",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn nhắn trong phòng cuộc đấu gía đang chạy trước khi đặt giá, trước khi mình nói hơi thiếu ngữ cảnh, rồi nút tham gia phòng đang mờ vì mình chưa rõ luồng",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"mình muốn nhắn trong phòng cuộc đấu giá đang chạy trước khi đặt giá, đồng thời mình đang muốn join room, rồi chatbot nói dễ hiểu giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình đang bị vướng, mình muốn nhắn trong phòng cuộc đấu giá đang chạy trước khi đặt giá, kèm chuyện ảnh sản phẩm chưa rõ; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn nhắn trong phòng cuộc đấu giá đang chạy mà không làm loạn màn hình, kèm chuyện chatbot nói dễ hiểu giúp mình.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, mình muốn nhắn trong phòng cuộc đấu giá đang chạy mà không làm loạn màn hình, sau đó không đủ dữ kiện để xử lý thẳng được không?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m muon nhan trong room cuoc dg dang chay ma ko lam loan man hinh, sau do de m vao room dg, truoc khi anh sp chua ro pls",0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng cuộc đấu gía đang chạy mà không làm loạn màn hình, nhưng cần đọc mô tả món hàng để khỏi làm sai",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng cuộc đấu giá đang chạy mà không làm loạn màn hình, rồi trợ lý ảo trả lời ngắn gọn đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Cứu mình với, mình muốn nhắn trong phòng cuộc đấu giá đang chạy mà không làm loạn màn hình, kèm chuyện câu này hơi mơ hồ, nhưng mã phòng GOLD-21; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình muốn nhắn trong phòng cuộc đấu giá đang chạy vì mình chưa gửi được, trước khi cần nhập mã phòng trước.",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn nhắn trong phòng cuộc đấu giá đang chạy vì mình chưa gửi được, rồi mình muốn xem chi tiết sản phẩm, nhưng trợ lý ảo trả lời ngắn gọn mình đang thao tác?",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"m muon nhan trong room cuoc dg dang chay vi m chua gui dc, kem chuyen bot huong dan buoc tiep theo vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn nhắn trong phòng cuộc đấu gía đang chạy vì mình chưa gửi được, sau đó cần bot hỏi lại cho chắc đang cần xử lý liền",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"mình muốn nhắn trong phòng cuộc đấu giá đang chạy vì mình chưa gửi được, nhưng vào room hiện tại giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn nhắn trong phòng cuộc đấu giá đang chạy vì mình chưa gửi được, nhưng xem tình trạng hàng trước khi bid; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn nhắn trong phòng phòng live có hoạt động không, sau đó nhờ chatbot giải thích thêm, nhưng cần bot hỏi lại cho chắc.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+"Help với, mình muốn nhắn trong phòng phòng live có hoạt động không, nhưng chưa rõ đang hỏi chức năng nào pls?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m muon nhan trong room room live co hoat dong ko, truoc khi nut tham gia room dang mo de khoi lam sai",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng phòng live có hoạt động khong, trước khi xem thông tin seller của món này, đồng thời nhờ chatbot giải thích thêm mình hơi rén",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn nhắn trong phòng phòng live có hoạt động không, trước khi bot phân tích lỗi đang gặp, sau đó mã phòng PHIEN-2026 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, mình muốn nhắn trong phòng phòng live có hoạt động không, sau đó mình nói hơi thiếu ngữ cảnh, trước khi nút tham gia phòng đang mờ; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Mình muốn nhắn trong phòng phòng live để hỏi thông tin sản phẩm, kèm chuyện mình đang muốn join room.",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn nhắn trong phòng phòng live để hỏi thông tin sản phẩm, sau đó ảnh sản phẩm chưa rõ vì mình chưa rõ luồng?",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon nhan trong room room live de hoi thong tin sp, nhung bot noi de hieu giup m dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"mình muốn nhắn trong phòng phòng live để hỏi thông tin sản phầm, trước khi không đủ dữ kiện để xử lý thẳng nhé",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"mình muốn nhắn trong phòng phòng live để hỏi thông tin sản phẩm, trước khi để mình vào phòng đấu giá, rồi ảnh sản phẩm chưa rõ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn nhắn trong phòng phòng live để hỏi thông tin sản phẩm, đồng thời cần đọc mô tả món hàng; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn nhắn trong phòng phòng live trước khi đặt giá, kèm chuyện trợ lý ảo trả lời ngắn gọn.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Alo ad, mình muốn nhắn trong phòng phòng live trước khi đặt giá, rồi câu này hơi mơ hồ để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"m muon nhan trong room room live truoc khi dat gia, roi can nhap ma room truoc m hoi ren",0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng phòng live trước khi đặt giá, kèm chuyện mã phòng P-774 được khong",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng phòng live trước khi đặt giá đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn nhắn trong phòng phòng live trước khi đặt giá; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn nhắn trong phòng phòng live mà không làm loạn màn hình.,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn nhắn trong phòng phòng live mà không làm loạn màn hình đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+m muon nhan trong room room live ma ko lam loan man hinh nhe,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình muốn nhắn trong phòng phòng live mà khong làm loạn màn hình mình đang thao tác,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng phòng live mà không làm loạn màn hình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, mình muốn nhắn trong phòng phòng live mà không làm loạn màn hình; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn nhắn trong phòng phòng live vì mình chưa gửi được.,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn nhắn trong phòng phòng live vì mình chưa gửi được mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"m muon nhan trong room room live vi m chua gui dc, truoc khi ma room auc-1024 dc ko",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình muốn nhắn trong phòg phòng live vì mình chưa gửi được pls,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng phòng live vì mình chưa gửi được đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, mình muốn nhắn trong phòng phòng live vì mình chưa gửi được; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn nhắn trong phòng chat chung có hoạt động không.,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn nhắn trong phòng chat chung có hoạt động không nhé?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+m muon nhan trong room chat chung co hoat dong ko m dang thao tac,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình muốn nhắn trong phòng chat chung có hoạt động khong vì mình chưa rõ luồng,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng chat chung có hoạt động không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, mình muốn nhắn trong phòng chat chung có hoạt động không; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn nhắn trong phòng chat chung để hỏi thông tin sản phẩm.,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn nhắn trong phòng chat chung để hỏi thông tin sản phẩm, kèm chuyện mã phòng A17 được không?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+m muon nhan trong room chat chung de hoi thong tin sp pls,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình muốn nhắn trong phòng chat chung để hỏi thông tin sản phầm để khỏi làm sai,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng chat chung để hỏi thông tin sản phẩm đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, mình muốn nhắn trong phòng chat chung để hỏi thông tin sản phẩm; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn nhắn trong phòng chat chung trước khi đặt giá.,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn nhắn trong phòng chat chung trước khi đặt giá mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+m muon nhan trong room chat chung truoc khi dat gia vi m chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình muốn nhắn trong phòg chat chung trước khi đặt giá đang cần xử lý liền,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn nhắn trong phòng chat chung trước khi đặt giá đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn nhắn trong phòng chat chung trước khi đặt giá; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình muốn nhắn trong phòng chat chung mà không làm loạn màn hình, nhưng mã phòng SALA-05.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, mình muốn nhắn trong phòng chat chung mà không làm loạn màn hình pls?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
