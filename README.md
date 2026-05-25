@@ -351,21 +351,39 @@ Auction-System-OOD/                                   [Root Project]
 
 ---
 
-## 📦 Vị Trí File JAR
+## Vị trí file JAR
 
-Sau khi build bằng Maven, các file JAR sẽ nằm trong thư mục:
+Các file JAR nằm trong thư mục:
+release/
+├── auction-server.jar
+├── auction-client.jar
+└── client.properties
 
-```
-target/
-├── auction-common-1.0-SNAPSHOT.jar                  # Common module
-├── auction-server-1.0-SNAPSHOT.jar                 # Server module
-├── auction-client-1.0-SNAPSHOT.jar                 # Client module
-├── classes/
-├── lib/                                             # Dependencies
-└── ...
-```
+## Cấu hình kết nối client
 
----
+File `client.properties` dùng để cấu hình địa chỉ server.
+
+Chạy local:
+
+server.host=localhost
+server.port=8080
+
+Chạy client từ máy khác cùng mạng LAN:
+
+server.host=<IPv4 của máy chạy server>
+server.port=8080
+
+## Cách chạy
+
+Bước 1: Chạy server
+
+java -jar auction-server.jar
+
+Bước 2: Chạy client
+
+java -jar auction-client.jar
+
+Có thể mở nhiều terminal và chạy lại client để mô phỏng nhiều người dùng.
 
 ## 🚀 Hướng Dẫn Chạy Ứng Dụng
 
@@ -420,21 +438,9 @@ mvn clean package
 
 ### Bước 5: Chạy Server ⭐ (CHẠY TRƯỚC)
 
-**Option 1: Từ IDE**
-```
-1. Mở project trong IntelliJ IDEA
-2. Tìm class: com.auction.server.main.AuctionServer (trong auction-server module)
-3. Right-click → Run 'AuctionServer.main()'
-```
-
-**Option 2: Từ terminal**
+**Từ JAR**
 ```bash
-mvn exec:java -Dexec.mainClass="com.auction.server.main.AuctionServer" -pl auction-server
-```
-
-**Option 3: Từ JAR**
-```bash
-java -jar target/auction-server-1.0-SNAPSHOT.jar
+java -jar target/auction-server.jar
 ```
 
 **Output mong đợi:**
@@ -448,35 +454,14 @@ java -jar target/auction-server-1.0-SNAPSHOT.jar
 
 **⚠️ QUAN TRỌNG: Chờ Server khởi động xong rồi mới chạy Client!**
 
-**Option 1: Từ IDE**
-```
-1. Tìm class: com.auction.client.app.Launcher (trong auction-client module)
-2. Right-click → Run 'Launcher.main()'
-```
-
-**Option 2: Từ terminal**
+**Từ JAR**
 ```bash
-mvn javafx:run -pl auction-client
-```
-
-**Option 3: Từ JAR**
-```bash
-java -jar target/auction-client-1.0-SNAPSHOT.jar
+java -jar target/auction-client.jar
 ```
 
 ### Bước 7: Đăng Nhập & Sử Dụng
 
 Sau khi Client khởi động, bạn sẽ thấy giao diện Login.
-
-**Tài khoản Demo:**
-
-| Role | Username | Password |
-|------|----------|----------|
-| Seller | hephaestus | 123 |
-| Bidder | cerberus | 123 |
-| Admin | hades | 123 |
-
----
 
 ## ✅ Danh Sách Chức Năng Hoàn Thành
 
@@ -618,21 +603,18 @@ Solution:
 - Kiểm tra JDBC driver trong pom.xml
 ```
 
-### Vấn đề GUI Client
-```
-Error: Exception in thread "main" java.awt.HeadlessException
-Solution:
-- Kiểm tra bạn có display available (không phải SSH headless)
-- Hoặc sử dụng X11 forwarding nếu SSH
+## 11.5. Port server
+
+Server lắng nghe port `8080`. Client lấy địa chỉ kết nối từ file `client.properties` đặt cạnh JAR khi chạy:
+
+```properties
+server.host=localhost
+server.port=8080
 ```
 
-### Vấn đề JavaFX
-```
-Error: module javafx.fxml not found
-Solution:
-- Kiểm tra JDK 25 có cài module JavaFX
-- Hoặc chỉnh sửa pom.xml javafx-maven-plugin version
-```
+Nếu file không tồn tại hoặc cấu hình không hợp lệ, client dùng mặc định `localhost:8080`.
+
+## 11.6. Database configuration
 
 ### Không thấy Room trong Lobby
 ```
@@ -689,6 +671,3 @@ This project is part of a university assignment. All rights reserved.
 - https://www.amazon.com/
 
 ---
-
-**Cập nhật lần cuối**: 25/05/2026
-**Commit**: 4bf1cb5657e176713b4fe58cfb78fd7d6a5f95b8
