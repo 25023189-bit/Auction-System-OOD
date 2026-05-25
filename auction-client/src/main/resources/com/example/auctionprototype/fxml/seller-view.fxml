@@ -12,247 +12,351 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.RadialGradient?>
-<?import javafx.scene.paint.Stop?>
 
-<AnchorPane prefHeight="650.0" prefWidth="1000.0" styleClass="main-container" stylesheets="@../css/seller-view.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.auction.seller.SellerController">
+<AnchorPane prefHeight="650.0"
+            prefWidth="1000.0"
+            styleClass="main-container"
+            stylesheets="@../css/seller-view.css"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.auction.client.feature.controllers.auction.seller.SellerController">
 
     <children>
-        <VBox spacing="16.0" styleClass="seller-page" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox spacing="16.0"
+              styleClass="seller-page"
+              AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0"
+              AnchorPane.topAnchor="0.0">
 
             <padding>
-                <Insets bottom="24.0" left="32.0" right="32.0" top="24.0" />
+                <Insets top="22.0" right="30.0" bottom="22.0" left="30.0"/>
             </padding>
 
             <children>
-                <HBox alignment="CENTER_LEFT" spacing="14.0" styleClass="seller-topbar">
+
+                <!-- TOP BAR -->
+                <HBox alignment="CENTER_LEFT" spacing="14.0" styleClass="seller-premium-topbar">
                     <children>
-                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="48.0"
+                                   fitWidth="48.0"
+                                   pickOnBounds="true"
+                                   preserveRatio="true">
                             <image>
-                                <Image url="@../images/creat_auction/creat-view-gavel-badge.png" />
+                                <Image url="@../images/creat_auction/creat-view-gavel-badge.png"/>
                             </image>
                         </ImageView>
 
                         <VBox spacing="1.0">
                             <children>
-                                <Label styleClass="seller-title" text="Seller Dashboard" />
-                                <Label styleClass="seller-subtitle" text="Create Auction Session" />
+                                <Label text="Seller Dashboard" styleClass="seller-title"/>
+                                <Label text="Create Auction Session" styleClass="seller-subtitle"/>
                             </children>
                         </VBox>
 
-                        <Region HBox.hgrow="ALWAYS" />
+                        <Region HBox.hgrow="ALWAYS"/>
 
                         <HBox alignment="CENTER" spacing="10.0" styleClass="reputation-card">
                             <children>
-                                <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="34.0"
+                                           fitWidth="34.0"
+                                           pickOnBounds="true"
+                                           preserveRatio="true">
                                     <image>
-                                        <Image url="@../images/creat_auction/creat-view-reputation-star.png" />
+                                        <Image url="@../images/creat_auction/creat-view-reputation-star.png"/>
                                     </image>
                                 </ImageView>
-                                <Label fx:id="lblReputation" styleClass="reputation-label" text="Reputation: 5.0 Stars" />
+
+                                <Label fx:id="lblReputation"
+                                       text="Reputation: 5.0 Stars"
+                                       styleClass="reputation-label"/>
                             </children>
                         </HBox>
                     </children>
                 </HBox>
 
-                <VBox spacing="18.0" styleClass="auction-form-card" VBox.vgrow="ALWAYS">
+                <!-- MAIN CARD -->
+                <VBox spacing="12.0" styleClass="auction-create-card" VBox.vgrow="ALWAYS">
                     <padding>
-                        <Insets bottom="22.0" left="28.0" right="28.0" top="18.0" />
+                        <Insets top="12.0" right="26.0" bottom="16.0" left="26.0"/>
                     </padding>
 
                     <children>
-                        <VBox alignment="CENTER" spacing="5.0" styleClass="form-title-zone">
-                            <children>
-                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../images/creat_auction/creat-view-gavel-badge.png" />
-                                    </image>
-                                </ImageView>
 
-                                <Label styleClass="form-title" text="Create Auction Session" />
-                                <Label styleClass="form-subtitle" text="Fill in the details below to launch your auction" />
-                                <Label styleClass="gold-divider" text="──────── ◆ ────────" />
+                        <!-- TITLE -->
+                        <VBox alignment="CENTER" spacing="3.0" styleClass="compact-form-title-zone">
+                            <children>
+                                <HBox alignment="CENTER" spacing="26.0">
+                                    <children>
+                                        <Label text="──────" styleClass="decorative-gold-line"/>
+
+                                        <ImageView fitHeight="52.0"
+                                                   fitWidth="52.0"
+                                                   pickOnBounds="true"
+                                                   preserveRatio="true">
+                                            <image>
+                                                <Image url="@../images/creat_auction/creat-view-gavel-badge.png"/>
+                                            </image>
+                                        </ImageView>
+
+                                        <Label text="──────" styleClass="decorative-gold-line"/>
+                                    </children>
+                                </HBox>
+
+                                <Label text="Create Auction Session" styleClass="form-title"/>
+                                <Label text="Fill in the details below to launch your auction" styleClass="form-subtitle"/>
+                                <Label text="──────── ◆ ────────" styleClass="gold-divider"/>
                             </children>
                         </VBox>
 
-                        <HBox spacing="26.0" styleClass="form-row">
+                        <!-- IMAGE UPLOAD -->
+                        <HBox alignment="CENTER" spacing="22.0" styleClass="image-upload-wide-card">
                             <children>
-                                <VBox spacing="8.0" styleClass="field-group" HBox.hgrow="ALWAYS">
-                                    <children>
-                                        <HBox alignment="CENTER_LEFT" spacing="9.0">
-                                            <children>
-                                                <Label styleClass="field-icon" text="◆" />
-                                                <Label styleClass="field-label" text="Auction Item Name" />
-                                                <Label styleClass="required-dot" text="•" />
-                                            </children>
-                                        </HBox>
+                                <ImageView fitHeight="70.0"
+                                           fitWidth="70.0"
+                                           pickOnBounds="true"
+                                           preserveRatio="true">
+                                    <image>
+                                        <Image url="@../images/creat_auction/creat-view-upload-cloud.png"/>
+                                    </image>
+                                </ImageView>
 
-                                        <TextField fx:id="txtItemName" prefHeight="46.0" promptText="Enter auction item name" styleClass="premium-input" />
+                                <VBox alignment="CENTER_LEFT" spacing="5.0">
+                                    <children>
+                                        <Label text="Upload Image" styleClass="image-upload-title"/>
+                                        <Label text="JPG, PNG up to 10MB" styleClass="image-upload-subtitle"/>
+
+                                        <Button mnemonicParsing="false"
+                                                onAction="#handleChooseImage"
+                                                prefHeight="32.0"
+                                                prefWidth="138.0"
+                                                text="▣  Browse Files"
+                                                styleClass="secondary-gold-button"/>
                                     </children>
                                 </VBox>
 
-                                <VBox spacing="8.0" styleClass="field-group" HBox.hgrow="ALWAYS">
+                                <Region HBox.hgrow="ALWAYS"/>
+
+                                <ImageView fx:id="imgProductPreview"
+                                           fitHeight="80.0"
+                                           fitWidth="150.0"
+                                           pickOnBounds="true"
+                                           preserveRatio="true"
+                                           styleClass="product-preview-image"/>
+                            </children>
+                        </HBox>
+
+                        <!-- ROW 1: ITEM INFO -->
+                        <HBox spacing="24.0" styleClass="form-row">
+                            <children>
+                                <VBox spacing="6.0" styleClass="compact-field-group" HBox.hgrow="ALWAYS">
                                     <children>
-                                        <HBox alignment="CENTER_LEFT" spacing="9.0">
+                                        <HBox alignment="CENTER_LEFT" spacing="8.0">
                                             <children>
-                                                <Label styleClass="field-icon" text="▣" />
-                                                <Label styleClass="field-label" text="Description" />
-                                                <Label styleClass="required-dot" text="•" />
+                                                <Label text="◆" styleClass="field-icon"/>
+                                                <Label text="Auction Item Name" styleClass="field-label"/>
+                                                <Label text="•" styleClass="required-dot"/>
                                             </children>
                                         </HBox>
 
-                                        <TextArea fx:id="txtItemDescription" prefHeight="82.0" prefRowCount="4" promptText="Detailed item description..." styleClass="premium-input" wrapText="true" />
+                                        <TextField fx:id="txtItemName"
+                                                   prefHeight="42.0"
+                                                   promptText="Enter auction item name"
+                                                   styleClass="premium-input"/>
+                                    </children>
+                                </VBox>
+
+                                <VBox spacing="6.0" styleClass="description-group" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                            <children>
+                                                <Label text="▣" styleClass="field-icon"/>
+                                                <Label text="Description" styleClass="field-label"/>
+                                                <Label text="•" styleClass="required-dot"/>
+                                            </children>
+                                        </HBox>
+
+                                        <TextArea fx:id="txtItemDescription"
+                                                  prefHeight="66.0"
+                                                  prefRowCount="3"
+                                                  promptText="Detailed item description..."
+                                                  wrapText="true"
+                                                  styleClass="premium-input"/>
                                     </children>
                                 </VBox>
                             </children>
                         </HBox>
 
-                        <Region styleClass="soft-separator" />
-
-                        <HBox spacing="26.0" styleClass="form-row">
+                        <!-- ROW 2: PRICING -->
+                        <HBox spacing="24.0" styleClass="form-row">
                             <children>
-                                <VBox spacing="8.0" styleClass="field-group" HBox.hgrow="ALWAYS">
+                                <VBox spacing="6.0" styleClass="compact-field-group" HBox.hgrow="ALWAYS">
                                     <children>
-                                        <HBox alignment="CENTER_LEFT" spacing="9.0">
+                                        <HBox alignment="CENTER_LEFT" spacing="8.0">
                                             <children>
-                                                <Label styleClass="field-icon" text="/$" />
-                                                <Label styleClass="field-label" text="Starting Price ($)" />
-                                                <Label styleClass="required-dot" text="•" />
+                                                <Label text="($)" styleClass="field-icon"/>
+                                                <Label text="Starting Price ($)" styleClass="field-label"/>
+                                                <Label text="•" styleClass="required-dot"/>
                                             </children>
                                         </HBox>
-            
-                                                          <TextField fx:id="txtStartingPrice" prefHeight="46.0" promptText="Example: 1000" styleClass="premium-input" />
+
+                                        <TextField fx:id="txtStartingPrice"
+                                                   prefHeight="42.0"
+                                                   promptText="Example: 1000"
+                                                   styleClass="premium-input"/>
                                     </children>
                                 </VBox>
 
-                                <VBox spacing="8.0" styleClass="field-group" HBox.hgrow="ALWAYS">
+                                <VBox spacing="6.0" styleClass="compact-field-group" HBox.hgrow="ALWAYS">
                                     <children>
-                                        <HBox alignment="CENTER_LEFT" spacing="9.0">
+                                        <HBox alignment="CENTER_LEFT" spacing="8.0">
                                             <children>
-                                                <Label styleClass="field-icon" text="●" />
-                                                <Label styleClass="field-label" text="Minimum Join Amount ($)" />
-                                                <Label styleClass="required-dot" text="•" />
+                                                <Label text="●" styleClass="field-icon"/>
+                                                <Label text="Minimum Join Amount ($)" styleClass="field-label"/>
+                                                <Label text="•" styleClass="required-dot"/>
                                             </children>
                                         </HBox>
 
-                                        <TextField fx:id="txtMinimumJoinAmount" prefHeight="46.0" promptText="Enter minimum amount" styleClass="premium-input" />
+                                        <TextField fx:id="txtMinimumJoinAmount"
+                                                   prefHeight="42.0"
+                                                   promptText="Enter minimum amount"
+                                                   styleClass="premium-input"/>
                                     </children>
                                 </VBox>
 
-                                <VBox spacing="8.0" styleClass="field-group" HBox.hgrow="ALWAYS">
+                                <VBox spacing="6.0" styleClass="compact-field-group" HBox.hgrow="ALWAYS">
                                     <children>
-                                        <HBox alignment="CENTER_LEFT" spacing="9.0">
+                                        <HBox alignment="CENTER_LEFT" spacing="8.0">
                                             <children>
-                                                <Label styleClass="field-icon" text="↕" />
-                                                <Label styleClass="field-label" text="Bid Step ($)" />
-                                                <Label styleClass="required-dot" text="•" />
+                                                <Label text="↗" styleClass="field-icon"/>
+                                                <Label text="Bid Step ($)" styleClass="field-label"/>
+                                                <Label text="•" styleClass="required-dot"/>
                                             </children>
                                         </HBox>
 
-                                        <TextField fx:id="txtBidStep" prefHeight="46.0" promptText="Enter bid step" styleClass="premium-input" />
+                                        <TextField fx:id="txtBidStep"
+                                                   prefHeight="42.0"
+                                                   promptText="Enter bid step"
+                                                   styleClass="premium-input"/>
                                     </children>
                                 </VBox>
                             </children>
                         </HBox>
 
-                        <Region styleClass="soft-separator" />
-
-                        <HBox spacing="26.0" styleClass="form-row">
+                        <!-- ROW 3: TIME -->
+                        <HBox spacing="24.0" styleClass="form-row">
                             <children>
-                                <VBox spacing="8.0" styleClass="field-group" HBox.hgrow="ALWAYS">
+                                <VBox spacing="6.0" styleClass="compact-field-group" HBox.hgrow="ALWAYS">
                                     <children>
-                                        <HBox alignment="CENTER_LEFT" spacing="9.0">
+                                        <HBox alignment="CENTER_LEFT" spacing="8.0">
                                             <children>
-                                                <Label styleClass="field-icon" text="▦" />
-                                                <Label styleClass="field-label" text="Start Time" />
-                                                <Label styleClass="required-dot" text="•" />
+                                                <Label text="▣" styleClass="field-icon"/>
+                                                <Label text="Start Time" styleClass="field-label"/>
+                                                <Label text="•" styleClass="required-dot"/>
                                             </children>
                                         </HBox>
 
                                         <HBox alignment="CENTER_LEFT" spacing="10.0">
                                             <children>
-                                                <DatePicker fx:id="datePickerStart" prefHeight="46.0" prefWidth="162.0" promptText="Select date" styleClass="premium-date-picker" />
+                                                <DatePicker fx:id="datePickerStart"
+                                                            prefHeight="42.0"
+                                                            prefWidth="150.0"
+                                                            promptText="Select date"
+                                                            styleClass="premium-date-picker"/>
 
-                                                <TextField fx:id="txtStartHour" prefHeight="46.0" prefWidth="70.0" promptText="HH" styleClass="time-input" />
+                                                <TextField fx:id="txtStartHour"
+                                                           prefHeight="42.0"
+                                                           prefWidth="62.0"
+                                                           promptText="HH"
+                                                           styleClass="time-input"/>
 
-                                                <Label styleClass="time-colon" text=":" />
+                                                <Label text=":" styleClass="time-colon"/>
 
-                                                <TextField fx:id="txtStartMinute" prefHeight="46.0" prefWidth="70.0" promptText="MM" styleClass="time-input" />
+                                                <TextField fx:id="txtStartMinute"
+                                                           prefHeight="42.0"
+                                                           prefWidth="62.0"
+                                                           promptText="MM"
+                                                           styleClass="time-input"/>
                                             </children>
                                         </HBox>
                                     </children>
                                 </VBox>
 
-                                <VBox spacing="8.0" styleClass="field-group" HBox.hgrow="ALWAYS">
+                                <VBox spacing="6.0" styleClass="compact-field-group" HBox.hgrow="ALWAYS">
                                     <children>
-                                        <HBox alignment="CENTER_LEFT" spacing="9.0">
+                                        <HBox alignment="CENTER_LEFT" spacing="8.0">
                                             <children>
-                                                <Label styleClass="field-icon" text="◷" />
-                                                <Label styleClass="field-label" text="Duration (Min)" />
-                                                <Label styleClass="required-dot" text="•" />
+                                                <Label text="◷" styleClass="field-icon"/>
+                                                <Label text="Duration (Min)" styleClass="field-label"/>
+                                                <Label text="•" styleClass="required-dot"/>
                                             </children>
                                         </HBox>
 
-                                        <TextField fx:id="txtDuration" prefHeight="46.0" promptText="Enter duration in minutes" styleClass="premium-input" />
+                                        <TextField fx:id="txtDuration"
+                                                   prefHeight="42.0"
+                                                   promptText="Enter duration in minutes"
+                                                   styleClass="premium-input"/>
                                     </children>
                                 </VBox>
 
-                                <VBox spacing="8.0" styleClass="field-group" HBox.hgrow="ALWAYS">
+                                <VBox spacing="6.0" styleClass="compact-field-group" HBox.hgrow="ALWAYS">
                                     <children>
-                                        <HBox alignment="CENTER_LEFT" spacing="9.0">
+                                        <HBox alignment="CENTER_LEFT" spacing="8.0">
                                             <children>
-                                                <Label styleClass="field-icon" text="⏱" />
-                                                <Label styleClass="field-label" text="Extension (Sec: 60 - 120)" />
-                                                <Label styleClass="required-dot" text="•" />
+                                                <Label text="⏱" styleClass="field-icon"/>
+                                                <Label text="Extension (Sec: 60 - 120)" styleClass="field-label"/>
+                                                <Label text="•" styleClass="required-dot"/>
                                             </children>
                                         </HBox>
 
-                                        <TextField fx:id="txtExtensionSeconds" prefHeight="46.0" promptText="Enter extension seconds" styleClass="premium-input" />
+                                        <TextField fx:id="txtExtensionSeconds"
+                                                   prefHeight="42.0"
+                                                   promptText="Enter extension seconds"
+                                                   styleClass="premium-input"/>
                                     </children>
                                 </VBox>
                             </children>
                         </HBox>
 
-                        <Region VBox.vgrow="ALWAYS" />
-                  <ImageView fx:id="imgProductPreview" fitHeight="49.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-                  <Button mnemonicParsing="false" onAction="#handleChooseImage" text="Upload Image">
-                     <textFill>
-                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
-                           <stops>
-                              <Stop>
-                                 <color>
-                                    <Color />
-                                 </color>
-                              </Stop>
-                              <Stop offset="1.0">
-                                 <color>
-                                    <Color red="1.0" green="1.0" blue="1.0" />
-                                 </color>
-                              </Stop>
-                           </stops>
-                        </RadialGradient>
-                     </textFill>
-                  </Button>
+                        <Region VBox.vgrow="ALWAYS"/>
 
-                        <HBox alignment="CENTER_LEFT" spacing="18.0" styleClass="form-footer">
+                        <!-- FOOTER -->
+                        <HBox alignment="CENTER_LEFT" spacing="20.0" styleClass="form-footer">
                             <children>
-                                <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="info-banner" HBox.hgrow="ALWAYS">
+                                <HBox alignment="CENTER_LEFT"
+                                      spacing="10.0"
+                                      styleClass="info-banner"
+                                      HBox.hgrow="ALWAYS">
                                     <children>
-                                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="26.0"
+                                                   fitWidth="26.0"
+                                                   pickOnBounds="true"
+                                                   preserveRatio="true">
                                             <image>
-                                                <Image url="@../images/creat_auction/creat-view-info-badge.png" />
+                                                <Image url="@../images/creat_auction/creat-view-info-badge.png"/>
                                             </image>
                                         </ImageView>
 
-                                        <Label styleClass="info-text" text="Extension must be between 60 and 120 seconds." />
-                                        <Label fx:id="lblStatus" styleClass="status-label" textFill="RED" />
+                                        <Label text="Extension must be between 60 and 120 seconds."
+                                               styleClass="info-text"/>
+
+                                        <Region HBox.hgrow="ALWAYS"/>
+
+                                        <Label fx:id="lblStatus"
+                                               textFill="RED"
+                                               styleClass="status-label"/>
                                     </children>
                                 </HBox>
 
-                                <Button mnemonicParsing="false" onAction="#handleCreateAuction" prefHeight="54.0" prefWidth="220.0" styleClass="btn-create-orange" text="Create Auction  →" />
+                                <Button mnemonicParsing="false"
+                                        onAction="#handleCreateAuction"
+                                        prefHeight="52.0"
+                                        prefWidth="220.0"
+                                        text="Create Auction  →"
+                                        styleClass="btn-create-orange"/>
                             </children>
                         </HBox>
+
                     </children>
                 </VBox>
             </children>

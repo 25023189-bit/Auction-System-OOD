@@ -1,120 +1,124 @@
 {
   "documents": [
     {
+      "title": "Giới hạn trả lời chung của Chatbot",
+      "content": "Chatbot chỉ trả lời trong phạm vi chức năng của hệ thống đấu giá Auction: tài khoản, phân quyền, lobby, phòng đấu giá, đặt giá, auto bid, chat trong phòng, sản phẩm, seller tạo phiên, admin duyệt/quản trị, thông báo kết thúc phiên và các trạng thái liên quan. Chatbot không được khẳng định đã thao tác thay người dùng nếu hệ thống chưa thực sự gửi request hoặc chưa có phản hồi từ server. Khi câu hỏi thiếu ngữ cảnh, chatbot phải hỏi lại thông tin cần thiết như vai trò người dùng, phòng/phiên, sản phẩm, lỗi đang gặp hoặc hành động muốn làm. Khi câu hỏi ngoài phạm vi hoặc nguy hiểm, chatbot không suy đoán nghiệp vụ và không hướng dẫn chi tiết ngoài miền tri thức."
+    },
+    {
       "title": "Đăng ký tài khoản",
-      "content": "Người dùng có thể tạo tài khoản mới để tham gia hệ thống đấu giá. Khi đăng ký, hệ thống kiểm tra dữ liệu nhập, kiểm tra username trùng, mã hóa mật khẩu và lưu tài khoản vào database."
+      "content": "Người dùng có thể tạo tài khoản mới từ màn hình đăng ký bằng cách nhập customer ID, username, họ tên, mật khẩu, xác nhận mật khẩu và vai trò. Các vai trò chính gồm BIDDER, SELLER; seller cần nhập thêm organization. Chatbot chỉ hướng dẫn thao tác đăng ký và giải thích lỗi thường gặp như thiếu thông tin, mật khẩu không khớp hoặc username đã tồn tại; không được tạo tài khoản thay người dùng."
     },
     {
       "title": "Đăng nhập hệ thống",
-      "content": "Người dùng đăng nhập bằng username hoặc thông tin định danh hợp lệ cùng mật khẩu. Sau khi đăng nhập thành công, hệ thống xác định vai trò của tài khoản là bidder, seller hoặc admin để mở giao diện phù hợp."
+      "content": "Người dùng đăng nhập bằng username hoặc thông tin định danh hợp lệ cùng mật khẩu trên màn hình login. Sau khi đăng nhập thành công, hệ thống xác định vai trò tài khoản để mở giao diện phù hợp: bidder vào lobby bidder, seller vào lobby seller hoặc trang seller, admin vào dashboard admin. Nếu đăng nhập thất bại, chatbot nên hướng dẫn kiểm tra username, mật khẩu, kết nối server và vai trò tài khoản thay vì suy đoán thông tin đăng nhập."
     },
     {
       "title": "Quên mật khẩu và đặt lại mật khẩu",
-      "content": "Người dùng có thể yêu cầu đặt lại mật khẩu khi quên mật khẩu. Hệ thống gửi OTP qua email, xác thực OTP và cho phép cập nhật mật khẩu mới nếu dữ liệu hợp lệ."
+      "content": "Người dùng có thể dùng màn hình reset password khi quên mật khẩu. Form yêu cầu username, mật khẩu mới và xác nhận mật khẩu mới; client kiểm tra username không rỗng, mật khẩu mới không rỗng và hai mật khẩu phải khớp trước khi gửi RESET_PASSWORD lên server. Chatbot có thể hướng dẫn người dùng mở mục quên mật khẩu, nhập lại mật khẩu mới và kiểm tra lỗi xác nhận mật khẩu. Chatbot không được tiết lộ, đọc, đoán hoặc khôi phục mật khẩu cũ của bất kỳ tài khoản nào."
     },
     {
       "title": "Phân quyền người dùng",
-      "content": "Hệ thống chia người dùng thành ba vai trò chính: bidder, seller và admin. Bidder tham gia và đặt giá, seller tạo phiên đấu giá, admin quản lý người dùng và kiểm duyệt phiên đấu giá."
+      "content": "Hệ thống phân quyền theo ba vai trò chính: BIDDER, SELLER và ADMIN. Bidder xem lobby, tham gia phòng, đặt giá, dùng autobidding, chat trong phòng, xem thông tin sản phẩm và theo dõi thời gian/giá. Seller tạo yêu cầu phiên đấu giá, theo dõi các phiên liên quan và có thể đóng phiên của mình khi được phép. Admin quản lý người dùng, xem danh sách phiên, duyệt hoặc từ chối yêu cầu phiên, xóa user/auction theo quyền quản trị và xem lịch sử bid. Chatbot không được hướng dẫn nâng quyền, bypass quyền, giả mạo admin/seller hoặc truy cập chức năng không thuộc vai trò hiện tại."
     },
     {
       "title": "Quản lý số dư tài khoản",
-      "content": "Mỗi người dùng có số dư tài khoản dùng trong quá trình đấu giá. Bidder cần có số dư đủ điều kiện để tham gia phòng và số dư sẽ được cập nhật khi phiên đấu giá kết thúc thành công."
+      "content": "Số dư tài khoản được hiển thị trên lobby và có thể được cập nhật mỗi lần thay đổi cho đúng người dùng hiện tại. Bidder cần số dư phù hợp để tham gia phòng, đặt giá và cấu hình autobidding trong giới hạn an toàn. Khi phiên kết thúc thành công có người thắng và giao dịch được áp dụng, hệ thống xử lý tiền theo nghiệp vụ server: trừ tiền người thắng và cộng tiền cho seller. Nếu người dùng hỏi về nạp/rút tiền hoặc sửa số dư thủ công mà hệ thống chưa có chức năng tương ứng trong client, chatbot phải nói rõ chưa có thông tin/chức năng đó thay vì tự bịa luồng thao tác."
     },
     {
       "title": "Xem danh sách phiên đấu giá",
-      "content": "Người dùng có thể xem danh sách các phiên đấu giá đang hoạt động ở lobby. Danh sách phòng được lấy từ server và cập nhật lại khi có thay đổi về phiên đấu giá."
+      "content": "Người dùng xem danh sách phiên đấu giá ở lobby. Danh sách có thể cập nhật giá hiện tại nhanh, tăng trải nghiệm người dùng. Bidder dùng danh sách để chọn phiên tham gia; seller cũng có thể xem các phiên đang có và mở màn hình tạo phiên mới. Chatbot có thể hướng dẫn người dùng quay lại lobby, refresh danh sách hoặc chọn card phiên phù hợp."
     },
     {
       "title": "Xem chi tiết sản phẩm đấu giá",
-      "content": "Người dùng có thể xem thông tin chi tiết của sản phẩm trong phiên đấu giá, bao gồm tên sản phẩm, mô tả, giá hiện tại, thông tin phiên và lịch sử đặt giá liên quan."
+      "content": "Người dùng có thể mở popup chi tiết sản phẩm từ phiên đấu giá hoặc card sản phẩm. Người dùng sẽ thấy thông tin tên sản phẩm, mô tả, giá hiện tại và hình ảnh nếu có. Thông tin sản phẩm phục vụ việc cân nhắc trước khi tham gia, đặt giá hoặc bật autobidding. Chatbot chỉ giải thích cách xem chi tiết và ý nghĩa thông tin; không được tự xác nhận chất lượng, nguồn gốc hay giá trị thật của sản phẩm nếu hệ thống không cung cấp."
     },
     {
       "title": "Tham gia phòng đấu giá",
-      "content": "Người dùng có thể tham gia một phòng đấu giá nếu phiên còn hợp lệ và đáp ứng điều kiện của hệ thống. Bidder phải có số dư tối thiểu theo yêu cầu của phiên, còn seller của phiên có thể vào phòng trước khi phiên bắt đầu."
+      "content": "Người dùng tham gia phòng bằng cách chọn phiên từ lobby; client gửi JOIN_ROOM với auctionId. Server có thể trả ROOM_JOINED nếu thành công hoặc ROOM_FAIL nếu không đủ điều kiện. Điều kiện tham gia có thể gồm phiên còn hợp lệ, chưa bị đóng, không bị khóa giai đoạn cuối và bidder có số dư tối thiểu theo yêu cầu phiên. Khi tham gia thành công, client lưu currentRoom/currentRoomId và mở giao diện phòng đấu giá tương ứng với vai trò bidder hoặc seller. Chatbot nên hướng dẫn kiểm tra phiên, số dư, trạng thái phiên và thông báo lỗi server khi người dùng không vào được phòng."
     },
     {
       "title": "Rời phòng đấu giá",
-      "content": "Người dùng có thể rời phòng đấu giá đang tham gia. Khi rời phòng, client xóa trạng thái phòng hiện tại và người dùng có thể quay lại lobby hoặc chọn phiên khác."
+      "content": "Người dùng có thể rời phòng đấu giá bằng nút exit/leave. Việc rời phòng không đồng nghĩa với hủy toàn bộ lịch sử bid đã tạo. Nếu người dùng đang bật autobidding, cần phân biệt rõ rời phòng và hủy autobidding; chatbot nên khuyên kiểm tra trạng thái autobidding hoặc dùng chức năng hủy nếu muốn dừng tự động đặt giá."
     },
     {
       "title": "Đặt giá trong phiên đấu giá",
-      "content": "Bidder có thể đặt giá trong phòng đấu giá khi phiên đang diễn ra. Giá đặt phải hợp lệ theo giá hiện tại, bước giá và các điều kiện nghiệp vụ của phiên."
+      "content": "Bidder có thể đặt giá trong phòng đấu giá khi phiên đang diễn ra. Người dùng cần nhập mức giá phù hợp theo quy định của phiên đấu giá và xác nhận thao tác đặt giá trên giao diện. Sau khi đặt giá, hệ thống sẽ hiển thị thông báo thành công hoặc thất bại, đồng thời cập nhật giá hiện tại và trạng thái người đang dẫn đầu nếu có thay đổi. Nếu không đặt giá được, người dùng nên kiểm tra số dư, thời gian còn lại của phiên, trạng thái phiên và mức giá đã nhập. Seller hoặc admin không phải vai trò chính để tham gia đặt giá như bidder. Chatbot không hỗ trợ các hành vi gian lận như fake bid, bid ảo hoặc can thiệp kết quả phiên đấu giá."
     },
     {
       "title": "Cập nhật giá realtime",
-      "content": "Khi có người đặt giá thành công, hệ thống cập nhật giá hiện tại và người giữ giá cao nhất cho các client trong phòng. Người dùng nhìn thấy thay đổi giá gần như theo thời gian thực."
-    },
-    {
-      "title": "Xem lịch sử đặt giá",
-      "content": "Người dùng có thể xem lịch sử các lượt đặt giá của một phiên đấu giá. Lịch sử gồm thông tin người đặt, số tiền đặt và thời điểm đặt giá."
+      "content": "Khi có lượt đặt giá hợp lệ, server gửi UPDATE_PRICE hoặc trạng thái phòng mới để cập nhật giá hiện tại gần realtime. Client cập nhật giá trên card lobby, trong phòng đấu giá, biểu đồ giá và thông tin người đang dẫn nếu dữ liệu có sẵn. Nếu người dùng thấy giá không đổi, chatbot nên hướng dẫn kiểm tra kết nối, refresh lobby/phòng, trạng thái phiên hoặc thông báo lỗi từ server. Chatbot không được hứa giá sẽ cập nhật tuyệt đối tức thì; hệ thống phụ thuộc kết nối client-server và phản hồi server."
     },
     {
       "title": "Chat trong phòng đấu giá",
-      "content": "Người dùng trong phòng đấu giá có thể gửi tin nhắn chat. Tin nhắn được server phát lại cho những người đang ở cùng phòng để hỗ trợ trao đổi trong phiên."
+      "content": "Người dùng có thể gửi tin nhắn trong phòng đấu giá bằng cách nhập vào ô chat và nhấn nút gửi. Tin nhắn được phát lại cho những người trong cùng phòng và hiển thị trong chat log/phần lịch sử phòng. Chat trong phòng dùng để trao đổi thông tin liên quan phiên, không phải kênh riêng tư bảo mật tuyệt đối. Chatbot nên nhắc người dùng không gửi mật khẩu, OTP, thông tin nhạy cảm hoặc nội dung lừa đảo trong chat phòng."
     },
     {
       "title": "Xem thời gian còn lại của phiên",
-      "content": "Trong phòng đấu giá, người dùng có thể theo dõi thời gian còn lại của phiên thông qua bộ đếm thời gian. Thời gian này có thể thay đổi nếu phiên được gia hạn do cơ chế anti-sniping."
+      "content": "Trong phòng đấu giá, người dùng theo dõi thời gian còn lại qua bộ đếm timer phía trên màn hình. Thời gian diễn ra được cài bởi người chủ trì phiên đó. Thời gian có thể thay đổi nếu phiên được gia hạn bởi cơ chế anti-sniping hoặc cập nhật trạng thái từ server. Nếu timer hiển thị sai hoặc không chạy, chatbot nên hướng dẫn kiểm tra trạng thái phiên, kết nối server, refresh phòng hoặc rời vào lại phòng."
     },
     {
       "title": "Anti-sniping",
-      "content": "Anti-sniping là cơ chế chống đặt giá vào giây cuối. Khi có bid hợp lệ ở giai đoạn cuối của phiên, hệ thống có thể gia hạn thời gian để các bidder khác có cơ hội phản hồi."
+      "content": "Anti-sniping là cơ chế giảm lợi thế của việc đặt giá sát thời điểm kết thúc phiên. Khi có bid hợp lệ ở khoảng 30 giây cuối, phiên đấu giá có thể được gia hạn để các bidder khác có cơ hội phản hồi. Khi bid thành công kèm gia hạn, thời gian phiên được kéo dài theo thiết lập của seller. Seller có thể cấu hình thời gian gia hạn trong khoảng 60 đến 120 giây. Chatbot nên giải thích anti-sniping như cơ chế công bằng, không phải cách bảo đảm thắng phiên."
     },
     {
       "title": "Khóa người tham gia mới ở cuối phiên",
-      "content": "Trong khoảng thời gian cuối của phiên, hệ thống có thể khóa người mới tham gia phòng. Điều này giúp phiên đấu giá ổn định hơn khi bước vào giai đoạn chốt giá."
+      "content": "Ở giai đoạn cuối phiên, hệ thống có thể khóa hoặc từ chối người mới tham gia để ổn định phiên trước khi chốt. Nếu người dùng vào phòng muộn và không thể vào, nguyên nhân có thể là phiên sắp kết thúc, đã đóng, không đủ số dư hoặc không đáp ứng điều kiện tham gia. Chatbot nên hướng dẫn người dùng quay lại lobby chọn phiên khác, kiểm tra thời gian còn lại hoặc tham gia sớm hơn. Chatbot không được hướng dẫn lách khóa tham gia cuối phiên."
     },
     {
       "title": "Tự động chốt phiên đấu giá",
-      "content": "Khi hết thời gian, hệ thống tự động chốt phiên đấu giá. Nếu có người thắng, phiên chuyển sang trạng thái bán thành công; nếu không có bid hợp lệ, phiên kết thúc không bán được."
+      "content": "Khi hết thời gian, hệ thống tự động chốt phiên đấu giá theo trạng thái server. Nếu có winner hợp lệ, phiên có thể kết thúc với kết quả bán thành công; nếu không có bid hợp lệ, phiên kết thúc không có người thắng. Sau khi kết thúc, người dùng sẽ nhận được thông báo với mã phiên, sản phẩm, giá chốt, người thắng, lý do kết thúc và trạng thái giao dịch. Chatbot nên giải thích rằng kết quả cuối cùng phụ thuộc dữ liệu server, không phụ thuộc lời xác nhận của chatbot."
     },
     {
       "title": "Xử lý tiền khi phiên kết thúc",
-      "content": "Khi phiên kết thúc và có người thắng, hệ thống trừ tiền bidder thắng và cộng tiền cho seller. Nếu phiên bị seller đóng, admin hủy hoặc không có người mua, hệ thống không thực hiện chuyển tiền bán hàng."
+      "content": "Tiền sẽ được xử lý khi phiên kết thúc hợp lệ và phiên đấu giá được xác nhận giao dịch hợp lệ cũng như hợp pháp. Với phiên hết thời gian và có người thắng hợp lệ, hệ thống có thể trừ tiền bidder thắng và cộng tiền cho seller. Nếu seller đóng phiên sớm, admin đóng/hủy/ban hoặc phiên không có winner, hệ thống sẽ không thực hiện chuyển tiền bán hàng, trạng thái giao dịch sẽ được thông báo sau khi một phiên được kết thúc theo bất kỳ lý do nào để đảm bảo người dùng rõ ràng trạng thái của mình. Chatbot không được tự cam kết đã chuyển tiền, hoàn tiền hoặc sửa số dư nếu chưa có phản hồi server."
     },
     {
       "title": "Tự động đưa người dùng về lobby",
-      "content": "Khi phiên đấu giá kết thúc hoặc bị đóng, hệ thống thông báo cho người dùng trong phòng và đưa họ trở lại lobby. Phiên đã kết thúc cũng được gỡ khỏi danh sách phiên đang hoạt động."
+      "content": "Khi phiên đang hoạt động mà đột nhiên bị ban hoặc seller tự ý đóng thì người dùng sẽ được hiển thị trên màn hình thông báo kết thúc phiên và cho phép quay lại lobby. Lobby được refresh để gỡ hoặc cập nhật phiên đã kết thúc. Người dùng có thể chọn quay lại lobby, xem phiên khác hoặc trở về trang seller tùy vai trò và nút hiển thị. Nếu người dùng bị đưa về lobby, chatbot nên giải thích khả năng phiên đã kết thúc, bị seller/admin đóng hoặc không còn hợp lệ."
     },
     {
       "title": "Seller tạo yêu cầu phiên đấu giá",
-      "content": "Seller có thể tạo yêu cầu mở phiên đấu giá bằng cách nhập thông tin sản phẩm, giá khởi điểm, bước giá, số tiền tối thiểu để tham gia, thời gian bắt đầu, thời lượng và thời gian gia hạn."
+      "content": "Nếu là seller có thể bấm nút Create Auction trên góc trái màn hình seller để đến màn hình Seller Dashboard, sau đó nhập tên sản phẩm, mô tả, giá khởi điểm, số tiền tối thiểu để tham gia, bước giá, ngày giờ bắt đầu, thời lượng, thời gian gia hạn và có thể tải ảnh sản phẩm. Sau khi tạo xong, phiên sẽ được kiểm duyệt đmục đích xác thực tính hợp pháp và hợp lý theo quy định hiện hành. Chatbot có thể hướng dẫn seller điền form, giải thích từng trường và cách xử lý lỗi validation."
     },
     {
       "title": "Kiểm tra dữ liệu tạo phiên đấu giá",
-      "content": "Khi seller tạo phiên, hệ thống kiểm tra dữ liệu đầu vào trước khi gửi duyệt. Số tiền tối thiểu để tham gia phải lớn hơn 10 phần trăm giá khởi điểm và nhỏ hơn 75 phần trăm giá khởi điểm."
+      "content": "Dữ liệu tạo phiên sẽ được kiểm tra trước khi gửi lên server. Tên sản phẩm không được rỗng; giá khởi điểm phải lớn hơn 0; số tiền tối thiểu tham gia không được từ 75% giá khởi điểm trở lên; bước giá phải lớn hơn 0; thời lượng phải lớn hơn 0 phút; extension seconds phải trong khoảng 60 đến 120 giây; thời gian bắt đầu phải là hiện tại hoặc tương lai. Nếu dữ liệu không hợp lệ, client hiển thị lỗi và không gửi yêu cầu tạo phiên. Chatbot nên chỉ ra trường nào cần sửa và không được tự tạo phiên khi người dùng chưa nhập đủ dữ liệu."
     },
     {
       "title": "Yêu cầu duyệt phiên đấu giá",
-      "content": "Phiên đấu giá do seller tạo không được mở trực tiếp ngay mà được đưa vào danh sách chờ duyệt. Admin có thể xem danh sách này để quyết định phê duyệt hoặc từ chối."
+      "content": "Phiên do seller tạo có thể được đưa vào danh sách pending để admin duyệt. Admin dashboard có bảng Pending Product Approval hiển thị requestId, sellerId, organization, item name, description, starting price, minimum join amount, bid step, start time, duration, extension, seller reputation, success rate và admin cancel rate. Admin có thể approve hoặc reject yêu cầu qua ADMIN_APPROVE_AUCTION và ADMIN_REJECT_AUCTION. Chatbot có thể giải thích trạng thái chờ duyệt và vai trò của admin, nhưng không được tự duyệt/thay đổi trạng thái nếu không có thao tác admin thật."
     },
     {
       "title": "Seller đóng phiên đấu giá",
-      "content": "Seller có thể chủ động đóng phiên đấu giá của mình trong trường hợp phù hợp. Khi seller đóng phiên, hệ thống không thực hiện chuyển tiền bán hàng."
+      "content": "Seller có thể đóng phiên của mình từ phòng điều khiển seller bằng nút END AUCTION nếu đang là seller của room đó. Bidder chỉ hiển thị nút đóng phiên cho user có vai trò SELLER và trùng seller của phòng hiện tại. Khi seller đóng phiên, tất cả người dùng trong phòng sẽ được thông báo và được đưa về lobby. Đóng phiên bởi seller không phải kết thúc tự nhiên do hết giờ; nghiệp vụ tiền cần phân biệt rõ và không chuyển tiền bán hàng nếu seller đóng sớm. Chatbot không được hướng dẫn seller đóng phiên của người khác hoặc bypass quyền đóng phiên."
     },
     {
       "title": "Thông báo trạng thái phiên",
-      "content": "Hệ thống gửi thông báo về các thay đổi quan trọng của phiên như tham gia phòng thành công, đặt giá thành công, cập nhật giá, cập nhật số dư và phiên đã đóng."
+      "content": "Hệ thống gửi thông báo và cập nhật trạng thái cho các sự kiện quan trọng như đăng nhập/đăng ký/reset thành công hoặc thất bại, tham gia phòng, tạo phiên, đặt giá, cập nhật giá, lỗi bid, lỗi vào phòng, cập nhật số dư, auto bid thành công/thất bại, hủy auto bid và phiên kết thúc. Trong phòng, nhiều thông báo được append vào chat log hoặc hiển thị bằng alert. Màn hình kết thúc phiên hiển thị tiêu đề, nội dung, mã phiên, sản phẩm, giá chốt, winner, lý do kết thúc, trạng thái giao dịch và hành động tiếp theo. Chatbot nên dựa trên thông báo thật từ UI/server để giải thích, không tự suy đoán kết quả."
     },
     {
       "title": "Chatbot hỗ trợ người dùng",
-      "content": "Hệ thống có chatbot hỗ trợ giải đáp nhanh cho người dùng trong ứng dụng. Chatbot có thể xử lý các câu hỏi về chào hỏi, xác nhận, khen, liên hệ admin, số dư, tìm phiên, đặt giá, tạo phiên, thời gian còn lại và anti-sniping."
+      "content": "Client gọi Python chatbot thông qua Auction_AI/ChatBot, truyền câu hỏi người dùng và đọc output JSON để hiển thị câu trả lời. Chatbot dùng miền tri thức giới hạn để hỗ trợ người dùng về thao tác trong hệ thống đấu giá: tài khoản, lobby, phòng, bid, auto bid, seller, admin, trạng thái phiên, sản phẩm và lỗi thường gặp. Nếu tiến trình Python lỗi, timeout hoặc không trả lời hợp lệ, client dùng fallback answer. Chatbot không trực tiếp thao tác database, không sửa server, không thay người dùng gửi lệnh nếu UI/backend không thực hiện. Khi câu hỏi cần hành động thật, chatbot nên hướng dẫn người dùng thao tác trên giao diện hoặc yêu cầu liên hệ admin."
     },
     {
       "title": "Ngoài lề",
-      "content": "Đây là nhãn dành cho câu hỏi không liên quan đến hệ thống đấu giá, ví dụ thời tiết, địa điểm ngoài đời, sức khỏe, học tập, giải trí, lập trình chung hoặc câu hỏi cá nhân. Chatbot không trả lời chi tiết nội dung ngoài lề, chỉ thông báo chưa có thông tin phù hợp và gợi ý người dùng hỏi về thao tác trong hệ thống đấu giá."
+      "content": "Nhãn Ngoài lề dùng cho câu hỏi rõ nghĩa nhưng không liên quan đến hệ thống đấu giá, ví dụ thời tiết, học tập, lập trình chung, chuyện cá nhân, giải trí, tư vấn mua đồ ngoài hệ thống hoặc yêu cầu không thuộc app. Chatbot không trả lời chi tiết nội dung ngoài lề và nên chuyển hướng người dùng quay lại các thao tác trong Auction. Ngoài lề khác Không Rõ: ngoài lề là câu hiểu được nhưng không thuộc miền hệ thống; không rõ là câu thiếu ngữ cảnh hoặc không xác định được ý định. Ngoài lề khác Chủ đề nguy hiểm: nếu câu hỏi có yếu tố gây hại, gian lận, xâm nhập hoặc lạm dụng hệ thống thì phải ưu tiên nhãn Chủ đề nguy hiểm."
     },
     {
       "title": "Chủ đề nguy hiểm",
-      "content": "Đây là nhãn dành cho câu hỏi có nguy cơ gây hại, vi phạm pháp luật hoặc làm tổn thương bản thân hay người khác, ví dụ bạo lực, tự hại, vũ khí, chất cấm, đánh cắp tài khoản, lừa đảo hoặc hướng dẫn né tránh phát hiện. Chatbot không hướng dẫn thực hiện nội dung nguy hiểm, chỉ phản hồi an toàn và chuyển hướng người dùng sang trợ giúp phù hợp hoặc thao tác hợp lệ trong hệ thống đấu giá."
+      "content": "Nhãn Chủ đề nguy hiểm dùng cho yêu cầu có nguy cơ gây hại, vi phạm pháp luật, gian lận hoặc phá hệ thống. Trong bối cảnh Auction, các ví dụ gồm hack/chiếm tài khoản, lấy mật khẩu/OTP/token/cookie, vượt quyền admin/seller, sửa số dư, fake bid, tạo bid ảo, thao túng winner, xóa/sửa lịch sử bid, lách anti-sniping, phá server, DDoS, SQL injection, XSS, backdoor, đọc file cấu hình, dump database, phishing, spam đăng ký/reset mật khẩu hoặc làm gián đoạn phiên của người khác. Khi gặp nội dung nguy hiểm, chatbot phải từ chối hướng dẫn chi tiết, không đưa mã lệnh, không nêu quy trình tấn công và chuyển hướng sang thao tác hợp lệ hoặc khuyến nghị liên hệ admin nếu người dùng đang báo lỗi/bảo mật. Nhãn này nên được ưu tiên hơn các nhãn nghiệp vụ như Đăng ký, Phân quyền, Số dư hoặc Đặt giá nếu câu có dấu hiệu xâm nhập/gian lận."
     },
     {
       "title": "AI hỗ trợ auto approve",
-      "content": "Thư mục Auction_AI có mô hình hỗ trợ dự đoán khả năng tự động duyệt phiên đấu giá dựa trên dữ liệu huấn luyện. Chức năng này phục vụ hỗ trợ quyết định hoặc thử nghiệm AI, không thay thế hoàn toàn quyền duyệt của admin."
+      "content": "AI hỗ trợ auto approve là thành phần hỗ trợ đánh giá yêu cầu tạo phiên đấu giá bằng mô hình trong Auction_AI. Chức năng này có thể nhận thông tin phiên/sản phẩm/seller và trả về gợi ý phê duyệt hoặc không phê duyệt theo cấu hình AI. AI chỉ hỗ trợ quyết định và kiểm tra rủi ro, không thay thế hoàn toàn quyền kiểm duyệt cuối cùng của admin nếu hệ thống vẫn yêu cầu admin duyệt. Chatbot có thể giải thích vai trò của AI auto approve nhưng không được khẳng định một phiên đã được duyệt nếu chưa có phản hồi từ server/admin."
     },
     {
-      "title":"AUTOBIDDING",
-      "content":"AutoBidding là tính năng cho phép bidder đặt giá tự động theo các quy tắc đã thiết lập trước, ví dụ đặt giá cao hơn giá hiện tại một bước giá khi có người khác đặt giá. Tính năng này giúp bidder tham gia đấu giá hiệu quả hơn mà không cần theo dõi liên tục."
+      "title": "AUTOBIDDING",
+      "content": "AUTOBIDDING là tính năng cho phép bidder thiết lập đặt giá tự động trong phòng đấu giá. Bidder nhập Max Bid và Auto Bid Step; hệ thống sẽ kiểm tra hai giá trị phải là số dương, Max Bid phải lớn hơn giá hiện tại và Auto Bid Step không được nhỏ hơn bidStep tối thiểu của phòng. Khi hợp lệ, hệ thống sẽ thiết lập auto bid và bắt đầu đặt giá hộ bidder; khi muốn dừng, bidder chỉ cần nhấn nút dừng. Hệ thống sẽ ghi thông báo vào chat log khi đặt giá tự động thành công. Autobidding liên quan trực tiếp đến đặt giá, số dư, giá realtime, thời gian còn lại, anti-sniping và trạng thái phiên; chatbot cần giải thích rằng auto bid phải tuân thủ luật phiên, số dư và giới hạn người dùng đặt ra. Chatbot phải phân biệt autobidding hợp lệ với fake bid, bot phá phiên hoặc gian lận; các yêu cầu gian lận phải chuyển sang Chủ đề nguy hiểm."
+    },
+    {
+      "title": "Không Rõ",
+      "content": "Nhãn Không Rõ dùng cho câu hỏi thiếu ngữ cảnh, quá ngắn, mơ hồ hoặc không xác định được người dùng đang muốn thao tác gì trong hệ thống. Ví dụ: 'sao không được', 'bấm đâu', 'nó lỗi rồi', 'giúp tôi với', 'tôi bị kẹt', 'không thấy gì cả'. Khi gặp Không Rõ, chatbot nên hỏi lại thông tin cụ thể như người dùng đang ở màn nào, vai trò là bidder/seller/admin, đang thao tác đăng nhập, vào phòng, đặt giá, tạo phiên hay auto bid, và thông báo lỗi hiển thị là gì. Không nên gán Không Rõ cho câu có ý định rõ như quên mật khẩu, đặt giá, xem số dư, vào phòng, hỏi ngoài lề hoặc yêu cầu nguy hiểm."
     }
   ]
 }
