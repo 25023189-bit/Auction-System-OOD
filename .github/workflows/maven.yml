@@ -21,5 +21,11 @@ jobs:
           distribution: 'temurin'
           cache: 'maven'
 
-      - name: 3. Biên dịch và tự động kiểm tra định dạng mã nguồn kết hợp Unit Test
-        run: mvn clean test
+      - name: 3. Cài xvfb cho JavaFX headless test
+        run: sudo apt-get update && sudo apt-get install -y xvfb
+
+      - name: 4. Cấp quyền chạy Maven Wrapper
+        run: chmod +x mvnw
+
+      - name: 5. Biên dịch và tự động kiểm tra định dạng mã nguồn kết hợp Unit Test
+        run: xvfb-run -a ./mvnw clean test
