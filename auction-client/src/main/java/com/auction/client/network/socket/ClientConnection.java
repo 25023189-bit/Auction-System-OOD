@@ -1,5 +1,6 @@
 package com.auction.client.network.socket;
 
+import com.auction.client.network.config.ClientNetworkConfig;
 import com.auction.common.dto.Message;
 
 import java.io.EOFException;
@@ -17,7 +18,7 @@ import org.slf4j.LoggerFactory;
  * - Chạy reader thread nhận response liên tục rồi chuyển về AuctionController.
  *
  * Luồng chính:
- * 1. connect() tạo thread nền, kết nối localhost:8080 và khởi tạo ObjectInputStream/ObjectOutputStream.
+ * 1. connect() tạo thread nền, đọc endpoint cấu hình và khởi tạo ObjectInputStream/ObjectOutputStream.
  * 2. Reader loop đọc Message từ server, gọi controller.onServerResponse(), còn sendMessage() ghi request ra socket.
  *
  * Business rules:
@@ -30,9 +31,6 @@ import org.slf4j.LoggerFactory;
  */
 public class ClientConnection {
     private static final Logger LOGGER = LoggerFactory.getLogger(ClientConnection.class);
-
-    private final String host = "100.120.197.41";
-    private final int port = 8080;
 
     private Socket socket;
     private ObjectOutputStream out;
@@ -49,7 +47,10 @@ public class ClientConnection {
             try {
                 listener.updateConnectionStatus("Connecting...");
 
-                socket = new Socket(host, port);
+                socket = new Socket(
+                        ClientNetworkConfig.getServerHost(),
+                        ClientNetworkConfig.getServerPort()
+                );
                 out = new ObjectOutputStream(socket.getOutputStream());
                 in = new ObjectInputStream(socket.getInputStream());
 

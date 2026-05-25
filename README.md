@@ -100,6 +100,28 @@ com.auction.client.app.Launcher
 
 và chạy.
 
+### Chạy bản đóng gói trong thư mục release
+
+Chạy server trước, sau đó chạy client:
+
+```powershell
+cd release
+java -jar auction-server.jar
+java -jar auction-client.jar
+```
+
+Client đọc endpoint server từ `client.properties` trong thư mục đang chạy:
+
+```properties
+server.host=localhost
+server.port=8080
+```
+
+- Chạy local: giữ `server.host=localhost`.
+- Hai máy cùng LAN: đổi `server.host` thành địa chỉ IPv4 của máy chạy server.
+- Qua Tailscale: đổi `server.host` thành Tailscale IP của máy chạy server.
+- Có thể override file cấu hình bằng biến môi trường `AUCTION_SERVER_HOST` và `AUCTION_SERVER_PORT`.
+
 ---
 
 # 4. Tài khoản mẫu
@@ -882,10 +904,14 @@ double initialBalance = 1000000; // thay đổi số tiền ban đầu cho bidde
 
 ## 11.5. Port server
 
-```java
-// Trong AuctionServer.java
-int PORT = 5000; // thay đổi port ở đây
+Server lắng nghe port `8080`. Client lấy địa chỉ kết nối từ file `client.properties` đặt cạnh JAR khi chạy:
+
+```properties
+server.host=localhost
+server.port=8080
 ```
+
+Nếu file không tồn tại hoặc cấu hình không hợp lệ, client dùng mặc định `localhost:8080`.
 
 ## 11.6. Database configuration
 
