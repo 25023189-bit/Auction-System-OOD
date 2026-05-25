@@ -3,26 +3,26 @@
   "source": "auction-system",
   "samples": [
     {
-      "title": "uuu",
+      "title": "Le Phe Do",
       "category": "",
       "organization": "D",
-      "description": "áddasasd",
+      "description": "TRR",
       "seller_rating": 5.0,
-      "seller_completed_rating": 0.0,
-      "seller_cancel_rate": 1.0,
-      "minimum_join_amount": 100.0,
-      "minimum_join_ratio": 0.1,
+      "seller_completed_rating": 0.5,
+      "seller_cancel_rate": 0.5,
+      "minimum_join_amount": 60.0,
+      "minimum_join_ratio": 0.06,
       "bid_step": 100.0,
       "bid_step_ratio": 0.1,
       "start_price": 1000.0,
       "start_price_log": 6.907755278982137,
-      "duration_minutes": 50.0,
+      "duration_minutes": 30.0,
       "extension_seconds": 60.0,
-      "start_hour": 22.0,
-      "day_of_week": 6.0,
-      "is_weekend": 1.0,
-      "title_length": 3.0,
-      "desc_length": 8.0
+      "start_hour": 10.0,
+      "day_of_week": 0.0,
+      "is_weekend": 0.0,
+      "title_length": 9.0,
+      "desc_length": 3.0
     }
   ]
 }

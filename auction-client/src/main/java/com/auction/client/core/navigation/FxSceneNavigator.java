@@ -132,7 +132,7 @@ public class FxSceneNavigator implements SceneNavigator {
             Stage stage = resolveStage();
             windowStateHandler.capture(stage);
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/notify-end-auction-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/fxml/notify-end-auction-view.fxml"));
             Parent root = loader.load();
 
             NotifyEndAuctionController controller = loader.getController();

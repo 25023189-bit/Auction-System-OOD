@@ -11,12 +11,11 @@ from joblib import load
 from .paths import CHATBOT_DIR, KNOWLEDGE_PATH, LABELS_PATH, MODEL_PATH
 
 
-DEFAULT_THRESHOLD = 0.25
-MAX_SELECTED_LABELS = 1
+DEFAULT_THRESHOLD = 0.5
 UNCLEAR_LABEL = "KHÔNG RÕ"
 OUT_OF_SCOPE_LABEL = "NGOÀI LỀ"
 DANGEROUS_TOPIC_LABEL = "CHỦ ĐỀ NGUY HIỂM"
-DIRECT_LOGIST_ANSWER_LABELS = {DANGEROUS_TOPIC_LABEL}
+DIRECT_LOGIST_ANSWER_LABELS = {DANGEROUS_TOPIC_LABEL, OUT_OF_SCOPE_LABEL}
 LOG_PATH = CHATBOT_DIR / "status" / "chatbot_process.log"
 LOGGER_NAME = "auction_ai.chatbot.logist"
 
@@ -189,18 +188,24 @@ def select_labels(
     scores: dict[str, float],
     message: str = "",
     threshold: float = DEFAULT_THRESHOLD,
-    max_labels: int = MAX_SELECTED_LABELS,
 ) -> list[str]:
+    """Select every intent whose probability reaches the runtime threshold.
+
+    Runtime policy:
+    - multi-label is allowed; no top-1/top-k truncation is applied;
+    - labels are returned from highest to lowest probability;
+    - if every label is below the threshold, return the canonical unclear label.
+    """
     ranked = sorted(scores.items(), key=lambda item: item[1], reverse=True)
     selected = [
         label for label, score in ranked
         if score >= threshold
     ]
 
-    if not selected and ranked:
-        selected = [_fallback_label(scores, ranked)]
+    if selected:
+        return selected
 
-    return selected[:max_labels]
+    return [UNCLEAR_LABEL] if ranked else []
 
 
 def classify_message(

@@ -1,0 +1,201 @@
+﻿text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+"Cuối phiên có khóa người mới tham gia không, vì thời gian còn lại của phiên đang rất ít.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, cuối phiên có khóa người mới tham gia không, khi tôi bấm tham gia phòng đấu giá mình đang thao tác?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+cuoi phien co khoa nguoi moi tham gia ko va co lien quan den anti-sniping dung ko vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+cuối phien có khóa người mới tham gia không rồi hệ thống tự động chốt phiên sau đó nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+"cuối phiên có khóa người mới tham gia không kèm thông báo rõ cho bidder biết đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Ê cho hỏi, cuối phiên có khóa người mới tham gia không, nếu không được vào thì có đưa về lobby không; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+Vì sao gần hết giờ tôi không vào phòng được nữa và vẫn cho người đang trong phòng đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, vì sao gần hết giờ tôi không vào phòng được nữa để tránh người vào muộn phá giá realtime để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"vi sao gan het gio toi ko vao room dc nua, vi phien vua dc seller dong som dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+vì sao gần hết giờ tôi không vào phòng được nữa rồi xử lý tiền sau khi kết thúc phien pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0
+"vì sao gần hết giờ tôi không vào phòng được nữa và chatbot cần giải thích rule này cho người mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, vì sao gần hết giờ tôi không vào phòng được nữa, khi phòng tự khóa rồi tự chốt; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0
+"Hệ thống chặn người mới ở phút cuối đúng không, vì thời gian còn lại của phiên đang rất ít.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, hệ thống chặn người mới ở phút cuối đúng không, khi tôi bấm tham gia phòng đấu giá mình đang thao tác?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+he thong chan nguoi moi o phut cuoi dung ko va co lien quan den anti-sniping dung ko vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+hệ thống chặn người mới ở phút cuối đúng không rồi hệ thống tự động chốt phien sau đó nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống chặn người mới ở phút cuối đúng không kèm thông báo rõ cho bidder biết đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Ê cho hỏi, hệ thống chặn người mới ở phút cuối đúng không, nếu không được vào thì có đưa về lobby không; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+Khi còn ít thời gian thì có cấm join room không và vẫn cho người đang trong phòng đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, khi còn ít thời gian thì có cấm join room không để tránh người vào muộn phá giá realtime để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"khi con it thoi gian thi co cam join room ko, vi phien vua dc seller dong som dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+khi còn ít thời gian thì có cấm join room không rồi xử lý tiền sau khi kết thúc phien pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi còn ít thời gian thì có cấm join room không và chatbot cần giải thích rule này cho người mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, khi còn ít thời gian thì có cấm join room không, khi phòng tự khóa rồi tự chốt; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0
+"Người mới có được vào phiên trong 30 giây cuối không, vì thời gian còn lại của phiên đang rất ít.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, người mới có được vào phiên trong 30 giây cuối không, khi tôi bấm tham gia phòng đấu giá mình đang thao tác?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+nguoi moi co dc vao phien trong 30 giay cuoi ko va co lien quan den anti-sniping dung ko vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+người mới có được vào phien trong 30 giây cuối không rồi hệ thống tự động chốt phiên sau đó nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+"người mới có được vào phiên trong 30 giây cuối không kèm thông báo rõ cho bidder biết đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Ê cho hỏi, người mới có được vào phiên trong 30 giây cuối không, nếu không được vào thì có đưa về lobby không; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+Tôi muốn biết rule khóa tham gia cuối phiên và vẫn cho người đang trong phòng đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, tôi muốn biết rule khóa tham gia cuối phiên để tránh người vào muộn phá giá realtime để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"toi muon biet rule khoa tham gia cuoi phien, vi phien vua dc seller dong som dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+tôi muốn biết rule khóa tham gia cuối phien rồi xử lý tiền sau khi kết thúc phiên pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0
+"tôi muốn biết rule khóa tham gia cuối phiên và chatbot cần giải thích rule này cho người mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, tôi muốn biết rule khóa tham gia cuối phiên, khi phòng tự khóa rồi tự chốt; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0
+"Phòng đấu giá tự đóng cổng vào lúc nào, vì thời gian còn lại của phiên đang rất ít.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, phòng đấu giá tự đóng cổng vào lúc nào, khi tôi bấm tham gia phòng đấu giá mình đang thao tác?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+room dg auto cong vao luc nao va co lien quan den anti-sniping dung ko vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+phòng đấu giá tự đóng cổng vào lúc nào rồi hệ thống tự động chốt phien sau đó nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phòng đấu giá tự đóng cổng vào lúc nào kèm thông báo rõ cho bidder biết đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Ê cho hỏi, phòng đấu giá tự đóng cổng vào lúc nào, nếu không được vào thì có đưa về lobby không; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+Gần kết thúc phiên thì bidder mới bị chặn à và vẫn cho người đang trong phòng đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, gần kết thúc phiên thì bidder mới bị chặn à để tránh người vào muộn phá giá realtime để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gan ket thuc phien thi bidder moi bi chan a, vi phien vua dc seller dong som dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+gần kết thúc phien thì bidder mới bị chặn à rồi xử lý tiền sau khi kết thúc phiên pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0
+"gần kết thúc phiên thì bidder mới bị chặn à và chatbot cần giải thích rule này cho người mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, gần kết thúc phiên thì bidder mới bị chặn à, khi phòng tự khóa rồi tự chốt; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0
+"Cuối phiên app báo không nhận người tham gia mới, vì thời gian còn lại của phiên đang rất ít.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, cuối phiên app báo không nhận người tham gia mới, khi tôi bấm tham gia phòng đấu giá mình đang thao tác?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+cuoi phien app bao ko nhan nguoi tham gia moi va co lien quan den anti-sniping dung ko vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+cuối phien app báo không nhận người tham gia mới rồi hệ thống tự động chốt phiên sau đó nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+"cuối phiên app báo không nhận người tham gia mới kèm thông báo rõ cho bidder biết đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Ê cho hỏi, cuối phiên app báo không nhận người tham gia mới, nếu không được vào thì có đưa về lobby không; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+Chính sách khóa người vào muộn hoạt động thế nào và vẫn cho người đang trong phòng đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, chính sách khóa người vào muộn hoạt động thế nào để tránh người vào muộn phá giá realtime để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"chinh sach khoa nguoi vao muon hoat dong the nao, vi phien vua dc seller dong som dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+chính sách khóa người vào muộn hoạt động thế nào rồi xử lý tiền sau khi kết thúc phien pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0
+"chính sách khóa người vào muộn hoạt động thế nào và chatbot cần giải thích rule này cho người mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, chính sách khóa người vào muộn hoạt động thế nào, khi phòng tự khóa rồi tự chốt; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0
+"Còn một phút mà bạn tôi không join được, vì thời gian còn lại của phiên đang rất ít.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, còn một phút mà bạn tôi không join được, khi tôi bấm tham gia phòng đấu giá mình đang thao tác?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+con mot phut ma ban toi ko join dc va co lien quan den anti-sniping dung ko vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+còn một phút mà bạn tôi không join được rồi hệ thống tự động chốt phien sau đó nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+"còn một phút mà bạn tôi không join được kèm thông báo rõ cho bidder biết đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Ê cho hỏi, còn một phút mà bạn tôi không join được, nếu không được vào thì có đưa về lobby không; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+Có phải anti-sniping nên khóa người mới không và vẫn cho người đang trong phòng đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, có phải anti-sniping nên khóa người mới không để tránh người vào muộn phá giá realtime để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"co phai anti-sniping nen khoa nguoi moi ko, vi phien vua dc seller dong som dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+có phải anti-sniping nên khóa người mới không rồi xử lý tiền sau khi kết thúc phien pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0
+"có phải anti-sniping nên khóa người mới không và chatbot cần giải thích rule này cho người mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, có phải anti-sniping nên khóa người mới không, khi phòng tự khóa rồi tự chốt; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0
+"Khi countdown thấp thì hệ thống khóa nút tham gia à, vì thời gian còn lại của phiên đang rất ít.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, khi countdown thấp thì hệ thống khóa nút tham gia à, khi tôi bấm tham gia phòng đấu giá mình đang thao tác?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+khi countdown thap thi he thong khoa nut tham gia a va co lien quan den anti-sniping dung ko vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+khi countdown thấp thì hệ thống khóa nút tham gia à rồi hệ thống tự động chốt phien sau đó nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+"khi countdown thấp thì hệ thống khóa nút tham gia à kèm thông báo rõ cho bidder biết đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Ê cho hỏi, khi countdown thấp thì hệ thống khóa nút tham gia à, nếu không được vào thì có đưa về lobby không; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+Khóa người mới trước khi chốt phiên bao lâu và vẫn cho người đang trong phòng đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, khóa người mới trước khi chốt phiên bao lâu để tránh người vào muộn phá giá realtime để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"khoa nguoi moi truoc khi chot phien bao lau, vi phien vua dc seller dong som dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+khóa người mới trước khi chốt phien bao lâu rồi xử lý tiền sau khi kết thúc phiên pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khóa người mới trước khi chốt phiên bao lâu và chatbot cần giải thích rule này cho người mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, khóa người mới trước khi chốt phiên bao lâu, khi phòng tự khóa rồi tự chốt; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0
+"Bidder đến muộn có bị đẩy ra không, vì thời gian còn lại của phiên đang rất ít.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, bidder đến muộn có bị đẩy ra không, khi tôi bấm tham gia phòng đấu giá mình đang thao tác?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+bidder den muon co bi day ra ko va co lien quan den anti-sniping dung ko vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+bidder đến muộn có bị đẩy ra không rồi hệ thống tự động chốt phien sau đó nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+"bidder đến muộn có bị đẩy ra không kèm thông báo rõ cho bidder biết đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Ê cho hỏi, bidder đến muộn có bị đẩy ra không, nếu không được vào thì có đưa về lobby không; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+Vì sao nút tham gia bị disabled cuối phiên và vẫn cho người đang trong phòng đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, vì sao nút tham gia bị disabled cuối phiên để tránh người vào muộn phá giá realtime để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"vi sao nut tham gia bi disabled cuoi phien, vi phien vua dc seller dong som dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+vì sao nút tham gia bị disabled cuối phien rồi xử lý tiền sau khi kết thúc phiên pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0
+"vì sao nút tham gia bị disabled cuối phiên và chatbot cần giải thích rule này cho người mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, vì sao nút tham gia bị disabled cuối phiên, khi phòng tự khóa rồi tự chốt; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0
+"Admin có đặt thời gian khóa người mới không, vì thời gian còn lại của phiên đang rất ít.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, admin có đặt thời gian khóa người mới không, khi tôi bấm tham gia phòng đấu giá mình đang thao tác?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+ad co dat thoi gian khoa nguoi moi ko va co lien quan den anti-sniping dung ko vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+admin có đặt thời gian khóa người mới không rồi hệ thống tự động chốt phien sau đó nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+"admin có đặt thời gian khóa người mới không kèm thông báo rõ cho bidder biết đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Ê cho hỏi, admin có đặt thời gian khóa người mới không, nếu không được vào thì có đưa về lobby không; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+Seller có nhìn thấy trạng thái khóa join cuối phiên không và vẫn cho người đang trong phòng đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, seller có nhìn thấy trạng thái khóa join cuối phiên không để tránh người vào muộn phá giá realtime để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"seller co nhin thay trang thai khoa join cuoi phien ko, vi phien vua dc seller dong som dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+seller có nhìn thấy trạng thái khóa join cuối phien không rồi xử lý tiền sau khi kết thúc phiên pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0
+"seller có nhìn thấy trạng thái khóa join cuối phiên không và chatbot cần giải thích rule này cho người mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, seller có nhìn thấy trạng thái khóa join cuối phiên không, khi phòng tự khóa rồi tự chốt; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0
+"Phòng còn mở nhưng không cho người mới vào, vì thời gian còn lại của phiên đang rất ít.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, phòng còn mở nhưng không cho người mới vào, khi tôi bấm tham gia phòng đấu giá mình đang thao tác?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+room con mo nhung ko cho nguoi moi vao va co lien quan den anti-sniping dung ko vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+phòng còn mở nhưng không cho người mới vào rồi hệ thống tự động chốt phien sau đó nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+"phòng còn mở nhưng không cho người mới vào kèm thông báo rõ cho bidder biết đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Ê cho hỏi, phòng còn mở nhưng không cho người mới vào, nếu không được vào thì có đưa về lobby không; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+Luật cuối phiên có ngăn user mới vào phá giá không và vẫn cho người đang trong phòng đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, luật cuối phiên có ngăn user mới vào phá giá không để tránh người vào muộn phá giá realtime để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"luat cuoi phien co ngan user moi vao pha gia ko, vi phien vua dc seller dong som dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+luật cuối phien có ngăn user mới vào phá giá không rồi xử lý tiền sau khi kết thúc phiên pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0
+"luật cuối phiên có ngăn user mới vào phá giá không và chatbot cần giải thích rule này cho người mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, luật cuối phiên có ngăn user mới vào phá giá không, khi phòng tự khóa rồi tự chốt; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0
+"Tôi đang ở lobby nhưng không vào được phiên sắp hết giờ, vì thời gian còn lại của phiên đang rất ít.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, tôi đang ở lobby nhưng không vào được phiên sắp hết giờ, khi tôi bấm tham gia phòng đấu giá mình đang thao tác?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+toi dang o lobby nhung ko vao dc phien sap het gio va co lien quan den anti-sniping dung ko vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+tôi đang ở lobby nhưng không vào được phien sắp hết giờ rồi hệ thống tự động chốt phiên sau đó nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi đang ở lobby nhưng không vào được phiên sắp hết giờ kèm thông báo rõ cho bidder biết đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Ê cho hỏi, tôi đang ở lobby nhưng không vào được phiên sắp hết giờ, nếu không được vào thì có đưa về lobby không; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+Khóa người tham gia mới có thông báo cho user không và vẫn cho người đang trong phòng đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, khóa người tham gia mới có thông báo cho user không để tránh người vào muộn phá giá realtime để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"khoa nguoi tham gia moi co thong bao cho user ko, vi phien vua dc seller dong som dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+khóa người tham gia mới có thông báo cho user không rồi xử lý tiền sau khi kết thúc phien pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khóa người tham gia mới có thông báo cho user không và chatbot cần giải thích rule này cho người mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, khóa người tham gia mới có thông báo cho user không, khi phòng tự khóa rồi tự chốt; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0
+"Cuối phiên có phân biệt người đang ở trong phòng và người mới không, vì thời gian còn lại của phiên đang rất ít.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, cuối phiên có phân biệt người đang ở trong phòng và người mới không, khi tôi bấm tham gia phòng đấu giá mình đang thao tác?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+cuoi phien co phan biet nguoi dang o trong room va nguoi moi ko va co lien quan den anti-sniping dung ko vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+cuối phien có phân biệt người đang ở trong phòng và người mới không rồi hệ thống tự động chốt phiên sau đó nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+"cuối phiên có phân biệt người đang ở trong phòng và người mới không kèm thông báo rõ cho bidder biết đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Ê cho hỏi, cuối phiên có phân biệt người đang ở trong phòng và người mới không, nếu không được vào thì có đưa về lobby không; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+Hệ thống khóa join rồi thì có tự chuyển về lobby không và vẫn cho người đang trong phòng đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, hệ thống khóa join rồi thì có tự chuyển về lobby không để tránh người vào muộn phá giá realtime để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong khoa join roi thi co tu chuyen ve lobby ko, vi phien vua dc seller dong som dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+hệ thống khóa join rồi thì có tự chuyển về lobby không rồi xử lý tiền sau khi kết thúc phien pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống khóa join rồi thì có tự chuyển về lobby không và chatbot cần giải thích rule này cho người mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, hệ thống khóa join rồi thì có tự chuyển về lobby không, khi phòng tự khóa rồi tự chốt; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0
+"Nếu phiên được gia hạn anti-sniping thì còn khóa người mới không, vì thời gian còn lại của phiên đang rất ít.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, nếu phiên được gia hạn anti-sniping thì còn khóa người mới không, khi tôi bấm tham gia phòng đấu giá mình đang thao tác?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+neu phien dc gia han anti-sniping thi con khoa nguoi moi ko va co lien quan den anti-sniping dung ko vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+nếu phien được gia hạn anti-sniping thì còn khóa người mới không rồi hệ thống tự động chốt phiên sau đó nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+"nếu phiên được gia hạn anti-sniping thì còn khóa người mới không kèm thông báo rõ cho bidder biết đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Ê cho hỏi, nếu phiên được gia hạn anti-sniping thì còn khóa người mới không, nếu không được vào thì có đưa về lobby không; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+Người mới bấm join lúc chốt phiên thì xử lý sao và vẫn cho người đang trong phòng đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, người mới bấm join lúc chốt phiên thì xử lý sao để tránh người vào muộn phá giá realtime để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"nguoi moi bam join luc chot phien thi xu ly sao, vi phien vua dc seller dong som dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+người mới bấm join lúc chốt phien thì xử lý sao rồi xử lý tiền sau khi kết thúc phiên pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0
+"người mới bấm join lúc chốt phiên thì xử lý sao và chatbot cần giải thích rule này cho người mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, người mới bấm join lúc chốt phiên thì xử lý sao, khi phòng tự khóa rồi tự chốt; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0
+"Còn 10 giây mà app không cho vào phòng, vì thời gian còn lại của phiên đang rất ít.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, còn 10 giây mà app không cho vào phòng, khi tôi bấm tham gia phòng đấu giá mình đang thao tác?",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+con 10 giay ma app ko cho vao room va co lien quan den anti-sniping dung ko vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+còn 10 giây mà app không cho vào phòng rồi hệ thống tự động chốt phien sau đó nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+"còn 10 giây mà app không cho vào phòng kèm thông báo rõ cho bidder biết đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+"Ê cho hỏi, còn 10 giây mà app không cho vào phòng, nếu không được vào thì có đưa về lobby không; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+Khóa người mới cuối phiên có áp dụng cho tất cả bidder không và vẫn cho người đang trong phòng đặt giá tiếp.,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, khóa người mới cuối phiên có áp dụng cho tất cả bidder không để tránh người vào muộn phá giá realtime để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"khoa nguoi moi cuoi phien co ap dung cho tat ca bidder ko, vi phien vua dc seller dong som dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+khóa người mới cuối phien có áp dụng cho tất cả bidder không pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"khóa người mới cuối phiên có áp dụng cho tất cả bidder không, ở đoạn cuối countdown đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, khóa người mới cuối phiên có áp dụng cho tất cả bidder không, trong phòng đấu giá; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tại sao phiên vẫn running nhưng không cho tham gia với bidder mới.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, tại sao phiên vẫn running nhưng không cho tham gia, khi phiên gần hết giờ mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+tai sao phien van running nhung ko cho tham gia vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tại sao phien vẫn running nhưng không cho tham gia, ở đoạn cuối countdown nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tại sao phiên vẫn running nhưng không cho tham gia, trong phòng đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tại sao phiên vẫn running nhưng không cho tham gia với bidder mới; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cho tôi kiểm tra trạng thái khóa join cuối phiên, khi phiên gần hết giờ.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, cho tôi kiểm tra trạng thái khóa join cuối phiên để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"cho toi check trang thai khoa join cuoi phien, o doan cuoi countdown dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"cho tôi kiểm tra trạng thái khóa join cuối phien, trong phòng đấu giá pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"cho tôi kiểm tra trạng thái khóa join cuối phiên với bidder mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, cho tôi kiểm tra trạng thái khóa join cuối phiên, khi phiên gần hết giờ; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+Cuối phiên có cần refresh danh sách người tham gia không.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, cuối phiên có cần refresh danh sách người tham gia không, ở đoạn cuối countdown mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"cuoi phien co can refresh danh sach nguoi tham gia ko, trong room dg vi minh chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+cuối phien có cần refresh danh sách người tham gia không với bidder mới nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"cuối phiên có cần refresh danh sách người tham gia không, khi phiên gần hết giờ đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, cuối phiên có cần refresh danh sách người tham gia không; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Khi phòng sắp đóng thì người mới thấy message gì, ở đoạn cuối countdown.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, khi phòng sắp đóng thì người mới thấy message gì, trong phòng đấu giá để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+khi room sap dong thi nguoi moi thay message gi voi bidder moi dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"khi phòng sắp đóng thì người mới thấy message gì, khi phien gần hết giờ pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"khi phòng sắp đóng thì người mới thấy message gì đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, khi phòng sắp đóng thì người mới thấy message gì, ở đoạn cuối countdown; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Khóa join cuối phiên có tránh spam bid không, trong phòng đấu giá.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, khóa join cuối phiên có tránh spam bid không với bidder mới mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"khoa join cuoi phien co tranh spam bid ko, khi phien gan het gio vi minh chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+khóa join cuối phien có tránh spam bid không nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"khóa join cuối phiên có tránh spam bid không, ở đoạn cuối countdown đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, khóa join cuối phiên có tránh spam bid không, trong phòng đấu giá; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+Luồng chặn bidder mới ở cuối phiên đang chạy chưa với bidder mới.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, luồng chặn bidder mới ở cuối phiên đang chạy chưa, khi phiên gần hết giờ để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0

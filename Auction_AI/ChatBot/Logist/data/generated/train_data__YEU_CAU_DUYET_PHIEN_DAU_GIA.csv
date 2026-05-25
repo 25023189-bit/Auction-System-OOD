@@ -1,0 +1,201 @@
+﻿text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+"Phiên của tôi đang chờ admin duyệt phải không, sau khi tôi tạo yêu cầu phiên mới.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"Admin ơi, phiên của tôi đang chờ admin duyệt phải không và kiểm tra dữ liệu tạo phiên có hợp lệ chưa mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"phien cua toi dang cho ad duyet phai ko, vi ai auto approve chua chac ket qua vi minh chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+phien của tôi đang chờ admin duyệt phải không rồi thông báo trạng thái cho seller nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0
+"phiên của tôi đang chờ admin duyệt phải không trước khi phiên hiện ở danh sách đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Ê cho hỏi, phiên của tôi đang chờ admin duyệt phải không kèm phần chi tiết sản phẩm để admin xem; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Tôi muốn gửi yêu cầu duyệt phiên đấu giá, nếu mô tả có dấu hiệu vi phạm thì báo nguy hiểm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0
+"Help với, tôi muốn gửi yêu cầu duyệt phiên đấu giá và chatbot giải thích tại sao bị pending để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0
+"toi muon gui yc duyet phien dg, sau buoc ai tu danh gia va validate input dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+tôi muốn gửi yêu cầu duyệt phien đấu giá để phiên đủ điều kiện vào lobby cho bidder pls,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"tôi muốn gửi yêu cầu duyệt phiên đấu giá, vì seller cần sửa dữ liệu rồi gửi lại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0
+"Này ad, tôi muốn gửi yêu cầu duyệt phiên đấu giá kèm message approve hoặc reject rõ ràng; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0
+"Yêu cầu tạo phiên đã được duyệt chưa, sau khi tôi tạo yêu cầu phiên mới.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"Admin ơi, yêu cầu tạo phiên đã được duyệt chưa và kiểm tra dữ liệu tạo phiên có hợp lệ chưa mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"yc tao phien da dc duyet chua, vi ai auto approve chua chac ket qua vi minh chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+yêu cầu tạo phien đã được duyệt chưa rồi thông báo trạng thái cho seller nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0
+"yêu cầu tạo phiên đã được duyệt chưa trước khi phiên hiện ở danh sách đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Ê cho hỏi, yêu cầu tạo phiên đã được duyệt chưa kèm phần chi tiết sản phẩm để admin xem; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Admin có thấy request phiên mới của tôi không, nếu mô tả có dấu hiệu vi phạm thì báo nguy hiểm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0
+"Help với, admin có thấy request phiên mới của tôi không và chatbot giải thích tại sao bị pending để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0
+"ad co thay request phien moi cua toi ko, sau buoc ai tu danh gia va validate input dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+admin có thấy request phien mới của tôi không để phiên đủ điều kiện vào lobby cho bidder pls,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"admin có thấy request phiên mới của tôi không, vì seller cần sửa dữ liệu rồi gửi lại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0
+"Này ad, admin có thấy request phiên mới của tôi không kèm message approve hoặc reject rõ ràng; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0
+"Phiên này đang pending duyệt ở đâu, sau khi tôi tạo yêu cầu phiên mới.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"Admin ơi, phiên này đang pending duyệt ở đâu và kiểm tra dữ liệu tạo phiên có hợp lệ chưa mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"phien nay dang pending duyet o dau, vi ai auto approve chua chac ket qua vi minh chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+phien này đang pending duyệt ở đâu rồi thông báo trạng thái cho seller nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0
+"phiên này đang pending duyệt ở đâu trước khi phiên hiện ở danh sách đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Ê cho hỏi, phiên này đang pending duyệt ở đâu kèm phần chi tiết sản phẩm để admin xem; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Làm sao biết phiên được duyệt hay bị từ chối, nếu mô tả có dấu hiệu vi phạm thì báo nguy hiểm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0
+"Help với, làm sao biết phiên được duyệt hay bị từ chối và chatbot giải thích tại sao bị pending để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0
+"lam sao biet phien dc duyet hay bi tu choi, sau buoc ai tu danh gia va validate input dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+làm sao biết phien được duyệt hay bị từ chối để phiên đủ điều kiện vào lobby cho bidder pls,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"làm sao biết phiên được duyệt hay bị từ chối, vì seller cần sửa dữ liệu rồi gửi lại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0
+"Này ad, làm sao biết phiên được duyệt hay bị từ chối kèm message approve hoặc reject rõ ràng; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0
+"Seller request của tôi cần duyệt thủ công không, sau khi tôi tạo yêu cầu phiên mới.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"Admin ơi, seller request của tôi cần duyệt thủ công không và kiểm tra dữ liệu tạo phiên có hợp lệ chưa mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"seller request cua toi can duyet thu cong ko, vi ai auto approve chua chac ket qua vi minh chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+seller request của tôi cần duyẹt thủ công không rồi thông báo trạng thái cho seller nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0
+"seller request của tôi cần duyệt thủ công không trước khi phiên hiện ở danh sách đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Ê cho hỏi, seller request của tôi cần duyệt thủ công không kèm phần chi tiết sản phẩm để admin xem; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Tôi muốn kiểm tra trạng thái duyệt phiên, nếu mô tả có dấu hiệu vi phạm thì báo nguy hiểm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0
+"Help với, tôi muốn kiểm tra trạng thái duyệt phiên và chatbot giải thích tại sao bị pending để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0
+"toi muon check trang thai duyet phien, sau buoc ai tu danh gia va validate input dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+tôi muốn kiểm tra trạng thái duyệt phien để phiên đủ điều kiện vào lobby cho bidder pls,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"tôi muốn kiểm tra trạng thái duyệt phiên, vì seller cần sửa dữ liệu rồi gửi lại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0
+"Này ad, tôi muốn kiểm tra trạng thái duyệt phiên kèm message approve hoặc reject rõ ràng; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0
+"Vì sao phiên đã tạo nhưng chưa lên danh sách, sau khi tôi tạo yêu cầu phiên mới.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"Admin ơi, vì sao phiên đã tạo nhưng chưa lên danh sách và kiểm tra dữ liệu tạo phiên có hợp lệ chưa mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"vi sao phien da tao nhung chua len danh sach, vi ai auto approve chua chac ket qua vi minh chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+vì sao phien đã tạo nhưng chưa lên danh sách rồi thông báo trạng thái cho seller nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0
+"vì sao phiên đã tạo nhưng chưa lên danh sách trước khi phiên hiện ở danh sách đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Ê cho hỏi, vì sao phiên đã tạo nhưng chưa lên danh sách kèm phần chi tiết sản phẩm để admin xem; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Yêu cầu duyệt phiên bị kẹt ở bước nào, nếu mô tả có dấu hiệu vi phạm thì báo nguy hiểm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0
+"Help với, yêu cầu duyệt phiên bị kẹt ở bước nào và chatbot giải thích tại sao bị pending để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0
+"yc duyet phien bi ket o buoc nao, sau buoc ai tu danh gia va validate input dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+yêu cầu duyệt phien bị kẹt ở bước nào để phiên đủ điều kiện vào lobby cho bidder pls,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"yêu cầu duyệt phiên bị kẹt ở bước nào, vì seller cần sửa dữ liệu rồi gửi lại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0
+"Này ad, yêu cầu duyệt phiên bị kẹt ở bước nào kèm message approve hoặc reject rõ ràng; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0
+"Admin approve phiên này giúp tôi được không, sau khi tôi tạo yêu cầu phiên mới.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"Admin ơi, admin approve phiên này giúp tôi được không và kiểm tra dữ liệu tạo phiên có hợp lệ chưa mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"ad approve phien nay giup toi dc ko, vi ai auto approve chua chac ket qua vi minh chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+admin approve phien này giúp tôi được không rồi thông báo trạng thái cho seller nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0
+"admin approve phiên này giúp tôi được không trước khi phiên hiện ở danh sách đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Ê cho hỏi, admin approve phiên này giúp tôi được không kèm phần chi tiết sản phẩm để admin xem; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Khi nào phiên của tôi được duyệt, nếu mô tả có dấu hiệu vi phạm thì báo nguy hiểm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0
+"Help với, khi nào phiên của tôi được duyệt và chatbot giải thích tại sao bị pending để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0
+"khi nao phien cua toi dc duyet, sau buoc ai tu danh gia va validate input dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+khi nào phien của tôi được duyệt để phiên đủ điều kiện vào lobby cho bidder pls,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"khi nào phiên của tôi được duyệt, vì seller cần sửa dữ liệu rồi gửi lại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0
+"Này ad, khi nào phiên của tôi được duyệt kèm message approve hoặc reject rõ ràng; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0
+"Phiên bị reject thì tôi xem lý do ở đâu, sau khi tôi tạo yêu cầu phiên mới.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"Admin ơi, phiên bị reject thì tôi xem lý do ở đâu và kiểm tra dữ liệu tạo phiên có hợp lệ chưa mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"phien bi reject thi toi xem ly do o dau, vi ai auto approve chua chac ket qua vi minh chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+phien bị reject thì tôi xem lý do ở đâu rồi thông báo trạng thái cho seller nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0
+"phiên bị reject thì tôi xem lý do ở đâu trước khi phiên hiện ở danh sách đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Ê cho hỏi, phiên bị reject thì tôi xem lý do ở đâu kèm phần chi tiết sản phẩm để admin xem; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Luồng duyệt phiên sau khi tạo hoạt động sao, nếu mô tả có dấu hiệu vi phạm thì báo nguy hiểm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0
+"Help với, luồng duyệt phiên sau khi tạo hoạt động sao và chatbot giải thích tại sao bị pending để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0
+"luong duyet phien sau khi tao hoat dong sao, sau buoc ai tu danh gia va validate input dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+luồng duyệt phien sau khi tạo hoạt động sao để phiên đủ điều kiện vào lobby cho bidder pls,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"luồng duyệt phiên sau khi tạo hoạt động sao, vì seller cần sửa dữ liệu rồi gửi lại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0
+"Này ad, luồng duyệt phiên sau khi tạo hoạt động sao kèm message approve hoặc reject rõ ràng; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0
+"Tôi đã gửi phiên rồi sao vẫn pending, sau khi tôi tạo yêu cầu phiên mới.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"Admin ơi, tôi đã gửi phiên rồi sao vẫn pending và kiểm tra dữ liệu tạo phiên có hợp lệ chưa mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"toi da gui phien roi sao van pending, vi ai auto approve chua chac ket qua vi minh chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+tôi đã gửi phien rồi sao vẫn pending rồi thông báo trạng thái cho seller nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0
+"tôi đã gửi phiên rồi sao vẫn pending trước khi phiên hiện ở danh sách đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Ê cho hỏi, tôi đã gửi phiên rồi sao vẫn pending kèm phần chi tiết sản phẩm để admin xem; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Có cần admin duyệt trước khi bidder thấy phiên không, nếu mô tả có dấu hiệu vi phạm thì báo nguy hiểm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0
+"Help với, có cần admin duyệt trước khi bidder thấy phiên không và chatbot giải thích tại sao bị pending để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0
+"co can ad duyet truoc khi bidder thay phien ko, sau buoc ai tu danh gia va validate input dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+có cần admin duyệt trước khi bidder thấy phien không để phiên đủ điều kiện vào lobby cho bidder pls,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"có cần admin duyệt trước khi bidder thấy phiên không, vì seller cần sửa dữ liệu rồi gửi lại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0
+"Này ad, có cần admin duyệt trước khi bidder thấy phiên không kèm message approve hoặc reject rõ ràng; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0
+"Yêu cầu duyệt phiên của seller mới có khác gì không, sau khi tôi tạo yêu cầu phiên mới.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"Admin ơi, yêu cầu duyệt phiên của seller mới có khác gì không và kiểm tra dữ liệu tạo phiên có hợp lệ chưa mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"yc duyet phien cua seller moi co khac gi ko, vi ai auto approve chua chac ket qua vi minh chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+yêu cầu duyệt phien của seller mới có khác gì không rồi thông báo trạng thái cho seller nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0
+"yêu cầu duyệt phiên của seller mới có khác gì không trước khi phiên hiện ở danh sách đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Ê cho hỏi, yêu cầu duyệt phiên của seller mới có khác gì không kèm phần chi tiết sản phẩm để admin xem; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Duyệt phiên xong có thông báo cho seller không, nếu mô tả có dấu hiệu vi phạm thì báo nguy hiểm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0
+"Help với, duyệt phiên xong có thông báo cho seller không và chatbot giải thích tại sao bị pending để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0
+"duyet phien xong co thong bao cho seller ko, sau buoc ai tu danh gia va validate input dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+duyệt phien xong có thông báo cho seller không để phiên đủ điều kiện vào lobby cho bidder pls,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"duyệt phiên xong có thông báo cho seller không, vì seller cần sửa dữ liệu rồi gửi lại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0
+"Này ad, duyệt phiên xong có thông báo cho seller không kèm message approve hoặc reject rõ ràng; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0
+"Phiên này đã qua bước kiểm duyệt chưa, sau khi tôi tạo yêu cầu phiên mới.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"Admin ơi, phiên này đã qua bước kiểm duyệt chưa và kiểm tra dữ liệu tạo phiên có hợp lệ chưa mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"phien nay da qua buoc kiem duyet chua, vi ai auto approve chua chac ket qua vi minh chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+phien này đã qua bước kiểm duyệt chưa rồi thông báo trạng thái cho seller nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0
+"phiên này đã qua bước kiểm duyệt chưa trước khi phiên hiện ở danh sách đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Ê cho hỏi, phiên này đã qua bước kiểm duyệt chưa kèm phần chi tiết sản phẩm để admin xem; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Tôi muốn đưa phiên từ pending sang running, nếu mô tả có dấu hiệu vi phạm thì báo nguy hiểm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0
+"Help với, tôi muốn đưa phiên từ pending sang running và chatbot giải thích tại sao bị pending để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0
+"toi muon dua phien tu pending sang running, sau buoc ai tu danh gia va validate input dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+tôi muốn đưa phien từ pending sang running để phiên đủ điều kiện vào lobby cho bidder pls,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"tôi muốn đưa phiên từ pending sang running, vì seller cần sửa dữ liệu rồi gửi lại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0
+"Này ad, tôi muốn đưa phiên từ pending sang running kèm message approve hoặc reject rõ ràng; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0
+"Admin có thể duyệt lại phiên bị fail không, sau khi tôi tạo yêu cầu phiên mới.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"Admin ơi, admin có thể duyệt lại phiên bị fail không và kiểm tra dữ liệu tạo phiên có hợp lệ chưa mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"ad co the duyet lai phien bi fail ko, vi ai auto approve chua chac ket qua vi minh chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+admin có thể duyệt lại phien bị fail không rồi thông báo trạng thái cho seller nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0
+"admin có thể duyệt lại phiên bị fail không trước khi phiên hiện ở danh sách đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Ê cho hỏi, admin có thể duyệt lại phiên bị fail không kèm phần chi tiết sản phẩm để admin xem; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Phiên tạo xong cần ai xác nhận, nếu mô tả có dấu hiệu vi phạm thì báo nguy hiểm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0
+"Help với, phiên tạo xong cần ai xác nhận và chatbot giải thích tại sao bị pending để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0
+"phien tao xong can ai xac nhan, sau buoc ai tu danh gia va validate input dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+phien tạo xong cần ai xác nhận để phiên đủ điều kiện vào lobby cho bidder pls,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"phiên tạo xong cần ai xác nhận, vì seller cần sửa dữ liệu rồi gửi lại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0
+"Này ad, phiên tạo xong cần ai xác nhận kèm message approve hoặc reject rõ ràng; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0
+"Yêu cầu duyệt phiên có lưu lịch sử không, sau khi tôi tạo yêu cầu phiên mới.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"Admin ơi, yêu cầu duyệt phiên có lưu lịch sử không và kiểm tra dữ liệu tạo phiên có hợp lệ chưa mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"yc duyet phien co luu lich su ko, vi ai auto approve chua chac ket qua vi minh chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+yêu cầu duyệt phien có lưu lịch sử không rồi thông báo trạng thái cho seller nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0
+"yêu cầu duyệt phiên có lưu lịch sử không trước khi phiên hiện ở danh sách đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Ê cho hỏi, yêu cầu duyệt phiên có lưu lịch sử không kèm phần chi tiết sản phẩm để admin xem; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Tôi muốn xem danh sách request chờ duyệt của mình, nếu mô tả có dấu hiệu vi phạm thì báo nguy hiểm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0
+"Help với, tôi muốn xem danh sách request chờ duyệt của mình và chatbot giải thích tại sao bị pending để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0
+"toi muon xem danh sach request cho duyet cua minh, sau buoc ai tu danh gia va validate input dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+tôi muốn xem danh sách request chờ duyệt của mình để phien đủ điều kiện vào lobby cho bidder pls,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"tôi muốn xem danh sách request chờ duyệt của mình, vì seller cần sửa dữ liệu rồi gửi lại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0
+"Này ad, tôi muốn xem danh sách request chờ duyệt của mình kèm message approve hoặc reject rõ ràng; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0
+"Phiên bị từ chối do dữ liệu hay do AI, sau khi tôi tạo yêu cầu phiên mới.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"Admin ơi, phiên bị từ chối do dữ liệu hay do AI và kiểm tra dữ liệu tạo phiên có hợp lệ chưa mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"phien bi tu choi do du lieu hay do ai, vi ai auto approve chua chac ket qua vi minh chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+phien bị từ chối do dữ liệu hay do AI rồi thông báo trạng thái cho seller nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0
+"phiên bị từ chối do dữ liệu hay do AI trước khi phiên hiện ở danh sách đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Ê cho hỏi, phiên bị từ chối do dữ liệu hay do AI kèm phần chi tiết sản phẩm để admin xem; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Hệ thống có tự động gửi duyệt sau khi seller submit không, nếu mô tả có dấu hiệu vi phạm thì báo nguy hiểm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0
+"Help với, hệ thống có tự động gửi duyệt sau khi seller submit không và chatbot giải thích tại sao bị pending để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0
+"he thong co auto gui duyet sau khi seller submit ko, sau buoc ai tu danh gia va validate input dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+hệ thống có tự động gửi duyệt sau khi seller submit không để phien đủ điều kiện vào lobby cho bidder pls,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"hệ thống có tự động gửi duyệt sau khi seller submit không, vì seller cần sửa dữ liệu rồi gửi lại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0
+"Này ad, hệ thống có tự động gửi duyệt sau khi seller submit không kèm message approve hoặc reject rõ ràng; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0
+"Phiên của tôi bị treo ở mục xét duyệt, sau khi tôi tạo yêu cầu phiên mới.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"Admin ơi, phiên của tôi bị treo ở mục xét duyệt và kiểm tra dữ liệu tạo phiên có hợp lệ chưa mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"phien cua toi bi treo o muc xet duyet, vi ai auto approve chua chac ket qua vi minh chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0
+phien của tôi bị treo ở mục xét duyệt rồi thông báo trạng thái cho seller nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0
+"phiên của tôi bị treo ở mục xét duyệt trước khi phiên hiện ở danh sách đấu giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Ê cho hỏi, phiên của tôi bị treo ở mục xét duyệt kèm phần chi tiết sản phẩm để admin xem; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Admin duyệt xong thì bidder mới thấy đúng không, nếu mô tả có dấu hiệu vi phạm thì báo nguy hiểm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0
+"Help với, admin duyệt xong thì bidder mới thấy đúng không và chatbot giải thích tại sao bị pending để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0
+"ad duyet xong thi bidder moi thay dung ko, sau buoc ai tu danh gia va validate input dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+admin duyẹt xong thì bidder mới thấy đúng không pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"admin duyệt xong thì bidder mới thấy đúng không, cho phiên mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Này ad, admin duyệt xong thì bidder mới thấy đúng không, ở tab seller; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Cần duyệt phiên trước khi mở countdown à, trong luồng pending.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Admin ơi, cần duyệt phiên trước khi mở countdown à, sau khi submit mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+can duyet phien truoc khi mo countdown a vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"cần duyệt phien trước khi mở countdown à, cho phiên mới nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"cần duyệt phiên trước khi mở countdown à, ở tab seller đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Ê cho hỏi, cần duyệt phiên trước khi mở countdown à, trong luồng pending; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Yêu cầu duyệt có áp dụng cho mọi sản phẩm không, sau khi submit.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Help với, yêu cầu duyệt có áp dụng cho mọi sản phẩm không để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"yc duyet co ap dung cho moi sp ko, cho phien moi dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"yêu cầu duyẹt có áp dụng cho mọi sản phẩm không, ở tab seller pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"yêu cầu duyệt có áp dụng cho mọi sản phẩm không, trong luồng pending đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Này ad, yêu cầu duyệt có áp dụng cho mọi sản phẩm không, sau khi submit; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Phiên đã gửi duyệt nhưng không có phản hồi.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Admin ơi, phiên đã gửi duyệt nhưng không có phản hồi, cho phiên mới mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"phien da gui duyet nhung ko co phan hoi, o tab seller vi minh chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"phien đã gửi duyệt nhưng không có phản hồi, trong luồng pending nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"phiên đã gửi duyệt nhưng không có phản hồi, sau khi submit đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Ê cho hỏi, phiên đã gửi duyệt nhưng không có phản hồi; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Tôi muốn biết ai đang duyệt phiên của tôi, cho phiên mới.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Help với, tôi muốn biết ai đang duyệt phiên của tôi, ở tab seller để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"toi muon biet ai dang duyet phien cua toi, trong luong pending dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"tôi muốn biết ai đang duyệt phien của tôi, sau khi submit pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"tôi muốn biết ai đang duyệt phiên của tôi đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Này ad, tôi muốn biết ai đang duyệt phiên của tôi, cho phiên mới; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Nếu sửa sản phẩm thì có phải gửi duyệt lại không, ở tab seller.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Admin ơi, nếu sửa sản phẩm thì có phải gửi duyệt lại không, trong luồng pending mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"neu sua sp thi co phai gui duyet lai ko, sau khi submit vi minh chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+nếu sửa sản phẩm thì có phải gửi duyẹt lại không nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"nếu sửa sản phẩm thì có phải gửi duyệt lại không, cho phiên mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Ê cho hỏi, nếu sửa sản phẩm thì có phải gửi duyệt lại không, ở tab seller; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Cho tôi kiểm tra request duyệt phiên gần nhất, trong luồng pending.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Help với, cho tôi kiểm tra request duyệt phiên gần nhất, sau khi submit để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0

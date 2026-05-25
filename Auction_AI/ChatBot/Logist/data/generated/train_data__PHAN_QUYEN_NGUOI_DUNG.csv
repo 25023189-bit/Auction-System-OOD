@@ -1,178 +1,201 @@
-text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
-Ba vai trò bidder seller admin khác nhau như thế nào,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giải thích quyền của từng loại tài khoản trong hệ thống đấu giá,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản bidder được phép làm những gì,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Seller có những quyền gì trong ứng dụng,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Admin quản lý được những phần nào của hệ thống,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Người bán và người mua trong đấu giá khác quyền ra sao,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết account của mình thuộc vai trò nào,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Hệ thống có những role người dùng nào,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Role bidder được dùng cho mục đích gì,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Role seller dùng để làm gì,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Role admin khác seller ở điểm nào,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản thường có quyền giống admin không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Ai được kiểm duyệt phiên đấu giá trong hệ thống,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Ai được tạo phiên đấu giá mới,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Ai được đặt giá trong phiên đang chạy,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Người dùng nào có thể quản lý danh sách tài khoản,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Bidder có quyền xem và tham gia đấu giá đúng không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Seller có thể vừa bán vừa đặt giá không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Admin có được tham gia đấu giá như bidder không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Quyền người dùng được hệ thống chia theo tiêu chí nào,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có bao nhiêu nhóm người dùng trong app đấu giá,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Phân quyền trong app hoạt động ra sao,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần hiểu vai trò của bidder trước khi dùng,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần hiểu vai trò seller trước khi đăng sản phẩm,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần hiểu quyền admin trong hệ thống,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản của tôi không thấy chức năng quản trị vì sao,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tại sao tôi không có quyền duyệt phiên,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Vì sao tài khoản của tôi không thấy mục tạo phiên,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Vì sao tôi chỉ thấy màn hình đặt giá mà không thấy quản lý,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có phải mỗi vai trò sẽ thấy giao diện khác nhau không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giao diện bidder seller admin khác nhau do quyền à,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản seller có được quản lý người dùng không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản bidder có được duyệt phiên không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Admin có toàn quyền với phiên và người dùng không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Người bán có quyền xóa tài khoản người khác không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Bidder có thể tạo sản phẩm đấu giá không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Seller có thể duyệt phiên của chính mình không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Admin có thể xem thông tin bidder seller không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Quyền bidder giới hạn ở phần nào,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Quyền seller giới hạn ở phần nào,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Quyền admin giới hạn ở phần nào,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết tài khoản nào được vào khu quản trị,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có role nào dành riêng cho người kiểm duyệt không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Người mới vào hệ thống mặc định thuộc nhóm nào,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi nên dùng quyền bidder hay seller nếu chỉ muốn mua hàng,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Muốn bán sản phẩm thì cần role gì,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Muốn quản lý phiên chờ duyệt thì cần role nào,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Muốn tham gia trả giá thì tài khoản cần quyền gì,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Muốn xem danh sách người dùng thì phải là ai,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản admin có khác tài khoản seller không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Hệ thống xác định quyền dựa trên vai trò tài khoản phải không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Role có ảnh hưởng đến chức năng hiển thị không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có thể một tài khoản có nhiều vai trò không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Bidder và seller có dùng chung màn hình không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Admin và seller khác nhau ở quyền phê duyệt đúng không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi không rõ mình là bidder hay seller,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Làm sao phân biệt tài khoản người mua và người bán,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Quyền tạo phiên thuộc về seller hay admin,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Quyền duyệt phiên thuộc về seller hay admin,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Quyền đặt giá thuộc về bidder đúng không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Seller có bị hạn chế không được tự duyệt phiên không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Bidder bị hạn chế không được tạo phiên phải không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Admin có quyền hủy phiên còn seller chỉ đóng phiên đúng không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết quyền nào được chỉnh trạng thái phiên,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản của tôi bị thiếu quyền thao tác,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Thông báo không đủ quyền nghĩa là gì,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Hệ thống báo unauthorized khi tôi mở chức năng quản trị,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Không có quyền truy cập màn admin là sao,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản seller không mở được trang admin có bình thường không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Bidder mở trang seller bị chặn là đúng không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi chỉ thấy lobby chứ không thấy trang tạo phiên,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi thấy nút quản lý bị ẩn theo quyền tài khoản à,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi không tìm thấy menu admin sau khi vào hệ thống,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Sao tài khoản này chỉ đặt giá được mà không đăng bán được,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Sao tài khoản kia tạo phiên được còn tôi thì không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có cần admin cấp quyền seller cho tôi không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Quyền của tài khoản có thay đổi được không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu đổi từ bidder sang seller thì chức năng có đổi không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản admin có cần thêm quyền riêng để duyệt không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Seller có nhìn thấy danh sách user như admin không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Bidder có xem được màn hình kiểm duyệt không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Ai được xem các yêu cầu phiên đang chờ,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Người bán có quản lý được phiên của người khác không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Admin có quản lý được phiên của mọi seller không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu không phải admin thì có xóa người dùng được không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu không phải seller thì có tạo yêu cầu bán hàng không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu không phải bidder thì có đặt giá được không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần quyền gì để dùng chức năng bán đấu giá,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần quyền gì để dùng chức năng quản trị,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần quyền gì để chỉ tham gia mua,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Màn hình của tôi phụ thuộc vào role nào,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Quyền người dùng được lưu theo tài khoản hay theo phiên,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Role có quyết định tôi được vào phòng nào không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Phân quyền có áp dụng sau khi đăng nhập không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tại sao cùng một app nhưng mỗi người thấy menu khác nhau,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có tài khoản nhưng bị giới hạn chức năng là do role à,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Hỏi về quyền truy cập của seller trong hệ thống,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Hỏi về quyền truy cập của bidder trong hệ thống,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Hỏi về quyền truy cập của admin trong hệ thống,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn so sánh quyền giữa ba nhóm người dùng,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Mình là người bán thì có quyền nào,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Mình là người mua thì có quyền nào,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Người quản trị hệ thống được làm những gì,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản xem được chức năng nào dựa vào đâu,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Vai trò tài khoản có ảnh hưởng đến quyền thao tác không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-role nguoi dung trong app la gi,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-phan quyen bidder seller admin nhu nao,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-bidder co nhung quyen gi vay,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-seller duoc lam gi trong he thong,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-admin co quyen gi tren app dau gia,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-tk toi la role nao,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-tai khoan nay bi thieu quyen ha,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-khong du quyen vao man admin,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-seller co dc duyet phien ko,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-bidder co tao phien duoc khong,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-admin vs seller khac nhau sao,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-nguoi mua va nguoi ban khac role gi,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-role co anh huong menu hien thi ko,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-muon ban hang can quyen seller dung k,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-muon mua dau gia thi dung role nao,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-co role nao de quan tri user khong,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-ad co xem duoc tat ca tai khoan khong,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-seller co xem duoc list user khong,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-bidder chi duoc bid thoi ha,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-toi bi chan vi ko co role admin,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-tk bidder sao khong thay tao phien,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-tk seller sao khong thay duyet phien,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-role cua account co doi duoc khong,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-phan quyen sau login nhu nao,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-giao dien khac nhau theo quyen a,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-quyen user bi sai hay sao ay,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-khong thay chuc nang ban hang vi chua la seller,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-admin moi duyet phien duoc phai khong,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-seller tu duyet phien cua minh dc ko,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-bidder co xem man quan tri duoc ko,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-phân quyên người dùng là gì,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-tôi bị báo ko đủ quyên,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-role seller có đc quản lý user không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-acc admin khác acc thường chỗ nào,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-người dùng mới có quyển gì trong app,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Khi đăng ký tài khoản tôi chọn role bidder hay seller ở đâu,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tạo account seller mới thì hệ thống gán quyền bán hàng như thế nào,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn đăng ký tài khoản người bán để có quyền tạo phiên,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
-Đăng ký bidder thì sau này chỉ được tham gia đặt giá phải không,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Form register có phần chọn quyền admin không,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản mới tạo được gán role nào trước khi đăng nhập,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-dang ky acc seller de co quyen dang phien dau gia,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
-Tôi muốn mở tài khoản bidder để chỉ vào phòng và bid sản phẩm,1,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Sau khi đăng nhập hệ thống đưa tôi vào giao diện theo role nào,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Login bằng tài khoản admin nhưng không thấy menu quản trị,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi đăng nhập seller mà lại hiện màn bidder,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-dn xong sao app khong nhan role seller,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Đăng nhập thành công thì quyền bidder seller admin được áp dụng ra sao,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn login bằng tài khoản seller để kiểm tra quyền bán hàng,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Bidder có quyền vào phòng đấu giá và đặt giá không,0,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Seller của phiên có được vào phòng trước khi bắt đầu theo quyền seller không,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi là bidder nhưng bị chặn vào phòng vì quyền tài khoản,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Người không phải bidder có được đặt bid trong phiên không,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản seller có được tham gia đặt giá như bidder không,0,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-role bidder moi duoc vao phong va bid ha,0,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Admin có được vào phòng đấu giá để đặt giá không,0,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi không thấy nút đặt giá vì tài khoản không phải bidder,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Seller có quyền tạo yêu cầu mở phiên đấu giá mới không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
-Tôi là seller muốn tạo phiên nhưng hệ thống báo thiếu quyền,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
-Người bán nhập thông tin sản phẩm để gửi duyệt thì cần quyền seller đúng không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
-seller role co gui yeu cau duyet phien duoc ko,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
-Bidder có thể tạo yêu cầu phiên đấu giá hay phải đổi sang seller,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
-Muốn bán hàng tôi cần quyền seller để tạo phiên và chờ duyệt,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
-Seller được đóng phiên của mình hay chỉ admin mới xử lý,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
-Tôi có role seller nhưng không mở được form tạo phiên,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
-Người bán có quyền gửi yêu cầu duyệt phiên sau khi tạo sản phẩm không,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
-Bidder cần số dư đủ và đúng quyền thì mới vào được phòng phải không,0,0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Tôi là bidder muốn xem số dư trước khi đặt giá, quyền này có bị giới hạn không",0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Quyền bidder cho phép xem lịch sử đặt giá của phiên không,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản seller xem chi tiết sản phẩm trong phiên của mình có khác bidder không,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Seller đóng phiên của mình thì quyền seller và thông báo cho người dùng xử lý ra sao,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0
-Chatbot giải thích giúp quyền bidder seller admin và cách dùng từng role,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+﻿text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+"Tài khoản mình có quyền vào màn seller có đúng không, sau đó mình vừa login xong, đồng thời tạo auction request mới, kèm chuyện bot phân tích lỗi đang gặp, kèm chuyện mã phòng AUC-1024.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0
+"Admin ơi, tài khoản mình có quyền vào màn seller có đúng không, trước khi nhập thông tin sản phẩm để chờ duyệt mình đang thao tác?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"tk m co quyen vao man seller co dung ko, sau do yc duyet con pending vi m chua ro luong",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"tài khoàn mình có quyền vào màn seller có đúng không, đồng thời vào room hiện tại giúp mình đang cần xử lý liền",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền vào màn seller có đúng không, trước khi nếu cần vào lại hệ thống đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tài khoản mình có quyền vào màn seller có đúng không, kèm chuyện seller đang tạo yêu cầu phiên, sau đó yêu cầu duyệt còn pending; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"Tài khoản mình có quyền vào màn seller đang bị sai chức năng, kèm chuyện admin đã approve chưa.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Help với, tài khoản mình có quyền vào màn seller đang bị sai chức năng, nhưng nút tham gia phòng đang mờ pls?",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tk m co quyen vao man seller dang bi sai chuc nang, truoc khi dang o man login de khoi lam sai",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền vào màn seller đang bị sai chức năng, đồng thời gửi yêu cầu tạo phien cho admin mình hơi rén",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền vào màn seller đang bị sai chức năng, nhưng phiên đang chờ admin duyệt, rồi nút tham gia phòng đang mờ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Này ad, tài khoản mình có quyền vào màn seller đang bị sai chức năng, rồi mình đang muốn join room, rồi mã phòng A17; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Tài khoản mình có quyền vào màn seller trước khi mình thao tác, đồng thời trước đó tài khoản báo sai mật khẩu.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, tài khoản mình có quyền vào màn seller trước khi mình thao tác, sau đó đăng sản phẩm lên sàn vì mình chưa rõ luồng?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"tk m co quyen vao man seller truoc khi m thao tac, roi gui len hang doi duyet dang can xu ly lien",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"tài khoản mình có quyền vào màn seller trước khi mình thao tác, kèm chuyện để mình vào phòng đấu gía, kèm chuyện trước đó tài khoản báo sai mật khẩu nhé",0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền vào màn seller trước khi mình thao tác, rồi sau khi đăng nhập thành công đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, tài khoản mình có quyền vào màn seller trước khi mình thao tác, đồng thời tạo auction request mới, kèm chuyện bot phân tích lỗi đang gặp; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0
+"Tài khoản mình có quyền vào màn seller vì giao diện hiện nhầm, kèm chuyện xem trạng thái duyệt phiên.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Alo ad, tài khoản mình có quyền vào màn seller vì giao diện hiện nhầm, rồi cần nhập mã phòng trước để khỏi làm sai?",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tk m co quyen vao man seller vi giao dien hien nham, nhung m vua login xong, kem chuyen tao auction request moi m hoi ren",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền vào màn seller vì giao diện hiện nhầm, đồng thời nhập thông tin sản phẩm để chờ duyẹt được không",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền vào màn seller vì giao diện hiện nhầm, nhưng yêu cầu duyệt còn pending, nhưng mã phòng SALA-05 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Help với, tài khoản mình có quyền vào màn seller vì giao diện hiện nhầm, trước khi vào room hiện tại giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Tài khoản mình có quyền vào màn seller sau khi đăng nhập, nhưng nếu cần vào lại hệ thống.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, tài khoản mình có quyền vào màn seller sau khi đăng nhập, đồng thời seller đang tạo yêu cầu phiên, nhưng yêu cầu duyệt còn pending đang cần xử lý liền?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"tk m co quyen vao man seller sau khi login, sau do ad da approve chua nhe",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"tài khoản mình có quyền vào màn seller sau khi đăg nhập, trước khi nút tham gia phòng đang mờ mình đang thao tác",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền vào màn seller sau khi đăng nhập, rồi đang ở màn login đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, tài khoản mình có quyền vào màn seller sau khi đăng nhập, kèm chuyện gửi yêu cầu tạo phiên cho admin; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Tài khoản mình có quyền tạo phiên đấu giá có đúng không, kèm chuyện phiên đang chờ admin duyệt, rồi nút tham gia phòng đang mờ.",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Cứu mình với, tài khoản mình có quyền tạo phiên đấu giá có đúng không, đồng thời mình đang muốn join room mình hơi rén?",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tk m co quyen tao phien dg co dung ko, roi truoc do tk bao sai mk dc ko",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền tạo phiên đấu giá có đúng không, trước khi đăg sản phẩm lên sàn, nhưng mã phòng ROOM-88 pls",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền tạo phiên đấu giá có đúng không, sau đó gửi lên hàng đợi duyệt, rồi bot hướng dẫn bước tiếp theo đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0
+"Alo ad, tài khoản mình có quyền tạo phiên đấu giá có đúng không, nhưng để mình vào phòng đấu giá, kèm chuyện trước đó tài khoản báo sai mật khẩu; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Tài khoản mình có quyền tạo phiên đấu giá đang bị sai chức năng, đồng thời sau khi đăng nhập thành công.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tài khoản mình có quyền tạo phiên đấu giá đang bị sai chức năng, nhưng tạo auction request mới nhé?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"tk m co quyen tao phien dg dang bi sai chuc nang, sau do xem trang thai duyet phien m dang thao tac",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"tài khoản mình có quyền tạo phien đấu giá đang bị sai chức năng, nhưng cần nhập mã phòng trước vì mình chưa rõ luồng",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền tạo phiên đấu giá đang bị sai chức năng, trước khi mình vừa login xong, kèm chuyện tạo auction request mới đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, tài khoản mình có quyền tạo phiên đấu giá đang bị sai chức năng, kèm chuyện nhập thông tin sản phẩm để chờ duyệt; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Tài khoản mình có quyền tạo phiên đấu giá trước khi mình thao tác, rồi yêu cầu duyệt còn pending.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Này ad, tài khoản mình có quyền tạo phiên đấu giá trước khi mình thao tác, nhưng vào room hiện tại giúp mình được không?",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tk m co quyen tao phien dg truoc khi m thao tac, sau do neu can vao lai he thong, sau do ma room bid-09 pls",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền tạo phien đấu giá trước khi mình thao tác, trước khi seller đang tạo yêu cầu phiên, sau đó yêu cầu duyệt còn pending để khỏi làm sai",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"tài khoản mình có quyền tạo phiên đấu giá trước khi mình thao tác, nhưng admin đã approve chưa đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Cứu mình với, tài khoản mình có quyền tạo phiên đấu giá trước khi mình thao tác, đồng thời nút tham gia phòng đang mờ; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Tài khoản mình có quyền tạo phiên đấu giá vì giao diện hiện nhầm, nhưng đang ở màn login.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, tài khoản mình có quyền tạo phiên đấu giá vì giao diện hiện nhầm, sau đó gửi yêu cầu tạo phiên cho admin mình đang thao tác?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"tk m co quyen tao phien dg vi giao dien hien nham, roi phien dang cho ad duyet, nhung nut tham gia room dang mo vi m chua ro luong",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"tài khoản mình có quyền tạo phien đấu giá vì giao diện hiện nhầm, trước khi mình đang muốn join room, kèm chuyện chatbot nói dễ hiểu giúp mình đang cần xử lý liền",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"tài khoản mình có quyền tạo phiên đấu giá vì giao diện hiện nhầm, kèm chuyện trước đó tài khoản báo sai mật khẩu đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tài khoản mình có quyền tạo phiên đấu giá vì giao diện hiện nhầm, đồng thời đăng sản phẩm lên sàn; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Tài khoản mình có quyền tạo phiên đấu giá sau khi đăng nhập, kèm chuyện gửi lên hàng đợi duyệt.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Help với, tài khoản mình có quyền tạo phiên đấu giá sau khi đăng nhập, rồi để mình vào phòng đấu giá, sau đó trước đó tài khoản báo sai mật khẩu, rồi mã phòng GOLD-21 pls?",0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tk m co quyen tao phien dg sau khi login, kem chuyen sau khi login thanh cong de khoi lam sai",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền tạo phiên đấu giá sau khi đăg nhập, trước khi tạo auction request mới mình hơi rén",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền tạo phiên đấu giá sau khi đăng nhập, đồng thời xem trạng thái duyệt phiên đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Này ad, tài khoản mình có quyền tạo phiên đấu giá sau khi đăng nhập, trước khi cần nhập mã phòng trước; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Tài khoản mình có quyền đặt giá trong room có đúng không, kèm chuyện mình vừa login xong, kèm chuyện tạo auction request mới.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, tài khoản mình có quyền đặt giá trong room có đúng không, nhưng nhập thông tin sản phẩm để chờ duyệt vì mình chưa rõ luồng?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"tk m co quyen dat gia trong room co dung ko, kem chuyen yc duyet con pending dang can xu ly lien",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"tài khoàn mình có quyền đặt giá trong room có đúng không, sau đó vào room hiện tại giúp mình nhé",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền đặt giá trong room có đúng không, nhưng nếu cần vào lại hệ thống đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, tài khoản mình có quyền đặt giá trong room có đúng không, đồng thời seller đang tạo yêu cầu phiên, nhưng yêu cầu duyệt còn pending; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"Tài khoản mình có quyền đặt giá trong room đang bị sai chức năng, đồng thời admin đã approve chưa, nhưng mã phòng PHIEN-2026.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Alo ad, tài khoản mình có quyền đặt giá trong room đang bị sai chức năng, rồi nút tham gia phòng đang mờ để khỏi làm sai?",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tk m co quyen dat gia trong room dang bi sai chuc nang, nhung dang o man login, dong thoi nho bot giai thich them m hoi ren",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"tài khoản mình có quyền đặt giá trong room đang bị sai chức năng, sau đó gửi yêu cầu tạo phien cho admin được không",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền đặt giá trong room đang bị sai chức năng, rồi phiên đang chờ admin duyệt, nhưng nút tham gia phòng đang mờ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Help với, tài khoản mình có quyền đặt giá trong room đang bị sai chức năng, trước khi mình đang muốn join room; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Tài khoản mình có quyền đặt giá trong room trước khi mình thao tác, sau đó trước đó tài khoản báo sai mật khẩu.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, tài khoản mình có quyền đặt giá trong room trước khi mình thao tác, kèm chuyện đăng sản phẩm lên sàn đang cần xử lý liền?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"tk m co quyen dat gia trong room truoc khi m thao tac, truoc khi gui len hang doi duyet nhe",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"tài khoản mình có quyền đặt giá trong room trước khi mình thao tác, đồng thời để mình vào phòng đấu gía, rồi trước đó tài khoản báo sai mật khẩu mình đang thao tác",0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền đặt giá trong room trước khi mình thao tác, trước khi sau khi đăng nhập thành công đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, tài khoản mình có quyền đặt giá trong room trước khi mình thao tác, sau đó tạo auction request mới, trước khi mã phòng P-774; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Tài khoản mình có quyền đặt giá trong room vì giao diện hiện nhầm, đồng thời xem trạng thái duyệt phiên.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Cứu mình với, tài khoản mình có quyền đặt giá trong room vì giao diện hiện nhầm, trước khi cần nhập mã phòng trước mình hơi rén?",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tk m co quyen dat gia trong room vi giao dien hien nham, roi m vua login xong, sau do tao auction request moi dc ko",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền đặt giá trong room vì giao diện hiện nhầm, sau đó nhập thông tin sản phẩm để chờ duyẹt pls",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền đặt giá trong room vì giao diện hiện nhầm, rồi yêu cầu duyệt còn pending đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Alo ad, tài khoản mình có quyền đặt giá trong room vì giao diện hiện nhầm, nhưng vào room hiện tại giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Tài khoản mình có quyền đặt giá trong room sau khi đăng nhập, rồi nếu cần vào lại hệ thống.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tài khoản mình có quyền đặt giá trong room sau khi đăng nhập, sau đó seller đang tạo yêu cầu phiên, kèm chuyện yêu cầu duyệt còn pending, rồi bot phân tích lỗi đang gặp nhé?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,1,0,0,0,0
+"tk m co quyen dat gia trong room sau khi login, kem chuyen ad da approve chua m dang thao tac",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"tài khoản mình có quyền đặt giá trong room sau khi đăg nhập, nhưng nút tham gia phòng đang mờ vì mình chưa rõ luồng",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền đặt giá trong room sau khi đăng nhập, trước khi đang ở màn login, kèm chuyện mã phòng AUC-1024 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, tài khoản mình có quyền đặt giá trong room sau khi đăng nhập, đồng thời gửi yêu cầu tạo phiên cho admin; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Tài khoản mình có quyền duyệt phiên có đúng không, kèm chuyện phiên đang chờ admin duyệt, rồi nút tham gia phòng đang mờ.",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Này ad, tài khoản mình có quyền duyệt phiên có đúng không, đồng thời mình đang muốn join room được không?",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tk m co quyen duyet phien co dung ko, roi truoc do tk bao sai mk pls",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền duyệt phiên có đúng không, trước khi đăg sản phẩm lên sàn để khỏi làm sai",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền duyệt phiên có đúng không, sau đó gửi lên hàng đợi duyệt đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Cứu mình với, tài khoản mình có quyền duyệt phiên có đúng không, nhưng để mình vào phòng đấu giá, kèm chuyện trước đó tài khoản báo sai mật khẩu; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Tài khoản mình có quyền duyệt phiên đang bị sai chức năng, đồng thời sau khi đăng nhập thành công.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, tài khoản mình có quyền duyệt phiên đang bị sai chức năng, nhưng tạo auction request mới mình đang thao tác?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"tk m co quyen duyet phien dang bi sai chuc nang, sau do xem trang thai duyet phien vi m chua ro luong",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"tài khoản mình có quyền duyệt phien đang bị sai chức năng, nhưng cần nhập mã phòng trước, trước khi mã phòng A17 đang cần xử lý liền",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền duyệt phiên đang bị sai chức năng, trước khi mình vừa login xong, kèm chuyện tạo auction request mới đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tài khoản mình có quyền duyệt phiên đang bị sai chức năng, kèm chuyện nhập thông tin sản phẩm để chờ duyệt; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Tài khoản mình có quyền duyệt phiên trước khi mình thao tác, rồi yêu cầu duyệt còn pending, nhưng bot phân tích lỗi đang gặp.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0
+"Help với, tài khoản mình có quyền duyệt phiên trước khi mình thao tác, nhưng vào room hiện tại giúp mình pls?",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tk m co quyen duyet phien truoc khi m thao tac, sau do neu can vao lai he thong de khoi lam sai",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền duyệt phien trước khi mình thao tác, trước khi seller đang tạo yêu cầu phiên, sau đó yêu cầu duyệt còn pending mình hơi rén",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"tài khoản mình có quyền duyệt phiên trước khi mình thao tác, nhưng admin đã approve chưa đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Này ad, tài khoản mình có quyền duyệt phiên trước khi mình thao tác, đồng thời nút tham gia phòng đang mờ; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Tài khoản mình có quyền duyệt phiên vì giao diện hiện nhầm, nhưng đang ở màn login.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, tài khoản mình có quyền duyệt phiên vì giao diện hiện nhầm, sau đó gửi yêu cầu tạo phiên cho admin vì mình chưa rõ luồng?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"tk m co quyen duyet phien vi giao dien hien nham, roi phien dang cho ad duyet, nhung nut tham gia room dang mo, nhung ma room sala-05 dang can xu ly lien",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"tài khoản mình có quyền duyệt phien vì giao diện hiện nhầm, trước khi mình đang muốn join room nhé",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền duyệt phiên vì giao diện hiện nhầm, kèm chuyện trước đó tài khoản báo sai mật khẩu đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, tài khoản mình có quyền duyệt phiên vì giao diện hiện nhầm, đồng thời đăng sản phẩm lên sàn; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Tài khoản mình có quyền duyệt phiên sau khi đăng nhập, kèm chuyện gửi lên hàng đợi duyệt.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Alo ad, tài khoản mình có quyền duyệt phiên sau khi đăng nhập, rồi để mình vào phòng đấu giá, sau đó trước đó tài khoản báo sai mật khẩu để khỏi làm sai?",0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tk m co quyen duyet phien sau khi login, kem chuyen sau khi login thanh cong m hoi ren",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền duyệt phiên sau khi đăg nhập, trước khi tạo auction request mới được không",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền duyệt phiên sau khi đăng nhập, đồng thời xem trạng thái duyệt phiên đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Help với, tài khoản mình có quyền duyệt phiên sau khi đăng nhập, trước khi cần nhập mã phòng trước, nhưng bot hướng dẫn bước tiếp theo; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Tài khoản mình có quyền đóng phiên có đúng không, đồng thời mình vừa login xong, rồi tạo auction request mới.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, tài khoản mình có quyền đóng phiên có đúng không, rồi nhập thông tin sản phẩm để chờ duyệt, trước khi mã phòng ROOM-88 đang cần xử lý liền?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"tk m co quyen dong phien co dung ko, dong thoi yc duyet con pending nhe",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"tài khoản mình có quyền đóng phien có đúng không, kèm chuyện vào room hiện tại giúp mình mình đang thao tác",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền đóng phiên có đúng không, rồi nếu cần vào lại hệ thống đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, tài khoản mình có quyền đóng phiên có đúng không, sau đó seller đang tạo yêu cầu phiên, kèm chuyện yêu cầu duyệt còn pending; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"Tài khoản mình có quyền đóng phiên đang bị sai chức năng, sau đó admin đã approve chưa.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Cứu mình với, tài khoản mình có quyền đóng phiên đang bị sai chức năng, trước khi nút tham gia phòng đang mờ mình hơi rén?",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tk m co quyen dong phien dang bi sai chuc nang, roi dang o man login dc ko",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền đóng phien đang bị sai chức năng, kèm chuyện gửi yêu cầu tạo phiên cho admin pls",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền đóng phiên đang bị sai chức năng, trước khi phiên đang chờ admin duyệt, rồi nút tham gia phòng đang mờ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Alo ad, tài khoản mình có quyền đóng phiên đang bị sai chức năng, nhưng mình đang muốn join room; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Tài khoản mình có quyền đóng phiên trước khi mình thao tác, kèm chuyện trước đó tài khoản báo sai mật khẩu, đồng thời mã phòng BID-09.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tài khoản mình có quyền đóng phiên trước khi mình thao tác, đồng thời đăng sản phẩm lên sàn nhé?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"tk m co quyen dong phien truoc khi m thao tac, nhung gui len hang doi duyet m dang thao tac",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"tài khoản mình có quyền đóng phien trước khi mình thao tác, sau đó để mình vào phòng đấu giá, đồng thời trước đó tài khoản báo sai mật khẩu vì mình chưa rõ luồng",0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền đóng phiên trước khi mình thao tác, nhưng sau khi đăng nhập thành công, kèm chuyện chatbot nói dễ hiểu giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình đang bị vướng, tài khoản mình có quyền đóng phiên trước khi mình thao tác, kèm chuyện tạo auction request mới; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Tài khoản mình có quyền đóng phiên vì giao diện hiện nhầm, sau đó xem trạng thái duyệt phiên.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Này ad, tài khoản mình có quyền đóng phiên vì giao diện hiện nhầm, nhưng cần nhập mã phòng trước được không?",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tk m co quyen dong phien vi giao dien hien nham, truoc khi m vua login xong, kem chuyen tao auction request moi pls",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền đóng phien vì giao diện hiện nhầm, kèm chuyện nhập thông tin sản phẩm để chờ duyệt để khỏi làm sai",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền đóng phiên vì giao diện hiện nhầm, trước khi yêu cầu duyệt còn pending đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Cứu mình với, tài khoản mình có quyền đóng phiên vì giao diện hiện nhầm, rồi vào room hiện tại giúp mình, trước khi mã phòng GOLD-21; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Tài khoản mình có quyền đóng phiên sau khi đăng nhập, trước khi nếu cần vào lại hệ thống.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, tài khoản mình có quyền đóng phiên sau khi đăng nhập, kèm chuyện seller đang tạo yêu cầu phiên, sau đó yêu cầu duyệt còn pending mình đang thao tác?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+"tk m co quyen dong phien sau khi login, dong thoi ad da approve chua vi m chua ro luong",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"tài khoản mình có quyền đóng phiên sau khi đăg nhập, rồi nút tham gia phòng đang mờ đang cần xử lý liền",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền đóng phiên sau khi đăng nhập, nhưng đang ở màn login đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tài khoản mình có quyền đóng phiên sau khi đăng nhập, sau đó gửi yêu cầu tạo phiên cho admin; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Tài khoản mình có quyền xem lobby có đúng không, đồng thời phiên đang chờ admin duyệt, kèm chuyện nút tham gia phòng đang mờ.",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Help với, tài khoản mình có quyền xem lobby có đúng không, sau đó mình đang muốn join room pls?",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tk m co quyen xem lobby co dung ko, truoc khi truoc do tk bao sai mk de khoi lam sai",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền xem lobby có đúng không, nhưng đăg sản phẩm lên sàn, đồng thời nhờ chatbot giải thích thêm mình hơi rén",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0
+"tài khoản mình có quyền xem lobby có đúng không, kèm chuyện gửi lên hàng đợi duyệt, sau đó mã phòng PHIEN-2026 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Này ad, tài khoản mình có quyền xem lobby có đúng không, rồi để mình vào phòng đấu giá, sau đó trước đó tài khoản báo sai mật khẩu; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Tài khoản mình có quyền xem lobby đang bị sai chức năng, sau đó sau khi đăng nhập thành công.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, tài khoản mình có quyền xem lobby đang bị sai chức năng, rồi tạo auction request mới vì mình chưa rõ luồng?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"tk m co quyen xem lobby dang bi sai chuc nang, kem chuyen xem trang thai duyet phien dang can xu ly lien",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"tài khoàn mình có quyền xem lobby đang bị sai chức năng, rồi cần nhập mã phòng trước nhé",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền xem lobby đang bị sai chức năng, nhưng mình vừa login xong, kèm chuyện tạo auction request mới đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Admin ơi, tài khoản mình có quyền xem lobby đang bị sai chức năng, đồng thời nhập thông tin sản phẩm để chờ duyệt; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"Tài khoản mình có quyền xem lobby trước khi mình thao tác, trước khi yêu cầu duyệt còn pending.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Alo ad, tài khoản mình có quyền xem lobby trước khi mình thao tác, rồi vào room hiện tại giúp mình để khỏi làm sai?",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tk m co quyen xem lobby truoc khi m thao tac, kem chuyen neu can vao lai he thong m hoi ren",0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoàn mình có quyền xem lobby trước khi mình thao tác, sau đó mã phòng P-774 được không",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền xem lobby trước khi mình thao tác đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, tài khoản mình có quyền xem lobby trước khi mình thao tác; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tài khoản mình có quyền xem lobby vì giao diện hiện nhầm.,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, tài khoản mình có quyền xem lobby vì giao diện hiện nhầm đang cần xử lý liền?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tk m co quyen xem lobby vi giao dien hien nham nhe,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tài khoàn mình có quyền xem lobby vì giao diện hiện nhầm mình đang thao tác,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền xem lobby vì giao diện hiện nhầm đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, tài khoản mình có quyền xem lobby vì giao diện hiện nhầm; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tài khoản mình có quyền xem lobby sau khi đăng nhập.,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, tài khoản mình có quyền xem lobby sau khi đăng nhập mình hơi rén?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tk m co quyen xem lobby sau khi login, nhung ma room auc-1024 dc ko",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tài khoản mình có quyền xem lobby sau khi đăg nhập pls,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền xem lobby sau khi đăng nhập đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, tài khoản mình có quyền xem lobby sau khi đăng nhập; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tài khoản mình có quyền chat trong phòng có đúng không.,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tài khoản mình có quyền chat trong phòng có đúng không nhé?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tk m co quyen chat trong room co dung ko m dang thao tac,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tài khoàn mình có quyền chat trong phòng có đúng không vì mình chưa rõ luồng,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền chat trong phòng có đúng không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, tài khoản mình có quyền chat trong phòng có đúng không; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tài khoản mình có quyền chat trong phòng đang bị sai chức năng.,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, tài khoản mình có quyền chat trong phòng đang bị sai chức năng, nhưng mã phòng A17 được không?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tk m co quyen chat trong room dang bi sai chuc nang pls,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tài khoàn mình có quyền chat trong phòng đang bị sai chức năng để khỏi làm sai,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền chat trong phòng đang bị sai chức năng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, tài khoản mình có quyền chat trong phòng đang bị sai chức năng; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tài khoản mình có quyền chat trong phòng trước khi mình thao tác.,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, tài khoản mình có quyền chat trong phòng trước khi mình thao tác mình đang thao tác?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tk m co quyen chat trong room truoc khi m thao tac vi m chua ro luong,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tài khoàn mình có quyền chat trong phòng trước khi mình thao tác đang cần xử lý liền,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mình có quyền chat trong phòng trước khi mình thao tác đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tài khoản mình có quyền chat trong phòng trước khi mình thao tác; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Tài khoản mình có quyền chat trong phòng vì giao diện hiện nhầm, đồng thời mã phòng SALA-05.",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, tài khoản mình có quyền chat trong phòng vì giao diện hiện nhầm pls?",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

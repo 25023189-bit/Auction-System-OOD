@@ -1,195 +1,201 @@
-text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
-Cơ chế anti-sniping trong hệ thống này hoạt động ra sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Cho tôi biết chống đặt giá phút chót là gì,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Vì sao phiên tự cộng thêm thời gian khi gần hết giờ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Khi có người bid ở cuối phiên thì timer kéo dài thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Anti snipe có phải để tránh cướp giá giây cuối không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn hiểu luật gia hạn phiên lúc cuối giờ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu ai đó trả giá sát giờ đóng thì chuyện gì xảy ra,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Hệ thống có chống kiểu chờ sát giây cuối mới bid không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Cơ chế chống cướp giá phút cuối áp dụng khi nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Phiên đấu giá tự kéo dài trong trường hợp nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có phải bid cuối giờ sẽ làm đồng hồ chạy thêm không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần biết khoảng thời gian nào được coi là cuối phiên,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Anti-sniping có bật cho mọi phiên đấu giá không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Chống sniping giúp các bidder khác phản hồi như thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Vì sao đang còn vài giây mà thời gian lại tăng lên,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Khi timer sắp về 0 mà có giá mới thì phiên xử lý sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Tôi thấy phiên thêm thời gian sau một lượt bid, giải thích giúp tôi",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Anti-sniping có làm phiên công bằng hơn không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu không có anti-sniping thì người khác chốt giá cuối được à,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Cơ chế chống chốt giá lén ở giây cuối là gì,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Thời gian gia hạn sau bid cuối phiên được tính như thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có thể xem anti-sniping là gia hạn tự động không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Khi nào hệ thống quyết định kéo dài phiên đấu giá,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tại sao phiên chưa đóng dù đồng hồ vừa hết gần hết,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Đặt giá trong phút cuối có khiến phiên chưa kết thúc không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Hệ thống chống bid sát giờ bằng cách nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Cơ chế snipe cuối phiên bị xử lý ra sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Cho hỏi anti-sniping khác gì gia hạn phiên bình thường,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Anti-sniping có phụ thuộc vào bid hợp lệ không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu bid cuối phiên không hợp lệ thì có gia hạn không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết điều kiện kích hoạt anti-snipe,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Cần bao nhiêu giây cuối thì anti-sniping mới chạy,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Phiên sẽ thêm mấy giây khi bị sniping,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Thời gian extension của anti-sniping lấy từ đâu,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có cấu hình số giây gia hạn chống sniping không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Anti-sniping có cộng dồn nhiều lần không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu nhiều người liên tục bid cuối giờ thì timer xử lý thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Phiên có thể bị kéo dài nhiều lần vì anti-sniping không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tại sao đồng hồ đếm ngược bị reset khi có bid cuối,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi tưởng hết giờ rồi mà hệ thống lại kéo thêm thời gian,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Cơ chế này có ngăn người đặt giá sát nút không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Bidder khác có cơ hội trả lời sau bid phút cuối không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Anti-sniping có nghĩa là không cho kết thúc ngay khi có bid cuối à,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn hỏi về luật chống đặt giá vào giây chót,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có phải mọi lượt bid cuối đều kích hoạt gia hạn không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu bid xảy ra trước ngưỡng cuối phiên thì có kéo dài không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Anti-sniping bắt đầu ở mốc thời gian nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giai đoạn cuối phiên được hệ thống xác định ra sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết timer kéo dài để ai có cơ hội phản hồi,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Khi có bid cuối phiên, các bidder khác còn bao lâu để trả giá",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Cơ chế này ngăn winner xuất hiện bất ngờ phút cuối đúng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Anti-sniping có chặn bid cuối hay chỉ gia hạn thời gian,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Hệ thống vẫn nhận bid cuối nhưng kéo dài phiên phải không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Chống sniping có làm giá hiện tại thay đổi ngay không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Nếu giá mới đến lúc cuối, phiên có phát lại thời gian mới không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Timer tự tăng do anti-sniping có phải lỗi không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Đồng hồ nhảy thêm thời gian ở cuối phiên có bình thường không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Tôi thấy countdown tăng lại sau bid cuối, đó là cơ chế gì",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Anti-sniping có hoạt động khi phiên sắp chốt không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Khi phiên gần chốt mà có bid hợp lệ thì sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Chống đặt giá phút cuối có liên quan đến bid step không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu bid cuối không đủ bước giá thì anti-sniping có chạy không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Gia hạn cuối phiên có cần người đặt giá cao nhất đổi không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Bid bằng giá hiện tại ở cuối phiên có kéo dài timer không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Anti-sniping chỉ chạy khi giá đặt được chấp nhận đúng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết vì sao phiên bị kéo dài sau khi giá mới hợp lệ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có trường hợp anti-sniping không kích hoạt dù còn ít giây không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu server nhận bid trễ ở cuối phiên thì anti-sniping tính ra sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Hệ thống có chống trường hợp mạng chậm rồi bid sát giờ không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Anti-sniping có tính theo thời điểm server nhận bid không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn hiểu logic kéo dài phiên khi có bid cuối,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có cần bật anti-sniping khi seller tạo phiên không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Seller cấu hình thời gian gia hạn chống sniping ở đâu,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Anti-sniping có phải do admin duyệt phiên cấu hình không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu thời gian gia hạn bằng 0 thì còn chống sniping không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Phiên nào không cấu hình extension có anti-sniping không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Cơ chế anti-snipe ảnh hưởng thời điểm tự chốt thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Khi anti-sniping kích hoạt thì chốt phiên bị lùi lại à,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tự động chốt có đợi hết thời gian gia hạn không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Hết thời gian gốc nhưng đang gia hạn thì phiên có đóng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Anti-sniping có làm người đang thắng phải chờ lâu hơn không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Người giữ giá cao nhất có bị mất quyền thắng vì anti-sniping không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu không ai bid thêm sau gia hạn thì phiên mới chốt đúng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Chống sniping có làm kết quả cuối cùng thay đổi không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần biết sau gia hạn ai là người thắng,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Anti-sniping có thông báo cho người trong phòng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có hiển thị thông báo phiên được gia hạn không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Khi timer tăng thêm, người dùng có nhận trạng thái mới không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Hệ thống có báo lý do gia hạn là anti-sniping không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Thông báo anti-sniping hiện ở đâu,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có cảnh báo khi phiên bước vào vùng chống sniping không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết phòng có đang ở chế độ anti-snipe không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Làm sao nhận ra phiên đang bị gia hạn do anti-sniping,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có dấu hiệu nào cho biết bid cuối vừa kích hoạt gia hạn không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu đang chat trong phòng thì anti-sniping có ảnh hưởng gì không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Anti-sniping có làm người mới vào phòng được thêm thời gian không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Cơ chế gia hạn cuối phiên khác khóa người mới như thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Khi anti-sniping chạy, người mới có bị chặn vào phòng không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Gia hạn phiên không đồng nghĩa mở cửa cho người mới đúng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn phân biệt anti-sniping với khóa người tham gia mới,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Anti-sniping có áp dụng cho người đã ở trong phòng từ trước không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Nếu bị khóa người mới, những bidder cũ còn được bid trong thời gian gia hạn không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Chống sniping có làm lobby hiển thị phiên lâu hơn không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Phiên được gia hạn có còn hiện ở danh sách đang hoạt động không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Khi anti-sniping kéo dài phiên, lobby có cập nhật thời gian không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Cơ chế này có làm phiên chưa bị đưa về lobby không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu phiên đang gia hạn thì chưa tự đưa user về lobby đúng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Anti-sniping có ảnh hưởng đến xử lý tiền sau phiên không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có trừ tiền ngay khi anti-sniping kích hoạt không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Khi gia hạn vì bid cuối, tiền chỉ xử lý lúc chốt phải không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Chống sniping có làm thanh toán bị lùi theo thời gian chốt không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn hỏi anti-sniping có liên quan đến người thắng cuối không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có thể tắt anti-sniping giữa phiên đang chạy không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Anti-sniping có làm phiên kéo dài vô hạn không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Hệ thống giới hạn số lần kéo dài do anti-sniping không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu cứ có bid cuối thì phiên kéo dài mãi à,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Có thời lượng tối đa cho cơ chế chống sniping không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết anti-snipe xử lý spam bid cuối giờ ra sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Cơ chế chống bid sát giờ có chống spam không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Anti-sniping có giống rate limit khi bấm bid liên tục không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu nhiều bid cuối giờ trong vài giây thì timer cập nhật mấy lần,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn hỏi vì sao anti-sniping không phải lỗi đếm giờ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Anti snipe là gì vậy,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Chống sniping hoạt động sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Gia hạn cuối phiên là gì,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Timer tăng do anti snipe,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Bid cuối giờ có kéo dài không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Còn vài giây mà thêm giờ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Phiên tự gia hạn à,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Chống cướp giá cuối giờ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Anti snipe áp dụng khi nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Cơ chế kéo dài phiên,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tại sao đồng hồ cộng giờ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Bid sát nút xử lý sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Gia hạn vì bid cuối,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Cuối phiên có anti không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Snipe phút cuối là gì,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Anti-sniping có tác dụng gì,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Bid cuối có gia hạn à,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Timer reset cuối phiên,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu tôi đặt giá sát giờ chốt thì anti-sniping có kéo dài phiên không,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Bid hợp lệ ở 10 giây cuối có làm countdown tăng lại không,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn đặt giá phút cuối và biết phiên có gia hạn không,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Khi bid cuối phiên được nhận, giá realtime và timer cập nhật ra sao",0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Đặt giá cuối giờ có phát giá mới cho mọi người trong phòng không,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu bid bị reject ở cuối phiên thì anti-sniping có chạy không,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Bid thấp hơn bước giá vào phút cuối có kéo dài phiên không,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Tôi vừa bid sát nút nhưng không thấy timer tăng, vì sao",0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Anti-sniping kích hoạt sau lượt đặt giá của tôi thế nào,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần xem thời gian còn lại để biết còn trong vùng anti-sniping không,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Countdown còn ít giây thì hệ thống bắt đầu chống sniping chưa,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Timer gia hạn thêm sau bid cuối hiển thị ở đâu,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết thời gian còn lại có thay đổi vì anti-sniping không,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Cập nhật thời gian realtime khi anti-sniping chạy thế nào,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Giá mới ở cuối phiên có cập nhật realtime cùng thời gian gia hạn không,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Anti-sniping làm giá hiện tại và người dẫn đầu thay đổi ra sao,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Khi có bid cuối, lịch sử đặt giá có ghi lượt kích hoạt anti-sniping không",0,0,0,0,0,0,0,0,0,1,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn xem lịch sử bid để biết ai làm phiên gia hạn,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Lượt bid cuối khiến gia hạn có nằm trong lịch sử không,0,0,0,0,0,0,0,0,0,1,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Thông báo phiên được gia hạn vì anti-sniping hiện thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0
-Người trong phòng có nhận thông báo anti-sniping không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0
-"Khi timer tăng lại, trạng thái phiên có báo đang gia hạn không",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0
-Tôi muốn chatbot giải thích vì sao phiên bị kéo dài cuối giờ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0
-Hỏi chatbot anti-sniping có phải lỗi hệ thống không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0
-"Nếu đang chat trong phòng, anti-sniping có báo cho mọi người không",0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0
-Trong phòng chat có thấy thông báo gia hạn anti-sniping không,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0
-Anti-sniping có khác khóa người tham gia mới cuối phiên không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Khi hệ thống khóa người mới, anti-sniping vẫn cho bidder cũ phản hồi à",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
-Người mới bị khóa nhưng người trong phòng còn bid khi gia hạn không,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu có bid cuối thì người mới còn được tham gia phòng không,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Tôi đã ở trong phòng, cuối phiên anti-sniping có cho đặt giá tiếp không",0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Vào phòng trước rồi gặp anti-sniping thì còn thời gian phản hồi không,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Người chưa vào phòng có lợi gì khi anti-sniping kéo dài phiên không,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Sau khi rời phòng, anti-sniping gia hạn thì tôi có quay lại bid được không",0,0,0,0,0,0,0,1,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Phiên được anti-sniping gia hạn thì chưa tự chốt đúng không,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
-Tự động chốt phiên có đợi hết phần gia hạn anti-sniping không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
-Nếu còn extension do anti-sniping thì hệ thống chưa xử lý người thắng à,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0
-Anti-sniping làm thời điểm trừ tiền người thắng bị lùi lại phải không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0
-"Khi phiên kéo dài do anti-sniping, số dư đã bị trừ chưa",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Phiên gia hạn vì bid cuối có tiếp tục hiện trong lobby không,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Danh sách phiên có cập nhật thời gian mới sau anti-sniping không,0,0,0,0,0,1,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Xem chi tiết phiên có thấy đang gia hạn do anti-sniping không,0,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Trang chi tiết sản phẩm có hiển thị lý do timer tăng không,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0
-Seller tạo phiên có đặt số giây gia hạn anti-sniping không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0
-"Khi tạo phiên, thời gian extension dùng cho anti-sniping nhập ở đâu",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0
-Dữ liệu tạo phiên kiểm tra extension anti-sniping như thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0
-Yêu cầu duyệt phiên có bao gồm cấu hình anti-sniping không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
-Seller đóng phiên khi anti-sniping đang gia hạn được không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0
-Anti-sniping đang chạy thì hệ thống có đưa người dùng về lobby chưa,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0
-"Khi phiên hết phần gia hạn, hệ thống đưa user về lobby ra sao",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0
-"Nếu nhiều người đặt giá cuối phiên, timer và giá realtime cập nhật ra sao",0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Anti-sniping giữ phiên mở để bidder khác đặt giá phản hồi đúng không,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Cơ chế này có giúp người bị vượt giá cuối cùng kịp bid lại không,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-"Khi bidder phản hồi trong thời gian gia hạn, giá và countdown cập nhật thế nào",0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+﻿text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+"Hệ thống có tự cộng giờ không khi người khác bid phút chót cho sản phẩm này, trước khi xem countdown còn bao lâu, sau đó đặt 500k nếu hợp lệ, trước khi bot phân tích lỗi đang gặp, kèm chuyện mã phòng AUC-1024, trước khi 30 giây cuối.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Admin ơi, hệ thống có tự cộng giờ không khi người khác bid phút chót cho sản phẩm này, sau đó chuẩn bị bid mức mới mình đang thao tác?",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi nguoi khac bid phut chot cho sp nay, sau do refresh gia live giup m vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi người khác bid phút chót cho sản phẩm này, kèm chuyện phien tự kết thúc sau deadline đang cần xử lý liền",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi người khác bid phút chót cho sản phẩm này, kèm chuyện còn mấy giây để thao tác đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, hệ thống có tự cộng giờ không khi người khác bid phút chót cho sản phẩm này, đồng thời mình định đặt giá thêm, kèm chuyện refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi người khác bid phút chót trong room hiện tại, sau đó cần xem giá cao nhất hiện tại.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, hệ thống có tự cộng giờ không khi người khác bid phút chót trong room hiện tại, đồng thời không cần seller bấm đóng pls?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi nguoi khac bid phut chot trong room hien tai, kem chuyen check deadline cua phien, truoc khi 30 giay cuoi de khoi lam sai",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ khong khi người khác bid phút chót trong room hiện tại, đồng thời nâng thêm 100k được không mình hơi rén",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi người khác bid phút chót trong room hiện tại, nhưng giá realtime đang chưa đổi, sau đó không cần seller bấm đóng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, hệ thống có tự cộng giờ không khi người khác bid phút chót trong room hiện tại, nhưng hệ thống tự xác định người thắng, trước khi mã phòng A17; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi người khác bid phút chót ở phiên đang mở, sau đó mình sợ hết thời gian.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, hệ thống có tự cộng giờ không khi người khác bid phút chót ở phiên đang mở, nhưng muốn vượt người đang dẫn vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi nguoi khac bid phut chot o phien dang mo, truoc khi dang theo doi gia hien tai dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi người khác bid phút chót ở phien đang mở, nhưng khi countdown về 0 thì tự chốt, đồng thời mình sợ hết thời gian nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi người khác bid phút chót ở phiên đang mở, sau đó đồng hồ phiên sắp hết, nhưng 30 giây cuối đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, hệ thống có tự cộng giờ không khi người khác bid phút chót ở phiên đang mở, kèm chuyện đặt 500k nếu hợp lệ, rồi bot phân tích lỗi đang gặp; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Hệ thống có tự cộng giờ không khi người khác bid phút chót với mã phòng AUC-1024, rồi giá mới bị delay.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, hệ thống có tự cộng giờ không khi người khác bid phút chót với mã phòng AUC-1024, kèm chuyện auto close phải chạy đúng để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi nguoi khac bid phut chot voi ma room auc-1024, kem chuyen xem countdown con bao lau, sau do dat 500k neu hop le m hoi ren",0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ khong khi người khác bid phút chót với mã phòng AUC-1024, trước khi chuẩn bị bid mức mới được không",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi người khác bid phút chót với mã phòng AUC-1024, trước khi refresh giá live giúp mình, nhưng mã phòng SALA-05 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, hệ thống có tự cộng giờ không khi người khác bid phút chót với mã phòng AUC-1024, nhưng phiên tự kết thúc sau deadline; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi người khác bid phút chót khi mình đang theo dõi giá, đồng thời còn mấy giây để thao tác, đồng thời 30 giây cuối.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, hệ thống có tự cộng giờ không khi người khác bid phút chót khi mình đang theo dõi giá, sau đó mình định đặt giá thêm, trước khi refresh giá live giúp mình đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi nguoi khac bid phut chot khi m dang theo doi gia, roi can xem gia cao nhat hien tai nhe",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ khong khi người khác bid phút chót khi mình đang theo dõi giá, nhưng không cần seller bấm đóng mình đang thao tác",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi người khác bid phút chót khi mình đang theo dõi giá, trước khi kiểm tra deadline của phiên đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, hệ thống có tự cộng giờ không khi người khác bid phút chót khi mình đang theo dõi giá, nhưng nâng thêm 100k được không; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi mình đặt giá sát giờ cho sản phẩm này, đồng thời giá realtime đang chưa đổi, nhưng không cần seller bấm đóng.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, hệ thống có tự cộng giờ không khi mình đặt giá sát giờ cho sản phẩm này, đồng thời hệ thống tự xác định người thắng mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi m dat gia sat gio cho sp nay, nhung m so het thoi gian, truoc khi 30 giay cuoi dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi mình đặt giá sát giờ cho sản phầm này, sau đó muốn vượt người đang dẫn, rồi mã phòng ROOM-88 pls",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi mình đặt giá sát giờ cho sản phẩm này, đồng thời đang theo dõi giá hiện tại, sau đó bot hướng dẫn bước tiếp theo đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Alo ad, hệ thống có tự cộng giờ không khi mình đặt giá sát giờ cho sản phẩm này, sau đó khi countdown về 0 thì tự chốt, sau đó mình sợ hết thời gian; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi mình đặt giá sát giờ trong room hiện tại, sau đó đồng hồ phiên sắp hết.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, hệ thống có tự cộng giờ không khi mình đặt giá sát giờ trong room hiện tại, kèm chuyện đặt 500k nếu hợp lệ nhé?",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi m dat gia sat gio trong room hien tai, roi gia moi bi delay m dang thao tac",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ khong khi mình đặt giá sát giờ trong room hiện tại, kèm chuyện auto close phải chạy đúng vì mình chưa rõ luồng",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi mình đặt giá sát giờ trong room hiện tại, kèm chuyện xem countdown còn bao lâu, sau đó đặt 500k nếu hợp lệ, nhưng 30 giây cuối đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, hệ thống có tự cộng giờ không khi mình đặt giá sát giờ trong room hiện tại, trước khi chuẩn bị bid mức mới; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi mình đặt giá sát giờ ở phiên đang mở, rồi refresh giá live giúp mình.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, hệ thống có tự cộng giờ không khi mình đặt giá sát giờ ở phiên đang mở, trước khi phiên tự kết thúc sau deadline được không?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi m dat gia sat gio o phien dang mo, truoc khi con may giay de thao tac, dong thoi ma room bid-09 pls",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi mình đặt giá sát giờ ở phien đang mở, nhưng mình định đặt giá thêm, rồi refresh giá live giúp mình để khỏi làm sai",0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi mình đặt giá sát giờ ở phiên đang mở, kèm chuyện cần xem giá cao nhất hiện tại đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, hệ thống có tự cộng giờ không khi mình đặt giá sát giờ ở phiên đang mở, sau đó không cần seller bấm đóng; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi mình đặt giá sát giờ với mã phòng AUC-1024, đồng thời kiểm tra deadline của phiên, đồng thời 30 giây cuối.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, hệ thống có tự cộng giờ không khi mình đặt giá sát giờ với mã phòng AUC-1024, sau đó nâng thêm 100k được không mình đang thao tác?",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi m dat gia sat gio voi ma room auc-1024, roi gia realtime dang chua doi, dong thoi ko can seller bam dong vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ khong khi mình đặt giá sát giờ với mã phòng AUC-1024, rồi hệ thống tự xác định người thắng, sau đó chatbot nói dễ hiểu giúp mình đang cần xử lý liền",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0
+"hệ thống có tự cộng giờ không khi mình đặt giá sát giờ với mã phòng AUC-1024, đồng thời mình sợ hết thời gian đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, hệ thống có tự cộng giờ không khi mình đặt giá sát giờ với mã phòng AUC-1024, trước khi muốn vượt người đang dẫn; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi mình đặt giá sát giờ khi mình đang theo dõi giá, sau đó đang theo dõi giá hiện tại.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, hệ thống có tự cộng giờ không khi mình đặt giá sát giờ khi mình đang theo dõi giá, kèm chuyện khi countdown về 0 thì tự chốt, đồng thời mình sợ hết thời gian, sau đó mã phòng GOLD-21 pls?",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi m dat gia sat gio khi m dang theo doi gia, roi dong ho phien sap het, roi 30 giay cuoi de khoi lam sai",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ khong khi mình đặt giá sát giờ khi mình đang theo dõi giá, trước khi đặt 500k nếu hợp lệ mình hơi rén",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi mình đặt giá sát giờ khi mình đang theo dõi giá, đồng thời giá mới bị delay đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, hệ thống có tự cộng giờ không khi mình đặt giá sát giờ khi mình đang theo dõi giá, trước khi auto close phải chạy đúng; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi giá bị đẩy ở cuối phiên cho sản phẩm này, kèm chuyện xem countdown còn bao lâu, sau đó đặt 500k nếu hợp lệ.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, hệ thống có tự cộng giờ không khi giá bị đẩy ở cuối phiên cho sản phẩm này, trước khi chuẩn bị bid mức mới vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi gia bi day o cuoi phien cho sp nay, truoc khi refresh gia live giup m dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi giá bị đẩy ở cuối phien cho sản phẩm này, nhưng phiên tự kết thúc sau deadline nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi giá bị đẩy ở cuối phiên cho sản phẩm này, nhưng còn mấy giây để thao tác, trước khi 30 giây cuối đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, hệ thống có tự cộng giờ không khi giá bị đẩy ở cuối phiên cho sản phẩm này, rồi mình định đặt giá thêm, nhưng refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi giá bị đẩy ở cuối phiên trong room hiện tại, trước khi cần xem giá cao nhất hiện tại, sau đó mã phòng PHIEN-2026.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, hệ thống có tự cộng giờ không khi giá bị đẩy ở cuối phiên trong room hiện tại, rồi không cần seller bấm đóng để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi gia bi day o cuoi phien trong room hien tai, nhung check deadline cua phien, dong thoi nho bot giai thich them m hoi ren",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"hệ thống có tự cộng giờ không khi giá bị đẩy ở cuối phien trong room hiện tại, rồi nâng thêm 100k được không được không",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi giá bị đẩy ở cuối phiên trong room hiện tại, đồng thời giá realtime đang chưa đổi, nhưng không cần seller bấm đóng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, hệ thống có tự cộng giờ không khi giá bị đẩy ở cuối phiên trong room hiện tại, đồng thời hệ thống tự xác định người thắng; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi giá bị đẩy ở cuối phiên ở phiên đang mở, trước khi mình sợ hết thời gian, trước khi 30 giây cuối.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, hệ thống có tự cộng giờ không khi giá bị đẩy ở cuối phiên ở phiên đang mở, đồng thời muốn vượt người đang dẫn đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi gia bi day o cuoi phien o phien dang mo, kem chuyen dang theo doi gia hien tai nhe",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi giá bị đẩy ở cuối phien ở phiên đang mở, đồng thời khi countdown về 0 thì tự chốt, trước khi mình sợ hết thời gian mình đang thao tác",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi giá bị đẩy ở cuối phiên ở phiên đang mở, trước khi đồng hồ phiên sắp hết đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, hệ thống có tự cộng giờ không khi giá bị đẩy ở cuối phiên ở phiên đang mở, nhưng đặt 500k nếu hợp lệ, rồi mã phòng P-774; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi giá bị đẩy ở cuối phiên với mã phòng AUC-1024, sau đó giá mới bị delay.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, hệ thống có tự cộng giờ không khi giá bị đẩy ở cuối phiên với mã phòng AUC-1024, nhưng auto close phải chạy đúng mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi gia bi day o cuoi phien voi ma room auc-1024, nhung xem countdown con bao lau, sau do dat 500k neu hop le, nhung 30 giay cuoi dc ko",0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi giá bị đẩy ở cuối phien với mã phòng AUC-1024, kèm chuyện chuẩn bị bid mức mới pls",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi giá bị đẩy ở cuối phiên với mã phòng AUC-1024, kèm chuyện refresh giá live giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, hệ thống có tự cộng giờ không khi giá bị đẩy ở cuối phiên với mã phòng AUC-1024, đồng thời phiên tự kết thúc sau deadline; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi giá bị đẩy ở cuối phiên khi mình đang theo dõi giá, rồi còn mấy giây để thao tác.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, hệ thống có tự cộng giờ không khi giá bị đẩy ở cuối phiên khi mình đang theo dõi giá, trước khi mình định đặt giá thêm, rồi refresh giá live giúp mình, nhưng bot phân tích lỗi đang gặp nhé?",0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"he thong co tu cong gio ko khi gia bi day o cuoi phien khi m dang theo doi gia, sau do can xem gia cao nhat hien tai m dang thao tac",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi giá bị đẩy ở cuối phien khi mình đang theo dõi giá, đồng thời không cần seller bấm đóng vì mình chưa rõ luồng",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi giá bị đẩy ở cuối phiên khi mình đang theo dõi giá, kèm chuyện kiểm tra deadline của phiên, kèm chuyện mã phòng AUC-1024, trước khi 30 giây cuối đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, hệ thống có tự cộng giờ không khi giá bị đẩy ở cuối phiên khi mình đang theo dõi giá, đồng thời nâng thêm 100k được không; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi đồng hồ còn vài giây cho sản phẩm này, đồng thời giá realtime đang chưa đổi, nhưng không cần seller bấm đóng.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, hệ thống có tự cộng giờ không khi đồng hồ còn vài giây cho sản phẩm này, đồng thời hệ thống tự xác định người thắng được không?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi dong ho con vai giay cho sp nay, nhung m so het thoi gian pls",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi đồng hồ còn vài giây cho sản phầm này, sau đó muốn vượt người đang dẫn để khỏi làm sai",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi đồng hồ còn vài giây cho sản phẩm này, đồng thời đang theo dõi giá hiện tại đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, hệ thống có tự cộng giờ không khi đồng hồ còn vài giây cho sản phẩm này, sau đó khi countdown về 0 thì tự chốt, sau đó mình sợ hết thời gian; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi đồng hồ còn vài giây trong room hiện tại, sau đó đồng hồ phiên sắp hết, nhưng 30 giây cuối.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, hệ thống có tự cộng giờ không khi đồng hồ còn vài giây trong room hiện tại, kèm chuyện đặt 500k nếu hợp lệ mình đang thao tác?",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi dong ho con vai giay trong room hien tai, roi gia moi bi delay vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ khong khi đồng hồ còn vài giây trong room hiện tại, kèm chuyện auto close phải chạy đúng, trước khi mã phòng A17 đang cần xử lý liền",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi đồng hồ còn vài giây trong room hiện tại, kèm chuyện xem countdown còn bao lâu, sau đó đặt 500k nếu hợp lệ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, hệ thống có tự cộng giờ không khi đồng hồ còn vài giây trong room hiện tại, trước khi chuẩn bị bid mức mới; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi đồng hồ còn vài giây ở phiên đang mở, rồi refresh giá live giúp mình, nhưng bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, hệ thống có tự cộng giờ không khi đồng hồ còn vài giây ở phiên đang mở, trước khi phiên tự kết thúc sau deadline pls?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi dong ho con vai giay o phien dang mo, truoc khi con may giay de thao tac, truoc khi 30 giay cuoi de khoi lam sai",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi đồng hồ còn vài giây ở phien đang mở, nhưng mình định đặt giá thêm, rồi refresh giá live giúp mình mình hơi rén",0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi đồng hồ còn vài giây ở phiên đang mở, kèm chuyện cần xem giá cao nhất hiện tại đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, hệ thống có tự cộng giờ không khi đồng hồ còn vài giây ở phiên đang mở, sau đó không cần seller bấm đóng; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi đồng hồ còn vài giây với mã phòng AUC-1024, đồng thời kiểm tra deadline của phiên.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, hệ thống có tự cộng giờ không khi đồng hồ còn vài giây với mã phòng AUC-1024, sau đó nâng thêm 100k được không vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi dong ho con vai giay voi ma room auc-1024, roi gia realtime dang chua doi, dong thoi ko can seller bam dong, sau do ma room sala-05 dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ khong khi đồng hồ còn vài giây với mã phòng AUC-1024, rồi hệ thống tự xác định người thắng nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi đồng hồ còn vài giây với mã phòng AUC-1024, đồng thời mình sợ hết thời gian, đồng thời 30 giây cuối đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, hệ thống có tự cộng giờ không khi đồng hồ còn vài giây với mã phòng AUC-1024, trước khi muốn vượt người đang dẫn; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi đồng hồ còn vài giây khi mình đang theo dõi giá, sau đó đang theo dõi giá hiện tại.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, hệ thống có tự cộng giờ không khi đồng hồ còn vài giây khi mình đang theo dõi giá, kèm chuyện khi countdown về 0 thì tự chốt, đồng thời mình sợ hết thời gian để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi dong ho con vai giay khi m dang theo doi gia, roi dong ho phien sap het m hoi ren",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ khong khi đồng hồ còn vài giây khi mình đang theo dõi giá, trước khi đặt 500k nếu hợp lệ được không",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi đồng hồ còn vài giây khi mình đang theo dõi giá, đồng thời giá mới bị delay đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, hệ thống có tự cộng giờ không khi đồng hồ còn vài giây khi mình đang theo dõi giá, trước khi auto close phải chạy đúng, nhưng bot hướng dẫn bước tiếp theo; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0
+"Hệ thống có tự cộng giờ không khi có bid mới trong room cho sản phẩm này, đồng thời xem countdown còn bao lâu, nhưng đặt 500k nếu hợp lệ, trước khi 30 giây cuối.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, hệ thống có tự cộng giờ không khi có bid mới trong room cho sản phẩm này, nhưng chuẩn bị bid mức mới, nhưng mã phòng ROOM-88 đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi co bid moi trong room cho sp nay, nhung refresh gia live giup m nhe",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi có bid mới trong room cho sản phẩm này, rồi phien tự kết thúc sau deadline mình đang thao tác",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi có bid mới trong room cho sản phẩm này, rồi còn mấy giây để thao tác đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, hệ thống có tự cộng giờ không khi có bid mới trong room cho sản phẩm này, trước khi mình định đặt giá thêm, rồi refresh giá live giúp mình; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi có bid mới trong room trong room hiện tại, nhưng cần xem giá cao nhất hiện tại.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, hệ thống có tự cộng giờ không khi có bid mới trong room trong room hiện tại, trước khi không cần seller bấm đóng mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi co bid moi trong room trong room hien tai, roi check deadline cua phien, roi 30 giay cuoi dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ khong khi có bid mới trong room trong room hiện tại, trước khi nâng thêm 100k được không pls",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi có bid mới trong room trong room hiện tại, sau đó giá realtime đang chưa đổi, kèm chuyện không cần seller bấm đóng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, hệ thống có tự cộng giờ không khi có bid mới trong room trong room hiện tại, sau đó hệ thống tự xác định người thắng; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi có bid mới trong room ở phiên đang mở, nhưng mình sợ hết thời gian, đồng thời mã phòng BID-09.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, hệ thống có tự cộng giờ không khi có bid mới trong room ở phiên đang mở, sau đó muốn vượt người đang dẫn nhé?",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi co bid moi trong room o phien dang mo, dong thoi dang theo doi gia hien tai m dang thao tac",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi có bid mới trong room ở phien đang mở, sau đó khi countdown về 0 thì tự chốt, sau đó mình sợ hết thời gian vì mình chưa rõ luồng",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi có bid mới trong room ở phiên đang mở, nhưng đồng hồ phiên sắp hết, kèm chuyện chatbot nói dễ hiểu giúp mình, trước khi 30 giây cuối đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Mình đang bị vướng, hệ thống có tự cộng giờ không khi có bid mới trong room ở phiên đang mở, rồi đặt 500k nếu hợp lệ; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi có bid mới trong room với mã phòng AUC-1024, kèm chuyện giá mới bị delay.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, hệ thống có tự cộng giờ không khi có bid mới trong room với mã phòng AUC-1024, rồi auto close phải chạy đúng được không?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi co bid moi trong room voi ma room auc-1024, roi xem countdown con bao lau, dong thoi dat 500k neu hop le pls",0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ khong khi có bid mới trong room với mã phòng AUC-1024, đồng thời chuẩn bị bid mức mới để khỏi làm sai",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi có bid mới trong room với mã phòng AUC-1024, đồng thời refresh giá live giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, hệ thống có tự cộng giờ không khi có bid mới trong room với mã phòng AUC-1024, sau đó phiên tự kết thúc sau deadline, rồi mã phòng GOLD-21; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi có bid mới trong room khi mình đang theo dõi giá, trước khi còn mấy giây để thao tác, trước khi 30 giây cuối.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, hệ thống có tự cộng giờ không khi có bid mới trong room khi mình đang theo dõi giá, nhưng mình định đặt giá thêm, rồi refresh giá live giúp mình mình đang thao tác?",0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi co bid moi trong room khi m dang theo doi gia, kem chuyen can xem gia cao nhat hien tai vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ khong khi có bid mới trong room khi mình đang theo dõi giá, sau đó không cần seller bấm đóng đang cần xử lý liền",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi có bid mới trong room khi mình đang theo dõi giá, đồng thời kiểm tra deadline của phiên đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, hệ thống có tự cộng giờ không khi có bid mới trong room khi mình đang theo dõi giá, sau đó nâng thêm 100k được không; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi phiên sắp hết giờ cho sản phẩm này, trước khi giá realtime đang chưa đổi, sau đó không cần seller bấm đóng.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, hệ thống có tự cộng giờ không khi phiên sắp hết giờ cho sản phẩm này, trước khi hệ thống tự xác định người thắng pls?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi phien sap het gio cho sp nay, sau do m so het thoi gian, nhung 30 giay cuoi de khoi lam sai",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi phien sắp hết giờ cho sản phẩm này, nhưng muốn vượt người đang dẫn, đồng thời nhờ chatbot giải thích thêm mình hơi rén",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"hệ thống có tự cộng giờ không khi phiên sắp hết giờ cho sản phẩm này, trước khi đang theo dõi giá hiện tại, sau đó mã phòng PHIEN-2026 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, hệ thống có tự cộng giờ không khi phiên sắp hết giờ cho sản phẩm này, nhưng khi countdown về 0 thì tự chốt, đồng thời mình sợ hết thời gian; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi phiên sắp hết giờ trong room hiện tại, nhưng đồng hồ phiên sắp hết.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, hệ thống có tự cộng giờ không khi phiên sắp hết giờ trong room hiện tại, rồi đặt 500k nếu hợp lệ vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi phien sap het gio trong room hien tai, kem chuyen gia moi bi delay dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi phien sắp hết giờ trong room hiện tại, rồi auto close phải chạy đúng nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi phiên sắp hết giờ trong room hiện tại, rồi xem countdown còn bao lâu, đồng thời đặt 500k nếu hợp lệ, đồng thời 30 giây cuối đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, hệ thống có tự cộng giờ không khi phiên sắp hết giờ trong room hiện tại, đồng thời chuẩn bị bid mức mới; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi phiên sắp hết giờ ở phiên đang mở, kèm chuyện refresh giá live giúp mình.",0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, hệ thống có tự cộng giờ không khi phiên sắp hết giờ ở phiên đang mở, đồng thời phiên tự kết thúc sau deadline để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi phien sap het gio o phien dang mo, dong thoi con may giay de thao tac m hoi ren",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi phien sắp hết giờ ở phiên đang mở, kèm chuyện mã phòng P-774 được không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi phiên sắp hết giờ ở phiên đang mở đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, hệ thống có tự cộng giờ không khi phiên sắp hết giờ ở phiên đang mở; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi phiên sắp hết giờ với mã phòng AUC-1024, đồng thời 30 giây cuối.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, hệ thống có tự cộng giờ không khi phiên sắp hết giờ với mã phòng AUC-1024 đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+he thong co tu cong gio ko khi phien sap het gio voi ma room auc-1024 nhe,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+hệ thống có tự cộng giờ không khi phien sắp hết giờ với mã phòng AUC-1024 mình đang thao tác,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi phiên sắp hết giờ với mã phòng AUC-1024 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, hệ thống có tự cộng giờ không khi phiên sắp hết giờ với mã phòng AUC-1024; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Hệ thống có tự cộng giờ không khi phiên sắp hết giờ khi mình đang theo dõi giá.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, hệ thống có tự cộng giờ không khi phiên sắp hết giờ khi mình đang theo dõi giá mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"he thong co tu cong gio ko khi phien sap het gio khi m dang theo doi gia, sau do ma room auc-1024, nhung 30 giay cuoi dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+hệ thống có tự cộng giờ không khi phien sắp hết giờ khi mình đang theo dõi giá pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi phiên sắp hết giờ khi mình đang theo dõi giá đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, hệ thống có tự cộng giờ không khi phiên sắp hết giờ khi mình đang theo dõi giá; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Hệ thống có tự cộng giờ không khi người ta úp giá cuối cho sản phẩm này.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, hệ thống có tự cộng giờ không khi người ta úp giá cuối cho sản phẩm này nhé?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+he thong co tu cong gio ko khi nguoi ta up gia cuoi cho sp nay m dang thao tac,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+hệ thống có tự cộng giờ không khi người ta úp giá cuối cho sản phầm này vì mình chưa rõ luồng,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi người ta úp giá cuối cho sản phẩm này, sau đó 30 giây cuối đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, hệ thống có tự cộng giờ không khi người ta úp giá cuối cho sản phẩm này; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Hệ thống có tự cộng giờ không khi người ta úp giá cuối trong room hiện tại.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, hệ thống có tự cộng giờ không khi người ta úp giá cuối trong room hiện tại, nhưng mã phòng A17 được không?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+he thong co tu cong gio ko khi nguoi ta up gia cuoi trong room hien tai pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+hệ thống có tự cộng giờ khong khi người ta úp giá cuối trong room hiện tại để khỏi làm sai,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi người ta úp giá cuối trong room hiện tại đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, hệ thống có tự cộng giờ không khi người ta úp giá cuối trong room hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi người ta úp giá cuối ở phiên đang mở, trước khi 30 giây cuối.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, hệ thống có tự cộng giờ không khi người ta úp giá cuối ở phiên đang mở mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+he thong co tu cong gio ko khi nguoi ta up gia cuoi o phien dang mo vi m chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+hệ thống có tự cộng giờ không khi người ta úp giá cuối ở phien đang mở đang cần xử lý liền,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"hệ thống có tự cộng giờ không khi người ta úp giá cuối ở phiên đang mở đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, hệ thống có tự cộng giờ không khi người ta úp giá cuối ở phiên đang mở; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Hệ thống có tự cộng giờ không khi người ta úp giá cuối với mã phòng AUC-1024, nhưng mã phòng SALA-05.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, hệ thống có tự cộng giờ không khi người ta úp giá cuối với mã phòng AUC-1024 pls?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0

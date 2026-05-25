@@ -1,0 +1,201 @@
+﻿text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+Tôi là seller muốn đóng phiên đấu giá sớm rồi tự động chốt phiên theo trạng thái hiện tại.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0
+"Admin ơi, tôi là seller muốn đóng phiên đấu giá sớm nhưng không được xử lý tiền nếu là seller đóng sớm mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+toi la seller muon dong phien dg som va dua bidder ve lobby sau khi ket thuc vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+tôi là seller muốn đóng phien đấu giá sớm kèm thông báo trạng thái phiên cho mọi người nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+"tôi là seller muốn đóng phiên đấu giá sớm, sau khi kiểm tra lịch sử đặt giá hiện tại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Ê cho hỏi, tôi là seller muốn đóng phiên đấu giá sớm, khi thời gian còn lại chưa về 0; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Seller có thể kết thúc phiên này ngay không và khóa người mới không cho vào thêm.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Help với, seller có thể kết thúc phiên này ngay không rồi gửi message trong phòng để bidder biết để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"seller co the ket thuc phien nay ngay ko, vi phien vua dc duyet nhung sp sai thong tin dc ko",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+"seller có thể kết thúc phien này ngay không, khác với luồng hết giờ tự động chốt và settlement pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0
+"seller có thể kết thúc phiên này ngay không, nếu đang anti-sniping thì cũng phải dừng an toàn đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+"Này ad, seller có thể kết thúc phiên này ngay không và chatbot cần giải thích seller close khác timeout; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0
+Nút đóng phiên của tôi nằm ở đâu rồi tự động chốt phiên theo trạng thái hiện tại.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0
+"Admin ơi, nút đóng phiên của tôi nằm ở đâu nhưng không được xử lý tiền nếu là seller đóng sớm mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+nut dong phien cua toi nam o dau va dua bidder ve lobby sau khi ket thuc vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+nút đóng phien của tôi nằm ở đâu kèm thông báo trạng thái phiên cho mọi người nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+"nút đóng phiên của tôi nằm ở đâu, sau khi kiểm tra lịch sử đặt giá hiện tại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Ê cho hỏi, nút đóng phiên của tôi nằm ở đâu, khi thời gian còn lại chưa về 0; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Tôi muốn dừng phiên trước thời gian kết thúc và khóa người mới không cho vào thêm.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Help với, tôi muốn dừng phiên trước thời gian kết thúc rồi gửi message trong phòng để bidder biết để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"toi muon dung phien truoc thoi gian ket thuc, vi phien vua dc duyet nhung sp sai thong tin dc ko",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+"tôi muốn dừng phien trước thời gian kết thúc, khác với luồng hết giờ tự động chốt và settlement pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0
+"tôi muốn dừng phiên trước thời gian kết thúc, nếu đang anti-sniping thì cũng phải dừng an toàn đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+"Này ad, tôi muốn dừng phiên trước thời gian kết thúc và chatbot cần giải thích seller close khác timeout; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0
+Phiên có lỗi nên tôi cần đóng lại rồi tự động chốt phiên theo trạng thái hiện tại.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0
+"Admin ơi, phiên có lỗi nên tôi cần đóng lại nhưng không được xử lý tiền nếu là seller đóng sớm mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+phien co loi nen toi can dong lai va dua bidder ve lobby sau khi ket thuc vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+phien có lỗi nên tôi cần đóng lại kèm thông báo trạng thái phiên cho mọi người nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+"phiên có lỗi nên tôi cần đóng lại, sau khi kiểm tra lịch sử đặt giá hiện tại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Ê cho hỏi, phiên có lỗi nên tôi cần đóng lại, khi thời gian còn lại chưa về 0; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Seller đóng phiên thì hệ thống xử lý sao và khóa người mới không cho vào thêm.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Help với, seller đóng phiên thì hệ thống xử lý sao rồi gửi message trong phòng để bidder biết để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"seller dong phien thi he thong xu ly sao, vi phien vua dc duyet nhung sp sai thong tin dc ko",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+"seller đóng phien thì hệ thống xử lý sao, khác với luồng hết giờ tự động chốt và settlement pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0
+"seller đóng phiên thì hệ thống xử lý sao, nếu đang anti-sniping thì cũng phải dừng an toàn đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+"Này ad, seller đóng phiên thì hệ thống xử lý sao và chatbot cần giải thích seller close khác timeout; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0
+Tôi muốn hủy phiên đang chạy với vai trò seller rồi tự động chốt phiên theo trạng thái hiện tại.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0
+"Admin ơi, tôi muốn hủy phiên đang chạy với vai trò seller nhưng không được xử lý tiền nếu là seller đóng sớm mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+toi muon huy phien dang chay voi vai tro seller va dua bidder ve lobby sau khi ket thuc vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+tôi muốn hủy phien đang chạy với vai trò seller kèm thông báo trạng thái phiên cho mọi người nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+"tôi muốn hủy phiên đang chạy với vai trò seller, sau khi kiểm tra lịch sử đặt giá hiện tại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Ê cho hỏi, tôi muốn hủy phiên đang chạy với vai trò seller, khi thời gian còn lại chưa về 0; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Đóng phiên sớm có cộng trừ tiền không và khóa người mới không cho vào thêm.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Help với, đóng phiên sớm có cộng trừ tiền không rồi gửi message trong phòng để bidder biết để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"dong phien som co cong tru tien ko, vi phien vua dc duyet nhung sp sai thong tin dc ko",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+"đóng phien sớm có cộng trừ tiền không, khác với luồng hết giờ tự động chốt và settlement pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0
+"đóng phiên sớm có cộng trừ tiền không, nếu đang anti-sniping thì cũng phải dừng an toàn đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+"Này ad, đóng phiên sớm có cộng trừ tiền không và chatbot cần giải thích seller close khác timeout; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0
+Nếu seller end session thì bidder bị đưa đi đâu rồi tự động chốt phiên theo trạng thái hiện tại.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0
+"Admin ơi, nếu seller end session thì bidder bị đưa đi đâu nhưng không được xử lý tiền nếu là seller đóng sớm mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+neu seller end session thi bidder bi dua di dau va dua bidder ve lobby sau khi ket thuc vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+nếu seller end session thì bidder bị đưa đi đâu kèm thông báo trạng thái phien cho mọi người nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+"nếu seller end session thì bidder bị đưa đi đâu, sau khi kiểm tra lịch sử đặt giá hiện tại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Ê cho hỏi, nếu seller end session thì bidder bị đưa đi đâu, khi thời gian còn lại chưa về 0; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Tôi cần xác nhận trước khi đóng phiên và khóa người mới không cho vào thêm.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Help với, tôi cần xác nhận trước khi đóng phiên rồi gửi message trong phòng để bidder biết để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"toi can xac nhan truoc khi dong phien, vi phien vua dc duyet nhung sp sai thong tin dc ko",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+"tôi cần xác nhận trước khi đóng phien, khác với luồng hết giờ tự động chốt và settlement pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0
+"tôi cần xác nhận trước khi đóng phiên, nếu đang anti-sniping thì cũng phải dừng an toàn đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+"Này ad, tôi cần xác nhận trước khi đóng phiên và chatbot cần giải thích seller close khác timeout; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0
+Phiên đang running mà tôi muốn kết thúc rồi tự động chốt phiên theo trạng thái hiện tại.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0
+"Admin ơi, phiên đang running mà tôi muốn kết thúc nhưng không được xử lý tiền nếu là seller đóng sớm mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+phien dang running ma toi muon ket thuc va dua bidder ve lobby sau khi ket thuc vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+phien đang running mà tôi muốn kết thúc kèm thông báo trạng thái phiên cho mọi người nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+"phiên đang running mà tôi muốn kết thúc, sau khi kiểm tra lịch sử đặt giá hiện tại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Ê cho hỏi, phiên đang running mà tôi muốn kết thúc, khi thời gian còn lại chưa về 0; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Seller đóng phiên có tạo thông báo cho bidder không và khóa người mới không cho vào thêm.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Help với, seller đóng phiên có tạo thông báo cho bidder không rồi gửi message trong phòng để bidder biết để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"seller dong phien co tao thong bao cho bidder ko, vi phien vua dc duyet nhung sp sai thong tin dc ko",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+"seller đóng phien có tạo thông báo cho bidder không, khác với luồng hết giờ tự động chốt và settlement pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0
+"seller đóng phiên có tạo thông báo cho bidder không, nếu đang anti-sniping thì cũng phải dừng an toàn đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+"Này ad, seller đóng phiên có tạo thông báo cho bidder không và chatbot cần giải thích seller close khác timeout; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0
+Đóng phiên rồi có chốt người thắng không rồi tự động chốt phiên theo trạng thái hiện tại.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0
+"Admin ơi, đóng phiên rồi có chốt người thắng không nhưng không được xử lý tiền nếu là seller đóng sớm mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+dong phien roi co chot nguoi thang ko va dua bidder ve lobby sau khi ket thuc vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+đóng phien rồi có chốt người thắng không kèm thông báo trạng thái phiên cho mọi người nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+"đóng phiên rồi có chốt người thắng không, sau khi kiểm tra lịch sử đặt giá hiện tại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Ê cho hỏi, đóng phiên rồi có chốt người thắng không, khi thời gian còn lại chưa về 0; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Tôi muốn close auction room ngay bây giờ và khóa người mới không cho vào thêm.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Help với, tôi muốn close auction room ngay bây giờ rồi gửi message trong phòng để bidder biết để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"toi muon close auction room ngay bay gio, vi phien vua dc duyet nhung sp sai thong tin dc ko",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+"tôi muốn close auction room ngay bây giờ, khác với luồng hết giờ tự đọng chốt và settlement pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0
+"tôi muốn close auction room ngay bây giờ, nếu đang anti-sniping thì cũng phải dừng an toàn đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+"Này ad, tôi muốn close auction room ngay bây giờ và chatbot cần giải thích seller close khác timeout; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0
+Nút end auction bị ẩn với seller à rồi tự động chốt phiên theo trạng thái hiện tại.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0
+"Admin ơi, nút end auction bị ẩn với seller à nhưng không được xử lý tiền nếu là seller đóng sớm mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+nut end auction bi an voi seller a va dua bidder ve lobby sau khi ket thuc vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+nút end auction bị ẩn với seller à kèm thông báo trạng thái phien cho mọi người nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+"nút end auction bị ẩn với seller à, sau khi kiểm tra lịch sử đặt giá hiện tại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Ê cho hỏi, nút end auction bị ẩn với seller à, khi thời gian còn lại chưa về 0; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Seller dừng phiên thì lịch sử bid còn lưu không và khóa người mới không cho vào thêm.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Help với, seller dừng phiên thì lịch sử bid còn lưu không rồi gửi message trong phòng để bidder biết để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"seller dung phien thi lich su bid con luu ko, vi phien vua dc duyet nhung sp sai thong tin dc ko",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+"seller dừng phien thì lịch sử bid còn lưu không, khác với luồng hết giờ tự động chốt và settlement pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0
+"seller dừng phiên thì lịch sử bid còn lưu không, nếu đang anti-sniping thì cũng phải dừng an toàn đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+"Này ad, seller dừng phiên thì lịch sử bid còn lưu không và chatbot cần giải thích seller close khác timeout; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0
+Đóng phiên do sản phẩm nhập sai được không rồi tự động chốt phiên theo trạng thái hiện tại.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0
+"Admin ơi, đóng phiên do sản phẩm nhập sai được không nhưng không được xử lý tiền nếu là seller đóng sớm mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+dong phien do sp nhap sai dc ko va dua bidder ve lobby sau khi ket thuc vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+đóng phien do sản phẩm nhập sai được không kèm thông báo trạng thái phiên cho mọi người nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+"đóng phiên do sản phẩm nhập sai được không, sau khi kiểm tra lịch sử đặt giá hiện tại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Ê cho hỏi, đóng phiên do sản phẩm nhập sai được không, khi thời gian còn lại chưa về 0; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Tôi muốn kết thúc phiên vì không còn bán nữa và khóa người mới không cho vào thêm.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Help với, tôi muốn kết thúc phiên vì không còn bán nữa rồi gửi message trong phòng để bidder biết để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"toi muon ket thuc phien vi ko con ban nua, vi phien vua dc duyet nhung sp sai thong tin dc ko",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+"tôi muốn kết thúc phien vì không còn bán nữa, khác với luồng hết giờ tự động chốt và settlement pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0
+"tôi muốn kết thúc phiên vì không còn bán nữa, nếu đang anti-sniping thì cũng phải dừng an toàn đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+"Này ad, tôi muốn kết thúc phiên vì không còn bán nữa và chatbot cần giải thích seller close khác timeout; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0
+Admin hay seller mới được đóng phiên này rồi tự động chốt phiên theo trạng thái hiện tại.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0
+"Admin ơi, admin hay seller mới được đóng phiên này nhưng không được xử lý tiền nếu là seller đóng sớm mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+ad hay seller moi dc dong phien nay va dua bidder ve lobby sau khi ket thuc vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+admin hay seller mới được đóng phien này kèm thông báo trạng thái phiên cho mọi người nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+"admin hay seller mới được đóng phiên này, sau khi kiểm tra lịch sử đặt giá hiện tại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Ê cho hỏi, admin hay seller mới được đóng phiên này, khi thời gian còn lại chưa về 0; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Phiên này bị spam nên tôi muốn đóng và khóa người mới không cho vào thêm.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Help với, phiên này bị spam nên tôi muốn đóng rồi gửi message trong phòng để bidder biết để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"phien nay bi spam nen toi muon dong, vi phien vua dc duyet nhung sp sai thong tin dc ko",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+"phien này bị spam nên tôi muốn đóng, khác với luồng hết giờ tự động chốt và settlement pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0
+"phiên này bị spam nên tôi muốn đóng, nếu đang anti-sniping thì cũng phải dừng an toàn đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+"Này ad, phiên này bị spam nên tôi muốn đóng và chatbot cần giải thích seller close khác timeout; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0
+Seller đóng phiên khác gì hết thời gian tự động rồi tự động chốt phiên theo trạng thái hiện tại.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0
+"Admin ơi, seller đóng phiên khác gì hết thời gian tự động nhưng không được xử lý tiền nếu là seller đóng sớm mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+seller dong phien khac gi het thoi gian auto va dua bidder ve lobby sau khi ket thuc vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+seller đóng phien khác gì hết thời gian tự động kèm thông báo trạng thái phiên cho mọi người nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+"seller đóng phiên khác gì hết thời gian tự động, sau khi kiểm tra lịch sử đặt giá hiện tại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Ê cho hỏi, seller đóng phiên khác gì hết thời gian tự động, khi thời gian còn lại chưa về 0; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Tôi bấm đóng phiên thì có cần lý do không và khóa người mới không cho vào thêm.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Help với, tôi bấm đóng phiên thì có cần lý do không rồi gửi message trong phòng để bidder biết để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"toi bam dong phien thi co can ly do ko, vi phien vua dc duyet nhung sp sai thong tin dc ko",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+"tôi bấm đóng phien thì có cần lý do không, khác với luồng hết giờ tự động chốt và settlement pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0
+"tôi bấm đóng phiên thì có cần lý do không, nếu đang anti-sniping thì cũng phải dừng an toàn đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+"Này ad, tôi bấm đóng phiên thì có cần lý do không và chatbot cần giải thích seller close khác timeout; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0
+Đóng phiên xong app có quay về lobby không rồi tự động chốt phiên theo trạng thái hiện tại.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0
+"Admin ơi, đóng phiên xong app có quay về lobby không nhưng không được xử lý tiền nếu là seller đóng sớm mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+dong phien xong app co quay ve lobby ko va dua bidder ve lobby sau khi ket thuc vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+đóng phien xong app có quay về lobby không kèm thông báo trạng thái phiên cho mọi người nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+"đóng phiên xong app có quay về lobby không, sau khi kiểm tra lịch sử đặt giá hiện tại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Ê cho hỏi, đóng phiên xong app có quay về lobby không, khi thời gian còn lại chưa về 0; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Tôi muốn khóa phiên trước khi bidder đặt thêm và khóa người mới không cho vào thêm.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Help với, tôi muốn khóa phiên trước khi bidder đặt thêm rồi gửi message trong phòng để bidder biết để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"toi muon khoa phien truoc khi bidder dat them, vi phien vua dc duyet nhung sp sai thong tin dc ko",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+"tôi muốn khóa phien trước khi bidder đặt thêm, khác với luồng hết giờ tự động chốt và settlement pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0
+"tôi muốn khóa phiên trước khi bidder đặt thêm, nếu đang anti-sniping thì cũng phải dừng an toàn đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+"Này ad, tôi muốn khóa phiên trước khi bidder đặt thêm và chatbot cần giải thích seller close khác timeout; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0
+Seller đóng sớm có thông báo trạng thái phiên không rồi tự động chốt phiên theo trạng thái hiện tại.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0
+"Admin ơi, seller đóng sớm có thông báo trạng thái phiên không nhưng không được xử lý tiền nếu là seller đóng sớm mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+seller dong som co thong bao trang thai phien ko va dua bidder ve lobby sau khi ket thuc vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+seller đóng sớm có thông báo trạng thái phien không kèm thông báo trạng thái phiên cho mọi người nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+"seller đóng sớm có thông báo trạng thái phiên không, sau khi kiểm tra lịch sử đặt giá hiện tại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Ê cho hỏi, seller đóng sớm có thông báo trạng thái phiên không, khi thời gian còn lại chưa về 0; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Kết thúc phiên bằng tay có gọi settlement không và khóa người mới không cho vào thêm.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Help với, kết thúc phiên bằng tay có gọi settlement không rồi gửi message trong phòng để bidder biết để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"ket thuc phien bang tay co goi settlement ko, vi phien vua dc duyet nhung sp sai thong tin dc ko",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+"kết thúc phien bằng tay có gọi settlement không, khác với luồng hết giờ tự động chốt và settlement pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0
+"kết thúc phiên bằng tay có gọi settlement không, nếu đang anti-sniping thì cũng phải dừng an toàn đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+"Này ad, kết thúc phiên bằng tay có gọi settlement không và chatbot cần giải thích seller close khác timeout; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0
+Đóng phiên khi chưa có ai bid thì sao rồi tự động chốt phiên theo trạng thái hiện tại.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0
+"Admin ơi, đóng phiên khi chưa có ai bid thì sao nhưng không được xử lý tiền nếu là seller đóng sớm mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+dong phien khi chua co ai bid thi sao va dua bidder ve lobby sau khi ket thuc vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+đóng phien khi chưa có ai bid thì sao kèm thông báo trạng thái phiên cho mọi người nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+"đóng phiên khi chưa có ai bid thì sao, sau khi kiểm tra lịch sử đặt giá hiện tại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Ê cho hỏi, đóng phiên khi chưa có ai bid thì sao, khi thời gian còn lại chưa về 0; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Tôi muốn dừng countdown của phiên và khóa người mới không cho vào thêm.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Help với, tôi muốn dừng countdown của phiên rồi gửi message trong phòng để bidder biết để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"toi muon dung countdown cua phien, vi phien vua dc duyet nhung sp sai thong tin dc ko",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+tôi muốn dừng countdown của phien pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"tôi muốn dừng countdown của phiên, ở màn seller room đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Này ad, tôi muốn dừng countdown của phiên trước khi hết giờ; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Close room cho seller ở màn đấu giá, ngay bây giờ.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Admin ơi, close room cho seller ở màn đấu giá với phiên đang chạy mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+close room cho seller o man dg vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"close room cho seller ở màn đấu gía, ở màn seller room nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"close room cho seller ở màn đấu giá trước khi hết giờ đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Ê cho hỏi, close room cho seller ở màn đấu giá, ngay bây giờ; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Seller có thể đóng phiên sau khi được duyệt không với phiên đang chạy.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Help với, seller có thể đóng phiên sau khi được duyệt không để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"seller co the dong phien sau khi dc duyet ko, o man seller room dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+seller có thể đóng phien sau khi được duyệt không trước khi hết giờ pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"seller có thể đóng phiên sau khi được duyệt không, ngay bây giờ đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Này ad, seller có thể đóng phiên sau khi được duyệt không với phiên đang chạy; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Đóng phiên sớm có xóa sản phẩm không.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Admin ơi, đóng phiên sớm có xóa sản phẩm không, ở màn seller room mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+dong phien som co xoa sp ko truoc khi het gio vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"đóng phien sớm có xóa sản phẩm không, ngay bây giờ nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"đóng phiên sớm có xóa sản phẩm không với phiên đang chạy đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Ê cho hỏi, đóng phiên sớm có xóa sản phẩm không; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Tôi muốn kết thúc buổi đấu giá vì nhầm giá, ở màn seller room.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Help với, tôi muốn kết thúc buổi đấu giá vì nhầm giá trước khi hết giờ để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"toi muon ket thuc buoi dg vi nham gia, ngay bay gio dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+tôi muốn kết thúc buổi đấu giá vì nhầm giá với phien đang chạy pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"tôi muốn kết thúc buổi đấu giá vì nhầm giá đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Này ad, tôi muốn kết thúc buổi đấu giá vì nhầm giá, ở màn seller room; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Seller đóng phiên thì người trong phòng thấy gì trước khi hết giờ.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Admin ơi, seller đóng phiên thì người trong phòng thấy gì, ngay bây giờ mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+seller dong phien thi nguoi trong room thay gi voi phien dang chay vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+seller đóng phien thì người trong phòng thấy gì nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"seller đóng phiên thì người trong phòng thấy gì, ở màn seller room đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Ê cho hỏi, seller đóng phiên thì người trong phòng thấy gì trước khi hết giờ; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Cho tôi đóng phiên hiện tại trong vai trò seller, ngay bây giờ.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"Help với, cho tôi đóng phiên hiện tại trong vai trò seller với phiên đang chạy để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0

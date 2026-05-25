@@ -1,190 +1,201 @@
-text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
-Khi phiên kết thúc thì tiền của người thắng được xử lý thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Sau khi đấu giá xong hệ thống trừ tiền bidder thắng ra sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Seller nhận tiền bán hàng vào lúc nào sau phiên,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Người thắng phiên bị trừ số dư ngay khi nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Phiên kết thúc thành công thì tiền chuyển từ bidder sang seller thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết quy trình thanh toán khi chốt phiên đấu giá,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Hệ thống có tự cộng tiền cho người bán sau khi có người thắng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Sau khi phiên hoàn tất, số tiền thắng được trừ ở đâu",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Nếu phiên có người thắng thì balance của họ bị xử lý ra sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tiền thanh toán sau phiên được tính theo giá thắng cuối cùng đúng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Tôi thắng phiên rồi, tiền có tự trừ khỏi tài khoản không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tại sao sau khi thắng đấu giá số dư của tôi giảm,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Khi seller bán thành công thì tiền vào tài khoản seller thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Phiên kết thúc có tự chuyển tiền cho seller không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Hệ thống xử lý tiền mua hàng sau khi phiên đóng như thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Sau khi chốt phiên, ai bị trừ tiền và ai được cộng tiền",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tiền của bidder thắng có bị trừ một lần duy nhất không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn kiểm tra logic trừ tiền sau khi phiên kết thúc,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Người không thắng có bị trừ tiền khi phiên kết thúc không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Nếu tôi không thắng phiên thì tiền có bị giữ lại không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tiền giữ tạm của người không thắng được trả lại lúc nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Khi phiên kết thúc mà không có người mua thì có chuyển tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Phiên không có bid nào thì seller có nhận tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Nếu không có người thắng thì hệ thống xử lý số dư ra sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Admin hủy phiên thì tiền bidder có bị trừ không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Seller đóng phiên thủ công thì có cộng tiền bán hàng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Phiên bị hủy trước khi bán xong thì tiền xử lý thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Nếu phiên bị xóa thì số dư của người tham gia có thay đổi không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Tôi thấy tiền bị trừ dù phiên bị hủy, kiểm tra giúp",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Không bán được sản phẩm thì hệ thống có chuyển tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Khi phiên thất bại, tiền của bidder có được giữ nguyên không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Sau phiên kết thúc, balance của tôi chưa cập nhật",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tiền thắng phiên chưa trừ khỏi tài khoản là do đâu,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Seller chưa nhận được tiền sau khi phiên thành công,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tôi bị trừ tiền hai lần sau khi thắng phiên,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Số dư giảm sai sau khi đấu giá kết thúc,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Hệ thống cộng tiền seller bị chậm sau phiên,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Có log giao dịch khi phiên kết thúc không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn xem tiền đã chuyển sau khi chốt phiên,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Sau khi phiên đóng, giao dịch thanh toán được ghi nhận ở đâu",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Khi kết thúc thành công thì hệ thống tạo transaction như thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tiền thanh toán cuối phiên có lưu vào database không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết trạng thái settlement sau phiên,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Thanh toán phiên đấu giá đã hoàn tất chưa,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Phiên đã chốt nhưng tiền vẫn đang pending,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tại sao giao dịch sau phiên còn ở trạng thái chờ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Người thắng có cần xác nhận thanh toán sau khi phiên kết thúc không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Hệ thống tự xử lý tiền hay cần admin can thiệp,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Có cần seller xác nhận trước khi nhận tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Số tiền seller nhận có bằng giá thắng cuối cùng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Phí hoặc khoản trừ sau phiên có được tính không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tiền của người thắng bị trừ theo giá cuối hay giá khởi điểm,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Sau khi phiên thành công, số dư buyer cập nhật thế nào",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Seller có thấy tiền ngay sau khi hệ thống chốt không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Nếu buyer thắng nhưng thiếu số dư thì hệ thống xử lý sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Người thắng không đủ tiền lúc chốt phiên thì có trừ được không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Khi balance người thắng không đủ, giao dịch sau phiên ra sao",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần biết trường hợp thanh toán thất bại khi phiên kết thúc,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Nếu trừ tiền thất bại thì seller có được cộng tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Phiên kết thúc rồi nhưng người thắng không thanh toán được thì sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-xong phien thi tien tru nhu nao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-seller nhan tien sau dau gia luc nao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-nguoi thang bi tru balance khi nao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-phien ket thuc co tu chuyen tien ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-bidder khong thang co bi tru tien khong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-admin huy phien co mat tien ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-seller dong phien co duoc cong tien ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-khong co nguoi mua thi xu ly tien sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-tien bi tru 2 lan sau dau gia,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-balance chua update sau khi chot phien,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-settlement sau phien dang pending,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-giao dich ket thuc phien luu o dau,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-tien nguoi thang tru theo gia nao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-tien ban hang vao tk seller chua,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-phien thanh cong thi cong tien seller sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-neu thang dau gia thi tien tu dong tru a,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-khong thang co duoc hoan tien giu khong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-sau khi dong phien co chuyen tien ngay ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-xu ly tien cuoi phien bi loi,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-tien dau gia cuoi phien tinh sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tôi thắng phiên nhưng app chưa trừ tiền,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Seller báo chưa nhận được tiền dù phiên đã kết thúc,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tiền của tôi bị giữ sau khi phiên kết thúc nhưng tôi không thắng,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn hỏi tiền giữ tạm có được nhả sau phiên không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Phiên kết thúc thành công nhưng số dư seller không tăng,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tiền của người thắng có chuyển thẳng sang seller không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Sau khi chốt người thắng, hệ thống cập nhật ví hai bên thế nào",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Nếu phiên có giá thắng cuối cùng thì thanh toán lấy số đó đúng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Có trường hợp nào kết thúc phiên mà không xử lý tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Khi seller tự đóng phiên thì tiền có đứng yên không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Phiên bị admin hủy thì hệ thống rollback tiền thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết có hoàn tiền cho bidder khác sau khi có người thắng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Người trả giá thấp hơn có bị ảnh hưởng số dư khi phiên kết thúc không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Sau khi kết thúc, các khoản giữ của bidder không thắng có được giải phóng không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần đối chiếu số tiền trừ sau phiên với giá thắng,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Giá cuối là 3 triệu mà số dư bị trừ khác là sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Số dư seller tăng sai so với giá chốt,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Có chống trừ tiền lặp khi chốt phiên nhiều lần không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Nếu server nhận lệnh chốt hai lần thì tiền có bị xử lý hai lần không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Khi retry settlement thì có trừ tiền thêm lần nữa không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết hệ thống tránh cộng tiền seller hai lần thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Phiên đã thanh toán rồi mà trạng thái chưa cập nhật,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Lỗi mạng lúc chốt phiên có làm mất tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Nếu client mất kết nối khi phiên kết thúc thì tiền vẫn xử lý chứ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tôi thoát app lúc hết phiên thì số dư có tự xử lý không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Đóng cửa sổ room trước khi chốt có ảnh hưởng thanh toán không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tiền xử lý ở server hay trên app của người dùng,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Khi kết thúc phiên, client có cần gửi yêu cầu trừ tiền không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Hệ thống có kiểm tra người thắng trước khi chuyển tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Nếu người thắng bị xóa tài khoản sau phiên thì tiền xử lý sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Seller nhận tiền sau khi hệ thống xác định winner đúng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết thứ tự xử lý: chốt người thắng rồi trừ tiền hay ngược lại,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Khi không có winner thì transaction có được tạo không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Phiên kết thúc với giá cuối bằng 0 thì có trừ tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tài khoản buyer có bị âm sau khi chốt phiên không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Nếu số dư không đủ thì hệ thống có cho âm tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Số tiền đang pending được chuyển thành thanh toán khi nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Sau phiên, tiền pending có chuyển sang đã thanh toán không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần kiểm tra vì tiền vẫn bị khóa sau khi seller đóng phiên,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Kết thúc phiên mà seller đóng thủ công thì khoản giữ xử lý sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Phiên hủy bởi admin có hoàn khoản giữ về bidder không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Có thông báo nào khi tiền đã được trừ sau phiên không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết thanh toán sau phiên có báo thành công không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Sau khi xử lý tiền, hệ thống hiển thị kết quả ở đâu",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Quy trình kết toán tiền phiên đấu giá là gì,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Kết toán cuối phiên hoạt động thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Thanh toán tự động sau phiên có bị delay không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tại sao vài phút sau khi hết phiên tiền mới cập nhật,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tiền seller nhận có cần chờ xác nhận giao hàng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Bid thắng xong tiền bị trừ nhưng seller chưa cộng là lỗi gì,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Cộng tiền seller trước hay trừ tiền bidder trước,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Sau phiên đấu giá, khoản thanh toán được khóa hay chuyển ngay",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Khi hệ thống chốt người thắng thì số tiền cuối cùng được quyết toán ra sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn biết giao dịch bán hàng được hoàn tất sau phiên thế nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Nếu phiên kết thúc hợp lệ thì tiền buyer và seller thay đổi ra sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tiền sau phiên có tự đối soát giữa hai tài khoản không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Khi phiên đóng thành công, hệ thống có cập nhật ví người mua và người bán không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần giải thích bước kết toán tiền sau khi đấu giá xong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Sau khi xác định winner, tiền trong tài khoản được cập nhật theo quy tắc nào",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Kết thúc phiên mà chưa thấy giao dịch thanh toán thì kiểm tra ở đâu,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Khi phiên tự chốt, hệ thống trừ tiền người thắng và cộng cho seller thế nào",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
-"Sau khi timer về 0 và tự động chốt phiên, tiền winner bị xử lý ra sao",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
-Hệ thống tự chốt xong có tạo giao dịch trừ tiền ngay không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
-Nếu tự động chốt phiên không thành công thì tiền có bị trừ không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
-"Tôi vừa thắng lượt bid cuối, khi chốt phiên tiền bị trừ thế nào",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Đặt giá cao nhất rồi phiên kết thúc thì số dư của tôi xử lý ra sao,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Bid thắng có bị giữ tiền trước rồi mới trừ khi kết thúc không,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Sau khi đặt giá cuối cùng, seller nhận tiền lúc nào",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn xem lịch sử bid để đối chiếu số tiền bị trừ cuối phiên,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Lịch sử đặt giá có giúp kiểm tra giá thắng dùng để trừ tiền không,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Sau phiên, tôi muốn xem lại lượt bid thắng và giao dịch thanh toán",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Giá realtime cuối cùng có phải số tiền người thắng bị trừ không,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Khi giá live cập nhật ở giây cuối, settlement lấy giá nào",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Giá hiện tại nhảy trước khi chốt thì tiền sau phiên tính sao,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Anti-sniping kéo dài phiên thì tiền người thắng đã bị trừ chưa,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Nếu có bid cuối làm gia hạn, hệ thống chờ hết anti-sniping rồi mới xử lý tiền đúng không",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Phiên được extension thêm thời gian thì seller nhận tiền khi nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Sau khi hết thời gian gia hạn chống sniping, tiền được chuyển thế nào",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn xem còn bao lâu nữa thì hệ thống trừ tiền người thắng,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Khi countdown kết thúc, balance của winner cập nhật ra sao",0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Phiên còn 0 giây nhưng tiền chưa trừ là do chưa chốt à,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
-Tôi cần kiểm tra số dư sau khi phiên kết thúc và tiền bị trừ,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Số dư của tôi giảm sau phiên, giải thích giúp quy trình xử lý tiền",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Seller muốn xem số dư đã được cộng sau khi bán thành công,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Nếu tôi không thắng thì khoản giữ trong balance có được trả lại sau phiên không,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Sau khi xử lý tiền, app có thông báo người thắng đã thanh toán không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0
-Thông báo trạng thái phiên kết thúc có kèm kết quả trừ tiền không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0
-Tôi muốn nhận thông báo khi seller đã được cộng tiền,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0
-"Khi settlement lỗi, hệ thống có báo trạng thái thất bại không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0
-Sau khi xử lý tiền xong có tự đưa người dùng về lobby không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
-"Phiên kết thúc, trừ tiền xong rồi app chuyển về lobby đúng không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
-Nếu thanh toán cuối phiên thất bại thì có đưa về lobby không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
-Tôi rời phòng trước khi hết phiên thì nếu đang thắng tiền có bị trừ không,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Thoát room trước khi chốt có ảnh hưởng chuyển tiền cho seller không,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Rời phòng rồi nhưng vẫn thắng thì balance xử lý ra sao,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tôi muốn vào phòng để xem sau khi kết thúc tiền xử lý thế nào,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Tham gia room xong nếu thắng thì hệ thống trừ tiền lúc phiên đóng đúng không,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Vào phòng muộn mà thắng phiên thì thanh toán cuối phiên vẫn tự xử lý chứ,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Xem chi tiết sản phẩm cho biết giá thắng cuối cùng dùng để trừ tiền không,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Trong chi tiết phiên, seller có thấy số tiền sẽ nhận sau khi kết thúc không",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-Seller đóng phiên thủ công thì hệ thống không chuyển tiền bán hàng đúng không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
-Nếu seller đóng phiên trước khi có winner thì tiền bidder xử lý sao,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
-Seller đóng phòng sau khi đã có người bid thì có cộng tiền seller không,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
-Chatbot giải thích giúp tiền được trừ và cộng khi phiên kết thúc,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0
-Hỏi chatbot vì sao thắng phiên xong balance bị giảm,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0
-Chatbot cho biết seller nhận tiền sau phiên thành công lúc nào,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0
-"Sau phiên, người thắng bị trừ tiền rồi có xem được trạng thái trong danh sách phiên không",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Nếu phiên đã thanh toán xong, lịch sử bid và số dư phải khớp đúng không",0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-"Khi seller nhận tiền, trạng thái phiên chuyển sang hoàn tất đúng không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0
+﻿text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+"Khi phiên kết thúc thì tiền có người thắng được xử lý thế nào, đồng thời khi countdown về 0 thì tự chốt, đồng thời balance đang hiển thị lạ, kèm chuyện bot phân tích lỗi đang gặp, kèm chuyện mã phòng AUC-1024, trước khi mức tiền 50k.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0
+"Admin ơi, khi phiên kết thúc thì tiền có người thắng được xử lý thế nào, trước khi xem tiền còn đủ không mình đang thao tác?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phien ket thuc thi tien co nguoi thang dc xu ly the nao, truoc khi dung auction truoc deadline vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"khi phien kết thúc thì tiền có người thắng được xử lý thế nào, trước khi room đóng nên quay về lobby đang cần xử lý liền",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền có người thắng được xử lý thế nào, nhưng auto close phải chạy đúng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, khi phiên kết thúc thì tiền có người thắng được xử lý thế nào, rồi mình cần kiểm tra số dư, kèm chuyện dừng auction trước deadline; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"Khi phiên kết thúc thì tiền có người thắng có rollback không, sau đó kết thúc phiên thủ công.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"Help với, khi phiên kết thúc thì tiền có người thắng có rollback không, nhưng app tự chuyển về danh sách phiên, nhưng mức tiền 5 triệu pls?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"khi phien ket thuc thi tien co nguoi thang co rollback ko, roi phien tu ket thuc sau deadline de khoi lam sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phien kết thúc thì tiền có người thắng có rollback không, sau đó số tiền còn lại phải rõ mình hơi rén",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền có người thắng có rollback không, nhưng seller muốn đóng phiên sớm, rồi app tự chuyển về danh sách phiên đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0
+"Này ad, khi phiên kết thúc thì tiền có người thắng có rollback không, sau đó mình bị đẩy khỏi phòng về màn chính, nhưng mã phòng A17; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"Khi phiên kết thúc thì tiền có người thắng có chuyển cho seller không, trước khi không cần seller bấm đóng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, khi phiên kết thúc thì tiền có người thắng có chuyển cho seller không, nhưng đừng trừ tiền sai vì mình chưa rõ luồng?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phien ket thuc thi tien co nguoi thang co chuyen cho seller ko, roi xac nhan seller close phien, nhung muc tien +300k dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"khi phien kết thúc thì tiền có người thắng có chuyển cho seller không, nhưng sau khi kết thúc thì về lobby, sau đó không cần seller bấm đóng nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền có người thắng có chuyển cho seller không, sau đó hệ thống tự xác định người thắng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, khi phiên kết thúc thì tiền có người thắng có chuyển cho seller không, kèm chuyện balance đang hiển thị lạ, rồi bot phân tích lỗi đang gặp; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0
+"Khi phiên kết thúc thì tiền có người thắng trước khi về lobby, trước khi đóng room do seller yêu cầu.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"Alo ad, khi phiên kết thúc thì tiền có người thắng trước khi về lobby, rồi đừng kẹt ở màn phiên cũ để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"khi phien ket thuc thi tien co nguoi thang truoc khi ve lobby, dong thoi khi countdown ve 0 thi tu chot, dong thoi balance dang hien thi la m hoi ren",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phien kết thúc thì tiền có người thắng trước khi về lobby, trước khi xem tiền còn đủ không, sau đó mức tiền +75k được không",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền có người thắng trước khi về lobby, trước khi dừng auction trước deadline, nhưng mã phòng SALA-05 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"Help với, khi phiên kết thúc thì tiền có người thắng trước khi về lobby, trước khi room đóng nên quay về lobby; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"Khi phiên kết thúc thì tiền có người thắng để tránh cộng trừ sai, sau đó auto close phải chạy đúng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, khi phiên kết thúc thì tiền có người thắng để tránh cộng trừ sai, kèm chuyện mình cần kiểm tra số dư, đồng thời dừng auction trước deadline đang cần xử lý liền?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"khi phien ket thuc thi tien co nguoi thang de tranh cong tru sai, kem chuyen ket thuc phien thu cong nhe",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"khi phien kết thúc thì tiền có người thắng để tránh cộng trừ sai, rồi app tự chuyển về danh sách phiên mình đang thao tác",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền có người thắng để tránh cộng trừ sai, trước khi phiên tự kết thúc sau deadline, trước khi mức tiền 2.500.000 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, khi phiên kết thúc thì tiền có người thắng để tránh cộng trừ sai, kèm chuyện số tiền còn lại phải rõ; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Khi phiên kết thúc thì tiền hết giờ tự chốt được xử lý thế nào, trước khi seller muốn đóng phiên sớm, rồi app tự chuyển về danh sách phiên.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0
+"Cứu mình với, khi phiên kết thúc thì tiền hết giờ tự chốt được xử lý thế nào, đồng thời mình bị đẩy khỏi phòng về màn chính mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"khi phien ket thuc thi tien het gio tu chot dc xu ly the nao, kem chuyen ko can seller bam dong dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phien kết thúc thì tiền hết giờ tự chốt được xử lý thế nào, đồng thời đừng trừ tiền sai, sau đó mã phòng ROOM-88 pls",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền hết giờ tự chốt được xử lý thế nào, sau đó xác nhận seller close phiên, rồi bot hướng dẫn bước tiếp theo đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0
+"Alo ad, khi phiên kết thúc thì tiền hết giờ tự chốt được xử lý thế nào, đồng thời sau khi kết thúc thì về lobby, nhưng không cần seller bấm đóng, sau đó mức tiền 1tr2; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0
+"Khi phiên kết thúc thì tiền hết giờ tự chốt có rollback không, kèm chuyện hệ thống tự xác định người thắng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, khi phiên kết thúc thì tiền hết giờ tự chốt có rollback không, đồng thời balance đang hiển thị lạ nhé?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phien ket thuc thi tien het gio tu chot co rollback ko, truoc khi dong room do seller yc m dang thao tac",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"khi phien kết thúc thì tiền hết giờ tự chốt có rollback không, rồi đừng kẹt ở màn phiên cũ vì mình chưa rõ luồng",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền hết giờ tự chốt có rollback không, đồng thời khi countdown về 0 thì tự chốt, đồng thời balance đang hiển thị lạ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, khi phiên kết thúc thì tiền hết giờ tự chốt có rollback không, trước khi xem tiền còn đủ không; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Khi phiên kết thúc thì tiền hết giờ tự chốt có chuyển cho seller không, đồng thời dừng auction trước deadline, sau đó mức tiền 250.000.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"Này ad, khi phiên kết thúc thì tiền hết giờ tự chốt có chuyển cho seller không, đồng thời room đóng nên quay về lobby được không?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"khi phien ket thuc thi tien het gio tu chot co chuyen cho seller ko, sau do auto close phai chay dung, sau do ma room bid-09 pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phien kết thúc thì tiền hết giờ tự chốt có chuyển cho seller không, kèm chuyện mình cần kiểm tra số dư, đồng thời dừng auction trước deadline để khỏi làm sai",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền hết giờ tự chốt có chuyển cho seller không, kèm chuyện kết thúc phiên thủ công đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"Cứu mình với, khi phiên kết thúc thì tiền hết giờ tự chốt có chuyển cho seller không, rồi app tự chuyển về danh sách phiên; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"Khi phiên kết thúc thì tiền hết giờ tự chốt trước khi về lobby, nhưng phiên tự kết thúc sau deadline.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, khi phiên kết thúc thì tiền hết giờ tự chốt trước khi về lobby, đồng thời số tiền còn lại phải rõ, nhưng mức tiền 100k mình đang thao tác?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phien ket thuc thi tien het gio tu chot truoc khi ve lobby, truoc khi seller muon dong phien som, roi app tu chuyen ve danh sach phien vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0
+"khi phien kết thúc thì tiền hết giờ tự chốt trước khi về lobby, đồng thời mình bị đẩy khỏi phòng về màn chính, rồi chatbot nói dễ hiểu giúp mình đang cần xử lý liền",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0,0,0,0
+"khi phiên kết thúc thì tiền hết giờ tự chốt trước khi về lobby, kèm chuyện không cần seller bấm đóng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, khi phiên kết thúc thì tiền hết giờ tự chốt trước khi về lobby, đồng thời đừng trừ tiền sai; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Khi phiên kết thúc thì tiền hết giờ tự chốt để tránh cộng trừ sai, nhưng xác nhận seller close phiên.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"Help với, khi phiên kết thúc thì tiền hết giờ tự chốt để tránh cộng trừ sai, trước khi sau khi kết thúc thì về lobby, sau đó không cần seller bấm đóng, rồi mã phòng GOLD-21 pls?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0
+"khi phien ket thuc thi tien het gio tu chot de tranh cong tru sai, dong thoi he thong tu xac dinh nguoi thang, dong thoi muc tien 50k de khoi lam sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phien kết thúc thì tiền hết giờ tự chốt để tránh cộng trừ sai, sau đó balance đang hiển thị lạ mình hơi rén",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền hết giờ tự chốt để tránh cộng trừ sai, nhưng đóng room do seller yêu cầu đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"Này ad, khi phiên kết thúc thì tiền hết giờ tự chốt để tránh cộng trừ sai, trước khi đừng kẹt ở màn phiên cũ; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"Khi phiên kết thúc thì tiền phiên bị đóng sớm được xử lý thế nào, trước khi khi countdown về 0 thì tự chốt, trước khi balance đang hiển thị lạ.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, khi phiên kết thúc thì tiền phiên bị đóng sớm được xử lý thế nào, đồng thời xem tiền còn đủ không vì mình chưa rõ luồng?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phien ket thuc thi tien phien bi dong som dc xu ly the nao, dong thoi dung auction truoc deadline dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"khi phien kết thúc thì tiền phiên bị đóng sớm được xử lý thế nào, đồng thời room đóng nên quay về lobby, sau đó mức tiền 5 triệu nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền phiên bị đóng sớm được xử lý thế nào, sau đó auto close phải chạy đúng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, khi phiên kết thúc thì tiền phiên bị đóng sớm được xử lý thế nào, kèm chuyện mình cần kiểm tra số dư, đồng thời dừng auction trước deadline; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"Khi phiên kết thúc thì tiền phiên bị đóng sớm có rollback không, nhưng kết thúc phiên thủ công, sau đó mã phòng PHIEN-2026.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"Alo ad, khi phiên kết thúc thì tiền phiên bị đóng sớm có rollback không, sau đó app tự chuyển về danh sách phiên để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"khi phien ket thuc thi tien phien bi dong som co rollback ko, kem chuyen phien tu ket thuc sau deadline, dong thoi nho bot giai thich them m hoi ren",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0
+"khi phien kết thúc thì tiền phiên bị đóng sớm có rollback không, nhưng số tiền còn lại phải rõ được không",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền phiên bị đóng sớm có rollback không, sau đó seller muốn đóng phiên sớm, trước khi app tự chuyển về danh sách phiên, rồi mức tiền +300k đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0
+"Help với, khi phiên kết thúc thì tiền phiên bị đóng sớm có rollback không, nhưng mình bị đẩy khỏi phòng về màn chính; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"Khi phiên kết thúc thì tiền phiên bị đóng sớm có chuyển cho seller không, đồng thời không cần seller bấm đóng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, khi phiên kết thúc thì tiền phiên bị đóng sớm có chuyển cho seller không, sau đó đừng trừ tiền sai đang cần xử lý liền?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phien ket thuc thi tien phien bi dong som co chuyen cho seller ko, kem chuyen xac nhan seller close phien nhe",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"khi phien kết thúc thì tiền phiên bị đóng sớm có chuyển cho seller không, sau đó sau khi kết thúc thì về lobby, kèm chuyện không cần seller bấm đóng mình đang thao tác",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền phiên bị đóng sớm có chuyển cho seller không, nhưng hệ thống tự xác định người thắng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, khi phiên kết thúc thì tiền phiên bị đóng sớm có chuyển cho seller không, rồi balance đang hiển thị lạ, nhưng mã phòng P-774, sau đó mức tiền +75k; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Khi phiên kết thúc thì tiền phiên bị đóng sớm trước khi về lobby, đồng thời đóng room do seller yêu cầu.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"Cứu mình với, khi phiên kết thúc thì tiền phiên bị đóng sớm trước khi về lobby, kèm chuyện đừng kẹt ở màn phiên cũ mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"khi phien ket thuc thi tien phien bi dong som truoc khi ve lobby, truoc khi khi countdown ve 0 thi tu chot, truoc khi balance dang hien thi la dc ko",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phien kết thúc thì tiền phiên bị đóng sớm trước khi về lobby, đồng thời xem tiền còn đủ không pls",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền phiên bị đóng sớm trước khi về lobby, đồng thời dừng auction trước deadline đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"Alo ad, khi phiên kết thúc thì tiền phiên bị đóng sớm trước khi về lobby, đồng thời room đóng nên quay về lobby; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"Khi phiên kết thúc thì tiền phiên bị đóng sớm để tránh cộng trừ sai, nhưng auto close phải chạy đúng, trước khi mức tiền 2.500.000.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, khi phiên kết thúc thì tiền phiên bị đóng sớm để tránh cộng trừ sai, rồi mình cần kiểm tra số dư, kèm chuyện dừng auction trước deadline, rồi bot phân tích lỗi đang gặp nhé?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0
+"khi phien ket thuc thi tien phien bi dong som de tranh cong tru sai, roi ket thuc phien thu cong m dang thao tac",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"khi phien kết thúc thì tiền phiên bị đóng sớm để tránh cộng trừ sai, kèm chuyện app tự chuyển về danh sách phiên vì mình chưa rõ luồng",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền phiên bị đóng sớm để tránh cộng trừ sai, đồng thời phiên tự kết thúc sau deadline, rồi mã phòng AUC-1024 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, khi phiên kết thúc thì tiền phiên bị đóng sớm để tránh cộng trừ sai, rồi số tiền còn lại phải rõ; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Khi phiên kết thúc thì tiền auction kết thúc được xử lý thế nào, sau đó seller muốn đóng phiên sớm, trước khi app tự chuyển về danh sách phiên.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0
+"Này ad, khi phiên kết thúc thì tiền auction kết thúc được xử lý thế nào, nhưng mình bị đẩy khỏi phòng về màn chính, sau đó mức tiền 1tr2 được không?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"khi phien ket thuc thi tien auction ket thuc dc xu ly the nao, truoc khi ko can seller bam dong pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phien kết thúc thì tiền auction kết thúc được xử lý thế nào, nhưng đừng trừ tiền sai để khỏi làm sai",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền auction kết thúc được xử lý thế nào, rồi xác nhận seller close phiên đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"Cứu mình với, khi phiên kết thúc thì tiền auction kết thúc được xử lý thế nào, nhưng sau khi kết thúc thì về lobby, sau đó không cần seller bấm đóng; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0
+"Khi phiên kết thúc thì tiền auction kết thúc có rollback không, trước khi hệ thống tự xác định người thắng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, khi phiên kết thúc thì tiền auction kết thúc có rollback không, nhưng balance đang hiển thị lạ mình đang thao tác?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phien ket thuc thi tien auction ket thuc co rollback ko, sau do dong room do seller yc, roi muc tien 250.000 vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"khi phien kết thúc thì tiền auction kết thúc có rollback không, đồng thời đừng kẹt ở màn phiên cũ, đồng thời mã phòng A17 đang cần xử lý liền",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền auction kết thúc có rollback không, nhưng khi countdown về 0 thì tự chốt, trước khi balance đang hiển thị lạ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, khi phiên kết thúc thì tiền auction kết thúc có rollback không, sau đó xem tiền còn đủ không; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Khi phiên kết thúc thì tiền auction kết thúc có chuyển cho seller không, nhưng dừng auction trước deadline, rồi bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0
+"Help với, khi phiên kết thúc thì tiền auction kết thúc có chuyển cho seller không, nhưng room đóng nên quay về lobby pls?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"khi phien ket thuc thi tien auction ket thuc co chuyen cho seller ko, roi auto close phai chay dung de khoi lam sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phien kết thúc thì tiền auction kết thúc có chuyển cho seller không, trước khi mình cần kiểm tra số dư, đồng thời dừng auction trước deadline, nhưng mức tiền 100k mình hơi rén",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền auction kết thúc có chuyển cho seller không, trước khi kết thúc phiên thủ công đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"Này ad, khi phiên kết thúc thì tiền auction kết thúc có chuyển cho seller không, đồng thời app tự chuyển về danh sách phiên; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"Khi phiên kết thúc thì tiền auction kết thúc trước khi về lobby, kèm chuyện phiên tự kết thúc sau deadline.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, khi phiên kết thúc thì tiền auction kết thúc trước khi về lobby, nhưng số tiền còn lại phải rõ vì mình chưa rõ luồng?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phien ket thuc thi tien auction ket thuc truoc khi ve lobby, sau do seller muon dong phien som, truoc khi app tu chuyen ve danh sach phien, nhung ma room sala-05 dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0
+"khi phien kết thúc thì tiền auction kết thúc trước khi về lobby, nhưng mình bị đẩy khỏi phòng về màn chính nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền auction kết thúc trước khi về lobby, trước khi không cần seller bấm đóng, trước khi mức tiền 50k đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, khi phiên kết thúc thì tiền auction kết thúc trước khi về lobby, nhưng đừng trừ tiền sai; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Khi phiên kết thúc thì tiền auction kết thúc để tránh cộng trừ sai, kèm chuyện xác nhận seller close phiên.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"Alo ad, khi phiên kết thúc thì tiền auction kết thúc để tránh cộng trừ sai, sau đó sau khi kết thúc thì về lobby, kèm chuyện không cần seller bấm đóng để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0
+"khi phien ket thuc thi tien auction ket thuc de tranh cong tru sai, nhung he thong tu xac dinh nguoi thang m hoi ren",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phien kết thúc thì tiền auction kết thúc để tránh cộng trừ sai, rồi balance đang hiển thị lạ được không",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền auction kết thúc để tránh cộng trừ sai, kèm chuyện đóng room do seller yêu cầu đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"Help với, khi phiên kết thúc thì tiền auction kết thúc để tránh cộng trừ sai, sau đó đừng kẹt ở màn phiên cũ, rồi bot hướng dẫn bước tiếp theo, trước khi mức tiền 5 triệu; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0,0,0,0
+"Khi phiên kết thúc thì tiền bid cao nhất được xác nhận được xử lý thế nào, đồng thời khi countdown về 0 thì tự chốt, đồng thời balance đang hiển thị lạ.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, khi phiên kết thúc thì tiền bid cao nhất được xác nhận được xử lý thế nào, trước khi xem tiền còn đủ không, nhưng mã phòng ROOM-88 đang cần xử lý liền?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phien ket thuc thi tien bid cao nhat dc xac nhan dc xu ly the nao, truoc khi dung auction truoc deadline nhe",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"khi phien kết thúc thì tiền bid cao nhất được xác nhận được xử lý thế nào, trước khi room đóng nên quay về lobby mình đang thao tác",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền bid cao nhất được xác nhận được xử lý thế nào, nhưng auto close phải chạy đúng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, khi phiên kết thúc thì tiền bid cao nhất được xác nhận được xử lý thế nào, rồi mình cần kiểm tra số dư, kèm chuyện dừng auction trước deadline; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"Khi phiên kết thúc thì tiền bid cao nhất được xác nhận có rollback không, sau đó kết thúc phiên thủ công, trước khi mức tiền +300k.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"Cứu mình với, khi phiên kết thúc thì tiền bid cao nhất được xác nhận có rollback không, nhưng app tự chuyển về danh sách phiên mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"khi phien ket thuc thi tien bid cao nhat dc xac nhan co rollback ko, roi phien tu ket thuc sau deadline dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phien kết thúc thì tiền bid cao nhất được xác nhận có rollback không, sau đó số tiền còn lại phải rõ pls",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền bid cao nhất được xác nhận có rollback không, nhưng seller muốn đóng phiên sớm, rồi app tự chuyển về danh sách phiên đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0
+"Alo ad, khi phiên kết thúc thì tiền bid cao nhất được xác nhận có rollback không, sau đó mình bị đẩy khỏi phòng về màn chính; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"Khi phiên kết thúc thì tiền bid cao nhất được xác nhận có chuyển cho seller không, trước khi không cần seller bấm đóng, đồng thời mã phòng BID-09.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, khi phiên kết thúc thì tiền bid cao nhất được xác nhận có chuyển cho seller không, nhưng đừng trừ tiền sai, sau đó mức tiền +75k nhé?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phien ket thuc thi tien bid cao nhat dc xac nhan co chuyen cho seller ko, roi xac nhan seller close phien m dang thao tac",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"khi phien kết thúc thì tiền bid cao nhất được xác nhận có chuyển cho seller không, nhưng sau khi kết thúc thì về lobby, sau đó không cần seller bấm đóng vì mình chưa rõ luồng",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền bid cao nhất được xác nhận có chuyển cho seller không, sau đó hệ thống tự xác định người thắng, đồng thời chatbot nói dễ hiểu giúp mình đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0
+"Mình đang bị vướng, khi phiên kết thúc thì tiền bid cao nhất được xác nhận có chuyển cho seller không, kèm chuyện balance đang hiển thị lạ; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Khi phiên kết thúc thì tiền bid cao nhất được xác nhận trước khi về lobby, trước khi đóng room do seller yêu cầu.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"Này ad, khi phiên kết thúc thì tiền bid cao nhất được xác nhận trước khi về lobby, rồi đừng kẹt ở màn phiên cũ được không?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"khi phien ket thuc thi tien bid cao nhat dc xac nhan truoc khi ve lobby, dong thoi khi countdown ve 0 thi tu chot, dong thoi balance dang hien thi la, dong thoi muc tien 2.500.000 pls",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phien kết thúc thì tiền bid cao nhất được xác nhận trước khi về lobby, trước khi xem tiền còn đủ không để khỏi làm sai",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền bid cao nhất được xác nhận trước khi về lobby, trước khi dừng auction trước deadline đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"Cứu mình với, khi phiên kết thúc thì tiền bid cao nhất được xác nhận trước khi về lobby, trước khi room đóng nên quay về lobby, nhưng mã phòng GOLD-21; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"Khi phiên kết thúc thì tiền bid cao nhất được xác nhận để tránh cộng trừ sai, sau đó auto close phải chạy đúng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, khi phiên kết thúc thì tiền bid cao nhất được xác nhận để tránh cộng trừ sai, kèm chuyện mình cần kiểm tra số dư, đồng thời dừng auction trước deadline mình đang thao tác?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"khi phien ket thuc thi tien bid cao nhat dc xac nhan de tranh cong tru sai, kem chuyen ket thuc phien thu cong vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"khi phien kết thúc thì tiền bid cao nhất được xác nhận để tránh cộng trừ sai, rồi app tự chuyển về danh sách phiên, đồng thời mức tiền 1tr2 đang cần xử lý liền",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền bid cao nhất được xác nhận để tránh cộng trừ sai, trước khi phiên tự kết thúc sau deadline đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, khi phiên kết thúc thì tiền bid cao nhất được xác nhận để tránh cộng trừ sai, kèm chuyện số tiền còn lại phải rõ; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Khi phiên kết thúc thì tiền người thắng không đủ tiền được xử lý thế nào, nhưng seller muốn đóng phiên sớm, rồi app tự chuyển về danh sách phiên.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0
+"Help với, khi phiên kết thúc thì tiền người thắng không đủ tiền được xử lý thế nào, sau đó mình bị đẩy khỏi phòng về màn chính pls?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"khi phien ket thuc thi tien nguoi thang ko du tien dc xu ly the nao, dong thoi ko can seller bam dong de khoi lam sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phien kết thúc thì tiền người thắng không đủ tiền được xử lý thế nào, sau đó đừng trừ tiền sai, sau đó nhờ chatbot giải thích thêm mình hơi rén",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0
+"khi phiên kết thúc thì tiền người thắng không đủ tiền được xử lý thế nào, kèm chuyện xác nhận seller close phiên, sau đó mã phòng PHIEN-2026, rồi mức tiền 250.000 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"Này ad, khi phiên kết thúc thì tiền người thắng không đủ tiền được xử lý thế nào, sau đó sau khi kết thúc thì về lobby, kèm chuyện không cần seller bấm đóng; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0
+"Khi phiên kết thúc thì tiền người thắng không đủ tiền có rollback không, đồng thời hệ thống tự xác định người thắng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, khi phiên kết thúc thì tiền người thắng không đủ tiền có rollback không, sau đó balance đang hiển thị lạ vì mình chưa rõ luồng?",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phien ket thuc thi tien nguoi thang ko du tien co rollback ko, nhung dong room do seller yc dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"khi phien kết thúc thì tiền người thắng không đủ tiền có rollback không, trước khi đừng kẹt ở màn phiên cũ nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền người thắng không đủ tiền có rollback không, sau đó khi countdown về 0 thì tự chốt, nhưng balance đang hiển thị lạ đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, khi phiên kết thúc thì tiền người thắng không đủ tiền có rollback không, nhưng xem tiền còn đủ không, sau đó mức tiền 100k; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Khi phiên kết thúc thì tiền người thắng không đủ tiền có chuyển cho seller không, sau đó dừng auction trước deadline.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+"Alo ad, khi phiên kết thúc thì tiền người thắng không đủ tiền có chuyển cho seller không, sau đó room đóng nên quay về lobby để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+"khi phien ket thuc thi tien nguoi thang ko du tien co chuyen cho seller ko, kem chuyen auto close phai chay dung m hoi ren",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phien kết thúc thì tiền người thắng không đủ tiền có chuyển cho seller không, trước khi mã phòng P-774 được không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền người thắng không đủ tiền có chuyển cho seller không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Help với, khi phiên kết thúc thì tiền người thắng không đủ tiền có chuyển cho seller không; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Khi phiên kết thúc thì tiền người thắng không đủ tiền trước khi về lobby, rồi mức tiền 50k.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, khi phiên kết thúc thì tiền người thắng không đủ tiền trước khi về lobby đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+khi phien ket thuc thi tien nguoi thang ko du tien truoc khi ve lobby nhe,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+khi phien kết thúc thì tiền người thắng không đủ tiền trước khi về lobby mình đang thao tác,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền người thắng không đủ tiền trước khi về lobby đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình mới dùng app, khi phiên kết thúc thì tiền người thắng không đủ tiền trước khi về lobby; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+Khi phiên kết thúc thì tiền người thắng không đủ tiền để tránh cộng trừ sai.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, khi phiên kết thúc thì tiền người thắng không đủ tiền để tránh cộng trừ sai, đồng thời mức tiền 5 triệu mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phien ket thuc thi tien nguoi thang ko du tien de tranh cong tru sai, nhung ma room auc-1024 dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+khi phien kết thúc thì tiền người thắng không đủ tiền để tránh cộng trừ sai pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền người thắng không đủ tiền để tránh cộng trừ sai đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Alo ad, khi phiên kết thúc thì tiền người thắng không đủ tiền để tránh cộng trừ sai; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+Khi phiên kết thúc thì tiền admin ban phiên được xử lý thế nào.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, khi phiên kết thúc thì tiền admin ban phiên được xử lý thế nào nhé?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phien ket thuc thi tien ad ban phien dc xu ly the nao, truoc khi muc tien +300k m dang thao tac",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+khi phien kết thúc thì tiền admin ban phiên được xử lý thế nào vì mình chưa rõ luồng,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền admin ban phiên được xử lý thế nào đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Mình đang bị vướng, khi phiên kết thúc thì tiền admin ban phiên được xử lý thế nào; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+Khi phiên kết thúc thì tiền admin ban phiên có rollback không.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, khi phiên kết thúc thì tiền admin ban phiên có rollback không, đồng thời mã phòng A17 được không?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+khi phien ket thuc thi tien ad ban phien co rollback ko pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phien kết thúc thì tiền admin ban phiên có rollback không, nhưng mức tiền +75k để khỏi làm sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền admin ban phiên có rollback không đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Cứu mình với, khi phiên kết thúc thì tiền admin ban phiên có rollback không; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+Khi phiên kết thúc thì tiền admin ban phiên có chuyển cho seller không.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, khi phiên kết thúc thì tiền admin ban phiên có chuyển cho seller không mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+khi phien ket thuc thi tien ad ban phien co chuyen cho seller ko vi m chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+khi phien kết thúc thì tiền admin ban phiên có chuyển cho seller không đang cần xử lý liền,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"khi phiên kết thúc thì tiền admin ban phiên có chuyển cho seller không, trước khi mức tiền 2.500.000 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, khi phiên kết thúc thì tiền admin ban phiên có chuyển cho seller không; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Khi phiên kết thúc thì tiền admin ban phiên trước khi về lobby, rồi mã phòng SALA-05.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"Help với, khi phiên kết thúc thì tiền admin ban phiên trước khi về lobby pls?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0

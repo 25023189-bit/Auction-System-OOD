@@ -1,0 +1,201 @@
+﻿text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+Tôi muốn đăng ký tài khoản mới rồi đăng nhập hệ thống luôn.,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, tôi muốn đăng ký tài khoản mới và chọn đúng role bidder hoặc seller mình đang thao tác?",1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+toi muon dk tk moi sau do vao room dg de bid vi minh chua ro luong,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tôi muốn đăg ký tài khoản mới rồi kiểm tra số dư tài khoản ban đầu nhé,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi muốn đăng ký tài khoản mới, nếu quên mật khẩu thì có đặt lại được không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tôi muốn đăng ký tài khoản mới để xem danh sách phiên đang mở; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Làm sao tạo tài khoản trên hệ thống đấu giá và chatbot hướng dẫn từng bước giúp tôi.,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, làm sao tạo tài khoản trên hệ thống đấu giá, vì tôi muốn tạo phiên với vai trò seller để khỏi làm sai?",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+lam sao tao tk tren he thong dg roi xem chi tiet sp truoc khi tham gia dc ko,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"làm sao tạo tài khoản trên hệ thống đấu gía, nếu username trùng thì thông báo trạng thái rõ pls",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"làm sao tạo tài khoản trên hệ thống đấu giá và sau register tự chuyển qua đăng nhập đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, làm sao tạo tài khoản trên hệ thống đấu giá để có số dư rồi đặt giá trong phiên; nếu thiếu điều kiện thì báo rõ giúp mình được không.",1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình chưa có account thì đăng ký ở đâu rồi đăng nhập hệ thống luôn.,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mình chưa có account thì đăng ký ở đâu và chọn đúng role bidder hoặc seller mình đang thao tác?",1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+minh chua co account thi dk o dau sau do vao room dg de bid vi minh chua ro luong,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mình chưa có account thì đăg ký ở đâu rồi kiểm tra số dư tài khoản ban đầu nhé,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình chưa có account thì đăng ký ở đâu, nếu quên mật khẩu thì có đặt lại được không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình chưa có account thì đăng ký ở đâu để xem danh sách phiên đang mở; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Cho tôi tạo user mới để vào app và chatbot hướng dẫn từng bước giúp tôi.,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, cho tôi tạo user mới để vào app, vì tôi muốn tạo phiên với vai trò seller để khỏi làm sai?",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+cho toi tao user moi de vao app roi xem chi tiet sp truoc khi tham gia dc ko,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"cho tôi tạo user mới để vào app, nếu username trùng thì thôg báo trạng thái rõ pls",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"cho tôi tạo user mới để vào app và sau register tự chuyển qua đăng nhập đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, cho tôi tạo user mới để vào app để có số dư rồi đặt giá trong phiên; nếu thiếu điều kiện thì báo rõ giúp mình được không.",1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Đăng ký bidder mới cần nhập gì rồi đăng nhập hệ thống luôn.,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, đăng ký bidder mới cần nhập gì và chọn đúng role bidder hoặc seller mình đang thao tác?",1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+dk bidder moi can nhap gi sau do vao room dg de bid vi minh chua ro luong,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+đăg ký bidder mới cần nhập gì rồi kiểm tra số dư tài khoản ban đầu nhé,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"đăng ký bidder mới cần nhập gì, nếu quên mật khẩu thì có đặt lại được không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, đăng ký bidder mới cần nhập gì để xem danh sách phiên đang mở; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn tạo tài khoản seller và chatbot hướng dẫn từng bước giúp tôi.,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, tôi muốn tạo tài khoản seller, vì tôi muốn tạo phiên với vai trò seller để khỏi làm sai?",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+toi muon tao tk seller roi xem chi tiet sp truoc khi tham gia dc ko,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi muốn tạo tài khoàn seller, nếu username trùng thì thông báo trạng thái rõ pls",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"tôi muốn tạo tài khoản seller và sau register tự chuyển qua đăng nhập đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, tôi muốn tạo tài khoản seller để có số dư rồi đặt giá trong phiên; nếu thiếu điều kiện thì báo rõ giúp mình được không.",1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Form đăng ký báo lỗi username rồi đăng nhập hệ thống luôn.,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, form đăng ký báo lỗi username và chọn đúng role bidder hoặc seller mình đang thao tác?",1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+form dk bao loi username sau do vao room dg de bid vi minh chua ro luong,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+form đăg ký báo lỗi username rồi kiểm tra số dư tài khoản ban đầu nhé,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"form đăng ký báo lỗi username, nếu quên mật khẩu thì có đặt lại được không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, form đăng ký báo lỗi username để xem danh sách phiên đang mở; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Email này đăng ký được chưa và chatbot hướng dẫn từng bước giúp tôi.,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, email này đăng ký được chưa, vì tôi muốn tạo phiên với vai trò seller để khỏi làm sai?",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+email nay dk dc chua roi xem chi tiet sp truoc khi tham gia dc ko,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"email này đăg ký được chưa, nếu username trùng thì thông báo trạng thái rõ pls",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"email này đăng ký được chưa và sau register tự chuyển qua đăng nhập đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, email này đăng ký được chưa để có số dư rồi đặt giá trong phiên; nếu thiếu điều kiện thì báo rõ giúp mình được không.",1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tạo tài khoản xong có đăng nhập luôn không rồi đăng nhập hệ thống luôn.,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, tạo tài khoản xong có đăng nhập luôn không và chọn đúng role bidder hoặc seller mình đang thao tác?",1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tao tk xong co login luon ko sau do vao room dg de bid vi minh chua ro luong,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tạo tài khoản xong có đăg nhập luôn không rồi kiểm tra số dư tài khoản ban đầu nhé,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tạo tài khoản xong có đăng nhập luôn không, nếu quên mật khẩu thì có đặt lại được không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tạo tài khoản xong có đăng nhập luôn không để xem danh sách phiên đang mở; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Đăng ký tài khoản bị trùng tên người dùng và chatbot hướng dẫn từng bước giúp tôi.,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, đăng ký tài khoản bị trùng tên người dùng, vì tôi muốn tạo phiên với vai trò seller để khỏi làm sai?",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+dk tk bi trung ten nguoi dung roi xem chi tiet sp truoc khi tham gia dc ko,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"đăg ký tài khoản bị trùng tên người dùng, nếu username trùng thì thông báo trạng thái rõ pls",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"đăng ký tài khoản bị trùng tên người dùng và sau register tự chuyển qua đăng nhập đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, đăng ký tài khoản bị trùng tên người dùng để có số dư rồi đặt giá trong phiên; nếu thiếu điều kiện thì báo rõ giúp mình được không.",1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mật khẩu đăng ký yêu cầu mấy ký tự rồi đăng nhập hệ thống luôn.,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mật khẩu đăng ký yêu cầu mấy ký tự và chọn đúng role bidder hoặc seller mình đang thao tác?",1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mk dk yc may ky tu sau do vao room dg de bid vi minh chua ro luong,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mật khẩu đăg ký yêu cầu mấy ký tự rồi kiểm tra số dư tài khoản ban đầu nhé,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mật khẩu đăng ký yêu cầu mấy ký tự, nếu quên mật khẩu thì có đặt lại được không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mật khẩu đăng ký yêu cầu mấy ký tự để xem danh sách phiên đang mở; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi cần chọn vai trò khi đăng ký à và chatbot hướng dẫn từng bước giúp tôi.,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, tôi cần chọn vai trò khi đăng ký à, vì tôi muốn tạo phiên với vai trò seller để khỏi làm sai?",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+toi can chon vai tro khi dk a roi xem chi tiet sp truoc khi tham gia dc ko,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi cần chọn vai trò khi đăg ký à, nếu username trùng thì thông báo trạng thái rõ pls",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"tôi cần chọn vai trò khi đăng ký à và sau register tự chuyển qua đăng nhập đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, tôi cần chọn vai trò khi đăng ký à để có số dư rồi đặt giá trong phiên; nếu thiếu điều kiện thì báo rõ giúp mình được không.",1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Đăng ký xong có sẵn số dư ban đầu không rồi đăng nhập hệ thống luôn.,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, đăng ký xong có sẵn số dư ban đầu không và chọn đúng role bidder hoặc seller mình đang thao tác?",1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+dk xong co san so du ban dau ko sau do vao room dg de bid vi minh chua ro luong,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+đăg ký xong có sẵn số dư ban đầu không rồi kiểm tra số dư tài khoản ban đầu nhé,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"đăng ký xong có sẵn số dư ban đầu không, nếu quên mật khẩu thì có đặt lại được không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, đăng ký xong có sẵn số dư ban đầu không để xem danh sách phiên đang mở; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+App không cho tạo tài khoản mới và chatbot hướng dẫn từng bước giúp tôi.,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, app không cho tạo tài khoản mới, vì tôi muốn tạo phiên với vai trò seller để khỏi làm sai?",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+app ko cho tao tk moi roi xem chi tiet sp truoc khi tham gia dc ko,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"app không cho tạo tài khoàn mới, nếu username trùng thì thông báo trạng thái rõ pls",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"app không cho tạo tài khoản mới và sau register tự chuyển qua đăng nhập đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, app không cho tạo tài khoản mới để có số dư rồi đặt giá trong phiên; nếu thiếu điều kiện thì báo rõ giúp mình được không.",1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn lập nick để tham gia đấu giá rồi đăng nhập hệ thống luôn.,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, tôi muốn lập nick để tham gia đấu giá và chọn đúng role bidder hoặc seller mình đang thao tác?",1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+toi muon lap nick de tham gia dg sau do vao room dg de bid vi minh chua ro luong,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tôi muốn lập nick để tham gia đấu gía rồi kiểm tra số dư tài khoản ban đầu nhé,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi muốn lập nick để tham gia đấu giá, nếu quên mật khẩu thì có đặt lại được không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tôi muốn lập nick để tham gia đấu giá để xem danh sách phiên đang mở; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Đăng ký bằng username này có hợp lệ không và chatbot hướng dẫn từng bước giúp tôi.,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, đăng ký bằng username này có hợp lệ không, vì tôi muốn tạo phiên với vai trò seller để khỏi làm sai?",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+dk bang username nay co hop le ko roi xem chi tiet sp truoc khi tham gia dc ko,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"đăg ký bằng username này có hợp lệ không, nếu username trùng thì thông báo trạng thái rõ pls",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"đăng ký bằng username này có hợp lệ không và sau register tự chuyển qua đăng nhập đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, đăng ký bằng username này có hợp lệ không để có số dư rồi đặt giá trong phiên; nếu thiếu điều kiện thì báo rõ giúp mình được không.",1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tài khoản mới có được vào phòng ngay không rồi đăng nhập hệ thống luôn.,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, tài khoản mới có được vào phòng ngay không và chọn đúng role bidder hoặc seller mình đang thao tác?",1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tk moi co dc vao room ngay ko sau do vao room dg de bid vi minh chua ro luong,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tài khoàn mới có được vào phòng ngay không rồi kiểm tra số dư tài khoản ban đầu nhé,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mới có được vào phòng ngay không, nếu quên mật khẩu thì có đặt lại được không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tài khoản mới có được vào phòng ngay không để xem danh sách phiên đang mở; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi nhập thông tin đăng ký nhưng không submit được và chatbot hướng dẫn từng bước giúp tôi.,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, tôi nhập thông tin đăng ký nhưng không submit được, vì tôi muốn tạo phiên với vai trò seller để khỏi làm sai?",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+toi nhap thong tin dk nhung ko submit dc roi xem chi tiet sp truoc khi tham gia dc ko,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi nhập thông tin đăg ký nhưng không submit được, nếu username trùng thì thông báo trạng thái rõ pls",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"tôi nhập thông tin đăng ký nhưng không submit được và sau register tự chuyển qua đăng nhập đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, tôi nhập thông tin đăng ký nhưng không submit được để có số dư rồi đặt giá trong phiên; nếu thiếu điều kiện thì báo rõ giúp mình được không.",1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tạo tài khoản mới cho người bán hàng rồi đăng nhập hệ thống luôn.,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, tạo tài khoản mới cho người bán hàng và chọn đúng role bidder hoặc seller mình đang thao tác?",1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tao tk moi cho nguoi ban hang sau do vao room dg de bid vi minh chua ro luong,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tạo tài khoàn mới cho người bán hàng rồi kiểm tra số dư tài khoản ban đầu nhé,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tạo tài khoản mới cho người bán hàng, nếu quên mật khẩu thì có đặt lại được không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tạo tài khoản mới cho người bán hàng để xem danh sách phiên đang mở; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Đăng ký seller có khác bidder không và chatbot hướng dẫn từng bước giúp tôi.,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, đăng ký seller có khác bidder không, vì tôi muốn tạo phiên với vai trò seller để khỏi làm sai?",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+dk seller co khac bidder ko roi xem chi tiet sp truoc khi tham gia dc ko,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"đăg ký seller có khác bidder không, nếu username trùng thì thông báo trạng thái rõ pls",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"đăng ký seller có khác bidder không và sau register tự chuyển qua đăng nhập đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, đăng ký seller có khác bidder không để có số dư rồi đặt giá trong phiên; nếu thiếu điều kiện thì báo rõ giúp mình được không.",1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Có cần admin duyệt tài khoản mới không rồi đăng nhập hệ thống luôn.,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, có cần admin duyệt tài khoản mới không và chọn đúng role bidder hoặc seller mình đang thao tác?",1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+co can ad duyet tk moi ko sau do vao room dg de bid vi minh chua ro luong,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+có cần admin duyẹt tài khoản mới không rồi kiểm tra số dư tài khoản ban đầu nhé,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"có cần admin duyệt tài khoản mới không, nếu quên mật khẩu thì có đặt lại được không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, có cần admin duyệt tài khoản mới không để xem danh sách phiên đang mở; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Đăng ký tài khoản rồi mà chưa thấy phản hồi và chatbot hướng dẫn từng bước giúp tôi.,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, đăng ký tài khoản rồi mà chưa thấy phản hồi, vì tôi muốn tạo phiên với vai trò seller để khỏi làm sai?",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+dk tk roi ma chua thay phan hoi roi xem chi tiet sp truoc khi tham gia dc ko,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"đăg ký tài khoản rồi mà chưa thấy phản hồi, nếu username trùng thì thông báo trạng thái rõ pls",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"đăng ký tài khoản rồi mà chưa thấy phản hồi và sau register tự chuyển qua đăng nhập đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, đăng ký tài khoản rồi mà chưa thấy phản hồi để có số dư rồi đặt giá trong phiên; nếu thiếu điều kiện thì báo rõ giúp mình được không.",1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn tạo account để thử bid rồi đăng nhập hệ thống luôn.,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, tôi muốn tạo account để thử bid và chọn đúng role bidder hoặc seller mình đang thao tác?",1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+toi muon tao account de thu bid sau do vao room dg de bid vi minh chua ro luong,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tôi muốn tạo account để thử bid rồi kiểm tra số dư tài khoàn ban đầu nhé,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi muốn tạo account để thử bid, nếu quên mật khẩu thì có đặt lại được không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tôi muốn tạo account để thử bid để xem danh sách phiên đang mở; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Form sign up đang bị lỗi và chatbot hướng dẫn từng bước giúp tôi.,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, form sign up đang bị lỗi, vì tôi muốn tạo phiên với vai trò seller để khỏi làm sai?",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+form sign up dang bi loi roi xem chi tiet sp truoc khi tham gia dc ko,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"form sign up đang bị lỗi, nếu username trùng thì thôg báo trạng thái rõ pls",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"form sign up đang bị lỗi và sau register tự chuyển qua đăng nhập đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, form sign up đang bị lỗi để có số dư rồi đặt giá trong phiên; nếu thiếu điều kiện thì báo rõ giúp mình được không.",1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Đăng ký với tên không dấu có được không rồi đăng nhập hệ thống luôn.,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, đăng ký với tên không dấu có được không và chọn đúng role bidder hoặc seller mình đang thao tác?",1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+dk voi ten ko dau co dc ko sau do vao room dg de bid vi minh chua ro luong,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+đăg ký với tên không dấu có được không rồi kiểm tra số dư tài khoản ban đầu nhé,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"đăng ký với tên không dấu có được không, nếu quên mật khẩu thì có đặt lại được không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, đăng ký với tên không dấu có được không để xem danh sách phiên đang mở; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mình muốn tạo tài khoản thứ hai để test và chatbot hướng dẫn từng bước giúp tôi.,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, mình muốn tạo tài khoản thứ hai để test, vì tôi muốn tạo phiên với vai trò seller để khỏi làm sai?",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+minh muon tao tk thu hai de test roi xem chi tiet sp truoc khi tham gia dc ko,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn tạo tài khoàn thứ hai để test, nếu username trùng thì thông báo trạng thái rõ pls",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"mình muốn tạo tài khoản thứ hai để test và sau register tự chuyển qua đăng nhập đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, mình muốn tạo tài khoản thứ hai để test để có số dư rồi đặt giá trong phiên; nếu thiếu điều kiện thì báo rõ giúp mình được không.",1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Đăng ký xong hệ thống lưu customer id thế nào rồi đăng nhập hệ thống luôn.,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, đăng ký xong hệ thống lưu customer id thế nào và chọn đúng role bidder hoặc seller mình đang thao tác?",1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+dk xong he thong luu customer id the nao sau do vao room dg de bid vi minh chua ro luong,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+đăg ký xong hệ thống lưu customer id thế nào rồi kiểm tra số dư tài khoản ban đầu nhé,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"đăng ký xong hệ thống lưu customer id thế nào, nếu quên mật khẩu thì có đặt lại được không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, đăng ký xong hệ thống lưu customer id thế nào để xem danh sách phiên đang mở; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tài khoản mới có quyền gì mặc định và chatbot hướng dẫn từng bước giúp tôi.,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Help với, tài khoản mới có quyền gì mặc định, vì tôi muốn tạo phiên với vai trò seller để khỏi làm sai?",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+tk moi co quyen gi mac dinh roi xem chi tiet sp truoc khi tham gia dc ko,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tài khoàn mới có quyền gì mặc định pls,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tài khoản mới có quyền gì mặc định, trên màn auth đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, tài khoản mới có quyền gì mặc định, bằng username mới; nếu thiếu điều kiện thì báo rõ giúp mình được không.",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Đăng ký không được vì password yếu à, cho lần đầu sử dụng.",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, đăng ký không được vì password yếu à trước khi vào app mình đang thao tác?",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+dk ko dc vi password yeu a vi minh chua ro luong,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"đăg ký không được vì password yếu à, trên màn auth nhé",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"đăng ký không được vì password yếu à, bằng username mới đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, đăng ký không được vì password yếu à, cho lần đầu sử dụng; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn biết luồng register của app trước khi vào app.,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, tôi muốn biết luồng register của app để khỏi làm sai?",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"toi muon biet luong register cua app, tren man auth dc ko",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi muốn biết luồng register của app, bằng username mới pls",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi muốn biết luồng register của app, cho lần đầu sử dụng đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, tôi muốn biết luồng register của app trước khi vào app; nếu thiếu điều kiện thì báo rõ giúp mình được không.",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Đăng ký tài khoản trên máy khác bị lỗi.,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, đăng ký tài khoản trên máy khác bị lỗi, trên màn auth mình đang thao tác?",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"dk tk tren may khac bi loi, bang username moi vi minh chua ro luong",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"đăg ký tài khoản trên máy khác bị lỗi, cho lần đầu sử dụng nhé",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"đăng ký tài khoản trên máy khác bị lỗi trước khi vào app đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, đăng ký tài khoản trên máy khác bị lỗi; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Username có dấu thì tạo tài khoản được không, trên màn auth.",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, username có dấu thì tạo tài khoản được không, bằng username mới để khỏi làm sai?",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"username co dau thi tao tk dc ko, cho lan dau su dung dc ko",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+username có dấu thì tạo tài khoàn được không trước khi vào app pls,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"username có dấu thì tạo tài khoản được không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, username có dấu thì tạo tài khoản được không, trên màn auth; nếu thiếu điều kiện thì báo rõ giúp mình được không.",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Đăng ký xong có chuyển về login không, bằng username mới.",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, đăng ký xong có chuyển về login không, cho lần đầu sử dụng mình đang thao tác?",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+dk xong co chuyen ve login ko truoc khi vao app vi minh chua ro luong,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+đăg ký xong có chuyển về login không nhé,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"đăng ký xong có chuyển về login không, trên màn auth đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, đăng ký xong có chuyển về login không, bằng username mới; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cho mình tạo tài khoản nhanh để vào phiên, cho lần đầu sử dụng.",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, cho mình tạo tài khoản nhanh để vào phiên trước khi vào app để khỏi làm sai?",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

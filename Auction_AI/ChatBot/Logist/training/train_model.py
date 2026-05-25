@@ -37,6 +37,12 @@ SUCCESS_STATUS = "success"
 FAILED_STATUS = "failed"
 TRAIN_DATA_PREFIX = "train_data"
 IGNORED_FILE_MARKERS = ("backup", ".bak", "tmp", "temp", "~")
+PREDICTION_THRESHOLD = 0.5
+UNCLEAR_LABEL = "KHÔNG RÕ"
+
+
+def normalize_label(label: str) -> str:
+    return " ".join(str(label).strip().upper().split())
 
 
 def build_model() -> Pipeline:
@@ -308,30 +314,66 @@ def resolve_training_files() -> list[Path]:
 
 
 def load_training_data(data_paths: list[Path]) -> tuple[pd.Series, pd.DataFrame, list[str]]:
-    frames = []
-    expected_label_columns: list[str] | None = None
+    frames: list[pd.DataFrame] = []
+    label_columns: list[str] = []
 
     for path in data_paths:
-        df, label_columns = validate_training_file(path)
-        if expected_label_columns is None:
-            expected_label_columns = label_columns
-        elif label_columns != expected_label_columns:
-            raise ValueError(
-                f"Schema label của {path.name} không khớp với các file success trước đó."
-            )
+        df, file_label_columns = validate_training_file(path)
+        for label in file_label_columns:
+            if label not in label_columns:
+                label_columns.append(label)
         frames.append(df)
 
-    if not frames or expected_label_columns is None:
+    if not frames or not label_columns:
         raise ValueError("Không có dữ liệu hợp lệ để train model.")
 
-    df = pd.concat(frames, ignore_index=True)
+    aligned_frames = [
+        frame.reindex(columns=[TEXT_COLUMN, *label_columns], fill_value=0)
+        for frame in frames
+    ]
+    df = pd.concat(aligned_frames, ignore_index=True)
     X = df[TEXT_COLUMN].astype(str)
-    label_columns = expected_label_columns
     y = df[label_columns].astype(int)
 
+    print(f"Training label columns found: {len(label_columns)}")
     print(f"Total samples used for training: {len(X)}")
 
     return X, y, label_columns
+
+
+def predict_with_threshold_fallback(
+    model: Pipeline,
+    X,
+    label_columns: list[str],
+    threshold: float = PREDICTION_THRESHOLD,
+) -> pd.DataFrame:
+    """Convert predict_proba output to multi-label predictions.
+
+    Policy used by the ChatBot runtime:
+    - every label with probability >= threshold is selected;
+    - if no label reaches threshold, the canonical unclear label is selected;
+    - no top-1 or top-k truncation is applied.
+    """
+    probabilities = model.predict_proba(X)
+    y_pred = pd.DataFrame(0, index=range(len(probabilities)), columns=label_columns, dtype=int)
+
+    unclear_columns = [
+        label for label in label_columns
+        if normalize_label(label) == UNCLEAR_LABEL
+    ]
+    unclear_column = unclear_columns[0] if unclear_columns else None
+
+    for row_index, row_probabilities in enumerate(probabilities):
+        selected_any = False
+        for label, probability in zip(label_columns, row_probabilities):
+            if float(probability) >= threshold:
+                y_pred.at[row_index, label] = 1
+                selected_any = True
+
+        if not selected_any and unclear_column is not None:
+            y_pred.at[row_index, unclear_column] = 1
+
+    return y_pred
 
 
 def evaluate_model(y_test: pd.DataFrame, y_pred, label_columns: list[str]) -> dict:
@@ -405,17 +447,17 @@ def main() -> None:
             random_state=42,
         )
         model.fit(X_train, y_train)
-        y_pred = model.predict(X_test)
-        evaluation = evaluate_model(y_test, y_pred, label_columns)
-        report_target = (y_test, y_pred)
+        y_pred = predict_with_threshold_fallback(model, X_test, label_columns)
+        evaluation = evaluate_model(y_test.reset_index(drop=True), y_pred, label_columns)
+        report_target = (y_test.reset_index(drop=True), y_pred)
     else:
-        y_pred = model.predict(X)
-        evaluation = evaluate_model(y, y_pred, label_columns)
-        report_target = (y, y_pred)
+        y_pred = predict_with_threshold_fallback(model, X, label_columns)
+        evaluation = evaluate_model(y.reset_index(drop=True), y_pred, label_columns)
+        report_target = (y.reset_index(drop=True), y_pred)
 
     model.fit(X, y)
 
-    print("\n===== MULTI-LABEL EVALUATION SUMMARY =====")
+    print(f"\n===== MULTI-LABEL EVALUATION SUMMARY threshold={PREDICTION_THRESHOLD} fallback={UNCLEAR_LABEL} =====")
     for metric_name, metric_value in evaluation["summary"].items():
         print(f"{metric_name:24s}: {metric_value}")
 

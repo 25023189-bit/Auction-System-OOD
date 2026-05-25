@@ -22,17 +22,17 @@ class FakeModel:
         return [self.probabilities]
 
 
-def test_selects_highest_probability_label():
+def test_selects_all_labels_at_or_above_threshold():
     prediction = classify_message(
-        "Tôi muốn đặt giá",
-        model=FakeModel([0.51, 0.49]),
+        "Tôi muốn đặt giá và đăng nhập",
+        model=FakeModel([0.51, 0.50]),
         labels=LABELS,
     )
 
-    assert prediction.labels == ["ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ"]
+    assert prediction.labels == ["ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ", "ĐĂNG NHẬP HỆ THỐNG"]
     assert prediction.scores == {
         "ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ": 0.51,
-        "ĐĂNG NHẬP HỆ THỐNG": 0.49,
+        "ĐĂNG NHẬP HỆ THỐNG": 0.5,
     }
 
 
@@ -46,14 +46,14 @@ def test_rule_based_answer_uses_selected_label():
     assert "đặt giá" in answer.lower()
 
 
-def test_low_confidence_prediction_uses_out_of_scope_label():
+def test_low_confidence_prediction_uses_unclear_label():
     prediction = classify_message(
         "Bệnh viện ở đâu?",
         model=FakeModel([0.21, 0.19, 0.12]),
         labels=LABELS_WITH_OUT_OF_SCOPE,
     )
 
-    assert prediction.labels == ["NGOÀI LỀ"]
+    assert prediction.labels == ["KHÔNG RÕ"]
 
 
 def test_out_of_scope_answer_redirects_to_auction_support():
@@ -63,8 +63,7 @@ def test_out_of_scope_answer_redirects_to_auction_support():
         labels=LABELS_WITH_OUT_OF_SCOPE,
     )
 
-    assert "hệ thống đấu giá" in answer.lower()
-    assert "thời tiết" not in answer.lower()
+    assert "chưa đủ thông tin" in answer.lower()
 
 
 def test_dangerous_topic_answer_uses_safety_redirect():
@@ -80,9 +79,9 @@ def test_dangerous_topic_answer_uses_safety_redirect():
 
 
 def main() -> None:
-    test_selects_highest_probability_label()
+    test_selects_all_labels_at_or_above_threshold()
     test_rule_based_answer_uses_selected_label()
-    test_low_confidence_prediction_uses_out_of_scope_label()
+    test_low_confidence_prediction_uses_unclear_label()
     test_out_of_scope_answer_redirects_to_auction_support()
     test_dangerous_topic_answer_uses_safety_redirect()
     print("Logistic chatbot tests passed.")

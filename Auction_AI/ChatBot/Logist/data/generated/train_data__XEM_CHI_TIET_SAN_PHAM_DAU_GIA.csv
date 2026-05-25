@@ -1,0 +1,201 @@
+﻿text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+Tôi muốn xem chi tiết sản phẩm đấu giá này rồi mới đặt giá trong phiên.,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, tôi muốn xem chi tiết sản phẩm đấu giá này kèm giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+toi muon xem chi tiet sp dg nay truoc khi tham gia room dg vi minh chua ro luong,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tôi muốn xem chi tiết sản phẩm đấu giá này và xem danh sách phien có sản phẩm đó nhé,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi muốn xem chi tiết sản phẩm đấu giá này để kiểm tra lịch sử đặt giá của sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tôi muốn xem chi tiết sản phẩm đấu giá này, vì seller vừa tạo yêu cầu phiên mới; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Sản phẩm này mô tả cụ thể ở đâu rồi AI auto approve xem dữ liệu có ổn không.,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Help với, sản phẩm này mô tả cụ thể ở đâu để kiểm tra dữ liệu tạo phiên thiếu gì để khỏi làm sai?",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+sp nay mo ta cu the o dau kem thoi gian con lai cua phien dc ko,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"sản phầm này mô tả cụ thể ở đâu, nếu mô tả có dấu hiệu lừa đảo thì cảnh báo pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+"sản phẩm này mô tả cụ thể ở đâu và chatbot giải thích phần thông tin khó hiểu đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, sản phẩm này mô tả cụ thể ở đâu trước khi gửi yêu cầu duyệt phiên cho admin; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Xem ảnh và thông tin món hàng giúp tôi rồi mới đặt giá trong phiên.,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, xem ảnh và thông tin món hàng giúp tôi kèm giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+xem anh va thong tin mon hang giup toi truoc khi tham gia room dg vi minh chua ro luong,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+xem ảnh và thông tin món hàng giúp tôi và xem danh sách phien có sản phẩm đó nhé,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"xem ảnh và thông tin món hàng giúp tôi để kiểm tra lịch sử đặt giá của sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, xem ảnh và thông tin món hàng giúp tôi, vì seller vừa tạo yêu cầu phiên mới; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Cho tôi biết tình trạng sản phẩm trước khi bid rồi AI auto approve xem dữ liệu có ổn không.,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Help với, cho tôi biết tình trạng sản phẩm trước khi bid để kiểm tra dữ liệu tạo phiên thiếu gì để khỏi làm sai?",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+cho toi biet tinh trang sp truoc khi bid kem thoi gian con lai cua phien dc ko,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"cho tôi biết tình trạng sản phầm trước khi bid, nếu mô tả có dấu hiệu lừa đảo thì cảnh báo pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+"cho tôi biết tình trạng sản phẩm trước khi bid và chatbot giải thích phần thông tin khó hiểu đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, cho tôi biết tình trạng sản phẩm trước khi bid trước khi gửi yêu cầu duyệt phiên cho admin; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Chi tiết sản phẩm có giá khởi điểm không rồi mới đặt giá trong phiên.,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, chi tiết sản phẩm có giá khởi điểm không kèm giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+chi tiet sp co gia khoi diem ko truoc khi tham gia room dg vi minh chua ro luong,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+chi tiết sản phẩm có giá khởi điểm không và xem danh sách phien có sản phẩm đó nhé,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"chi tiết sản phẩm có giá khởi điểm không để kiểm tra lịch sử đặt giá của sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, chi tiết sản phẩm có giá khởi điểm không, vì seller vừa tạo yêu cầu phiên mới; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tôi muốn xem mô tả đầy đủ của item này rồi AI auto approve xem dữ liệu có ổn không.,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Help với, tôi muốn xem mô tả đầy đủ của item này để kiểm tra dữ liệu tạo phiên thiếu gì để khỏi làm sai?",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+toi muon xem mo ta day du cua item nay kem thoi gian con lai cua phien dc ko,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi muốn xem mô tả đầy đủ của item này, nếu mô tả có dấu hiệu lừa đảo thì cảnh báo pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+"tôi muốn xem mô tả đầy đủ của item này và chatbot giải thích phần thông tin khó hiểu đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, tôi muốn xem mô tả đầy đủ của item này trước khi gửi yêu cầu duyệt phiên cho admin; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Card ngoài lobby thiếu thông tin sản phẩm rồi mới đặt giá trong phiên.,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, card ngoài lobby thiếu thông tin sản phẩm kèm giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+card ngoai lobby thieu thong tin sp truoc khi tham gia room dg vi minh chua ro luong,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+card ngoài lobby thiếu thông tin sản phẩm và xem danh sách phien có sản phẩm đó nhé,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"card ngoài lobby thiếu thông tin sản phẩm để kiểm tra lịch sử đặt giá của sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, card ngoài lobby thiếu thông tin sản phẩm, vì seller vừa tạo yêu cầu phiên mới; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Nhấn vào sản phẩm thì xem detail ở đâu rồi AI auto approve xem dữ liệu có ổn không.,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Help với, nhấn vào sản phẩm thì xem detail ở đâu để kiểm tra dữ liệu tạo phiên thiếu gì để khỏi làm sai?",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+nhan vao sp thi xem detail o dau kem thoi gian con lai cua phien dc ko,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"nhấn vào sản phầm thì xem detail ở đâu, nếu mô tả có dấu hiệu lừa đảo thì cảnh báo pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+"nhấn vào sản phẩm thì xem detail ở đâu và chatbot giải thích phần thông tin khó hiểu đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, nhấn vào sản phẩm thì xem detail ở đâu trước khi gửi yêu cầu duyệt phiên cho admin; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Tôi cần xem ảnh rõ hơn của món này rồi mới đặt giá trong phiên.,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, tôi cần xem ảnh rõ hơn của món này kèm giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+toi can xem anh ro hon cua mon nay truoc khi tham gia room dg vi minh chua ro luong,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tôi cần xem ảnh rõ hơn của món này và xem danh sách phien có sản phẩm đó nhé,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi cần xem ảnh rõ hơn của món này để kiểm tra lịch sử đặt giá của sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tôi cần xem ảnh rõ hơn của món này, vì seller vừa tạo yêu cầu phiên mới; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Sản phẩm này có thông số kỹ thuật không rồi AI auto approve xem dữ liệu có ổn không.,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Help với, sản phẩm này có thông số kỹ thuật không để kiểm tra dữ liệu tạo phiên thiếu gì để khỏi làm sai?",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+sp nay co thong so ky thuat ko kem thoi gian con lai cua phien dc ko,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"sản phầm này có thông số kỹ thuật không, nếu mô tả có dấu hiệu lừa đảo thì cảnh báo pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+"sản phẩm này có thông số kỹ thuật không và chatbot giải thích phần thông tin khó hiểu đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, sản phẩm này có thông số kỹ thuật không trước khi gửi yêu cầu duyệt phiên cho admin; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Cho mình xem seller mô tả gì về sản phẩm rồi mới đặt giá trong phiên.,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, cho mình xem seller mô tả gì về sản phẩm kèm giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+cho minh xem seller mo ta gi ve sp truoc khi tham gia room dg vi minh chua ro luong,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+cho mình xem seller mô tả gì về sản phẩm và xem danh sách phien có sản phẩm đó nhé,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"cho mình xem seller mô tả gì về sản phẩm để kiểm tra lịch sử đặt giá của sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, cho mình xem seller mô tả gì về sản phẩm, vì seller vừa tạo yêu cầu phiên mới; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Xem chi tiết để biết hàng mới hay cũ rồi AI auto approve xem dữ liệu có ổn không.,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Help với, xem chi tiết để biết hàng mới hay cũ để kiểm tra dữ liệu tạo phiên thiếu gì để khỏi làm sai?",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+xem chi tiet de biet hang moi hay cu kem thoi gian con lai cua phien dc ko,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"xem chi tiết để biết hàng mới hay cũ, nếu mô tả có dấu hiệu lừa đảo thì cảnh báo pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+"xem chi tiết để biết hàng mới hay cũ và chatbot giải thích phần thông tin khó hiểu đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, xem chi tiết để biết hàng mới hay cũ trước khi gửi yêu cầu duyệt phiên cho admin; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Popup sản phẩm có hiện lịch sử giá không rồi mới đặt giá trong phiên.,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, popup sản phẩm có hiện lịch sử giá không kèm giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+popup sp co hien lich su gia ko truoc khi tham gia room dg vi minh chua ro luong,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+popup sản phẩm có hiện lịch sử giá không và xem danh sách phien có sản phẩm đó nhé,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"popup sản phẩm có hiện lịch sử giá không để kiểm tra lịch sử đặt giá của sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, popup sản phẩm có hiện lịch sử giá không, vì seller vừa tạo yêu cầu phiên mới; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tôi muốn xem tên mô tả giá của sản phẩm rồi AI auto approve xem dữ liệu có ổn không.,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Help với, tôi muốn xem tên mô tả giá của sản phẩm để kiểm tra dữ liệu tạo phiên thiếu gì để khỏi làm sai?",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+toi muon xem ten mo ta gia cua sp kem thoi gian con lai cua phien dc ko,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi muốn xem tên mô tả giá của sản phầm, nếu mô tả có dấu hiệu lừa đảo thì cảnh báo pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+"tôi muốn xem tên mô tả giá của sản phẩm và chatbot giải thích phần thông tin khó hiểu đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, tôi muốn xem tên mô tả giá của sản phẩm trước khi gửi yêu cầu duyệt phiên cho admin; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Chi tiết sản phẩm đang không load ảnh rồi mới đặt giá trong phiên.,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, chi tiết sản phẩm đang không load ảnh kèm giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+chi tiet sp dang ko load anh truoc khi tham gia room dg vi minh chua ro luong,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+chi tiết sản phẩm đang không load ảnh và xem danh sách phien có sản phẩm đó nhé,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"chi tiết sản phẩm đang không load ảnh để kiểm tra lịch sử đặt giá của sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, chi tiết sản phẩm đang không load ảnh, vì seller vừa tạo yêu cầu phiên mới; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Sản phẩm đang đấu giá có nguồn gốc không rồi AI auto approve xem dữ liệu có ổn không.,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Help với, sản phẩm đang đấu giá có nguồn gốc không để kiểm tra dữ liệu tạo phiên thiếu gì để khỏi làm sai?",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+sp dang dg co nguon goc ko kem thoi gian con lai cua phien dc ko,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"sản phẩm đang đấu gía có nguồn gốc không, nếu mô tả có dấu hiệu lừa đảo thì cảnh báo pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+"sản phẩm đang đấu giá có nguồn gốc không và chatbot giải thích phần thông tin khó hiểu đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, sản phẩm đang đấu giá có nguồn gốc không trước khi gửi yêu cầu duyệt phiên cho admin; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Tôi muốn đọc mô tả trước khi tham gia phòng rồi mới đặt giá trong phiên.,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, tôi muốn đọc mô tả trước khi tham gia phòng kèm giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+toi muon doc mo ta truoc khi tham gia room truoc khi tham gia room dg vi minh chua ro luong,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+tôi muốn đọc mô tả trước khi tham gia phòng và xem danh sách phien có sản phẩm đó nhé,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi muốn đọc mô tả trước khi tham gia phòng để kiểm tra lịch sử đặt giá của sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tôi muốn đọc mô tả trước khi tham gia phòng, vì seller vừa tạo yêu cầu phiên mới; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Chi tiết item này có hiển thị thời gian phiên không rồi AI auto approve xem dữ liệu có ổn không.,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Help với, chi tiết item này có hiển thị thời gian phiên không để kiểm tra dữ liệu tạo phiên thiếu gì để khỏi làm sai?",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+chi tiet item nay co hien thi thoi gian phien ko kem thoi gian con lai cua phien dc ko,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"chi tiết item này có hiển thị thời gian phien không, nếu mô tả có dấu hiệu lừa đảo thì cảnh báo pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+"chi tiết item này có hiển thị thời gian phiên không và chatbot giải thích phần thông tin khó hiểu đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, chi tiết item này có hiển thị thời gian phiên không trước khi gửi yêu cầu duyệt phiên cho admin; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Xem ảnh sản phẩm trong room đấu giá rồi mới đặt giá trong phiên.,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, xem ảnh sản phẩm trong room đấu giá kèm giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+xem anh sp trong room dg truoc khi tham gia room dg vi minh chua ro luong,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+xem ảnh sản phẩm trong room đấu giá và xem danh sách phien có sản phẩm đó nhé,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"xem ảnh sản phẩm trong room đấu giá để kiểm tra lịch sử đặt giá của sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, xem ảnh sản phẩm trong room đấu giá, vì seller vừa tạo yêu cầu phiên mới; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Mình muốn xem thông tin món hàng trước khi trả giá rồi AI auto approve xem dữ liệu có ổn không.,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Help với, mình muốn xem thông tin món hàng trước khi trả giá để kiểm tra dữ liệu tạo phiên thiếu gì để khỏi làm sai?",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+minh muon xem thong tin mon hang truoc khi tra gia kem thoi gian con lai cua phien dc ko,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mình muốn xem thông tin món hàng trước khi trả giá, nếu mô tả có dấu hiệu lừa đảo thì cảnh báo pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+"mình muốn xem thông tin món hàng trước khi trả giá và chatbot giải thích phần thông tin khó hiểu đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, mình muốn xem thông tin món hàng trước khi trả giá trước khi gửi yêu cầu duyệt phiên cho admin; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Sản phẩm này có bị thiếu mô tả không rồi mới đặt giá trong phiên.,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, sản phẩm này có bị thiếu mô tả không kèm giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+sp nay co bi thieu mo ta ko truoc khi tham gia room dg vi minh chua ro luong,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+sản phẩm này có bị thiếu mô tả không và xem danh sách phien có sản phẩm đó nhé,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"sản phẩm này có bị thiếu mô tả không để kiểm tra lịch sử đặt giá của sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, sản phẩm này có bị thiếu mô tả không, vì seller vừa tạo yêu cầu phiên mới; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Cho tôi kiểm tra mô tả seller nhập rồi AI auto approve xem dữ liệu có ổn không.,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Help với, cho tôi kiểm tra mô tả seller nhập để kiểm tra dữ liệu tạo phiên thiếu gì để khỏi làm sai?",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+cho toi check mo ta seller nhap kem thoi gian con lai cua phien dc ko,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"cho tôi kiểm chra mô tả seller nhập, nếu mô tả có dấu hiệu lừa đảo thì cảnh báo pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+"cho tôi kiểm tra mô tả seller nhập và chatbot giải thích phần thông tin khó hiểu đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, cho tôi kiểm tra mô tả seller nhập trước khi gửi yêu cầu duyệt phiên cho admin; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Chi tiết sản phẩm có trạng thái duyệt không rồi mới đặt giá trong phiên.,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, chi tiết sản phẩm có trạng thái duyệt không kèm giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+chi tiet sp co trang thai duyet ko truoc khi tham gia room dg vi minh chua ro luong,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+chi tiết sản phẩm có trạng thái duyệt không và xem danh sách phien có sản phẩm đó nhé,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"chi tiết sản phẩm có trạng thái duyệt không để kiểm tra lịch sử đặt giá của sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, chi tiết sản phẩm có trạng thái duyệt không, vì seller vừa tạo yêu cầu phiên mới; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Tôi không thấy phần mô tả sản phẩm rồi AI auto approve xem dữ liệu có ổn không.,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Help với, tôi không thấy phần mô tả sản phẩm để kiểm tra dữ liệu tạo phiên thiếu gì để khỏi làm sai?",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+toi ko thay phan mo ta sp kem thoi gian con lai cua phien dc ko,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi không thấy phần mô tả sản phầm, nếu mô tả có dấu hiệu lừa đảo thì cảnh báo pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+"tôi không thấy phần mô tả sản phẩm và chatbot giải thích phần thông tin khó hiểu đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, tôi không thấy phần mô tả sản phẩm trước khi gửi yêu cầu duyệt phiên cho admin; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Xem detail của phiên AUC này như nào rồi mới đặt giá trong phiên.,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, xem detail của phiên AUC này như nào kèm giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+xem detail cua phien auc nay nhu nao truoc khi tham gia room dg vi minh chua ro luong,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+xem detail của phien AUC này như nào và xem danh sách phiên có sản phẩm đó nhé,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"xem detail của phiên AUC này như nào để kiểm tra lịch sử đặt giá của sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, xem detail của phiên AUC này như nào, vì seller vừa tạo yêu cầu phiên mới; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Ảnh sản phẩm bị mờ có xem phóng to được không rồi AI auto approve xem dữ liệu có ổn không.,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Help với, ảnh sản phẩm bị mờ có xem phóng to được không để kiểm tra dữ liệu tạo phiên thiếu gì để khỏi làm sai?",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+anh sp bi mo co xem room to dc ko kem thoi gian con lai cua phien dc ko,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"ảnh sản phầm bị mờ có xem phóng to được không, nếu mô tả có dấu hiệu lừa đảo thì cảnh báo pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+"ảnh sản phẩm bị mờ có xem phóng to được không và chatbot giải thích phần thông tin khó hiểu đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"Này ad, ảnh sản phẩm bị mờ có xem phóng to được không trước khi gửi yêu cầu duyệt phiên cho admin; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Cho tôi xem đầy đủ thông tin trước khi quyết định bid rồi mới đặt giá trong phiên.,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, cho tôi xem đầy đủ thông tin trước khi quyết định bid kèm giá hiện tại realtime mình đang thao tác?",0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+cho toi xem day du thong tin truoc khi quyet dinh bid truoc khi tham gia room dg vi minh chua ro luong,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+cho tôi xem đầy đủ thông tin trước khi quyết định bid và xem danh sách phien có sản phẩm đó nhé,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"cho tôi xem đầy đủ thông tin trước khi quyết định bid để kiểm tra lịch sử đặt giá của sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, cho tôi xem đầy đủ thông tin trước khi quyết định bid, vì seller vừa tạo yêu cầu phiên mới; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Chi tiết sản phẩm có hiện giá hiện tại không rồi AI auto approve xem dữ liệu có ổn không.,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"Help với, chi tiết sản phẩm có hiện giá hiện tại không để kiểm tra dữ liệu tạo phiên thiếu gì để khỏi làm sai?",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+chi tiet sp co hien gia hien tai ko kem thoi gian con lai cua phien dc ko,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+chi tiết sản phầm có hiện giá hiện tại không pls,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"chi tiết sản phẩm có hiện giá hiện tại không, trong popup sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, chi tiết sản phẩm có hiện giá hiện tại không, ở card ngoài lobby; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tôi muốn xem sản phẩm đang thuộc phiên nào trước khi bid.,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, tôi muốn xem sản phẩm đang thuộc phiên nào, cho item hiện tại mình đang thao tác?",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+toi muon xem sp dang thuoc phien nao vi minh chua ro luong,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi muốn xem sản phẩm đang thuộc phien nào, trong popup sản phẩm nhé",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"tôi muốn xem sản phẩm đang thuộc phiên nào, ở card ngoài lobby đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, tôi muốn xem sản phẩm đang thuộc phiên nào trước khi bid; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Card sản phẩm bấm vào không mở chi tiết, cho item hiện tại.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, card sản phẩm bấm vào không mở chi tiết để khỏi làm sai?",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"card sp bam vao ko mo chi tiet, trong popup sp dc ko",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"card sản phầm bấm vào không mở chi tiết, ở card ngoài lobby pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"card sản phẩm bấm vào không mở chi tiết trước khi bid đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, card sản phẩm bấm vào không mở chi tiết, cho item hiện tại; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mô tả sản phẩm có đáng tin không.,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, mô tả sản phẩm có đáng tin không, trong popup sản phẩm mình đang thao tác?",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mo ta sp co dang tin ko, o card ngoai lobby vi minh chua ro luong",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mô tả sản phầm có đáng tin không trước khi bid nhé,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"mô tả sản phẩm có đáng tin không, cho item hiện tại đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mô tả sản phẩm có đáng tin không; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Cho mình xem ảnh, mô tả và giá khởi điểm, trong popup sản phẩm.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, cho mình xem ảnh, mô tả và giá khởi điểm, ở card ngoài lobby để khỏi làm sai?",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"cho minh xem anh, mo ta va gia khoi diem truoc khi bid dc ko",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"cho mình xem ảnh, mô tả và giá khởi điểm, cho item hiện tại pls",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"cho mình xem ảnh, mô tả và giá khởi điểm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Này ad, cho mình xem ảnh, mô tả và giá khởi điểm, trong popup sản phẩm; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Sản phẩm này có đủ thông tin để đấu giá chưa, ở card ngoài lobby.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Admin ơi, sản phẩm này có đủ thông tin để đấu giá chưa trước khi bid mình đang thao tác?",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"sp nay co du thong tin de dg chua, cho item hien tai vi minh chua ro luong",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+sản phẩm này có đủ thông tin để đấu gía chưa nhé,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"sản phẩm này có đủ thông tin để đấu giá chưa, trong popup sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Ê cho hỏi, sản phẩm này có đủ thông tin để đấu giá chưa, ở card ngoài lobby; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Xem chi tiết sản phẩm trong danh sách phiên trước khi bid.,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Help với, xem chi tiết sản phẩm trong danh sách phiên, cho item hiện tại để khỏi làm sai?",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

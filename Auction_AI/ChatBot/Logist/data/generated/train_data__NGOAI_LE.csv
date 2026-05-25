@@ -1,112 +1,401 @@
-text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
-Bệnh viện ở đâu?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Bệnh viện gần nhất nằm ở đâu?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Cho tôi địa chỉ bệnh viện gần nhất.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Tìm phòng khám gần đây giúp tôi.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Bố đang bị đau chân.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Bố tôi bị đau chân nên làm gì?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Mẹ tôi đau lưng cần đi đâu khám?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Tôi bị đau bụng nên uống thuốc gì?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Tôi bị sốt có nguy hiểm không?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Đau đầu kéo dài phải làm sao?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Thời tiết nay thế nào?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Thời tiết hôm nay thế nào?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Ngày mai có mưa không?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Nhiệt độ Hà Nội hôm nay bao nhiêu?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Dự báo thời tiết cuối tuần ra sao?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Giá vàng hôm nay bao nhiêu?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Bitcoin hôm nay tăng hay giảm?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Tỷ giá đô la hôm nay là bao nhiêu?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Tin tức mới nhất hôm nay có gì?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Ai là tổng thống Mỹ hiện tại?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Thủ đô của Pháp là gì?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Dân số Việt Nam khoảng bao nhiêu?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Giải phương trình bậc hai này giúp tôi.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Tính đạo hàm của hàm số này.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Viết giúp tôi bài văn về mùa xuân.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Tóm tắt tác phẩm Vợ nhặt.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Dịch câu này sang tiếng Anh.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Dịch tiếng Nhật câu xin chào.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Làm slide thuyết trình về môi trường.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Viết email xin nghỉ học giúp tôi.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Viết code Python đọc file Excel.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Sửa lỗi JavaScript này giúp tôi.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Máy tính của tôi bị chậm phải làm sao?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Cài đặt Windows như thế nào?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Điện thoại không lên nguồn xử lý sao?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Tư vấn mua điện thoại dưới 10 triệu.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-So sánh iPhone và Samsung.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Nên mua laptop hãng nào?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Cách nấu phở bò tại nhà.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Tối nay nên ăn món gì?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Công thức làm bánh flan.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Luộc trứng bao lâu thì chín?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Đặt vé máy bay đi Đà Nẵng giúp tôi.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Khách sạn nào tốt ở Đà Lạt?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Đường tới sân bay Nội Bài đi thế nào?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Quán cà phê đẹp gần đây ở đâu?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Lịch chiếu phim hôm nay có gì?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Bộ phim nào đang hot?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Kể tôi một câu chuyện cười.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Gợi ý bài hát để thư giãn.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Tin bóng đá tối nay thế nào?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Đội tuyển nào thắng trận hôm qua?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Lịch thi đấu World Cup ra sao?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Tư vấn tập gym cho người mới.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Tôi nên chạy bộ bao nhiêu phút mỗi ngày?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Cách chăm sóc da mụn.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Tóc rụng nhiều phải làm sao?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Người yêu giận thì nên nhắn gì?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Tôi đang buồn hãy an ủi tôi.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Kể chuyện ma nghe đi.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Bạn có biết hát không?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Vẽ cho tôi một con mèo.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Tạo ảnh phong cảnh núi tuyết.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Đọc lá số tử vi giúp tôi.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Hôm nay cung Bạch Dương thế nào?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Mơ thấy rắn là điềm gì?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Tư vấn phong thủy bàn làm việc.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Cách trồng cây monstera.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Chó bị bỏ ăn phải làm sao?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Mèo bị rụng lông nhiều.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Cách sửa xe máy không đề được.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Xe ô tô báo lỗi động cơ.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Tuyến xe buýt đến bến xe Mỹ Đình.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Mua bảo hiểm y tế ở đâu?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Làm căn cước công dân cần giấy tờ gì?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Đăng ký kết hôn cần chuẩn bị gì?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Nộp thuế thu nhập cá nhân thế nào?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Tìm việc làm part time ở Hà Nội.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Viết CV xin thực tập giúp tôi.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Phỏng vấn nên trả lời thế nào?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Lương ngành IT hiện nay bao nhiêu?,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-benh vien o dau,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-benh vien gan nhat o dau,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-bo toi bi dau chan,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-bo dang bi dau chan,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-me toi dau lung,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-toi bi dau bung nen lam gi,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-toi bi sot nen uong thuoc gi,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-thoi tiet nay the nao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-thoi tiet hom nay the nao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-ngay mai co mua khong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-gia vang hom nay bao nhieu,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-bitcoin hom nay tang hay giam,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-giai bai tap toan nay giup toi,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-viet bai van ve mua xuan,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-dich cau nay sang tieng anh,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-viet code python giup toi,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-may tinh bi cham phai lam sao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-tu van mua dien thoai,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-toi nay nen an gi,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-cach nau pho bo,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-dat ve may bay di da nang,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-quan ca phe dep gan day,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-lich chieu phim hom nay,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-ke toi mot cau chuyen cuoi,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-tin bong da hom nay,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-nguoi yeu gian nen lam gi,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-toi dang buon hay an ui toi,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-hom nay cung bach duong the nao,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-lam can cuoc cong dan can giay to gi,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-viet cv xin viec giup toi,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+﻿text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+"Viết giúp mình một bài thơ tình không liên quan đấu giá, trước khi nhờ chatbot giải thích thêm, đồng thời gửi tin cho mọi người trong phiên, rồi mã phòng AUC-1024.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Admin ơi, viết giúp mình một bài thơ tình không liên quan đấu giá, kèm chuyện khung chat phòng chưa hiện mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m mot bai tho tinh ko lien quan dg, dong thoi can bot hoi lai cho chac vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình một bài thơ tình không liên quan đấu gía, rồi chatbot nói dễ hiểu giúp mình đang cần xử lý liền",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình một bài thơ tình không liên quan đấu giá, rồi đừng gửi ra ngoài lobby đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Ê cho hỏi, viết giúp mình một bài thơ tình không liên quan đấu giá, trước khi mình nói hơi thiếu ngữ cảnh; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình một bài thơ tình nhanh nha, kèm chuyện bot hướng dẫn bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Help với, viết giúp mình một bài thơ tình nhanh nha, nhưng gửi tin cho mọi người trong phiên pls?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m mot bai tho tinh nhanh nha, truoc khi cau nay hoi mo ho de khoi lam sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình một bài thơ tình nhanh nha, đồng thời bot phân tích lỗi đang gặp mình hơi rén",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình một bài thơ tình nhanh nha, sau đó mình muốn nhắn trong chat room, trước khi trợ lý ảo trả lời ngắn gọn đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Này ad, viết giúp mình một bài thơ tình nhanh nha, sau đó chưa rõ đang hỏi chức năng nào, nhưng mã phòng A17; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình một bài thơ tình cho vui thôi, trước khi trợ lý ảo trả lời ngắn gọn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Mình mới dùng app, viết giúp mình một bài thơ tình cho vui thôi, trước khi chat hỏi thêm thông tin món hàng vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m mot bai tho tinh cho vui thoi, kem chuyen ko du du kien de xu ly thang dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình một bài thơ tình cho vui thôi, sau đó nhờ chatbot giải thích thêm, sau đó gửi tin cho mọi người trong phien nhé",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình một bài thơ tình cho vui thôi, trước khi khung chat phòng chưa hiện đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Admin ơi, viết giúp mình một bài thơ tình cho vui thôi, nhưng cần bot hỏi lại cho chắc; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình một bài thơ tình vì mình đang chán, rồi chatbot nói dễ hiểu giúp mình.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Alo ad, viết giúp mình một bài thơ tình vì mình đang chán, rồi đừng gửi ra ngoài lobby để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m mot bai tho tinh vi m dang chan, truoc khi m noi hoi thieu ngu canh m hoi ren",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình một bài thơ tình vì mình đang chán, sau đó bot hướng dẫn bước tiếp theo được khong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình một bài thơ tình vì mình đang chán, trước khi gửi tin cho mọi người trong phiên, nhưng mã phòng SALA-05 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Help với, viết giúp mình một bài thơ tình vì mình đang chán, rồi câu này hơi mơ hồ; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình một bài thơ tình bằng giọng Gen Z, nhưng bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Mình đang bị vướng, viết giúp mình một bài thơ tình bằng giọng Gen Z, rồi mình muốn nhắn trong chat room, nhưng trợ lý ảo trả lời ngắn gọn đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viet giup m mot bai tho tinh bang giong gen z, roi chua ro dang hoi chuc nang nao nhe",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình một bài thơ tình bằng giọng Gen Z, nhưng trợ lý ảo trả lời ngắn gọn mình đang thao tác",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình một bài thơ tình bằng giọng Gen Z, nhưng chat hỏi thêm thông tin món hàng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Mình mới dùng app, viết giúp mình một bài thơ tình bằng giọng Gen Z, đồng thời không đủ dữ kiện để xử lý thẳng; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình thời tiết Hà Nội không liên quan đấu giá, trước khi nhờ chatbot giải thích thêm, đồng thời gửi tin cho mọi người trong phiên.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Cứu mình với, viết giúp mình thời tiết Hà Nội không liên quan đấu giá, kèm chuyện khung chat phòng chưa hiện mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m thoi tiet ha noi ko lien quan dg, dong thoi can bot hoi lai cho chac dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình thời tiết Hà Nội không liên quan đấu gía, rồi chatbot nói dễ hiểu giúp mình, trước khi mã phòng ROOM-88 pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình thời tiết Hà Nội không liên quan đấu giá, rồi đừng gửi ra ngoài lobby đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Alo ad, viết giúp mình thời tiết Hà Nội không liên quan đấu giá, trước khi mình nói hơi thiếu ngữ cảnh; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình thời tiết Hà Nội nhanh nha, kèm chuyện bot hướng dẫn bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Ê cho hỏi, viết giúp mình thời tiết Hà Nội nhanh nha, nhưng gửi tin cho mọi người trong phiên nhé?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m thoi tiet ha noi nhanh nha, truoc khi cau nay hoi mo ho m dang thao tac",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình thời tiết Hà Nội nhanh nha, đồng thời bot phân tích lỗi đang gặp vì mình chưa rõ luồng",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình thời tiết Hà Nội nhanh nha, sau đó mình muốn nhắn trong chat room, trước khi trợ lý ảo trả lời ngắn gọn đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Mình đang bị vướng, viết giúp mình thời tiết Hà Nội nhanh nha, sau đó chưa rõ đang hỏi chức năng nào; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình thời tiết Hà Nội cho vui thôi, trước khi trợ lý ảo trả lời ngắn gọn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Này ad, viết giúp mình thời tiết Hà Nội cho vui thôi, trước khi chat hỏi thêm thông tin món hàng được không?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m thoi tiet ha noi cho vui thoi, kem chuyen ko du du kien de xu ly thang, dong thoi ma room bid-09 pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình thời tiết Hà Nội cho vui thôi, sau đó nhờ chatbot giải thích thêm, sau đó gửi tin cho mọi người trong phien để khỏi làm sai",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình thời tiết Hà Nội cho vui thôi, trước khi khung chat phòng chưa hiện đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Cứu mình với, viết giúp mình thời tiết Hà Nội cho vui thôi, nhưng cần bot hỏi lại cho chắc; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình thời tiết Hà Nội vì mình đang chán, rồi chatbot nói dễ hiểu giúp mình.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Admin ơi, viết giúp mình thời tiết Hà Nội vì mình đang chán, rồi đừng gửi ra ngoài lobby mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m thoi tiet ha noi vi m dang chan, truoc khi m noi hoi thieu ngu canh vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình thời tiết Hà Nội vì mình đang chán, sau đó bot hướng dẫn bước tiếp theo đang cần xử lý liền",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình thời tiết Hà Nội vì mình đang chán, trước khi gửi tin cho mọi người trong phiên đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Ê cho hỏi, viết giúp mình thời tiết Hà Nội vì mình đang chán, rồi câu này hơi mơ hồ; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình thời tiết Hà Nội bằng giọng Gen Z, nhưng bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Help với, viết giúp mình thời tiết Hà Nội bằng giọng Gen Z, rồi mình muốn nhắn trong chat room, nhưng trợ lý ảo trả lời ngắn gọn, nhưng mã phòng GOLD-21 pls?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viet giup m thoi tiet ha noi bang giong gen z, roi chua ro dang hoi chuc nang nao de khoi lam sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình thời tiết Hà Nội bằng giọng Gen Z, nhưng trợ lý ảo trả lời ngắn gọn mình hơi rén",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình thời tiết Hà Nội bằng giọng Gen Z, nhưng chat hỏi thêm thông tin món hàng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Này ad, viết giúp mình thời tiết Hà Nội bằng giọng Gen Z, đồng thời không đủ dữ kiện để xử lý thẳng; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình bài toán tích phân không liên quan đấu giá, rồi nhờ chatbot giải thích thêm, kèm chuyện gửi tin cho mọi người trong phiên.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Mình mới dùng app, viết giúp mình bài toán tích phân không liên quan đấu giá, sau đó khung chat phòng chưa hiện vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m bai toan tich phan ko lien quan dg, kem chuyen can bot hoi lai cho chac dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình bài toán tích phân không liên quan đấu gía, nhưng chatbot nói dễ hiểu giúp mình nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình bài toán tích phân không liên quan đấu giá, nhưng đừng gửi ra ngoài lobby đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Admin ơi, viết giúp mình bài toán tích phân không liên quan đấu giá, rồi mình nói hơi thiếu ngữ cảnh; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình bài toán tích phân nhanh nha, sau đó bot hướng dẫn bước tiếp theo, kèm chuyện mã phòng PHIEN-2026.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Alo ad, viết giúp mình bài toán tích phân nhanh nha, trước khi gửi tin cho mọi người trong phiên để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m bai toan tich phan nhanh nha, roi cau nay hoi mo ho m hoi ren",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình bài toán tích phân nhanh nha, kèm chuyện bot phân tích lỗi đang gặp được khong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình bài toán tích phân nhanh nha, đồng thời mình muốn nhắn trong chat room, kèm chuyện trợ lý ảo trả lời ngắn gọn đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Help với, viết giúp mình bài toán tích phân nhanh nha, đồng thời chưa rõ đang hỏi chức năng nào; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình bài toán tích phân cho vui thôi, rồi trợ lý ảo trả lời ngắn gọn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Mình đang bị vướng, viết giúp mình bài toán tích phân cho vui thôi, rồi chat hỏi thêm thông tin món hàng đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m bai toan tich phan cho vui thoi, sau do ko du du kien de xu ly thang nhe",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình bài toán tích phân cho vui thôi, đồng thời nhờ chatbot giải thích thêm, trước khi gửi tin cho mọi người trong phien mình đang thao tác",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình bài toán tích phân cho vui thôi, rồi khung chat phòng chưa hiện đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Mình mới dùng app, viết giúp mình bài toán tích phân cho vui thôi, trước khi cần bot hỏi lại cho chắc, rồi mã phòng P-774; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình bài toán tích phân vì mình đang chán, nhưng chatbot nói dễ hiểu giúp mình.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Cứu mình với, viết giúp mình bài toán tích phân vì mình đang chán, nhưng đừng gửi ra ngoài lobby mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m bai toan tich phan vi m dang chan, roi m noi hoi thieu ngu canh dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình bài toán tích phân vì mình đang chán, đồng thời bot hướng dẫn bước tiếp theo pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình bài toán tích phân vì mình đang chán, rồi gửi tin cho mọi người trong phiên đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Alo ad, viết giúp mình bài toán tích phân vì mình đang chán, nhưng câu này hơi mơ hồ; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình bài toán tích phân bằng giọng Gen Z, trước khi bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Ê cho hỏi, viết giúp mình bài toán tích phân bằng giọng Gen Z, nhưng mình muốn nhắn trong chat room, rồi trợ lý ảo trả lời ngắn gọn nhé?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viet giup m bai toan tich phan bang giong gen z, nhung chua ro dang hoi chuc nang nao m dang thao tac",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình bài toán tích phân bằng giọng Gen Z, trước khi trợ lý ảo trả lời ngắn gọn vì mình chưa rõ luồng",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình bài toán tích phân bằng giọng Gen Z, trước khi chat hỏi thêm thông tin món hàng, kèm chuyện mã phòng AUC-1024 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Mình đang bị vướng, viết giúp mình bài toán tích phân bằng giọng Gen Z, kèm chuyện không đủ dữ kiện để xử lý thẳng; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình laptop để chơi game không liên quan đấu giá, đồng thời nhờ chatbot giải thích thêm, trước khi gửi tin cho mọi người trong phiên.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Này ad, viết giúp mình laptop để chơi game không liên quan đấu giá, rồi khung chat phòng chưa hiện được không?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m laptop de choi game ko lien quan dg, truoc khi can bot hoi lai cho chac pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình laptop để chơi game không liên quan đấu gía, kèm chuyện chatbot nói dễ hiểu giúp mình để khỏi làm sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình laptop để chơi game không liên quan đấu giá, kèm chuyện đừng gửi ra ngoài lobby đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Cứu mình với, viết giúp mình laptop để chơi game không liên quan đấu giá, đồng thời mình nói hơi thiếu ngữ cảnh; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình laptop để chơi game nhanh nha, rồi bot hướng dẫn bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Admin ơi, viết giúp mình laptop để chơi game nhanh nha, sau đó gửi tin cho mọi người trong phiên mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m laptop de choi game nhanh nha, dong thoi cau nay hoi mo ho vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình laptop để chơi game nhanh nha, trước khi bot phân tích lỗi đang gặp, trước khi mã phòg A17 đang cần xử lý liền",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình laptop để chơi game nhanh nha, nhưng mình muốn nhắn trong chat room, rồi trợ lý ảo trả lời ngắn gọn đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Ê cho hỏi, viết giúp mình laptop để chơi game nhanh nha, nhưng chưa rõ đang hỏi chức năng nào; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình laptop để chơi game cho vui thôi, đồng thời trợ lý ảo trả lời ngắn gọn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Help với, viết giúp mình laptop để chơi game cho vui thôi, đồng thời chat hỏi thêm thông tin món hàng pls?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m laptop de choi game cho vui thoi, roi ko du du kien de xu ly thang de khoi lam sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình laptop để chơi game cho vui thôi, nhưng nhờ chatbot giải thích thêm, đồng thời gửi tin cho mọi người trong phien mình hơi rén",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình laptop để chơi game cho vui thôi, đồng thời khung chat phòng chưa hiện đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Này ad, viết giúp mình laptop để chơi game cho vui thôi, sau đó cần bot hỏi lại cho chắc; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình laptop để chơi game vì mình đang chán, kèm chuyện chatbot nói dễ hiểu giúp mình.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Mình mới dùng app, viết giúp mình laptop để chơi game vì mình đang chán, kèm chuyện đừng gửi ra ngoài lobby vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m laptop de choi game vi m dang chan, dong thoi m noi hoi thieu ngu canh, sau do ma room sala-05 dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình laptop để chơi game vì mình đang chán, nhưng bot hướng dẫn bước tiếp theo nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình laptop để chơi game vì mình đang chán, đồng thời gửi tin cho mọi người trong phiên đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Admin ơi, viết giúp mình laptop để chơi game vì mình đang chán, kèm chuyện câu này hơi mơ hồ; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình laptop để chơi game bằng giọng Gen Z, sau đó bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Alo ad, viết giúp mình laptop để chơi game bằng giọng Gen Z, kèm chuyện mình muốn nhắn trong chat room, rồi trợ lý ảo trả lời ngắn gọn để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viet giup m laptop de choi game bang giong gen z, kem chuyen chua ro dang hoi chuc nang nao m hoi ren",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình laptop để chơi game bằng giọng Gen Z, sau đó trợ lý ảo trả lời ngắn gọn được khong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình laptop để chơi game bằng giọng Gen Z, sau đó chat hỏi thêm thông tin món hàng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Help với, viết giúp mình laptop để chơi game bằng giọng Gen Z, trước khi không đủ dữ kiện để xử lý thẳng; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình ảnh anime không liên quan đấu giá, kèm chuyện nhờ chatbot giải thích thêm, đồng thời gửi tin cho mọi người trong phiên.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Mình đang bị vướng, viết giúp mình ảnh anime không liên quan đấu giá, nhưng khung chat phòng chưa hiện, nhưng mã phòng ROOM-88 đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m anh anime ko lien quan dg, roi can bot hoi lai cho chac nhe",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình ảnh anime không liên quan đấu gía, sau đó chatbot nói dễ hiểu giúp mình mình đang thao tác",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình ảnh anime không liên quan đấu giá, sau đó đừng gửi ra ngoài lobby đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Mình mới dùng app, viết giúp mình ảnh anime không liên quan đấu giá, kèm chuyện mình nói hơi thiếu ngữ cảnh; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình ảnh anime nhanh nha, nhưng bot hướng dẫn bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Cứu mình với, viết giúp mình ảnh anime nhanh nha, đồng thời gửi tin cho mọi người trong phiên mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m anh anime nhanh nha, kem chuyen cau nay hoi mo ho dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình ảnh anime nhanh nha, rồi bot phân tích lỗi đang gặp pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình ảnh anime nhanh nha, trước khi mình muốn nhắn trong chat room, rồi trợ lý ảo trả lời ngắn gọn đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Alo ad, viết giúp mình ảnh anime nhanh nha, trước khi chưa rõ đang hỏi chức năng nào; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình ảnh anime cho vui thôi, kèm chuyện trợ lý ảo trả lời ngắn gọn, đồng thời mã phòng BID-09.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Ê cho hỏi, viết giúp mình ảnh anime cho vui thôi, kèm chuyện chat hỏi thêm thông tin món hàng nhé?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m anh anime cho vui thoi, nhung ko du du kien de xu ly thang m dang thao tac",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình ảnh anime cho vui thôi, trước khi nhờ chatbot giải thích thêm, đồng thời gửi tin cho mọi người trong phien vì mình chưa rõ luồng",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình ảnh anime cho vui thôi, kèm chuyện khung chat phòng chưa hiện đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Mình đang bị vướng, viết giúp mình ảnh anime cho vui thôi, đồng thời cần bot hỏi lại cho chắc; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình ảnh anime vì mình đang chán, sau đó chatbot nói dễ hiểu giúp mình.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Này ad, viết giúp mình ảnh anime vì mình đang chán, sau đó đừng gửi ra ngoài lobby được không?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m anh anime vi m dang chan, kem chuyen m noi hoi thieu ngu canh pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình ảnh anime vì mình đang chán, trước khi bot hướng dẫn bước tiếp theo để khỏi làm sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình ảnh anime vì mình đang chán, kèm chuyện gửi tin cho mọi người trong phiên đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Cứu mình với, viết giúp mình ảnh anime vì mình đang chán, sau đó câu này hơi mơ hồ, rồi mã phòng GOLD-21; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình ảnh anime bằng giọng Gen Z, đồng thời bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Admin ơi, viết giúp mình ảnh anime bằng giọng Gen Z, sau đó mình muốn nhắn trong chat room, trước khi trợ lý ảo trả lời ngắn gọn mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viet giup m anh anime bang giong gen z, sau do chua ro dang hoi chuc nang nao vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình ảnh anime bằng giọng Gen Z, đồng thời trợ lý ảo trả lời ngắn gọn đang cần xử lý liền",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình ảnh anime bằng giọng Gen Z, đồng thời chat hỏi thêm thông tin món hàng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Ê cho hỏi, viết giúp mình ảnh anime bằng giọng Gen Z, rồi không đủ dữ kiện để xử lý thẳng; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình món ăn tối nay không liên quan đấu giá, nhưng nhờ chatbot giải thích thêm, đồng thời gửi tin cho mọi người trong phiên.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Help với, viết giúp mình món ăn tối nay không liên quan đấu giá, đồng thời khung chat phòng chưa hiện pls?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m mon an t nay ko lien quan dg, sau do can bot hoi lai cho chac de khoi lam sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình món ăn tối nay không liên quan đấu gía, trước khi chatbot nói dễ hiểu giúp mình mình hơi rén",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình món ăn tối nay không liên quan đấu giá, trước khi đừng gửi ra ngoài lobby, sau đó mã phòng PHIEN-2026 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Này ad, viết giúp mình món ăn tối nay không liên quan đấu giá, nhưng mình nói hơi thiếu ngữ cảnh; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình món ăn tối nay nhanh nha, đồng thời bot hướng dẫn bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Mình mới dùng app, viết giúp mình món ăn tối nay nhanh nha, rồi gửi tin cho mọi người trong phiên vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m mon an t nay nhanh nha, nhung cau nay hoi mo ho dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình món ăn tối nay nhanh nha, sau đó bot phân tích lỗi đang gặp nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình món ăn tối nay nhanh nha, kèm chuyện mình muốn nhắn trong chat room, rồi trợ lý ảo trả lời ngắn gọn đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Admin ơi, viết giúp mình món ăn tối nay nhanh nha, kèm chuyện chưa rõ đang hỏi chức năng nào; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình món ăn tối nay cho vui thôi, nhưng trợ lý ảo trả lời ngắn gọn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Alo ad, viết giúp mình món ăn tối nay cho vui thôi, nhưng chat hỏi thêm thông tin món hàng để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m mon an t nay cho vui thoi, dong thoi ko du du kien de xu ly thang m hoi ren",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình món ăn tối nay cho vui thôi, kèm chuyện nhờ chatbot giải thích thêm, đồng thời gửi tin cho mọi người trong phien, kèm chuyện mã phòng P-774 được không",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình món ăn tối nay cho vui thôi, nhưng khung chat phòng chưa hiện đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Help với, viết giúp mình món ăn tối nay cho vui thôi, rồi cần bot hỏi lại cho chắc; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình món ăn tối nay vì mình đang chán, trước khi chatbot nói dễ hiểu giúp mình.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Mình đang bị vướng, viết giúp mình món ăn tối nay vì mình đang chán, trước khi đừng gửi ra ngoài lobby đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m mon an t nay vi m dang chan, nhung m noi hoi thieu ngu canh nhe",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình món ăn tối nay vì mình đang chán, kèm chuyện bot hướng dẫn bước tiếp theo mình đang thao tác",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình món ăn tối nay vì mình đang chán, nhưng gửi tin cho mọi người trong phiên đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Mình mới dùng app, viết giúp mình món ăn tối nay vì mình đang chán, trước khi câu này hơi mơ hồ; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình món ăn tối nay bằng giọng Gen Z, rồi bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Cứu mình với, viết giúp mình món ăn tối nay bằng giọng Gen Z, trước khi mình muốn nhắn trong chat room, rồi trợ lý ảo trả lời ngắn gọn mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viet giup m mon an t nay bang giong gen z, truoc khi chua ro dang hoi chuc nang nao, kem chuyen ma room auc-1024 dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình món ăn tối nay bằng giọng Gen Z, rồi trợ lý ảo trả lời ngắn gọn pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình món ăn tối nay bằng giọng Gen Z, rồi chat hỏi thêm thông tin món hàng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Alo ad, viết giúp mình món ăn tối nay bằng giọng Gen Z, sau đó không đủ dữ kiện để xử lý thẳng; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình lịch bóng đá không liên quan đấu giá, rồi nhờ chatbot giải thích thêm, kèm chuyện gửi tin cho mọi người trong phiên.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Ê cho hỏi, viết giúp mình lịch bóng đá không liên quan đấu giá, sau đó khung chat phòng chưa hiện nhé?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m lich bong da ko lien quan dg, kem chuyen can bot hoi lai cho chac m dang thao tac",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình lịch bóng đá không liên quan đấu gía, nhưng chatbot nói dễ hiểu giúp mình vì mình chưa rõ luồng",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình lịch bóng đá không liên quan đấu giá, nhưng đừng gửi ra ngoài lobby đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Mình đang bị vướng, viết giúp mình lịch bóng đá không liên quan đấu giá, rồi mình nói hơi thiếu ngữ cảnh; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình lịch bóng đá nhanh nha, sau đó bot hướng dẫn bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Này ad, viết giúp mình lịch bóng đá nhanh nha, trước khi gửi tin cho mọi người trong phiên, trước khi mã phòng A17 được không?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m lich bong da nhanh nha, roi cau nay hoi mo ho pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình lịch bóng đá nhanh nha, kèm chuyện bot phân tích lỗi đang gặp để khỏi làm sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình lịch bóng đá nhanh nha, đồng thời mình muốn nhắn trong chat room, kèm chuyện trợ lý ảo trả lời ngắn gọn đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Cứu mình với, viết giúp mình lịch bóng đá nhanh nha, đồng thời chưa rõ đang hỏi chức năng nào; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình lịch bóng đá cho vui thôi, rồi trợ lý ảo trả lời ngắn gọn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Admin ơi, viết giúp mình lịch bóng đá cho vui thôi, rồi chat hỏi thêm thông tin món hàng mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m lich bong da cho vui thoi, sau do ko du du kien de xu ly thang vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình lịch bóng đá cho vui thôi, đồng thời nhờ chatbot giải thích thêm, trước khi gửi tin cho mọi người trong phien đang cần xử lý liền",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình lịch bóng đá cho vui thôi, rồi khung chat phòng chưa hiện đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Ê cho hỏi, viết giúp mình lịch bóng đá cho vui thôi, trước khi cần bot hỏi lại cho chắc; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình lịch bóng đá vì mình đang chán, nhưng chatbot nói dễ hiểu giúp mình, nhưng mã phòng SALA-05.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Help với, viết giúp mình lịch bóng đá vì mình đang chán, nhưng đừng gửi ra ngoài lobby pls?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m lich bong da vi m dang chan, roi m noi hoi thieu ngu canh de khoi lam sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình lịch bóng đá vì mình đang chán, đồng thời bot hướng dẫn bước tiếp theo mình hơi rén",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình lịch bóng đá vì mình đang chán, rồi gửi tin cho mọi người trong phiên đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Này ad, viết giúp mình lịch bóng đá vì mình đang chán, nhưng câu này hơi mơ hồ; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình lịch bóng đá bằng giọng Gen Z, trước khi bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Mình mới dùng app, viết giúp mình lịch bóng đá bằng giọng Gen Z, nhưng mình muốn nhắn trong chat room, rồi trợ lý ảo trả lời ngắn gọn vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viet giup m lich bong da bang giong gen z, nhung chua ro dang hoi chuc nang nao dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình lịch bóng đá bằng giọng Gen Z, trước khi trợ lý ảo trả lời ngắn gọn nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình lịch bóng đá bằng giọng Gen Z, trước khi chat hỏi thêm thông tin món hàng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Admin ơi, viết giúp mình lịch bóng đá bằng giọng Gen Z, kèm chuyện không đủ dữ kiện để xử lý thẳng, nhưng mã phòng ROOM-88; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình phim mới ngoài rạp không liên quan đấu giá, rồi nhờ chatbot giải thích thêm, kèm chuyện gửi tin cho mọi người trong phiên.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Alo ad, viết giúp mình phim mới ngoài rạp không liên quan đấu giá, sau đó khung chat phòng chưa hiện để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m phim moi ngoai rap ko lien quan dg, kem chuyen can bot hoi lai cho chac m hoi ren",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình phim mới ngoài rạp không liên quan đấu gía, nhưng chatbot nói dễ hiểu giúp mình được không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình phim mới ngoài rạp không liên quan đấu giá, nhưng đừng gửi ra ngoài lobby đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Help với, viết giúp mình phim mới ngoài rạp không liên quan đấu giá, rồi mình nói hơi thiếu ngữ cảnh; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình phim mới ngoài rạp nhanh nha, sau đó bot hướng dẫn bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Mình đang bị vướng, viết giúp mình phim mới ngoài rạp nhanh nha, trước khi gửi tin cho mọi người trong phiên đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m phim moi ngoai rap nhanh nha, roi cau nay hoi mo ho nhe",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình phim mới ngoài rạp nhanh nha, kèm chuyện bot phân tích lỗi đang gặp mình đang thao tác",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình phim mới ngoài rạp nhanh nha, đồng thời mình muốn nhắn trong chat room, kèm chuyện trợ lý ảo trả lời ngắn gọn, đồng thời mã phòng BID-09 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Mình mới dùng app, viết giúp mình phim mới ngoài rạp nhanh nha, đồng thời chưa rõ đang hỏi chức năng nào; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình phim mới ngoài rạp cho vui thôi, rồi trợ lý ảo trả lời ngắn gọn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Cứu mình với, viết giúp mình phim mới ngoài rạp cho vui thôi, rồi chat hỏi thêm thông tin món hàng mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m phim moi ngoai rap cho vui thoi, sau do ko du du kien de xu ly thang dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình phim mới ngoài rạp cho vui thôi, đồng thời nhờ chatbot giải thích thêm, trước khi gửi tin cho mọi người trong phien pls",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình phim mới ngoài rạp cho vui thôi, rồi khung chat phòng chưa hiện đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Alo ad, viết giúp mình phim mới ngoài rạp cho vui thôi, trước khi cần bot hỏi lại cho chắc; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình phim mới ngoài rạp vì mình đang chán, nhưng chatbot nói dễ hiểu giúp mình.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Ê cho hỏi, viết giúp mình phim mới ngoài rạp vì mình đang chán, nhưng đừng gửi ra ngoài lobby nhé?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m phim moi ngoai rap vi m dang chan, roi m noi hoi thieu ngu canh m dang thao tac",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình phim mới ngoài rạp vì mình đang chán, đồng thời bot hướng dẫn bước tiếp theo, sau đó mã phòg GOLD-21 vì mình chưa rõ luồng",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình phim mới ngoài rạp vì mình đang chán, rồi gửi tin cho mọi người trong phiên đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Mình đang bị vướng, viết giúp mình phim mới ngoài rạp vì mình đang chán, nhưng câu này hơi mơ hồ; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình phim mới ngoài rạp bằng giọng Gen Z, trước khi bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Này ad, viết giúp mình phim mới ngoài rạp bằng giọng Gen Z, nhưng mình muốn nhắn trong chat room, rồi trợ lý ảo trả lời ngắn gọn được không?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viet giup m phim moi ngoai rap bang giong gen z, nhung chua ro dang hoi chuc nang nao pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình phim mới ngoài rạp bằng giọng Gen Z, trước khi trợ lý ảo trả lời ngắn gọn để khỏi làm sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình phim mới ngoài rạp bằng giọng Gen Z, trước khi chat hỏi thêm thông tin món hàng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Cứu mình với, viết giúp mình phim mới ngoài rạp bằng giọng Gen Z, kèm chuyện không đủ dữ kiện để xử lý thẳng; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình caption đăng facebook không liên quan đấu giá, kèm chuyện nhờ chatbot giải thích thêm, đồng thời gửi tin cho mọi người trong phiên.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Admin ơi, viết giúp mình caption đăng facebook không liên quan đấu giá, nhưng khung chat phòng chưa hiện mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m caption dang facebook ko lien quan dg, roi can bot hoi lai cho chac, dong thoi ma room phien-2026 vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình caption đăg facebook không liên quan đấu giá, sau đó chatbot nói dễ hiểu giúp mình đang cần xử lý liền",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình caption đăng facebook không liên quan đấu giá, sau đó đừng gửi ra ngoài lobby đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Ê cho hỏi, viết giúp mình caption đăng facebook không liên quan đấu giá, kèm chuyện mình nói hơi thiếu ngữ cảnh; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình caption đăng facebook nhanh nha, nhưng bot hướng dẫn bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Help với, viết giúp mình caption đăng facebook nhanh nha, đồng thời gửi tin cho mọi người trong phiên pls?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m caption dang facebook nhanh nha, kem chuyen cau nay hoi mo ho de khoi lam sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình caption đăg facebook nhanh nha, rồi bot phân tích lỗi đang gặp mình hơi rén",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình caption đăng facebook nhanh nha, trước khi mình muốn nhắn trong chat room, rồi trợ lý ảo trả lời ngắn gọn đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Này ad, viết giúp mình caption đăng facebook nhanh nha, trước khi chưa rõ đang hỏi chức năng nào; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình caption đăng facebook cho vui thôi, kèm chuyện trợ lý ảo trả lời ngắn gọn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Mình mới dùng app, viết giúp mình caption đăng facebook cho vui thôi, kèm chuyện chat hỏi thêm thông tin món hàng, rồi mã phòng P-774 vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m caption dang facebook cho vui thoi, nhung ko du du kien de xu ly thang dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình caption đăg facebook cho vui thôi, trước khi nhờ chatbot giải thích thêm, đồng thời gửi tin cho mọi người trong phiên nhé",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình caption đăng facebook cho vui thôi, kèm chuyện khung chat phòng chưa hiện đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Admin ơi, viết giúp mình caption đăng facebook cho vui thôi, đồng thời cần bot hỏi lại cho chắc; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình caption đăng facebook vì mình đang chán, sau đó chatbot nói dễ hiểu giúp mình.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Alo ad, viết giúp mình caption đăng facebook vì mình đang chán, sau đó đừng gửi ra ngoài lobby để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m caption dang facebook vi m dang chan, kem chuyen m noi hoi thieu ngu canh m hoi ren",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình caption đăg facebook vì mình đang chán, trước khi bot hướng dẫn bước tiếp theo được không",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình caption đăng facebook vì mình đang chán, kèm chuyện gửi tin cho mọi người trong phiên đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Help với, viết giúp mình caption đăng facebook vì mình đang chán, sau đó câu này hơi mơ hồ; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình caption đăng facebook bằng giọng Gen Z, đồng thời bot phân tích lỗi đang gặp, rồi mã phòng AUC-1024.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Mình đang bị vướng, viết giúp mình caption đăng facebook bằng giọng Gen Z, sau đó mình muốn nhắn trong chat room, trước khi trợ lý ảo trả lời ngắn gọn đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viet giup m caption dang facebook bang giong gen z, sau do chua ro dang hoi chuc nang nao nhe",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình caption đăg facebook bằng giọng Gen Z, đồng thời trợ lý ảo trả lời ngắn gọn mình đang thao tác",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình caption đăng facebook bằng giọng Gen Z, đồng thời chat hỏi thêm thông tin món hàng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Mình mới dùng app, viết giúp mình caption đăng facebook bằng giọng Gen Z, rồi không đủ dữ kiện để xử lý thẳng; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình tour du lịch Đà Lạt không liên quan đấu giá, đồng thời nhờ chatbot giải thích thêm, trước khi gửi tin cho mọi người trong phiên.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Cứu mình với, viết giúp mình tour du lịch Đà Lạt không liên quan đấu giá, rồi khung chat phòng chưa hiện mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m tour du lich da lat ko lien quan dg, truoc khi can bot hoi lai cho chac dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình tour du lịch Đà Lạt không liên quan đấu gía, kèm chuyện chatbot nói dễ hiểu giúp mình pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình tour du lịch Đà Lạt không liên quan đấu giá, kèm chuyện đừng gửi ra ngoài lobby đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Alo ad, viết giúp mình tour du lịch Đà Lạt không liên quan đấu giá, đồng thời mình nói hơi thiếu ngữ cảnh, đồng thời mã phòng A17; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình tour du lịch Đà Lạt nhanh nha, rồi bot hướng dẫn bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Ê cho hỏi, viết giúp mình tour du lịch Đà Lạt nhanh nha, sau đó gửi tin cho mọi người trong phiên nhé?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m tour du lich da lat nhanh nha, dong thoi cau nay hoi mo ho m dang thao tac",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình tour du lịch Đà Lạt nhanh nha, trước khi bot phân tích lỗi đang gặp vì mình chưa rõ luồng",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình tour du lịch Đà Lạt nhanh nha, nhưng mình muốn nhắn trong chat room, rồi trợ lý ảo trả lời ngắn gọn đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Mình đang bị vướng, viết giúp mình tour du lịch Đà Lạt nhanh nha, nhưng chưa rõ đang hỏi chức năng nào; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình tour du lịch Đà Lạt cho vui thôi, đồng thời trợ lý ảo trả lời ngắn gọn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Này ad, viết giúp mình tour du lịch Đà Lạt cho vui thôi, đồng thời chat hỏi thêm thông tin món hàng được không?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m tour du lich da lat cho vui thoi, roi ko du du kien de xu ly thang pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình tour du lịch Đà Lạt cho vui thôi, nhưng nhờ chatbot giải thích thêm, đồng thời gửi tin cho mọi người trong phien để khỏi làm sai",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình tour du lịch Đà Lạt cho vui thôi, đồng thời khung chat phòng chưa hiện, sau đó mã phòng SALA-05 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Cứu mình với, viết giúp mình tour du lịch Đà Lạt cho vui thôi, sau đó cần bot hỏi lại cho chắc; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình tour du lịch Đà Lạt vì mình đang chán, kèm chuyện chatbot nói dễ hiểu giúp mình.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Admin ơi, viết giúp mình tour du lịch Đà Lạt vì mình đang chán, kèm chuyện đừng gửi ra ngoài lobby mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"viet giup m tour du lich da lat vi m dang chan, dong thoi m noi hoi thieu ngu canh vi m chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình tour du lịch Đà Lạt vì mình đang chán, nhưng bot hướng dẫn bước tiếp theo đang cần xử lý liền",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình tour du lịch Đà Lạt vì mình đang chán, đồng thời gửi tin cho mọi người trong phiên đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Ê cho hỏi, viết giúp mình tour du lịch Đà Lạt vì mình đang chán, kèm chuyện câu này hơi mơ hồ; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Viết giúp mình tour du lịch Đà Lạt bằng giọng Gen Z, sau đó bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Help với, viết giúp mình tour du lịch Đà Lạt bằng giọng Gen Z, kèm chuyện mình muốn nhắn trong chat room, rồi trợ lý ảo trả lời ngắn gọn pls?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viet giup m tour du lich da lat bang giong gen z, kem chuyen chua ro dang hoi chuc nang nao de khoi lam sai",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"viết giúp mình tour du lịch Đà Lạt bằng giọng Gen Z, sau đó trợ lý ảo trả lời ngắn gọn, rồi mã phòg ROOM-88 mình hơi rén",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"viết giúp mình tour du lịch Đà Lạt bằng giọng Gen Z, sau đó chat hỏi thêm thông tin món hàng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Này ad, viết giúp mình tour du lịch Đà Lạt bằng giọng Gen Z, trước khi không đủ dữ kiện để xử lý thẳng; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Kể mình nghe một bài thơ tình không liên quan đấu giá, nhưng nhờ chatbot giải thích thêm, đồng thời gửi tin cho mọi người trong phiên.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Mình mới dùng app, kể mình nghe một bài thơ tình không liên quan đấu giá, đồng thời khung chat phòng chưa hiện vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"ke m nghe mot bai tho tinh ko lien quan dg, sau do can bot hoi lai cho chac dang can xu ly lien",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"kể mình nghe một bài thơ tình không liên quan đấu gía, trước khi chatbot nói dễ hiểu giúp mình nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"kể mình nghe một bài thơ tình không liên quan đấu giá, trước khi đừng gửi ra ngoài lobby đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Admin ơi, kể mình nghe một bài thơ tình không liên quan đấu giá, nhưng mình nói hơi thiếu ngữ cảnh; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Kể mình nghe một bài thơ tình nhanh nha, đồng thời bot hướng dẫn bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Alo ad, kể mình nghe một bài thơ tình nhanh nha, rồi gửi tin cho mọi người trong phiên để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"ke m nghe mot bai tho tinh nhanh nha, nhung cau nay hoi mo ho, dong thoi ma room bid-09 m hoi ren",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"kể mình nghe một bài thơ tình nhanh nha, sau đó bot phân tích lỗi đang gặp được khong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"kể mình nghe một bài thơ tình nhanh nha, kèm chuyện mình muốn nhắn trong chat room, rồi trợ lý ảo trả lời ngắn gọn đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Help với, kể mình nghe một bài thơ tình nhanh nha, kèm chuyện chưa rõ đang hỏi chức năng nào; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Kể mình nghe một bài thơ tình cho vui thôi, nhưng trợ lý ảo trả lời ngắn gọn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Mình đang bị vướng, kể mình nghe một bài thơ tình cho vui thôi, nhưng chat hỏi thêm thông tin món hàng đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"ke m nghe mot bai tho tinh cho vui thoi, dong thoi ko du du kien de xu ly thang nhe",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"kể mình nghe một bài thơ tình cho vui thôi, kèm chuyện nhờ chatbot giải thích thêm, đồng thời gửi tin cho mọi người trong phien mình đang thao tác",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"kể mình nghe một bài thơ tình cho vui thôi, nhưng khung chat phòng chưa hiện đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Mình mới dùng app, kể mình nghe một bài thơ tình cho vui thôi, rồi cần bot hỏi lại cho chắc; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Kể mình nghe một bài thơ tình vì mình đang chán, trước khi chatbot nói dễ hiểu giúp mình.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Cứu mình với, kể mình nghe một bài thơ tình vì mình đang chán, trước khi đừng gửi ra ngoài lobby, nhưng mã phòng GOLD-21 mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"ke m nghe mot bai tho tinh vi m dang chan, nhung m noi hoi thieu ngu canh dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"kể mình nghe một bài thơ tình vì mình đang chán, kèm chuyện bot hướng dẫn bước tiếp theo pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"kể mình nghe một bài thơ tình vì mình đang chán, nhưng gửi tin cho mọi người trong phiên đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Alo ad, kể mình nghe một bài thơ tình vì mình đang chán, trước khi câu này hơi mơ hồ; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Kể mình nghe một bài thơ tình bằng giọng Gen Z, rồi bot phân tích lỗi đang gặp.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"Ê cho hỏi, kể mình nghe một bài thơ tình bằng giọng Gen Z, trước khi mình muốn nhắn trong chat room, rồi trợ lý ảo trả lời ngắn gọn nhé?",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"ke m nghe mot bai tho tinh bang giong gen z, truoc khi chua ro dang hoi chuc nang nao m dang thao tac",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"kể mình nghe một bài thơ tình bằng giọng Gen Z, rồi trợ lý ảo trả lời ngắn gọn vì mình chưa rõ luồng",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"kể mình nghe một bài thơ tình bằng giọng Gen Z, rồi chat hỏi thêm thông tin món hàng đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Mình đang bị vướng, kể mình nghe một bài thơ tình bằng giọng Gen Z, sau đó không đủ dữ kiện để xử lý thẳng; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"Kể mình nghe thời tiết Hà Nội không liên quan đấu giá, rồi mã phòng PHIEN-2026.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Này ad, kể mình nghe thời tiết Hà Nội không liên quan đấu giá được không?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+ke m nghe thoi tiet ha noi ko lien quan dg pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+kể mình nghe thời tiết Hà Nội không liên quan đấu gía để khỏi làm sai,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"kể mình nghe thời tiết Hà Nội không liên quan đấu giá đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Cứu mình với, kể mình nghe thời tiết Hà Nội không liên quan đấu giá; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+Kể mình nghe thời tiết Hà Nội nhanh nha.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Admin ơi, kể mình nghe thời tiết Hà Nội nhanh nha mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+ke m nghe thoi tiet ha noi nhanh nha vi m chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+kể mình nghe thời tiết Hà Nội nhanh nha đang cần xử lý liền,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"kể mình nghe thời tiết Hà Nội nhanh nha đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Ê cho hỏi, kể mình nghe thời tiết Hà Nội nhanh nha, sau đó mã phòng P-774; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+Kể mình nghe thời tiết Hà Nội cho vui thôi.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Help với, kể mình nghe thời tiết Hà Nội cho vui thôi pls?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+ke m nghe thoi tiet ha noi cho vui thoi de khoi lam sai,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+kể mình nghe thời tiết Hà Nội cho vui thôi mình hơi rén,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"kể mình nghe thời tiết Hà Nội cho vui thôi đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Này ad, kể mình nghe thời tiết Hà Nội cho vui thôi; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+Kể mình nghe thời tiết Hà Nội vì mình đang chán.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Mình mới dùng app, kể mình nghe thời tiết Hà Nội vì mình đang chán vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+ke m nghe thoi tiet ha noi vi m dang chan dang can xu ly lien,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+kể mình nghe thời tiết Hà Nội vì mình đang chán nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"kể mình nghe thời tiết Hà Nội vì mình đang chán, trước khi mã phòng AUC-1024 đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Admin ơi, kể mình nghe thời tiết Hà Nội vì mình đang chán; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+Kể mình nghe thời tiết Hà Nội bằng giọng Gen Z.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Alo ad, kể mình nghe thời tiết Hà Nội bằng giọng Gen Z để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+ke m nghe thoi tiet ha noi bang giong gen z m hoi ren,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+kể mình nghe thời tiết Hà Nội bằng giọng Gen Z được khong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"kể mình nghe thời tiết Hà Nội bằng giọng Gen Z đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Help với, kể mình nghe thời tiết Hà Nội bằng giọng Gen Z; nếu thiếu điều kiện thì báo rõ giúp mình để khỏi làm sai.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+Kể mình nghe bài toán tích phân không liên quan đấu giá.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Mình đang bị vướng, kể mình nghe bài toán tích phân không liên quan đấu giá đang cần xử lý liền?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+ke m nghe bai toan tich phan ko lien quan dg nhe,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"kể mình nghe bài toán tích phân không liên quan đấu gía, đồng thời mã phòng A17 mình đang thao tác",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"kể mình nghe bài toán tích phân không liên quan đấu giá đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Mình mới dùng app, kể mình nghe bài toán tích phân không liên quan đấu giá; nếu thiếu điều kiện thì báo rõ giúp mình đang cần xử lý liền.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+Kể mình nghe bài toán tích phân nhanh nha.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Cứu mình với, kể mình nghe bài toán tích phân nhanh nha mình hơi rén?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+ke m nghe bai toan tich phan nhanh nha dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+kể mình nghe bài toán tích phân nhanh nha pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"kể mình nghe bài toán tích phân nhanh nha đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Alo ad, kể mình nghe bài toán tích phân nhanh nha; nếu thiếu điều kiện thì báo rõ giúp mình mình hơi rén.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+Kể mình nghe bài toán tích phân cho vui thôi.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Ê cho hỏi, kể mình nghe bài toán tích phân cho vui thôi nhé?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"ke m nghe bai toan tich phan cho vui thoi, roi ma room sala-05 m dang thao tac",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+kể mình nghe bài toán tích phân cho vui thôi vì mình chưa rõ luồng,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"kể mình nghe bài toán tích phân cho vui thôi đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Mình đang bị vướng, kể mình nghe bài toán tích phân cho vui thôi; nếu thiếu điều kiện thì báo rõ giúp mình nhé.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+Kể mình nghe bài toán tích phân vì mình đang chán.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Này ad, kể mình nghe bài toán tích phân vì mình đang chán được không?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+ke m nghe bai toan tich phan vi m dang chan pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+kể mình nghe bài toán tích phân vì mình đang chán để khỏi làm sai,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"kể mình nghe bài toán tích phân vì mình đang chán đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Cứu mình với, kể mình nghe bài toán tích phân vì mình đang chán; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+Kể mình nghe bài toán tích phân bằng giọng Gen Z.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Admin ơi, kể mình nghe bài toán tích phân bằng giọng Gen Z, trước khi mã phòng ROOM-88 mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+ke m nghe bai toan tich phan bang giong gen z vi m chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+kể mình nghe bài toán tích phân bằng giọng Gen Z đang cần xử lý liền,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"kể mình nghe bài toán tích phân bằng giọng Gen Z đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Ê cho hỏi, kể mình nghe bài toán tích phân bằng giọng Gen Z; nếu thiếu điều kiện thì báo rõ giúp mình mình đang thao tác.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+Kể mình nghe laptop để chơi game không liên quan đấu giá.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Help với, kể mình nghe laptop để chơi game không liên quan đấu giá pls?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+ke m nghe laptop de choi game ko lien quan dg de khoi lam sai,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+kể mình nghe laptop để chơi game không liên quan đấu gía mình hơi rén,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"kể mình nghe laptop để chơi game không liên quan đấu giá đi, mình hơi rối vì thao tác trên màn hình không rõ lắm.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Này ad, kể mình nghe laptop để chơi game không liên quan đấu giá; nếu thiếu điều kiện thì báo rõ giúp mình pls.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Kể mình nghe laptop để chơi game nhanh nha, kèm chuyện mã phòng BID-09.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"Mình mới dùng app, kể mình nghe laptop để chơi game nhanh nha vì mình chưa rõ luồng?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+ke m nghe laptop de choi game nhanh nha dang can xu ly lien,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+kể mình nghe laptop để chơi game nhanh nha nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0

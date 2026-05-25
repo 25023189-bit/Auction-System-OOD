@@ -111,6 +111,10 @@
     {
       "title": "AI hỗ trợ auto approve",
       "content": "Thư mục Auction_AI có mô hình hỗ trợ dự đoán khả năng tự động duyệt phiên đấu giá dựa trên dữ liệu huấn luyện. Chức năng này phục vụ hỗ trợ quyết định hoặc thử nghiệm AI, không thay thế hoàn toàn quyền duyệt của admin."
+    },
+    {
+      "title":"AUTOBIDDING",
+      "content":"AutoBidding là tính năng cho phép bidder đặt giá tự động theo các quy tắc đã thiết lập trước, ví dụ đặt giá cao hơn giá hiện tại một bước giá khi có người khác đặt giá. Tính năng này giúp bidder tham gia đấu giá hiệu quả hơn mà không cần theo dõi liên tục."
     }
   ]
 }

@@ -1,0 +1,201 @@
+﻿text,ĐĂNG KÝ TÀI KHOẢN,ĐĂNG NHẬP HỆ THỐNG,QUÊN MẬT KHẨU VÀ ĐẶT LẠI MẬT KHẨU,PHÂN QUYỀN NGƯỜI DÙNG,QUẢN LÝ SỐ DƯ TÀI KHOẢN,XEM DANH SÁCH PHIÊN ĐẤU GIÁ,XEM CHI TIẾT SẢN PHẨM ĐẤU GIÁ,THAM GIA PHÒNG ĐẤU GIÁ,RỜI PHÒNG ĐẤU GIÁ,ĐẶT GIÁ TRONG PHIÊN ĐẤU GIÁ,CẬP NHẬT GIÁ REALTIME,XEM LỊCH SỬ ĐẶT GIÁ,CHAT TRONG PHÒNG ĐẤU GIÁ,XEM THỜI GIAN CÒN LẠI CỦA PHIÊN,ANTI-SNIPING,KHÓA NGƯỜI THAM GIA MỚI Ở CUỐI PHIÊN,TỰ ĐỘNG CHỐT PHIÊN ĐẤU GIÁ,XỬ LÝ TIỀN KHI PHIÊN KẾT THÚC,TỰ ĐỘNG ĐƯA NGƯỜI DÙNG VỀ LOBBY,SELLER TẠO YÊU CẦU PHIÊN ĐẤU GIÁ,KIỂM TRA DỮ LIỆU TẠO PHIÊN ĐẤU GIÁ,YÊU CẦU DUYỆT PHIÊN ĐẤU GIÁ,SELLER ĐÓNG PHIÊN ĐẤU GIÁ,THÔNG BÁO TRẠNG THÁI PHIÊN,CHATBOT HỖ TRỢ NGƯỜI DÙNG,NGOÀI LỀ,CHỦ ĐỀ NGUY HIỂM,AI HỖ TRỢ AUTO APPROVE,Không Rõ
+Kiểm tra giúp dữ liệu tạo phiên của tôi thiếu gì rồi nếu ổn thì gửi sang yêu cầu duyệt phiên.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"Admin ơi, kiểm tra giúp dữ liệu tạo phiên của tôi thiếu gì, vì tôi đang tạo một phiên mới cho seller mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+check giup du lieu tao phien cua toi thieu gi va cho ai auto approve danh gia tiep vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+kiểm tra giúp dữ liệu tạo phien của tôi thiếu gì để phần chi tiết sản phẩm hiển thị đúng cho bidder nhé,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"kiểm tra giúp dữ liệu tạo phiên của tôi thiếu gì kèm thông báo lỗi cụ thể cho tôi sửa đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0
+"Ê cho hỏi, kiểm tra giúp dữ liệu tạo phiên của tôi thiếu gì trước khi phiên xuất hiện trong danh sách; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Thông tin sản phẩm này đã đủ để tạo phiên chưa, nếu mô tả có dấu hiệu gian lận thì cảnh báo luôn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0
+"Help với, thông tin sản phẩm này đã đủ để tạo phiên chưa và chatbot giải thích lỗi bằng tiếng Việt dễ hiểu để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0
+thong tin sp nay da du de tao phien chua roi moi cho ad duyet tay neu ai ko chac dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+"thông tin sản phẩm này đã đủ để tạo phien chưa, vì tôi muốn sửa xong rồi tạo request lại pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0
+"thông tin sản phẩm này đã đủ để tạo phiên chưa với cả kiểm tra ảnh mô tả giá trong chi tiết sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+"Này ad, thông tin sản phẩm này đã đủ để tạo phiên chưa để tránh đưa nhầm sản phẩm vi phạm lên hệ thống; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0
+Giá khởi điểm và thời lượng như này có hợp lệ không rồi nếu ổn thì gửi sang yêu cầu duyệt phiên.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"Admin ơi, giá khởi điểm và thời lượng như này có hợp lệ không, vì tôi đang tạo một phiên mới cho seller mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+gia khoi diem va thoi luong nhu nay co hop le ko va cho ai auto approve danh gia tiep vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+giá khởi điểm và thời lượng như này có hợp lệ không để phần chi tiết sản phầm hiển thị đúng cho bidder nhé,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"giá khởi điểm và thời lượng như này có hợp lệ không kèm thông báo lỗi cụ thể cho tôi sửa đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0
+"Ê cho hỏi, giá khởi điểm và thời lượng như này có hợp lệ không trước khi phiên xuất hiện trong danh sách; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Form tạo phiên báo lỗi nhưng tôi không biết sai trường nào, nếu mô tả có dấu hiệu gian lận thì cảnh báo luôn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0
+"Help với, form tạo phiên báo lỗi nhưng tôi không biết sai trường nào và chatbot giải thích lỗi bằng tiếng Việt dễ hiểu để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0
+form tao phien bao loi nhung toi ko biet sai truong nao roi moi cho ad duyet tay neu ai ko chac dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+"form tạo phien báo lỗi nhưng tôi không biết sai trường nào, vì tôi muốn sửa xong rồi tạo request lại pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0
+"form tạo phiên báo lỗi nhưng tôi không biết sai trường nào với cả kiểm tra ảnh mô tả giá trong chi tiết sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+"Này ad, form tạo phiên báo lỗi nhưng tôi không biết sai trường nào để tránh đưa nhầm sản phẩm vi phạm lên hệ thống; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0
+Mô tả sản phẩm của tôi có đạt yêu cầu không rồi nếu ổn thì gửi sang yêu cầu duyệt phiên.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"Admin ơi, mô tả sản phẩm của tôi có đạt yêu cầu không, vì tôi đang tạo một phiên mới cho seller mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+mo ta sp cua toi co dat yc ko va cho ai auto approve danh gia tiep vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+mô tả sản phầm của tôi có đạt yêu cầu không để phần chi tiết sản phẩm hiển thị đúng cho bidder nhé,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"mô tả sản phẩm của tôi có đạt yêu cầu không kèm thông báo lỗi cụ thể cho tôi sửa đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0
+"Ê cho hỏi, mô tả sản phẩm của tôi có đạt yêu cầu không trước khi phiên xuất hiện trong danh sách; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Tên sản phẩm này có quá ngắn để mở phiên không, nếu mô tả có dấu hiệu gian lận thì cảnh báo luôn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0
+"Help với, tên sản phẩm này có quá ngắn để mở phiên không và chatbot giải thích lỗi bằng tiếng Việt dễ hiểu để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0
+ten sp nay co qua ngan de mo phien ko roi moi cho ad duyet tay neu ai ko chac dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+"tên sản phẩm này có quá ngắn để mở phien không, vì tôi muốn sửa xong rồi tạo request lại pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0
+"tên sản phẩm này có quá ngắn để mở phiên không với cả kiểm tra ảnh mô tả giá trong chi tiết sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+"Này ad, tên sản phẩm này có quá ngắn để mở phiên không để tránh đưa nhầm sản phẩm vi phạm lên hệ thống; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0
+Ảnh sản phẩm đã đủ điều kiện tạo auction chưa rồi nếu ổn thì gửi sang yêu cầu duyệt phiên.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"Admin ơi, ảnh sản phẩm đã đủ điều kiện tạo auction chưa, vì tôi đang tạo một phiên mới cho seller mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+anh sp da du dieu kien tao auction chua va cho ai auto approve danh gia tiep vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+ảnh sản phầm đã đủ điều kiện tạo auction chưa để phần chi tiết sản phẩm hiển thị đúng cho bidder nhé,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"ảnh sản phẩm đã đủ điều kiện tạo auction chưa kèm thông báo lỗi cụ thể cho tôi sửa đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0
+"Ê cho hỏi, ảnh sản phẩm đã đủ điều kiện tạo auction chưa trước khi phiên xuất hiện trong danh sách; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Tôi nhập thời gian kết thúc như vậy có sai không, nếu mô tả có dấu hiệu gian lận thì cảnh báo luôn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0
+"Help với, tôi nhập thời gian kết thúc như vậy có sai không và chatbot giải thích lỗi bằng tiếng Việt dễ hiểu để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0
+toi nhap thoi gian ket thuc nhu vay co sai ko roi moi cho ad duyet tay neu ai ko chac dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+"tôi nhập thời gian kết thúc như vậy có sai khong, vì tôi muốn sửa xong rồi tạo request lại pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0
+"tôi nhập thời gian kết thúc như vậy có sai không với cả kiểm tra ảnh mô tả giá trong chi tiết sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+"Này ad, tôi nhập thời gian kết thúc như vậy có sai không để tránh đưa nhầm sản phẩm vi phạm lên hệ thống; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0
+Kiểm tra xem seller request này có hợp lệ không rồi nếu ổn thì gửi sang yêu cầu duyệt phiên.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"Admin ơi, kiểm tra xem seller request này có hợp lệ không, vì tôi đang tạo một phiên mới cho seller mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+check xem seller request nay co hop le ko va cho ai auto approve danh gia tiep vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+kiểm tra xem seller request này có hợp lệ không để phần chi tiết sản phầm hiển thị đúng cho bidder nhé,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"kiểm tra xem seller request này có hợp lệ không kèm thông báo lỗi cụ thể cho tôi sửa đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0
+"Ê cho hỏi, kiểm tra xem seller request này có hợp lệ không trước khi phiên xuất hiện trong danh sách; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Dữ liệu tạo phiên bị reject ở bước nào, nếu mô tả có dấu hiệu gian lận thì cảnh báo luôn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0
+"Help với, dữ liệu tạo phiên bị reject ở bước nào và chatbot giải thích lỗi bằng tiếng Việt dễ hiểu để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0
+du lieu tao phien bi reject o buoc nao roi moi cho ad duyet tay neu ai ko chac dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+"dữ liệu tạo phien bị reject ở bước nào, vì tôi muốn sửa xong rồi tạo request lại pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0
+"dữ liệu tạo phiên bị reject ở bước nào với cả kiểm tra ảnh mô tả giá trong chi tiết sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+"Này ad, dữ liệu tạo phiên bị reject ở bước nào để tránh đưa nhầm sản phẩm vi phạm lên hệ thống; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0
+Sản phẩm thiếu mô tả thì có được gửi duyệt không rồi nếu ổn thì gửi sang yêu cầu duyệt phiên.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"Admin ơi, sản phẩm thiếu mô tả thì có được gửi duyệt không, vì tôi đang tạo một phiên mới cho seller mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+sp thieu mo ta thi co dc gui duyet ko va cho ai auto approve danh gia tiep vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+sản phẩm thiếu mô tả thì có được gửi duyẹt không để phần chi tiết sản phẩm hiển thị đúng cho bidder nhé,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"sản phẩm thiếu mô tả thì có được gửi duyệt không kèm thông báo lỗi cụ thể cho tôi sửa đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0
+"Ê cho hỏi, sản phẩm thiếu mô tả thì có được gửi duyệt không trước khi phiên xuất hiện trong danh sách; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Giá bắt đầu bằng 0 có tạo phiên được không, nếu mô tả có dấu hiệu gian lận thì cảnh báo luôn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0
+"Help với, giá bắt đầu bằng 0 có tạo phiên được không và chatbot giải thích lỗi bằng tiếng Việt dễ hiểu để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0
+gia bat dau bang 0 co tao phien dc ko roi moi cho ad duyet tay neu ai ko chac dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+"giá bắt đầu bằng 0 có tạo phien được không, vì tôi muốn sửa xong rồi tạo request lại pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0
+"giá bắt đầu bằng 0 có tạo phiên được không với cả kiểm tra ảnh mô tả giá trong chi tiết sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+"Này ad, giá bắt đầu bằng 0 có tạo phiên được không để tránh đưa nhầm sản phẩm vi phạm lên hệ thống; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0
+Mã sản phẩm đang bị trùng khi tạo phiên à rồi nếu ổn thì gửi sang yêu cầu duyệt phiên.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"Admin ơi, mã sản phẩm đang bị trùng khi tạo phiên à, vì tôi đang tạo một phiên mới cho seller mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+ma sp dang bi trung khi tao phien a va cho ai auto approve danh gia tiep vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+mã sản phẩm đang bị trùng khi tạo phien à để phần chi tiết sản phẩm hiển thị đúng cho bidder nhé,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"mã sản phẩm đang bị trùng khi tạo phiên à kèm thông báo lỗi cụ thể cho tôi sửa đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0
+"Ê cho hỏi, mã sản phẩm đang bị trùng khi tạo phiên à trước khi phiên xuất hiện trong danh sách; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Phần mô tả có từ cấm nên hệ thống chặn đúng không, nếu mô tả có dấu hiệu gian lận thì cảnh báo luôn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0
+"Help với, phần mô tả có từ cấm nên hệ thống chặn đúng không và chatbot giải thích lỗi bằng tiếng Việt dễ hiểu để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0
+phan mo ta co tu cam nen he thong chan dung ko roi moi cho ad duyet tay neu ai ko chac dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+"phần mô tả có từ cấm nên hệ thống chặn đúng khong, vì tôi muốn sửa xong rồi tạo request lại pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0
+"phần mô tả có từ cấm nên hệ thống chặn đúng không với cả kiểm tra ảnh mô tả giá trong chi tiết sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+"Này ad, phần mô tả có từ cấm nên hệ thống chặn đúng không để tránh đưa nhầm sản phẩm vi phạm lên hệ thống; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0
+Kiểm tra các trường bắt buộc trước khi tôi submit rồi nếu ổn thì gửi sang yêu cầu duyệt phiên.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"Admin ơi, kiểm tra các trường bắt buộc trước khi tôi submit, vì tôi đang tạo một phiên mới cho seller mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+check cac truong bat buoc truoc khi toi submit va cho ai auto approve danh gia tiep vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+kiểm tra các trường bắt buộc trước khi tôi submit để phần chi tiết sản phầm hiển thị đúng cho bidder nhé,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"kiểm tra các trường bắt buộc trước khi tôi submit kèm thông báo lỗi cụ thể cho tôi sửa đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0
+"Ê cho hỏi, kiểm tra các trường bắt buộc trước khi tôi submit trước khi phiên xuất hiện trong danh sách; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Hệ thống đang validate thông tin tạo phiên thế nào, nếu mô tả có dấu hiệu gian lận thì cảnh báo luôn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0
+"Help với, hệ thống đang validate thông tin tạo phiên thế nào và chatbot giải thích lỗi bằng tiếng Việt dễ hiểu để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0
+he thong dang validate thong tin tao phien the nao roi moi cho ad duyet tay neu ai ko chac dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+"hệ thống đang validate thông tin tạo phien thế nào, vì tôi muốn sửa xong rồi tạo request lại pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0
+"hệ thống đang validate thông tin tạo phiên thế nào với cả kiểm tra ảnh mô tả giá trong chi tiết sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+"Này ad, hệ thống đang validate thông tin tạo phiên thế nào để tránh đưa nhầm sản phẩm vi phạm lên hệ thống; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0
+Listing này thiếu ảnh hay thiếu giá vậy rồi nếu ổn thì gửi sang yêu cầu duyệt phiên.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"Admin ơi, listing này thiếu ảnh hay thiếu giá vậy, vì tôi đang tạo một phiên mới cho seller mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+listing nay thieu anh hay thieu gia vay va cho ai auto approve danh gia tiep vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+listing này thiếu ảnh hay thiếu giá vậy để phần chi tiết sản phầm hiển thị đúng cho bidder nhé,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"listing này thiếu ảnh hay thiếu giá vậy kèm thông báo lỗi cụ thể cho tôi sửa đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0
+"Ê cho hỏi, listing này thiếu ảnh hay thiếu giá vậy trước khi phiên xuất hiện trong danh sách; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Cho tôi biết field nào làm phiên không tạo được, nếu mô tả có dấu hiệu gian lận thì cảnh báo luôn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0
+"Help với, cho tôi biết field nào làm phiên không tạo được và chatbot giải thích lỗi bằng tiếng Việt dễ hiểu để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0
+cho toi biet field nao lam phien ko tao dc roi moi cho ad duyet tay neu ai ko chac dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+"cho tôi biết field nào làm phien không tạo được, vì tôi muốn sửa xong rồi tạo request lại pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0
+"cho tôi biết field nào làm phiên không tạo được với cả kiểm tra ảnh mô tả giá trong chi tiết sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+"Này ad, cho tôi biết field nào làm phiên không tạo được để tránh đưa nhầm sản phẩm vi phạm lên hệ thống; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0
+Kiểm tra ngày bắt đầu và ngày kết thúc của phiên rồi nếu ổn thì gửi sang yêu cầu duyệt phiên.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"Admin ơi, kiểm tra ngày bắt đầu và ngày kết thúc của phiên, vì tôi đang tạo một phiên mới cho seller mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+check ngay bat dau va ngay ket thuc cua phien va cho ai auto approve danh gia tiep vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+kiểm tra ngày bắt đầu và ngày kết thúc của phien để phần chi tiết sản phẩm hiển thị đúng cho bidder nhé,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"kiểm tra ngày bắt đầu và ngày kết thúc của phiên kèm thông báo lỗi cụ thể cho tôi sửa đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0
+"Ê cho hỏi, kiểm tra ngày bắt đầu và ngày kết thúc của phiên trước khi phiên xuất hiện trong danh sách; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Dữ liệu sản phẩm có đủ rõ cho bidder xem không, nếu mô tả có dấu hiệu gian lận thì cảnh báo luôn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0
+"Help với, dữ liệu sản phẩm có đủ rõ cho bidder xem không và chatbot giải thích lỗi bằng tiếng Việt dễ hiểu để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0
+du lieu sp co du ro cho bidder xem ko roi moi cho ad duyet tay neu ai ko chac dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+"dữ liệu sản phầm có đủ rõ cho bidder xem không, vì tôi muốn sửa xong rồi tạo request lại pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0
+"dữ liệu sản phẩm có đủ rõ cho bidder xem không với cả kiểm tra ảnh mô tả giá trong chi tiết sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+"Này ad, dữ liệu sản phẩm có đủ rõ cho bidder xem không để tránh đưa nhầm sản phẩm vi phạm lên hệ thống; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0
+Form seller tạo phiên đang báo invalid rồi nếu ổn thì gửi sang yêu cầu duyệt phiên.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"Admin ơi, form seller tạo phiên đang báo invalid, vì tôi đang tạo một phiên mới cho seller mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+form seller tao phien dang bao invalid va cho ai auto approve danh gia tiep vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+form seller tạo phien đang báo invalid để phần chi tiết sản phẩm hiển thị đúng cho bidder nhé,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"form seller tạo phiên đang báo invalid kèm thông báo lỗi cụ thể cho tôi sửa đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0
+"Ê cho hỏi, form seller tạo phiên đang báo invalid trước khi phiên xuất hiện trong danh sách; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Kiểm tra tiêu đề có gây hiểu nhầm không, nếu mô tả có dấu hiệu gian lận thì cảnh báo luôn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0
+"Help với, kiểm tra tiêu đề có gây hiểu nhầm không và chatbot giải thích lỗi bằng tiếng Việt dễ hiểu để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0
+check tieu de co gay hieu nham ko roi moi cho ad duyet tay neu ai ko chac dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+"kiểm tra tiêu đề có gây hiểu nhầm khong, vì tôi muốn sửa xong rồi tạo request lại pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0
+"kiểm tra tiêu đề có gây hiểu nhầm không với cả kiểm tra ảnh mô tả giá trong chi tiết sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+"Này ad, kiểm tra tiêu đề có gây hiểu nhầm không để tránh đưa nhầm sản phẩm vi phạm lên hệ thống; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0
+Mô tả sản phẩm có cần dài hơn không rồi nếu ổn thì gửi sang yêu cầu duyệt phiên.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"Admin ơi, mô tả sản phẩm có cần dài hơn không, vì tôi đang tạo một phiên mới cho seller mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+mo ta sp co can dai hon ko va cho ai auto approve danh gia tiep vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+mô tả sản phầm có cần dài hơn không để phần chi tiết sản phẩm hiển thị đúng cho bidder nhé,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"mô tả sản phẩm có cần dài hơn không kèm thông báo lỗi cụ thể cho tôi sửa đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0
+"Ê cho hỏi, mô tả sản phẩm có cần dài hơn không trước khi phiên xuất hiện trong danh sách; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Giá khởi điểm này có vượt giới hạn hệ thống không, nếu mô tả có dấu hiệu gian lận thì cảnh báo luôn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0
+"Help với, giá khởi điểm này có vượt giới hạn hệ thống không và chatbot giải thích lỗi bằng tiếng Việt dễ hiểu để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0
+gia khoi diem nay co vuot gioi han he thong ko roi moi cho ad duyet tay neu ai ko chac dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+"giá khởi điểm này có vượt giới hạn hệ thống khong, vì tôi muốn sửa xong rồi tạo request lại pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0
+"giá khởi điểm này có vượt giới hạn hệ thống không với cả kiểm tra ảnh mô tả giá trong chi tiết sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+"Này ad, giá khởi điểm này có vượt giới hạn hệ thống không để tránh đưa nhầm sản phẩm vi phạm lên hệ thống; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0
+Kiểm tra category sản phẩm trước khi duyệt rồi nếu ổn thì gửi sang yêu cầu duyệt phiên.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"Admin ơi, kiểm tra category sản phẩm trước khi duyệt, vì tôi đang tạo một phiên mới cho seller mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+check category sp truoc khi duyet va cho ai auto approve danh gia tiep vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+kiểm tra category sản phẩm trước khi duyẹt để phần chi tiết sản phẩm hiển thị đúng cho bidder nhé,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"kiểm tra category sản phẩm trước khi duyệt kèm thông báo lỗi cụ thể cho tôi sửa đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0
+"Ê cho hỏi, kiểm tra category sản phẩm trước khi duyệt trước khi phiên xuất hiện trong danh sách; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Tôi cần biết vì sao dữ liệu tạo phiên không pass, nếu mô tả có dấu hiệu gian lận thì cảnh báo luôn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0
+"Help với, tôi cần biết vì sao dữ liệu tạo phiên không pass và chatbot giải thích lỗi bằng tiếng Việt dễ hiểu để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0
+toi can biet vi sao du lieu tao phien ko pass roi moi cho ad duyet tay neu ai ko chac dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+"tôi cần biết vì sao dữ liệu tạo phien không pass, vì tôi muốn sửa xong rồi tạo request lại pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0
+"tôi cần biết vì sao dữ liệu tạo phiên không pass với cả kiểm tra ảnh mô tả giá trong chi tiết sản phẩm đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+"Này ad, tôi cần biết vì sao dữ liệu tạo phiên không pass để tránh đưa nhầm sản phẩm vi phạm lên hệ thống; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0
+Validate giúp thông tin phiên đấu giá này rồi nếu ổn thì gửi sang yêu cầu duyệt phiên.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+"Admin ơi, validate giúp thông tin phiên đấu giá này, vì tôi đang tạo một phiên mới cho seller mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+validate giup thong tin phien dg nay va cho ai auto approve danh gia tiep vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+validate giúp thông tin phien đấu giá này để phần chi tiết sản phẩm hiển thị đúng cho bidder nhé,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"validate giúp thông tin phiên đấu giá này kèm thông báo lỗi cụ thể cho tôi sửa đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0
+"Ê cho hỏi, validate giúp thông tin phiên đấu giá này trước khi phiên xuất hiện trong danh sách; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Ảnh bị thiếu thì có tự động fail không, nếu mô tả có dấu hiệu gian lận thì cảnh báo luôn.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0
+"Help với, ảnh bị thiếu thì có tự động fail không và chatbot giải thích lỗi bằng tiếng Việt dễ hiểu để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0
+anh bi thieu thi co auto fail ko roi moi cho ad duyet tay neu ai ko chac dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+ảnh bị thiếu thì có tự động fail khong pls,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"ảnh bị thiếu thì có tự động fail không trước khi submit đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Này ad, ảnh bị thiếu thì có tự động fail không, ở màn seller; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Kiểm tra điều kiện tạo phiên cho seller mới, cho sản phẩm vừa nhập.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Admin ơi, kiểm tra điều kiện tạo phiên cho seller mới, vì app đang báo lỗi mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+check dieu kien tao phien cho seller moi vi minh chua ro luong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+kiểm tra điều kiện tạo phien cho seller mới trước khi submit nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"kiểm tra điều kiện tạo phiên cho seller mới, ở màn seller đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Ê cho hỏi, kiểm tra điều kiện tạo phiên cho seller mới, cho sản phẩm vừa nhập; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Form tạo phiên bị đỏ ở phần mô tả, vì app đang báo lỗi.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Help với, form tạo phiên bị đỏ ở phần mô tả để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+form tao phien bi do o phan mo ta truoc khi submit dc ko,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"form tạo phien bị đỏ ở phần mô tả, ở màn seller pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"form tạo phiên bị đỏ ở phần mô tả, cho sản phẩm vừa nhập đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Này ad, form tạo phiên bị đỏ ở phần mô tả, vì app đang báo lỗi; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Dữ liệu nhập có hợp lệ để gửi admin không.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Admin ơi, dữ liệu nhập có hợp lệ để gửi admin không trước khi submit mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"du lieu nhap co hop le de gui ad ko, o man seller vi minh chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"dữ liệu nhập có hợp lệ để gửi admin không, cho sản phầm vừa nhập nhé",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"dữ liệu nhập có hợp lệ để gửi admin không, vì app đang báo lỗi đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Ê cho hỏi, dữ liệu nhập có hợp lệ để gửi admin không; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Kiểm tra sản phẩm có bị cấm đấu giá không trước khi submit.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Help với, kiểm tra sản phẩm có bị cấm đấu giá không, ở màn seller để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"check sp co bi cam dg ko, cho sp vua nhap dc ko",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"kiểm tra sản phẩm có bị cấm đấu gía không, vì app đang báo lỗi pls",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"kiểm tra sản phẩm có bị cấm đấu giá không đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Này ad, kiểm tra sản phẩm có bị cấm đấu giá không trước khi submit; nếu thiếu điều kiện thì báo rõ giúp mình được không.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Mình muốn biết yêu cầu tạo phiên còn thiếu bước nào, ở màn seller.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Admin ơi, mình muốn biết yêu cầu tạo phiên còn thiếu bước nào, cho sản phẩm vừa nhập mình đang thao tác?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"minh muon biet yc tao phien con thieu buoc nao, vi app dang bao loi vi minh chua ro luong",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+mình muốn biết yêu cầu tạo phien còn thiếu bước nào nhé,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"mình muốn biết yêu cầu tạo phiên còn thiếu bước nào trước khi submit đi, mình hơi rối vì màn hình không nói rõ bước tiếp theo.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Ê cho hỏi, mình muốn biết yêu cầu tạo phiên còn thiếu bước nào, ở màn seller; nếu thiếu điều kiện thì báo rõ giúp mình vì mình chưa rõ luồng.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Kiểm tra lại toàn bộ input trước khi mở phiên, cho sản phẩm vừa nhập.",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Help với, kiểm tra lại toàn bộ input trước khi mở phiên, vì app đang báo lỗi để khỏi làm sai?",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
