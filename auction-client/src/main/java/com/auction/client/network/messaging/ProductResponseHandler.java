@@ -12,18 +12,15 @@ public class ProductResponseHandler implements MessageHandler {
 
     @Override
     public boolean supports(String action) {
-        // Chỉ nhận 2 loại tin nhắn này từ Server
-        return "PRODUCT_DETAILS_SUCCESS".equals(action) || "PRODUCT_DETAILS_ERROR".equals(action);
+        return "PRODUCT_DETAILS_SUCCESS".equals(action)
+                || "PRODUCT_DETAILS_ERROR".equals(action)
+                || "PRODUCT_DETAILS_FAIL".equals(action);
     }
 
     @Override
     public void handle(Message message) {
-        // Lấy dữ liệu (AuctionRoom hoặc chuỗi báo lỗi)
-        Object data = message.getData();
-
-        // Bắn dữ liệu này vào callback để ProductViewController tự động cập nhật UI
         if (auctionService != null) {
-            auctionService.fireProductDetailsReceived(data);
+            auctionService.fireProductDetailsReceived(message.getData());
         }
     }
 }

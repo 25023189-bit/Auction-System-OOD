@@ -24,6 +24,7 @@ class ProductDetailResponseTest {
         assertEquals(0.0, response.getStartPrice());
         assertEquals(0.0, response.getCurrentPrice());
         assertEquals(0L, response.getTimeLeftMillis());
+        assertNull(response.getBase64Image());
         assertNull(response.getBidHistory());
 
         // Tạo một danh sách lịch sử đấu giá giả để test
@@ -37,6 +38,7 @@ class ProductDetailResponseTest {
         response.setStartPrice(1000.0);
         response.setCurrentPrice(1500.0);
         response.setTimeLeftMillis(3600000L); // Còn 1 tiếng
+        response.setBase64Image("encoded-image");
         response.setBidHistory(mockHistory);
 
         // 3. Rút dữ liệu ra qua Getter để lấy trọn điểm Coverage
@@ -46,6 +48,7 @@ class ProductDetailResponseTest {
         assertEquals(1000.0, response.getStartPrice());
         assertEquals(1500.0, response.getCurrentPrice());
         assertEquals(3600000L, response.getTimeLeftMillis());
+        assertEquals("encoded-image", response.getBase64Image());
 
         // Kiểm tra list BidHistoryDTO
         assertEquals(1, response.getBidHistory().size());
