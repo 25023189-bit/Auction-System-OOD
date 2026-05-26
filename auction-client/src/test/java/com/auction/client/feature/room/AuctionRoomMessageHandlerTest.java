@@ -109,4 +109,64 @@ class AuctionRoomMessageHandlerTest {
         verify(autoBidController).handleCancelSuccess();
         verify(autoBidController).handleCancelFailed("bad");
     }
+
+    @Test
+    void roomStateUpdateBindsOnlyCurrentRoomAndStartsTimer() {
+        AuctionRoom room = new AuctionRoom();
+        room.setRoomId("ROOM_ACTIVE");
+        room.setCurrentPrice(320.0);
+        room.setStartTime(LocalDateTime.now().minusMinutes(1));
+        room.setEndTime(LocalDateTime.now().plusMinutes(4));
+        room.setScheduledEndTime(LocalDateTime.now().plusMinutes(5));
+        when(mockSession.getCurrentRoomId()).thenReturn("ROOM_ACTIVE");
+
+        handler.handle(new Message("ROOM_STATE_UPDATED", "SERVER", room));
+
+        verify(mockSession).setCurrentRoom(room);
+        verify(mockBinder).bind(room);
+        verify(mockPresenter).showCurrentPrice(320.0, null);
+        verify(mockTimer).start(room.getStartTime(), room.getScheduledEndTime());
+
+        reset(mockBinder);
+        when(mockSession.getCurrentRoomId()).thenReturn("OTHER");
+        handler.handle(new Message("ROOM_STATE_UPDATED", "SERVER", room));
+        handler.handle(new Message("ROOM_STATE_UPDATED", "SERVER", "bad payload"));
+        verifyNoInteractions(mockBinder);
+    }
+
+    @Test
+    void bidSuccessUsesBidderNameAndExplainsExtension() {
+        AuctionRoom room = new AuctionRoom();
+        room.setRoomId("ROOM_ACTIVE");
+        room.setCurrentPrice(410.0);
+        room.setStartTime(LocalDateTime.now().minusMinutes(1));
+        room.setEndTime(LocalDateTime.now().plusMinutes(1));
+        when(mockSession.getCurrentRoomId()).thenReturn("ROOM_ACTIVE");
+
+        handler.handle(new Message("BID_SUCCESS_EXTENDED", "newBidder", room));
+
+        verify(mockSession).setCurrentRoom(room);
+        verify(mockBinder).bind(room);
+        verify(mockPresenter).showCurrentPrice(410.0, "newBidder");
+        verify(mockPresenter).appendChat("Auction extended because a bid was placed in the final 30 seconds.");
+        verify(mockTimer).start(room.getStartTime(), room.getEndTime());
+
+        handler.handle(new Message("BID_SUCCESS", "SERVER", "no room"));
+        verify(mockPresenter).appendChat("New bid received!");
+    }
+
+    @Test
+    void updatePriceIgnoresMalformedOrOtherRoomPayloads() {
+        AuctionRoom currentRoom = new AuctionRoom();
+        when(mockSession.getCurrentRoomId()).thenReturn("ROOM_ACTIVE");
+        when(mockSession.getCurrentRoom()).thenReturn(currentRoom);
+
+        handler.handle(new Message("UPDATE_PRICE", "SERVER", null));
+        handler.handle(new Message("UPDATE_PRICE", "SERVER", "invalid"));
+        handler.handle(new Message("UPDATE_PRICE", "SERVER", "OTHER|250"));
+        handler.handle(new Message("UPDATE_PRICE", "SERVER", "ROOM_ACTIVE|bad"));
+
+        verify(mockPresenter, never()).showCurrentPrice(anyDouble(), any());
+        assertEquals(0.0, currentRoom.getCurrentPrice());
+    }
 }

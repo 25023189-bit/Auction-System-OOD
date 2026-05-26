@@ -13,6 +13,7 @@
         <module>auction-common</module>
         <module>auction-server</module>
         <module>auction-client</module>
+        <module>auction-coverage</module>
     </modules>
 
     <properties>
