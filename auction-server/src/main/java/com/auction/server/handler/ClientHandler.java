@@ -69,8 +69,7 @@ public class ClientHandler implements Runnable {
                 new AuthActionHandler(),
                 new RoomActionHandler(),
                 new SellerActionHandler(AUTO_APPROVE_DECIDER, PENDING_ROOM_FACTORY),
-                new AdminActionHandler(PENDING_ROOM_FACTORY),
-                new ProductDetailHandler()
+                new AdminActionHandler(PENDING_ROOM_FACTORY)
         ));
 
         try {

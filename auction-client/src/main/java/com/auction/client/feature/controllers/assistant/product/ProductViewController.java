@@ -12,7 +12,9 @@ import javafx.scene.image.ImageView;
 public class ProductViewController {
     @FXML private Label lblProductName;
     @FXML private Label lblDescription;
-    @FXML private Label lblStartingPrice;
+    @FXML private Label lblCurrentPrice;
+    @FXML private Label lblBidCount;
+    @FXML private Label lblTimeRemaining;
     @FXML private ImageView imgItem;
 
     private AuctionService auctionService;
@@ -22,7 +24,7 @@ public class ProductViewController {
 
     @FXML
     public void initialize() {
-        detailBinder = new ProductDetailBinder(lblProductName, lblDescription, lblStartingPrice, imgItem);
+        detailBinder = createDetailBinder();
     }
 
     public void setAuctionService(AuctionService auctionService) {
@@ -52,7 +54,18 @@ public class ProductViewController {
 
     private void ensureDetailBinderReady() {
         if (detailBinder == null) {
-            detailBinder = new ProductDetailBinder(lblProductName, lblDescription, lblStartingPrice, imgItem);
+            detailBinder = createDetailBinder();
         }
+    }
+
+    private ProductDetailBinder createDetailBinder() {
+        return new ProductDetailBinder(
+                lblProductName,
+                lblDescription,
+                lblCurrentPrice,
+                lblBidCount,
+                lblTimeRemaining,
+                imgItem
+        );
     }
 }

@@ -177,6 +177,24 @@ class RoomActionHandlerTest {
     }
 
     @Test
+    void testHandleGetProductDetails_FailsForMissingRoomId() {
+        handler.handle(new Message("GET_PRODUCT_DETAILS", "  "), mockContext);
+
+        verify(mockContext).send(argThat(msg -> "PRODUCT_DETAILS_FAIL".equals(msg.getAction())));
+    }
+
+    @Test
+    void testHandleGetProductDetails_FailsWhenServiceHasNoDetails() {
+        mockedProductDetailService = mockConstruction(ProductDetailService.class, (mock, context) -> {
+            when(mock.getProductDetails("MISSING")).thenReturn(null);
+        });
+
+        handler.handle(new Message("GET_PRODUCT_DETAILS", "MISSING"), mockContext);
+
+        verify(mockContext).send(argThat(msg -> "PRODUCT_DETAILS_FAIL".equals(msg.getAction())));
+    }
+
+    @Test
     @DisplayName("SET_AUTO_BID thanh cong dung userId va khong trigger khi user dang thang")
     void testHandleSetAutoBid_SuccessWhenAlreadyHighestBidder() {
         AuctionRoom room = new AuctionRoom();

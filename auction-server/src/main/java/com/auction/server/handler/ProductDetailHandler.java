@@ -1,9 +1,23 @@
 package com.auction.server.handler;
 
 import com.auction.common.dto.Message;
-import com.auction.common.model.AuctionRoom;
+import com.auction.common.model.ProductDetailResponse;
+import com.auction.server.service.ProductDetailService;
 
+/**
+ * Legacy standalone product detail handler retained for compatibility.
+ * The active route is owned by {@link RoomActionHandler}.
+ */
 public class ProductDetailHandler implements ClientActionHandler {
+    private final ProductDetailService detailService;
+
+    public ProductDetailHandler() {
+        this(new ProductDetailService());
+    }
+
+    ProductDetailHandler(ProductDetailService detailService) {
+        this.detailService = detailService;
+    }
 
     @Override
     public boolean canHandle(String action) {
@@ -13,28 +27,21 @@ public class ProductDetailHandler implements ClientActionHandler {
     @Override
     public void handle(Message message, ClientActionContext context) {
         try {
-            // Lấy roomId từ Client gửi lên
-            String roomId = (String) message.getData();
-
-            // --- BẮT ĐẦU ĐOẠN GIẢ LẬP (Xóa đi khi ráp DB thật) ---
-            AuctionRoom room = new AuctionRoom();
-            room.setRoomId(roomId);
-            room.setItemName("Sản phẩm mẫu " + roomId);
-            room.setCurrentPrice(5000.0);
-            room.setSellerName("hanto_seller");
-            room.setItemDescription("Đây là mô tả chi tiết của sản phẩm. Máy nguyên seal, chưa bóc hộp...");
-            // --- KẾT THÚC ĐOẠN GIẢ LẬP ---
-
-            if (room != null) {
-                AuctionImageRegistry.apply(room);
-                // Tìm thấy -> Trả về Client với action PRODUCT_DETAILS_SUCCESS
-                context.send(new Message("PRODUCT_DETAILS_SUCCESS", "SERVER", room));
-            } else {
-                // Không tìm thấy -> Trả về lỗi
-                context.send(new Message("PRODUCT_DETAILS_ERROR", "SERVER", "Không tìm thấy phòng đấu giá này trên hệ thống."));
+            String roomId = message.getData() == null ? "" : message.getData().toString().trim();
+            if (roomId.isEmpty()) {
+                context.send(new Message("PRODUCT_DETAILS_FAIL", "SERVER", "Invalid room ID!"));
+                return;
             }
+
+            ProductDetailResponse details = detailService.getProductDetails(roomId);
+            if (details == null) {
+                context.send(new Message("PRODUCT_DETAILS_ERROR", "SERVER", "Auction room details not found!"));
+                return;
+            }
+
+            context.send(new Message("PRODUCT_DETAILS_SUCCESS", "SERVER", details));
         } catch (Exception e) {
-            context.send(new Message("PRODUCT_DETAILS_ERROR", "SERVER", "Lỗi máy chủ khi tải chi tiết sản phẩm."));
+            context.send(new Message("PRODUCT_DETAILS_ERROR", "SERVER", "Unable to load product details."));
         }
     }
 }

@@ -24,7 +24,9 @@ class ProductViewControllerTest {
     private AuctionService mockAuctionService;
     private Label lblProductName;
     private Label lblDescription;
-    private Label lblStartingPrice;
+    private Label lblCurrentPrice;
+    private Label lblBidCount;
+    private Label lblTimeRemaining;
 
     @BeforeAll
     static void initJavaFX() {
@@ -43,11 +45,15 @@ class ProductViewControllerTest {
 
         lblProductName = new Label();
         lblDescription = new Label();
-        lblStartingPrice = new Label();
+        lblCurrentPrice = new Label();
+        lblBidCount = new Label();
+        lblTimeRemaining = new Label();
 
         injectField("lblProductName", lblProductName);
         injectField("lblDescription", lblDescription);
-        injectField("lblStartingPrice", lblStartingPrice);
+        injectField("lblCurrentPrice", lblCurrentPrice);
+        injectField("lblBidCount", lblBidCount);
+        injectField("lblTimeRemaining", lblTimeRemaining);
     }
 
     private void injectField(String name, Object value) throws Exception {
@@ -64,6 +70,14 @@ class ProductViewControllerTest {
 
         assertEquals("Loading data from server...", lblDescription.getText());
         verify(mockAuctionService).requestProductDetails("AU10001");
+    }
+
+    @Test
+    void setRoomIdWithoutServiceStillShowsLoading() {
+        controller.setRoomId("AU10001");
+
+        assertEquals("Loading data from server...", lblDescription.getText());
+        verifyNoInteractions(mockAuctionService);
     }
 
     @Test
@@ -89,8 +103,10 @@ class ProductViewControllerTest {
         assertEquals("Đồ cổ nguyên bản cực hiếm", lblDescription.getText());
 
         // SỬA LỖI LOCALE: Chấp nhận cả 50,000 $ hoặc 50.000 $ tùy máy chạy test
-        String priceText = lblStartingPrice.getText();
+        String priceText = lblCurrentPrice.getText();
         assertNotNull(priceText);
+        assertEquals("0", lblBidCount.getText());
+        assertEquals("Ended", lblTimeRemaining.getText());
         assertTrue(priceText.matches("50[.,]000 \\$"), "Giá hiển thị thực tế là: " + priceText);
     }
 

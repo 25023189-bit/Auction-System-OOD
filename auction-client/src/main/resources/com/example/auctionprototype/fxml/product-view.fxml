@@ -44,15 +44,15 @@
                             <children>
                                 <VBox styleClass="stat-box">
                                     <Label styleClass="stat-label" text="Current Price" />
-                                    <Label fx:id="lblStartingPrice" styleClass="stat-value-price" text="16.00$" />
+                                    <Label fx:id="lblCurrentPrice" styleClass="stat-value-price" text="" />
                                 </VBox>
                                 <VBox styleClass="stat-box">
                                     <Label styleClass="stat-label" text="Number of Bids" />
-                                    <Label styleClass="stat-value" text="20" />
+                                    <Label fx:id="lblBidCount" styleClass="stat-value" text="" />
                                 </VBox>
                                 <VBox styleClass="stat-box">
                                     <Label styleClass="stat-label" text="Time Remaining" />
-                                    <Label styleClass="stat-value-time" text="3h 15m" />
+                                    <Label fx:id="lblTimeRemaining" styleClass="stat-value-time" text="" />
                                 </VBox>
                             </children>
                         </HBox>
@@ -61,7 +61,7 @@
                             <children>
                                 <HBox alignment="CENTER_LEFT" spacing="10.0">
                                     <Circle radius="4.0" styleClass="neon-bullet" />
-                                    <Label fx:id="lblDescription" styleClass="info-text-highlight" text="Model: Chronos Elite" />
+                                    <Label fx:id="lblDescription" styleClass="info-text-highlight" text="" />
                                 </HBox>
                                 <HBox alignment="CENTER_LEFT" spacing="10.0" />
                             </children>
