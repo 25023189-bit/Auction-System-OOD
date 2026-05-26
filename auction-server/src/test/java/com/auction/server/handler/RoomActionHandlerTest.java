@@ -233,4 +233,102 @@ class RoomActionHandlerTest {
         verify(mockContext).send(argThat(msg -> "AUTO_BID_CANCEL_SUCCESS".equals(msg.getAction())));
         verify(mockContext).send(argThat(msg -> "AUTO_BID_CANCEL_FAILED".equals(msg.getAction())));
     }
+
+    @Test
+    void leaveRoomAndJoinExceptionClearRoomState() {
+        handler.handle(new Message("LEAVE_ROOM", "ignored"), mockContext);
+        verify(mockContext).clearCurrentRoom();
+
+        when(mockContext.getCurrentRoomId()).thenReturn("BROKEN");
+        when(mockRoomService.joinRoom("BROKEN", "USER_HAN")).thenThrow(new IllegalStateException("failure"));
+        handler.handle(new Message("JOIN_ROOM", "BROKEN"), mockContext);
+
+        verify(mockContext, atLeast(2)).clearCurrentRoom();
+        verify(mockContext).send(argThat(msg -> "ROOM_FAIL".equals(msg.getAction())
+                && msg.getData().toString().contains("processing")));
+    }
+
+    @Test
+    void bidReportsMissingRoomRejectedResultAndUnexpectedFailure() {
+        when(mockContext.getCurrentRoomId()).thenReturn("");
+        handler.handle(new Message("BID", 200.0), mockContext);
+        verify(mockContext).send(argThat(msg -> "BID_FAIL".equals(msg.getAction())));
+
+        reset(mockContext);
+        when(mockContext.getRoomService()).thenReturn(mockRoomService);
+        when(mockContext.getUserId()).thenReturn("USER_HAN");
+        when(mockContext.getCurrentRoomId()).thenReturn("R1");
+        Message rejected = new Message("BID_FAIL", "SERVER", "low");
+        when(mockRoomService.placeNewBid("R1", "USER_HAN", 200.0)).thenReturn(rejected);
+        handler.handle(new Message("BID", 200.0), mockContext);
+        verify(mockContext).send(rejected);
+
+        when(mockRoomService.placeNewBid("R1", "USER_HAN", 300.0))
+                .thenThrow(new IllegalArgumentException("broken"));
+        handler.handle(new Message("BID", 300.0), mockContext);
+        verify(mockContext).send(argThat(msg -> "BID_FAIL".equals(msg.getAction())
+                && msg.getData().toString().contains("processing")));
+    }
+
+    @Test
+    void productDetailsAndHistoryExceptionsReturnFailures() {
+        mockedProductDetailService = mockConstruction(ProductDetailService.class, (mock, context) -> {
+            when(mock.getProductDetails("BROKEN")).thenThrow(new IllegalStateException("broken"));
+        });
+        handler.handle(new Message("GET_PRODUCT_DETAILS", "BROKEN"), mockContext);
+        verify(mockContext).send(argThat(msg -> "PRODUCT_DETAILS_FAIL".equals(msg.getAction())
+                && msg.getData().toString().contains("System error")));
+
+        mockedTransactionDAO = mockConstruction(TransactionDAO.class, (mock, context) -> {
+            when(mock.getHistoryByRoom("R1")).thenThrow(new IllegalStateException("broken"));
+        });
+        handler.handle(new Message("GET_BID_HISTORY", "R1"), mockContext);
+        verify(mockContext).send(argThat(msg -> "BID_HISTORY_FAIL".equals(msg.getAction())));
+    }
+
+    @Test
+    void closeAuctionHandlesMissingRejectedAndSuccessfulRequests() {
+        handler.handle(new Message("CLOSE_AUCTION", " "), mockContext);
+        verify(mockContext).send(argThat(msg -> "CLOSE_AUCTION_FAIL".equals(msg.getAction())));
+
+        mockedAuctionDAO = mockConstruction(AuctionDAO.class, (mock, context) -> {
+            when(mock.closeAuctionBySeller("R1", "USER_HAN")).thenReturn(false);
+        });
+        handler.handle(new Message("CLOSE_AUCTION", "R1"), mockContext);
+        verify(mockContext, atLeast(2)).send(argThat(msg -> "CLOSE_AUCTION_FAIL".equals(msg.getAction())));
+        mockedAuctionDAO.close();
+        mockedAuctionDAO = null;
+
+        AuctionRoom room = new AuctionRoom();
+        room.setRoomId("R2");
+        room.setItemName("Item");
+        room.setCurrentPrice(90.0);
+        mockedAuctionDAO = mockConstruction(AuctionDAO.class, (mock, context) -> {
+            when(mock.getAuctionById("R2")).thenReturn(room);
+            when(mock.closeAuctionBySeller("R2", "USER_HAN")).thenReturn(true);
+            when(mock.getAllActiveAuctions()).thenReturn(Collections.emptyList());
+        });
+        handler.handle(new Message("CLOSE_AUCTION", "R2"), mockContext);
+        verify(mockContext).send(argThat(msg -> "CLOSE_AUCTION_SUCCESS".equals(msg.getAction())));
+        verify(mockContext).notifyRoomClosed(eq("R2"), any());
+        verify(mockContext).broadcastAll(argThat(msg -> "ROOM_LIST".equals(msg.getAction())));
+    }
+
+    @Test
+    void autoBidValidationRejectsInvalidInputs() {
+        handler.handle(new Message("SET_AUTO_BID", "bad"), mockContext);
+        handler.handle(new Message("CANCEL_AUTO_BID", " "), mockContext);
+
+        AuctionRoom room = new AuctionRoom();
+        room.setRoomId("R1");
+        room.setStatus("ENDED");
+        room.setCurrentPrice(100.0);
+        room.setBidStep(10.0);
+        when(mockContext.getCurrentRoomId()).thenReturn("R1");
+        when(mockRoomService.getLiveRoom("R1")).thenReturn(room);
+        handler.handle(new Message("SET_AUTO_BID", new AutoBidRequest("R1", 200.0, 10.0)), mockContext);
+
+        verify(mockContext, times(3)).send(argThat(msg ->
+                msg.getAction().endsWith("FAILED")));
+    }
 }
