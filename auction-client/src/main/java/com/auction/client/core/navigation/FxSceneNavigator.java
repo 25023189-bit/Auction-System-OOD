@@ -1,5 +1,6 @@
 package com.auction.client.core.navigation;
 
+import com.auction.client.app.theme.ThemeManager;
 import com.auction.client.feature.controllers.app.root.AuctionController;
 import com.auction.client.feature.controllers.app.navigation.DashboardLauncherController;
 import com.auction.client.feature.controllers.auction.notify.EndAuctionNotificationViewModel;
@@ -10,7 +11,6 @@ import com.auction.common.model.User;
 import com.auction.client.service.AuctionService;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import org.slf4j.Logger;
@@ -66,7 +66,7 @@ public class FxSceneNavigator implements SceneNavigator {
             Stage stage = resolveStage();
             if (stage != null) {
                 rememberMainStage(stage);
-                stage.setScene(new Scene(root));
+                stage.setScene(ThemeManager.createThemedScene(root));
                 windowStateHandler.apply(stage, "Auction System");
             }
         } catch (Exception e) {
@@ -88,7 +88,7 @@ public class FxSceneNavigator implements SceneNavigator {
             stage = resolveStage();
             if (stage != null) {
                 rememberMainStage(stage);
-                stage.setScene(new Scene(root));
+                stage.setScene(ThemeManager.createThemedScene(root));
                 windowStateHandler.apply(stage, resolveLobbyTitle());
             }
         } catch (Exception e) {
@@ -113,7 +113,7 @@ public class FxSceneNavigator implements SceneNavigator {
             stage = resolveStage();
             if (stage != null) {
                 rememberMainStage(stage);
-                stage.setScene(new Scene(root));
+                stage.setScene(ThemeManager.createThemedScene(root));
                 windowStateHandler.apply(stage, resolveAuctionRoomTitle());
             }
         } catch (Exception e) {
@@ -146,7 +146,7 @@ public class FxSceneNavigator implements SceneNavigator {
             stage = resolveStage();
             if (stage != null) {
                 rememberMainStage(stage);
-                stage.setScene(new Scene(root));
+                stage.setScene(ThemeManager.createThemedScene(root));
                 windowStateHandler.apply(stage, "Auction Ended - Auction System");
             }
         } catch (Exception e) {

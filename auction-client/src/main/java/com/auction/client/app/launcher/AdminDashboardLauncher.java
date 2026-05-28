@@ -1,11 +1,11 @@
 package com.auction.client.app.launcher;
 
+import com.auction.client.app.theme.ThemeManager;
 import com.auction.client.feature.controllers.account.admin.AdminController;
 import com.auction.client.session.SessionStore;
 import com.auction.client.service.AuctionService;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -53,7 +53,7 @@ public class AdminDashboardLauncher implements DashboardLauncher {
 
             Stage stage = new Stage();
             stage.setTitle("Admin Dashboard");
-            stage.setScene(new Scene(root));
+            stage.setScene(ThemeManager.createThemedScene(root));
             stage.setFullScreen(false);
             stage.setMaximized(true);
             stage.show();

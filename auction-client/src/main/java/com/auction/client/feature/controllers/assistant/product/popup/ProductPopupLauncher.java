@@ -1,10 +1,10 @@
 package com.auction.client.feature.controllers.assistant.product.popup;
 
+import com.auction.client.app.theme.ThemeManager;
 import com.auction.client.feature.controllers.assistant.product.ProductViewController;
 import com.auction.client.service.AuctionService;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -24,7 +24,7 @@ public class ProductPopupLauncher {
 
         Stage stage = new Stage();
         stage.setTitle("Chi tiết sản phẩm");
-        stage.setScene(new Scene(root));
+        stage.setScene(ThemeManager.createThemedScene(root));
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.show();
     }

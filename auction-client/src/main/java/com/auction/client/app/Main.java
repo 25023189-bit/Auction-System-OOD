@@ -1,11 +1,11 @@
 package com.auction.client.app;
 
+import com.auction.client.app.theme.ThemeManager;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
@@ -33,12 +33,14 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         // Thêm /com/example/auctionprototype/fxml/ vào trước tên file
+        ThemeManager.applyGlobalTheme();
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/auctionprototype/fxml/login-view.fxml"));
         Parent root = loader.load();
 
         // Mở màn hình login ở kích thước tối đa để các view phía sau kế thừa cùng trạng thái cửa sổ.
         primaryStage.setTitle("Auction System");
-        primaryStage.setScene(new Scene(root));
+        primaryStage.setScene(ThemeManager.createThemedScene(root));
         primaryStage.setMinWidth(1000);
         primaryStage.setMinHeight(600);
         primaryStage.setFullScreen(false);
