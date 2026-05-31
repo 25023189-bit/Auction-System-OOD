@@ -1,10 +1,10 @@
 package com.auction.client.app.launcher;
 
-import com.auction.client.app.theme.ThemeManager;
 import com.auction.client.feature.controllers.auction.seller.SellerController;
 import com.auction.client.service.AuctionService;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -49,7 +49,7 @@ public class SellerDashboardLauncher implements DashboardLauncher {
 
             Stage stage = new Stage();
             stage.setTitle("Create Auction");
-            stage.setScene(ThemeManager.createThemedScene(root));
+            stage.setScene(new Scene(root));
             stage.setFullScreen(false);
             stage.setMaximized(true);
             stage.show();

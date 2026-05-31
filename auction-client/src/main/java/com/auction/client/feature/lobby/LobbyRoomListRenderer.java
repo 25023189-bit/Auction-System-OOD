@@ -53,9 +53,7 @@ public class LobbyRoomListRenderer {
     }
 
     private void applyBidderLobbyCardLayout(VBox card) {
-        boolean supportedGrid = paneSelectAuction.getStyleClass().contains("bidder-auction-grid")
-                || paneSelectAuction.getStyleClass().contains("seller-auction-grid");
-        if (!supportedGrid) return;
+        if (!paneSelectAuction.getStyleClass().contains("bidder-auction-grid")) return;
 
         card.setMinSize(200, 286);
         card.setPrefSize(200, 286);

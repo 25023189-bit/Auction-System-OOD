@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -14,174 +15,279 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane styleClass="seller-lobby-root" stylesheets="@../css/seller-lobby.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.app.root.AuctionController">
+<AnchorPane styleClass="bidder-root" stylesheets="@../css/seller-lobby.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.auction.client.feature.controllers.app.root.AuctionController">
+
     <children>
-        <BorderPane fx:id="paneMainLobby" styleClass="seller-lobby-shell" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <BorderPane fx:id="paneMainLobby" styleClass="bidder-shell" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
             <top>
-                <HBox alignment="CENTER_LEFT" spacing="18.0" styleClass="seller-top-bar">
-                    <children>
-                        <ImageView fitHeight="48.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                <VBox maxWidth="1.7976931348623157E308" styleClass="top-nav-taskboard">
+                    <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="1280.0" spacing="18.0" styleClass="bidder-header">
+                        <ImageView fitHeight="70.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../images/bidder_mainLobby/auction_empty_gavel_emblem.png" />
                             </image>
                         </ImageView>
 
-                        <VBox alignment="CENTER_LEFT" spacing="2.0">
-                            <Label styleClass="seller-brand-title" text="Seller Lobby" />
-                            <Label styleClass="seller-brand-subtitle" text="Manage live auction rooms and seller workflow" />
+                        <VBox alignment="CENTER_LEFT" spacing="3.0">
+                            <Label prefHeight="43.0" prefWidth="165.0" styleClass="bidder-title" text=" Seller Lobby" />
+
+                            <ImageView fitHeight="74.0" fitWidth="159.0" pickOnBounds="true" preserveRatio="true" styleClass="bidder-header-divider">
+                                <image>
+                                    <Image url="@../images/bidder_mainLobby/ornament_divider.png" />
+                                </image>
+                            </ImageView>
                         </VBox>
 
-                        <Region HBox.hgrow="ALWAYS" />
+                        <Region prefHeight="70.0" prefWidth="294.0" HBox.hgrow="ALWAYS" />
 
-                        <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="seller-wallet-card">
-                            <ImageView fitHeight="30.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                        <HBox alignment="CENTER" prefHeight="70.0" prefWidth="304.0" spacing="9.0" styleClass="bidder-wallet-card">
+                            <ImageView fitHeight="45.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
                                     <Image url="@../images/bidder_mainLobby/icon_wallet.png" />
                                 </image>
                             </ImageView>
-                            <Label fx:id="lblBalance" styleClass="seller-wallet-text" text="Wallet Balance: 0 $" />
+                            <Label fx:id="lblBalance" styleClass="bidder-wallet-text" text="Balance: 0 $" />
                         </HBox>
 
-                        <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="seller-user-chip">
-                            <ImageView fitHeight="32.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                        <HBox alignment="CENTER" minWidth="166.0" prefHeight="78.0" prefWidth="275.0" spacing="9.0" styleClass="welcome-user-chip">
+                            <ImageView fitHeight="48.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" styleClass="user-icon">
                                 <image>
                                     <Image url="@../images/bidder_mainLobby/icon_user.png" />
                                 </image>
                             </ImageView>
-                            <Label fx:id="lblUsername" maxWidth="210.0" styleClass="seller-welcome-text" text="Welcome!" />
+                            <Label fx:id="lblUsername" maxWidth="155.0" prefHeight="46.0" prefWidth="155.0" styleClass="bidder-welcome-text" text="Welcome!" textAlignment="CENTER" textFill="#69592c">
+                                <font>
+                                    <Font size="25.0" />
+                                </font></Label>
                         </HBox>
 
-                        <Button mnemonicParsing="false" onAction="#handleLogout" styleClass="seller-logout-button" text="Log out" />
-                    </children>
-                </HBox>
+                        <Button mnemonicParsing="false" onAction="#handleLogout" prefHeight="64.0" prefWidth="142.0" styleClass="bidder-logout-button" text="Log out" />
+                    </HBox>
+                </VBox>
             </top>
 
             <center>
-                <HBox spacing="20.0" styleClass="seller-main-content">
-                    <children>
-                        <VBox maxWidth="286.0" minWidth="260.0" prefWidth="276.0" spacing="14.0" styleClass="seller-side-panel">
+                <HBox prefHeight="737.0" prefWidth="1341.0" spacing="22.0" styleClass="bidder-main-content">
+
+                    <!-- Left: Exchange Rates -->
+                    <VBox maxWidth="290.0" minWidth="271.0" prefHeight="621.0" prefWidth="271.0" spacing="14.0" styleClass="bidder-exchange-card">
+
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <ImageView fitHeight="57.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../images/bidder_mainLobby/icon_exchange_rates.png" />
+                                </image>
+                            </ImageView>
+
+                            <VBox alignment="CENTER_LEFT" spacing="3.0" styleClass="bidder-card-title-block">
+                                <Label prefHeight="22.0" prefWidth="123.0" styleClass="bidder-card-title" text="Exchange Rates" />
+
+                                <ImageView fitHeight="63.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true" styleClass="bidder-title-divider">
+                                    <image>
+                                        <Image url="@../images/bidder_mainLobby/ornament_divider.png" />
+                                    </image>
+                                </ImageView>
+
+                                <Label styleClass="bidder-card-subtitle" text="Base: 1 USD" />
+                            </VBox>
+                        </HBox>
+
+                        <VBox fx:id="vboxCurrencyRates" spacing="8.0">
+
+                            <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="bidder-rate-row-featured">
+                                <ImageView fitHeight="18.0" fitWidth="24.0" preserveRatio="true">
+                                    <image><Image url="@../images/bidder_mainLobby/flag_us.png" /></image>
+                                </ImageView>
+                                <Label styleClass="bidder-rate-name" text="United States (USD)" />
+                                <Region HBox.hgrow="ALWAYS" />
+                                <Label styleClass="bidder-rate-value" text="1.00" />
+                            </HBox>
+
+                            <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="bidder-rate-row">
+                                <ImageView fitHeight="18.0" fitWidth="24.0" preserveRatio="true">
+                                    <image><Image url="@../images/bidder_mainLobby/flag_cn.png" /></image>
+                                </ImageView>
+                                <Label styleClass="bidder-rate-name" text="China (CNY)" />
+                                <Region HBox.hgrow="ALWAYS" />
+                                <Label styleClass="bidder-rate-value" text="6.82" />
+                            </HBox>
+
+                            <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="bidder-rate-row">
+                                <ImageView fitHeight="18.0" fitWidth="24.0" preserveRatio="true">
+                                    <image><Image url="@../images/bidder_mainLobby/flag_jp.png" /></image>
+                                </ImageView>
+                                <Label styleClass="bidder-rate-name" text="Japan (JPY)" />
+                                <Region HBox.hgrow="ALWAYS" />
+                                <Label styleClass="bidder-rate-value" text="158.91" />
+                            </HBox>
+
+                            <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="bidder-rate-row">
+                                <ImageView fitHeight="18.0" fitWidth="24.0" preserveRatio="true">
+                                    <image><Image url="@../images/bidder_mainLobby/flag_de.png" /></image>
+                                </ImageView>
+                                <Label styleClass="bidder-rate-name" text="Germany (EUR)" />
+                                <Region HBox.hgrow="ALWAYS" />
+                                <Label styleClass="bidder-rate-value" text="0.85" />
+                            </HBox>
+
+                            <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="bidder-rate-row">
+                                <ImageView fitHeight="18.0" fitWidth="24.0" preserveRatio="true">
+                                    <image><Image url="@../images/bidder_mainLobby/flag_in.png" /></image>
+                                </ImageView>
+                                <Label styleClass="bidder-rate-name" text="India (INR)" />
+                                <Region HBox.hgrow="ALWAYS" />
+                                <Label styleClass="bidder-rate-value" text="93.07" />
+                            </HBox>
+
+                            <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="bidder-rate-row">
+                                <ImageView fitHeight="18.0" fitWidth="24.0" preserveRatio="true">
+                                    <image><Image url="@../images/bidder_mainLobby/flag_uk.png" /></image>
+                                </ImageView>
+                                <Label styleClass="bidder-rate-name" text="United Kingdom (GBP)" />
+                                <Region HBox.hgrow="ALWAYS" />
+                                <Label styleClass="bidder-rate-value" text="0.74" />
+                            </HBox>
+
+                            <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="bidder-rate-row">
+                                <ImageView fitHeight="18.0" fitWidth="24.0" preserveRatio="true">
+                                    <image><Image url="@../images/bidder_mainLobby/flag_fr.png" /></image>
+                                </ImageView>
+                                <Label styleClass="bidder-rate-name" text="France (EUR)" />
+                                <Region HBox.hgrow="ALWAYS" />
+                                <Label styleClass="bidder-rate-value" text="0.85" />
+                            </HBox>
+
+                            <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="bidder-rate-row">
+                                <ImageView fitHeight="18.0" fitWidth="24.0" preserveRatio="true">
+                                    <image><Image url="@../images/bidder_mainLobby/flag_br.png" /></image>
+                                </ImageView>
+                                <Label styleClass="bidder-rate-name" text="Brazil (BRL)" />
+                                <Region HBox.hgrow="ALWAYS" />
+                                <Label styleClass="bidder-rate-value" text="4.98" />
+                            </HBox>
+
+                            <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="bidder-rate-row">
+                                <ImageView fitHeight="18.0" fitWidth="24.0" preserveRatio="true">
+                                    <image><Image url="@../images/bidder_mainLobby/flag_it.png" /></image>
+                                </ImageView>
+                                <Label styleClass="bidder-rate-name" text="Italy (EUR)" />
+                                <Region HBox.hgrow="ALWAYS" />
+                                <Label styleClass="bidder-rate-value" text="0.85" />
+                            </HBox>
+
+                            <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="bidder-rate-row">
+                                <ImageView fitHeight="18.0" fitWidth="24.0" preserveRatio="true">
+                                    <image><Image url="@../images/bidder_mainLobby/flag_ca.png" /></image>
+                                </ImageView>
+                                <Label styleClass="bidder-rate-name" text="Canada (CAD)" />
+                                <Region HBox.hgrow="ALWAYS" />
+                                <Label styleClass="bidder-rate-value" text="1.37" />
+                            </HBox>
+
+                            <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="bidder-rate-row">
+                                <ImageView fitHeight="18.0" fitWidth="24.0" preserveRatio="true">
+                                    <image><Image url="@../images/bidder_mainLobby/flag_id.png" /></image>
+                                </ImageView>
+                                <Label styleClass="bidder-rate-name" text="Indonesia (IDR)" />
+                                <Region HBox.hgrow="ALWAYS" />
+                                <Label styleClass="bidder-rate-value" text="17,129.60" />
+                            </HBox>
+
+                            <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="bidder-rate-row">
+                                <ImageView fitHeight="18.0" fitWidth="24.0" preserveRatio="true">
+                                    <image><Image url="@../images/bidder_mainLobby/flag_vn.png" /></image>
+                                </ImageView>
+                                <Label styleClass="bidder-rate-name" text="Vietnam (VND)" />
+                                <Region HBox.hgrow="ALWAYS" />
+                                <Label styleClass="bidder-rate-value" text="26,336.30" />
+                            </HBox>
+                        </VBox>
+                    </VBox>
+
+                    <!-- Center: Available Auctions -->
+                    <VBox prefHeight="535.0" prefWidth="674.0" spacing="14.0" styleClass="bidder-auctions-card" HBox.hgrow="ALWAYS">
+
+                        <!-- Title area -->
+                        <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="bidder-auctions-title-bar">
                             <children>
-                                <HBox alignment="CENTER_LEFT" spacing="10.0">
-                                    <ImageView fitHeight="36.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                                <VBox alignment="CENTER_LEFT" spacing="2.0">
+                                    <children>
+                                        <Label styleClass="bidder-section-title" text="Available Auctions" />
+                                        <Pane prefHeight="3.0" prefWidth="124.0" styleClass="bidder-gold-line" />
+                                    </children>
+                                </VBox>
+
+                                <Region HBox.hgrow="ALWAYS" />
+
+                                <Button fx:id="btnCreateAuction" mnemonicParsing="false" onAction="#openSellerDashboard" style="-fx-background-color: linear-gradient(to bottom right, #dfc17b, #b39652);                        -fx-text-fill: #0c2340;                        -fx-font-weight: bold;                        -fx-font-size: 13px;                        -fx-background-radius: 8px;                        -fx-padding: 8px 18px;                        -fx-cursor: hand;                        -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 5, 0, 0, 2);" text="+ Create Auction">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <rotationAxis>
+                              <Point3D x="1.0" z="1.0" />
+                           </rotationAxis></Button>
+
+                                <ImageView fitHeight="26.0" fitWidth="26.0" opacity="0.42" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../images/bidder_mainLobby/ornament_corner.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </HBox>
+
+                        <!-- Content area -->
+                        <StackPane styleClass="bidder-auction-content-stack" VBox.vgrow="ALWAYS">
+
+                            <!-- White veil over the VBox background -->
+                            <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mouseTransparent="true" styleClass="bidder-auction-glass-overlay" />
+
+                            <!-- Runtime auction cards: keep visible and clickable -->
+                            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" styleClass="bidder-auction-scroll" vbarPolicy="AS_NEEDED">
+                                <content>
+                                    <FlowPane fx:id="paneSelectAuction" alignment="TOP_LEFT" hgap="16.0" prefHeight="486.0" prefWidth="626.0" styleClass="bidder-auction-grid" vgap="16.0" />
+                                </content>
+                            </ScrollPane>
+                        </StackPane>
+                    </VBox>
+
+                    <!-- Right: Bidder Notes -->
+                    <StackPane maxWidth="280.0" minWidth="249.0" prefHeight="621.0" prefWidth="249.0" styleClass="bidder-notes-card">
+
+                        <VBox prefHeight="616.0" prefWidth="204.0" spacing="14.0">
+                            <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                <ImageView fitHeight="47.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../images/bidder_mainLobby/icon_bidder_notes.png" />
+                                    </image>
+                                </ImageView>
+
+                                <VBox alignment="CENTER_LEFT" spacing="3.0" styleClass="bidder-card-title-block">
+                                    <Label styleClass="bidder-card-title" text="Seller Notes" />
+
+                                    <ImageView fitHeight="46.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true" styleClass="bidder-title-divider">
                                         <image>
-                                            <Image url="@../images/bidder_mainLobby/icon_exchange_rates.png" />
+                                            <Image url="@../images/bidder_mainLobby/ornament_divider.png" />
                                         </image>
                                     </ImageView>
-                                    <VBox alignment="CENTER_LEFT" spacing="2.0">
-                                        <Label styleClass="seller-panel-title" text="Exchange Rates" />
-                                        <Label styleClass="section-subtitle" text="Base: 1 USD" />
-                                    </VBox>
-                                </HBox>
-
-                                <VBox fx:id="vboxCurrencyRates" spacing="8.0" styleClass="seller-rate-list">
-                                    <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="seller-rate-row-featured">
-                                        <ImageView fitHeight="18.0" fitWidth="24.0" preserveRatio="true">
-                                            <image><Image url="@../images/bidder_mainLobby/flag_us.png" /></image>
-                                        </ImageView>
-                                        <Label styleClass="seller-rate-name" text="United States (USD)" />
-                                        <Region HBox.hgrow="ALWAYS" />
-                                        <Label styleClass="seller-rate-value" text="1.00" />
-                                    </HBox>
-
-                                    <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="seller-rate-row">
-                                        <ImageView fitHeight="18.0" fitWidth="24.0" preserveRatio="true">
-                                            <image><Image url="@../images/bidder_mainLobby/flag_cn.png" /></image>
-                                        </ImageView>
-                                        <Label styleClass="seller-rate-name" text="China (CNY)" />
-                                        <Region HBox.hgrow="ALWAYS" />
-                                        <Label styleClass="seller-rate-value" text="6.82" />
-                                    </HBox>
-
-                                    <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="seller-rate-row">
-                                        <ImageView fitHeight="18.0" fitWidth="24.0" preserveRatio="true">
-                                            <image><Image url="@../images/bidder_mainLobby/flag_jp.png" /></image>
-                                        </ImageView>
-                                        <Label styleClass="seller-rate-name" text="Japan (JPY)" />
-                                        <Region HBox.hgrow="ALWAYS" />
-                                        <Label styleClass="seller-rate-value" text="158.91" />
-                                    </HBox>
-
-                                    <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="seller-rate-row">
-                                        <ImageView fitHeight="18.0" fitWidth="24.0" preserveRatio="true">
-                                            <image><Image url="@../images/bidder_mainLobby/flag_de.png" /></image>
-                                        </ImageView>
-                                        <Label styleClass="seller-rate-name" text="Germany (EUR)" />
-                                        <Region HBox.hgrow="ALWAYS" />
-                                        <Label styleClass="seller-rate-value" text="0.85" />
-                                    </HBox>
-
-                                    <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="seller-rate-row">
-                                        <ImageView fitHeight="18.0" fitWidth="24.0" preserveRatio="true">
-                                            <image><Image url="@../images/bidder_mainLobby/flag_vn.png" /></image>
-                                        </ImageView>
-                                        <Label styleClass="seller-rate-name" text="Vietnam (VND)" />
-                                        <Region HBox.hgrow="ALWAYS" />
-                                        <Label styleClass="seller-rate-value" text="26,336.30" />
-                                    </HBox>
                                 </VBox>
-                            </children>
-                        </VBox>
+                            </HBox>
 
-                        <VBox spacing="14.0" styleClass="seller-auctions-panel" HBox.hgrow="ALWAYS">
-                            <children>
-                                <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="seller-auctions-title-bar">
-                                    <children>
-                                        <VBox alignment="CENTER_LEFT" spacing="4.0">
-                                            <Label styleClass="seller-section-title" text="Available Auctions" />
-                                            <Label styleClass="section-subtitle" text="Review live rooms, inspect item details, and join a room as needed." />
-                                            <Pane prefHeight="3.0" prefWidth="136.0" styleClass="seller-gold-line" />
-                                        </VBox>
-
-                                        <Region HBox.hgrow="ALWAYS" />
-
-                                        <Button fx:id="btnCreateAuction" mnemonicParsing="false" onAction="#openSellerDashboard" styleClass="seller-create-button" text="+ Create Auction" />
-                                    </children>
+                            <VBox fx:id="vboxNews" spacing="12.0">
+                                <HBox alignment="TOP_LEFT" spacing="9.0" styleClass="bidder-note-row">
+                                    <Label styleClass="bidder-note-bullet" text="•" />
+                                    <Label styleClass="bidder-note-text" text="Create auction lobbies" wrapText="true" />
                                 </HBox>
 
-                                <StackPane styleClass="seller-auction-content-stack" VBox.vgrow="ALWAYS">
-                                    <children>
-                                        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" styleClass="seller-auction-scroll" vbarPolicy="AS_NEEDED">
-                                            <content>
-                                                <FlowPane fx:id="paneSelectAuction" alignment="TOP_LEFT" hgap="18.0" prefWrapLength="720.0" styleClass="seller-auction-grid" vgap="18.0" />
-                                            </content>
-                                        </ScrollPane>
-                                    </children>
-                                </StackPane>
-                            </children>
-                        </VBox>
-
-                        <VBox maxWidth="284.0" minWidth="250.0" prefWidth="270.0" spacing="14.0" styleClass="seller-notes-panel">
-                            <children>
-                                <HBox alignment="CENTER_LEFT" spacing="10.0">
-                                    <ImageView fitHeight="36.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
-                                        <image>
-                                            <Image url="@../images/bidder_mainLobby/icon_bidder_notes.png" />
-                                        </image>
-                                    </ImageView>
-                                    <VBox alignment="CENTER_LEFT" spacing="2.0">
-                                        <Label styleClass="seller-panel-title" text="Seller Notes" />
-                                        <Label styleClass="section-subtitle" text="Operational checklist" />
-                                    </VBox>
+                                <HBox alignment="TOP_LEFT" spacing="9.0" styleClass="bidder-note-row">
+                                    <Label styleClass="bidder-note-bullet" text="•" />
+                                    <Label styleClass="bidder-note-text" text="Check minimum balance requirements before joining." wrapText="true" />
                                 </HBox>
-
-                                <VBox fx:id="vboxNews" spacing="12.0">
-                                    <HBox alignment="TOP_LEFT" spacing="9.0" styleClass="seller-note-row">
-                                        <Label styleClass="seller-note-bullet" text="01" />
-                                        <Label styleClass="seller-note-text" text="Create auction lobbies for approved items from your seller dashboard." wrapText="true" />
-                                    </HBox>
-                                    <HBox alignment="TOP_LEFT" spacing="9.0" styleClass="seller-note-row">
-                                        <Label styleClass="seller-note-bullet" text="02" />
-                                        <Label styleClass="seller-note-text" text="Check minimum balance requirements before joining any active room." wrapText="true" />
-                                    </HBox>
-                                    <HBox alignment="TOP_LEFT" spacing="9.0" styleClass="seller-note-row">
-                                        <Label styleClass="seller-note-bullet" text="03" />
-                                        <Label styleClass="seller-note-text" text="Use View Details before entering a room to confirm item information." wrapText="true" />
-                                    </HBox>
-                                </VBox>
-                            </children>
+                            </VBox>
                         </VBox>
-                    </children>
+                    </StackPane>
                 </HBox>
             </center>
         </BorderPane>
