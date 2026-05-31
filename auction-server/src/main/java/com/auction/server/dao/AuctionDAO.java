@@ -10,7 +10,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.sql.Timestamp;
 import java.sql.Types;
 import java.time.LocalDateTime;
@@ -79,14 +78,6 @@ public class AuctionDAO implements IAuctionDAO {
             return false;
         }
 
-        String insertProductSql = """
-                INSERT INTO products (
-                    seller_id, product_type, product_name, description,
-                    starting_price, current_price
-                )
-                VALUES (?, 'ELECTRONICS', ?, ?, ?, ?)
-                """;
-
         String insertAuctionSql = """
                 INSERT INTO auctions (
                     auction_id, product_id, created_by, start_time, end_time,
@@ -99,24 +90,7 @@ public class AuctionDAO implements IAuctionDAO {
             conn.setAutoCommit(false);
 
             try {
-                int productId;
-                try (PreparedStatement stmt = conn.prepareStatement(insertProductSql, Statement.RETURN_GENERATED_KEYS)) {
-                    stmt.setString(1, sellerId);
-                    stmt.setString(2, item.getProductName());
-                    stmt.setString(3, item.getDescription());
-                    stmt.setDouble(4, item.getStartingPrice());
-                    stmt.setDouble(5, item.getStartingPrice());
-                    stmt.executeUpdate();
-
-                    try (ResultSet keys = stmt.getGeneratedKeys()) {
-                        if (!keys.next()) {
-                            conn.rollback();
-                            LOGGER.error("Product insert succeeded but no generated product_id was returned.");
-                            return false;
-                        }
-                        productId = keys.getInt(1);
-                    }
-                }
+                int productId = new ItemDAO().createItem(conn, item, sellerId);
 
                 room.setItemId(String.valueOf(productId));
                 try (PreparedStatement stmt = conn.prepareStatement(insertAuctionSql)) {
@@ -296,12 +270,6 @@ public class AuctionDAO implements IAuctionDAO {
                 WHERE auction_id = ?
                 """;
 
-        String updateProductSql = """
-                UPDATE products
-                SET status = ?, current_price = ?
-                WHERE product_id = ?
-                """;
-
         String debitWinnerSql = """
                 UPDATE users
                 SET balance = balance - ?
@@ -394,12 +362,7 @@ public class AuctionDAO implements IAuctionDAO {
                     stmt.executeUpdate();
                 }
 
-                try (PreparedStatement stmt = conn.prepareStatement(updateProductSql)) {
-                    stmt.setString(1, "SOLD");
-                    stmt.setDouble(2, finalPrice);
-                    stmt.setInt(3, productId);
-                    stmt.executeUpdate();
-                }
+                new ItemDAO().updateSaleStatus(conn, productId, "SOLD", finalPrice);
 
                 Map<String, Double> balances = new HashMap<>();
                 try (PreparedStatement stmt = conn.prepareStatement(selectBalancesSql)) {

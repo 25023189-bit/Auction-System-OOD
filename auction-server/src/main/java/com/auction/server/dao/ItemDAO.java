@@ -7,7 +7,9 @@ import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * Truy cập dữ liệu cơ bản cho item được dùng trong phiên đấu giá.
@@ -37,21 +39,8 @@ public class ItemDAO {
     }
 
     public boolean saveItem(Item item, String sellerId) {
-        String sql = """
-                INSERT INTO products (product_name, description, starting_price, current_price, seller_id, product_type)
-                VALUES (?, ?, ?, ?, ?, 'ELECTRONICS')
-                """;
-
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-
-            stmt.setString(1, item.getProductName());
-            stmt.setString(2, item.getDescription());
-            stmt.setDouble(3, item.getStartingPrice());
-            stmt.setDouble(4, item.getStartingPrice());
-            stmt.setString(5, sellerId);
-
-            return stmt.executeUpdate() > 0;
+        try (Connection conn = DatabaseConnection.getConnection()) {
+            return createItem(conn, item, sellerId) > 0;
         } catch (SQLException e) {
             LOGGER.error("Failed to save item {}.", item != null ? item.getId() : null, e);
             return false;
@@ -71,6 +60,47 @@ public class ItemDAO {
         } catch (SQLException e) {
             LOGGER.error("Failed to update current price for item {}.", itemId, e);
             return false;
+        }
+    }
+
+    int createItem(Connection conn, Item item, String sellerId) throws SQLException {
+        String sql = """
+                INSERT INTO products (
+                    seller_id, product_type, product_name, description,
+                    starting_price, current_price
+                )
+                VALUES (?, 'ELECTRONICS', ?, ?, ?, ?)
+                """;
+
+        try (PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+            stmt.setString(1, sellerId);
+            stmt.setString(2, item.getProductName());
+            stmt.setString(3, item.getDescription());
+            stmt.setDouble(4, item.getStartingPrice());
+            stmt.setDouble(5, item.getStartingPrice());
+            stmt.executeUpdate();
+
+            try (ResultSet keys = stmt.getGeneratedKeys()) {
+                if (!keys.next()) {
+                    throw new SQLException("Product insert succeeded but no generated product_id was returned.");
+                }
+                return keys.getInt(1);
+            }
+        }
+    }
+
+    int updateSaleStatus(Connection conn, int productId, String status, double currentPrice) throws SQLException {
+        String sql = """
+                UPDATE products
+                SET status = ?, current_price = ?
+                WHERE product_id = ?
+                """;
+
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, status);
+            stmt.setDouble(2, currentPrice);
+            stmt.setInt(3, productId);
+            return stmt.executeUpdate();
         }
     }
 }

@@ -506,7 +506,7 @@ Sau khi Client khởi động, bạn sẽ thấy giao diện Login.
 
 ### Link Báo Cáo & Tài Liệu
 - 📖 **Báo cáo chi tiết**: [DATABASE_SCHEMA_AND_DAO_GUIDE.md](./DATABASE_SCHEMA_AND_DAO_GUIDE.md)
-- 📚 **PlantUML Diagrams**: 
+- 📚 **PlantUML Diagrams**:
   - [system-overview.puml](./system-overview.puml)
   - [server-core.puml](./server-core.puml)
   - [client-mvc.puml](./client-mvc.puml)
@@ -555,7 +555,7 @@ Sau khi Client khởi động, bạn sẽ thấy giao diện Login.
 - Seller nhập **giá khởi điểm** (starting_price)
 - Seller nhập **bước giá** (bid_step) - mức tăng tối thiểu cho mỗi bid
 - Seller nhập **số tiền tối thiểu** để tham gia (minimum_join_amount)
-- **Constraint**: 
+- **Constraint**:
   - `minimum_join_amount` > 10% của `starting_price`
   - `minimum_join_amount` < 75% của `starting_price`
 - Validation được thực hiện bởi lớp `AuctionCreationValidator`
