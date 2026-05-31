@@ -5,6 +5,9 @@
 ### Bài Toán
 Đây là project hệ thống đấu giá realtime sử dụng **JavaFX** cho client, **Socket** cho server và **MySQL** cho database.
 
+### Link Giới thiệu Hệ Thống
+https://drive.google.com/file/d/1jm25PCK1x3LAd_zeir_PhlkSpqa3lszx/view?fbclid=IwY2xjawSJKuNleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEeIxlLqGqIGDAJj6aI2lMTymOzkBhQIhYQbJe9Ktb7h7FgVNEnMbSEGP8oGRM_aem_FYQWbs7Eto4euNZMl4RsHA
+
 ### Phạm Vi Hệ Thống
 
 Project mô phỏng một hệ thống đấu giá với các chức năng chính:
