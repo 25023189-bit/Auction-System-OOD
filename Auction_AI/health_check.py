@@ -12,7 +12,6 @@ from __future__ import annotations
 import json
 import subprocess
 import sys
-import tempfile
 from pathlib import Path
 import os
 
@@ -22,6 +21,9 @@ if str(AUCTION_AI_DIR) not in sys.path:
 
 
 def main() -> int:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+
     print("Auction_AI health check")
     print(f"AUCTION_AI_DIR = {AUCTION_AI_DIR}")
 
@@ -49,7 +51,7 @@ def check_autoapprove() -> list[tuple[str, bool, str]]:
         ("AutoApprove predict script", (auto_dir / "predict_from_input.py").is_file(), str(auto_dir / "predict_from_input.py")),
         ("AutoApprove model", (auto_dir / "auction_model.pkl").is_file(), str(auto_dir / "auction_model.pkl")),
         ("AutoApprove bridge input", (auto_dir / "input_ap.json").exists(), str(auto_dir / "input_ap.json")),
-        ("AutoApprove bridge output", (auto_dir / "output_ap.json").exists(), str(auto_dir / "output_ap.json")),
+        ("AutoApprove bridge output parent writable", os.access(auto_dir, os.W_OK), str(auto_dir / "output_ap.json")),
         ("AutoApprove test samples", (auto_dir / "test_samples.json").exists(), str(auto_dir / "test_samples.json")),
     ]
 
@@ -60,56 +62,55 @@ def check_autoapprove() -> list[tuple[str, bool, str]]:
     env["PYTHONIOENCODING"] = "utf-8"
     env["PYTHONUTF8"] = "1"
 
-    with tempfile.TemporaryDirectory() as tmp:
-        output_path = Path(tmp) / "prediction_results.json"
-        command = [
-            sys.executable,
-            str(auto_dir / "predict_from_input.py"),
-            "--input",
-            str(auto_dir / "test_samples.json"),
-            "--output",
-            str(output_path),
-        ]
+    output_path = auto_dir / "status" / "health_prediction_results.json"
+    command = [
+        sys.executable,
+        str(auto_dir / "predict_from_input.py"),
+        "--input",
+        str(auto_dir / "test_samples.json"),
+        "--output",
+        str(output_path),
+    ]
 
-        try:
-            completed = subprocess.run(
-                command,
-                cwd=str(auto_dir),
-                capture_output=True,
-                text=True,
-                encoding="utf-8",
-                errors="replace",
-                timeout=45,
-                env=env,
-            )
+    try:
+        completed = subprocess.run(
+            command,
+            cwd=str(auto_dir),
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            timeout=45,
+            env=env,
+        )
 
-            ok = completed.returncode == 0 and output_path.exists()
+        ok = completed.returncode == 0 and output_path.exists()
 
-            checks.append(
+        checks.append(
+            (
+                "AutoApprove smoke prediction",
+                ok,
                 (
-                    "AutoApprove smoke prediction",
-                    ok,
-                    (
-                        f"returncode={completed.returncode} "
-                        f"output_exists={output_path.exists()} "
-                        f"stdout={_truncate(completed.stdout)} "
-                        f"stderr={_truncate(completed.stderr)}"
-                    ),
-                )
+                    f"returncode={completed.returncode} "
+                    f"output_exists={output_path.exists()} "
+                    f"stdout={_truncate(completed.stdout)} "
+                    f"stderr={_truncate(completed.stderr)}"
+                ),
             )
+        )
 
-        except subprocess.TimeoutExpired as exc:
-            checks.append(
+    except subprocess.TimeoutExpired as exc:
+        checks.append(
+            (
+                "AutoApprove smoke prediction",
+                False,
                 (
-                    "AutoApprove smoke prediction",
-                    False,
-                    (
-                        f"timeout after {exc.timeout}s "
-                        f"stdout={_truncate(exc.stdout or '')} "
-                        f"stderr={_truncate(exc.stderr or '')}"
-                    ),
-                )
+                    f"timeout after {exc.timeout}s "
+                    f"stdout={_truncate(exc.stdout or '')} "
+                    f"stderr={_truncate(exc.stderr or '')}"
+                ),
             )
+        )
 
     return checks
 

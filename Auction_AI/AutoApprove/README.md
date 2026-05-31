@@ -1,66 +1,39 @@
-# Auction AI
+# Auction AI AutoApprove
 
-## Files
+## Runtime files
 
-- `Training_Data.csv`: dataset huấn luyện hiện tại, 1.000 mẫu, đúng schema dữ liệu đầu vào hiện tại.
-- `train_logistic_regression.py`: train Logistic Regression với title, description, organization và các feature số.
-- `auction_model.pkl`: model đã train.
-- `model_tester.py`: giao diện Python để nhập dữ liệu và xem quyết định của model.
-- `input_data.json`: nơi nhập dữ liệu test bằng file.
-- `predict_from_input.py`: đọc `input_data.json` và in kết quả dự đoán.
+- `predict_from_input.py`: Java-facing inference script. It reads JSON/CSV input and writes either rich prediction JSON or the Java bridge boolean output.
+- `input_ap.json`: Java bridge input sample/state file.
+- `output_ap.json`: Java bridge output created at runtime by `predict_from_input.py`.
+- `auction_model.pkl`: trained Logistic Regression pipeline used by inference.
+- `auction_logreg_bow.pkl`: older trained artifact retained for compatibility checks/debugging.
+- `diagnostics.py`: logging and path diagnostics shared by the inference script.
+- `prediction_results.json`: rich debug output from local/manual inference runs.
+- `status/`: runtime/debug logs and health-check output.
 
-## Cài thư viện
+## Training files
+
+- `Training_Data.csv`: current training dataset.
+- `train_logistic_regression.py`: retrains `auction_model.pkl` from `Training_Data.csv`.
+- `metrics.json`: latest training metrics.
+- `test_samples.json`: smoke-test samples for inference and `Auction_AI/health_check.py`.
+
+## Install dependencies
 
 ```bash
-pip install pandas scikit-learn joblib
+pip install -r ../requirements.txt
 ```
 
-`model_tester.py` dùng `tkinter`, thường có sẵn trong Python trên Windows.
-
-## Train lại model
+## Retrain model
 
 ```bash
 python train_logistic_regression.py
 ```
 
-Dataset được chỉnh trực tiếp trong `Training_Data.csv`; hiện không dùng script sinh dữ liệu.
-
-Dataset chỉ giữ các field: `title`, `category`, `organization`, `description`, `seller_rating`, `seller_completed_rating`, `seller_cancel_rate`, `minimum_join_amount`, `bid_step`, `start_price`, `start_price_log`, `duration_minutes`, `extension_seconds`, `start_hour`, `day_of_week`, `is_weekend`, `targeted_risk_type`, `description_style`, `review_status`, `auto_approve`.
-
-Model binary vẫn train theo `auto_approve`; các dòng `manual_review` được xem là `not_auto_approve`.
-
-`targeted_risk_type` chỉ dùng để mô tả lý do cần review, không đưa vào feature huấn luyện.
-
-`title_length` và `desc_length` không nằm trong CSV; train script tự tính trong bộ nhớ. `num_positive_keywords` không còn dùng trong dataset để tránh model học kiểu "nhiều từ tốt = approve".
-
-Nhóm nhà đất dùng giá khởi điểm và bước giá lớn hơn, có nhiễu về pháp lý, quy hoạch, đặt cọc, quyền thuê, giấy chứng nhận và giá thầu lệch thị trường.
-
-## Test bằng giao diện
+## Run inference smoke test
 
 ```bash
-python model_tester.py
+python predict_from_input.py --input test_samples.json --output prediction_results.json
 ```
 
-Giao diện sẽ tự tính các feature phụ:
-
-- `title_length`
-- `desc_length`
-- `num_positive_keywords`
-- `start_price_log`
-- `is_weekend`
-
-Kết quả hiển thị gồm quyết định `APPROVE`/`REJECT` và xác suất approve.
-
-## Test bằng file nhập
-
-Sửa dữ liệu trong:
-
-```bash
-input_data.json
-```
-
-Sau đó chạy:
-
-```bash
-python predict_from_input.py
-```
+When Java calls this module, it passes `--input input_ap.json --output output_ap.json`. In that bridge mode, `output_ap.json` must contain only `true` or `false`; rich diagnostics are kept in `prediction_results.json`.
