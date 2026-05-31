@@ -25,10 +25,10 @@ Project mô phỏng một hệ thống đấu giá với các chức năng chín
 
 | Công Nghệ | Tỷ Lệ | Mục Đích |
 |-----------|-------|---------|
-| Java | 85.3% | Backend server, client logic |
-| Python | 12.8% | AI ChatBot |
-| CSS | 1.8% | UI styling cho JavaFX |
-| Batchfile | 0.1% | Build scripts |
+| Java | 8x.x% | Backend server, client logic |
+| Python | 1x.x% | AI ChatBot |
+| CSS | 1.x% | UI styling cho JavaFX |
+| Batchfile | 0.x% | Build scripts |
 
 **Tech Stack chính:**
 - **JavaFX**: Giao diện người dùng
@@ -373,18 +373,6 @@ Chạy client từ máy khác cùng mạng LAN:
 server.host=<IPv4 của máy chạy server>
 server.port=8080
 
-## Cách chạy
-
-Bước 1: Chạy server
-
-java -jar auction-server.jar
-
-Bước 2: Chạy client
-
-java -jar auction-client.jar
-
-Có thể mở nhiều terminal và chạy lại client để mô phỏng nhiều người dùng.
-
 ## 🚀 Hướng Dẫn Chạy Ứng Dụng
 
 ### Bước 1: Tạo & Import Database
@@ -445,7 +433,7 @@ java -jar target/auction-server.jar
 
 **Output mong đợi:**
 ```
-[Server] Listening on port 5000...
+[Server] Listening on port 8080...
 [Database] Connection established successfully
 [Server] Ready to accept connections
 ```
@@ -608,7 +596,7 @@ Solution:
 Server lắng nghe port `8080`. Client lấy địa chỉ kết nối từ file `client.properties` đặt cạnh JAR khi chạy:
 
 ```properties
-server.host=localhost
+server.host=localhost //Có thể thay đổi để kết nối máy chủ
 server.port=8080
 ```
 
