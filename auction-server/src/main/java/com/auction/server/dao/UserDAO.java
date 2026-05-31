@@ -2,7 +2,7 @@ package com.auction.server.dao;
 
 import com.auction.common.model.User;
 import com.auction.server.utils.DatabaseConnection;
-import org.mindrot.jbcrypt.BCrypt;
+import com.auction.server.utils.PasswordUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -69,7 +69,7 @@ public class UserDAO implements IUserDAO {
                 if (rs.next()) {
                     User user = mapUser(rs);
                     // Kiểm tra mật khẩu mã hóa bằng BCrypt
-                    if (user != null && BCrypt.checkpw(rawPassword, rs.getString("password_hash"))) {
+                    if (user != null && PasswordUtil.checkPassword(rawPassword, rs.getString("password_hash"))) {
                         return user;
                     }
                 }
@@ -94,7 +94,7 @@ public class UserDAO implements IUserDAO {
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             String nextId = user.getId() != null ? user.getId() : generateNextCustomerId();
-            String hashedPass = BCrypt.hashpw(rawPassword, BCrypt.gensalt());
+            String hashedPass = PasswordUtil.hashPassword(rawPassword);
 
             stmt.setString(1, nextId);
             stmt.setString(2, user.getUsername());
@@ -116,29 +116,11 @@ public class UserDAO implements IUserDAO {
     }
 
     @Override
-    public boolean resetPassword(String customerId, String newPassword, String confirmPassword) {
-        if (newPassword == null || !newPassword.equals(confirmPassword)) {
-            return false;
-        }
-        String hashedPass = BCrypt.hashpw(newPassword, BCrypt.gensalt());
-        String sql = "UPDATE users SET password_hash = ? WHERE customer_id = ?";
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, hashedPass);
-            stmt.setString(2, customerId);
-            return stmt.executeUpdate() > 0;
-        } catch (SQLException e) {
-            LOGGER.error("Lỗi khi đổi mật khẩu cho user ID: {}", customerId, e);
-            return false;
-        }
-    }
-
-    @Override
     public String resetPasswordWithNewPassword(String username, String newPassword) {
         User user = getUserByUsername(username);
         if (user == null) return "USER_NOT_FOUND";
 
-        String hashedPass = BCrypt.hashpw(newPassword, BCrypt.gensalt());
+        String hashedPass = PasswordUtil.hashPassword(newPassword);
         String sql = "UPDATE users SET password_hash = ? WHERE username = ?";
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -190,13 +172,13 @@ public class UserDAO implements IUserDAO {
                 String lastId = rs.getString("customer_id");
                 if (lastId != null && lastId.startsWith("U")) {
                     int num = Integer.parseInt(lastId.substring(1));
-                    return String.format("U%03d", num + 1);
+                    return String.format("BD5%05d", num + 1);
                 }
             }
         } catch (Exception e) {
             LOGGER.error("Lỗi khi tự động sinh mã ID khách hàng tiếp theo", e);
         }
-        return "U001";
+        return "BD500001";
     }
 
     private User mapUser(ResultSet rs) throws SQLException {

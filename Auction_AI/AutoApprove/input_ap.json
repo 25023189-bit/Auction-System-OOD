@@ -3,26 +3,26 @@
   "source": "auction-system",
   "samples": [
     {
-      "title": "hello",
+      "title": "Item07",
       "category": "",
-      "organization": "đấu giá",
-      "description": "world",
+      "organization": "Olympus",
+      "description": "07",
       "seller_rating": 5.0,
-      "seller_completed_rating": 0.0,
-      "seller_cancel_rate": 0.0,
-      "minimum_join_amount": 50.0,
-      "minimum_join_ratio": 0.05,
+      "seller_completed_rating": 0.42857142857142855,
+      "seller_cancel_rate": 0.42857142857142855,
+      "minimum_join_amount": 40.0,
+      "minimum_join_ratio": 0.1,
       "bid_step": 50.0,
-      "bid_step_ratio": 0.05,
-      "start_price": 1000.0,
-      "start_price_log": 6.907755278982137,
-      "duration_minutes": 30.0,
-      "extension_seconds": 60.0,
-      "start_hour": 16.0,
-      "day_of_week": 0.0,
-      "is_weekend": 0.0,
-      "title_length": 5.0,
-      "desc_length": 5.0
+      "bid_step_ratio": 0.125,
+      "start_price": 400.0,
+      "start_price_log": 5.991464547107982,
+      "duration_minutes": 120.0,
+      "extension_seconds": 120.0,
+      "start_hour": 7.0,
+      "day_of_week": 6.0,
+      "is_weekend": 1.0,
+      "title_length": 6.0,
+      "desc_length": 2.0
     }
   ]
 }

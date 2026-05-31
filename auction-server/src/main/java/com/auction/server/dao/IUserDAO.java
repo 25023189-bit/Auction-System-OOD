@@ -12,7 +12,6 @@ public interface IUserDAO {
     User getUserByUsername(String username);
     User login(String username, String rawPassword);
     String registerUser(User user, String rawPassword);
-    boolean resetPassword(String customerId, String newPassword, String confirmPassword);
     String resetPasswordWithNewPassword(String username, String newPassword);
     List<User> getAllUsers();
     boolean deleteUser(String customerId);
