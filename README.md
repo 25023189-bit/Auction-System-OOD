@@ -6,7 +6,7 @@
 Đây là project hệ thống đấu giá realtime sử dụng **JavaFX** cho client, **Socket** cho server và **MySQL** cho database.
 
 ### Link Giới thiệu Hệ Thống
-https://drive.google.com/file/d/1jm25PCK1x3LAd_zeir_PhlkSpqa3lszx/view?fbclid=IwY2xjawSJKuNleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEeIxlLqGqIGDAJj6aI2lMTymOzkBhQIhYQbJe9Ktb7h7FgVNEnMbSEGP8oGRM_aem_FYQWbs7Eto4euNZMl4RsHA
+📖 [Xem báo cáo chi tiết](https://drive.google.com/file/d/1jm25PCK1x3LAd_zeir_PhlkSpqa3lszx/view)
 
 ### Phạm Vi Hệ Thống
 
@@ -19,6 +19,8 @@ Project mô phỏng một hệ thống đấu giá với các chức năng chín
 - ✅ Tự động gia hạn phiên ở thời điểm cuối (Anti-sniping)
 - ✅ Tự động chốt phiên và xử lý tiền
 - ✅ Tự động đóng phòng và đưa người dùng về sảnh khi phiên kết thúc
+- ✅ AI ChatBot hỗ trợ trả lời câu hỏi
+- ✅ Auto-approve phiên bằng ML model
 
 ---
 
@@ -28,19 +30,19 @@ Project mô phỏng một hệ thống đấu giá với các chức năng chín
 
 | Công Nghệ | Tỷ Lệ | Mục Đích |
 |-----------|-------|---------|
-| Java | 8x.x% | Backend server, client logic |
-| Python | 1x.x% | AI ChatBot |
-| CSS | 1.x% | UI styling cho JavaFX |
-| Batchfile | 0.x% | Build scripts |
+| Java | 82.7% | Backend server, client logic |
+| Python | 11.0% | AI ChatBot, ML Auto-approve |
+| CSS | 6.3% | UI styling cho JavaFX |
 
 **Tech Stack chính:**
-- **JavaFX**: Giao diện người dùng
-- **Java Socket**: Giao tiếp realtime client-server
-- **MySQL**: Cơ sở dữ liệu
-- **Maven**: Build tool (Multi-module)
+- **JavaFX 25**: Giao diện người dùng hiện đại
+- **Java Socket**: Giao tiếp realtime client-server (port 5000)
+- **MySQL 8.0+**: Cơ sở dữ liệu (Database: `aivien`)
+- **Maven 3.6+**: Multi-module build tool
 - **BCrypt**: Mã hóa mật khẩu
-- **Python ML**: AI auto-approve phiên (Logistic Regression)
 - **HikariCP**: Connection pooling
+- **Python ML**: AI auto-approve phiên (Logistic Regression)
+- **Logging**: SLF4J + Logback
 
 ### Môi Trường & Yêu Cầu
 
@@ -57,14 +59,14 @@ Project mô phỏng một hệ thống đấu giá với các chức năng chín
 git clone https://github.com/25023189-bit/Auction-System-OOD.git
 cd Auction-System-OOD
 
-# 2. Tạo database
-mysql -u root -p -e "CREATE DATABASE auction_system_v2;"
+# 2. Tạo database (sử dụng tên 'aivien')
+mysql -u root -p -e "CREATE DATABASE aivien;"
 
 # 3. Import database schema
-mysql -u root -p auction_system_v2 < auction-server/src/main/resources/database/init_db.sql
+mysql -u root -p aivien < auction-server/src/main/resources/database/init_db.sql
 
 # 4. Cấu hình database (tạo file application.properties)
-# Xem chi tiết ở phần Cấu Hình Database
+# Xem chi tiết ở phần "Cấu Hình Database"
 
 # 5. Cài Python dependencies (cho ChatBot)
 pip install -r Auction_AI/ChatBot/requirements.txt
@@ -89,327 +91,138 @@ Auction-System-OOD/                                   [Root Project]
 ├── 📁 .mvn/                                           [Maven Wrapper]
 ├── 📁 .idea/                                          [IntelliJ Config]
 │
-│
 ├── 📦 AUCTION-COMMON MODULE
 │   ├── 📄 pom.xml
 │   ├── src/main/java/com/auction/common/
 │   │   ├── dto/
-│   │   │   ├── Message.java                          # Socket message wrapper
-│   │   │   ├── AuctionEndNotificationPayload.java    # Auction end event
-│   │   │   ├── AutoBidRequest.java                   # Auto-bid request
-│   │   │   ├── BidHistoryDTO.java                    # Bid history data
+│   │   │   ├── Message.java
+│   │   │   ├── AuctionEndNotificationPayload.java
+│   │   │   ├── AutoBidRequest.java
 │   │   │   └── ...
-│   │   │
 │   │   ├── model/
-│   │   │   ├── Entity.java                           # Base entity
-│   │   │   ├── User.java                             # Base user class
-│   │   │   ├── Seller.java                           # Seller subclass
-│   │   │   ├── Bidder.java                           # Bidder subclass
-│   │   │   ├── Admin.java                            # Admin subclass
-│   │   │   ├── Item.java                             # Product/Item
-│   │   │   ├── AuctionRoom.java                      # Auction room entity
-│   │   │   ├── Art.java                              # Art item type
-│   │   │   ├── BidTransaction.java                   # Bid transaction log
-│   │   │   ├── AutoBidAgent.java                     # Auto-bid agent
-│   │   │   ├── AutoBiddingRule.java                  # Auto-bid rules
-│   │   │   ├── Notification.java                     # Notification entity
-│   │   │   ├── NotificationType.java                 # ENUM
-│   │   │   ├── PendingAuctionRequest.java            # Pending request
-│   │   │   ├── ProductDetailResponse.java            # Response model
-│   │   │   ├── PaymentStatus.java                    # ENUM
-│   │   │   ├── TransactionType.java                  # ENUM
+│   │   │   ├── User.java
+│   │   │   ├── AuctionRoom.java
+│   │   │   ├── Item.java
 │   │   │   └── ...
-│   │   │
 │   │   └── role/
-│   │       └── UserRole.java                         # BIDDER, SELLER, ADMIN
-│   │
-│   └── src/test/java/                                [Unit Tests]
-│
+│   │       └── UserRole.java
 │
 ├── 📦 AUCTION-SERVER MODULE
 │   ├── 📄 pom.xml
 │   ├── src/main/java/com/auction/server/
 │   │   ├── main/
-│   │   │   └── AuctionServer.java                    # Entry point (port 5000)
-│   │   │
+│   │   │   └── AuctionServer.java                    [Entry point (port 5000)]
 │   │   ├── handler/
-│   │   │   ├── ClientHandler.java                    # Process client requests
-│   │   │   ├── ClientConnection.java                 # Client connection wrapper
-│   │   │   ├── MessageProcessor.java                 # Message processing
-│   │   │   └── MessageRouter.java                    # Route messages to handlers
-│   │   │
 │   │   ├── network/
-│   │   │   ├── ServerSocket.java                     # TCP server
-│   │   │   ├── MessageCodec.java                     # Serialize/deserialize
-│   │   │   └── NetworkManager.java                   # Network management
-│   │   │
 │   │   ├── service/
-│   │   │   ├── AuthService.java                      # Login/Register/Password
-│   │   │   ├── AuctionRoomService.java               # Auction room logic
-│   │   │   ├── AuctionCreationValidator.java         # Validation rules
-│   │   │   ├── AuctionStateManager.java              # State management
-│   │   │   ├── AuctionRuntimeState.java              # Runtime state holder
-│   │   │   ├── AutoBidManager.java                   # Auto-bidding logic
-│   │   │   ├── PendingAuctionApprovalService.java    # Admin approval
-│   │   │   ├── ProductDetailService.java             # Product details
-│   │   │   ├── PasswordStrengthValidator.java        # Password validation
-│   │   │   ├── RateLimiter.java                      # Rate limiting
-│   │   │   └── ...
-│   │   │
 │   │   ├── dao/
-│   │   │   ├── Interfaces:
-│   │   │   │   ├── IUserDAO.java
-│   │   │   │   ├── IAuctionDAO.java
-│   │   │   │   ├── IBidDAO.java
-│   │   │   │   └── ...
-│   │   │   ├── Implementations:
-│   │   │   │   ├── UserDAO.java                      # User DB operations
-│   │   │   │   ├── AuctionDAO.java                   # Auction DB operations
-│   │   │   │   ├── BidDAO.java                       # Bid DB operations
-│   │   │   │   ├── ItemDAO.java                      # Item DB operations
-│   │   │   │   ├── TransactionDAO.java               # Transaction logs
-│   │   │   │   └── ...
-│   │   │
 │   │   ├── config/
-│   │   │   ├── DatabaseConfig.java                   # DB connection pool
-│   │   │   ├── ServerConfig.java                     # Server configuration
-│   │   │   ├── ConnectionPool.java                   # HikariCP pool
-│   │   │   └── ...
-│   │   │
 │   │   ├── AI/
-│   │   │   ├── AutoApprovalModel.java                # ML model integration
-│   │   │   ├── ChatBotIntegration.java               # ChatBot API
-│   │   │   └── ...
-│   │   │
 │   │   └── utils/
-│   │       ├── PasswordUtil.java                     # BCrypt hashing
-│   │       ├── DateUtil.java
-│   │       ├── ValidationUtil.java
-│   │       └── ...
-│   │
 │   ├── src/main/resources/
-│   │   ├── 📄 application.properties                 # Server config
-│   │   ├── 📄 logback.xml                            # Logging config
+│   │   ├── 📄 application.properties
+│   │   ├── 📄 logback.xml
 │   │   └── database/
-│   │       └── 📄 init_db.sql                        # MySQL schema
-│   │
-│   └── src/test/java/                                [Unit Tests]
-│
+│   │       └── 📄 init_db.sql
 │
 ├── 📦 AUCTION-CLIENT MODULE
 │   ├── 📄 pom.xml
 │   ├── src/main/java/com/auction/client/
 │   │   ├── app/
-│   │   │   └── Launcher.java                         # JavaFX entry point
-│   │   │
 │   │   ├── core/
-│   │   │   ├── Application.java                      # App main class
-│   │   │   ├── SceneManager.java                     # Scene navigation
-│   │   │   ├── StageManager.java                     # Window management
-│   │   │   └── ...
-│   │   │
 │   │   ├── feature/
-│   │   │   ├── auth/
-│   │   │   │   ├── LoginController.java              # Login screen
-│   │   │   │   ├── RegisterController.java           # Register screen
-│   │   │   │   ├── ForgotPasswordController.java     # Password recovery
-│   │   │   │   └── ...
-│   │   │   │
-│   │   │   ├── lobby/
-│   │   │   │   ├── LobbyController.java              # Auction list
-│   │   │   │   ├── LobbyViewModel.java               # Business logic
-│   │   │   │   ├── AuctionListView.java              # List component
-│   │   │   │   └── ...
-│   │   │   │
-│   │   │   ├── room/
-│   │   │   │   ├── RoomController.java               # Auction room UI
-│   │   │   │   ├── RoomViewModel.java                # Room logic
-│   │   │   │   ├── BidPanelController.java           # Bidding UI
-│   │   │   │   ├── ParticipantListController.java    # Participant list
-│   │   │   │   └── ...
-│   │   │   │
-│   │   │   ├── controllers/
-│   │   │   │   ├── DashboardController.java          # User dashboard
-│   │   │   │   ├── ProfileController.java            # User profile
-│   │   │   │   ├── AdminPanelController.java         # Admin panel
-│   │   │   │   ├── SellerPanelController.java        # Seller panel
-│   │   │   │   ├── BidderPanelController.java        # Bidder panel
-│   │   │   │   └── ...
-│   │   │   │
-│   │   │   └── viewmodel/
-│   │   │       ├── DashboardViewModel.java
-│   │   │       ├── RoomViewModel.java
-│   │   │       └── ...
-│   │   │
-│   │   ├── session/
-│   │   │   ├── SessionManager.java                   # User session
-│   │   │   ├── UserContext.java                      # Current user context
-│   │   │   └── ...
-│   │   │
 │   │   ├── network/
-│   │   │   ├── SocketClient.java                     # TCP client
-│   │   │   ├── MessageHandler.java                   # Handle messages
-│   │   │   ├── ConnectionManager.java                # Manage connection
-│   │   │   └── ...
-│   │   │
 │   │   ├── service/
-│   │   │   ├── AuthService.java                      # Auth API calls
-│   │   │   ├── AuctionService.java                   # Auction API
-│   │   │   ├── BidService.java                       # Bidding API
-│   │   │   ├── UserService.java                      # User API
-│   │   │   └── ...
-│   │   │
-│   │   ├── shared/
-│   │   │   ├── Utils.java                            # Utility functions
-│   │   │   ├── Constants.java                        # Constants
-│   │   │   ├── Validators.java                       # Client validation
-│   │   │   └── ...
-│   │   │
-│   │   └── AI/
-│   │       ├── ChatBotUI.java                        # ChatBot integration
-│   │       └── ...
-│   │
+│   │   └── session/
 │   ├── src/main/resources/
-│   │   ├── 📄 logback.xml
-│   │   ├── com/auction/client/feature/controllers/
-│   │   │   ├── 📄 login.fxml                         # Login scene
-│   │   │   ├── 📄 lobby.fxml                         # Lobby scene
-│   │   │   ├── 📄 room.fxml                          # Auction room scene
-│   │   │   ├── 📄 dashboard.fxml                     # Dashboard scene
-│   │   │   ├── 📄 admin_panel.fxml                   # Admin panel
-│   │   │   ├── 📄 seller_panel.fxml                  # Seller panel
-│   │   │   ├── 📄 bidder_panel.fxml                  # Bidder panel
-│   │   │   ├── 📄 profile.fxml                       # Profile scene
-│   │   │   ├── 📄 bid_history.fxml                   # Bid history
-│   │   │   └── ...
-│   │   │
-│   │   ├── com/auction/client/feature/css/
-│   │   │   ├── 📄 style.css                          # Global styles
-│   │   │   ├── 📄 login.css                          # Login styles
-│   │   │   ├── 📄 lobby.css                          # Lobby styles
-│   │   │   ├── 📄 room.css                           # Room styles
-│   │   │   └── ...
-│   │   │
-│   │   ├── com/auction/client/feature/images/
-│   │   │   ├── icons/                                # UI icons
-│   │   │   ├── logos/                                # App logos
-│   │   │   ├── backgrounds/                          # Background images
-│   │   │   └── ...
-│   │   │
-│   │   └── com/auction/client/AI/
-│   │       └── chatbot_resources/
-│   │
-│   └── src/test/java/                                [Unit Tests]
-│
+│   │   ├── logback.xml
+│   │   ├── fxml/
+│   │   ├── css/
+│   │   └── images/
 │
 ├── 📁 Auction_AI/
 │   ├── ChatBot/
-│   │   ├── 🐍 chatbot.py                             # Main ChatBot
-│   │   ├── 🐍 train_model.py                         # Training script
-│   │   ├── 📦 model.pkl                              # Trained model
-│   │   ├── 📄 intents.json                           # Intent definitions
-│   │   ├── 📄 training_data.json                     # Training data
-│   │   ├── 📄 requirements.txt                       # Python dependencies
+│   │   ├── 🐍 chatbot.py
+│   │   ├── 📄 requirements.txt
 │   │   └── 📄 README.md
-│   │
 │   └── AutoApprove/
-│       ├── 🐍 train_logistic_regression.py           # Training script
-│       ├── 🐍 model_tester.py                        # GUI tester
-│       ├── 🐍 predict_from_input.py                  # Batch prediction
-│       ├── 📦 auction_model.pkl                      # Trained ML model
-│       ├── 📊 Training_Data.csv                      # Training dataset
-│       ├── 📄 input_data.json                        # Test input
-│       ├── 📄 requirements.txt                       # Python dependencies
+│       ├── 🐍 train_logistic_regression.py
+│       ├── 📦 auction_model.pkl
+│       ├── 📊 Training_Data.csv
 │       └── 📄 README.md
 │
-│
-├── 📁 target/                                        [Build Output - Maven]
-│   ├── auction-common-1.0-SNAPSHOT.jar
-│   ├── auction-server-1.0-SNAPSHOT.jar
-│   ├── auction-client-1.0-SNAPSHOT.jar
-│   ├── classes/
-│   ├── lib/                                          # Dependencies
+├── 📊 DOCUMENTATION FILES
+│   ├── 📄 AuctionSystem_AllClasses_StarUML_Final.mdj
+│   ├── 📄 system-overview.puml
 │   └── ...
 │
-│
-├── 📊 DOCUMENTATION FILES
-│   ├── 📄 AuctionSystem_AllClasses_StarUML_Final.mdj # Class diagram
-│   ├── 📄 AuctionSystem_Presentation_StarUML.mdj     # Presentation diagram
-│   ├── 📄 system-overview.puml                       # System overview
-│   ├── 📄 server-core.puml                           # Server architecture
-│   ├── 📄 client-mvc.puml                            # Client MVC
-│   ├── 📄 service-layer.puml                         # Service layer
-│   ├── 📄 model-dto-layer.puml                       # Model/DTO layer
-│   ├── 📄 auction_system_functions.json              # Function definitions
-│   └── 📄 Open_AllClasses_StarUML.cmd                # Open diagram tool
-│
-│
-├── 🛠 BUILD & CONFIG FILES
-│   ├── 📄 mvnw, mvnw.cmd                             # Maven wrapper
-│   ├── 📄 .gitignore
-│   ├── 📄 .gitmodules
-│   ├── 📄 qodana.yaml                                # Code quality config
-│   └── 📄 pom.xml                                    # Main pom.xml
+└── 🛠 BUILD & CONFIG FILES
+    ├── 📄 mvnw, mvnw.cmd
+    ├── 📄 .gitignore
+    └── 📄 pom.xml
 ```
 
 ---
 
-## Vị trí file JAR
+## 📦 Vị Trí File JAR
 
 Các file JAR nằm trong thư mục:
+
+```
 release/
-├── auction-server.jar
-├── auction-client.jar
-└── client.properties
+├── auction-server.jar                    [Server executable]
+├── auction-client.jar                    [Client executable]
+└── client.properties                     [Client config file]
+```
 
-## Cấu hình kết nối client
+Hoặc sau khi build bằng Maven:
+```
+target/
+├── auction-common-1.0-SNAPSHOT.jar
+├── auction-server-1.0-SNAPSHOT.jar
+├── auction-client-1.0-SNAPSHOT.jar
+└── lib/                                  [Dependencies]
+```
 
-File `client.properties` dùng để cấu hình địa chỉ server.
-
-Chạy local:
-
-server.host=localhost
-server.port=8080
-
-Chạy client từ máy khác cùng mạng LAN:
-
-server.host=<IPv4 của máy chạy server>
-server.port=8080
+---
 
 ## 🚀 Hướng Dẫn Chạy Ứng Dụng
 
 ### Bước 1: Tạo & Import Database
 
 ```bash
-# Tạo database
-mysql -u root -p -e "CREATE DATABASE auction_system_v2;"
+# Tạo database (sử dụng tên 'aivien')
+mysql -u root -p -e "CREATE DATABASE aivien;"
 
 # Import schema
-mysql -u root -p auction_system_v2 < auction-server/src/main/resources/database/init_db.sql
+mysql -u root -p aivien < auction-server/src/main/resources/database/init_db.sql
 ```
 
-### Bước 2: Cấu Hình Database (application.properties)
+### Bước 2: Cấu Hình Database
 
 **Tạo file**: `auction-server/src/main/resources/application.properties`
 
 **Nội dung mẫu**:
 ```properties
-# Database Configuration
-db.url=jdbc:mysql://localhost:3306/auction_system_v2
+# Database Configuration (sử dụng database 'aivien')
+db.url=jdbc:mysql://localhost:3306/aivien
 db.user=root
 db.password=your_mysql_password
 db.driver=com.mysql.cj.jdbc.Driver
 
-# Connection Pool
+# Connection Pool (HikariCP)
 db.pool.maxSize=10
 db.pool.minIdle=5
 
 # Server Configuration
 server.port=5000
 server.host=localhost
+
+# Logging
+logging.level=INFO
 ```
 
-### Bước 3: Cài Đặt Python ChatBot (Tuỳ Chọn)
+### Bước 3: Cài Đặt Python ChatBot (Optional)
 
 ```bash
 # Navigate to ChatBot directory
@@ -429,14 +242,21 @@ mvn clean package
 
 ### Bước 5: Chạy Server ⭐ (CHẠY TRƯỚC)
 
-**Từ JAR**
+**Từ IDE:**
+```
+1. Mở project trong IntelliJ IDEA
+2. Tìm class: com.auction.server.main.AuctionServer
+3. Right-click → Run
+```
+
+**Từ JAR:**
 ```bash
 java -jar target/auction-server.jar
 ```
 
 **Output mong đợi:**
 ```
-[Server] Listening on port 8080...
+[Server] Listening on port 5000...
 [Database] Connection established successfully
 [Server] Ready to accept connections
 ```
@@ -445,7 +265,13 @@ java -jar target/auction-server.jar
 
 **⚠️ QUAN TRỌNG: Chờ Server khởi động xong rồi mới chạy Client!**
 
-**Từ JAR**
+**Từ IDE:**
+```
+1. Tìm class: com.auction.client.app.Launcher
+2. Right-click → Run
+```
+
+**Từ JAR:**
 ```bash
 java -jar target/auction-client.jar
 ```
@@ -453,6 +279,16 @@ java -jar target/auction-client.jar
 ### Bước 7: Đăng Nhập & Sử Dụng
 
 Sau khi Client khởi động, bạn sẽ thấy giao diện Login.
+
+**Tài khoản Demo:**
+
+| Role | Username | Password |
+|------|----------|----------|
+| Seller | hephaestus | 123 |
+| Bidder | cerberus | 123 |
+| Admin | hades | 123 |
+
+---
 
 ## ✅ Danh Sách Chức Năng Hoàn Thành
 
@@ -494,26 +330,28 @@ Sau khi Client khởi động, bạn sẽ thấy giao diện Login.
 - [x] Kiểm soát đồng thời truy cập (Thread-safe)
 - [x] Anti-sniping (gia hạn tự động trong 30s cuối nếu có bid)
 - [x] Xác thực & phân quyền người dùng
-- [x] Mã hóa mật khẩu BCrypt
-- [x] Lưu trữ dữ liệu an toàn trên MySQL
+- [x] Mã hóa mật khẩu BCrypt (cost 12)
+- [x] Lưu trữ dữ liệu an toàn trên MySQL (Database: aivien)
 - [x] Xử lý lỗi và exception handling
-- [x] Logging và monitoring (Audit Log)
+- [x] Logging và monitoring (SLF4J + Logback)
 - [x] Rate limiting để tránh spam
 - [x] Email notification (quên mật khẩu)
 - [x] AI ChatBot hỗ trợ trả lời câu hỏi
-- [x] AI auto-approve phiên (ML model)
+- [x] AI auto-approve phiên (Logistic Regression ML model)
+- [x] HikariCP connection pooling
 
 ---
 
 ## 📄 Tài Liệu & Demo
 
 ### Link Báo Cáo & Tài Liệu
-- 📖 **Báo cáo chi tiết**: [DATABASE_SCHEMA_AND_DAO_GUIDE.md](./DATABASE_SCHEMA_AND_DAO_GUIDE.md)
+- 📖 **Database Schema & DAO Guide**: [DATABASE_SCHEMA_AND_DAO_GUIDE.md](./DATABASE_SCHEMA_AND_DAO_GUIDE.md)
+- 📊 **Function Definitions**: [auction_system_functions.json](./auction_system_functions.json)
 - 📚 **PlantUML Diagrams**:
   - [system-overview.puml](./system-overview.puml)
   - [server-core.puml](./server-core.puml)
   - [client-mvc.puml](./client-mvc.puml)
-- 📊 **StarUML Diagrams**: [AuctionSystem_AllClasses_StarUML_Final.mdj](./AuctionSystem_AllClasses_StarUML_Final.mdj)
+- 📊 **StarUML Class Diagram**: [AuctionSystem_AllClasses_StarUML_Final.mdj](./AuctionSystem_AllClasses_StarUML_Final.mdj)
 
 ### Link Video Demo
 - 🎥 **Video hướng dẫn sử dụng**: [Xem Demo Video](#)
@@ -556,7 +394,7 @@ Sau khi Client khởi động, bạn sẽ thấy giao diện Login.
 ### 4. Quy Tắc Tạo Phiên
 
 - Seller nhập **giá khởi điểm** (starting_price)
-- Seller nhập **bước giá** (bid_step) - mức tăng tối thiểu cho mỗi bid
+- Seller nhập **bước giá** (bid_step)
 - Seller nhập **số tiền tối thiểu** để tham gia (minimum_join_amount)
 - **Constraint**:
   - `minimum_join_amount` > 10% của `starting_price`
@@ -578,7 +416,7 @@ Sau khi Client khởi động, bạn sẽ thấy giao diện Login.
 ```
 Error: Connection refused
 Solution: 
-- Kiểm tra server đã khởi động chưa (log sẽ hiển thị "Listening on port 5000")
+- Kiểm tra server đã khởi động chưa
 - Kiểm tra port 5000 không bị chiếm bởi ứng dụng khác
 - Kiểm tra firewall có chặn port không
 ```
@@ -589,23 +427,25 @@ Error: No suitable driver found / SQLNonTransientConnectionException
 Solution:
 - Kiểm tra MySQL service đang chạy
 - Kiểm tra file application.properties có cấu hình đúng
-- Kiểm tra có tạo database "auction_system_v2" chưa
+- Kiểm tra có tạo database "aivien" chưa
 - Kiểm tra user/password MySQL đúng
-- Kiểm tra JDBC driver trong pom.xml
 ```
 
-## 11.5. Port server
-
-Server lắng nghe port `8080`. Client lấy địa chỉ kết nối từ file `client.properties` đặt cạnh JAR khi chạy:
-
-```properties
-server.host=localhost //Có thể thay đổi để kết nối máy chủ
-server.port=8080
+### Vấn đề JavaFX GUI
+```
+Error: JavaFX initialization failed
+Solution:
+- Kiểm tra JDK 25 có cài module JavaFX
+- Kiểm tra javafx dependency trong pom.xml
 ```
 
-Nếu file không tồn tại hoặc cấu hình không hợp lệ, client dùng mặc định `localhost:8080`.
-
-## 11.6. Database configuration
+### Port 5000 bị chiếm
+```
+Error: Address already in use
+Solution:
+- Thay đổi server.port trong application.properties
+- Hoặc kill process chiếm port 5000
+```
 
 ### Không thấy Room trong Lobby
 ```
@@ -626,6 +466,9 @@ Solution:
 - **Repository**: [25023189-bit/Auction-System-OOD](https://github.com/25023189-bit/Auction-System-OOD)
 - **Bài tập**: Lập Trình Nâng Cao - Object-Oriented Design
 - **Architecture**: Multi-module Maven (auction-common, auction-server, auction-client)
+- **Database**: MySQL `aivien`
+- **Server Port**: 5000
+- **Language Composition**: Java 82.7%, Python 11.0%, CSS 6.3%
 
 ### Phân Công Công Việc
 
@@ -633,7 +476,7 @@ Solution:
 |--------|-----------|
 | **Nguyễn Hữu Hùng** | Đăng nhập, Đăng ký, AI ChatBot, Tạo phiên, Biến động số dư, Đặt giá, Kết thúc phiên, Phân quyền Admin |
 | **Tô Bảo Hân** | Lập trình mạng, Xử lý Server, Đa luồng (Multithreading), Quản trị trạng thái hệ thống, Quản lý mã nguồn |
-| **Bùi Thế Dũng** | Database design, Kết nối database, Lấy lại mật khẩu bằng email, Testing & debugging |
+| **Bùi Thế Dũng** | Database design (aivien), Kết nối database, Lấy lại mật khẩu bằng email, Testing & debugging |
 | **Đặng Đức Anh** | UI/UX JavaFX (Login, Lobby, Room, Dashboard), Thiết kế giao diện |
 
 ---
@@ -662,3 +505,7 @@ This project is part of a university assignment. All rights reserved.
 - https://www.amazon.com/
 
 ---
+
+**Cập nhật lần cuối**: 25/05/2026
+**Database**: aivien
+**Language Composition**: Java 82.7%, Python 11.0%, CSS 6.3%
